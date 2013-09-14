@@ -20,12 +20,9 @@
 namespace YAF.SampleWebApplication
 {
     using System;
-    using System.ComponentModel;
     using System.Web.UI;
-    using System.Web.UI.WebControls;
 
     using YAF.Classes;
-    using YAF.Controls;
     using YAF.Core;
     using YAF.Types.Interfaces;
     using YAF.Utilities;

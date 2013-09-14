@@ -21,9 +21,9 @@ namespace YAF.SampleWebApplication
 {
     using System;
     using System.Web;
-    using System.Web.UI;
     using System.Web.UI.WebControls;
 
+    using YAF.Types.Extensions;
     using YAF.Utils;
     using YAF.Utils.Helpers;
 
@@ -40,11 +40,11 @@ namespace YAF.SampleWebApplication
         /// </returns>
         protected string GetReturnUrl()
         {
-            return HttpContext.Current.Server.UrlEncode(
-                        HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl").IsSet()
-                            ? General.GetSafeRawUrl(
-                                HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl"))
-                            : General.GetSafeRawUrl());
+            return
+                HttpContext.Current.Server.UrlEncode(
+                    HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl").IsSet()
+                        ? General.GetSafeRawUrl(HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl"))
+                        : General.GetSafeRawUrl());
         }
 
         /// <summary>
