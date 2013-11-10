@@ -2,6 +2,7 @@
     CodeBehind="users.ascx.cs" %>
 <%@ Import Namespace="YAF.Utils" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 <YAF:AdminMenu runat="server" ID="Adminmenu1">
     <table cellspacing="0" cellpadding="0" class="content" width="100%">
@@ -63,16 +64,9 @@
             </td>
         </tr>
         <tr>
-            <td class="header2">
-                <YAF:LocalizedLabel ID="LocalizedLabel11" runat="server" LocalizedTag="USER_NAME" LocalizedPage="ADMIN_USERS" />
-                <br />
+            <td class="header2" colspan="4">
+                <YAF:LocalizedLabel ID="LocalizedLabel11" runat="server" LocalizedTag="USER_NAME" LocalizedPage="ADMIN_USERS" />&nbsp;
                 (<YAF:LocalizedLabel ID="LocalizedLabel10" runat="server" LocalizedTag="DISPLAY_NAME" LocalizedPage="ADMIN_USERS" />)
-            </td>
-            <td class="header2">
-                &nbsp;
-            </td>
-            <td class="header2">
-                &nbsp;
             </td>
         </tr>
         <asp:Repeater ID="UserList" runat="server" OnItemCommand="UserList_ItemCommand">
@@ -93,7 +87,8 @@
                      <span style="font-weight:bold"><YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="APPROVED" LocalizedPage="ADMIN_USERS" /> :</span> <%# this.GetText("COMMON", BitSet(Eval("Flags"), 2) ? "YES" : "NO")%>&nbsp;|&nbsp;
                      <span style="font-weight:bold"><YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" LocalizedTag="LAST_VISIT" LocalizedPage="ADMIN_USERS" /> :</span> <%# this.Get<IDateTime>().FormatDateTime((DateTime)((System.Data.DataRowView)Container.DataItem)["LastVisit"]) %>&nbsp;|&nbsp;
                      <span style="font-weight:bold"><YAF:LocalizedLabel ID="LocalizedLabel17" runat="server" LocalizedTag="FACEBOOK_USER" LocalizedPage="ADMIN_USERS" /> :</span> <%# this.GetText("COMMON", Eval("IsFacebookUser").ToType<bool>() ?  "YES" : "NO") %>&nbsp;|&nbsp;
-                     <span style="font-weight:bold"><YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" LocalizedTag="TWITTER_USER" LocalizedPage="ADMIN_USERS" /> :</span> <%# this.GetText("COMMON", Eval("IsTwitterUser").ToType<bool>() ? "YES" : "NO")%>
+                     <span style="font-weight:bold"><YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" LocalizedTag="TWITTER_USER" LocalizedPage="ADMIN_USERS" /> :</span> <%# this.GetText("COMMON", Eval("IsTwitterUser").ToType<bool>() ? "YES" : "NO")%>&nbsp;|&nbsp;
+                     <span style="font-weight:bold"><YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="GOOGLE_USER" LocalizedPage="ADMIN_USERS" /> :</span> <%# this.GetText("COMMON", Eval("IsGoogleUser").ToType<bool>() ? "YES" : "NO")%>
                     </td>
                     <td class="post" align="center">
                        <YAF:ThemeButton ID="ThemeButtonEdit" CssClass="yaflittlebutton" CommandName='edit' CommandArgument='<%# DataBinder.Eval(Container.DataItem, "UserID") %>' TitleLocalizedTag="EDIT" ImageThemePage="ICONS" ImageThemeTag="EDIT_SMALL_ICON" runat="server"></YAF:ThemeButton>

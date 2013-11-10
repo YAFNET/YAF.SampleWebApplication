@@ -5,14 +5,12 @@
 <script runat="server">
     void Page_Load()
     {
-        byte[] delay = new byte[1];
-        RandomNumberGenerator prng = new RNGCryptoServiceProvider();
-
-        prng.GetBytes(delay);
-        Thread.Sleep((int)delay[0]);
-
-        IDisposable disposable = prng as IDisposable;
-        if (disposable != null) { disposable.Dispose(); }
+        using (RandomNumberGenerator prng = new RNGCryptoServiceProvider())
+        {
+            var delay = new byte[1];
+            prng.GetBytes(delay);
+            Thread.Sleep((int)delay[0]);
+        }
     }
 </script>
 <html>
@@ -36,9 +34,8 @@
                     </p>
                     <hr />
                     <p style="font-size: 9pt">
-                        Note: If you are the administrator, and need help with this problem, please visit
-                        this url: <a href="http://wiki.yetanotherforum.net/TroubleShooting%20CustomErrors.ashx">
-                            Turn off CustomErrors in your web.config</a>.
+                        Note: If you are the administrator, and need help with this problem, please
+                        Turn off CustomErrors in your web.config.
                     </p>
                 </td>
             </tr>

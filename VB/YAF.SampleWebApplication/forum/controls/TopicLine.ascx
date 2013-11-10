@@ -7,7 +7,7 @@
 <%@ Import Namespace="YAF.Controls" %>
 <%@ Import Namespace="YAF.Types.Constants" %>
 <%@ Import Namespace="YAF.Classes" %>
-<%@ Import Namespace="YAF.Types.Interfaces.Extensions" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
 <tr class="<%=this.IsAlt ? "topicRow_Alt post_alt" : "topicRow post" %>">
     <asp:PlaceHolder ID="SelectionHolder" runat="server" Visible="false">
         <td>
@@ -25,9 +25,14 @@
             if (this.Get<YafBoardSettings>().ShowAvatarsInTopic)
             {
                 var avatarUrl = this.GetAvatarUrlFromID(this.TopicRow["UserID"].ToType<int>());
+
+                var avatarTitle = this.GetTextFormatted(
+                    "USER_AVATAR",
+                    this.HtmlEncode(this.TopicRow[this.Get<YafBoardSettings>().EnableDisplayName ? "StarterDisplay" : "Starter"].
+                        ToString()));
         %>
-        <img src="<%=avatarUrl%>" alt="<%=this.AltLastPost%>" title="<%=this.AltLastPost%>"
-            class="avatarimage" />
+        <img src="<%=avatarUrl%>" alt="<%= avatarTitle %>" title="<%= avatarTitle %>"
+            class="avatarimage img-rounded" />
         <%}
 
             string priorityMessage = this.GetPriorityMessage(this.TopicRow);
@@ -71,7 +76,7 @@
         {
           ID = "topicStarterLink",
           UserID = this.TopicRow["UserID"].ToType<int>(),
-          CrawlerName = this.Get<IUserDisplayName>().GetName(this.TopicRow["UserID"].ToType<int>()),
+          ReplaceName = this.TopicRow[this.Get<YafBoardSettings>().EnableDisplayName ? "StarterDisplay" : "Starter"].ToString(),
           Style = this.TopicRow["StarterStyle"].ToString()
         }.RenderToString() %>
         </span>
@@ -119,10 +124,15 @@
             {
                 int userID = this.TopicRow["LastUserID"].ToType<int>();
 
+                var lastAvatarTitle = this.GetTextFormatted(
+                    "USER_AVATAR",
+                    this.HtmlEncode(this.TopicRow[this.Get<YafBoardSettings>().EnableDisplayName ? "LastUserDisplayName" : "LastUserName"].
+                        ToString()));
+
                 if (this.Get<YafBoardSettings>().ShowAvatarsInTopic)
                 {%>
-        <img src="<%=this.GetAvatarUrlFromID(userID)%>" alt="<%=this.AltLastPost%>" title="<%=this.AltLastPost%>"
-            class="avatarimage" />
+        <img src="<%=this.GetAvatarUrlFromID(userID)%>" alt="<%=lastAvatarTitle%>" title="<%=lastAvatarTitle%>"
+            class="avatarimage img-rounded" />
         <%
             }
 
@@ -130,8 +140,8 @@
                 this.Get<IReadTrackCurrentUser>().GetForumTopicRead(
                 forumId: this.TopicRow["ForumID"].ToType<int>(),
                 topicId: this.TopicRow["TopicID"].ToType<int>(),
-                forumReadOverride: this.TopicRow["LastForumAccess"].ToType<DateTime?>() ?? DateTime.MinValue,
-                topicReadOverride: this.TopicRow["LastTopicAccess"].ToType<DateTime?>() ?? DateTime.MinValue); 
+                forumReadOverride: this.TopicRow["LastForumAccess"].ToType<DateTime?>() ?? YAF.Utils.Helpers.DateTimeHelper.SqlDbMinTime(),
+                topicReadOverride: this.TopicRow["LastTopicAccess"].ToType<DateTime?>() ?? YAF.Utils.Helpers.DateTimeHelper.SqlDbMinTime()); 
 
 
         string strMiniPost = this.Get<ITheme>().GetItem(
@@ -156,7 +166,9 @@
         }    
                 
         %>
-        <%=new UserLink { UserID = userID, CrawlerName = this.Get<IUserDisplayName>().GetName(this.TopicRow["LastUserID"].ToType<int>()) , Style = this.TopicRow["LastUserStyle"].ToString() }.RenderToString() %>
+        <%=new UserLink { UserID = userID, 
+                          ReplaceName = this.TopicRow[this.Get<YafBoardSettings>().EnableDisplayName ? "LastUserDisplayName" : "LastUserName"].ToString(),
+                          Style = this.TopicRow["LastUserStyle"].ToString() }.RenderToString() %>
         <a href="<%=YafBuildLink.GetLink(ForumPages.posts, "m={0}&find=lastpost", this.TopicRow["LastMessageID"]) %>"
             title="<%=this.AltLastPost%>">
             <img src="<%=strMiniPost%>" alt="<%=this.AltLastPost%>" title="<%=this.AltLastPost%>" />            

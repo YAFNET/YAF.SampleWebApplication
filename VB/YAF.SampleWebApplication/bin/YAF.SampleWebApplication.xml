@@ -1,0 +1,113 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+YAF.SampleWebApplication
+</name>
+</assembly>
+<members>
+<member name="P:YAF.SampleWebApplication.My.MyWebExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:YAF.SampleWebApplication.My.MyWebExtension.User">
+	<summary>
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:YAF.SampleWebApplication.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:YAF.SampleWebApplication.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:YAF.SampleWebApplication.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="T:YAF.SampleWebApplication.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:YAF.SampleWebApplication.Forum.forum">
+	<summary>
+forum control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:YAF.SampleWebApplication.SiteMaster.HeadContent">
+	<summary>
+HeadContent control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:YAF.SampleWebApplication.SiteMaster.Image1">
+	<summary>
+Image1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:YAF.SampleWebApplication.SiteMaster.FeaturedContent">
+	<summary>
+FeaturedContent control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:YAF.SampleWebApplication.SiteMaster.MainContent">
+	<summary>
+MainContent control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:YAF.SampleWebApplication._Default.ActiveDiscussions">
+	<summary>
+ActiveDiscussions control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="M:YAF.SampleWebApplication.SiteMaster.GetRegisterUrl">
+	<summary>
+ Gets the register URL.
+ </summary>
+	<returns></returns>
+</member><member name="M:YAF.SampleWebApplication.SiteMaster.GetLoginUrl">
+	<summary>
+ Gets the login URL.
+ </summary>
+	<returns></returns>
+</member><member name="M:YAF.SampleWebApplication.SiteMaster.Page_Init(System.Object,System.EventArgs)">
+	<summary>
+ Handles the Init event of the Page control.
+ </summary>
+	<param name="sender">The source of the event.</param>
+	<param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member><member name="M:YAF.SampleWebApplication.SiteMaster.master_Page_PreLoad(System.Object,System.EventArgs)">
+	<summary>
+ Handles the PreLoad event of the master_Page control.
+ </summary>
+	<param name="sender">The source of the event.</param>
+	<param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+	<exception cref="T:System.InvalidOperationException">Validation of Anti-XSRF token failed.</exception>
+</member><member name="M:YAF.SampleWebApplication.SiteMaster.Page_Load(System.Object,System.EventArgs)">
+	<summary>
+ Handles the Load event of the Page control.
+ </summary>
+	<param name="sender">The source of the event.</param>
+	<param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member>
+</members>
+</doc>

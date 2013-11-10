@@ -4,6 +4,7 @@
 <%@ Import Namespace="YAF.Types.Flags" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Utils" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 <asp:Repeater ID="Inbox" runat="server" OnItemCommand="Inbox_ItemCommand">
     <HeaderTemplate>
@@ -60,7 +61,7 @@
         </tr>
         <tr class="postfooter">
             <td class="small postTop" colspan='2'>
-                <a onclick="ScrollToTop();" href="javascript: void(0)">            
+                <a onclick="ScrollToTop();" class="postTopLink" href="javascript: void(0)">            
                   <YAF:ThemeImage ID="ThemeImage1" LocalizedTitlePage="POSTS" LocalizedTitleTag="TOP"  runat="server" ThemeTag="TOTOPPOST" />
                 </a>
             </td>

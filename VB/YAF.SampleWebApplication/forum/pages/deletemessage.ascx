@@ -3,7 +3,6 @@
 <%@ Import Namespace="YAF.Types.Constants" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Utils" %>
-<%@ Register TagPrefix="uc1" TagName="smileys" Src="../controls/smileys.ascx" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 <table class="content" cellspacing="1" cellpadding="4" width="100%" align="center">
     <tr>
@@ -58,8 +57,7 @@
         <table class="content linkedPostsContent" cellspacing="1" cellpadding="0" width="100%" align="center">
             <tr>
                 <td class="header2" align="center" colspan="1">
-                    <asp:CheckBox ID="DeleteAllPosts" OnCheckedChanged="DeleteAllPosts_CheckedChanged1"
-                        AutoPostBack="True" runat="server" />
+                    <asp:CheckBox ID="DeleteAllPosts" runat="server" />
                     Delete All Posts?
                 </td>
                 <td class="header2" align="center" colspan="1">
@@ -119,9 +117,7 @@
         </tr>
     </AlternatingItemTemplate>
 </asp:Repeater>
-<!--
-<iframe runat="server" Visible="false" id="LastPostsIFrame" name="lastposts" width="100%" height="300" frameborder="0" marginheight="2" marginwidth="2" scrolling="yes"></iframe>
--->
+
 <div id="DivSmartScroller">
     <YAF:SmartScroller ID="SmartScroller1" runat="server" />
 </div>

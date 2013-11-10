@@ -5,6 +5,7 @@
 <%@ Import Namespace="YAF.Utils" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 <YAF:AdminMenu runat="server">
+     <YAF:Pager ID="PagerTop" runat="server" OnPageChange="PagerTop_PageChange" />
 	<table class="content" width="100%" cellspacing="1" cellpadding="0">
 		<tr>
 			<td class="header1" colspan="8">
@@ -44,19 +45,19 @@
 				<tr class="post">
 					<td>
 						<a target="_top" href='<%# YafBuildLink.GetLink(ForumPages.topics,"f={0}",Eval("ForumID")) %>'>
-							<%# Eval("ForumName") %>
+							<%# HtmlEncode(Eval("ForumName")) %>
 						</a>
 					</td>
 					<td>
 						<a target="_top" href='<%# YafBuildLink.GetLink(ForumPages.posts,"t={0}",Eval("TopicID")) %>'>
-							<%# Eval("TopicName") %>
+							<%# HtmlEncode(Eval("TopicName")) %>
 						</a>
 					</td>
 					<td>
 						<%# this.Get<IDateTime>().FormatDateTimeShort(Eval( "Posted")) %>
 					</td>
 					<td>
-						<%# Eval( "FileName") %>
+						<%# HtmlEncode(Eval( "FileName")) %>
 					</td>
 					<td align="right">
 						<%# Eval( "Downloads") %>
@@ -74,5 +75,6 @@
 			</ItemTemplate>
 		</asp:Repeater>
 	</table>
+     <YAF:Pager ID="PagerBottom" runat="server" LinkedPager="PagerTop" />
 </YAF:AdminMenu>
 <YAF:SmartScroller ID="SmartScroller1" runat="server" />

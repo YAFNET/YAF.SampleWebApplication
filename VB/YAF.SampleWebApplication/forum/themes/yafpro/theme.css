@@ -1,8 +1,4 @@
-﻿.yafnet {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 9pt;
-    color: #3B3b3b;
-}
+﻿.yafnet,
 .yafnet td {
     font-family: sans-serif, Helvetica, Arial;
     font-size: 9pt;
@@ -159,8 +155,11 @@
     border: 0;
 }
 .yafnet ul {
-    margin: 2px 2px 2px 2px;
+    margin: 2px;
     padding: 0;
+}
+.yafnet .postdiv ul {
+	padding: 0 0 0 40px;
 }
 .yafnet li {
     margin-left: 15px;
@@ -208,14 +207,6 @@
     font-size: 15px;
     line-height: 30px;
 }	
-.yafnet .header1Title {
-    background: url('titleBack.gif') repeat-x black;
-    color: #ffffff;
-    font-weight: bold;
-    padding-left: 10px;	
-    font-size: 15px;
-    line-height: 30px;
-}
 .yafnet .postTitle .rightItem a
 {
     color: White;
@@ -658,7 +649,6 @@ This CSS already works on FireFox.
 .yafnet div.postdiv {
     width: 100%;
     min-height: 100px;
-    overflow: auto;	
 }
 .yafnet div.AdMessage {
 	min-height: 10px;
@@ -849,6 +839,10 @@ This CSS already works on FireFox.
 .yafnet .yafpopupmenu li {
     padding: 5px 10px 5px 10px;
     margin: 0;
+	font-family: sans-serif, Helvetica, Arial;
+    font-size: 9pt;
+    color: #3b3b3b;
+	font-weight:normal;
 }
 .yafnet .yafpopupmenu li.popupitemhover {
     background-color: #cccccc;

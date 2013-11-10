@@ -1,12 +1,8 @@
-.yafnet {
-	font-size:12px;
-	font-family:Arial;
-	color: #000;
-}
+.yafnet,
 .yafnet td {
 	font-size:12px;
-	font-family:Arial;
-	color: #000;
+	font-family: Arial,Helvetica,sans-serif;
+	color: black;
 }
 .yafnet input,
 .yafnet select,
@@ -21,18 +17,17 @@
     background-color: #f5f5f5;
 }
 .yafnet textarea {
-		width:98%;
-		padding:0px;
+	width:98%;
+	padding:0;
 }
-.yafnet input[type="image"]
+.yafnet input[type="image"],
+.yafnet input[type="checkbox"]
 {
-    padding: 0px;
-    border: 0px;
+    padding: 0;
+    border: 0;
 }
 .yafnet input[type="checkbox"]
 {
-    border: 0px;
-    padding: 0px;
     margin: 5px;
 }
 
@@ -124,23 +119,6 @@
 	color: #ffffff;
 	font-weight: bold;
 	padding-left: 10px;
-	font-size: 15px;
-	line-height: 30px;
-}	
-.yafnet .header1Title {
-	text-shadow: 0 1px 1px rgba(0,0,0,.3);
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	background: url('HeaderBack.png') #f78d1d;
-	
-	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
-	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
-	background: -o-linear-gradient(top,  #faa51a,  #f47a20);
-	
-	color: #ffffff;
-	font-weight: bold;
-	padding-left: 10px;	
 	font-size: 15px;
 	line-height: 30px;
 }
@@ -255,7 +233,8 @@
 .forumStatisticsContent .postheader,
 .smiliesContent .post,
 #yafprofilecontent .post,
-#yafprofilecontent .postheader {border-top:none;}
+#yafprofilecontent .postheader,
+.yafnet .LastPosts .header2 {border-top:none;}
 
 .yafnet .linkedPostsContent .postheader,
 .yafnet .LastPosts .postheader {
@@ -394,7 +373,7 @@ border-bottom-left-radius:0.3em;}
     padding: 8px;
 }
 .yafnet .content td table td table td {
-	padding: 0px;	
+	padding: 0;	
 }
 .yafnet .content .headersub {
 	color: #ffffff;
@@ -572,15 +551,9 @@ border-bottom-left-radius:0.3em;}
 	-webkit-border-radius: 0.4em;
 	border-radius: 0.4em;
 }
-/*
-Use this to setup overflow feature for your site.
-On IE that would mean specifying a width so that the overflow will work properly.
-This CSS already works on FireFox.
-*/
 .yafnet div.postdiv {
 	width: 100%;
 	min-height: 100px;
-	overflow: auto;	
 }
 .yafnet div.AdMessage {
 	min-height: 10px;
@@ -598,7 +571,7 @@ This CSS already works on FireFox.
 /* CSS Pagelinks */
 .yafnet .yafpager {
 	color: #555555;
-	margin: 6px 0px 6px 0px;
+	margin: 6px 0 6px 0;
 }
 .yafnet a.pagelink,
 .yafnet a.pagelinkfirst,
@@ -666,7 +639,7 @@ This CSS already works on FireFox.
 	
 }
 .yafnet a.yafcssbigbutton:hover,
-.yafnet .pbutton:hover
+.yafnet .pbutton:hover,
 .yafnet .postTopLink:hover,
 .yafnet .MultiQuoteButton:hover,
 .yafnet a.yaflittlebutton:hover,
@@ -738,10 +711,10 @@ This CSS already works on FireFox.
 }
 .yafnet a.yafcssbigbutton img{
 	vertical-align: top;
-	padding: 0px 4px 0px 0px;
+	padding: 0 4px 0 0;
 }
 .yafnet a.yafcssbigbutton:active img{
-    padding: 0px 4px 0px 0px;
+    padding: 0 4px 0 0;
 }
 .yafnet a.yafcssbigbutton:active span{
     background-position: bottom left;
@@ -768,6 +741,11 @@ This CSS already works on FireFox.
 	padding: 5px 10px 5px 10px;
 	list-style-type: none;
 	margin: 0;
+	font-size:12px;
+	font-family:Arial;
+	color: #000;
+	font-weight:normal;
+	text-shadow:none;
 }
 .yafnet .yafpopupmenu li.popupitemhover {
 	background-color: #cccccc;
@@ -977,6 +955,8 @@ height:80em;
 	-webkit-box-shadow: 0 0 3px #555;
 	-moz-box-shadow: 0 0 3px #555;
 }
+* html #tiptip_content {background-color: rgb(247,147,29);}
+*:first-child+html #tiptip_content {background-color: rgb(247,147,29)}
 
 #tiptip_arrow, #tiptip_arrow_inner {
 	position: absolute;
@@ -1049,6 +1029,9 @@ height:80em;
 	}
 }
 
+/* Selection of rules to make tiptip work in IE6 */
+* html #tiptip_arrow {display:none;}
+
 .adminContent li,
 .ui-helper-reset li {list-style-type:none}
 
@@ -1104,6 +1087,8 @@ height:80em;
     background-color: Yellow;
     color: Black;
 }
+
+.yafnet #yafheader ul {display:inline-block}
 
 .yafnet .menuList li a,
 .yafnet .menuAdminList li a
@@ -1224,23 +1209,6 @@ height:80em;
 .menuAdmin a {
 	color:#333!important;
 }
-
-/* Irkoo Service styles */
-.irk-rating { font-family: Arial, Sans-Serif; color: #080; }
-.irk-negative { color: #c00; }
-.irk-count { font-size: 12px; font-weight: bold; padding: 0 4px; vertical-align: middle; }
-.irk-down, .irk-up { cursor: pointer; width: 16px; height: 16px; vertical-align: middle; }
-.irk-down { background: url(http://z.irkoo.com/down.png); }
-.irk-down:hover { background: url(http://z.irkoo.com/down-hover.png); }
-.irk-down-voted .irk-down { background: url(http://z.irkoo.com/down-voted.png); }
-.irk-up { background: url(http://z.irkoo.com/up.png); }
-.irk-up:hover { background: url(http://z.irkoo.com/up-hover.png); }
-.irk-up-voted .irk-up { background: url(http://z.irkoo.com/up-voted.png); }
-/* irk-vote should have relative positioning needed for popup to be positioned correctly */
-.irk-vote { position: relative; }
-.irk-count, .irk-rating { font-family: Arial, Sans-Serif; color: #680; }
-.irk-negative, .irk-negative .irk-count { color: #c4e; }
-/* End of Irkoo Service styles */
 
 /* Override jquery ui font-size */
 .ui-widget { font-size: 9pt!important; }
@@ -1399,22 +1367,8 @@ height:80em;
 	border-radius: 0.4em;
     box-shadow:1px 1px 1px gray;
 }
-.yafnet .Unread a {color:white!important;font-weight:bold!important;font-size:0.9em!important;padding-left: 0px!important;}
+.yafnet .Unread a {color:white!important;font-weight:bold!important;font-size:0.9em!important;padding-left: 0!important;}
 .yafnet .unread {padding-top:7px;}
-
-.yafnet .postTopLink a  {
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
-    border: 1px solid #aaa;
-    -webkit-border-radius: 0.4em;
-	border-radius: 0.4em;
-	padding:4px 3px 0 3px;
-	
-}
-.yafnet .postTopLink:hover  {
-    background:#999;
-}
 
 /* Alpha Sort Control */
 .yafnet dl.AlphaSort {
@@ -1459,3 +1413,27 @@ height:80em;
 {
 	background-color: yellow;
 }
+
+/* Profile Menu */
+.yafnet #yafprofilemessenger li,
+.yafnet #yafprofilepersonal li {
+	list-style-type:none;
+	line-height:20px;
+	
+	background: url("ProfileMenu.png") no-repeat top left;
+}
+
+.yafnet #yafprofilemessenger li a,
+.yafnet #yafprofilepersonal li a {padding-left: 20px;}
+
+.yafnet #yafprofilemessenger li.yafprofilemenu_cp_pm {background-position: 0 -264px;}
+.yafnet #yafprofilemessenger li.yafprofilemenu_pmessage {background-position: 0 -330px}
+.yafnet #yafprofilepersonal li.yafprofilemenu_profile { background-position: 0 -396px;}
+.yafnet #yafprofilepersonal li.yafprofilemenu_cp_editprofile { background-position: 0 -198px;}
+.yafnet #yafprofilepersonal li.yafprofilemenu_cp_editbuddies {background-position: 0 -132px;}
+.yafnet #yafprofilepersonal li.yafprofilemenu_albums {background-position: 0 0;}
+.yafnet #yafprofilepersonal li.yafprofilemenu_viewthanks{background-position: 0 -462px;}
+.yafnet #yafprofilepersonal li.yafprofilemenu_cp_editavatar {background-position: 0 -198px;}
+.yafnet #yafprofilepersonal li.yafprofilemenu_cp_signature{background-position: 0 -330px}
+.yafnet #yafprofilepersonal li.yafprofilemenu_cp_subscriptions{background-position: 0 -198px;}
+.yafnet #yafprofilepersonal li.yafprofilemenu_cp_changepassword {background-position: 0 -66px;}

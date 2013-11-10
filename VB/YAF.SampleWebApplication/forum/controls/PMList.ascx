@@ -1,12 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Controls.PMList" EnableTheming="true" Codebehind="PMList.ascx.cs" EnableViewState="true" %>
 <%@ Import Namespace="YAF.Utils" %>
 <%@ Import Namespace="YAF.Core" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
 
 <YAF:Pager ID="PagerTop" runat="server" OnPageChange="PagerTop_PageChange" />
 
 <asp:GridView ID="MessagesView" runat="server" OnRowCreated="MessagesView_RowCreated"
 	DataKeyNames="UserPMessageID" Width="99%" GridLines="None" CellSpacing="1" ShowFooter="true"
-	AutoGenerateColumns="false" CssClass="content" EmptyDataText='<%#GetLocalizedText("NO_MESSAGES") %>'
+	AutoGenerateColumns="false" CssClass="content" EmptyDataText='<%#GetLocalizedText("NO_MESSAGES", null) %>'
 	EmptyDataRowStyle-CssClass="post">
 	<HeaderStyle CssClass="header2" />
 	<RowStyle CssClass="post" />
@@ -42,8 +43,8 @@
                 </Triggers>
               </asp:UpdatePanel>
 			</FooterTemplate>
-			<HeaderStyle Width="50px" />
-			<ItemStyle Width="50px" HorizontalAlign="Center" />
+			<HeaderStyle Width="20px" />
+			<ItemStyle Width="20px" HorizontalAlign="Center" />
 			<FooterStyle HorizontalAlign="Center" />
 		</asp:TemplateField>
 		<asp:TemplateField>
@@ -52,37 +53,43 @@
 			<ItemTemplate>
 				<img src="<%# GetImage(Container.DataItem) %>" alt="" />
 			</ItemTemplate>
-			<ItemStyle HorizontalAlign="Center" />
+            <HeaderStyle Width="40px" />
+			<ItemStyle Width="40px" HorizontalAlign="Center" />
 		</asp:TemplateField>
 		<asp:TemplateField>
 			<HeaderTemplate>
 				<asp:Image runat="server" ID="SortFrom" AlternateText="Sort From" />
 				<asp:LinkButton runat="server" ID="FromLink" OnClick="FromLink_Click" Text='<%#GetMessageUserHeader() %>' />
 			</HeaderTemplate>
+            <HeaderStyle Width="7%" />
 			<ItemTemplate>
-				<YAF:UserLink ID="UserLink1" runat="server" UserID='<%# Convert.ToInt32(( View == PMView.Outbox ) ? Eval("ToUserID") : Eval("FromUserID" )) %>' />
+				<YAF:UserLink ID="UserLink1" runat="server" UserID='<%# (( this.View == PMView.Outbox ) ? this.Eval("ToUserID") : this.Eval("FromUserID" )).ToType<int>() %>' />
 			</ItemTemplate>
+            <ItemStyle Width="7%" HorizontalAlign="Center" />
 		</asp:TemplateField>
 		<asp:TemplateField>
 			<HeaderTemplate>
 				<asp:Image runat="server" ID="SortSubject" AlternateText="Sort Subject" />
-				<asp:LinkButton runat="server" ID="SubjectLink" OnClick="SubjectLink_Click" Text='<%#GetLocalizedText("SUBJECT") %>' />
+				<asp:LinkButton runat="server" ID="SubjectLink" OnClick="SubjectLink_Click" Text='<%#GetLocalizedText("SUBJECT", null) %>' />
 			</HeaderTemplate>
-			<HeaderStyle Width="60%" />
+			<HeaderStyle Width="60%" HorizontalAlign="Left" />
 			<ItemTemplate>
 				<a href='<%# GetMessageLink(Eval("UserPMessageID")) %>'>
 					<%# this.HtmlEncode(Eval("Subject")) %>
 				</a>
 			</ItemTemplate>
+            <ItemStyle HorizontalAlign="Left" />
 		</asp:TemplateField>
 		<asp:TemplateField>
 			<HeaderTemplate>
 				<asp:Image runat="server" ID="SortDate" AlternateText="Sort Date" />
-				<asp:LinkButton runat="server" ID="DateLink" OnClick="DateLink_Click" Text='<%#GetLocalizedText("DATE") %>' />
+				<asp:LinkButton runat="server" ID="DateLink" OnClick="DateLink_Click" Text='<%#GetLocalizedText("DATE", null) %>' />
 			</HeaderTemplate>
+            <HeaderStyle HorizontalAlign="Left" />
 			<ItemTemplate>
                 <YAF:DisplayDateTime ID="PostedDateTime" runat="server" DateTime='<%# Container.DataItemToField<DateTime>("Created") %>'></YAF:DisplayDateTime>
 			</ItemTemplate>
+            <ItemStyle HorizontalAlign="Left" />
 		</asp:TemplateField>
 	</Columns>
 </asp:GridView>
