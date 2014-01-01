@@ -72,6 +72,10 @@
 	padding: 0;
 }
 
+.yafnet .postdiv ul {
+	padding: 0 0 0 40px;
+}
+
 .yafnet .content td,
 .yafnet .content th
 {
@@ -98,12 +102,6 @@
 .yafnet tr.header1 a		{color:#FFFFFF!important;text-decoration:none}
 .yafnet a.HeaderTopicLink:hover,
 .yafnet tr.header1 a:hover	{color:#C0C0FF;text-decoration:underline}
-.yafnet .header1Title {
-	color: #FFFFFF;
-	font-weight: bold;
-	line-height: 18px;
-	font-size:12px;		
-}
 
 /* yaf header */
 .yafnet #yafheader
@@ -468,7 +466,6 @@ This CSS already works on FireFox.
 .yafnet div.postdiv {
 	width: 100%;
 	min-height: 100px;
-	overflow: auto;	
 }
 .yafnet div.AdMessage {
 	min-height: 10px;
@@ -652,6 +649,10 @@ This CSS already works on FireFox.
 .yafnet .yafpopupmenu li {
 	padding: 5px 10px 5px 10px;
 	margin: 0;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 8pt;
+	color:#404040;
+	font-weight:normal;
 }
 .yafnet .yafpopupmenu li.popupitemhover {
 	background-color: #cccccc;
@@ -820,22 +821,6 @@ This CSS already works on FireFox.
 {
 		padding-top:0;
 }
-/* Irkoo Service styles */
-.irk-rating { font-family: Arial, Sans-Serif; color: #080; }
-.irk-negative { color: #c00; }
-.irk-count { font-size: 12px; font-weight: bold; padding: 0 4px; vertical-align: middle; }
-.irk-down, .irk-up { cursor: pointer; width: 16px; height: 16px; vertical-align: middle; }
-.irk-down { background: url(http://z.irkoo.com/down.png); }
-.irk-down:hover { background: url(http://z.irkoo.com/down-hover.png); }
-.irk-down-voted .irk-down { background: url(http://z.irkoo.com/down-voted.png); }
-.irk-up { background: url(http://z.irkoo.com/up.png); }
-.irk-up:hover { background: url(http://z.irkoo.com/up-hover.png); }
-.irk-up-voted .irk-up { background: url(http://z.irkoo.com/up-voted.png); }
-/* irk-vote should have relative positioning needed for popup to be positioned correctly */
-.irk-vote { position: relative; }
-.irk-count, .irk-rating { font-family: Arial, Sans-Serif; color: #680; }
-.irk-negative, .irk-negative .irk-count { color: #c4e; }
-/* End of Irkoo Service styles */
 
 /* Override jquery ui font-size */
 .ui-widget { font-size: 9pt!important; }
@@ -914,7 +899,7 @@ This CSS already works on FireFox.
 .ModalDialog .DialogContent {
   display:table;
   width: 370px;
-  padding: 4px;
+  padding: 4px 0 4px 0;
   background: #eee;
 }
 .ModalDialog .modalHeader 
@@ -962,4 +947,12 @@ This CSS already works on FireFox.
 .ModalDialog .modalInner
 {
     display: inline;
+}
+.ModalDialog .StandardButton,
+.ModalDialog .StandardButton:hover {
+  background: #666;
+}
+.ModalDialog .close {
+	top:10px;
+	right:10px
 }

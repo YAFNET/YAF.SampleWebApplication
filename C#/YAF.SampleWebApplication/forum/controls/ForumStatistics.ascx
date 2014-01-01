@@ -29,7 +29,7 @@
 						</YAF:ActiveUsers>
                     </td>
                 </tr>
-                <asp:PlaceHolder runat="server" ID="RecentUsersPlaceHolder">
+                <asp:PlaceHolder runat="server" ID="RecentUsersPlaceHolder" Visible="False" >
                 <tr>
                     <td class="header2" colspan="2">
                         <YAF:LocalizedLabel ID="RecentUsersLabel" runat="server" LocalizedTag="RECENT_USERS" />
@@ -42,7 +42,7 @@
                     <td class="post">
                         <asp:Label runat="server" ID="RecentUsersCount" />
                         <br />
-                        <YAF:ActiveUsers ID="RecentUsers" runat="server" InstantId="RecentUsersOneDay">
+                        <YAF:ActiveUsers ID="RecentUsers" runat="server" InstantId="RecentUsersOneDay" Visible="False">
 						</YAF:ActiveUsers>
                     </td>
                 </tr>

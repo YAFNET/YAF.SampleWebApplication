@@ -2,6 +2,7 @@
 <%@ Import Namespace="YAF.Core" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Utils" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayPost" Src="../controls/DisplayPost.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayAd" Src="../controls/DisplayAd.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="PollList" Src="../controls/PollList.ascx" %>
@@ -44,17 +45,33 @@
             </div>
             <div class="rightItem">
                 <div id="fb-root"></div>
+                <div style="display:inline">
                 <asp:HyperLink ID="ShareLink" runat="server" CssClass="PopMenuLink">
                     <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="Share" />
                 </asp:HyperLink>
+                <YAF:PopMenu ID="ShareMenu" runat="server" Control="ShareLink" />
+                </div>
+                <div style="display:inline">
                 <asp:HyperLink ID="OptionsLink" runat="server" CssClass="PopMenuLink">
                     <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" LocalizedTag="Options" />
                 </asp:HyperLink>
+                <asp:UpdatePanel ID="PopupMenuUpdatePanel" runat="server" style="display:inline">
+                  <ContentTemplate>
+                    <span id="WatchTopicID" runat="server" visible="false"></span>
+                  </ContentTemplate>
+                </asp:UpdatePanel>
+                <YAF:PopMenu runat="server" ID="OptionsMenu" Control="OptionsLink" />
+                </div>
+                
+                <div style="display:inline">
                 <asp:PlaceHolder ID="ViewOptions" runat="server">
                     <asp:HyperLink ID="ViewLink" runat="server" CssClass="PopMenuLink">
                         <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="View" />
                     </asp:HyperLink>
                 </asp:PlaceHolder>
+                <YAF:PopMenu ID="ViewMenu" runat="server" Control="ViewLink" />
+                </div>
+                
                 <asp:HyperLink ID="ImageMessageLink" runat="server" CssClass="GoToLink">
                      <YAF:ThemeImage ID="LastPostedImage" runat="server" Style="border: 0" />
                 </asp:HyperLink>
@@ -195,11 +212,3 @@
 <div id="DivSmartScroller">
     <YAF:SmartScroller ID="SmartScroller1" runat="server" />
 </div>
-<YAF:PopMenu ID="ShareMenu" runat="server" Control="ShareLink" />
-<asp:UpdatePanel ID="PopupMenuUpdatePanel" runat="server">
-    <ContentTemplate>
-        <YAF:PopMenu runat="server" ID="OptionsMenu" Control="OptionsLink" />
-        <span id="WatchTopicID" runat="server" visible="false"></span>
-    </ContentTemplate>
-</asp:UpdatePanel>
-<YAF:PopMenu ID="ViewMenu" runat="server" Control="ViewLink" />

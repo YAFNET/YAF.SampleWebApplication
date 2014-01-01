@@ -14,10 +14,32 @@
 <body>
     <form id="Form1" runat="server">
     <script type="text/javascript">
-        jQuery('#Form1').submit(function () { jQuery('.wizStep').animate({ opacity: '0.4' }, 'fast'); jQuery('#YafLoader').css({ top: '40%', left: '50%', margin: '-' + (jQuery('#YafLoader').height() / 2) + 'px 0 0 -' + (jQuery('#YafLoader').width() / 2) + 'px' });
-            jQuery('#YafLoader').show(); });  (function ($) { var cache = []; $.preLoadImages = function () { var args_len = arguments.length; for (var i = args_len; i--; ) { var cacheImage = document.createElement('img'); cacheImage.src = arguments[i]; cache.push(cacheImage);
-                                                                                                                                               } };
-            })(jQuery); jQuery.preLoadImages("loader.gif", "../resources/images/loader.gif");
+        (function ($) {
+            $(document).ready(function () {
+                $(".wizMain td:eq(0)").addClass("wizHeader");
+                
+                $('#Form1').submit(function () {
+                    $('.wizStep').animate({ opacity: '0.4' }, 'fast');
+                    $('#YafLoader').css({
+                        top: '40%',
+                        left: '50%',
+                        margin: '-' + ($('#YafLoader').height() / 2) + 'px 0 0 -' + ($('#YafLoader').width() / 2) + 'px'
+                    });
+                    $('#YafLoader').show();
+                });
+            });
+
+            var cache = [];
+            $.preLoadImages = function() {
+                var args_len = arguments.length;
+                for (var i = args_len; i--;) {
+                    var cacheImage = document.createElement('img');
+                    cacheImage.src = arguments[i];
+                    cache.push(cacheImage);
+                }
+            };
+            $.preLoadImages("loader.gif", "../resources/images/loader.gif");
+        })(jQuery);
     </script>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
@@ -34,12 +56,12 @@
                     <h4 class="lined">
                         Validate Permissions</h4>
                     <p>
-                        YetAnotherForum.NET Installation is easier when YAF has write access to your .config
-                        files. Click below to test is permissions are correct. If they are not, you can
+                        YetAnotherForum.NET Installation is easier when the Application has write access to your .config
+                        files. Click below to test if permissions are correct. If they are not, you can
                         still use the installation wizard.
                     </p>
                     <ul>
-                        <li>Asp.Net Hosting Trust Level (if trust level is not "Full" you will need to manually
+                        <li>Asp.Net Hosting Trust Level (if trust level is not "Full" or "Unrestricted" you will need to manually
                             modify all configuration files)... <strong>
                                 <asp:Label ID="lblHostingTrust" runat="server" ForeColor="Gray">Unchecked</asp:Label></strong></li>
                         <li>YAF Has Write Access to Root Application Directory ("~/")... <strong>
@@ -265,13 +287,13 @@
                     </asp:PlaceHolder>
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Upgrade Database" ID="WizInitDatabase">
-                    <strong><%# !NewForumCreated ? "Upgrade" : "Initialize"%> Database</strong><br />
+                    <strong><%# IsForumInstalled ? "Upgrade" : "Initialize"%> Database</strong><br />
                     <br />
-                    Clicking next will <%# !NewForumCreated ? "upgrade" : "initialize"%> your database to the latest version.<br />
+                    Clicking next will <%# IsForumInstalled ? "upgrade" : "initialize"%> your database to the latest version.<br />
                     <br />
                     <asp:CheckBox ID="FullTextSupport" runat="server" Text="Attempt to Install FullText Search Support" />
                     <br />
-                    <asp:CheckBox ID="UpgradeExtensions" Checked="False" Visible="<%# !NewForumCreated %>" runat="server" Text="Upgrade BBCode Extensions, File Extensions and Topic Status Lists" />
+                    <asp:CheckBox ID="UpgradeExtensions" Checked="True" Visible="<%# IsForumInstalled %>" runat="server" Text="Upgrade BBCode Extensions, File Extensions and Topic Status Lists" />
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Create Forum" ID="WizCreateForum">
                     <strong>Create Board</strong><br />
@@ -368,9 +390,9 @@
                     </asp:UpdatePanel>
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" StepType="Finish" Title="Finished" ID="WizFinished">
-                    <strong>Setup/Upgrade Finished</strong><br />
+                    <strong><%# IsForumInstalled ? "Upgrade" : "Setup"%> Finished</strong><br />
                     <br />
-                    Your forum has now been setup or upgraded to the latest version.
+                    Your forum has now been <%# IsForumInstalled ? "upgraded" : "Setup"%> to the latest version.
                 </asp:WizardStep>
             </WizardSteps>
             <SideBarButtonStyle BackColor="#507CD1" Font-Names="Verdana" ForeColor="White" />
@@ -382,8 +404,6 @@
                         Text="Finish" />
                 </div>
             </FinishNavigationTemplate>
-            <HeaderStyle BackColor="White" Font-Bold="True"
-                Font-Size="0.9em" ForeColor="Black" HorizontalAlign="Center" />
             <HeaderTemplate>
                 <img src="../images/YAFLogo.png" alt="YAF Logo" /><br />
                 Installation Wizard

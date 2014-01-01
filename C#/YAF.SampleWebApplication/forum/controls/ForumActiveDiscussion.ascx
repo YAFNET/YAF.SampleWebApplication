@@ -21,10 +21,10 @@
                     <ItemTemplate>
                         <tr>
                             <td class="post" style="padding-left:10px">
-                                <asp:Image ID="NewPostIcon" runat="server" style="border: 0;width:16px;height:16px" />
+                                <asp:Image ID="NewPostIcon" runat="server" CssClass="topicStatusIcon" />
                                 &nbsp;<strong><asp:HyperLink ID="TextMessageLink" runat="server" /></strong>
                                 &nbsp;<YAF:LocalizedLabel ID="ByLabel" runat="server" LocalizedTag="BY" LocalizedPage="TOPICS" />
-                                &nbsp;<YAF:UserLink ID="LastUserLink" runat="server" />&nbsp;(<asp:HyperLink ID="ForumLink" runat="server" />)
+                                &nbsp;<YAF:UserLink ID="LastUserLink"  runat="server" />&nbsp;(<asp:HyperLink ID="ForumLink" runat="server" />)
                             </td>
                             <td class="post" style="width: 30em; text-align: right;">                            
                                 <YAF:DisplayDateTime ID="LastPostDate" runat="server" Format="BothTopic" />

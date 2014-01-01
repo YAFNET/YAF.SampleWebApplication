@@ -682,6 +682,9 @@
   <page name="ADMIN_EDITUSER">
     <Resource tag="ADD_POINTS">Punkte hinzufügen:</Resource>
     <Resource tag="BAN_IP_OFUSER">IP-Adressen des Benutzers sperren?</Resource>
+    <Resource tag="BAN_IP_OFUSER">IP-Adressen des Benutzers sperren?</Resource>
+    <Resource tag="BOT_REPORTED">Benutzer erfolgreich als BOT gemeldet</Resource>
+    <Resource tag="BOT_REPORTED_FAILED">Benutzer konnte nicht gemeldet werden, bitte API Key überprüfen!</Resource>
     <Resource tag="CHANGE_NEW_PASS">Neues Passwort:</Resource>
     <Resource tag="CHANGE_NEW_PASS_HELP">Neues Benutzer-Passwort.</Resource>
     <Resource tag="CHANGE_PASS">Passwort ändern</Resource>
@@ -707,6 +710,8 @@
     <Resource tag="HEAD_USER_RESETPASS">Benutzer Passwort ändern</Resource>
     <Resource tag="IP_ADDRESSES">IP Addresses:</Resource>
     <Resource tag="IP_ADRESSES">IP-Adressen:</Resource>
+    <Resource tag="KILL_USER">Benutzer löschen</Resource>
+    <Resource tag="KILL_USER_CONFIRM">Alle Beiträge löschen und (optional) all IP Addressen des Benutzers bannen?</Resource>
     <Resource tag="LINK_USER_BAN">Benutzer &lt;a id="usr{0}" href="{1}"&gt;{2}&lt;/a&gt;  ist gesperrt durch die IP-Adresse</Resource>
     <Resource tag="MEMBER">Mitglied</Resource>
     <Resource tag="MSG_GUEST_APPROVED">Der Gastbenutzer muss als Genehmigt markiert sein, ansonsten funktioniert das Forum nicht korrekt.</Resource>
@@ -720,6 +725,8 @@
     <Resource tag="PASS_REQUIREMENT">{0} minimale Länge. {1} minimale nicht Alphanumerische Zeichen ($#@!).</Resource>
     <Resource tag="PASSWORD_REQUIREMENTS">Die Membership Passwort-Anforderungen:</Resource>
     <Resource tag="REMOVE_POINTS">Punkte entfernen:</Resource>
+    <Resource tag="REPORT_USER">Benuzter als BOT melden an StopForumSpam.com</Resource>
+    <Resource tag="REPORT_USER_CONFIRM">Benutzer Name, Email Adresse und IP Adresse an StopForumSpam.com als BOT melden?</Resource>
     <Resource tag="RESET_PASS">Passwort zurücksetzen</Resource>
     <Resource tag="SET_POINTS">Punkte setzen:</Resource>
     <Resource tag="SUSPEND_ACCOUNT_USER">Suspend this account for 5 years?</Resource>
@@ -1008,8 +1015,6 @@
     <Resource tag="ENABLE_DISPLAY_NAME_HELP">Wenn diese Option aktiviert, verwendet YAF den alternativen "Anzeigenamen" anstelle des Benutzernamens.</Resource>
     <Resource tag="ENABLE_HOVERCARDS">Benutzer Info Hover Karte aktivieren:</Resource>
     <Resource tag="ENABLE_HOVERCARDS_HELP">Wenn aktiviert wird eine Hover Karte (Die eine Kurzübersicht über den Benutzer zeigt) angezeigt, wenn man mit der Maus über einen Benutzernamen im Forum fährt. Es wird auch eine Karte angezeigt für den Twitter &amp; Facebook Button.</Resource>
-    <Resource tag="ENABLE_IRKOO">Use Irkoo Reputation Service:</Resource>
-    <Resource tag="ENABLE_IRKOO_HELP">Irkoo is a free service that adds user reputations to your site  Visit &lt;strong&gt;http://www.Irkoo.com&lt;/strong&gt; to get the site ID and secret key for your website.</Resource>
     <Resource tag="ENABLE_LOCATIONPATH_ERRORS">Aktivieren von Aktiver Ort Fehlerprotokollierung</Resource>
     <Resource tag="ENABLE_LOCATIONPATH_ERRORS_HELP">Wenn aktiviert, Alle Aktive Fehler werden Protokolliert</Resource>
     <Resource tag="ENABLE_RETWEET_MSG">Beitrag Retweeten Button aktivieren:</Resource>
@@ -1046,8 +1051,6 @@
     <Resource tag="GRAVATAR_RATING_HELP">Max. Bewertung von Gravataren wenn erlaubt.</Resource>
     <Resource tag="GROUPS_TEMPLATE">Gruppen Vorlage:</Resource>
     <Resource tag="GROUPS_TEMPLATE_HELP">Vorlage für die Darstellung von Benutzer-Gruppen.</Resource>
-    <Resource tag="GUESTS_VIEW_IRKOO">Allow guests to view users' reputations:</Resource>
-    <Resource tag="GUESTS_VIEW_IRKOO_HELP">If checked, guests can view members' reputations.</Resource>
     <Resource tag="HEADER_ADVERTS">Werbeeinstellungen</Resource>
     <Resource tag="HEADER_ALBUM">Albumeinstellungen</Resource>
     <Resource tag="HEADER_AVATARS">Avatar Einstellungen</Resource>
@@ -1062,7 +1065,6 @@
     <Resource tag="HEADER_HOVERCARD">Hover Cards Einstellungen</Resource>
     <Resource tag="HEADER_HOVERCARD">Hover Cards Einstellungen</Resource>
     <Resource tag="HEADER_IMAGE_ATTACH">Bildanhang Einstellungen</Resource>
-    <Resource tag="HEADER_IRKOO">Irkoo Reputation Service</Resource>
     <Resource tag="HEADER_LOG">Log-Einstellungen</Resource>
     <Resource tag="HEADER_LOGIN">Login / Registrierungseinstellungen</Resource>
     <Resource tag="HEADER_LOGSCOPE">Ereignisprotokoll Anwendungsbereich</Resource>
@@ -1106,12 +1108,6 @@
     <Resource tag="IP_INFOSERVICE_XMLURL_HELP">Aktivieren um Informationen über die Benutzer IPs als XML-Daten zu erhalten.</Resource>
     <Resource tag="IPINFO_ULRL">IP-Infoseite URL:</Resource>
     <Resource tag="IPINFO_ULRL_HELP">Aktivieren um Informationen über den IPs Verbleib als Web-Seite zu erhalten.</Resource>
-    <Resource tag="IRKOO_ONLY_ONTOPICPAGES">Show user reputations in user links only in topic pages:</Resource>
-    <Resource tag="IRKOO_ONLY_ONTOPICPAGES_HELP">If checked, users' reputation will be displayed only in topic pages.</Resource>
-    <Resource tag="IRKOO_SECRETKEY">Irkoo secret key:</Resource>
-    <Resource tag="IRKOO_SECRETKEY_HELP">Enter your Irkoo secret key.</Resource>
-    <Resource tag="IRKOO_SITEID">Irkoo site ID:</Resource>
-    <Resource tag="IRKOO_SITEID_HELP">Enter your Irkoo site ID.</Resource>
     <Resource tag="JOINDATE_TEMPLATE">Anmeldedatum Vorlage:</Resource>
     <Resource tag="JOINDATE_TEMPLATE_HELP">Vorlage für die Darstellung des Benutzers Anmeldedatums.</Resource>
     <Resource tag="LASTPOST_COUNT">Aktive Diskussionen Anzahl:</Resource>
@@ -1353,6 +1349,8 @@
     <Resource tag="SSL_REGISTER_HELP">Erzwingen einer sicheren Verbindung für die Benutzer Registrierung.</Resource>
     <Resource tag="STATS_CACHE_TIMEOUT">Forum Statistiken Speicher Ablaufzeit:</Resource>
     <Resource tag="STATS_CACHE_TIMEOUT_HELP">In Minuten</Resource>
+    <Resource tag="STOPFORUMSPAM_KEY">StopForumSpam.com API Key:</Resource>
+    <Resource tag="STOPFORUMSPAM_KEY_HELP">In order to Report a User as Bot you need an StopForumSpam.com API Key &lt;a href="http://www.stopforumspam.com/signup"&gt;Sign Up here&lt;a&gt;</Resource>
     <Resource tag="STYLED_NICKS">Gestylte Nicks verwenden:</Resource>
     <Resource tag="STYLED_NICKS_HELP">Wenn diese Option aktiviert, können Sie Farben, die Schriftgröße, usw. ändern für aktive Benutzer Nicknamen.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Themen Titel Stil verwenden:</Resource>
@@ -1789,6 +1787,9 @@
     <Resource tag="UP_TITLE">Zum übergeordneten Ordner gehen.</Resource>
   </page>
   <page name="BBCODEMODULE">
+    <Resource tag="ALBUMIMG_DESCRIPTION">Geben Sie hier die Album Nummer ein</Resource>
+    <Resource tag="DAILYMOTION_DESCRIPTION">Geben Sie hier eine DailyMotion URL (http://www.dailymotion.com/video/xxxx)</Resource>
+    <Resource tag="GOOGLEMAPS_DESCRIPTION">Geben Sie hier eine Google Maps URL ein</Resource>
     <Resource tag="HIDDENMOD_DESC">Der Inhalt dieses Beitrages ist versteckt. Nachdem Sie dem Autor DANKE Gesagt haben, und die Seite neugeladen haben, können Sie den Inhalt sehen.</Resource>
     <Resource tag="HIDDENMOD_GROUP">Sie haben nicht die nötigen Rechte den Versteckten Inhalt sehen zu können.</Resource>
     <Resource tag="HIDDENMOD_GUEST">Das Forum verlangt das Sie registriert sind und angemeldet bevor Sie die Versteckten Beiträge sehen können</Resource>
@@ -1806,8 +1807,9 @@
     <Resource tag="SPOILERMOD_HIDE">"Spoiler"-Text verbergen</Resource>
     <Resource tag="SPOILERMOD_SHOW">"Spoiler"-Text anzeigen</Resource>
     <Resource tag="SPOILERMOD_TOOLTIP">Hier klicken, um den verborgenen Text ("Spoiler") anzuzeigen oder auszublenden</Resource>
+    <Resource tag="TWITTER_DESCRIPTION">Geben Sie hier die Status ID des Tweets ein</Resource>
     <Resource tag="UERLINKMOD_DESCRIPTION">Benutzernamen Hier eingeben</Resource>
-    <Resource tag="YOUTUBEMOD_DESCRIPTION">Hier deine YouTube-URL eintragen</Resource>
+    <Resource tag="YOUTUBEMOD_DESCRIPTION">Geben Sie hier eine YouTube URL ein</Resource>
   </page>
   <page name="BUDDY">
     <Resource tag="ADDBUDDY">Als Freund hinzufügen</Resource>

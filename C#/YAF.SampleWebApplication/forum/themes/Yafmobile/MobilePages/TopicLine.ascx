@@ -7,6 +7,7 @@
 <%@ Import Namespace="YAF.Controls" %>
 <%@ Import Namespace="YAF.Types.Constants" %>
 <%@ Import Namespace="YAF.Classes" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
 <tr class="<%=this.IsAlt ? "topicRow_Alt post_alt" : "topicRow post" %>">
      <asp:PlaceHolder ID="SelectionHolder" runat="server" Visible="false">
         <td>
@@ -44,7 +45,7 @@
                <%}
             %></a>
         <%
-            var favoriteCount = this.Get<IFavoriteTopic>().FavoriteTopicCount((int)this.TopicRow["LinkTopicID"]);
+            var favoriteCount = this.TopicRow["FavoriteCount"].ToType<int>();
             
             if (favoriteCount > 0)
             {
@@ -60,6 +61,7 @@
         {
           ID = "topicStarterLink",
           UserID = this.TopicRow["UserID"].ToType<int>(),
+          ReplaceName = this.Get<YafBoardSettings>().EnableDisplayName ? this.TopicRow["StarterDisplay"].ToString() : this.TopicRow["Starter"].ToString(),
           Style = this.TopicRow["StarterStyle"].ToString()
         }.RenderToString() %>
         </span>

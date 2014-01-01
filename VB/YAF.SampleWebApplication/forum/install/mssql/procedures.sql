@@ -3546,26 +3546,25 @@ CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}mail_list]
 )
 AS
 BEGIN
-    BEGIN TRANSACTION TRANSUPDATEMAIL
-        UPDATE [{databaseOwner}].[{objectQualifier}Mail]
-        SET 
-            ProcessID = NULL
-        WHERE
-            ProcessID IS NOT NULL AND SendAttempt > @UTCTIMESTAMP
+	DECLARE @count int
 
-        UPDATE [{databaseOwner}].[{objectQualifier}Mail]
-        SET 
-            SendTries = SendTries + 1,
-            SendAttempt = DATEADD(n,5,@UTCTIMESTAMP),
-            ProcessID = @ProcessID
-        WHERE
-            MailID IN (SELECT TOP 10 MailID FROM [{databaseOwner}].[{objectQualifier}Mail] WHERE SendAttempt < @UTCTIMESTAMP OR SendAttempt IS NULL ORDER BY SendAttempt, Created)
-    COMMIT TRANSACTION TRANSUPDATEMAIL
+	SET @count = (SELECT (count(*)/100) FROM [{databaseOwner}].[{objectQualifier}Mail] WHERE SendAttempt IS NULL OR SendAttempt < @UTCTIMESTAMP)
+	SET @count = (Select Case When @count < 10 Then 10 Else @count End)
 
-    -- now select all mail reserved for this process...
-    SELECT TOP 10 * FROM [{databaseOwner}].[{objectQualifier}Mail] WHERE ProcessID = @ProcessID ORDER BY SendAttempt, Created desc
+	UPDATE [{databaseOwner}].[{objectQualifier}Mail]
+	SET 
+		SendTries = SendTries + 1,
+		SendAttempt = DATEADD(n,5,@UTCTIMESTAMP),
+		ProcessID = @ProcessID
+	WHERE
+		MailID IN (SELECT TOP (@count) MailID FROM [{databaseOwner}].[{objectQualifier}Mail] WHERE SendAttempt IS NULL OR SendAttempt < @UTCTIMESTAMP)
+
+	BEGIN TRANSACTION TRANSUPDATEMAIL
+		-- now select all mail reserved for this process...
+		SELECT TOP (@count) * FROM [{databaseOwner}].[{objectQualifier}Mail] WHERE ProcessID = @ProcessID ORDER BY SendAttempt, Created desc
+		UPDATE [{databaseOwner}].[{objectQualifier}Mail] SET ProcessID = NULL WHERE ProcessID = @ProcessID
+	COMMIT TRANSACTION TRANSUPDATEMAIL
 END
-
 GO
 
 create procedure [{databaseOwner}].[{objectQualifier}message_approve](@MessageID int) as begin
@@ -4865,7 +4864,7 @@ begin
             where UserID = @UserID and ForumID= ISNULL(@ForumID,0) and (ISNULL(@ForumID,0) = 0 OR ReadAccess = 1))		
             begin
                  -- verify that there's not the sane session for other board and drop it if required. Test code for portals with many boards
-     delete from [{databaseOwner}].[{objectQualifier}Active] where (SessionID=@SessionID  and (BoardID <> @BoardID or userid <> @UserID))
+     delete from [{databaseOwner}].[{objectQualifier}Active] where (SessionID=@SessionID  and (BoardID <> @BoardID or UserID <> @UserID))
     -- get previous visit
     if  @IsGuest = 0	 begin
         select @PreviousVisit = LastVisit from [{databaseOwner}].[{objectQualifier}User] where UserID = @UserID
@@ -6414,6 +6413,7 @@ BEGIN
         t.LastMessageFlags,
         t.LastUserID,
         t.NumPosts,
+		t.Views,
         t.Posted,	
 		LastMessage = (select m.Message from [{databaseOwner}].[{objectQualifier}Message] m where m.MessageID = t.LastMessageID),
         LastUserName = IsNull(t.LastUserName,(select x.[Name] from [{databaseOwner}].[{objectQualifier}User] x where x.UserID = t.LastUserID)),
@@ -7296,6 +7296,7 @@ begin
     delete from [{databaseOwner}].[{objectQualifier}TopicReadTracking] where UserID = @UserID
     delete from [{databaseOwner}].[{objectQualifier}ForumReadTracking] where UserID = @UserID
     delete from [{databaseOwner}].[{objectQualifier}ReputationVote] where ReputationFromUserID = @UserID
+	delete from [{databaseOwner}].[{objectQualifier}ReputationVote] where ReputationToUserID = @UserID
     delete from [{databaseOwner}].[{objectQualifier}UserGroup] where UserID = @UserID
     -- ABOT CHANGED
     -- Delete UserForums entries Too 
@@ -8069,7 +8070,7 @@ begin
         update [{databaseOwner}].[{objectQualifier}Topic] set LastUserDisplayName = @DisplayName where LastUserID = @UserID AND (LastUserDisplayName IS NULL OR LastUserDisplayName = @OldDisplayName)
         update [{databaseOwner}].[{objectQualifier}Topic] set UserDisplayName = @DisplayName where UserID = @UserID AND (UserDisplayName IS NULL OR UserDisplayName = @OldDisplayName)
         update [{databaseOwner}].[{objectQualifier}Message] set UserDisplayName = @DisplayName where UserID = @UserID AND (UserDisplayName IS NULL OR UserDisplayName = @OldDisplayName)
-        update [{databaseOwner}].[{objectQualifier}ShoutboxMessage] set UserDisplayName = @DisplayName where UseriD = @UserID AND (UserDisplayName IS NULL OR UserDisplayName = @OldDisplayName)
+        update [{databaseOwner}].[{objectQualifier}ShoutboxMessage] set UserDisplayName = @DisplayName where UserID = @UserID AND (UserDisplayName IS NULL OR UserDisplayName = @OldDisplayName)
         end
         
     end
@@ -8428,6 +8429,7 @@ begin
         a.*,
         TopicName = b.Topic,
         Replies = (select count(1) from [{databaseOwner}].[{objectQualifier}Message] x where x.TopicID=b.TopicID) -1,
+		b.ForumID,
         b.[Views],
         b.LastPosted,
         b.LastMessageID,
@@ -10656,6 +10658,7 @@ begin
       )	  
       select
         c.ForumID,
+		ForumName = d.Name,
         c.TopicID,
         c.TopicMovedID,		
         c.Posted,

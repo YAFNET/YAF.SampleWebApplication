@@ -1,21 +1,49 @@
 <YafBBCodeList>
   <YafBBCode>
-    <Name>YOUTUBE</Name>
-    <Description>[YOUTUBE][localization=YOUTUBEMOD_DESCRIPTION]Put YouTube URL Here[/localization][/YOUTUBE]</Description>
+    <Name>TWITTER</Name>
+    <Description>[TWITTER][localization=TWITTER_DESCRIPTION]Enter the Status ID of the Tweet you want to embed[/localization][/TWITTER]</Description>
+    <OnClickJS />
+    <DisplayJS>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</DisplayJS>
+    <EditJS />
+    <DisplayCSS />
+    <SearchRegex>\[twitter\](?&lt;statusID&gt;[0-9].+?)\[/twitter\]</SearchRegex>
+    <ReplaceRegex>&lt;!-- BEGIN twitter embed --&gt;&lt;blockquote class="twitter-tweet"&gt;&lt;a href="https://twitter.com/twitterapi/status/${statusID}"&gt;&lt;/a&gt;&lt;/blockquote&gt;&lt;!-- END twitter embed --&gt;</ReplaceRegex>
+    <Variables>statusID</Variables>
+    <UseModule>false</UseModule>
+    <ModuleClass />
+    <ExecOrder>100</ExecOrder>
+  </YafBBCode>
+  <YafBBCode>
+    <Name>DAILYMOTION</Name>
+    <Description>[dailymotion][localization=DAILYMOTION_DESCRIPTION]Enter Dailymotion Url (http://www.dailymotion.com/video/xxxx)[/localization][/dailymotion]</Description>
     <OnClickJS />
     <DisplayJS />
     <EditJS />
     <DisplayCSS />
-    <SearchRegex>\[youtube\](?&lt;inner&gt;http://(?&lt;prefix&gt;[A-Za-z][A-Za-z][A-Za-z]?\.)?youtube.com/watch\?v=(?&lt;id&gt;[0-9A-Za-z-_]{11}))[^[]*\[/youtube\]|\[youtube\](?&lt;inner&gt;http://(?&lt;prefix&gt;[A-Za-z][A-Za-z][A-Za-z]?\.)?youtu.be/(?&lt;id&gt;[0-9A-Za-z-_]{11}))\[/youtube\]</SearchRegex>
-    <ReplaceRegex>&lt;!-- BEGIN youtube --&gt;&lt;div&gt;&lt;iframe width="560" height="350" src="http://${prefix}youtube.com/embed/${id}?hd=1" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;!-- END youtube --&gt;</ReplaceRegex>
+    <SearchRegex>\[dailymotion\](?&lt;inner&gt;http://(?&lt;prefix&gt;[A-Za-z][A-Za-z][A-Za-z]?\.)?dailymotion.com/video/(?&lt;id&gt;[^_]*))[^[]*\[/dailymotion\]</SearchRegex>
+    <ReplaceRegex>&lt;div&gt;&lt;!-- BEGIN dailymotion --&gt;&lt;iframe frameborder="0" width="560" height="315" src="http://${prefix}dailymotion.com/embed/video/${id}?forcedQuality=hd720"&gt;&lt;/iframe&gt;&lt;!-- END dailymotion --&gt;&lt;/div&gt;</ReplaceRegex>
     <Variables>id;prefix</Variables>
     <UseModule>false</UseModule>
     <ModuleClass />
     <ExecOrder>1</ExecOrder>
   </YafBBCode>
   <YafBBCode>
+    <Name>YOUTUBE</Name>
+    <Description>[YOUTUBE][localization=YOUTUBEMOD_DESCRIPTION]Put YouTube URL Here[/localization][/YOUTUBE]</Description>
+    <OnClickJS />
+    <DisplayJS />
+    <EditJS />
+    <DisplayCSS />
+    <SearchRegex>\[youtube\](?&lt;inner&gt;(?&lt;prefix&gt;.+?)youtube.com/watch\?v=(?&lt;id&gt;[0-9A-Za-z-_]{11}))[^[]*\[/youtube\]|\[youtube\](?&lt;inner&gt;(?&lt;prefix&gt;.+?)youtu.be/(?&lt;id&gt;[0-9A-Za-z-_]{11}))\[/youtube\]</SearchRegex>
+    <ReplaceRegex>&lt;!-- BEGIN youtube --&gt;&lt;div&gt;&lt;iframe width="560" height="350" src="//youtube.com/embed/${id}?hd=1" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;!-- END youtube --&gt;</ReplaceRegex>
+    <Variables>id</Variables>
+    <UseModule>false</UseModule>
+    <ModuleClass />
+    <ExecOrder>1</ExecOrder>
+  </YafBBCode>
+  <YafBBCode>
     <Name>GOOGLEMAPS</Name>
-    <Description>[GOOGLEMAPS]Enter Google Maps Url[/GOOGLEMAPS]</Description>
+    <Description>[GOOGLEMAPS][localization=GOOGLEMAPS_DESCRIPTION]Enter Google Maps Url[/localization][/GOOGLEMAPS]</Description>
     <OnClickJS />
     <DisplayJS />
     <EditJS />
@@ -34,11 +62,11 @@
     <DisplayJS />
     <EditJS />
     <DisplayCSS />
-    <SearchRegex>\[googlewidget\]\&amp;lt\;script src\=\&amp;quot\;(?&lt;inner&gt;http://(?&lt;prefix&gt;[A-Za-z][A-Za-z][A-Za-z]?\.)?gmodules.com\/ig\/ifr\?(?&lt;url&gt;.+?))\&amp;quot\;\&amp;gt\;\&amp;lt\;/script\&amp;gt\;\[/googlewidget\]</SearchRegex>
+    <SearchRegex>\[googlewidget\]&amp;lt;script src=\&amp;quot;(?&lt;prefix&gt;.+?)gmodules.com/ig/ifr\?url=(?&lt;url&gt;.+?)&amp;quot;\&amp;gt;\&amp;lt;/script\&amp;gt;\[/googlewidget\]</SearchRegex>
     <ReplaceRegex>&lt;!-- BEGIN Google Widget --&gt;
-&lt;script type="text/javascript" src="http://${prefix}gmodules.com/ig/ifr?${url}"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://www.gmodules.com/ig/ifr?url=${url}"&gt;&lt;/script&gt;
 &lt;!-- END Google Widget --&gt;</ReplaceRegex>
-    <Variables>url:decode;prefix</Variables>
+    <Variables>url:decode;</Variables>
     <UseModule>false</UseModule>
     <ModuleClass />
     <ExecOrder>1</ExecOrder>
@@ -214,7 +242,7 @@
   </YafBBCode>
   <YafBBCode>
     <Name>ALBUMIMG</Name>
-    <Description>[ALBUMIMG]Enter Album Image Number[/ALBUMIMG]</Description>
+    <Description>[ALBUMIMG][localization=ALBUMIMG_DESCRIPTION]Enter a Album Image Number[/localization][/ALBUMIMG]</Description>
     <OnClickJS />
     <DisplayJS />
     <EditJS />

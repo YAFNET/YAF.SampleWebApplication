@@ -1,0 +1,12 @@
+C:\Users\Watcher\Documents\Projects\Visual studio 2010\Projects\YAF.SampleWebApplication\YAF.SampleWebApplication\bin\YAF.SampleWebApplication.dll
+C:\Users\Watcher\Documents\Projects\Visual studio 2010\Projects\YAF.SampleWebApplication\YAF.SampleWebApplication\bin\YAF.SampleWebApplication.pdb
+C:\Users\Watcher\Documents\Projects\Visual studio 2010\Projects\YAF.SampleWebApplication\YAF.SampleWebApplication\obj\Debug\YAF.SampleWebApplication.dll
+C:\Users\Watcher\Documents\Projects\Visual studio 2010\Projects\YAF.SampleWebApplication\YAF.SampleWebApplication\obj\Debug\YAF.SampleWebApplication.pdb
+C:\Users\Watcher\Documents\Projects\Visual studio 2010\Projects\YAF.SampleWebApplication\YAF.SampleWebApplication\bin\YAF.SampleWebApplication.dll.config
+C:\Users\Watcher\Documents\Projects\Visual Studio 2010\Projects\YAF.SampleWebApplication\YAF.SampleWebApplication\obj\Debug\YAF.SampleWebApplication.csprojResolveAssemblyReference.cache
+C:\Users\Watcher\Documents\Projects\Visual Studio 2012\Projects\DotNetNuke\YetAnotherForum.NET\YAF.Extras\YAF.SampleWebApplication\C#\YAF.SampleWebApplication\bin\YAF.SampleWebApplication.dll.config
+C:\Users\Watcher\Documents\Projects\Visual Studio 2012\Projects\DotNetNuke\YetAnotherForum.NET\YAF.Extras\YAF.SampleWebApplication\C#\YAF.SampleWebApplication\bin\YAF.SampleWebApplication.dll
+C:\Users\Watcher\Documents\Projects\Visual Studio 2012\Projects\DotNetNuke\YetAnotherForum.NET\YAF.Extras\YAF.SampleWebApplication\C#\YAF.SampleWebApplication\bin\YAF.SampleWebApplication.pdb
+C:\Users\Watcher\Documents\Projects\Visual Studio 2012\Projects\DotNetNuke\YetAnotherForum.NET\YAF.Extras\YAF.SampleWebApplication\C#\YAF.SampleWebApplication\obj\Debug\YAF.SampleWebApplication.csprojResolveAssemblyReference.cache
+C:\Users\Watcher\Documents\Projects\Visual Studio 2012\Projects\DotNetNuke\YetAnotherForum.NET\YAF.Extras\YAF.SampleWebApplication\C#\YAF.SampleWebApplication\obj\Debug\YAF.SampleWebApplication.dll
+C:\Users\Watcher\Documents\Projects\Visual Studio 2012\Projects\DotNetNuke\YetAnotherForum.NET\YAF.Extras\YAF.SampleWebApplication\C#\YAF.SampleWebApplication\obj\Debug\YAF.SampleWebApplication.pdb

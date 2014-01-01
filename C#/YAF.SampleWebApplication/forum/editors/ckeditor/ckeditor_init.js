@@ -9,8 +9,8 @@ function CKEditor_Load() {
 		  config.disableNativeSpellChecker = false;
 		  config.scayt_autoStartup = true; 
 		  
-	      config.extraPlugins = 'syntaxhighlight,bbcodeselector';
-	      config.toolbar_Full = [
+	      config.extraPlugins = 'bbcodehtml,syntaxhighlight,bbcodeselector';
+	      config.toolbar = [
                                  ['Source'],
 		                         ['Cut', 'Copy', 'Paste'], ['Undo', 'Redo', '-', 'Find', 'Replace', '-', 'SelectAll', 'RemoveFormat'],
 								 ['-', 'NumberedList', 'BulletedList'],
@@ -21,6 +21,7 @@ function CKEditor_Load() {
 								 '/',
 								 ['Bold', 'Italic', 'Underline', '-', 'TextColor', 'Font', 'FontSize'],
 								 ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'PasteText','PasteFromWord'],
+		                         ['Outdent', 'Indent'],
 								 ['Scayt']
 								] ;
 								

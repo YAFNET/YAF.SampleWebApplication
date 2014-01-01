@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.team" Codebehind="team.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Constants" %>
 <%@ Import Namespace="YAF.Utils" %>
+<%@ Import Namespace="YAF.Types.Interfaces" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 <table class="content" width="100%" cellspacing="1" cellpadding="0">
     <tr>
@@ -16,7 +18,7 @@
 			  			    <HeaderStyle HorizontalAlign="Center" CssClass="header2"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" CssClass="post" Width="40px"></ItemStyle>
 			  				    <ItemTemplate>
-                                    <asp:Image ID="AdminAvatar" runat="server" CssClass="avatarimage" Width="40px" Height="40px" />
+                                    <asp:Image ID="AdminAvatar" runat="server" CssClass="avatarimage img-rounded" Width="40px" Height="40px" />
 			  				    </ItemTemplate>
              		 	</asp:TemplateColumn>
              		 	<asp:TemplateColumn>
@@ -42,7 +44,7 @@
 			                        <YAF:ThemeButton ID="Email" runat="server" CssClass="yafcssimagebutton" Visible="false" TextLocalizedPage="POSTS" TextLocalizedTag="EMAIL" ImageThemeTag="EMAIL" 
                                      TitleLocalizedPage="POSTS" TitleLocalizedTag="EMAIL_TITLE" />
 			                        <YAF:ThemeButton ID="AdminUserButton" runat="server" TitleLocalizedPage="PROFILE" TitleLocalizedTag="ADMIN_USER" CssClass="yaflittlebutton" Visible="false"
-				                     TextLocalizedTag="ADMIN_USER" NavigateUrl='<%# YafBuildLink.GetLinkNotEscaped( ForumPages.admin_edituser,"u={0}", this.Eval("UserID").ToType<int>() ) %>'>
+				                     TextLocalizedTag="ADMIN_USER" TextLocalizedPage="PROFILE" NavigateUrl='<%# YafBuildLink.GetLinkNotEscaped( ForumPages.admin_edituser,"u={0}", this.Eval("UserID").ToType<int>() ) %>'>
 			                        </YAF:ThemeButton>
 			  				    </ItemTemplate>
              		 	</asp:TemplateColumn>
@@ -65,14 +67,14 @@
 			  			    <HeaderStyle HorizontalAlign="Center" CssClass="header2"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Center" CssClass="post" Width="40px"></ItemStyle>
 			  				    <ItemTemplate>
-                                    <asp:Image ID="ModAvatar" runat="server" CssClass="avatarimage" Width="40px" Height="40px" />
+                                    <asp:Image ID="ModAvatar" runat="server" CssClass="avatarimage img-rounded" Width="40px" Height="40px" />
 			  				    </ItemTemplate>
              		 	</asp:TemplateColumn>
              		 	<asp:TemplateColumn>
              		 	    <HeaderStyle HorizontalAlign="Center" CssClass="header2"></HeaderStyle>
 			  			    <ItemStyle CssClass="post" Width="150px"></ItemStyle>
 			  				    <ItemTemplate>
-               				        <YAF:UserLink ID="ModLink" runat="server" ReplaceName='<%# Eval("DisplayName").ToString() %>' UserID='<%# this.Eval("ModeratorID").ToType<int>() %>' IsGuest="False" Style='<%# Eval("Style") %>'  />
+               				        <YAF:UserLink ID="ModLink" runat="server" ReplaceName='<%# this.Get<YafBoardSettings>().EnableDisplayName ? Eval("DisplayName").ToString() : Eval("Name").ToString() %>' UserID='<%# this.Eval("ModeratorID").ToType<int>() %>' IsGuest="False" Style='<%# Eval("Style") %>'  />
 			  				    </ItemTemplate>
              		 	</asp:TemplateColumn>
              		 	<asp:TemplateColumn HeaderText="Forums">
@@ -93,7 +95,7 @@
 			                        <YAF:ThemeButton ID="Email" runat="server" CssClass="yafcssimagebutton" Visible="false" TextLocalizedPage="POSTS" TextLocalizedTag="EMAIL" ImageThemeTag="EMAIL"
                                      TitleLocalizedPage="POSTS" TitleLocalizedTag="EMAIL_TITLE" />
 			                        <YAF:ThemeButton ID="AdminUserButton" runat="server" CssClass="yaflittlebutton" TitleLocalizedPage="PROFILE" TitleLocalizedTag="ADMIN_USER" Visible="false"
-				                     TextLocalizedTag="ADMIN_USER" NavigateUrl='<%# YafBuildLink.GetLinkNotEscaped( ForumPages.admin_edituser,"u={0}", this.Eval("ModeratorID").ToType<int>() ) %>'>
+				                     TextLocalizedTag="ADMIN_USER" TextLocalizedPage="PROFILE" NavigateUrl='<%# YafBuildLink.GetLinkNotEscaped( ForumPages.admin_edituser,"u={0}", this.Eval("ModeratorID").ToType<int>() ) %>'>
 			                        </YAF:ThemeButton>
 			  				    </ItemTemplate>
              		 	</asp:TemplateColumn>

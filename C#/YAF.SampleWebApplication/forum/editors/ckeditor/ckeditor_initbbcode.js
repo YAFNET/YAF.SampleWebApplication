@@ -9,7 +9,7 @@
 		  config.disableNativeSpellChecker = false;
 		  config.scayt_autoStartup = true;  
 		  
-		  config.toolbar_Full = [
+		  config.toolbar = [
 		                         ['Source'],
 		                         ['Undo','Redo'],
 								 ['-','NumberedList','BulletedList'], 
@@ -19,13 +19,16 @@
 								 ['About'],
 								 '/',
 								 ['Bold','Italic','Underline','-', 'TextColor', 'Font', 'FontSize'],
-								 ['JustifyLeft','JustifyCenter','JustifyRight'],
+								 ['JustifyLeft', 'JustifyCenter', 'JustifyRight'],
+		                         ['Outdent', 'Indent'],
 								 ['Scayt']
 		                        ] ;
 								
 			config.entities_greek = false;
 			config.entities_latin = false;
 			config.language = editorLanguage;
+			config.disableObjectResizing = true;
+			config.forcePasteAsPlainText = true;
 			
 			config.contentsCss = 'editors/ckeditor/contents.css';
 		  });

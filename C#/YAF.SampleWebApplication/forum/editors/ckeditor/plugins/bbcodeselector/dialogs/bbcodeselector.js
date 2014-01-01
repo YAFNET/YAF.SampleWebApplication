@@ -139,7 +139,6 @@ CKEDITOR.dialog.add('bbcodeselector', function(editor)
 											  var text = editor.lang.bbcodeselector.userLink;
 											  contentBox.setValue( text );
 									      }
-									  break;
 								  }
 							  }
                           }

@@ -27,16 +27,18 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>YAF.SampleWebApplication.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>None</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>YAF.SampleWebApplication.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -3301,7 +3303,6 @@
     <Content Include="forum\resources\js\_src\jquery.yafmodaldialog.js" />
     <Content Include="forum\resources\js\_src\yaf.js" />
     <Content Include="forum\resources\ProviderExceptions.xml" />
-    <Content Include="forum\rss.xsl" />
     <Content Include="forum\themes\BlackGrey.xml" />
     <Content Include="forum\themes\BlackGrey\albums.png" />
     <Content Include="forum\themes\BlackGrey\arrow_up_button.png" />
@@ -4841,7 +4842,6 @@
     <Content Include="app.config" />
     <Content Include="db.config" />
     <Content Include="mail.config" />
-    <Content Include="forum\App_Browsers\w3cvalidator.browser" />
     <Content Include="forum\COPYING" />
     <Content Include="forum\editors\ckeditor\skins\black\images\Thumbs.db" />
     <Content Include="forum\editors\tiny_mce\plugins\spellchecker\classes\EnchantSpell.php" />
@@ -4862,8 +4862,6 @@
     <Content Include="forum\Web References\RegisterV2\LatestVersionInformation.datasource" />
     <Content Include="forum\Web References\RegisterV2\Reference.map" />
     <Content Include="forum\Web References\RegisterV2\RegisterV2.wsdl" />
-    <Content Include="forum\webconfigs\recommended-NET-web.config" />
-    <Content Include="forum\webconfigs\v191-upgrade-web.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
