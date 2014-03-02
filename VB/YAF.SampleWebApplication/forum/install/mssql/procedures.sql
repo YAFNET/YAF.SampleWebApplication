@@ -433,7 +433,7 @@ IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{data
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}mail_create]
 GO
 
-IF  exists (select top 1 1 from dbo.sysobjects where id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}mail_save]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+IF  exists (select top 1 1 from sys.objects where object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}mail_save]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}mail_save]
 GO
 
@@ -751,6 +751,10 @@ GO
 
 IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}topic_latest]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}topic_latest]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}topic_latest_in_category]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}topic_latest_in_category]
 GO
 
 IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}rss_topic_latest]') AND type in (N'P', N'PC'))
@@ -2948,23 +2952,34 @@ create procedure [{databaseOwner}].[{objectQualifier}forum_listpath](@ForumID in
 begin
 declare @tbllpath TABLE (ForumID int, Name nvarchar(255), Indent int);
 declare @Indent int;
-declare @CurrentParentID int ;
-declare @CurrentForumID int
+declare @CurrentParentID int;
+declare @CurrentForumID int;
 declare @CurrentForumName nvarchar(255);
-SET @CurrentParentID = 1000;
+
+-- Flag if a record was selected
+declare @Selectcount int;
+
+-- Forum 1000 is a legal value... always use -1 instead
+SET @CurrentParentID = -1;
 
 SET @Indent = 0;
-      while (@CurrentParentID IS NOT NULL)
+	while (@CurrentParentID IS NOT NULL and @Indent < 1000)
       begin                
+	   set @Selectcount = 0;
        select
+			@Selectcount = 1,
             @CurrentForumID =  a.ForumID,
             @CurrentParentID = a.ParentID,
             @CurrentForumName = a.Name			                      
         from
-            [{databaseOwner}].[{objectQualifier}Forum] a
+             [{databaseOwner}].[{objectQualifier}Forum] a
         where
             a.ForumID=@ForumID;
 
+		if @Selectcount = 0
+		begin
+			break;
+		end
             Insert into @tbllpath(ForumID, Name,Indent)
             values (@CurrentForumID,@CurrentForumName,@Indent)
             SET @ForumID = @CurrentParentID; 
@@ -3682,7 +3697,10 @@ begin
     end
     
     -- update user post count
-    UPDATE [{databaseOwner}].[{objectQualifier}User] SET NumPosts = (SELECT count(MessageID) FROM [{databaseOwner}].[{objectQualifier}Message] WHERE UserID = @UserID AND IsDeleted = 0 AND IsApproved = 1) WHERE UserID = @UserID
+    if exists(select top 1 1 from [{databaseOwner}].[{objectQualifier}Forum] where ForumID=@ForumID and (Flags & 4)=0)
+    begin
+	     UPDATE [{databaseOwner}].[{objectQualifier}User] SET NumPosts = (SELECT count(MessageID) FROM [{databaseOwner}].[{objectQualifier}Message] WHERE UserID = @UserID AND IsDeleted = 0 AND IsApproved = 1) WHERE UserID = @UserID
+    end
     
     -- Delete topic if there are no more messages
     select @MessageCount = count(1) from [{databaseOwner}].[{objectQualifier}Message] where TopicID = @TopicID and IsDeleted=0
@@ -4041,6 +4059,7 @@ CREATE procedure [{databaseOwner}].[{objectQualifier}message_unapproved](@ForumI
         Posted		= b.Posted,
         TopicID		= a.TopicID,
         Topic		= a.Topic,
+        MessageCount = a.NumPosts,
         [Message]	= b.[Message],
         [Flags]		= b.Flags,
         [IsModeratorChanged] = b.IsModeratorChanged
@@ -4969,6 +4988,7 @@ begin
         ActiveUpdate        = ISNULL(@ActiveUpdate,0),
         PreviousVisit		= @PreviousVisit,	   
         x.*,	
+        IsModeratorAny      = ISNULL((select top 1 aa.ModeratorAccess from [{databaseOwner}].[{objectQualifier}ActiveAccess] aa where aa.UserID = @UserID and aa.ModeratorAccess = 1),0),
         IsCrawler           = @IsCrawler,
         IsMobileDevice      = @IsMobileDevice,
         CategoryID			= @CategoryID,
@@ -6114,8 +6134,45 @@ BEGIN
         DELETE FROM  [{databaseOwner}].[{objectQualifier}topic] WHERE TopicMovedID = @TopicID
         
         DELETE  [{databaseOwner}].[{objectQualifier}Attachment] WHERE MessageID IN (SELECT MessageID FROM  [{databaseOwner}].[{objectQualifier}message] WHERE TopicID = @TopicID) 
-        DELETE  [{databaseOwner}].[{objectQualifier}MessageHistory] WHERE MessageID IN (SELECT MessageID FROM  [{databaseOwner}].[{objectQualifier}message] WHERE TopicID = @TopicID) 	
-        DELETE  [{databaseOwner}].[{objectQualifier}Message] WHERE TopicID = @TopicID
+        DELETE  [{databaseOwner}].[{objectQualifier}MessageHistory] WHERE MessageID IN (SELECT MessageID FROM  [{databaseOwner}].[{objectQualifier}message] WHERE TopicID = @TopicID) 
+		
+		
+		-- update user post count
+		if not exists(select top 1 1 from [{databaseOwner}].[{objectQualifier}Forum] where ForumID=@ForumID and (Flags & 4)=0)
+          -- delete messages
+		  DELETE  [{databaseOwner}].[{objectQualifier}Message] WHERE TopicID = @TopicID
+        else 
+		   begin
+		   declare @tmpUserID int;
+		   declare message_cursor cursor for
+		   select UserID from [{databaseOwner}].[{objectQualifier}Message]
+		   where TopicID=@TopicID
+    
+    
+		   open message_cursor
+    
+		   fetch next from message_cursor
+		   into @tmpUserID
+    
+		   -- Check @@FETCH_STATUS to see if there are any more rows to fetch.
+		   while @@FETCH_STATUS = 0
+    		   begin
+		   UPDATE [{databaseOwner}].[{objectQualifier}User] SET NumPosts = (SELECT count(MessageID) FROM [{databaseOwner}].[{objectQualifier}Message] WHERE UserID = @tmpUserID AND IsDeleted = 0 AND IsApproved = 1) WHERE UserID = @tmpUserID
+
+		   DELETE  [{databaseOwner}].[{objectQualifier}Message] WHERE TopicID = @TopicID and UserID = @tmpUserID
+    
+		   -- This is executed as long as the previous fetch succeeds.
+		   fetch next from message_cursor
+		   into @tmpUserID
+		   end
+    
+		   close message_cursor
+		   deallocate message_cursor
+
+		end
+
+		EXEC [{databaseOwner}].[{objectQualifier}pollgroup_remove] @pollID, @TopicID, null, null, null, 0, 0 	
+        
         DELETE  [{databaseOwner}].[{objectQualifier}WatchTopic] WHERE TopicID = @TopicID
         DELETE  [{databaseOwner}].[{objectQualifier}TopicReadTracking] WHERE TopicID = @TopicID
         DELETE  [{databaseOwner}].[{objectQualifier}FavoriteTopic]  WHERE TopicID = @TopicID
@@ -6123,8 +6180,8 @@ BEGIN
         DELETE  [{databaseOwner}].[{objectQualifier}Topic] WHERE TopicID = @TopicID
         DELETE  [{databaseOwner}].[{objectQualifier}MessageReportedAudit] WHERE MessageID IN (SELECT MessageID FROM  [{databaseOwner}].[{objectQualifier}message] WHERE TopicID = @TopicID) 
         DELETE  [{databaseOwner}].[{objectQualifier}MessageReported] WHERE MessageID IN (SELECT MessageID FROM  [{databaseOwner}].[{objectQualifier}message] WHERE TopicID = @TopicID)
-        
-    END
+
+		END
         
     --commit
     IF @UpdateLastPost<>0
@@ -6322,7 +6379,18 @@ CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}topic_announcements]
 )
 AS
 BEGIN
-    SELECT DISTINCT TOP (@NumPosts) t.Topic, t.LastPosted, t.Posted, t.TopicID, t.LastMessageID, t.LastMessageFlags FROM
+    SELECT DISTINCT TOP (@NumPosts) 
+	t.Topic, 
+	t.LastPosted, 
+	t.Posted,
+	t.UserID,
+	t.LastUserID, 
+	t.TopicID,
+	t.TopicMovedID, 
+	Message = (select  CONVERT(VARCHAR(MAX), m.Message) from [{databaseOwner}].[{objectQualifier}Message] m where t.LastMessageID = m.MessageID),
+	t.LastMessageID, 
+	t.LastMessageFlags 
+	FROM
     [{databaseOwner}].[{objectQualifier}Topic] t 
     INNER JOIN [{databaseOwner}].[{objectQualifier}Forum] f ON t.ForumID = f.ForumID
     INNER JOIN [{databaseOwner}].[{objectQualifier}Category] c 
@@ -6440,6 +6508,75 @@ BEGIN
         [{databaseOwner}].[{objectQualifier}ActiveAccess] v  with(nolock) ON v.ForumID=f.ForumID
     WHERE	
         c.BoardID = @BoardID
+        AND t.TopicMovedID is NULL
+        AND v.UserID=@PageUserID
+        AND (CONVERT(int,v.ReadAccess) <> 0)
+        AND t.IsDeleted != 1
+        AND t.LastPosted IS NOT NULL
+        AND
+        f.Flags & 4 <> (CASE WHEN @ShowNoCountPosts > 0 THEN -1 ELSE 4 END)
+    ORDER BY
+        t.LastPosted DESC;
+END
+GO
+
+CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}topic_latest_in_category]
+(
+    @BoardID int,
+    @CategoryID int,
+	@NumPosts int,
+    @PageUserID int,
+    @StyledNicks bit = 0,
+    @ShowNoCountPosts  bit = 0,
+    @FindLastRead bit = 0
+)
+AS
+BEGIN  
+  
+    SELECT TOP(@NumPosts)
+        t.LastPosted,
+        t.ForumID,
+        f.Name as Forum,
+        t.Topic,
+        t.Status,
+        t.Styles,
+        t.TopicID,
+        t.TopicMovedID,
+        t.UserID,
+        UserName = IsNull(t.UserName,(select x.[Name] from [{databaseOwner}].[{objectQualifier}User] x where x.UserID = t.UserID)),
+        UserDisplayName = IsNull(t.UserDisplayName,(select x.[DisplayName] from [{databaseOwner}].[{objectQualifier}User] x where x.UserID = t.UserID)),		
+        t.LastMessageID,
+        t.LastMessageFlags,
+        t.LastUserID,
+        t.NumPosts,
+		t.Views,
+        t.Posted,	
+		LastMessage = (select m.Message from [{databaseOwner}].[{objectQualifier}Message] m where m.MessageID = t.LastMessageID),
+        LastUserName = IsNull(t.LastUserName,(select x.[Name] from [{databaseOwner}].[{objectQualifier}User] x where x.UserID = t.LastUserID)),
+        LastUserDisplayName = IsNull(t.LastUserDisplayName,(select x.[DisplayName] from [{databaseOwner}].[{objectQualifier}User] x where x.UserID = t.LastUserID)),
+        LastUserStyle = case(@StyledNicks)
+            when 1 then  (select top 1 usr.[UserStyle] from [{databaseOwner}].[{objectQualifier}User] usr with(nolock) where usr.UserID = t.LastUserID)
+            else ''	 end,
+        LastForumAccess = case(@FindLastRead)
+             when 1 then
+               (SELECT top 1 LastAccessDate FROM [{databaseOwner}].[{objectQualifier}ForumReadTracking] x WHERE x.ForumID=f.ForumID AND x.UserID = @PageUserID)
+             else ''	 end,
+        LastTopicAccess = case(@FindLastRead)
+             when 1 then
+               (SELECT top 1 LastAccessDate FROM [{databaseOwner}].[{objectQualifier}TopicReadTracking] y WHERE y.TopicID=t.TopicID AND y.UserID = @PageUserID)
+             else ''	 end
+            
+    FROM	
+        [{databaseOwner}].[{objectQualifier}Topic] t 
+    INNER JOIN
+        [{databaseOwner}].[{objectQualifier}Forum] f ON t.ForumID = f.ForumID	
+    INNER JOIN
+        [{databaseOwner}].[{objectQualifier}Category] c ON c.CategoryID = f.CategoryID
+    JOIN
+        [{databaseOwner}].[{objectQualifier}ActiveAccess] v  with(nolock) ON v.ForumID=f.ForumID
+    WHERE	
+	    c.BoardID = @BoardID
+        AND c.CategoryID = @CategoryID
         AND t.TopicMovedID is NULL
         AND v.UserID=@PageUserID
         AND (CONVERT(int,v.ReadAccess) <> 0)
@@ -8528,7 +8665,10 @@ begin
      where MessageID = @MessageID and ((Flags & 8) <> @isDeleteAction*8)
     
     -- update num posts for user now that the delete/undelete status has been toggled...
-    UPDATE [{databaseOwner}].[{objectQualifier}User] SET NumPosts = (SELECT count(MessageID) FROM [{databaseOwner}].[{objectQualifier}Message] WHERE UserID = @UserID AND IsDeleted = 0 AND IsApproved = 1) WHERE UserID = @UserID
+    if exists(select top 1 1 from [{databaseOwner}].[{objectQualifier}Forum] where ForumID=@ForumID and (Flags & 4)=0)
+    begin
+	    UPDATE [{databaseOwner}].[{objectQualifier}User] SET NumPosts = (SELECT count(MessageID) FROM [{databaseOwner}].[{objectQualifier}Message] WHERE UserID = @UserID AND IsDeleted = 0 AND IsApproved = 1) WHERE UserID = @UserID
+	end
 
     -- Delete topic if there are no more messages
     select @MessageCount = count(1) from [{databaseOwner}].[{objectQualifier}Message] where TopicID = @TopicID and IsDeleted=0
@@ -8811,7 +8951,8 @@ AS
     BEGIN               
        
         SELECT TOP(@Limit)  a.[UserID],
-                 a.[Name]
+                 a.[Name],
+				 a.[DisplayName]
         FROM     [{databaseOwner}].[{objectQualifier}User] a
         WHERE    a.[UserID] >= @StartID
         AND a.[UserID] < (@StartID + @Limit)
