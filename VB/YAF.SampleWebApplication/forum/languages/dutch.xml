@@ -5,9 +5,15 @@
     <Resource tag="ADMIN_ACCESSMASKS">Bekijkt toegangsmaskers</Resource>
     <Resource tag="ADMIN_ADMIN">Bekijkt admin index</Resource>
     <Resource tag="ADMIN_ATTACHMENTS">Bekijkt attachments</Resource>
+    <Resource tag="ADMIN_BANNEDEMAIL">Views banned Emails list</Resource>
+    <Resource tag="ADMIN_BANNEDEMAIL_EDIT">Edits banned Emails</Resource>
+    <Resource tag="ADMIN_BANNEDEMAIL_IMPORT">Imports banned Emails</Resource>
     <Resource tag="ADMIN_BANNEDIP">Bekijkt gebande IPs lijst</Resource>
     <Resource tag="ADMIN_BANNEDIP_EDIT">Bewerkt gebande IPs</Resource>
     <Resource tag="ADMIN_BANNEDIP_IMPORT">Imports banned ips</Resource>
+    <Resource tag="ADMIN_BANNEDNAME">Views banned Names list</Resource>
+    <Resource tag="ADMIN_BANNEDNAME_EDIT">Edits banned Names</Resource>
+    <Resource tag="ADMIN_BANNEDNAME_IMPORT">Imports banned Names</Resource>
     <Resource tag="ADMIN_BBCODE">Bekijkt BBCodes</Resource>
     <Resource tag="ADMIN_BBCODE_EDIT">Bewerkt BBcodes</Resource>
     <Resource tag="ADMIN_BBCODE_IMPORT">Importeert BBCodes</Resource>
@@ -51,6 +57,9 @@
     <Resource tag="ADMIN_SMILIES">Bekijkt smilies</Resource>
     <Resource tag="ADMIN_SMILIES_EDIT">Bewerkt smilies</Resource>
     <Resource tag="ADMIN_SMILIES_IMPORT">Importeert smilies</Resource>
+    <Resource tag="ADMIN_SPAMWORDS">Views spam words list</Resource>
+    <Resource tag="ADMIN_SPAMWORDS_EDIT">Edits spam words list</Resource>
+    <Resource tag="ADMIN_SPAMWORDS_IMPORT">Imports spam words</Resource>
     <Resource tag="ADMIN_TASKMANAGER">Bekijkt/bewerkt taakbeheer</Resource>
     <Resource tag="ADMIN_TEST_DATA">Bekijkt/bewerkt test data generator</Resource>
     <Resource tag="ADMIN_TOPICSTATUS">Bekijkt admin topic status</Resource>
@@ -201,9 +210,36 @@
     <Resource tag="POSTED">Geplaatst</Resource>
     <Resource tag="TITLE">Bijlagen</Resource>
   </page>
+  <page name="ADMIN_BANNEDEMAIL">
+    <Resource tag="ADD_IP">Add New Email</Resource>
+    <Resource tag="IMPORT_IPS">Import Email(s)</Resource>
+    <Resource tag="MASK">Mask</Resource>
+    <Resource tag="REASON">Reason</Resource>
+    <Resource tag="SINCE">Since</Resource>
+    <Resource tag="TITLE">Banned Email Addresses</Resource>
+  </page>
+  <page name="ADMIN_BANNEDEMAIL_EDIT">
+    <Resource tag="MASK">Mask:</Resource>
+    <Resource tag="MASK_HELP">The Email address to ban. You can use Regular Expressions.</Resource>
+    <Resource tag="REASON">Reason:</Resource>
+    <Resource tag="REASON_HELP">The reason why the email address was banned.</Resource>
+    <Resource tag="TITLE">Add/Edit Banned Email Address</Resource>
+  </page>
+  <page name="ADMIN_BANNEDEMAIL_IMPORT">
+    <Resource tag="HEADER">Import Email Addresses List</Resource>
+    <Resource tag="IMPORT">Import List</Resource>
+    <Resource tag="IMPORT_FAILED">Failed to import! Invalid upload format specified: {0} </Resource>
+    <Resource tag="IMPORT_FILE">Select Import File:</Resource>
+    <Resource tag="IMPORT_FILE_HELP">Must be *.txt file containing an Email Adress on each line</Resource>
+    <Resource tag="IMPORT_NOTHING">Nothing imported: no new email address was found in the upload.</Resource>
+    <Resource tag="IMPORT_SUCESS">{0} new email adress(es) imported successfully.</Resource>
+    <Resource tag="NOTE">You can find a list of Spam Bot Email Addresses on StopForumSpam.com &lt;a href="http://www.stopforumspam.com/downloads/"&gt;http://www.stopforumspam.com/downloads/&lt;/a&gt;, that can be imported here.</Resource>
+    <Resource tag="TITLE">Import Email Addresses</Resource>
+  </page>
   <page name="ADMIN_BANNEDIP">
     <Resource tag="ADD_IP">Voeg nieuw ip toe</Resource>
     <Resource tag="BAN_BY">Geblokkeerd door</Resource>
+    <Resource tag="EXPORT">Export to Text File</Resource>
     <Resource tag="IMPORT_IPS">Import Adress(es)</Resource>
     <Resource tag="MASK">Masker</Resource>
     <Resource tag="REASON">Reden</Resource>
@@ -229,7 +265,34 @@
     <Resource tag="IMPORT_FILE_HELP">Must be *.txt file containting Ip Adresses on each line</Resource>
     <Resource tag="IMPORT_NOTHING">Nothing imported: no new ip address was found in the upload.</Resource>
     <Resource tag="IMPORT_SUCESS">{0} new ip adress(es) imported successfully.</Resource>
+    <Resource tag="NOTE">You can find a list of Spam Bot Ips on StopForumSpam.com &lt;a href="http://www.stopforumspam.com/downloads/"&gt;http://www.stopforumspam.com/downloads/&lt;/a&gt;, that can be imported here.</Resource>
     <Resource tag="TITLE">Import IP Addresses</Resource>
+  </page>
+  <page name="ADMIN_BANNEDNAME">
+    <Resource tag="ADD_IP">Add New User Name</Resource>
+    <Resource tag="IMPORT_IPS">Import Name(s)</Resource>
+    <Resource tag="MASK">Mask</Resource>
+    <Resource tag="REASON">Reason</Resource>
+    <Resource tag="SINCE">Since</Resource>
+    <Resource tag="TITLE">Banned Names</Resource>
+  </page>
+  <page name="ADMIN_BANNEDNAME_EDIT">
+    <Resource tag="MASK">Mask:</Resource>
+    <Resource tag="MASK_HELP">The User Name to ban. You can use Regular Expressions.</Resource>
+    <Resource tag="REASON">Reason:</Resource>
+    <Resource tag="REASON_HELP">The reason why the email address was banned.</Resource>
+    <Resource tag="TITLE">Add/Edit Banned Email Address</Resource>
+  </page>
+  <page name="ADMIN_BANNEDNAME_IMPORT">
+    <Resource tag="HEADER">Import Names List</Resource>
+    <Resource tag="IMPORT">Import List</Resource>
+    <Resource tag="IMPORT_FAILED">Failed to import! Invalid upload format specified: {0} </Resource>
+    <Resource tag="IMPORT_FILE">Select Import File:</Resource>
+    <Resource tag="IMPORT_FILE_HELP">Must be *.txt file containing one Name on each line</Resource>
+    <Resource tag="IMPORT_NOTHING">Nothing imported: no new name was found in the upload.</Resource>
+    <Resource tag="IMPORT_SUCESS">{0} new name(s) imported successfully.</Resource>
+    <Resource tag="NOTE">You can find a list of Spam Bot user names on StopForumSpam.com &lt;a href="http://www.stopforumspam.com/downloads/"&gt;http://www.stopforumspam.com/downloads/&lt;/a&gt;, that can be imported here.</Resource>
+    <Resource tag="TITLE">Import Name(s)</Resource>
   </page>
   <page name="ADMIN_BBCODE">
     <Resource tag="ADD">Nieuwe BBCode toevoegen</Resource>
@@ -479,6 +542,11 @@
     <Resource tag="INITAL_MASK_HELP">Het standaard toegangsmasker voor alle forums.</Resource>
     <Resource tag="LOCKED">Vergrendeld:</Resource>
     <Resource tag="LOCKED_HELP">Als het forum vergrendeld is, kan niemand reageren in dit forum.</Resource>
+    <Resource tag="MODERATE_ALL_POSTS">Moderate all Posts</Resource>
+    <Resource tag="MODERATED_COUNT">Moderate all Posts or only until a User reaches x amount of Posts</Resource>
+    <Resource tag="MODERATED_COUNT_HELP">Set it to 'Moderate all Posts' or uncheck that option to specifify the amount of post a user has to reach to be automatically appproved.</Resource>
+    <Resource tag="MODERATED_NEWTOPIC_ONLY">Moderate only new Topics but not Replies?</Resource>
+    <Resource tag="MODERATED_NEWTOPIC_ONLY_HELP">If checked only Messages of new Topics are checked but not Replies to existing Topics, otherwise all Messages needs moderation.</Resource>
     <Resource tag="MSG_CATEGORY">Je moet een categorie kiezen voor het forum.</Resource>
     <Resource tag="MSG_CHILD_PARENT">Het gekozen forum kan geen subforum worden omdat het een hoofdforum is.</Resource>
     <Resource tag="MSG_DESCRIPTION">Je moet een omschrijving geven voor het forum.</Resource>
@@ -681,7 +749,9 @@
   </page>
   <page name="ADMIN_EDITUSER">
     <Resource tag="ADD_POINTS">Voeg punten toe:</Resource>
+    <Resource tag="BAN_EMAIL_OFUSER">Ban Email Addresses of User?</Resource>
     <Resource tag="BAN_IP_OFUSER">Ban de IP Adressen van de gebruiker?</Resource>
+    <Resource tag="BAN_NAME_OFUSER">Ban User Name of User?</Resource>
     <Resource tag="BOT_REPORTED">User Successfully Reported as Bot</Resource>
     <Resource tag="BOT_REPORTED_FAILED">User Reporting was not successfull, please check your API Key!</Resource>
     <Resource tag="CHANGE_NEW_PASS">Nieuw Wachtwoord:</Resource>
@@ -692,6 +762,7 @@
     <Resource tag="CONFIRM_PASS">Bevestig Wachtwoord:</Resource>
     <Resource tag="CONFIRM_PASS_HELP">Bevestig het nieuwe wachtwoord.</Resource>
     <Resource tag="CURRENT_POINTS">Aantal punten:</Resource>
+    <Resource tag="DELETE_ACCOUNT">Delete this account</Resource>
     <Resource tag="DELETE_POSTS_USER">Verwijder alle Posts van deze gebruiker?</Resource>
     <Resource tag="ERROR_CONFIRM_PASS">Je moet het wachtwoord ook als controle ingeven</Resource>
     <Resource tag="ERROR_NEW_PASS">Je moet een nieuw wachtwoord ingeven</Resource>
@@ -701,7 +772,7 @@
     <Resource tag="FACEBOOK_USER_HELP">Geeft een indicatie of de gebruiker is ingelogd via Facebook.</Resource>
     <Resource tag="GOOGLE_USER">Google User:</Resource>
     <Resource tag="GOOGLE_USER_HELP">Indicates if the User is logged in via Google.</Resource>
-    <Resource tag="HEAD_KILL_USER">Stop alle activiteiten van de gebruiker</Resource>
+    <Resource tag="HEAD_KILL_USER">Kill User and Ban</Resource>
     <Resource tag="HEAD_USER_CHANGEPASS">Wijzig wachtwoord</Resource>
     <Resource tag="HEAD_USER_DETAILS">Gebruiker Details</Resource>
     <Resource tag="HEAD_USER_GROUPS">Gebruikersgroepen</Resource>
@@ -728,13 +799,14 @@
     <Resource tag="REPORT_USER_CONFIRM">Report User Name, Email Address and IP Address to StopForumSpam.com as BOT?</Resource>
     <Resource tag="RESET_PASS">Reset Wachtwoord</Resource>
     <Resource tag="SET_POINTS">Zet aantal punten:</Resource>
-    <Resource tag="SUSPEND_ACCOUNT_USER">Suspend this account for 5 years?</Resource>
+    <Resource tag="SUSPEND_ACCOUNT_USER">Suspend this account for 5 years</Resource>
+    <Resource tag="SUSPEND_OR_DELETE_ACCOUNT">Suspend or Delete this Account?</Resource>
     <Resource tag="TITLE">Bewerk Gebruiker "{0}"</Resource>
     <Resource tag="TWITTER_USER">Twitter Gebruiker:</Resource>
     <Resource tag="TWITTER_USER_HELP">Indicates if the User is logged in via Twitter.</Resource>
     <Resource tag="USER_AVATAR">Avatar</Resource>
     <Resource tag="USER_DETAILS">Details van gebruiker</Resource>
-    <Resource tag="USER_KILL">Kill Activiteit</Resource>
+    <Resource tag="USER_KILL">User Kill &amp; Ban</Resource>
     <Resource tag="USER_PASS">Wachtwoord</Resource>
     <Resource tag="USER_PROFILE">Profiel</Resource>
     <Resource tag="USER_REPUTATION">Gebruiker Reputatie</Resource>
@@ -1045,6 +1117,8 @@
     <Resource tag="FLOOT_DELAY">Post interval timeout:</Resource>
     <Resource tag="FLOOT_DELAY_HELP">Aantal seconden voordat een nieuwe post gemaakt kan worden. (Geldt niet voor Admins of Mods).</Resource>
     <Resource tag="FORBIDDEN">Uitgeschakeld</Resource>
+    <Resource tag="FORUM_BASEURLMASK">Forum Base URL Mask:</Resource>
+    <Resource tag="FORUM_BASEURLMASK_HELP">The full forward-facing url to this forum.</Resource>
     <Resource tag="FORUM_EDITOR">Forum Tekstverwerker:</Resource>
     <Resource tag="FORUM_EDITOR_HELP">Selecteer de globale tekstverwerker voor je forum. OM HTML tekstverwerkers (FCK and FreeTextBox) te gebruiken, moet het .bin bestand in de \bin directory staan en de support bestanden moeten in in \editors staan.</Resource>
     <Resource tag="FORUM_EMAIL">Forum E-mail:</Resource>
@@ -1129,14 +1203,14 @@
     <Resource tag="LOG_ERROR_HELP">Application errors will be logged.</Resource>
     <Resource tag="LOG_INFORMATION">Allow log Application Info:</Resource>
     <Resource tag="LOG_INFORMATION_HELP">Application info messages will be logged.</Resource>
-    <Resource tag="LOG_SQLERROR">Allow log Sql Errors:</Resource>
-    <Resource tag="LOG_SQLERROR_HELP">Sql errors will be logged.</Resource>
     <Resource tag="LOG_SUSPENDEDANDCONTRA">Allow log when users suspended or unsuspended:</Resource>
     <Resource tag="LOG_SUSPENDEDANDCONTRA_HELP">Log when users are suspended or unsuspended.</Resource>
     <Resource tag="LOG_USERDELETED">Allow log user deleting event:</Resource>
     <Resource tag="LOG_USERDELETED_HELP">User deleting event will be logged.</Resource>
     <Resource tag="LOG_USERSUSPENDED">Allow log user suspended and unsuspended:</Resource>
     <Resource tag="LOG_USERSUSPENDED_HELP">Suspended and unsuspended events will be logged.</Resource>
+    <Resource tag="LOG_VIEWSTATEERROR">Log ViewState Exceptions:</Resource>
+    <Resource tag="LOG_VIEWSTATEERROR_HELP">ViewState Exceptions (mainly caused by SPAM Bots) will be logged.</Resource>
     <Resource tag="LOG_WARNING">Allow log Application Warnings:</Resource>
     <Resource tag="LOG_WARNING_HELP">Application warnings will be logged.</Resource>
     <Resource tag="LOGIN_REDIR_URL">Aangepaste Login Url:</Resource>
@@ -1346,6 +1420,9 @@
     <Resource tag="SPAM_MESSAGE_2">Blokkeer bericht</Resource>
     <Resource tag="SPAM_MESSAGE_HANDLING">Verwerking van als SPAM herkende berichten</Resource>
     <Resource tag="SPAM_MESSAGE_HANDLING_HELP">Kies hier wat er moet gebeuren als een bericht als SPAM herkend wordt. Je kunt kiezen tussen 'Niets doen', 'Markeer bericht als niet-goedgekeurd', of blokkeer het bericht.</Resource>
+    <Resource tag="SPAM_SERVICE_TYP_1">BlogSpam.NET API</Resource>
+    <Resource tag="SPAM_SERVICE_TYP_2">Akismet API (Needs Registration)</Resource>
+    <Resource tag="SPAM_SERVICE_TYP_3">Internal Spam Check Words</Resource>
     <Resource tag="SQL_FULLTEXT">Gebruik SQL Full Text Search:</Resource>
     <Resource tag="SQL_FULLTEXT_HELP">Zet het gebruik van FULLTEXT SQL Server support aan of uit bij zoekopdrachten.</Resource>
     <Resource tag="SSL_LOGIN">Gebruik SSL bij het inloggen:</Resource>
@@ -1628,6 +1705,31 @@
     <Resource tag="SELECT_FILE">Selecteer Bestand (*.pak)</Resource>
     <Resource tag="TITLE">Smilies Importeren</Resource>
   </page>
+  <page name="ADMIN_SPAMWORDS">
+    <Resource tag="ADD">Add</Resource>
+    <Resource tag="EXPORT">Export to XML</Resource>
+    <Resource tag="IMPORT">Import from XML</Resource>
+    <Resource tag="MSG_DELETE">Delete this Word?</Resource>
+    <Resource tag="NOTE">&lt;strong&gt;Note: &lt;/strong&gt; The Spam Words are used for the internal SPAM Detection, during Registration the Homepage the user is entering in the user profile is checked against the Spam Words. Also if a user Posts a new Message in the forum it will be checked against the Spam Words if 'Choose a SPAM Service for Automatically SPAM Checking' in the Host Settings is set to 'Internal Spam Check Words'.</Resource>
+    <Resource tag="SPAM">"Spam" Word (Find) Expression</Resource>
+    <Resource tag="TITLE">Spam Check Words</Resource>
+  </page>
+  <page name="ADMIN_SPAMWORDS_EDIT">
+    <Resource tag="MSG_REGEX_SPAM">The Regular expression statement you have entered is invalid.</Resource>
+    <Resource tag="SPAM">"Spam" Word (Find) Expression:</Resource>
+    <Resource tag="SPAM_HELP">Regular expression statement. Escape punctation with a preceding slash (e.g. '\.').</Resource>
+    <Resource tag="TITLE">Add/Edit Spam Word</Resource>
+  </page>
+  <page name="ADMIN_SPAMWORDS_IMPORT">
+    <Resource tag="HEADER">Import Spam Word List</Resource>
+    <Resource tag="MSG_IMPORTED">{0} new spam word(s) were imported successfully.</Resource>
+    <Resource tag="MSG_IMPORTED_FAILED">Failed to import: Import file format is different than expected.</Resource>
+    <Resource tag="MSG_IMPORTED_FAILEDX">Failed to import: {0}</Resource>
+    <Resource tag="MSG_NOTHING">Nothing imported: no new spam words were found in the upload.</Resource>
+    <Resource tag="SELECT_IMPORT">Select Import File:</Resource>
+    <Resource tag="SELECT_IMPORT_HELP">(Must be *.xml file)</Resource>
+    <Resource tag="TITLE">Import Spam Words</Resource>
+  </page>
   <page name="ADMIN_TASKMANAGER">
     <Resource tag="DURATION">Duur</Resource>
     <Resource tag="HEADER">Taakbeheer: {0} Ta(a)k(en) bezig</Resource>
@@ -1716,7 +1818,9 @@
     <Resource tag="admin_accessmasks">Toegangsmaskers</Resource>
     <Resource tag="admin_admin">Beheerdersindex</Resource>
     <Resource tag="admin_attachments">Bijlagen</Resource>
+    <Resource tag="admin_bannedemail">Banned Emails</Resource>
     <Resource tag="admin_bannedip">Geblokkeerde IPs</Resource>
+    <Resource tag="admin_bannedname">Banned Names</Resource>
     <Resource tag="admin_bbcode">BBCode Extensies</Resource>
     <Resource tag="admin_boards">Boards</Resource>
     <Resource tag="admin_boardsettings">Board Instellingen</Resource>
@@ -1745,6 +1849,7 @@
     <Resource tag="admin_restartapp">Herstart Forum</Resource>
     <Resource tag="admin_runsql">Draai SQL Query</Resource>
     <Resource tag="admin_smilies">Smiley's</Resource>
+    <Resource tag="admin_spamwords">Spam Check Words</Resource>
     <Resource tag="admin_taskmanager">Taakbeheer</Resource>
     <Resource tag="admin_test_data">Maak Test Data</Resource>
     <Resource tag="admin_topicstatus">Topic Status</Resource>
@@ -1755,6 +1860,7 @@
     <Resource tag="Maintenance">Onderhoud</Resource>
     <Resource tag="NNTP">NNTP</Resource>
     <Resource tag="Settings">Instellingen</Resource>
+    <Resource tag="Spam_Protection">Spam Protection</Resource>
     <Resource tag="Upgrade">Upgrade</Resource>
     <Resource tag="UsersandRoles">Gebruikers en rollen</Resource>
   </page>
@@ -1968,6 +2074,7 @@
     <Resource tag="NOTIFICATION_ON_MEDAL_AWARDED_SUBJECT">You have been award on the {0} Forum</Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_MESSAGE_APPROVAL">Nieuw bericht op {0} Forum heeft goedkeuring nodig</Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_REPORTED_MESSAGE">Er is een Bericht gerapporteerd op {0} Forum.</Resource>
+    <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL">New SPAM Message on {0} Forum needs to be checked</Resource>
     <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">Registratie op {0} Forum gelukt</Resource>
     <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">Nieuwe gebruiker geregistreerd op {0} Forum</Resource>
     <Resource tag="OK">OK</Resource>
@@ -4656,6 +4763,7 @@ Spoiler Inhoud
     <Resource tag="ALREADY_REGISTERED_DISPLAYNAME">Deze gebruikersnaam bestaat al.</Resource>
     <Resource tag="BAD_EMAIL">Je hebt een ongeldig e-mail adres opgegeven.</Resource>
     <Resource tag="BAD_PASSWORD">Kies a.u.b. een complexer wachtwoord dat ook leestekens of cijfers bevat.</Resource>
+    <Resource tag="BASIC_ACCOUNT">Account</Resource>
     <Resource tag="BOT_MESSAGE">Sorry Spammers are not allowed in the Forum!</Resource>
     <Resource tag="CONFIRM_PASSWORD">Bevestig wachtwoord</Resource>
     <Resource tag="CONTINUE">Verder</Resource>
@@ -4670,7 +4778,7 @@ Spoiler Inhoud
     <Resource tag="INVALID_QUESTION">Kies a.u.b. een andere vraag.</Resource>
     <Resource tag="INVALID_USERNAME">Kies a.u.b. een andere gebruikersnaam.</Resource>
     <Resource tag="LOCATION">Locatie</Resource>
-    <Resource tag="LOGIN_INSTEAD">Login instead with an existing Account</Resource>
+    <Resource tag="LOGIN_INSTEAD">Already Signed Up? Click Sign In to login your account.</Resource>
     <Resource tag="NEED_ANSWER">Beveiligings-antwoord is verplicht.</Resource>
     <Resource tag="NEED_DISPLAYNAME">Naam is verplicht.</Resource>
     <Resource tag="NEED_EMAIL">E-mail is verplicht.</Resource>
@@ -4693,6 +4801,7 @@ Spoiler Inhoud
     <Resource tag="TERMS_AND_CONDITIONS_TITLE">Reglement</Resource>
     <Resource tag="TIMEZONE">Tijdzone</Resource>
     <Resource tag="TITLE">Registreren als nieuwe gebruiker</Resource>
+    <Resource tag="TITLE2">Register a new account</Resource>
     <Resource tag="USERNAME">Gebruikersnaam</Resource>
     <Resource tag="USERNAME_LENGTH_WARN">Gebruikersnaam kan niet meer dan {0} karakters.</Resource>
     <Resource tag="VERIFICATION_EMAIL_SUBJECT">Bevestiging registratie voor {0} forum</Resource>
@@ -4893,6 +5002,11 @@ Het bericht was gepost op het  {forumname} forum.
       
       Beheerlink: {adminlink}
    </Resource>
+    <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL_TEXT">
+      A new message (posted in the {forumname} forum) was detected as SPAM, needs to be checked:
+      
+      Administration Link: {adminlink}
+   </Resource>
     <Resource tag="NOTIFICATION_ON_REGISTER">
       Hallo {user}.
 
@@ -4922,11 +5036,11 @@ Het bericht was gepost op het  {forumname} forum.
     <Resource tag="PASSWORDRETRIEVAL_HTML">
       &lt;!DOCTYPE html&gt;
 
-      &lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+      &lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;
       &lt;head&gt;
-      &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+      &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
       &lt;title&gt;Password Retrieval&lt;/title&gt;
-      &lt;style type=&quot;text/css&quot;&gt;
+      &lt;style type="text/css"&gt;
       &lt;!--
       .style1 {
       font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -4935,12 +5049,12 @@ Het bericht was gepost op het  {forumname} forum.
       &lt;/style&gt;
       &lt;/head&gt;
       &lt;body&gt;
-      &lt;p class=&quot;style1&quot;&gt;Hello {username},&lt;/p&gt;
-      &lt;p class=&quot;style1&quot;&gt;You or someone (with the IP Address: {ipaddress}) has requested to reset your password because you have forgotten your password.&lt;/p&gt;
-      &lt;p class=&quot;style1&quot;&gt;A new password has been generated for you on &lt;strong&gt;{forumname}&lt;/strong&gt; at &lt;a href=&quot;{forumlink}&quot;&gt;{forumlink}&lt;/a&gt;.&lt;/p&gt;
-      &lt;p class=&quot;style1&quot;&gt;Please return to the site and login using the following information:&lt;/p&gt;
+      &lt;p class="style1"&gt;Hello {username},&lt;/p&gt;
+      &lt;p class="style1"&gt;You or someone (with the IP Address: {ipaddress}) has requested to reset your password because you have forgotten your password.&lt;/p&gt;
+      &lt;p class="style1"&gt;A new password has been generated for you on &lt;strong&gt;{forumname}&lt;/strong&gt; at &lt;a href="{forumlink}"&gt;{forumlink}&lt;/a&gt;.&lt;/p&gt;
+      &lt;p class="style1"&gt;Please return to the site and login using the following information:&lt;/p&gt;
       &lt;blockquote&gt;
-      &lt;span class=&quot;style1&quot;&gt;
+      &lt;span class="style1"&gt;
       User Name: &lt;strong&gt;{username}&lt;/strong&gt;&lt;br /&gt;
       Password: &lt;strong&gt;{password}&lt;/strong&gt;
       &lt;/span&gt;

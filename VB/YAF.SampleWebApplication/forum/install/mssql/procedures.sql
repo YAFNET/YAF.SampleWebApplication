@@ -201,6 +201,30 @@ IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{data
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}bannedip_save]
 GO
 
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}bannedname_delete]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}bannedname_delete]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}bannedname_list]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}bannedname_list]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}bannedname_save]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}bannedname_save]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}bannedemail_delete]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}bannedemail_delete]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}bannedemail_list]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}bannedemail_list]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}bannedemail_save]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}bannedemail_save]
+GO
+
 IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}board_create]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}board_create]
 GO
@@ -693,6 +717,18 @@ IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{data
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}replace_words_save]
 GO
 
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}spam_words_delete]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}spam_words_delete]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}spam_words_list]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}spam_words_list]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}spam_words_save]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}spam_words_save]
+GO
+
 IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}smiley_delete]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}smiley_delete]
 GO
@@ -759,6 +795,10 @@ GO
 
 IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}rss_topic_latest]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}rss_topic_latest]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}rsstopic_list]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}rsstopic_list]
 GO
 
 IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}topic_list]') AND type in (N'P', N'PC'))
@@ -1267,6 +1307,10 @@ GO
 
 IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}message_gettextbyids]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}message_gettextbyids]
+GO
+
+IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}message_GetTextByIds]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [{databaseOwner}].[{objectQualifier}message_GetTextByIds]
 GO
 
 /*****************************************************************************************************************************/
@@ -1971,7 +2015,7 @@ declare @FirstSelectRowID int
 end
 GO
 
-create procedure [{databaseOwner}].[{objectQualifier}attachment_save](@MessageID int,@FileName nvarchar(255),@Bytes int,@ContentType nvarchar(50)=null,@FileData image=null) as begin
+create procedure [{databaseOwner}].[{objectQualifier}attachment_save](@MessageID int,@FileName nvarchar(255),@Bytes int,@ContentType nvarchar(max)=null,@FileData image=null) as begin
         insert into [{databaseOwner}].[{objectQualifier}Attachment](MessageID,[FileName],Bytes,ContentType,Downloads,FileData) values(@MessageID,@FileName,@Bytes,@ContentType,0,@FileData)
 end
 GO
@@ -2031,6 +2075,124 @@ begin
     end
     else begin
         update [{databaseOwner}].[{objectQualifier}BannedIP] set Mask = @Mask,Reason = @Reason, UserID = @UserID where ID = @ID
+    end
+end
+GO
+
+create procedure [{databaseOwner}].[{objectQualifier}bannedname_delete](@ID int) as
+begin
+        delete from [{databaseOwner}].[{objectQualifier}BannedName] where ID = @ID
+end
+GO
+
+create procedure [{databaseOwner}].[{objectQualifier}bannedname_list](@BoardID int,@ID int=null,@PageIndex int=null, @PageSize int=null) as
+begin
+declare @TotalRows int
+declare @FirstSelectRowNumber int
+declare @LastSelectRowNumber int
+ if @ID is null
+        begin       
+           set @PageIndex = @PageIndex + 1;
+           set @FirstSelectRowNumber = 0;  
+           set @LastSelectRowNumber = 0;  
+           set @TotalRows = 0;
+           
+           select @TotalRows = count(1) from [{databaseOwner}].[{objectQualifier}BannedName] where BoardID=@BoardID;
+           select @FirstSelectRowNumber = (@PageIndex - 1) * @PageSize + 1;
+           select @LastSelectRowNumber = (@PageIndex - 1) * @PageSize +  @PageSize;
+           
+           with BannedNames  as 
+           (
+             select ROW_NUMBER() over (order by Mask) as RowNum, Mask 
+             from  [{databaseOwner}].[{objectQualifier}BannedName] where BoardID=@BoardID
+           )
+           select
+            a.*,
+            @TotalRows as TotalRows
+            from
+            BannedNames c
+            inner join [{databaseOwner}].[{objectQualifier}BannedName] a	
+            on 	c.Mask = a.Mask	
+            where c.RowNum between (@FirstSelectRowNumber) and (@LastSelectRowNumber)
+            order by c.RowNum asc
+  end
+  else
+  select * from [{databaseOwner}].[{objectQualifier}BannedName] where ID=@ID and BoardID=@BoardID
+end
+GO
+
+create procedure [{databaseOwner}].[{objectQualifier}bannedname_save](@ID int=null,@BoardID int,@Mask varchar(255), @Reason nvarchar(128), @UTCTIMESTAMP datetime) as
+begin
+    if (@ID is null or @ID = 0 ) 
+    begin
+        declare @ExistsRow int
+        select @ExistsRow = count(1) from [{databaseOwner}].[{objectQualifier}BannedName] where BoardID=@BoardID and Mask=@Mask;
+        if (@ExistsRow  is null or @ExistsRow = 0)
+        begin
+            insert into [{databaseOwner}].[{objectQualifier}BannedName](BoardID,Mask,Since,Reason) values(@BoardID,@Mask,@UTCTIMESTAMP,@Reason)
+        end
+    end
+    else begin
+        update [{databaseOwner}].[{objectQualifier}BannedName] set Mask = @Mask,Reason = @Reason where ID = @ID
+    end
+end
+GO
+
+create procedure [{databaseOwner}].[{objectQualifier}bannedemail_delete](@ID int) as
+begin
+        delete from [{databaseOwner}].[{objectQualifier}BannedEmail] where ID = @ID
+end
+GO
+
+create procedure [{databaseOwner}].[{objectQualifier}bannedemail_list](@BoardID int,@ID int=null,@PageIndex int=null, @PageSize int=null) as
+begin
+declare @TotalRows int
+declare @FirstSelectRowNumber int
+declare @LastSelectRowNumber int
+ if @ID is null
+        begin       
+           set @PageIndex = @PageIndex + 1;
+           set @FirstSelectRowNumber = 0;  
+           set @LastSelectRowNumber = 0;  
+           set @TotalRows = 0;
+           
+           select @TotalRows = count(1) from [{databaseOwner}].[{objectQualifier}BannedEmail] where BoardID=@BoardID;
+           select @FirstSelectRowNumber = (@PageIndex - 1) * @PageSize + 1;
+           select @LastSelectRowNumber = (@PageIndex - 1) * @PageSize +  @PageSize;
+           
+           with BannedEmails  as 
+           (
+             select ROW_NUMBER() over (order by Mask) as RowNum, Mask 
+             from  [{databaseOwner}].[{objectQualifier}BannedEmail] where BoardID=@BoardID
+           )
+           select
+            a.*,
+            @TotalRows as TotalRows
+            from
+            BannedEmails c
+            inner join [{databaseOwner}].[{objectQualifier}BannedEmail] a	
+            on 	c.Mask = a.Mask	
+            where c.RowNum between (@FirstSelectRowNumber) and (@LastSelectRowNumber)
+            order by c.RowNum asc
+  end
+  else
+  select * from [{databaseOwner}].[{objectQualifier}BannedEmail] where ID=@ID and BoardID=@BoardID
+end
+GO
+
+create procedure [{databaseOwner}].[{objectQualifier}bannedemail_save](@ID int=null,@BoardID int,@Mask varchar(255), @Reason nvarchar(128), @UTCTIMESTAMP datetime) as
+begin
+    if (@ID is null or @ID = 0 ) 
+    begin
+        declare @ExistsRow int
+        select @ExistsRow = count(1) from [{databaseOwner}].[{objectQualifier}BannedEmail] where BoardID=@BoardID and Mask=@Mask;
+        if (@ExistsRow  is null or @ExistsRow = 0)
+        begin
+            insert into [{databaseOwner}].[{objectQualifier}BannedEmail](BoardID,Mask,Since,Reason) values(@BoardID,@Mask,@UTCTIMESTAMP,@Reason)
+        end
+    end
+    else begin
+        update [{databaseOwner}].[{objectQualifier}BannedEmail] set Mask = @Mask,Reason = @Reason where ID = @ID
     end
 end
 GO
@@ -2186,6 +2348,7 @@ begin
     delete from [{databaseOwner}].[{objectQualifier}Medal] where BoardID=@BoardID
     delete from [{databaseOwner}].[{objectQualifier}Smiley] where BoardID=@BoardID
     delete from [{databaseOwner}].[{objectQualifier}Replace_Words] where BoardID=@BoardID
+	delete from [{databaseOwner}].[{objectQualifier}Spam_Words] where BoardID=@BoardID
     delete from [{databaseOwner}].[{objectQualifier}NntpServer] where BoardID=@BoardID
     delete from [{databaseOwner}].[{objectQualifier}BannedIP] where BoardID=@BoardID
     delete from [{databaseOwner}].[{objectQualifier}Registry] where BoardID=@BoardID
@@ -3212,6 +3375,8 @@ CREATE procedure [{databaseOwner}].[{objectQualifier}forum_save](
     @Hidden			bit,
     @IsTest			bit,
     @Moderated		bit,
+	@ModeratedPostCount int = null,
+	@IsModeratedNewTopicOnly bit,
     @RemoteURL		nvarchar(100)=null,
     @ThemeURL		nvarchar(100)=null,
     @ImageURL       nvarchar(128)=null,
@@ -3242,13 +3407,15 @@ begin
             ThemeURL = @ThemeURL,
             ImageURL = @ImageURL,
             Styles = @Styles,
-            Flags = @Flags
+            Flags = @Flags,
+			ModeratedPostCount = @ModeratedPostCount,
+			IsModeratedNewTopicOnly = @IsModeratedNewTopicOnly
         where ForumID=@ForumID
     end
     else begin		
     
-        insert into [{databaseOwner}].[{objectQualifier}Forum](ParentID,Name,Description,SortOrder,CategoryID,NumTopics,NumPosts,RemoteURL,ThemeURL,Flags,ImageURL,Styles)
-        values(@ParentID,@Name,@Description,@SortOrder,@CategoryID,0,0,@RemoteURL,@ThemeURL,@Flags,@ImageURL,@Styles)
+        insert into [{databaseOwner}].[{objectQualifier}Forum](ParentID,Name,Description,SortOrder,CategoryID,NumTopics,NumPosts,RemoteURL,ThemeURL,Flags,ImageURL,Styles,ModeratedPostCount,IsModeratedNewTopicOnly)
+        values(@ParentID,@Name,@Description,@SortOrder,@CategoryID,0,0,@RemoteURL,@ThemeURL,@Flags,@ImageURL,@Styles,@ModeratedPostCount,@IsModeratedNewTopicOnly)
         select @ForumID = SCOPE_IDENTITY()
 
         insert into [{databaseOwner}].[{objectQualifier}ForumAccess](GroupID,ForumID,AccessMaskID) 
@@ -3721,6 +3888,7 @@ create procedure [{databaseOwner}].[{objectQualifier}message_findunread](
 @TopicID int,
 @MessageID int,
 @LastRead datetime,
+@MinDateTime datetime,
 @ShowDeleted bit = 0,
 @AuthorUserID int) as
 begin
@@ -3728,36 +3896,36 @@ begin
 
    if (@MessageID > 0)
    begin
-   Select top 1 @MessagePosition = CONVERT(int,RowNum), @MessageID = tbl.MessageID  from 
+   select top 1 @MessagePosition = CONVERT(int,RowNum), @MessageID = tbl.MessageID  from 
    (
-   Select ROW_NUMBER() OVER ( order by Posted desc) as RowNum, m.MessageID
+   select ROW_NUMBER() OVER ( order by Posted desc) as RowNum, m.MessageID
    from yaf_Message m  
    where m.TopicID = @TopicID			
         AND m.IsApproved = 1
         AND (@ShowDeleted = 1 OR m.IsDeleted = 0 OR (@AuthorUserID > 0 AND m.UserID = @AuthorUserID))        
    ) as tbl
-   Where tbl.MessageID = @MessageID
+   where tbl.MessageID = @MessageID
    order by tbl.RowNum ASC;
    end
 -- a message with the id was not found or we are looking for first unread or last post 
   if (@MessageID <= 0)
    begin  
    -- if value > yaf db min value (1-1-1903) we are looking for first unread 
-   if (@LastRead > CONVERT(datetime,'2/1/1903'))  
+   if (@LastRead > @MinDateTime)  
    begin
-   Select top 1 @MessagePosition = CONVERT(int,RowNum), @MessageID = tbl.MessageID  from 
+   select top 1 @MessagePosition = CONVERT(int,RowNum), @MessageID = tbl.MessageID  from 
    (
-   Select ROW_NUMBER() OVER ( order by m.Posted asc) as RowNum, m.MessageID, m.Posted
+   select ROW_NUMBER() OVER ( order by m.Posted asc) as RowNum, m.MessageID, m.Posted
    from yaf_Message m  
    where m.TopicID = @TopicID			
         AND m.IsApproved = 1
         AND (@ShowDeleted = 1 OR m.IsDeleted = 0 OR (@AuthorUserID > 0 AND m.UserID = @AuthorUserID))		     
    ) as tbl
-   Where tbl.Posted > @LastRead 
+   where tbl.Posted > @LastRead 
    order by tbl.RowNum ASC;
    end
    -- if first unread was not found or we looking for last posted 
-   if (@LastRead < CONVERT(datetime,'2/1/1903') OR @MessagePosition IS NULL) 
+   if (@LastRead < @MinDateTime OR @MessagePosition IS NULL) 
    begin    
         select top 1 @MessageID = m.MessageID, @MessagePosition = 1
     from
@@ -3768,7 +3936,18 @@ begin
        AND (@ShowDeleted = 1 OR m.IsDeleted = 0 OR (@AuthorUserID > 0 AND m.UserID = @AuthorUserID))
     order by		
         m.Posted DESC;    
-end
+    end
+
+	 select top 1 @MessagePosition = CONVERT(int,RowNum), @MessageID = tbl.MessageID  from 
+   (
+   select ROW_NUMBER() OVER ( order by Posted desc) as RowNum, m.MessageID
+   from yaf_Message m  
+   where m.TopicID = @TopicID			
+        AND m.IsApproved = 1
+        AND (@ShowDeleted = 1 OR m.IsDeleted = 0 OR (@AuthorUserID > 0 AND m.UserID = @AuthorUserID))        
+   ) as tbl
+   where tbl.MessageID = @MessageID
+   order by tbl.RowNum ASC;
 end
   
 select @MessageID as MessageID, @MessagePosition as MessagePosition;
@@ -5318,6 +5497,7 @@ create procedure [{databaseOwner}].[{objectQualifier}post_list](
                  @MessagePosition int = 0,
                  @UTCTIMESTAMP datetime) as
 begin
+   declare @TotalPages int
    declare @TotalRows int
    declare @FirstSelectRowNumber int
    declare @LastSelectRowNumber int
@@ -5349,6 +5529,14 @@ begin
         AND 
         m.Edited >= SinceEditedDate
         */ 
+
+    select @TotalPages = CEILING(CONVERT(decimal,@TotalRows)/@PageSize);
+    
+	-- check if page index is bigger then Total pages
+    if (@PageIndex > @TotalPages -1)
+    begin
+      set @PageIndex = @TotalPages -1
+    end
 
  if (@MessagePosition > 0)
  begin
@@ -5648,7 +5836,7 @@ GO
 
 CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}replace_words_delete](@ID int) AS
 BEGIN
-        DELETE FROM [{databaseOwner}].[{objectQualifier}replace_words] WHERE ID = @ID
+        DELETE FROM [{databaseOwner}].[{objectQualifier}Replace_Words] WHERE ID = @ID
 END
 GO
 
@@ -5676,13 +5864,53 @@ AS
 BEGIN
         IF (@ID IS NOT NULL AND @ID <> 0)
     BEGIN
-        UPDATE [{databaseOwner}].[{objectQualifier}replace_words] SET BadWord = @BadWord, GoodWord = @GoodWord WHERE ID = @ID		
+        UPDATE [{databaseOwner}].[{objectQualifier}Replace_Words] SET BadWord = @BadWord, GoodWord = @GoodWord WHERE ID = @ID		
     END
     ELSE BEGIN
-        INSERT INTO [{databaseOwner}].[{objectQualifier}replace_words]
+        INSERT INTO [{databaseOwner}].[{objectQualifier}Replace_Words]
             (BoardID,BadWord,GoodWord)
         VALUES
             (@BoardID,@BadWord,@GoodWord)
+    END
+END
+GO
+
+CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}spam_words_delete](@ID int) AS
+BEGIN
+        DELETE FROM [{databaseOwner}].[{objectQualifier}Spam_Words] WHERE ID = @ID
+END
+GO
+
+CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}spam_words_list]
+(
+    @BoardID int,
+    @ID int = null
+)
+AS BEGIN
+        IF (@ID IS NOT NULL AND @ID <> 0)
+        SELECT * FROM [{databaseOwner}].[{objectQualifier}Spam_Words] WHERE BoardID = @BoardID AND ID = @ID
+    ELSE
+        SELECT * FROM [{databaseOwner}].[{objectQualifier}Spam_Words] WHERE BoardID = @BoardID
+END
+GO
+
+CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}spam_words_save]
+(
+    @BoardID int,
+    @ID int = null,
+    @SpamWord nvarchar(255)
+)
+AS
+BEGIN
+        IF (@ID IS NOT NULL AND @ID <> 0)
+    BEGIN
+        UPDATE [{databaseOwner}].[{objectQualifier}Spam_Words] SET SpamWord = @SpamWord WHERE ID = @ID		
+    END
+    ELSE BEGIN
+        INSERT INTO [{databaseOwner}].[{objectQualifier}Spam_Words]
+            (BoardID,SpamWord)
+        VALUES
+            (@BoardID,@SpamWord)
     END
 END
 GO
@@ -5793,6 +6021,7 @@ create procedure [{databaseOwner}].[{objectQualifier}system_initialize](
     @Culture	varchar(10),
     @LanguageFile nvarchar(50),
     @ForumEmail	nvarchar(50),
+	@ForumBaseUrlMask	nvarchar(255),
     @SmtpServer	nvarchar(50),
     @User		nvarchar(255),
     @UserEmail	nvarchar(255),
@@ -5813,7 +6042,8 @@ begin
     EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'language', @LanguageFile
     EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'smtpserver', @SmtpServer
     EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'forumemail', @ForumEmail
-
+	EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'baseurlmask', @ForumBaseUrlMask
+    
     -- initalize new board
     EXEC [{databaseOwner}].[{objectQualifier}board_create] @Name, @Culture, @LanguageFile, '','',@User,@UserEmail,@UserKey,1,@RolePrefix,@UTCTIMESTAMP
 end
@@ -6519,6 +6749,33 @@ BEGIN
         t.LastPosted DESC;
 END
 GO
+
+CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}rsstopic_list]
+(
+    @ForumID int,
+    @TopicLimit int
+)
+as
+begin
+  
+    select top(@TopicLimit)
+	Topic = a.Topic,
+	TopicID = a.TopicID, 
+	Name = b.Name, 
+	LastPosted = IsNull(a.LastPosted,a.Posted), 
+	LastUserID = IsNull(a.LastUserID, a.UserID), 
+	LastMessageID= IsNull(a.LastMessageID,
+	(select top 1 m.MessageID 
+	from [{databaseOwner}].[{objectQualifier}Message] m where m.TopicID = a.TopicID order by m.Posted desc)), 
+	LastMessageFlags = IsNull(a.LastMessageFlags,22) , 
+	LastMessage = (SELECT TOP 1 CAST([Message] as nvarchar(1000)) FROM [{databaseOwner}].[{objectQualifier}Message] mes2 where mes2.TopicID = IsNull(a.TopicMovedID,a.TopicID) AND mes2.IsApproved = 1 AND mes2.IsDeleted = 0 ORDER BY mes2.Posted DESC) 
+
+from [{databaseOwner}].[{objectQualifier}Topic] a, 
+     [{databaseOwner}].[{objectQualifier}Forum] b where a.ForumID = 1 and b.ForumID = a.ForumID and a.TopicMovedID is null and a.IsDeleted = 0
+
+order by a.Posted desc
+end
+go
 
 CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}topic_latest_in_category]
 (
@@ -7916,10 +8173,15 @@ begin
         -- user is not guest
         ISNULL(a.Flags & 4,0) <> 4
             AND
-        LOWER(a.DisplayName) LIKE CASE 
+        (LOWER(a.DisplayName) LIKE CASE 
             WHEN (@BeginsWith = 0 AND @Literals IS NOT NULL AND LEN(@Literals) > 0) THEN '%' + LOWER(@Literals) + '%' 
             WHEN (@BeginsWith = 1 AND @Literals IS NOT NULL AND LEN(@Literals) > 0) THEN LOWER(@Literals) + '%'
             ELSE '%' END  
+            or
+         LOWER(a.Name) LIKE CASE 
+            WHEN (@BeginsWith = 0 AND @Literals IS NOT NULL AND LEN(@Literals) > 0) THEN '%' + LOWER(@Literals) + '%' 
+            WHEN (@BeginsWith = 1 AND @Literals IS NOT NULL AND LEN(@Literals) > 0) THEN LOWER(@Literals) + '%'
+            ELSE '%' END) 
         and
         (a.NumPosts >= (case 
         when @NumPostsCompare = 3 then  @NumPosts end) 
@@ -7965,10 +8227,15 @@ begin
         -- user is not guest
         ISNULL(a.Flags & 4,0) <> 4
             AND
-        LOWER(a.DisplayName) LIKE CASE 
+        (LOWER(a.DisplayName) LIKE CASE 
             WHEN (@BeginsWith = 0 AND @Literals IS NOT NULL AND LEN(@Literals) > 0) THEN '%' + LOWER(@Literals) + '%' 
             WHEN (@BeginsWith = 1 AND @Literals IS NOT NULL AND LEN(@Literals) > 0) THEN LOWER(@Literals) + '%'
             ELSE '%' END  
+            or
+         LOWER(a.Name) LIKE CASE 
+            WHEN (@BeginsWith = 0 AND @Literals IS NOT NULL AND LEN(@Literals) > 0) THEN '%' + LOWER(@Literals) + '%' 
+            WHEN (@BeginsWith = 1 AND @Literals IS NOT NULL AND LEN(@Literals) > 0) THEN LOWER(@Literals) + '%'
+            ELSE '%' END) 
         and
         (a.NumPosts >= (case 
         when @NumPostsCompare = 3 then  @NumPosts end) 
@@ -9746,7 +10013,8 @@ CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}buddy_addrequest]
     @FromUserID INT,
     @ToUserID INT,
     @UTCTIMESTAMP datetime,
-    @approved BIT = NULL OUT,	
+    @approved BIT = NULL OUT,
+	@UseDisplayName BIT,	
     @paramOutput NVARCHAR(255) = NULL OUT
 AS 
     BEGIN
@@ -9776,10 +10044,10 @@ AS
                                   0,
                                   @UTCTIMESTAMP 
                                 )
-                        SET @paramOutput = ( SELECT [Name]
-                                             FROM   [{databaseOwner}].[{objectQualifier}User]
-                                             WHERE  ( UserID = @ToUserID )
-                                           )
+                        SET @paramOutput = ( SELECT (CASE WHEN @UseDisplayName = 1 THEN [DisplayName] ELSE [Name] END) 
+		                     FROM [{databaseOwner}].[{objectQualifier}User]
+							 WHERE ( UserID = @ToUserID )
+                           )
                         SET @approved = 0
                     END
                 ELSE 
@@ -9822,6 +10090,7 @@ CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}buddy_approverequest]
     @ToUserID INT,
     @Mutual BIT,
     @UTCTIMESTAMP datetime,
+	@UseDisplayName BIT,
     @paramOutput NVARCHAR(255) = NULL OUT
 AS 
     BEGIN
@@ -9836,10 +10105,10 @@ AS
                 WHERE   ( FromUserID = @FromUserID
                           AND ToUserID = @ToUserID
                         )
-                SET @paramOutput = ( SELECT [Name]
-                                     FROM   [{databaseOwner}].[{objectQualifier}User]
-                                     WHERE  ( UserID = @FromUserID )
-                                   )
+                SET @paramOutput = ( SELECT (CASE WHEN @UseDisplayName = 1 THEN [DisplayName] ELSE [Name] END) 
+		                     FROM [{databaseOwner}].[{objectQualifier}User]
+							 WHERE ( UserID = @FromUserID )
+                           )
                 IF ( @Mutual = 1 )
                     AND ( NOT EXISTS ( SELECT   ID
                                        FROM     [{databaseOwner}].[{objectQualifier}Buddy]
@@ -9903,6 +10172,7 @@ AS
     CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}buddy_remove]
     @FromUserID INT,
     @ToUserID INT,
+	@UseDisplayName BIT,
     @paramOutput NVARCHAR(255) = NULL OUT
 AS 
     BEGIN
@@ -9910,25 +10180,27 @@ AS
         WHERE   ( FromUserID = @FromUserID
                   AND ToUserID = @ToUserID
                 )
-        SET @paramOutput = ( SELECT [Name]
-                             FROM   [{databaseOwner}].[{objectQualifier}User]
-                             WHERE  ( UserID = @ToUserID )
+        SET @paramOutput = ( SELECT (CASE WHEN @UseDisplayName = 1 THEN [DisplayName] ELSE [Name] END) 
+		                     FROM [{databaseOwner}].[{objectQualifier}User]
+							 WHERE ( UserID = @ToUserID )
                            )
     END
     GO
 CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}buddy_denyrequest]
     @FromUserID INT,
     @ToUserID INT,
+	@UseDisplayName BIT,
     @paramOutput NVARCHAR(255) = NULL OUT
 AS 
     BEGIN
         DELETE  FROM [{databaseOwner}].[{objectQualifier}Buddy]
         WHERE   FromUserID = @FromUserID
                 AND ToUserID = @ToUserID
-        SET @paramOutput = ( SELECT [Name]
-                             FROM   [{databaseOwner}].[{objectQualifier}User]
-                             WHERE  ( UserID = @FromUserID )
-                           )
+        SET @paramOutput = ( SELECT (CASE WHEN @UseDisplayName = 1 THEN [DisplayName] ELSE [Name] END) 
+		                     FROM [{databaseOwner}].[{objectQualifier}User]
+							 WHERE ( UserID = @FromUserID 
+							)
+)
     END
 Go    
 /* End of stored procedures for Buddy feature */
@@ -10526,7 +10798,7 @@ begin
      end
 GO
 
-CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}message_gettextbyids] (@MessageIDs varchar(max))
+CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}message_GetTextByIds] (@MessageIDs varchar(max))
 AS 
     BEGIN
     -- vzrus says: the server version > 2000 ntext works too slowly with substring in the 2005 

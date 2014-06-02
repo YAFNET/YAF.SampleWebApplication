@@ -5,9 +5,15 @@
     <Resource tag="ADMIN_ACCESSMASKS">Ver máscara de acceso</Resource>
     <Resource tag="ADMIN_ADMIN">Ver índice de administrador</Resource>
     <Resource tag="ADMIN_ATTACHMENTS">Ver adjuntos</Resource>
+    <Resource tag="ADMIN_BANNEDEMAIL">Views banned Emails list</Resource>
+    <Resource tag="ADMIN_BANNEDEMAIL_EDIT">Edits banned Emails</Resource>
+    <Resource tag="ADMIN_BANNEDEMAIL_IMPORT">Imports banned Emails</Resource>
     <Resource tag="ADMIN_BANNEDIP">Ver lista de IPs baneadas</Resource>
     <Resource tag="ADMIN_BANNEDIP_EDIT">Editar IPs baneadas</Resource>
     <Resource tag="ADMIN_BANNEDIP_IMPORT">Importar IPs baneadas</Resource>
+    <Resource tag="ADMIN_BANNEDNAME">Views banned Names list</Resource>
+    <Resource tag="ADMIN_BANNEDNAME_EDIT">Edits banned Names</Resource>
+    <Resource tag="ADMIN_BANNEDNAME_IMPORT">Imports banned Names</Resource>
     <Resource tag="ADMIN_BBCODE">Ver BBCodes</Resource>
     <Resource tag="ADMIN_BBCODE_EDIT">Editar BBcodes</Resource>
     <Resource tag="ADMIN_BBCODE_IMPORT">Importar BBCodes</Resource>
@@ -51,6 +57,9 @@
     <Resource tag="ADMIN_SMILIES">Ver smilies</Resource>
     <Resource tag="ADMIN_SMILIES_EDIT">Editar smilies</Resource>
     <Resource tag="ADMIN_SMILIES_IMPORT">Iportar smilies</Resource>
+    <Resource tag="ADMIN_SPAMWORDS">Views spam words list</Resource>
+    <Resource tag="ADMIN_SPAMWORDS_EDIT">Edits spam words list</Resource>
+    <Resource tag="ADMIN_SPAMWORDS_IMPORT">Imports spam words</Resource>
     <Resource tag="ADMIN_TASKMANAGER">Ver/administrar administrador de tareas</Resource>
     <Resource tag="ADMIN_TEST_DATA">Ver/editar generador de datos de prueba</Resource>
     <Resource tag="ADMIN_TOPICSTATUS">Ver estado de temas de administración</Resource>
@@ -201,9 +210,36 @@
     <Resource tag="POSTED">Publicado</Resource>
     <Resource tag="TITLE">Adjuntos</Resource>
   </page>
+  <page name="ADMIN_BANNEDEMAIL">
+    <Resource tag="ADD_IP">Add New Email</Resource>
+    <Resource tag="IMPORT_IPS">Import Email(s)</Resource>
+    <Resource tag="MASK">Mask</Resource>
+    <Resource tag="REASON">Reason</Resource>
+    <Resource tag="SINCE">Since</Resource>
+    <Resource tag="TITLE">Banned Email Addresses</Resource>
+  </page>
+  <page name="ADMIN_BANNEDEMAIL_EDIT">
+    <Resource tag="MASK">Mask:</Resource>
+    <Resource tag="MASK_HELP">The Email address to ban. You can use Regular Expressions.</Resource>
+    <Resource tag="REASON">Reason:</Resource>
+    <Resource tag="REASON_HELP">The reason why the email address was banned.</Resource>
+    <Resource tag="TITLE">Add/Edit Banned Email Address</Resource>
+  </page>
+  <page name="ADMIN_BANNEDEMAIL_IMPORT">
+    <Resource tag="HEADER">Import Email Addresses List</Resource>
+    <Resource tag="IMPORT">Import List</Resource>
+    <Resource tag="IMPORT_FAILED">Failed to import! Invalid upload format specified: {0} </Resource>
+    <Resource tag="IMPORT_FILE">Select Import File:</Resource>
+    <Resource tag="IMPORT_FILE_HELP">Must be *.txt file containing an Email Adress on each line</Resource>
+    <Resource tag="IMPORT_NOTHING">Nothing imported: no new email address was found in the upload.</Resource>
+    <Resource tag="IMPORT_SUCESS">{0} new email adress(es) imported successfully.</Resource>
+    <Resource tag="NOTE">You can find a list of Spam Bot Email Addresses on StopForumSpam.com &lt;a href="http://www.stopforumspam.com/downloads/"&gt;http://www.stopforumspam.com/downloads/&lt;/a&gt;, that can be imported here.</Resource>
+    <Resource tag="TITLE">Import Email Addresses</Resource>
+  </page>
   <page name="ADMIN_BANNEDIP">
     <Resource tag="ADD_IP">Añadir nueva dirección</Resource>
     <Resource tag="BAN_BY">Baneado por</Resource>
+    <Resource tag="EXPORT">Export to Text File</Resource>
     <Resource tag="IMPORT_IPS">Importar IPs</Resource>
     <Resource tag="MASK">Máscara</Resource>
     <Resource tag="REASON">Razón</Resource>
@@ -229,7 +265,34 @@
     <Resource tag="IMPORT_FILE_HELP">Debe ser un fichero *.txt conteniendo una IP en cada línea.</Resource>
     <Resource tag="IMPORT_NOTHING">No se ha importado nada. No se han encontrado nuevas IPs en el archivo subido.</Resource>
     <Resource tag="IMPORT_SUCESS">{0} nuevas IPs importadas correctamente.</Resource>
+    <Resource tag="NOTE">You can find a list of Spam Bot Ips on StopForumSpam.com &lt;a href="http://www.stopforumspam.com/downloads/"&gt;http://www.stopforumspam.com/downloads/&lt;/a&gt;, that can be imported here.</Resource>
     <Resource tag="TITLE">Importar IPs</Resource>
+  </page>
+  <page name="ADMIN_BANNEDNAME">
+    <Resource tag="ADD_IP">Add New User Name</Resource>
+    <Resource tag="IMPORT_IPS">Import Name(s)</Resource>
+    <Resource tag="MASK">Mask</Resource>
+    <Resource tag="REASON">Reason</Resource>
+    <Resource tag="SINCE">Since</Resource>
+    <Resource tag="TITLE">Banned Names</Resource>
+  </page>
+  <page name="ADMIN_BANNEDNAME_EDIT">
+    <Resource tag="MASK">Mask:</Resource>
+    <Resource tag="MASK_HELP">The User Name to ban. You can use Regular Expressions.</Resource>
+    <Resource tag="REASON">Reason:</Resource>
+    <Resource tag="REASON_HELP">The reason why the email address was banned.</Resource>
+    <Resource tag="TITLE">Add/Edit Banned Email Address</Resource>
+  </page>
+  <page name="ADMIN_BANNEDNAME_IMPORT">
+    <Resource tag="HEADER">Import Names List</Resource>
+    <Resource tag="IMPORT">Import List</Resource>
+    <Resource tag="IMPORT_FAILED">Failed to import! Invalid upload format specified: {0} </Resource>
+    <Resource tag="IMPORT_FILE">Select Import File:</Resource>
+    <Resource tag="IMPORT_FILE_HELP">Must be *.txt file containing one Name on each line</Resource>
+    <Resource tag="IMPORT_NOTHING">Nothing imported: no new name was found in the upload.</Resource>
+    <Resource tag="IMPORT_SUCESS">{0} new name(s) imported successfully.</Resource>
+    <Resource tag="NOTE">You can find a list of Spam Bot user names on StopForumSpam.com &lt;a href="http://www.stopforumspam.com/downloads/"&gt;http://www.stopforumspam.com/downloads/&lt;/a&gt;, that can be imported here.</Resource>
+    <Resource tag="TITLE">Import Name(s)</Resource>
   </page>
   <page name="ADMIN_BBCODE">
     <Resource tag="ADD">Añadir nuevo BBCode</Resource>
@@ -479,6 +542,11 @@
     <Resource tag="INITAL_MASK_HELP">La máscara de acceso inicial para todos los foros.</Resource>
     <Resource tag="LOCKED">Bloqueado:</Resource>
     <Resource tag="LOCKED_HELP">Si el foro está bloqueado, nadie puede publicar o responder en él.</Resource>
+    <Resource tag="MODERATE_ALL_POSTS">Moderate all Posts</Resource>
+    <Resource tag="MODERATED_COUNT">Moderate all Posts or only until a User reaches x amount of Posts</Resource>
+    <Resource tag="MODERATED_COUNT_HELP">Set it to 'Moderate all Posts' or uncheck that option to specifify the amount of post a user has to reach to be automatically appproved.</Resource>
+    <Resource tag="MODERATED_NEWTOPIC_ONLY">Moderate only new Topics but not Replies?</Resource>
+    <Resource tag="MODERATED_NEWTOPIC_ONLY_HELP">If checked only Messages of new Topics are checked but not Replies to existing Topics, otherwise all Messages needs moderation.</Resource>
     <Resource tag="MSG_CATEGORY">Debes seleccionar una categoría para el foro.</Resource>
     <Resource tag="MSG_CHILD_PARENT">El foro elegido no puede ser foro hijo, ya que es foro padre.</Resource>
     <Resource tag="MSG_DESCRIPTION">Debes introducir una descripción para el foro.</Resource>
@@ -683,7 +751,9 @@
   </page>
   <page name="ADMIN_EDITUSER">
     <Resource tag="ADD_POINTS">Añadir puntos:</Resource>
+    <Resource tag="BAN_EMAIL_OFUSER">Ban Email Addresses of User?</Resource>
     <Resource tag="BAN_IP_OFUSER">¿Banear IP de este usuario?</Resource>
+    <Resource tag="BAN_NAME_OFUSER">Ban User Name of User?</Resource>
     <Resource tag="BOT_REPORTED">User Successfully Reported as Bot</Resource>
     <Resource tag="BOT_REPORTED_FAILED">User Reporting was not successfull, please check your API Key!</Resource>
     <Resource tag="CHANGE_NEW_PASS">Nueva contraseña:</Resource>
@@ -694,6 +764,7 @@
     <Resource tag="CONFIRM_PASS">Confirmar contraseña:</Resource>
     <Resource tag="CONFIRM_PASS_HELP">Confirmar la nueva contraseña.</Resource>
     <Resource tag="CURRENT_POINTS">Puntos actuales:</Resource>
+    <Resource tag="DELETE_ACCOUNT">Delete this account</Resource>
     <Resource tag="DELETE_POSTS_USER">¿Eliminar todas las publicaciones de este usuario?</Resource>
     <Resource tag="ERROR_CONFIRM_PASS">Debes introducir una contraseña de confirmación</Resource>
     <Resource tag="ERROR_NEW_PASS">Debes introducir una nueva contraseña</Resource>
@@ -703,7 +774,7 @@
     <Resource tag="FACEBOOK_USER_HELP">Indica si el usuario está conectado vía Facebook.</Resource>
     <Resource tag="GOOGLE_USER">Usuario de Google:</Resource>
     <Resource tag="GOOGLE_USER_HELP">Indica si el usuario está conectado vía Google.</Resource>
-    <Resource tag="HEAD_KILL_USER">Matar la actividad del usuario.</Resource>
+    <Resource tag="HEAD_KILL_USER">Kill User and Ban</Resource>
     <Resource tag="HEAD_USER_CHANGEPASS">Cambiar contraseña</Resource>
     <Resource tag="HEAD_USER_DETAILS">Detalles del usuario</Resource>
     <Resource tag="HEAD_USER_GROUPS">Grupos del usuario</Resource>
@@ -730,12 +801,13 @@
     <Resource tag="RESET_PASS">Resetear contraseña</Resource>
     <Resource tag="SET_POINTS">Fijar puntos a:</Resource>
     <Resource tag="SUSPEND_ACCOUNT_USER">¿Suspender esta cuenta por 5 años?</Resource>
+    <Resource tag="SUSPEND_OR_DELETE_ACCOUNT">Suspend or Delete this Account?</Resource>
     <Resource tag="TITLE">Editar usuario "{0}"</Resource>
     <Resource tag="TWITTER_USER">Twiter del usuario:</Resource>
     <Resource tag="TWITTER_USER_HELP">Indica si el usuario está conectado a través de Twitter.</Resource>
     <Resource tag="USER_AVATAR">Avatar del usuario</Resource>
     <Resource tag="USER_DETAILS">Detalles del usuario</Resource>
-    <Resource tag="USER_KILL">Matar actividad del usuario</Resource>
+    <Resource tag="USER_KILL">User Kill &amp; Ban</Resource>
     <Resource tag="USER_PASS">Contraseña del usuario</Resource>
     <Resource tag="USER_PROFILE">Perfil del usuario</Resource>
     <Resource tag="USER_REPUTATION">Reputación del usuario</Resource>
@@ -1047,6 +1119,8 @@
     <Resource tag="FLOOT_DELAY">Retrasar las publicaciones abrumadoras:</Resource>
     <Resource tag="FLOOT_DELAY_HELP">Número de segundos antes de que otra publicación pueda ser introducida (no se aplica a administradores y moderadores).</Resource>
     <Resource tag="FORBIDDEN">Prohibido</Resource>
+    <Resource tag="FORUM_BASEURLMASK">Forum Base URL Mask:</Resource>
+    <Resource tag="FORUM_BASEURLMASK_HELP">The full forward-facing url to this forum.</Resource>
     <Resource tag="FORUM_EDITOR">Editor del foro:</Resource>
     <Resource tag="FORUM_EDITOR_HELP">Selecciona el tipo de editor blobal para tu foro. Para usar editores HTML (FCL and FreeTextBox) el fichero .bin debe estar en el directorio \bin y los ficheros de apoyo apropiados deben ser puestos en \editors.</Resource>
     <Resource tag="FORUM_EMAIL">Email del foro:</Resource>
@@ -1140,14 +1214,14 @@
     <Resource tag="LOG_ERROR_HELP">Los errores de aplicación serán registrados.</Resource>
     <Resource tag="LOG_INFORMATION">Permitir registrar información de aplicación:</Resource>
     <Resource tag="LOG_INFORMATION_HELP">Los mensajes de información de la aplicación serán registrados.</Resource>
-    <Resource tag="LOG_SQLERROR">Permitir registrar errores SQL:</Resource>
-    <Resource tag="LOG_SQLERROR_HELP">Los errores SQL serán registrados.</Resource>
     <Resource tag="LOG_SUSPENDEDANDCONTRA">Registrar suspensión o reaprobación de usuarios:</Resource>
     <Resource tag="LOG_SUSPENDEDANDCONTRA_HELP">Registrar cuándo los usuarios han sido suspendidos o reaprobados.</Resource>
     <Resource tag="LOG_USERDELETED">Registrar eventos de eliminación de usuarios:</Resource>
     <Resource tag="LOG_USERDELETED_HELP">El evento de eliminación de usuario será registrado.</Resource>
     <Resource tag="LOG_USERSUSPENDED">Permitir registrar cuándo un usuario es suspendido o reaprobado:</Resource>
     <Resource tag="LOG_USERSUSPENDED_HELP">Eventos de suspensión o reaprobación serán registrados.</Resource>
+    <Resource tag="LOG_VIEWSTATEERROR">Log ViewState Exceptions:</Resource>
+    <Resource tag="LOG_VIEWSTATEERROR_HELP">ViewState Exceptions (mainly caused by SPAM Bots) will be logged.</Resource>
     <Resource tag="LOG_WARNING">Permitir registrar advertencias de aplicación:</Resource>
     <Resource tag="LOG_WARNING_HELP">Las advertencias de aplicación serán registradas.</Resource>
     <Resource tag="LOGIN_REDIR_URL">URL de redirección a inicio de sesión personalizado:</Resource>
@@ -1357,6 +1431,9 @@
     <Resource tag="SPAM_MESSAGE_2">Rechazar mensaje</Resource>
     <Resource tag="SPAM_MESSAGE_HANDLING">Manejo de los mensajes detectados como SPAM</Resource>
     <Resource tag="SPAM_MESSAGE_HANDLING_HELP">Elije que hacer cunado un mensaje ha sido detectado como SPAM, puedes elegir entre no hacer nada, marcar el mensaje como no aprobado o rechazar el mensaje.</Resource>
+    <Resource tag="SPAM_SERVICE_TYP_1">BlogSpam.NET API</Resource>
+    <Resource tag="SPAM_SERVICE_TYP_2">Akismet API (Needs Registration)</Resource>
+    <Resource tag="SPAM_SERVICE_TYP_3">Internal Spam Check Words</Resource>
     <Resource tag="SQL_FULLTEXT">Usar búsqueda de texto completo SQL:</Resource>
     <Resource tag="SQL_FULLTEXT_HELP">Cambiar el si las búsquedas de texto completo SQL son soportadas en las búsquedas.</Resource>
     <Resource tag="SSL_LOGIN">Usar SSL mientras se está iniciando sesión:</Resource>
@@ -1640,6 +1717,31 @@
     <Resource tag="SELECT_FILE">Seleccionar un fichero (*.pak)</Resource>
     <Resource tag="TITLE">Importación de smilies</Resource>
   </page>
+  <page name="ADMIN_SPAMWORDS">
+    <Resource tag="ADD">Add</Resource>
+    <Resource tag="EXPORT">Export to XML</Resource>
+    <Resource tag="IMPORT">Import from XML</Resource>
+    <Resource tag="MSG_DELETE">Delete this Word?</Resource>
+    <Resource tag="NOTE">&lt;strong&gt;Note: &lt;/strong&gt; The Spam Words are used for the internal SPAM Detection, during Registration the Homepage the user is entering in the user profile is checked against the Spam Words. Also if a user Posts a new Message in the forum it will be checked against the Spam Words if 'Choose a SPAM Service for Automatically SPAM Checking' in the Host Settings is set to 'Internal Spam Check Words'.</Resource>
+    <Resource tag="SPAM">"Spam" Word (Find) Expression</Resource>
+    <Resource tag="TITLE">Spam Check Words</Resource>
+  </page>
+  <page name="ADMIN_SPAMWORDS_EDIT">
+    <Resource tag="MSG_REGEX_SPAM">The Regular expression statement you have entered is invalid.</Resource>
+    <Resource tag="SPAM">"Spam" Word (Find) Expression:</Resource>
+    <Resource tag="SPAM_HELP">Regular expression statement. Escape punctation with a preceding slash (e.g. '\.').</Resource>
+    <Resource tag="TITLE">Add/Edit Spam Word</Resource>
+  </page>
+  <page name="ADMIN_SPAMWORDS_IMPORT">
+    <Resource tag="HEADER">Import Spam Word List</Resource>
+    <Resource tag="MSG_IMPORTED">{0} new spam word(s) were imported successfully.</Resource>
+    <Resource tag="MSG_IMPORTED_FAILED">Failed to import: Import file format is different than expected.</Resource>
+    <Resource tag="MSG_IMPORTED_FAILEDX">Failed to import: {0}</Resource>
+    <Resource tag="MSG_NOTHING">Nothing imported: no new spam words were found in the upload.</Resource>
+    <Resource tag="SELECT_IMPORT">Select Import File:</Resource>
+    <Resource tag="SELECT_IMPORT_HELP">(Must be *.xml file)</Resource>
+    <Resource tag="TITLE">Import Spam Words</Resource>
+  </page>
   <page name="ADMIN_TASKMANAGER">
     <Resource tag="DURATION">Duración</Resource>
     <Resource tag="HEADER">Administrador de tareas: {0} tareas en ejecución.</Resource>
@@ -1728,7 +1830,9 @@
     <Resource tag="admin_accessmasks">Máscaras de acceso</Resource>
     <Resource tag="admin_admin">Índice de admin</Resource>
     <Resource tag="admin_attachments">Adjuntos</Resource>
+    <Resource tag="admin_bannedemail">Banned Emails</Resource>
     <Resource tag="admin_bannedip">IPs baneadas</Resource>
+    <Resource tag="admin_bannedname">Banned Names</Resource>
     <Resource tag="admin_bbcode">Extensiones BBCode</Resource>
     <Resource tag="admin_boards">Escritorios</Resource>
     <Resource tag="admin_boardsettings">Preferencias de tablero</Resource>
@@ -1757,6 +1861,7 @@
     <Resource tag="admin_restartapp">Reiniciar aplicación</Resource>
     <Resource tag="admin_runsql">Ejecutar query SQL</Resource>
     <Resource tag="admin_smilies">Smilies</Resource>
+    <Resource tag="admin_spamwords">Spam Check Words</Resource>
     <Resource tag="admin_taskmanager">Administrador de tareas</Resource>
     <Resource tag="admin_test_data">Crear datos de prueba</Resource>
     <Resource tag="admin_topicstatus">Estado de temas</Resource>
@@ -1767,6 +1872,7 @@
     <Resource tag="Maintenance">Mantenimiento</Resource>
     <Resource tag="NNTP">NNTP</Resource>
     <Resource tag="Settings">Preferencias</Resource>
+    <Resource tag="Spam_Protection">Spam Protection</Resource>
     <Resource tag="Upgrade">Actualizar</Resource>
     <Resource tag="UsersandRoles">Roles y usuarios</Resource>
   </page>
@@ -1980,6 +2086,7 @@
     <Resource tag="NOTIFICATION_ON_MEDAL_AWARDED_SUBJECT">Has sido galardonado en el foro {0}</Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_MESSAGE_APPROVAL">Nuevo mensaje en el foro {0} necesita ser aprovado</Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_REPORTED_MESSAGE">Un mensaje el el foro {0} ha sido denunciado</Resource>
+    <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL">New SPAM Message on {0} Forum needs to be checked</Resource>
     <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">Se ha registrado con éxito en el foro {0}</Resource>
     <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">Nuevo usuario registrado en el foro {0}</Resource>
     <Resource tag="OK">OK</Resource>
@@ -5035,6 +5142,7 @@ public class Hello1
     <Resource tag="ALREADY_REGISTERED_DISPLAYNAME">Tu nombre a mostrar ya está registrado.</Resource>
     <Resource tag="BAD_EMAIL">La cuenta de correo es incorrecta.</Resource>
     <Resource tag="BAD_PASSWORD">Por favor elija una calve más compleja que incluya caracteres de puntuacion (!?) o numeros.</Resource>
+    <Resource tag="BASIC_ACCOUNT">Account</Resource>
     <Resource tag="BOT_MESSAGE">Lo sentimos, no se permiten spammers en el foro.</Resource>
     <Resource tag="CONFIRM_PASSWORD">Confirmar clave</Resource>
     <Resource tag="CONTINUE">Continuar</Resource>
@@ -5072,6 +5180,7 @@ public class Hello1
     <Resource tag="TERMS_AND_CONDITIONS_TITLE">Terminos y condiciones</Resource>
     <Resource tag="TIMEZONE">Zona horaria</Resource>
     <Resource tag="TITLE">Registro de usuario nuevo</Resource>
+    <Resource tag="TITLE2">Register a new account</Resource>
     <Resource tag="USERNAME">Nombre de usuario (nick)</Resource>
     <Resource tag="USERNAME_LENGTH_WARN">El nombre de usuario no puede exceder los {0} caracteres.</Resource>
     <Resource tag="VERIFICATION_EMAIL_SUBJECT">Verificación de registro para el foro {0} </Resource>
@@ -5279,6 +5388,11 @@ El mensaje ha sido publicado en {forumname}.
       
 Enlace de administración: {adminlink}
    </Resource>
+    <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL_TEXT">
+      A new message (posted in the {forumname} forum) was detected as SPAM, needs to be checked:
+      
+      Administration Link: {adminlink}
+   </Resource>
     <Resource tag="NOTIFICATION_ON_REGISTER">
 Hola {user}.
 
@@ -5313,11 +5427,11 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
     <Resource tag="PASSWORDRETRIEVAL_HTML">
       &lt;!DOCTYPE html&gt;
 
-      &lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+      &lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;
       &lt;head&gt;
-      &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+      &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
       &lt;title&gt;Password Retrieval&lt;/title&gt;
-      &lt;style type=&quot;text/css&quot;&gt;
+      &lt;style type="text/css"&gt;
       &lt;!--
       .style1 {
       font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -5326,12 +5440,12 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
       &lt;/style&gt;
       &lt;/head&gt;
       &lt;body&gt;
-      &lt;p class=&quot;style1&quot;&gt;Hello {username},&lt;/p&gt;
-      &lt;p class=&quot;style1&quot;&gt;You or someone (with the IP Address: {ipaddress}) has requested to reset your password because you have forgotten your password.&lt;/p&gt;
-      &lt;p class=&quot;style1&quot;&gt;A new password has been generated for you on &lt;strong&gt;{forumname}&lt;/strong&gt; at &lt;a href=&quot;{forumlink}&quot;&gt;{forumlink}&lt;/a&gt;.&lt;/p&gt;
-      &lt;p class=&quot;style1&quot;&gt;Please return to the site and login using the following information:&lt;/p&gt;
+      &lt;p class="style1"&gt;Hello {username},&lt;/p&gt;
+      &lt;p class="style1"&gt;You or someone (with the IP Address: {ipaddress}) has requested to reset your password because you have forgotten your password.&lt;/p&gt;
+      &lt;p class="style1"&gt;A new password has been generated for you on &lt;strong&gt;{forumname}&lt;/strong&gt; at &lt;a href="{forumlink}"&gt;{forumlink}&lt;/a&gt;.&lt;/p&gt;
+      &lt;p class="style1"&gt;Please return to the site and login using the following information:&lt;/p&gt;
       &lt;blockquote&gt;
-      &lt;span class=&quot;style1&quot;&gt;
+      &lt;span class="style1"&gt;
       User Name: &lt;strong&gt;{username}&lt;/strong&gt;&lt;br /&gt;
       Password: &lt;strong&gt;{password}&lt;/strong&gt;
       &lt;/span&gt;

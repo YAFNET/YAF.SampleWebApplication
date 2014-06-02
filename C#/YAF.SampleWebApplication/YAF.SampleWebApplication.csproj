@@ -126,6 +126,8 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="forum\auth.aspx" />
+    <Content Include="forum\Changes.html" />
     <Content Include="forum\Forum.aspx" />
     <Content Include="forum\controls\AlbumImageList.ascx" />
     <Content Include="forum\controls\AlbumList.ascx" />
@@ -416,6 +418,7 @@
     <Content Include="forum\editors\yafEditor\unorderedlist.gif" />
     <Content Include="forum\editors\yafEditor\yafEditor.js" />
     <Content Include="forum\error.aspx" />
+    <Content Include="forum\forumlogo.jpg" />
     <Content Include="forum\images\avatars\Common\SampleAvatar.gif" />
     <Content Include="forum\images\blank.gif" />
     <Content Include="forum\images\categories\categoryImageSample.gif" />
@@ -607,6 +610,7 @@
     <Content Include="forum\pages\topics.ascx" />
     <Content Include="forum\pages\viewthanks.ascx" />
     <Content Include="forum\popup.aspx" />
+    <Content Include="forum\ReadMe.htm" />
     <Content Include="forum\resources\css\forum.css" />
     <Content Include="forum\resources\css\jquery-ui-themes\black-tie\images\ui-bg_diagonals-thick_8_333333_40x40.png" />
     <Content Include="forum\resources\css\jquery-ui-themes\black-tie\images\ui-bg_flat_65_ffffff_40x100.png" />
@@ -2643,6 +2647,7 @@
     <Content Include="forum\themes\yafvision\vote_refuse.gif" />
     <Content Include="forum\themes\yafvision\voting_bar.gif" />
     <Content Include="forum\themes\yafvision\yafvision.js" />
+    <Content Include="forum\uploads\readme.txt" />
     <Content Include="forum\YafAjax.asmx" />
     <Content Include="forum\YafWebService.asmx" />
     <Content Include="Styles\Site.css" />

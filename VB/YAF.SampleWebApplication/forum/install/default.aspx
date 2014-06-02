@@ -7,7 +7,7 @@
         name="scriptlanguage" content="text/javascript" />
     <meta id="YafMetaStyles" http-equiv="Content-Style-Type" runat="server" name="styles"
         content="text/css" />
-    <title>Yet Another Forum.NET Installation</title>
+    <title>YAF.NET Installation/Upgrade</title>
    <link type="text/css" rel="stylesheet" href="wizard.css" />
    <script src="../resources/js/jquery.min.js" type="text/javascript"></script>    
 </head>
@@ -316,6 +316,11 @@
                         The official forum email address.
                     </p>
                     <p>
+                        Forum Base Url Mask:<br />
+                        <asp:TextBox ID="ForumBaseUrlMask" runat="server" />
+                        Base Url mask for the forum.
+                    </p>
+                    <p>
                         <asp:RadioButtonList ID="UserChoice" runat="server" AutoPostBack="true" OnSelectedIndexChanged="UserChoice_SelectedIndexChanged">
                             <asp:ListItem Text="Create New Admin User" Selected="true" Value="create"></asp:ListItem>
                             <asp:ListItem Text="Use Existing User" Value="existing"></asp:ListItem>
@@ -368,8 +373,11 @@
                         user(s) in your forum database.</p>
                     <p>
                         Click "Next" to start the upgrade (migration) of all roles and users from your old
-                        Yet Another Forum.NET database to the .NET Provider Model. The migration task can
-                        take a <strong>very</strong> long time depending on how many users are in your forum.</p>
+                        Yet Another Forum.NET database to the .NET Provider Model.
+                    </p> 
+                    <p>The migration task can
+                        take a <strong>very</strong> long time depending on how many users are in your forum.
+                    </p>
                     <asp:CheckBox ID="skipMigration" runat="server" Text="Disable Migration (not recommended)"
                         Visible="False" />
                 </asp:WizardStep>
@@ -406,7 +414,7 @@
             </FinishNavigationTemplate>
             <HeaderTemplate>
                 <img src="../images/YAFLogo.png" alt="YAF Logo" /><br />
-                Installation Wizard
+                <%# IsForumInstalled ? "Upgrade" : "Installation"%> Wizard
             </HeaderTemplate>
             <StartNavigationTemplate>
                 <div class="wizNav">

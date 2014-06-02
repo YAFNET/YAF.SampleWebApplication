@@ -8,6 +8,19 @@
               <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="HEADER" LocalizedPage="ADMIN_BANNEDIP_IMPORT" />
             </td>
 		</tr>
+        <tr>
+            <td class="post" colspan="2">
+                <div class="ui-widget">
+                    <div class="ui-state-highlight ui-corner-all">
+                        <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+                            <YAF:LocalizedLabel ID="LocalizedLabelRequirementsText" runat="server" 
+                                LocalizedTag="NOTE" LocalizedPage="ADMIN_BANNEDIP">
+                                    </YAF:LocalizedLabel>
+                        </p>
+                    </div>
+                </div>
+            </td>
+        </tr>
 		<tr>
 			<td class="postheader" width="50%">
               <YAF:HelpLabel ID="HelpLabel1" runat="server" LocalizedTag="IMPORT_FILE" LocalizedPage="ADMIN_BANNEDIP_IMPORT" />

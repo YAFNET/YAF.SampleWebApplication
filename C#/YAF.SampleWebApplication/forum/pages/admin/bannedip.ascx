@@ -57,8 +57,12 @@
 		<FooterTemplate>
 			<tr>
 				<td class="footer1" colspan="5" style="text-align:center">
-					<asp:Button runat="server" OnLoad="Import_Load" CommandName='import' CssClass="pbutton"></asp:Button>&nbsp;|&nbsp;<asp:Button 
-                    runat="server" OnLoad="Add_Load" CommandName='add' CssClass="pbutton"></asp:Button></td></td>
+					<asp:Button runat="server" OnLoad="Import_Load" CommandName='import' CssClass="pbutton"></asp:Button>
+                    &nbsp;|&nbsp;
+                    <asp:Button runat="server" OnLoad="Add_Load" CommandName='add' CssClass="pbutton"></asp:Button>
+                    &nbsp;|&nbsp;
+					<asp:Button runat="server" CommandName='export' ID="Linkbutton4" CssClass="pbutton" OnLoad="ExportLoad"></asp:Button>
+				</td>
 			</tr>
 			</table>
 			</FooterTemplate>

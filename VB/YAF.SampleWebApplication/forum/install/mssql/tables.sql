@@ -156,6 +156,26 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 	)
 go
 
+if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}BannedName]') and type in (N'U'))
+	create table [{databaseOwner}].[{objectQualifier}BannedName](
+		ID				int IDENTITY (1, 1) NOT NULL ,
+		BoardID			int NOT NULL ,
+		Mask			nvarchar (255) NOT NULL ,
+		Since			datetime NOT NULL,
+		Reason          nvarchar (128) NULL
+	)
+go
+
+if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}BannedEmail]') and type in (N'U'))
+	create table [{databaseOwner}].[{objectQualifier}BannedEmail](
+		ID				int IDENTITY (1, 1) NOT NULL ,
+		BoardID			int NOT NULL ,
+		Mask			nvarchar (255) NOT NULL ,
+		Since			datetime NOT NULL,
+		Reason          nvarchar (128) NULL
+	)
+go
+
 if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Category]') and type in (N'U'))
 	create table [{databaseOwner}].[{objectQualifier}Category](
 		CategoryID		int IDENTITY (1, 1) NOT NULL ,
@@ -231,7 +251,9 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		[IsModerated]	AS (CONVERT([bit],sign([Flags]&(8)),(0))),
 		ThemeURL		nvarchar(50) NULL,
 		PollGroupID     int null,
-		UserID          int null 
+		UserID          int null,
+		ModeratedPostCount int null,
+		IsModeratedNewTopicOnly	bit not null constraint [DF_{objectQualifier}Forum_IsModeratedNewTopicOnly] default (0)
 	)
 GO
 
@@ -492,7 +514,7 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		[FileName]		nvarchar(255) not null,
 		Bytes			int not null,
 		FileID			int null,
-		ContentType		nvarchar(50) null,
+		ContentType		nvarchar(max) null,
 		Downloads		int not null,
 		FileData		image null
 	)
@@ -606,6 +628,17 @@ begin
 		BadWord			nvarchar (255) NULL ,
 		GoodWord		nvarchar (255) NULL ,
 		constraint [PK_{objectQualifier}Replace_Words] primary key(ID)
+	)
+end
+GO
+
+if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Spam_Words]') and type in (N'U'))
+begin
+	create table [{databaseOwner}].[{objectQualifier}Spam_Words](
+		ID				int IDENTITY (1, 1) NOT NULL,
+		BoardId			int NOT NULL,
+		SpamWord			nvarchar (255) NULL ,
+		constraint [PK_{objectQualifier}Spam_Words] primary key(ID)
 	)
 end
 GO
@@ -1204,6 +1237,14 @@ GO
 -- Forum Table
 if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Forum]') and name='RemoteURL')
 	alter table [{databaseOwner}].[{objectQualifier}Forum] add RemoteURL nvarchar(100) null
+GO
+
+if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Forum]') and name='ModeratedPostCount')
+	alter table [{databaseOwner}].[{objectQualifier}Forum] add ModeratedPostCount int null
+GO
+
+if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Forum]') and name='IsModeratedNewTopicOnly')
+	alter table [{databaseOwner}].[{objectQualifier}Forum] add IsModeratedNewTopicOnly	bit not null constraint [DF_{objectQualifier}Forum_IsModeratedNewTopicOnly] default (0)
 GO
 
 if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Forum]') and name='Flags')
@@ -2408,4 +2449,8 @@ GO
 
 -- delete any old medals without valid groups.
 exec('DELETE FROM [{databaseOwner}].[{objectQualifier}GroupMedal] WHERE GroupID NOT IN (SELECT GroupID FROM [{databaseOwner}].[{objectQualifier}Group])')
+GO
+
+if exists(select top 1 1 from sys.columns where object_id = object_id(N'[{databaseOwner}].[{objectQualifier}Attachment]') and name=N'ContentType' and precision < 255)
+	alter table [{databaseOwner}].[{objectQualifier}Attachment] alter column ContentType nvarchar(max) null
 GO
