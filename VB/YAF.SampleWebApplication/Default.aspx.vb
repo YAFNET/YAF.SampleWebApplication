@@ -35,10 +35,6 @@ Public Class _Default
         Try
             Dim csType As Type = GetType(Page)
 
-            If Not YafContext.Current.[Get](Of YafBoardSettings)().ShowRelativeTime Then
-                Return
-            End If
-
             Dim uRLToResource = Config.JQueryFile
 
             If Not uRLToResource.StartsWith("http") Then
@@ -46,6 +42,12 @@ Public Class _Default
             End If
 
             ScriptManager.RegisterClientScriptInclude(Me, csType, "JQuery", uRLToResource)
+
+            YafContext.Current.PageElements.AddPageElement("jquery")
+
+            If Not YafContext.Current.[Get](Of YafBoardSettings)().ShowRelativeTime Then
+                Return
+            End If
 
             ScriptManager.RegisterClientScriptInclude(Me, csType, "jqueryTimeagoscript", YafForumInfo.GetURLToResource("js/jquery.timeago.js"))
 

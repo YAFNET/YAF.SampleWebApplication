@@ -48,11 +48,6 @@ namespace YAF.SampleWebApplication
             {
                 Type csType = typeof(Page);
 
-                if (!YafContext.Current.Get<YafBoardSettings>().ShowRelativeTime)
-                {
-                    return;
-                }
-
                 var uRLToResource = Config.JQueryFile;
 
                 if (!uRLToResource.StartsWith("http"))
@@ -61,6 +56,13 @@ namespace YAF.SampleWebApplication
                 }
 
                 ScriptManager.RegisterClientScriptInclude(this, csType, "JQuery", uRLToResource);
+
+                YafContext.Current.PageElements.AddPageElement("jquery");
+
+                if (!YafContext.Current.Get<YafBoardSettings>().ShowRelativeTime)
+                {
+                    return;
+                }
 
                 ScriptManager.RegisterClientScriptInclude(
                     this, csType, "jqueryTimeagoscript", YafForumInfo.GetURLToResource("js/jquery.timeago.js"));
