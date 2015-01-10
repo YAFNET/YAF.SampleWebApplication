@@ -3,7 +3,7 @@
     <Name>TWITTER</Name>
     <Description>[TWITTER][localization=TWITTER_DESCRIPTION]Enter the Status ID of the Tweet you want to embed[/localization][/TWITTER]</Description>
     <OnClickJS />
-    <DisplayJS>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</DisplayJS>
+    <DisplayJS>!function(d,s,id) {var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)) {js=d.createElement(s);js.id=id;js.async=true;js.src='//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</DisplayJS>
     <EditJS />
     <DisplayCSS />
     <SearchRegex>\[twitter\](?&lt;statusID&gt;[0-9].+?)\[/twitter\]</SearchRegex>
@@ -117,7 +117,7 @@
     <EditJS />
     <DisplayCSS>.yafnet .userLinkContainer
 {
-    background: url(resources/icons/user.png) #fff no-repeat 4px 50%;
+    background: url(Content/icons/user.png) #fff no-repeat 4px 50%;
     border: 1px solid #eee;
     padding: 4px 2px 4px 25px;
     margin: 3px;
@@ -253,5 +253,19 @@
     <UseModule>true</UseModule>
     <ModuleClass>YAF.Modules.BBCode.AlbumImage</ModuleClass>
     <ExecOrder>30</ExecOrder>
+  </YafBBCode>
+  <YafBBCode>
+    <Name>ATTACH</Name>
+    <Description>[ATTACH][localization=ATTACH_DESCRIPTION]Enter a Album Image Number[/localization][/ATTACH]</Description>
+    <OnClickJS />
+    <DisplayJS />
+    <EditJS />
+    <DisplayCSS />
+    <SearchRegex>\[attach\](?&lt;inner&gt;.+?)\[\/attach\]</SearchRegex>
+    <ReplaceRegex />
+    <Variables />
+    <UseModule>true</UseModule>
+    <ModuleClass>YAF.Modules.BBCode.Attach</ModuleClass>
+    <ExecOrder>31</ExecOrder>
   </YafBBCode>
 </YafBBCodeList>

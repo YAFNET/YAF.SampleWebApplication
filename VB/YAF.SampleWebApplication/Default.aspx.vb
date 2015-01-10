@@ -1,7 +1,7 @@
 ﻿' Yet Another Forum.NET
 ' Copyright (C) 2003-2005 Bjørnar Henden
 ' Copyright (C) 2006-2013 Jaben Cargman
-' Copyright (C) 2014 Ingo Herbote
+' Copyright (C) 2014-2015 Ingo Herbote
 ' http://www.yetanotherforum.net/
 ' 
 ' Licensed to the Apache Software Foundation (ASF) under one
@@ -35,23 +35,15 @@ Public Class _Default
         Try
             Dim csType As Type = GetType(Page)
 
-            Dim uRLToResource = Config.JQueryFile
-
-            If Not uRLToResource.StartsWith("http") Then
-                uRLToResource = YafForumInfo.GetURLToResource(Config.JQueryFile)
-            End If
-
-            ScriptManager.RegisterClientScriptInclude(Me, csType, "JQuery", uRLToResource)
-
-            YafContext.Current.PageElements.AddPageElement("jquery")
-
-            If Not YafContext.Current.[Get](Of YafBoardSettings)().ShowRelativeTime Then
+            If YafContext.Current.PageElements.PageElementExists("jquery") Then
                 Return
             End If
 
-            ScriptManager.RegisterClientScriptInclude(Me, csType, "jqueryTimeagoscript", YafForumInfo.GetURLToResource("js/jquery.timeago.js"))
+            ScriptManager.RegisterClientScriptInclude(Me, csType, "JQuery", "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
 
-            ScriptManager.RegisterStartupScript(Me, csType, "timeagoloadjs", JavaScriptBlocks.TimeagoLoadJs, True)
+            YafContext.Current.PageElements.AddPageElement("jquery")
+
+            
         Catch generatedExceptionName As Exception
             Me.Response.Redirect("~/forum/install/default.aspx")
         End Try

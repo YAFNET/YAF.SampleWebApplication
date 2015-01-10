@@ -26,7 +26,7 @@
                 <YAF:HelpLabel ID="HelpLabel4" runat="server" LocalizedTag="FORUM_EMAIL" LocalizedPage="ADMIN_HOSTSETTINGS" />
             </td>
             <td class="post">
-                <asp:TextBox ID="ForumEmail" runat="server" Width="400"></asp:TextBox>
+                <asp:TextBox ID="ForumEmail" runat="server" Width="400" type="email"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -61,7 +61,7 @@
                 <YAF:HelpLabel ID="LocalizedLabel5" runat="server" LocalizedTag="BOARD_THEME" LocalizedPage="ADMIN_BOARDSETTINGS" />
             </td>
             <td class="post">
-                <asp:DropDownList ID="Theme" runat="server" Width="400">
+                <asp:DropDownList ID="Theme" runat="server" Width="400" CssClass="standardSelectMenu">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -71,7 +71,7 @@
                     LocalizedPage="ADMIN_BOARDSETTINGS" />
             </td>
             <td class="post">
-                <asp:DropDownList ID="MobileTheme" runat="server" Width="400">
+                <asp:DropDownList ID="MobileTheme" runat="server" Width="400" CssClass="standardSelectMenu">
                     <asp:ListItem Text="[None Selected]" Value=""></asp:ListItem>
                 </asp:DropDownList>
             </td>
@@ -91,17 +91,8 @@
                     LocalizedPage="ADMIN_BOARDSETTINGS" />
             </td>
             <td class="post">
-                <asp:DropDownList ID="JqueryUITheme" runat="server" Width="400">
+                <asp:DropDownList ID="JqueryUITheme" runat="server" Width="400" CssClass="standardSelectMenu">
                 </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td class="postheader">
-                <YAF:HelpLabel ID="LocalizedLabel9" runat="server" LocalizedTag="BOARD_CDN_HOSTED"
-                    LocalizedPage="ADMIN_BOARDSETTINGS" />
-            </td>
-            <td class="post">
-                <asp:CheckBox ID="JqueryUIThemeCDNHosted" runat="server"></asp:CheckBox>
             </td>
         </tr>
         <tr>
@@ -110,7 +101,7 @@
                     LocalizedPage="ADMIN_BOARDSETTINGS" />
             </td>
             <td class="post">
-                <asp:DropDownList ID="Culture" runat="server" Width="400">
+                <asp:DropDownList ID="Culture" runat="server" Width="400" CssClass="standardSelectMenu">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -120,7 +111,7 @@
                     LocalizedPage="ADMIN_BOARDSETTINGS" />
             </td>
             <td class="post">
-                <asp:DropDownList ID="ShowTopic" runat="server" Width="400">
+                <asp:DropDownList ID="ShowTopic" runat="server" Width="400" CssClass="standardSelectMenu">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -130,7 +121,7 @@
                     LocalizedPage="ADMIN_BOARDSETTINGS" />
             </td>
             <td class="post">
-                <asp:DropDownList ID="FileExtensionAllow" runat="server" Width="400">
+                <asp:DropDownList ID="FileExtensionAllow" runat="server" Width="400" CssClass="standardSelectMenu">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -139,7 +130,7 @@
                 <YAF:HelpLabel ID="PollGroupListLabel" runat="server" LocalizedTag="pollgroup_list" />
             </td>
             <td class="post" style="width: 80%">
-                <asp:DropDownList ID="PollGroupListDropDown" runat="server" CssClass="edit" Width="400" />
+                <asp:DropDownList ID="PollGroupListDropDown" runat="server" CssClass="standardSelectMenu" Width="400" />
             </td>
         </tr>
         <tr>
@@ -202,7 +193,7 @@
                     LocalizedPage="ADMIN_BOARDSETTINGS" />
             </td>
             <td class="post">
-                <asp:DropDownList ID="DefaultNotificationSetting" runat="server" Width="400">
+                <asp:DropDownList ID="DefaultNotificationSetting" runat="server" Width="400" CssClass="standardSelectMenu">
                 </asp:DropDownList>
             </td>
         </tr>

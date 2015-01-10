@@ -57,6 +57,7 @@
     <Resource tag="ADMIN_SMILIES">Przegląda emotikony</Resource>
     <Resource tag="ADMIN_SMILIES_EDIT">Edytuje emotikony</Resource>
     <Resource tag="ADMIN_SMILIES_IMPORT">Importuje emotikony</Resource>
+    <Resource tag="ADMIN_SPAMLOG">Views/edits the spam log</Resource>
     <Resource tag="ADMIN_SPAMWORDS">Views spam words list</Resource>
     <Resource tag="ADMIN_SPAMWORDS_EDIT">Edits spam words list</Resource>
     <Resource tag="ADMIN_SPAMWORDS_IMPORT">Imports spam words</Resource>
@@ -177,6 +178,7 @@
     <Resource tag="ADMIN_JOINED">Dołączył</Resource>
     <Resource tag="ADMIN_LOCATION">Lokalizacja forum</Resource>
     <Resource tag="ADMIN_NAME">Nazwa użytkownika</Resource>
+    <Resource tag="ADMIN_RESEND_EMAIL">Resend Email Verification</Resource>
     <Resource tag="ADMIN_UPGRADE">Zainstalowana wersja Yet Another Forum.net i wersja bazy danych nie zgadzają się. Powinieneś iść do "Instaluj" i zaktualizować bazę danych.</Resource>
     <Resource tag="Administration">Administracja</Resource>
     <Resource tag="ALL_BOARDS">- Wszystkie fora -</Resource>
@@ -193,6 +195,7 @@
     <Resource tag="HEADER1">Kto jest dostępny</Resource>
     <Resource tag="HEADER2">Nieaktywowani użytkownicy</Resource>
     <Resource tag="HEADER3">Statystyki dla</Resource>
+    <Resource tag="MSG_MESSAGE_SEND">Verification Mail was send again to the User.</Resource>
     <Resource tag="MSG_VALID_DAYS">Powinieneś wpisać poprawną ilość dni.</Resource>
     <Resource tag="NUM_POSTS">Liczba postów:</Resource>
     <Resource tag="NUM_TOPICS">Liczba wątków:</Resource>
@@ -280,8 +283,8 @@
     <Resource tag="MASK">Mask:</Resource>
     <Resource tag="MASK_HELP">The User Name to ban. You can use Regular Expressions.</Resource>
     <Resource tag="REASON">Reason:</Resource>
-    <Resource tag="REASON_HELP">The reason why the email address was banned.</Resource>
-    <Resource tag="TITLE">Add/Edit Banned Email Address</Resource>
+    <Resource tag="REASON_HELP">The reason why the user name was banned.</Resource>
+    <Resource tag="TITLE">Add/Edit Banned Name</Resource>
   </page>
   <page name="ADMIN_BANNEDNAME_IMPORT">
     <Resource tag="HEADER">Import Names List</Resource>
@@ -865,6 +868,7 @@
     <Resource tag="LT_DEBUG">Debug</Resource>
     <Resource tag="LT_ERROR">Errors</Resource>
     <Resource tag="LT_INFORMATION">Information</Resource>
+    <Resource tag="LT_IPBANDETECTED">Detected a Banned IP</Resource>
     <Resource tag="LT_IPBANLIFTED">Canceling IP ban</Resource>
     <Resource tag="LT_IPBANSET">Setting IP ban</Resource>
     <Resource tag="LT_SpamBotDetected">Spam Bot Detected</Resource>
@@ -1008,6 +1012,8 @@
     <Resource tag="ALLOW_USERS_POLLIMAGES_HELP">If enabled Users can add images as poll options.</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR">Allow users to pick text editor</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR_HELP">Allow users to pick text editor in their profiles.</Resource>
+    <Resource tag="AMOUNT_OF_SUBFORUMS">Sub Forums In Forums List:</Resource>
+    <Resource tag="AMOUNT_OF_SUBFORUMS_HELP">The amount of Sub Forums In Forums List.</Resource>
     <Resource tag="APP_CORES">Processor Cores:</Resource>
     <Resource tag="APP_CORES_HELP">Number of Processor cores.</Resource>
     <Resource tag="APP_MEMORY">Application memory:</Resource>
@@ -1049,6 +1055,12 @@
     <Resource tag="CAPTCHA_SIZE_HELP">Size (length) of the CAPTCHA random alphanumeric string.</Resource>
     <Resource tag="CAT_CACHE_TIMEOUT">Board Categories Cache Timeout:</Resource>
     <Resource tag="CAT_CACHE_TIMEOUT_HELP">In minutes</Resource>
+    <Resource tag="CDN_JQUERY">Use Google Hosted CDN jQuery Script File?</Resource>
+    <Resource tag="CDN_JQUERY_HELP">You can use the Google Hosted Script File, or instead use internal.</Resource>
+    <Resource tag="CDN_JQUERY_UI">Use Google Hosted CDN jQuery-UI Script File?</Resource>
+    <Resource tag="CDN_JQUERY_UI_HELP">You can use the Google Hosted Script File, or instead use internal.</Resource>
+    <Resource tag="CDN_SCRIPTMANAGER">Use CDN Hosted Script Manager JS Files?</Resource>
+    <Resource tag="CDN_SCRIPTMANAGER_HELP">You can use the CDN Hosted Script Files, or instead use internal.</Resource>
     <Resource tag="CHECK_FOR_BOTSPAM">Choose a Service for Automatically User Bot Checking:</Resource>
     <Resource tag="CHECK_FOR_BOTSPAM_HELP">Enables/disables automatically Bot SPAM Checking via the &lt;a href="http://stopforumspam.com/"&gt;StopForumSpam.com API&lt;/a&gt; , BotScout.com API, or both together.</Resource>
     <Resource tag="CHECK_FOR_SPAM">Choose a SPAM Service for Automatically SPAM Checking:</Resource>
@@ -1135,6 +1147,7 @@
     <Resource tag="HEADER_BOTSPAM">Bot Spam Settings (User Checking)</Resource>
     <Resource tag="HEADER_CACHE">Cache Settings</Resource>
     <Resource tag="HEADER_CAPTCHA">CAPTCHA Settings</Resource>
+    <Resource tag="HEADER_CDN">Scripts CDN Settings</Resource>
     <Resource tag="HEADER_DISPLAY">Display Settings</Resource>
     <Resource tag="HEADER_EDITORS">Editing/Formatting Settings</Resource>
     <Resource tag="HEADER_FEATURES">Feature Settings</Resource>
@@ -1169,6 +1182,8 @@
     <Resource tag="HOST_TEMPLATES">Templates</Resource>
     <Resource tag="HOVERCARD_DELAY">Hover Card opening Delay (Milliseconds):</Resource>
     <Resource tag="HOVERCARD_DELAY_HELP">The Delay before opening the Hover Card when a user hovers over a user name.</Resource>
+    <Resource tag="IGNORE_SPAMCHECK_COUNT">User Post Count to be ignored from Spam Check:</Resource>
+    <Resource tag="IGNORE_SPAMCHECK_COUNT_HELP">The amount of posts a user has to have to be ignored by the spam checking.</Resource>
     <Resource tag="IMAGE_ATTACH_RESIZE">Enable Image Attachment Resize:</Resource>
     <Resource tag="IMAGE_ATTACH_RESIZE_HELP">Attached images will be resized to thumbnails if they are too large.</Resource>
     <Resource tag="IMAGE_RESIZE_HEIGHT">Image Resize Max Height:</Resource>
@@ -1287,12 +1302,10 @@
     <Resource tag="RANK_TEMPLATE_HELP">Template for rendering user's rank.</Resource>
     <Resource tag="RANKIMAGE_TEMPLATE">Rank image template:</Resource>
     <Resource tag="RANKIMAGE_TEMPLATE_HELP">Template for rendering rank image.</Resource>
-    <Resource tag="RECAPTCHA_MULTI_INSTANCE">Enable reCAPTCHA Multiple Instances:</Resource>
-    <Resource tag="RECAPTCHA_MULTI_INSTANCE_HELP">Enable reCAPTCHA Recapture Multiple Instances(shared keys).</Resource>
-    <Resource tag="RECAPTCHA_PRIVATE_KEY">reCAPTCHA Private Key:</Resource>
-    <Resource tag="RECAPTCHA_PRIVATE_KEY_HELP">Enter a reCAPTCHA Private Key</Resource>
-    <Resource tag="RECAPTCHA_PUBLIC_KEY">reCAPTCHA Public Key:</Resource>
-    <Resource tag="RECAPTCHA_PUBLIC_KEY_HELP">Enter a reCAPTCHA Public Key.</Resource>
+    <Resource tag="RECAPTCHA_PRIVATE_KEY">reCAPTCHA Secret Key:</Resource>
+    <Resource tag="RECAPTCHA_PRIVATE_KEY_HELP">Enter a reCAPTCHA Secret Key</Resource>
+    <Resource tag="RECAPTCHA_PUBLIC_KEY">reCAPTCHA Site Key:</Resource>
+    <Resource tag="RECAPTCHA_PUBLIC_KEY_HELP">Enter a reCAPTCHA Site Key.</Resource>
     <Resource tag="REFERRER_CHECK">Enable Url Referrer Security Check:</Resource>
     <Resource tag="REFERRER_CHECK_HELP">Validates all POSTs are from the same domain as the referring domain (No cross domain POSTs).</Resource>
     <Resource tag="REG_USERS">Registered Users</Resource>
@@ -1355,6 +1368,8 @@
     <Resource tag="SHOW_AVATARS_TOPICLISTS_HELP">If this is checked, the topic pages will show avatar graphics.</Resource>
     <Resource tag="SHOW_BOTS_INACTIVE">Show Crawlers In Active Lists:</Resource>
     <Resource tag="SHOW_BOTS_INACTIVE_HELP">If checked, Crawlers will be displayed In Active Lists.</Resource>
+    <Resource tag="SHOW_CONNECT_MESSAGE">Show Connect Message after first Message:</Resource>
+    <Resource tag="SHOW_CONNECT_MESSAGE_HELP">Whether or not to show a Connect Message after the first Message in a topic for Guests, containing login and registration links.</Resource>
     <Resource tag="SHOW_DEL_MESSAGES">Show Deleted Messages:</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_HELP">If this is checked, messages that are deleted will leave with some notes</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_TOALL">Show Deleted Messages to All:</Resource>
@@ -1395,6 +1410,8 @@
     <Resource tag="SHOW_SHOUTBOX_HELP">Enable or disable display of the Shoutbox (Chat Module) in the forum page.</Resource>
     <Resource tag="SHOW_SHOUTBOX_SMILIES">Show Shoutbox Smiles:</Resource>
     <Resource tag="SHOW_SHOUTBOX_SMILIES_HELP">Enable or disable display of the Shoutbox (Chat Module) smiles.</Resource>
+    <Resource tag="SHOW_SIMILARTOPICS">Show Similar Topics:</Resource>
+    <Resource tag="SHOW_SIMILARTOPICS_HELP">Should similar topics to be displayed at the bottom of a topic.</Resource>
     <Resource tag="SHOW_THANK_DATE">Show The Date on Which Users Have Thanked Posts:</Resource>
     <Resource tag="SHOW_THANK_DATE_HELP">If checked users can see on which date posts have been thanked. (Thanks Mod must be enabled first.)</Resource>
     <Resource tag="SHOW_TODAYS_BIRTHDAYS">Show Todays Birthdays in Forum Info:</Resource>
@@ -1416,6 +1433,7 @@
     <Resource tag="SPAM_MESSAGE_0">Do nothing</Resource>
     <Resource tag="SPAM_MESSAGE_1">Flag Message as Unapproved</Resource>
     <Resource tag="SPAM_MESSAGE_2">Reject Message</Resource>
+    <Resource tag="SPAM_MESSAGE_3">Delete &amp; Ban user</Resource>
     <Resource tag="SPAM_MESSAGE_HANDLING">Handling of as SPAM Detected Messages</Resource>
     <Resource tag="SPAM_MESSAGE_HANDLING_HELP">Choose what to do when a Message was detected a SPAM, You can choose between Do Nothing, Flag Message as Unapproved, or reject the Message.</Resource>
     <Resource tag="SPAM_SERVICE_TYP_1">BlogSpam.NET API</Resource>
@@ -1472,6 +1490,11 @@
     <Resource tag="VIEWPROFILE_PERMISSION_HELP">Allow viewing of other users' profiles to:</Resource>
     <Resource tag="VIEWSHOUTBOX_PERMISSION">Shout Box View Permission:</Resource>
     <Resource tag="VIEWSHOUTBOX_PERMISSION_HELP">View Permission for the Shout Box to allow for all Users (Including Guests) or only registered users.</Resource>
+    <Resource tag="WELCOME_NOTIFICATION">Send User Welcome Notification:</Resource>
+    <Resource tag="WELCOME_NOTIFICATION_0">Send No Message</Resource>
+    <Resource tag="WELCOME_NOTIFICATION_1">Send as e-mail</Resource>
+    <Resource tag="WELCOME_NOTIFICATION_2">Send as private message</Resource>
+    <Resource tag="WELCOME_NOTIFICATION_HELP">If enabled you it sends a user a Welcome Mail/Private Message after successfully registration.</Resource>
     <Resource tag="WSERVICE_TOKEN">Web Service Token:</Resource>
     <Resource tag="WSERVICE_TOKEN_HELP">Token used to make secure web service calls. Constantly changing until you save your host settings.</Resource>
   </page>
@@ -1674,6 +1697,8 @@
     <Resource tag="COMANDS">Emotion</Resource>
     <Resource tag="EMOTION">Emotion</Resource>
     <Resource tag="IMPORT">Import Smiley Pack</Resource>
+    <Resource tag="MOVE_DOWN">Move Down</Resource>
+    <Resource tag="MOVE_UP">Move Up</Resource>
     <Resource tag="MSG_DELETE">Delete this smiley?</Resource>
     <Resource tag="ORDER">Order</Resource>
     <Resource tag="SMILEY">Smiley</Resource>
@@ -1704,6 +1729,9 @@
     <Resource tag="IMPORT">Import</Resource>
     <Resource tag="SELECT_FILE">Select File (*.pak)</Resource>
     <Resource tag="TITLE">Smilies Import</Resource>
+  </page>
+  <page name="ADMIN_SPAMLOG">
+    <Resource tag="TITLE">Spam Event Log</Resource>
   </page>
   <page name="ADMIN_SPAMWORDS">
     <Resource tag="ADD">Add</Resource>
@@ -1849,6 +1877,7 @@
     <Resource tag="admin_restartapp">Restartuj aplikację</Resource>
     <Resource tag="admin_runsql">Wyślij zapytanie SQL</Resource>
     <Resource tag="admin_smilies">Emotikony</Resource>
+    <Resource tag="ADMIN_SPAMLOG">Spam Event Log</Resource>
     <Resource tag="admin_spamwords">Spam Check Words</Resource>
     <Resource tag="admin_taskmanager">Menedżer zadań</Resource>
     <Resource tag="admin_test_data">Tworzenie danych testowych</Resource>
@@ -1885,16 +1914,21 @@
     <Resource tag="VALIDATE">Weryfikuj</Resource>
   </page>
   <page name="ATTACHMENTS">
+    <Resource tag="ADD_FILES">Add file(s)...</Resource>
     <Resource tag="ALLOWED_EXTENSIONS">Dozwolone typy plików</Resource>
     <Resource tag="ASK_DELETE">Usunąć ten załącznik?</Resource>
+    <Resource tag="CURRENT_UPLOADS">Current Attachment Uploads:</Resource>
     <Resource tag="DELETE">Usuń</Resource>
     <Resource tag="DISALLOWED_EXTENSIONS">Zabronione typy plków</Resource>
+    <Resource tag="DROP_HERE">Drop file(s) here</Resource>
     <Resource tag="FILEERROR">'{0}' nie jest prawidłowym plikiem do wgrania.</Resource>
     <Resource tag="FILENAME">Nazwa Pliku</Resource>
     <Resource tag="SELECT_FILE">Wybierz plik, który chcesz wgrać.</Resource>
     <Resource tag="SIZE">Rozmiar</Resource>
+    <Resource tag="START_UPLOADS">Start upload(s)</Resource>
     <Resource tag="TITLE">Załączniki</Resource>
     <Resource tag="UPLOAD">Wgraj</Resource>
+    <Resource tag="UPLOAD_NEW">Upload New File(s)</Resource>
     <Resource tag="UPLOAD_NOTE">Maksymalny rozmiar pliku, który ma być załącznikiem to {0} KB.</Resource>
     <Resource tag="UPLOAD_TITLE">Wgraj Plik</Resource>
     <Resource tag="UPLOAD_TOOBIG">Nie możesz załączyć plików większych niż {1} KB. Rozmiar Twoich plików to {0} KB.</Resource>
@@ -1907,6 +1941,7 @@
   </page>
   <page name="BBCODEMODULE">
     <Resource tag="ALBUMIMG_DESCRIPTION">Enter a Album Image Number</Resource>
+    <Resource tag="ATTACH_DESCRIPTION">Enter a Attachment ID</Resource>
     <Resource tag="DAILYMOTION_DESCRIPTION">Enter Dailymotion Url (http://www.dailymotion.com/video/xxxx)</Resource>
     <Resource tag="GOOGLEMAPS_DESCRIPTION">Enter Google Maps Url</Resource>
     <Resource tag="HIDDENMOD_DESC">The content of this post is hidden. After you THANK the poster, refresh the page to see the hidden content. You need to thank the Current Post</Resource>
@@ -2003,8 +2038,10 @@
   <page name="COMMON">
     <Resource tag="ALBUMIMG_BBCODE">Wstaw obrazek z albumu...</Resource>
     <Resource tag="ALLOWED">Dozwolony</Resource>
+    <Resource tag="ATTACH_BBCODE">Insert an existing Attachment or upload a new File...</Resource>
     <Resource tag="BACK">Wstecz</Resource>
     <Resource tag="BAD_CAPTCHA">Tekst wprowadzony nie zgadza się z tym na obrazie zabezpieczającym.</Resource>
+    <Resource tag="BAD_RECAPTCHA">Please re-enter the reCAPTCHA.</Resource>
     <Resource tag="BAD_USERNAME">Nazwa użytkownika nie może zawierać średników (;) i innych specjalnych znaków.</Resource>
     <Resource tag="BBCODE_CODE">Kod:</Resource>
     <Resource tag="BBCODE_QUOTE">Cytat:</Resource>
@@ -2061,7 +2098,7 @@
     <Resource tag="HTMLTAG_FORBIDDEN">Twoja wiadomość nie może zawierać tagów html.</Resource>
     <Resource tag="HTMLTAG_WRONG">Twoja wiadomość zawiera zabronione {0} tagi html.</Resource>
     <Resource tag="LOADING">Wczytywanie...</Resource>
-    <Resource tag="MAX_ONLINE">Najwięcej użytkowników było {0}, {1}.</Resource>
+    <Resource tag="MAX_ONLINE">Najwięcej użytkowników było {0:N0} on {1}.</Resource>
     <Resource tag="MESSAGE">Wiadomość</Resource>
     <Resource tag="MOBILE_FULLSITE">Pokaż pełną stronę</Resource>
     <Resource tag="MOBILE_VIEWSITE">Pokaż mobilną stronę</Resource>
@@ -2077,6 +2114,7 @@
     <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL">New SPAM Message on {0} Forum needs to be checked</Resource>
     <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">Rejestracja na forum {0} zakończona sukcesem</Resource>
     <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">Nowy użytkownik na forum {0}</Resource>
+    <Resource tag="NOTIFICATION_ON_WELCOME_USER_SUBJECT">Welcome to the {0} Forum</Resource>
     <Resource tag="OK">Tak</Resource>
     <Resource tag="OR">lub</Resource>
     <Resource tag="PAGES">Strony</Resource>
@@ -2151,6 +2189,7 @@
     <Resource tag="VIEW_FORUM">Pokaż dział</Resource>
     <Resource tag="VIEW_FULLINFO">Pokaż więcej informacji</Resource>
     <Resource tag="VIEW_TOPIC">Pokaż temat</Resource>
+    <Resource tag="VIEW_TOPIC_STARTED_BY">View topic started by {0}</Resource>
     <Resource tag="VIEW_USRPROFILE">Pokaż profil</Resource>
     <Resource tag="VOTE">Głosuj</Resource>
     <Resource tag="YES">Tak</Resource>
@@ -2440,7 +2479,7 @@
     <Resource tag="OURAVATAR_SELECT">Kliknij tutaj, aby wybrać avatar</Resource>
     <Resource tag="TITLE">Modyfikuj avatar</Resource>
     <Resource tag="WARN_BIGFILE">Rozmiar obrazu nie może być większy niż {0} bytes.</Resource>
-    <Resource tag="WARN_File size">Rozmiar Twojego obrazu to {0} bytes.</Resource>
+    <Resource tag="WARN_FILESIZE">Rozmiar Twojego obrazu to {0} bytes.</Resource>
     <Resource tag="WARN_RESIZED">Obraz został przeskalowany w celu dopasowania.</Resource>
     <Resource tag="WARN_SIZE">Rozmiar Twojego obrazu to {0}x{1} pikseli.</Resource>
     <Resource tag="WARN_TOOBIG">Rozmiar obrazu nie może być większy niż {0}x{1} pikseli.</Resource>
@@ -3471,7 +3510,7 @@ public class Hello1
     &lt;/td&gt;
     &lt;td&gt;
     &lt;p&gt;If you don't have the right to view the content, you see an Info Message that Informs you way you don't see the Content&lt;/p&gt;
-    &lt;img src="{0}resources/images/HiddenWarnDescription.png" alt="The content of this post is hidden. After you THANK the poster, refresh the page to see the hidden content. You need to thank the Current Post" title="The content of this post is hidden. After you THANK the poster, refresh the page to see the hidden content. You need to thank the Current Post" /&gt;   
+    &lt;img src="{0}Content/images/HiddenWarnDescription.png" alt="The content of this post is hidden. After you THANK the poster, refresh the page to see the hidden content. You need to thank the Current Post" title="The content of this post is hidden. After you THANK the poster, refresh the page to see the hidden content. You need to thank the Current Post" /&gt;   
     &lt;p&gt;Otherwise as Guest you see a Info Message&lt;/p&gt;
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;This board requires you to be registered and logged-in before you can view hidden messages.&lt;/div&gt;&lt;/div&gt;
     &lt;p&gt;If you do have access to see the Content you simply see the Hidden Content&lt;/p&gt;&lt;br /&gt;
@@ -3711,7 +3750,7 @@ Spoiler Content
       &lt;strong&gt;Output&lt;/strong&gt;
     &lt;/td&gt;
     &lt;td&gt;
-    &lt;style type="text/css"&gt;.yafnet .userLinkContainer{{background: url({0}resources/icons/user.png) #fff no-repeat 4px 50%;border: 1px solid #eee;padding: 4px 2px 4px 25px;margin: 3px;font-size: 80%;font-weight: bold;    background-color: #fff;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}}.yafnet .userLinkContainer:hover{{border: 1px solid #ddd;background-color: #eee;}}
+    &lt;style type="text/css"&gt;.yafnet .userLinkContainer{{background: url({0}Content/icons/user.png) #fff no-repeat 4px 50%;border: 1px solid #eee;padding: 4px 2px 4px 25px;margin: 3px;font-size: 80%;font-weight: bold;    background-color: #fff;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}}.yafnet .userLinkContainer:hover{{border: 1px solid #ddd;background-color: #eee;}}
         &lt;/style&gt;
     &lt;span class="userLinkContainer"&gt;
 &lt;a href="{0}yaf_profile1234.aspx" rel="nofollow" title="View profile" target="_blank" id="UserLinkBBCodeFor12224" class="UserLinkBBCode"&gt;Username&lt;/a&gt;
@@ -3802,7 +3841,7 @@ Spoiler Content
 </Resource>
     <Resource tag="EDITPROFILETITLE">Editing User Profile &amp; Forum Settings</Resource>
     <Resource tag="FORUMSCONTENT">&lt;p&gt;&lt;strong&gt;What is YAF?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;YetAnotherForum.NET (YAF) is The Open Source Discussion Forum for sites running ASP.NET. 100% written in C#, YAF (pronounced like &amp;quot;laugh&amp;quot;) is a unique combination of Open Source, Microsoft's .NET platform and an international collaboration of the .NET developer community. Growing and changing daily, the YAF project is led by Jaben Cargman of Tiny Gecko. YAF runs on any web server that supports ASP.NET v2.0 (and above) and SQL Server. YAF is licensed under GPL.&lt;/p&gt;
+&lt;p&gt;YetAnotherForum.NET (YAF) is The Open Source Discussion Forum for sites running ASP.NET. 100% written in C#, YAF (pronounced like &amp;quot;laugh&amp;quot;) is a unique combination of Open Source, Microsoft's .NET platform and an international collaboration of the .NET developer community. Growing and changing daily, the YAF project is led by Ingo Herbote. YAF runs on any web server that supports ASP.NET v4.0 (and above) and SQL Server. YAF is licensed under Apache 2.0.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How is all of this structured?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;A Forum contains various areas, which themselves contain forums (more specific subject areas) which contain topics  which are made up of individual messages (where a user writes something).&lt;/p&gt;
 &lt;p&gt;The Forums home page has a list of categories and forums, with basic statistics for each, including the number of topics and messages, and which member posted the most recent message.&lt;/p&gt;
@@ -4156,6 +4195,7 @@ Spoiler Content
     <Resource tag="AUTH_NO_ACCESS_TOKEN">Brak dostępu!</Resource>
     <Resource tag="AUTO">Zapamiętaj mnie</Resource>
     <Resource tag="BOTH_USERNAME_EMAIL">Wpisz nazwę użytkownika i hasło, które są wymagane.</Resource>
+    <Resource tag="CONNECT_VIA">Or Connect via</Resource>
     <Resource tag="EMAIL">Adres e-mail</Resource>
     <Resource tag="EMAIL_SENT_PASSWORD">Mail z nowym hasłem został wysłany do Ciebie.</Resource>
     <Resource tag="FACEBOOK_LOGIN">Zaloguj przez Facebook</Resource>
@@ -4206,14 +4246,27 @@ Spoiler Content
     <Resource tag="USERNAME">Nazwa Użytkownika</Resource>
   </page>
   <page name="MESSAGEHISTORY">
+    <Resource tag="COMPARE_TITLE">Message Edit History Post Comparsion</Resource>
+    <Resource tag="COMPARE_VERSIONS">Compare versions</Resource>
+    <Resource tag="CONFIRM_RESTORE">Are you really want to restore that Message version?</Resource>
     <Resource tag="CURRENTMESSAGE">Bieżąca wersja</Resource>
     <Resource tag="EDITED">Edytowany:</Resource>
     <Resource tag="EDITEDBY">Edytowany przez:</Resource>
+    <Resource tag="EDITEDBY_MOD">Edited By an Moderator</Resource>
     <Resource tag="EDITEREASON">Powód edycji:</Resource>
     <Resource tag="GOMODERATE">Kontynuuj moderowanie</Resource>
     <Resource tag="HISTORYSTART">Historia edycji</Resource>
+    <Resource tag="MESSAGE_EDITEDAT">Message Edited at </Resource>
+    <Resource tag="MESSAGE_RESTORED">Message was successfully restored!</Resource>
+    <Resource tag="NEW">New</Resource>
+    <Resource tag="NOTHING_SELECTED">Nothing selected</Resource>
+    <Resource tag="OLD">Old</Resource>
     <Resource tag="ORIGINALMESSAGE">Oryginalna wersja</Resource>
     <Resource tag="POSTED">Wysłany:</Resource>
+    <Resource tag="RESTORE_MESSAGE">Restore Version</Resource>
+    <Resource tag="SELECT_BOTH">Please select one old and one new Message</Resource>
+    <Resource tag="SELECT_DIFFERENT">You must select two different versions to make a valid comparison.</Resource>
+    <Resource tag="TEXT_CHANGES">Text Changes</Resource>
     <Resource tag="TITLE">Historia posta</Resource>
     <Resource tag="TOMESSAGE">Idź do posta</Resource>
   </page>
@@ -4544,6 +4597,7 @@ Spoiler Content
     <Resource tag="RSSTOPIC">Źródło RSS</Resource>
     <Resource tag="SHARE">Podziel się</Resource>
     <Resource tag="SHARE_TOOLTIP">Podziel się tematem przez e-mail, Twitter, Google+, Facebook, Digg, Reddit, lub Tumblr.</Resource>
+    <Resource tag="SIMILAR_TOPICS">Similar Topics</Resource>
     <Resource tag="SKYPE">SKYPE</Resource>
     <Resource tag="SKYPE_TITLE">Skontaktuj się z {0} przez Skype</Resource>
     <Resource tag="STATISTICS">Statystyki</Resource>
@@ -4887,11 +4941,13 @@ Jeśli złamiesz któreś z tych postanowień, narazisz się na możliwość usu
     <Resource tag="BTNSEARCH">Szukaj</Resource>
     <Resource tag="BTNSEARCH_EXTERNAL">Szukaj {0}</Resource>
     <Resource tag="BY">przez</Resource>
+    <Resource tag="KEYWORDS">Keyword(s)</Resource>
     <Resource tag="LOADING_SEARCH">Wczytywanie wyników...</Resource>
     <Resource tag="MATCH_ALL">Dopasuj wszystkie wyrazy</Resource>
     <Resource tag="MATCH_ANY">Dopasuj dowolny wyraz</Resource>
     <Resource tag="MATCH_EXACT">Dopasuj całe wyrażenie</Resource>
     <Resource tag="NO_SEARCH_RESULTS">[b]Nic nie znaleziono.[/b]</Resource>
+    <Resource tag="POST_AND_TITLE">Search Entire Posts</Resource>
     <Resource tag="POSTED">Wysłane:</Resource>
     <Resource tag="POSTEDBY">Wysłane przez</Resource>
     <Resource tag="POSTS">Posty</Resource>
@@ -4902,7 +4958,12 @@ Jeśli złamiesz któreś z tych postanowień, narazisz się na możliwość usu
     <Resource tag="RESULTS">Wyniki</Resource>
     <Resource tag="SEARCH_CRITERIA_ERROR_MAX">Tekst do wyszukania musi być krótszy niż {0} znaków i musi być zgodny z regułami wyszukiwania (więcej informacji w FAQ).</Resource>
     <Resource tag="SEARCH_CRITERIA_ERROR_MIN">Tekst do wyszukania musi być dłuższy niż {0} znaki i musi być zgodny z regułami wyszukiwania (więcej informacji w FAQ).</Resource>
+    <Resource tag="SEARCH_IN">Search in Forum(s)</Resource>
+    <Resource tag="SEARCH_OPTIONS">Search Options</Resource>
+    <Resource tag="SEARCH_RESULTS">Search Results per Page</Resource>
+    <Resource tag="SEARCH_TITLEORBOTH">Search entire Posts or Titles only</Resource>
     <Resource tag="TITLE">Szukaj</Resource>
+    <Resource tag="TITLE_ONLY">Search Titles Only</Resource>
     <Resource tag="TOPIC">Temat:</Resource>
   </page>
   <page name="SHOUTBOX">
@@ -5035,7 +5096,7 @@ The Message was posted in the {forumname} forum.
     <Resource tag="NOTIFICATION_ON_REGISTER">
       Hello {user}.
 
-      You have been successfully Registred on the {forumname} forum:
+      You have been successfully registered on the {forumname} forum:
 
       User Name: {user}
           Auto Generated Password: {pass}
@@ -5064,6 +5125,23 @@ The Message was posted in the {forumname} forum.
                 
                 Administration Link: {adminlink}
         </Resource>
+    <Resource tag="NOTIFICATION_ON_WELCOME_USER">
+    Hello {user},
+
+    You have been successfully registered on the {forumname} forum. You're all ready to go!
+
+    Before posting, consider other ways of finding information:
+
+    - Use the help pages to find out how the forum works
+    - Try the Forum Search, often times your questions are already been answered
+    - Do not post any abusive, vulgar, obscene, hateful, slanderous, threatening, sexually-oriented or any other material that may violate any applicable laws.
+    Doing so may lead to you being permanently banned from this forum. Note that all IP addresses are logged and may aid in enforcing these conditions.
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
     <Resource tag="PASSWORDRETRIEVAL_HTML">
       &lt;!DOCTYPE html&gt;
 
@@ -5138,36 +5216,40 @@ Visit {forumname} at {forumlink}
   </page>
   <page name="TIMEZONES">
     <Resource tag="NAME_UTC">(UTC)</Resource>
-    <Resource tag="UTC0">(UTC) Casablanca, Dublin, Edynburg, Londyn, Lizbona, Monrovia</Resource>
-    <Resource tag="UTC1">(UTC+1:00) Berlin, Bruksela, Kristiansund, Madryt, Paryż, Rzym, Warszawa</Resource>
-    <Resource tag="UTC-1">(UTC-1:00) Azory, Wyspy Zielonego Przylądka</Resource>
-    <Resource tag="UTC10">(UTC+10:00) Melbourne, Papua Nowa Gwinea, Sydney, Władywostok</Resource>
-    <Resource tag="UTC-10">(UTC-10:00) Hawaje</Resource>
-    <Resource tag="UTC11">(UTC+11:00) Magadan, Nowa Kaledonia, Wyspy Salomona</Resource>
-    <Resource tag="UTC-11">(UTC-11:00) Wyspa Midway, Samoa</Resource>
-    <Resource tag="UTC12">(UTC+12:00) Auckland, Wellington, Fidżi, Wyspy Marshalla</Resource>
-    <Resource tag="UTC-12">(UTC-12:00) Eniwetok, Kwajalein</Resource>
-    <Resource tag="UTC2">(UTC+2:00) Jerozolima, Kaliningrad, Południowa Afryka</Resource>
-    <Resource tag="UTC-2">(UTC-2:00) Ascension</Resource>
-    <Resource tag="UTC3">(UTC+3:00) Bagdad, Riyadh, Moskwa, Nairobi</Resource>
-    <Resource tag="UTC-3">(UTC-3:00) Brazylia, Buenos Aires, Georgetown, Wyspa Falkland</Resource>
-    <Resource tag="UTC3.5">(UTC+3:30) Teheran</Resource>
-    <Resource tag="UTC-3.5">(UTC-3:30) Nowa Fundlandia</Resource>
-    <Resource tag="UTC4">(UTC+4:00) Adu Dhabi, Baku, Maskat, Tbilisi</Resource>
-    <Resource tag="UTC-4">(UTC-4:00) Czas atlantycki (Kanada), Caracas, La Paz</Resource>
-    <Resource tag="UTC4.5">(UTC+4:30) Kabul</Resource>
-    <Resource tag="UTC5">(UTC+5:00) Ekaterinburg, Islamabad, Karaczi, Taszkient</Resource>
-    <Resource tag="UTC-5">(UTC-5:00) Czas wschodni (USA i Kanada), Bogota, Lima, Quito</Resource>
-    <Resource tag="UTC5.5">(UTC+5:30) Bombaj, Kalkuta, Madras, Nowe Delhi</Resource>
-    <Resource tag="UTC6">(UTC+6:00) Almaty, Colomba, Dhaka</Resource>
-    <Resource tag="UTC-6">(UTC-6:00) Czas centralny (USA i Kanada), Meksyk</Resource>
-    <Resource tag="UTC7">(UTC+7:00) Bangkok, Hanoi, Dżakarta</Resource>
-    <Resource tag="UTC-7">(UTC-7:00) Arizona, Czas górski (USA i Kanada)</Resource>
-    <Resource tag="UTC8">(UTC+8:00) Pekin, Hongkong, Perth, Singapur, Taipei</Resource>
-    <Resource tag="UTC-8">(UTC-8:00) Czas pacyficzny (USA i Kanada)</Resource>
-    <Resource tag="UTC9">(UTC+9:00) Osaka, Sapporo, Seul, Tokio, Jakuck</Resource>
+    <Resource tag="UTC0">(UTC) Casablanca, Coordinated Universal Time, Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London, Monrovia, Reykjavik</Resource>
+    <Resource tag="UTC1">(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna, Belgrade, Bratislava, Budapest, Ljubljana, Prague, Brussels, Copenhagen, Madrid, Paris, Sarajevo, Skopje, Warsaw, Zagreb</Resource>
+    <Resource tag="UTC-1">(UTC-1:00) Azores, Cape Verde Is.</Resource>
+    <Resource tag="UTC10">(UTC+10:00) Brisbane, Canberra, Melbourne, Sydney, Guam, Port Moresby, Hobart, Yakutsk</Resource>
+    <Resource tag="UTC-10">(UTC-10:00) Hawaii</Resource>
+    <Resource tag="UTC11">(UTC+11:00) Solomon Is., New Caledonia, Vladivostok</Resource>
+    <Resource tag="UTC-11">(UTC-11:00) Coordinated Universal Time-11</Resource>
+    <Resource tag="UTC12">(UTC+12:00) Auckland, Wellington, Coordinated Universal Time+12, Fiji, Magadan, Petropavlovsk-Kamchatsky - Old</Resource>
+    <Resource tag="UTC-12">(UTC-12:00) International Date Line West</Resource>
+    <Resource tag="UTC13">(UTC+13:00) Nuku'alofa, Samoa</Resource>
+    <Resource tag="UTC2">(UTC+02:00) Athens, Bucharest, Beirut, Cairo, Damascus, E. Europe, Harare, Pretoria, Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius, Istanbul, Jerusalem, Tripoli</Resource>
+    <Resource tag="UTC-2">(UTC-2:00) Coordinated Universal Time-2, Mid-Atlantic - Old</Resource>
+    <Resource tag="UTC3">(UTC+03:00) Amman, Baghdad, Kaliningrad, Minsk, Kuwait, Riyadh, Nairobi</Resource>
+    <Resource tag="UTC-3">(UTC-3:00) Brasilia, Buenos Aires, Cayenne, Fortaleza, Greenland, Montevideo, Salvador</Resource>
+    <Resource tag="UTC3.5">(UTC+03:30) Tehran</Resource>
+    <Resource tag="UTC-3.5">(UTC-3:30) Newfoundland</Resource>
+    <Resource tag="UTC4">(UTC+04:00) Abu Dhabi, Muscat, Baku, Caucasus Standard Time, Moscow, St. Petersburg, Volgograd,Port Louis, Tbilisi, Yerevan</Resource>
+    <Resource tag="UTC-4">(UTC-4:00) Asuncion, Atlantic Time (Canada), Cuiaba, Georgetown, La Paz, Manaus, San Juan, Santiago</Resource>
+    <Resource tag="UTC4.5">(UTC+04:30) Kabul</Resource>
+    <Resource tag="UTC-4.5">(UTC-4:30) Caracas</Resource>
+    <Resource tag="UTC5">(UTC+05:00) Ashgabat, Tashkent, Islamabad, Karachi</Resource>
+    <Resource tag="UTC-5">(UTC-5:00) Bogota, Lima, Quito, Eastern Time (US &amp; Canada), Indiana (East)</Resource>
+    <Resource tag="UTC5.5">(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi</Resource>
+    <Resource tag="UTC5.75">(UTC+05:45) Kathmandu</Resource>
+    <Resource tag="UTC6">(UTC+06:00) Astana, Dhaka, Ekaterinburg</Resource>
+    <Resource tag="UTC-6">(UTC-6:00) Central America, Central Time (US &amp; Canada), Guadalajara, Mexico City, Monterrey - New, Guadalajara, Mexico City, Monterrey - Old, Saskatchewan</Resource>
+    <Resource tag="UTC6.5">(UTC+06:30) Yangon (Rangoon)</Resource>
+    <Resource tag="UTC7">(UTC+07:00) Bangkok, Hanoi, Jakarta, Novosibirsk</Resource>
+    <Resource tag="UTC-7">(UTC-7:00) Arizona, Chihuahua, La Paz, Mazatlan - New, Chihuahua, La Paz, Mazatlan - Old, Mountain Time (US &amp; Canada)</Resource>
+    <Resource tag="UTC8">(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi, Krasnoyarsk, Kuala Lumpur, Singapore Perth, Taipei, Ulaanbaatar</Resource>
+    <Resource tag="UTC-8">(UTC-8:00) Baja California, Pacific Time (US &amp; Canada)</Resource>
+    <Resource tag="UTC9">(UTC+09:00) Irkutsk, Osaka, Sapporo, Tokyo, Seoul</Resource>
     <Resource tag="UTC-9">(UTC-9:00) Alaska</Resource>
-    <Resource tag="UTC9.5">(UTC+9:30) Adelajda, Darwin</Resource>
+    <Resource tag="UTC9.5">(UTC+09:30) Adelaide</Resource>
   </page>
   <page name="TOOLBAR">
     <Resource tag="ACTIVETOPICS">Aktywne Tematy</Resource>
@@ -5187,6 +5269,7 @@ Visit {forumname} at {forumlink}
     <Resource tag="INBOX_TITLE">Pokazuje odebrane wiadomości prywatne.</Resource>
     <Resource tag="LOGGED_IN_AS">Zalogowany jako: {0}</Resource>
     <Resource tag="LOGIN">Zaloguj</Resource>
+    <Resource tag="LOGIN_CONNECT">Login to your {0} forum account</Resource>
     <Resource tag="LOGIN_TITLE">Pokazuje formularz logujący do forum.</Resource>
     <Resource tag="LOGOUT">Wyloguj</Resource>
     <Resource tag="LOGOUT_QUESTION">Na pewno chcesz się wylogować?</Resource>
@@ -5203,6 +5286,7 @@ Visit {forumname} at {forumlink}
     <Resource tag="MYTOPICS_TITLE">Pokazuje Twoje aktywne i ulubione wątki.</Resource>
     <Resource tag="NEWPM">({0} Nieprzeczytanych)</Resource>
     <Resource tag="REGISTER">Rejestruj</Resource>
+    <Resource tag="REGISTER_CONNECT">register a new account</Resource>
     <Resource tag="REGISTER_TITLE">Pokazuje formularz rejestracyjny.</Resource>
     <Resource tag="SEARCH">Szukaj</Resource>
     <Resource tag="SEARCH_TITLE">Przeszukaj forum.</Resource>
@@ -5211,6 +5295,7 @@ Visit {forumname} at {forumlink}
     <Resource tag="TEAM_TITLE">Pokazuję stronę z listą wszystkich moderatorów i administratorów...</Resource>
     <Resource tag="UNREADTOPICS">Jest tu {0} wątków z nieprzeczytanymi postami.</Resource>
     <Resource tag="WELCOME_GUEST">Witaj Gościu! Aby odblokować wszystkie funkcje proszę się zarejestrować lub zalogować.</Resource>
+    <Resource tag="WELCOME_GUEST_CONNECT">Wanna join the discussion?! </Resource>
     <Resource tag="WELCOME_GUEST_FULL">Witaj Gościu! Aby odblokować wszystkie funkcję proszę się </Resource>
     <Resource tag="WELCOME_GUEST_NO">Witaj Gościu! &lt;strong&gt;Nie&lt;/strong&gt; możesz się zalogować lub zarejestrować.</Resource>
   </page>

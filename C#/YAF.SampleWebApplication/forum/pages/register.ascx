@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.register" Codebehind="register.ascx.cs" %>
+<%@ Import Namespace="YAF.Types.Interfaces" %>
+<%@ Register TagPrefix="YAF" Assembly="YAF.Controls" Namespace="YAF.Controls" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 <div align="center">
 	<asp:CreateUserWizard ID="CreateUserWizard1" runat="server" StartNextButtonText="Agree"
@@ -154,13 +156,12 @@
 						</tr>
 						</asp:PlaceHolder>
 						<asp:PlaceHolder runat="server" ID="RecaptchaPlaceHolder" Visible="false">  
-
 						<tr>
 							<td align="right" class="postheader" valign="top">
-							<YAF:LocalizedLabel ID="LocalizedLabel17" runat="server" LocalizedTag="Captcha_Image" />
 							</td>
 							<td class="post">
-						    <asp:PlaceHolder runat="server" ID="RecaptchaControl" Visible="false"/>
+						    <YAF:RecaptchaControl runat="server" ID="Recaptcha1" 
+                                Visible='<%# PageContext.BoardSettings.CaptchaTypeRegister.Equals(2) %>' />
 					    </td>
 					    </tr>
 					    </asp:PlaceHolder>
@@ -213,7 +214,7 @@
 								<YAF:LocalizedLabel ID="LocalizedLabel18" runat="server" LocalizedTag="COUNTRY" />
 						    </td>
 							<td class="post">
-								<YAF:CountryListBox ID="Country" runat="server" DataTextField="Name" DataValueField="Value" /></td>
+								<YAF:CountryListBox ID="Country" runat="server" DataTextField="Name" DataValueField="Value" CssClass="selectMenuWithIcons" /></td>
 						</tr>
 						<tr>
 							<td align="right" class="postheader">
@@ -243,7 +244,7 @@
 								<YAF:LocalizedLabel ID="LocalizedLabel15" runat="server" LocalizedTag="TIMEZONE" />
 								:</td>
 							<td class="post">
-								<asp:DropDownList ID="TimeZones" runat="server" DataTextField="Name" DataValueField="Value" /></td>
+								<asp:DropDownList ID="TimeZones" runat="server" DataTextField="Name" DataValueField="Value" CssClass="standardSelectMenu" /></td>
 						</tr>
                         <tr>
                             <td class="postheader">

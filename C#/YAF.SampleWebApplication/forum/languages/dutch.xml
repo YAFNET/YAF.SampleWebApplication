@@ -57,6 +57,7 @@
     <Resource tag="ADMIN_SMILIES">Bekijkt smilies</Resource>
     <Resource tag="ADMIN_SMILIES_EDIT">Bewerkt smilies</Resource>
     <Resource tag="ADMIN_SMILIES_IMPORT">Importeert smilies</Resource>
+    <Resource tag="ADMIN_SPAMLOG">Views/edits the spam log</Resource>
     <Resource tag="ADMIN_SPAMWORDS">Views spam words list</Resource>
     <Resource tag="ADMIN_SPAMWORDS_EDIT">Edits spam words list</Resource>
     <Resource tag="ADMIN_SPAMWORDS_IMPORT">Imports spam words</Resource>
@@ -177,6 +178,7 @@
     <Resource tag="ADMIN_JOINED">Geregistreerd</Resource>
     <Resource tag="ADMIN_LOCATION">Board Lokatie</Resource>
     <Resource tag="ADMIN_NAME">Naam</Resource>
+    <Resource tag="ADMIN_RESEND_EMAIL">Resend Email Verification</Resource>
     <Resource tag="ADMIN_UPGRADE">De ge&amp;iuml;nstalleerde versie van de database en de versie van Yet Another Forum.net komen niet overeen. Je moet de database updaten.</Resource>
     <Resource tag="Administration">Onderhoud</Resource>
     <Resource tag="ALL_BOARDS"> - Alle Boards - </Resource>
@@ -193,6 +195,7 @@
     <Resource tag="HEADER1">Wie is online</Resource>
     <Resource tag="HEADER2">Niet-goedgekeurde gebruikers</Resource>
     <Resource tag="HEADER3">Statistieken voor</Resource>
+    <Resource tag="MSG_MESSAGE_SEND">Verification Mail was send again to the User.</Resource>
     <Resource tag="MSG_VALID_DAYS">Je moet een nummer invullen voor het aantal dagen.</Resource>
     <Resource tag="NUM_POSTS">Aantal posts:</Resource>
     <Resource tag="NUM_TOPICS">Aantal topics:</Resource>
@@ -280,8 +283,8 @@
     <Resource tag="MASK">Mask:</Resource>
     <Resource tag="MASK_HELP">The User Name to ban. You can use Regular Expressions.</Resource>
     <Resource tag="REASON">Reason:</Resource>
-    <Resource tag="REASON_HELP">The reason why the email address was banned.</Resource>
-    <Resource tag="TITLE">Add/Edit Banned Email Address</Resource>
+    <Resource tag="REASON_HELP">The reason why the user name was banned.</Resource>
+    <Resource tag="TITLE">Add/Edit Banned Name</Resource>
   </page>
   <page name="ADMIN_BANNEDNAME_IMPORT">
     <Resource tag="HEADER">Import Names List</Resource>
@@ -866,6 +869,7 @@
     <Resource tag="LT_DEBUG">Debug</Resource>
     <Resource tag="LT_ERROR">Errors</Resource>
     <Resource tag="LT_INFORMATION">Information</Resource>
+    <Resource tag="LT_IPBANDETECTED">Detected a Banned IP</Resource>
     <Resource tag="LT_IPBANLIFTED">Canceling IP ban</Resource>
     <Resource tag="LT_IPBANSET">Setting IP ban</Resource>
     <Resource tag="LT_SpamBotDetected">Spam Bot Detected</Resource>
@@ -1009,6 +1013,8 @@
     <Resource tag="ALLOW_USERS_POLLIMAGES_HELP">Als deze is aangevinkt, kunnen gebruikers plaatjes als keuzes gebruiken.</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR">Gebruikers mogen tekstverwerker kiezen</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR_HELP">Gebruikers kunnen kiezen tussen verschillende tekstverwerkers in hun profiel.</Resource>
+    <Resource tag="AMOUNT_OF_SUBFORUMS">Sub Forums In Forums List:</Resource>
+    <Resource tag="AMOUNT_OF_SUBFORUMS_HELP">The amount of Sub Forums In Forums List.</Resource>
     <Resource tag="APP_CORES">Processor Cores:</Resource>
     <Resource tag="APP_CORES_HELP">Number of Processor cores.</Resource>
     <Resource tag="APP_MEMORY">Application memory:</Resource>
@@ -1050,6 +1056,12 @@
     <Resource tag="CAPTCHA_SIZE_HELP">Grootte (lengte) van de CAPTCHA willekeurige tekenreeks.</Resource>
     <Resource tag="CAT_CACHE_TIMEOUT">s Cache Timeout:</Resource>
     <Resource tag="CAT_CACHE_TIMEOUT_HELP">In minuten</Resource>
+    <Resource tag="CDN_JQUERY">Use Google Hosted CDN jQuery Script File?</Resource>
+    <Resource tag="CDN_JQUERY_HELP">You can use the Google Hosted Script File, or instead use internal.</Resource>
+    <Resource tag="CDN_JQUERY_UI">Use Google Hosted CDN jQuery-UI Script File?</Resource>
+    <Resource tag="CDN_JQUERY_UI_HELP">You can use the Google Hosted Script File, or instead use internal.</Resource>
+    <Resource tag="CDN_SCRIPTMANAGER">Use CDN Hosted Script Manager JS Files?</Resource>
+    <Resource tag="CDN_SCRIPTMANAGER_HELP">You can use the CDN Hosted Script Files, or instead use internal.</Resource>
     <Resource tag="CHECK_FOR_BOTSPAM">Choose a Service for Automatically User Bot Checking:</Resource>
     <Resource tag="CHECK_FOR_BOTSPAM_HELP">Enables/disables automatically Bot SPAM Checking via the &lt;a href="http://stopforumspam.com/"&gt;StopForumSpam.com API&lt;/a&gt; , BotScout.com API, or both together.</Resource>
     <Resource tag="CHECK_FOR_SPAM">Kies een SPAM Service voor Automatische SPAM Controle:</Resource>
@@ -1137,6 +1149,7 @@
     <Resource tag="HEADER_BOTSPAM">Bot Spam Settings (User Checking)</Resource>
     <Resource tag="HEADER_CACHE">Cache instellingen</Resource>
     <Resource tag="HEADER_CAPTCHA">CAPTCHA instellingen</Resource>
+    <Resource tag="HEADER_CDN">Scripts CDN Settings</Resource>
     <Resource tag="HEADER_DISPLAY">Weergave instellingen</Resource>
     <Resource tag="HEADER_EDITORS">Bewerk/Opmaak instellingen</Resource>
     <Resource tag="HEADER_FEATURES">Functie instellingen</Resource>
@@ -1171,6 +1184,8 @@
     <Resource tag="HOST_TEMPLATES">Sjablonen</Resource>
     <Resource tag="HOVERCARD_DELAY">Hover Card opening Delay (Milliseconds):</Resource>
     <Resource tag="HOVERCARD_DELAY_HELP">The Delay before opening the Hover Card when a user hovers over a user name.</Resource>
+    <Resource tag="IGNORE_SPAMCHECK_COUNT">User Post Count to be ignored from Spam Check:</Resource>
+    <Resource tag="IGNORE_SPAMCHECK_COUNT_HELP">The amount of posts a user has to have to be ignored by the spam checking.</Resource>
     <Resource tag="IMAGE_ATTACH_RESIZE">Activeer automatisch vergroten/verkleinen van foto-bijlagen:</Resource>
     <Resource tag="IMAGE_ATTACH_RESIZE_HELP">Foto-bijlagen worden verkleind naar miniatuurweergaven als ze te groot zijn.</Resource>
     <Resource tag="IMAGE_RESIZE_HEIGHT">Maximale hoogte van de verkleinde foto-bijlagen:</Resource>
@@ -1289,8 +1304,6 @@
     <Resource tag="RANK_TEMPLATE_HELP">Sjabloon om de rang van de gebruiker op te bouwen.</Resource>
     <Resource tag="RANKIMAGE_TEMPLATE">Rang afbeelding sjabloon :</Resource>
     <Resource tag="RANKIMAGE_TEMPLATE_HELP">Sjabloon om de rang afbeelding op te bouwen.</Resource>
-    <Resource tag="RECAPTCHA_MULTI_INSTANCE">Zet meerdere instanties van reCAPTCHA aan:</Resource>
-    <Resource tag="RECAPTCHA_MULTI_INSTANCE_HELP">Zet meerdere instanties van reCAPTCHA aan (gedeelde sleutels).</Resource>
     <Resource tag="RECAPTCHA_PRIVATE_KEY"> Sleutel:</Resource>
     <Resource tag="RECAPTCHA_PRIVATE_KEY_HELP"> Sleutel in.</Resource>
     <Resource tag="RECAPTCHA_PUBLIC_KEY">reCAPTCHA Publieke Sleutel:</Resource>
@@ -1357,6 +1370,8 @@
     <Resource tag="SHOW_AVATARS_TOPICLISTS_HELP">Als deze is aangevinkt, worden de Gebruikers Avatars getoond in de topiclijsten.</Resource>
     <Resource tag="SHOW_BOTS_INACTIVE">Laat Bots zien in de Actieve Gebruikerslijst:</Resource>
     <Resource tag="SHOW_BOTS_INACTIVE_HELP">Als deze is aangevinkt, worden Bots zichtbaar in de Actieve Gebruikerslijst.</Resource>
+    <Resource tag="SHOW_CONNECT_MESSAGE">Show Connect Message after first Message:</Resource>
+    <Resource tag="SHOW_CONNECT_MESSAGE_HELP">Whether or not to show a Connect Message after the first Message in a topic for Guests, containing login and registration links.</Resource>
     <Resource tag="SHOW_DEL_MESSAGES">Laat verwijderde berichten zien:</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_HELP">Als deze is aangevinkt, blijven verwijderde berichten staan met een notitie.</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_TOALL">Laat verwijderde berichten zien aan Iedereen:</Resource>
@@ -1397,6 +1412,8 @@
     <Resource tag="SHOW_SHOUTBOX_HELP">Zet de ShoutBox (Chat Module) aan of uit.</Resource>
     <Resource tag="SHOW_SHOUTBOX_SMILIES">Laat Shoutbox Smilies zien:</Resource>
     <Resource tag="SHOW_SHOUTBOX_SMILIES_HELP">Verberg of laat de Shoutbox (Chat Module) smilies zien.</Resource>
+    <Resource tag="SHOW_SIMILARTOPICS">Show Similar Topics:</Resource>
+    <Resource tag="SHOW_SIMILARTOPICS_HELP">Should similar topics to be displayed at the bottom of a topic.</Resource>
     <Resource tag="SHOW_THANK_DATE">Laat de datum zien wanneer gebruikers bedankt hebben:</Resource>
     <Resource tag="SHOW_THANK_DATE_HELP">Als deze is aangevinkt, kunnen gebruikers zien op welke datum bedankjes zijn gedaan (Bedanksysteem moet wel actief zijn).</Resource>
     <Resource tag="SHOW_TODAYS_BIRTHDAYS">Laat de verjaardagen van vandaag zien in de forum info:</Resource>
@@ -1418,6 +1435,7 @@
     <Resource tag="SPAM_MESSAGE_0">Niets doen</Resource>
     <Resource tag="SPAM_MESSAGE_1">Markeer bericht als niet-goedgekeurd</Resource>
     <Resource tag="SPAM_MESSAGE_2">Blokkeer bericht</Resource>
+    <Resource tag="SPAM_MESSAGE_3">Delete &amp; Ban user</Resource>
     <Resource tag="SPAM_MESSAGE_HANDLING">Verwerking van als SPAM herkende berichten</Resource>
     <Resource tag="SPAM_MESSAGE_HANDLING_HELP">Kies hier wat er moet gebeuren als een bericht als SPAM herkend wordt. Je kunt kiezen tussen 'Niets doen', 'Markeer bericht als niet-goedgekeurd', of blokkeer het bericht.</Resource>
     <Resource tag="SPAM_SERVICE_TYP_1">BlogSpam.NET API</Resource>
@@ -1474,6 +1492,11 @@
     <Resource tag="VIEWPROFILE_PERMISSION_HELP">Sta het bekijken van andere profielen toe aan:</Resource>
     <Resource tag="VIEWSHOUTBOX_PERMISSION">Shout Box View Permission:</Resource>
     <Resource tag="VIEWSHOUTBOX_PERMISSION_HELP">View Permission for the Shout Box to allow for all Users (Including Guests) or only registered users.</Resource>
+    <Resource tag="WELCOME_NOTIFICATION">Send User Welcome Notification:</Resource>
+    <Resource tag="WELCOME_NOTIFICATION_0">Send No Message</Resource>
+    <Resource tag="WELCOME_NOTIFICATION_1">Send as e-mail</Resource>
+    <Resource tag="WELCOME_NOTIFICATION_2">Send as private message</Resource>
+    <Resource tag="WELCOME_NOTIFICATION_HELP">If enabled you it sends a user a Welcome Mail/Private Message after successfully registration.</Resource>
     <Resource tag="WSERVICE_TOKEN">Web Service Merkteken:</Resource>
     <Resource tag="WSERVICE_TOKEN_HELP">Merkteken om beveiligde web service calls te maken. Wijzigt voortdurend totdat je de host settings hebt opgeslagen.</Resource>
   </page>
@@ -1674,6 +1697,8 @@
     <Resource tag="COMANDS">Emotie</Resource>
     <Resource tag="EMOTION">Emotie</Resource>
     <Resource tag="IMPORT">Importeer Smiley Pack</Resource>
+    <Resource tag="MOVE_DOWN">Move Down</Resource>
+    <Resource tag="MOVE_UP">Move Up</Resource>
     <Resource tag="MSG_DELETE">Smiley verwijderen?</Resource>
     <Resource tag="ORDER">Sorteer</Resource>
     <Resource tag="SMILEY">Smiley</Resource>
@@ -1704,6 +1729,9 @@
     <Resource tag="IMPORT">Importeer</Resource>
     <Resource tag="SELECT_FILE">Selecteer Bestand (*.pak)</Resource>
     <Resource tag="TITLE">Smilies Importeren</Resource>
+  </page>
+  <page name="ADMIN_SPAMLOG">
+    <Resource tag="TITLE">Spam Event Log</Resource>
   </page>
   <page name="ADMIN_SPAMWORDS">
     <Resource tag="ADD">Add</Resource>
@@ -1849,6 +1877,7 @@
     <Resource tag="admin_restartapp">Herstart Forum</Resource>
     <Resource tag="admin_runsql">Draai SQL Query</Resource>
     <Resource tag="admin_smilies">Smiley's</Resource>
+    <Resource tag="ADMIN_SPAMLOG">Spam Event Log</Resource>
     <Resource tag="admin_spamwords">Spam Check Words</Resource>
     <Resource tag="admin_taskmanager">Taakbeheer</Resource>
     <Resource tag="admin_test_data">Maak Test Data</Resource>
@@ -1885,16 +1914,21 @@
     <Resource tag="VALIDATE">Valideren</Resource>
   </page>
   <page name="ATTACHMENTS">
+    <Resource tag="ADD_FILES">Add file(s)...</Resource>
     <Resource tag="ALLOWED_EXTENSIONS">Toegestane bestandstypen</Resource>
     <Resource tag="ASK_DELETE">Bijlage verwijderen?</Resource>
+    <Resource tag="CURRENT_UPLOADS">Current Attachment Uploads:</Resource>
     <Resource tag="DELETE">Verwijderen</Resource>
     <Resource tag="DISALLOWED_EXTENSIONS">Verbonden bestandstypen</Resource>
+    <Resource tag="DROP_HERE">Drop file(s) here</Resource>
     <Resource tag="FILEERROR">'{0}' is geen geldig bestand om te uploaden.</Resource>
     <Resource tag="FILENAME">Bestandsnaam</Resource>
     <Resource tag="SELECT_FILE">Selecteer het bestand dat je wilt uploaden:</Resource>
     <Resource tag="SIZE">Grootte</Resource>
+    <Resource tag="START_UPLOADS">Start upload(s)</Resource>
     <Resource tag="TITLE">Bijlagen</Resource>
     <Resource tag="UPLOAD">Uploaden</Resource>
+    <Resource tag="UPLOAD_NEW">Upload New File(s)</Resource>
     <Resource tag="UPLOAD_NOTE">Let op: Max. Bestandsgrootte van een Attachment is {0} KB.</Resource>
     <Resource tag="UPLOAD_TITLE">Te uploaden bestand</Resource>
     <Resource tag="UPLOAD_TOOBIG">Je kunt geen bestanden bijsluiten die groter zijn dan {1} KB. Deze grootte is {0} KB.</Resource>
@@ -1907,6 +1941,7 @@
   </page>
   <page name="BBCODEMODULE">
     <Resource tag="ALBUMIMG_DESCRIPTION">Enter a Album Image Number</Resource>
+    <Resource tag="ATTACH_DESCRIPTION">Enter a Attachment ID</Resource>
     <Resource tag="DAILYMOTION_DESCRIPTION">Enter Dailymotion Url (http://www.dailymotion.com/video/xxxx)</Resource>
     <Resource tag="GOOGLEMAPS_DESCRIPTION">Enter Google Maps Url</Resource>
     <Resource tag="HIDDENMOD_DESC">De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken." title="De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken.</Resource>
@@ -2003,8 +2038,10 @@
   <page name="COMMON">
     <Resource tag="ALBUMIMG_BBCODE">Voeg Album plaatje toe...</Resource>
     <Resource tag="ALLOWED">Toegestaan</Resource>
+    <Resource tag="ATTACH_BBCODE">Insert an existing Attachment or upload a new File...</Resource>
     <Resource tag="BACK">Terug</Resource>
     <Resource tag="BAD_CAPTCHA">Tekst komt niet overeen met de tekst in het plaatje</Resource>
+    <Resource tag="BAD_RECAPTCHA">Please re-enter the reCAPTCHA.</Resource>
     <Resource tag="BAD_USERNAME">Gebruikersnaam mag geen puntkomma's (;)bevatten.</Resource>
     <Resource tag="BBCODE_CODE">Code:</Resource>
     <Resource tag="BBCODE_QUOTE">Quote:</Resource>
@@ -2061,7 +2098,7 @@
     <Resource tag="HTMLTAG_FORBIDDEN">Je tekst mag geen HTML tags bevatten.</Resource>
     <Resource tag="HTMLTAG_WRONG">Je tekst bevat een verboden {0} HTML tag.</Resource>
     <Resource tag="LOADING">Bezig met laden...</Resource>
-    <Resource tag="MAX_ONLINE">Grootste aantal gebruikers ooit online was {0}, {1}.</Resource>
+    <Resource tag="MAX_ONLINE">Grootste aantal gebruikers ooit online was {0:N0} on {1}.</Resource>
     <Resource tag="MESSAGE">Bericht</Resource>
     <Resource tag="MOBILE_FULLSITE">Bekijk volledige site</Resource>
     <Resource tag="MOBILE_VIEWSITE">Bekijk mobiele site</Resource>
@@ -2077,6 +2114,7 @@
     <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL">New SPAM Message on {0} Forum needs to be checked</Resource>
     <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">Registratie op {0} Forum gelukt</Resource>
     <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">Nieuwe gebruiker geregistreerd op {0} Forum</Resource>
+    <Resource tag="NOTIFICATION_ON_WELCOME_USER_SUBJECT">Welcome to the {0} Forum</Resource>
     <Resource tag="OK">OK</Resource>
     <Resource tag="OR">of</Resource>
     <Resource tag="PAGES">Pagina's</Resource>
@@ -2135,6 +2173,7 @@
     <Resource tag="VIEW_FORUM">Bekijk forum</Resource>
     <Resource tag="VIEW_FULLINFO">Bekijk volledige info</Resource>
     <Resource tag="VIEW_TOPIC">Bekijk topic</Resource>
+    <Resource tag="VIEW_TOPIC_STARTED_BY">View topic started by {0}</Resource>
     <Resource tag="VIEW_USRPROFILE">Bekijk profiel</Resource>
     <Resource tag="VOTE">Stem</Resource>
     <Resource tag="YES">Ja</Resource>
@@ -2424,7 +2463,7 @@
     <Resource tag="OURAVATAR_SELECT">Selecteer uit onze avatar-galerij</Resource>
     <Resource tag="TITLE">Avatar wijzigen</Resource>
     <Resource tag="WARN_BIGFILE">De bestandsgrootte van je afbeelding mag maximaal {0} bytes bedragen.</Resource>
-    <Resource tag="WARN_File size">De bestandsgrootte van je afbeelding is {0} bytes.</Resource>
+    <Resource tag="WARN_FILESIZE">De bestandsgrootte van je afbeelding is {0} bytes.</Resource>
     <Resource tag="WARN_RESIZED">De afmetingen van je afbeelding zijn aangepast.</Resource>
     <Resource tag="WARN_SIZE">De afmetingen van je afbeelding zijn {0}x{1} pixels.</Resource>
     <Resource tag="WARN_TOOBIG">De afmeting van je afbeelding mag niet meer dan {0}x{1} pixels bedragen.</Resource>
@@ -3459,7 +3498,7 @@ public class Hello1
     &lt;/td&gt;
     &lt;td&gt;
     &lt;p&gt;Als je geen rechten hebt om deze inhoud te bekijken, zie je een informatiebericht.&lt;/p&gt;
-    &lt;img src="{0}resources/images/HiddenWarnDescription.png" alt="De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken." title="De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken." /&gt;   
+    &lt;img src="{0}Content/images/HiddenWarnDescription.png" alt="De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken." title="De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken." /&gt;   
     &lt;p&gt;Als 'Gast' zie je een informatiebericht:&lt;/p&gt;
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Dit forum vereist dat je bent geregistreerd en ingelogd om verborgen berichten te bekijken.&lt;/div&gt;&lt;/div&gt;
     &lt;p&gt;Als je toegang hebt, zie je verborgen tekst.&lt;/p&gt;&lt;br /&gt;
@@ -3698,7 +3737,7 @@ Spoiler Inhoud
       &lt;strong&gt;Resultaat&lt;/strong&gt;
     &lt;/td&gt;
     &lt;td&gt;
-    &lt;style type="text/css"&gt;.yafnet .userLinkContainer{{background: url({0}resources/icons/user.png) #fff no-repeat 4px 50%;border: 1px solid #eee;padding: 4px 2px 4px 25px;margin: 3px;font-size: 80%;font-weight: bold;    background-color: #fff;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}}.yafnet .userLinkContainer:hover{{border: 1px solid #ddd;background-color: #eee;}}
+    &lt;style type="text/css"&gt;.yafnet .userLinkContainer{{background: url({0}Content/icons/user.png) #fff no-repeat 4px 50%;border: 1px solid #eee;padding: 4px 2px 4px 25px;margin: 3px;font-size: 80%;font-weight: bold;    background-color: #fff;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}}.yafnet .userLinkContainer:hover{{border: 1px solid #ddd;background-color: #eee;}}
 	&lt;/style&gt;
     &lt;span class="userLinkContainer"&gt;
 &lt;a href="{0}yaf_profile1234.aspx" rel="nofollow" title="View profile" target="_blank" id="UserLinkBBCodeFor12224" class="UserLinkBBCode"&gt;Username&lt;/a&gt;
@@ -3786,7 +3825,7 @@ Spoiler Inhoud
 </Resource>
     <Resource tag="EDITPROFILETITLE">Gebruikersprofiel bewerken &amp; Forum Instellingen</Resource>
     <Resource tag="FORUMSCONTENT">&lt;p&gt;&lt;strong&gt;Wat is YAF?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;YetAnotherForum.Net (YAF) is de Open Source Discussieforum software voor websites die draaien onder ASP.NET. YAF is 100% geschreven in C#, en een unieke combinatie van Open Source, Microsoft's .NET platform en een internationale samenwerking van de .NET Ontwikkel Community. Dagelijks groeiend en evoluerend onder de hoede van Jaben Cargman van Tiny Gecko. YAF draait op elke webserver die ASP.NET 4.0 (en hoger) en SQL Server support. YAF wordt uitgegeven onder de GPL licentie.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Hoe is het opgebouwd?&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Een forum bevat bepaalde gebieden, die zelf ook weer forums kunnen bevatten (subforums), met daarin Onderwerpen (topics), die weer door gebruikers geschreven berichten bevatten.&lt;/p&gt;&lt;p&gt;De Indexpagina bevat een lijst met categorie&amp;euml;n en forums, met standaard statistieken, zoals het aantal topics, het aantal berichten en welke gebruiker het laatste bericht heeft geplaatst.&lt;/p&gt;
+&lt;p&gt;YetAnotherForum.Net (YAF) is de Open Source Discussieforum software voor websites die draaien onder ASP.NET. YAF is 100% geschreven in C#, en een unieke combinatie van Open Source, Microsoft's .NET platform en een internationale samenwerking van de .NET Ontwikkel Community. Dagelijks groeiend en evoluerend onder de hoede van Ingo Herbote. YAF draait op elke webserver die ASP.NET 4.0 (en hoger) en SQL Server support. YAF wordt uitgegeven onder de GPL licentie.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Hoe is het opgebouwd?&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Een forum bevat bepaalde gebieden, die zelf ook weer forums kunnen bevatten (subforums), met daarin Onderwerpen (topics), die weer door gebruikers geschreven berichten bevatten.&lt;/p&gt;&lt;p&gt;De Indexpagina bevat een lijst met categorie&amp;euml;n en forums, met standaard statistieken, zoals het aantal topics, het aantal berichten en welke gebruiker het laatste bericht heeft geplaatst.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Hoe kan ik navigeren?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Als je op een forumnaam klikt, krijg je een lijst met topics te zien. Een topic is een conversatie tussen leden en/of gasten. Elk topic begint als een enkel bericht en groeit wanneer anderen erop reageren. &lt;/p&gt;
 &lt;p&gt;Om een nieuw topic te starten kun je eenvoudig op de 'Nieuw Topic' knop klikken. (Als dit is toegestaan).&lt;/p&gt;
@@ -4123,6 +4162,7 @@ Spoiler Inhoud
     <Resource tag="AUTH_NO_ACCESS_TOKEN">Could not get access_token!</Resource>
     <Resource tag="AUTO">Automatisch inloggen</Resource>
     <Resource tag="BOTH_USERNAME_EMAIL">Graag zowel je gebruikersnaam als je e-mail adres in te vullen.</Resource>
+    <Resource tag="CONNECT_VIA">Or Connect via</Resource>
     <Resource tag="EMAIL">E-mail adres</Resource>
     <Resource tag="EMAIL_SENT_PASSWORD">Er is een e-mail verzonden met je nieuwe wachtwoord.</Resource>
     <Resource tag="FACEBOOK_LOGIN">Login met Facebook</Resource>
@@ -4173,14 +4213,27 @@ Spoiler Inhoud
     <Resource tag="USERNAME">Gebruikersnaam</Resource>
   </page>
   <page name="MESSAGEHISTORY">
+    <Resource tag="COMPARE_TITLE">Message Edit History Post Comparsion</Resource>
+    <Resource tag="COMPARE_VERSIONS">Compare versions</Resource>
+    <Resource tag="CONFIRM_RESTORE">Are you really want to restore that Message version?</Resource>
     <Resource tag="CURRENTMESSAGE">Huidige versie</Resource>
     <Resource tag="EDITED">Bewerkt:</Resource>
     <Resource tag="EDITEDBY">Bewerkt door:</Resource>
+    <Resource tag="EDITEDBY_MOD">Edited By an Moderator</Resource>
     <Resource tag="EDITEREASON">Reden:</Resource>
     <Resource tag="GOMODERATE">Verder met moderatie</Resource>
     <Resource tag="HISTORYSTART">Oudere versies</Resource>
+    <Resource tag="MESSAGE_EDITEDAT">Message Edited at </Resource>
+    <Resource tag="MESSAGE_RESTORED">Message was successfully restored!</Resource>
+    <Resource tag="NEW">New</Resource>
+    <Resource tag="NOTHING_SELECTED">Nothing selected</Resource>
+    <Resource tag="OLD">Old</Resource>
     <Resource tag="ORIGINALMESSAGE">Originele versie</Resource>
     <Resource tag="POSTED">Gepost:</Resource>
+    <Resource tag="RESTORE_MESSAGE">Restore Version</Resource>
+    <Resource tag="SELECT_BOTH">Please select one old and one new Message</Resource>
+    <Resource tag="SELECT_DIFFERENT">You must select two different versions to make a valid comparison.</Resource>
+    <Resource tag="TEXT_CHANGES">Text Changes</Resource>
     <Resource tag="TITLE">Bericht geschiedenis</Resource>
     <Resource tag="TOMESSAGE">Ga naar bericht</Resource>
   </page>
@@ -4510,6 +4563,7 @@ Spoiler Inhoud
     <Resource tag="RSSTOPIC">RSS Feed</Resource>
     <Resource tag="SHARE">Delen</Resource>
     <Resource tag="SHARE_TOOLTIP">Deel dit topic via Email, Twitter, Google+, Facebook, Digg, Reddit of Tumblr.</Resource>
+    <Resource tag="SIMILAR_TOPICS">Similar Topics</Resource>
     <Resource tag="SKYPE">SKYPE</Resource>
     <Resource tag="SKYPE_TITLE">Neem met {0} contact op via Skype</Resource>
     <Resource tag="STATISTICS">Statistieken</Resource>
@@ -4868,11 +4922,13 @@ Spoiler Inhoud
     <Resource tag="BTNSEARCH">Zoeken</Resource>
     <Resource tag="BTNSEARCH_EXTERNAL">Zoek met {0}</Resource>
     <Resource tag="BY">door</Resource>
+    <Resource tag="KEYWORDS">Keyword(s)</Resource>
     <Resource tag="LOADING_SEARCH">Momentje...</Resource>
     <Resource tag="MATCH_ALL">met alle woorden</Resource>
     <Resource tag="MATCH_ANY">met één van deze woorden</Resource>
     <Resource tag="MATCH_EXACT">met de exacte woordcombinatie</Resource>
     <Resource tag="NO_SEARCH_RESULTS">[b]Geen resultaten voor zoekopdracht.[/b]</Resource>
+    <Resource tag="POST_AND_TITLE">Search Entire Posts</Resource>
     <Resource tag="POSTED">Gepost:</Resource>
     <Resource tag="POSTEDBY">Geplaatst door</Resource>
     <Resource tag="POSTS">Berichten</Resource>
@@ -4883,7 +4939,12 @@ Spoiler Inhoud
     <Resource tag="RESULTS">Resultaten</Resource>
     <Resource tag="SEARCH_CRITERIA_ERROR_MAX">Zoekteksten mogen maximaal {0} tekens lang zijn en de forumregels volgen (bekijk de forum FAQ voor meer informatie).</Resource>
     <Resource tag="SEARCH_CRITERIA_ERROR_MIN">Zoekteksten moeten minimaal {0} tekens lang zijn en de forumregels volgen (bekijk de forum FAQ voor meer informatie).</Resource>
+    <Resource tag="SEARCH_IN">Search in Forum(s)</Resource>
+    <Resource tag="SEARCH_OPTIONS">Search Options</Resource>
+    <Resource tag="SEARCH_RESULTS">Search Results per Page</Resource>
+    <Resource tag="SEARCH_TITLEORBOTH">Search entire Posts or Titles only</Resource>
     <Resource tag="TITLE">Zoeken</Resource>
+    <Resource tag="TITLE_ONLY">Search Titles Only</Resource>
     <Resource tag="TOPIC">Topic:</Resource>
   </page>
   <page name="SHOUTBOX">
@@ -5033,6 +5094,23 @@ Het bericht was gepost op het  {forumname} forum.
 		
 		Beheerlink: {adminlink}
 	</Resource>
+    <Resource tag="NOTIFICATION_ON_WELCOME_USER">
+    Hello {user},
+
+    You have been successfully registered on the {forumname} forum. You're all ready to go!
+
+    Before posting, consider other ways of finding information:
+
+    - Use the help pages to find out how the forum works
+    - Try the Forum Search, often times your questions are already been answered
+    - Do not post any abusive, vulgar, obscene, hateful, slanderous, threatening, sexually-oriented or any other material that may violate any applicable laws.
+    Doing so may lead to you being permanently banned from this forum. Note that all IP addresses are logged and may aid in enforcing these conditions.
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
     <Resource tag="PASSWORDRETRIEVAL_HTML">
       &lt;!DOCTYPE html&gt;
 
@@ -5104,36 +5182,40 @@ Bezoek {forumname} op {forumlink}
   </page>
   <page name="TIMEZONES">
     <Resource tag="NAME_UTC">(UTC)</Resource>
-    <Resource tag="UTC0">(UTC) Casablanca, Dublin, Edinburgh, Londen, Lissabon, Monrovi&amp;euml;</Resource>
-    <Resource tag="UTC1">(UTC+1:00) Amsterdam, Berlijn, Brussel, Madrid, Parijs, Rome, Warsaw</Resource>
-    <Resource tag="UTC-1">(UTC-1:00) Azoren, Kaapverdische eilanden</Resource>
-    <Resource tag="UTC10">(UTC+10:00) Melbourne, Papua Nieuw Guinea, Sydney, Vladivostok</Resource>
+    <Resource tag="UTC0">(UTC) Casablanca, Coordinated Universal Time, Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London, Monrovia, Reykjavik</Resource>
+    <Resource tag="UTC1">(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna, Belgrade, Bratislava, Budapest, Ljubljana, Prague, Brussels, Copenhagen, Madrid, Paris, Sarajevo, Skopje, Warsaw, Zagreb</Resource>
+    <Resource tag="UTC-1">(UTC-1:00) Azores, Cape Verde Is.</Resource>
+    <Resource tag="UTC10">(UTC+10:00) Brisbane, Canberra, Melbourne, Sydney, Guam, Port Moresby, Hobart, Yakutsk</Resource>
     <Resource tag="UTC-10">(UTC-10:00) Hawaii</Resource>
-    <Resource tag="UTC11">(UTC+11:00) Magadan, Nieuw Caledoni&amp;euml;, Solomon Eilanden</Resource>
-    <Resource tag="UTC-11">(UTC-11:00) Midway Eiland, Samoa</Resource>
-    <Resource tag="UTC12">(UTC+12:00) Auckland, Wellington, Fiji, Marshall Eiland</Resource>
-    <Resource tag="UTC-12">(UTC-12:00) Eniwetok, Kwajalein</Resource>
-    <Resource tag="UTC2">(UTC+2:00) Jeruzalem, Kaliningrad, Zuid-Afrika</Resource>
-    <Resource tag="UTC-2">(UTC-2:00) Ascension</Resource>
-    <Resource tag="UTC3">(UTC+3:00) Baghdad, Riyadh, Moskou, Nairobi</Resource>
-    <Resource tag="UTC-3">(UTC-3:00) Brazili&amp;euml;, Buenos Aires, Georgetown, Falkland Is.</Resource>
-    <Resource tag="UTC3.5">(UTC+3:30) Teheran</Resource>
+    <Resource tag="UTC11">(UTC+11:00) Solomon Is., New Caledonia, Vladivostok</Resource>
+    <Resource tag="UTC-11">(UTC-11:00) Coordinated Universal Time-11</Resource>
+    <Resource tag="UTC12">(UTC+12:00) Auckland, Wellington, Coordinated Universal Time+12, Fiji, Magadan, Petropavlovsk-Kamchatsky - Old</Resource>
+    <Resource tag="UTC-12">(UTC-12:00) International Date Line West</Resource>
+    <Resource tag="UTC13">(UTC+13:00) Nuku'alofa, Samoa</Resource>
+    <Resource tag="UTC2">(UTC+02:00) Athens, Bucharest, Beirut, Cairo, Damascus, E. Europe, Harare, Pretoria, Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius, Istanbul, Jerusalem, Tripoli</Resource>
+    <Resource tag="UTC-2">(UTC-2:00) Coordinated Universal Time-2, Mid-Atlantic - Old</Resource>
+    <Resource tag="UTC3">(UTC+03:00) Amman, Baghdad, Kaliningrad, Minsk, Kuwait, Riyadh, Nairobi</Resource>
+    <Resource tag="UTC-3">(UTC-3:00) Brasilia, Buenos Aires, Cayenne, Fortaleza, Greenland, Montevideo, Salvador</Resource>
+    <Resource tag="UTC3.5">(UTC+03:30) Tehran</Resource>
     <Resource tag="UTC-3.5">(UTC-3:30) Newfoundland</Resource>
-    <Resource tag="UTC4">(UTC+4:00) Adu Dhabi, Baku, Muscat, Tbilisi</Resource>
-    <Resource tag="UTC-4">(UTC-4:00) Atlantic Time (Canada), Caracas, La Paz</Resource>
-    <Resource tag="UTC4.5">(UTC+4:30) Kabul</Resource>
-    <Resource tag="UTC5">(UTC+5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</Resource>
-    <Resource tag="UTC-5">(UTC-5:00) Eastern Time (US &amp; Canada), Bogota, Lima, Quito</Resource>
-    <Resource tag="UTC5.5">(UTC+5:30) Bombay, Calcutta, Madras, Nieuw Delhi</Resource>
-    <Resource tag="UTC6">(UTC+6:00) Almaty, Colomba, Dhaka</Resource>
-    <Resource tag="UTC-6">(UTC-6:00) Central Time (US &amp; Canada), Mexico City</Resource>
-    <Resource tag="UTC7">(UTC+7:00) Bangkok, Hanoi, Jakarta</Resource>
-    <Resource tag="UTC-7">(UTC-7:00) Arizona</Resource>
-    <Resource tag="UTC8">(UTC+8:00) Peking, Hong Kong, Perth, Singapore, Taipei</Resource>
-    <Resource tag="UTC-8">(UTC-8:00) Pacific Time (US &amp; Canada)</Resource>
-    <Resource tag="UTC9">(UTC+9:00) Osaka, Sapporo, Seoul, Tokio, Yakutsk</Resource>
+    <Resource tag="UTC4">(UTC+04:00) Abu Dhabi, Muscat, Baku, Caucasus Standard Time, Moscow, St. Petersburg, Volgograd,Port Louis, Tbilisi, Yerevan</Resource>
+    <Resource tag="UTC-4">(UTC-4:00) Asuncion, Atlantic Time (Canada), Cuiaba, Georgetown, La Paz, Manaus, San Juan, Santiago</Resource>
+    <Resource tag="UTC4.5">(UTC+04:30) Kabul</Resource>
+    <Resource tag="UTC-4.5">(UTC-4:30) Caracas</Resource>
+    <Resource tag="UTC5">(UTC+05:00) Ashgabat, Tashkent, Islamabad, Karachi</Resource>
+    <Resource tag="UTC-5">(UTC-5:00) Bogota, Lima, Quito, Eastern Time (US &amp; Canada), Indiana (East)</Resource>
+    <Resource tag="UTC5.5">(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi</Resource>
+    <Resource tag="UTC5.75">(UTC+05:45) Kathmandu</Resource>
+    <Resource tag="UTC6">(UTC+06:00) Astana, Dhaka, Ekaterinburg</Resource>
+    <Resource tag="UTC-6">(UTC-6:00) Central America, Central Time (US &amp; Canada), Guadalajara, Mexico City, Monterrey - New, Guadalajara, Mexico City, Monterrey - Old, Saskatchewan</Resource>
+    <Resource tag="UTC6.5">(UTC+06:30) Yangon (Rangoon)</Resource>
+    <Resource tag="UTC7">(UTC+07:00) Bangkok, Hanoi, Jakarta, Novosibirsk</Resource>
+    <Resource tag="UTC-7">(UTC-7:00) Arizona, Chihuahua, La Paz, Mazatlan - New, Chihuahua, La Paz, Mazatlan - Old, Mountain Time (US &amp; Canada)</Resource>
+    <Resource tag="UTC8">(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi, Krasnoyarsk, Kuala Lumpur, Singapore Perth, Taipei, Ulaanbaatar</Resource>
+    <Resource tag="UTC-8">(UTC-8:00) Baja California, Pacific Time (US &amp; Canada)</Resource>
+    <Resource tag="UTC9">(UTC+09:00) Irkutsk, Osaka, Sapporo, Tokyo, Seoul</Resource>
     <Resource tag="UTC-9">(UTC-9:00) Alaska</Resource>
-    <Resource tag="UTC9.5">(UTC+9:30) Adelaide, Darwin</Resource>
+    <Resource tag="UTC9.5">(UTC+09:30) Adelaide</Resource>
   </page>
   <page name="TOOLBAR">
     <Resource tag="ACTIVETOPICS">Actieve topics</Resource>
@@ -5153,6 +5235,7 @@ Bezoek {forumname} op {forumlink}
     <Resource tag="INBOX_TITLE">Laat Postvak In zien.</Resource>
     <Resource tag="LOGGED_IN_AS">Aangemeld als: {0}</Resource>
     <Resource tag="LOGIN">Inloggen</Resource>
+    <Resource tag="LOGIN_CONNECT">Login to your {0} forum account</Resource>
     <Resource tag="LOGIN_TITLE">Laat het Login-control van het forum zien.</Resource>
     <Resource tag="LOGOUT">Uitloggen</Resource>
     <Resource tag="LOGOUT_QUESTION">Weet je zeker dat je wilt uitloggen?</Resource>
@@ -5169,6 +5252,7 @@ Bezoek {forumname} op {forumlink}
     <Resource tag="MYTOPICS_TITLE">Laat de actieve en favoriete topics zien.</Resource>
     <Resource tag="NEWPM">(&lt;b&gt;{0} Ongelezen&lt;/b&gt;)</Resource>
     <Resource tag="REGISTER">Registreren</Resource>
+    <Resource tag="REGISTER_CONNECT">register a new account</Resource>
     <Resource tag="REGISTER_TITLE">Laat het registratieformulier zien.</Resource>
     <Resource tag="SEARCH">Zoeken</Resource>
     <Resource tag="SEARCH_TITLE">Gebruik de zoekfunctie.</Resource>
@@ -5177,6 +5261,7 @@ Bezoek {forumname} op {forumlink}
     <Resource tag="TEAM_TITLE">Laat de teampagina zien met alle Moderators en Admins</Resource>
     <Resource tag="UNREADTOPICS">Er is/zijn {0} Topic(s) met ongelezen berichten.</Resource>
     <Resource tag="WELCOME_GUEST">Welkom gast!</Resource>
+    <Resource tag="WELCOME_GUEST_CONNECT">Wanna join the discussion?! </Resource>
     <Resource tag="WELCOME_GUEST_FULL">Welkom gast! Om van alle functies gebruik te kunnen maken kun je</Resource>
     <Resource tag="WELCOME_GUEST_NO">Welkom gast! Je kunt helaas &lt;strong&gt;niet&lt;/strong&gt; inloggen of registreren.</Resource>
   </page>

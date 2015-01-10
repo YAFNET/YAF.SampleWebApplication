@@ -12,7 +12,7 @@
         <li><a href="#View5"><YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" LocalizedTag="HOST_EDITORS" LocalizedPage="ADMIN_HOSTSETTINGS" /></a></li>
         <li><a href="#View6"><YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="HOST_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" /></a></li>
         <li><a href="#View7"><YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" LocalizedTag="HOST_TEMPLATES" LocalizedPage="ADMIN_HOSTSETTINGS" /></a></li>
-        <asp:PlaceHolder runat="server" ID="AvatarsTabLi"><li><a href="#View8"><YAF:LocalizedLabel ID="LocalizedLabel8" runat="server" LocalizedTag="HOST_AVATARS" LocalizedPage="ADMIN_HOSTSETTINGS" /></a></li></asp:PlaceHolder>
+        <li><a href="#View8"><YAF:LocalizedLabel ID="LocalizedLabel8" runat="server" LocalizedTag="HOST_AVATARS" LocalizedPage="ADMIN_HOSTSETTINGS" /></a></li>
         <li><a href="#View9"><YAF:LocalizedLabel ID="LocalizedLabel9" runat="server" LocalizedTag="HOST_CACHE" LocalizedPage="ADMIN_HOSTSETTINGS" /></a></li>
         <li><a href="#View10"><YAF:LocalizedLabel ID="LocalizedLabel10" runat="server" LocalizedTag="HOST_SEARCH" LocalizedPage="ADMIN_HOSTSETTINGS" /></a></li>
         <li><a href="#View11"><YAF:LocalizedLabel ID="LocalizedLabel34" runat="server" LocalizedTag="HOST_LOG" LocalizedPage="ADMIN_HOSTSETTINGS" /></a></li>
@@ -76,14 +76,6 @@
                         </td>
                         <td class="post">
                             <asp:TextBox Style="width:350px" ID="ServerTimeCorrection" runat="server"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="postheader">
-                            <YAF:HelpLabel ID="HelpLabel4" runat="server" LocalizedTag="EMAIL_VERIFICATION" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                        </td>
-                        <td class="post">
-                            <asp:CheckBox ID="EmailVerification" runat="server"></asp:CheckBox>
                         </td>
                     </tr>
                     <tr>
@@ -201,7 +193,7 @@
                             <YAF:HelpLabel ID="HelpLabel185" runat="server" LocalizedTag="CHECK_FOR_SPAM" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="SpamServiceType" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="SpamServiceType" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -210,7 +202,7 @@
                             <YAF:HelpLabel ID="HelpLabel187" runat="server" LocalizedTag="SPAM_MESSAGE_HANDLING" LocalizedPage="ADMIN_HOSTSETTINGS" Suffix=":" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="SpamMessageHandling" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="SpamMessageHandling" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -220,6 +212,14 @@
                         </td>
                         <td class="post">
                             <asp:TextBox ID="AkismetApiKey" Style="width:350px" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel239" runat="server" LocalizedTag="IGNORE_SPAMCHECK_COUNT" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                            <asp:TextBox ID="IgnoreSpamWordCheckPostCount" Style="width:350px" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                     <asp:PlaceHolder runat="server" ID="BotRegisterCheck">
@@ -233,7 +233,7 @@
                             <YAF:HelpLabel ID="HelpLabel224" runat="server" LocalizedTag="CHECK_FOR_BOTSPAM" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="BotSpamServiceType" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="BotSpamServiceType" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -258,7 +258,7 @@
                             <YAF:HelpLabel ID="HelpLabel226" runat="server" LocalizedTag="BOT_CHECK_ONREGISTER" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList ID="BotHandlingOnRegister" runat="server" Style="width:350px"></asp:DropDownList>
+                            <asp:DropDownList ID="BotHandlingOnRegister" runat="server" Style="width:350px" CssClass="standardSelectMenu"></asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
@@ -282,6 +282,30 @@
                         </td>
                         <td class="post">
                             <asp:CheckBox ID="DisableRegistrations" runat="server"></asp:CheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel4" runat="server" LocalizedTag="EMAIL_VERIFICATION" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                            <asp:CheckBox ID="EmailVerification" runat="server"></asp:CheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel238" runat="server" LocalizedTag="SHOW_CONNECT_MESSAGE" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                            <asp:CheckBox ID="ShowConnectMessageInTopic" runat="server"></asp:CheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel237" runat="server" LocalizedTag="WELCOME_NOTIFICATION" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                           <asp:DropDownList Style="width:350px" ID="SendWelcomeNotificationAfterRegister" runat="server" CssClass="standardSelectMenu"></asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
@@ -368,6 +392,43 @@
                         </td>
                         <td class="post">
                             <asp:CheckBox ID="ImageAttachmentResizeCropped" runat="server"></asp:CheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header1" colspan="2">
+                            <YAF:LocalizedLabel ID="LocalizedLabel40" runat="server" LocalizedTag="HEADER_CDN" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel235" runat="server" LocalizedTag="CDN_SCRIPTMANAGER" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                            <asp:CheckBox ID="ScriptManagerScriptsCDNHosted" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel228" runat="server" LocalizedTag="CDN_JQUERY" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                            <asp:CheckBox ID="JqueryCDNHosted" runat="server"></asp:CheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel229" runat="server" LocalizedTag="CDN_JQUERY_UI" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                            <asp:CheckBox ID="JqueryUICDNHosted" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel230" runat="server" LocalizedTag="BOARD_CDN_HOSTED" />
+                        </td>
+                        <td class="post">
+                            <asp:CheckBox ID="JqueryUIThemeCDNHosted" runat="server" />
                         </td>
                     </tr>
                 </table>
@@ -576,7 +637,7 @@
                             <YAF:HelpLabel ID="HelpLabel105" runat="server" LocalizedTag="ALLOW_SHARE_TOPIC" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ShowShareTopicTo" runat="server" DataValueField="Value" DataTextField="Name">
+                            <asp:DropDownList Style="width:350px" ID="ShowShareTopicTo" runat="server" DataValueField="Value" DataTextField="Name" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -585,7 +646,7 @@
                             <YAF:HelpLabel ID="HelpLabel184" runat="server" LocalizedTag="ENABLE_RETWEET_MSG" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ShowRetweetMessageTo" runat="server" DataValueField="Value" DataTextField="Name">
+                            <asp:DropDownList Style="width:350px" ID="ShowRetweetMessageTo" runat="server" DataValueField="Value" DataTextField="Name" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -848,7 +909,7 @@
                             <YAF:HelpLabel ID="HelpLabel133" runat="server" LocalizedTag="POSTS_FEEDS_ACCESS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>              
                         <td class="post">
-                              <asp:DropDownList Style="width:350px" ID="PostsFeedAccess" runat="server">
+                              <asp:DropDownList Style="width:350px" ID="PostsFeedAccess" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -857,7 +918,7 @@
                             <YAF:HelpLabel ID="HelpLabel134" runat="server" LocalizedTag="LASTPOSTS_FEEDS_ACCESS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>              
                         <td class="post">
-                              <asp:DropDownList Style="width:350px" ID="PostLatestFeedAccess" runat="server">
+                              <asp:DropDownList Style="width:350px" ID="PostLatestFeedAccess" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -866,7 +927,7 @@
                             <YAF:HelpLabel ID="HelpLabel135" runat="server" LocalizedTag="FORUM_FEEDS_ACCESS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>              
                         <td class="post">
-                              <asp:DropDownList Style="width:350px" ID="ForumFeedAccess" runat="server">
+                              <asp:DropDownList Style="width:350px" ID="ForumFeedAccess" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -875,7 +936,7 @@
                             <YAF:HelpLabel ID="HelpLabel136" runat="server" LocalizedTag="TOPIC_FEEDS_ACCESS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>              
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="TopicsFeedAccess" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="TopicsFeedAccess" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -884,7 +945,7 @@
                             <YAF:HelpLabel ID="HelpLabel137" runat="server" LocalizedTag="ACTIVETOPIC_FEEDS_ACCESS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>              
                         <td class="post">
-                              <asp:DropDownList Style="width:350px" ID="ActiveTopicFeedAccess" runat="server">
+                              <asp:DropDownList Style="width:350px" ID="ActiveTopicFeedAccess" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -893,7 +954,7 @@
                             <YAF:HelpLabel ID="HelpLabel138" runat="server" LocalizedTag="FAVTOPIC_FEEDS_ACCESS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>              
                         <td class="post">
-                              <asp:DropDownList Style="width:350px" ID="FavoriteTopicFeedAccess" runat="server">
+                              <asp:DropDownList Style="width:350px" ID="FavoriteTopicFeedAccess" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>        
@@ -1026,14 +1087,6 @@
                     </tr>
                     <tr>
                         <td class="postheader">
-                            <YAF:HelpLabel ID="HelpLabel181" runat="server" LocalizedTag="RECAPTCHA_MULTI_INSTANCE" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                        </td>
-                        <td class="post">
-                            <asp:CheckBox ID="RecaptureMultipleInstances" runat="server"></asp:CheckBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="postheader">
                             <YAF:HelpLabel ID="HelpLabel146" runat="server" LocalizedTag="CAPTCHA_GUEST_POSTING" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
@@ -1053,7 +1106,7 @@
                             <YAF:HelpLabel ID="HelpLabel148" runat="server" LocalizedTag="CAPTCHA_FOR_REGISTER" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="CaptchaTypeRegister" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="CaptchaTypeRegister" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1067,7 +1120,7 @@
                             <YAF:HelpLabel ID="HelpLabel216" runat="server" LocalizedTag="MESSAGE_SYSTEM" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="MessageNotificationSystem" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="MessageNotificationSystem" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1266,6 +1319,14 @@
                     </tr>
                     <tr>
                         <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel181" runat="server" LocalizedTag="SHOW_SIMILARTOPICS" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                            <asp:CheckBox ID="ShowSimilarTopics" runat="server"></asp:CheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="postheader">
                             <YAF:HelpLabel ID="HelpLabel171" runat="server" LocalizedTag="SHOW_RENDERTIME" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
@@ -1285,7 +1346,7 @@
                             <YAF:HelpLabel ID="HelpLabel182" runat="server" LocalizedTag="SHOWHELP" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ShowHelpTo" runat="server" DataValueField="Value" DataTextField="Name">
+                            <asp:DropDownList Style="width:350px" ID="ShowHelpTo" runat="server" DataValueField="Value" DataTextField="Name" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1294,7 +1355,7 @@
                             <YAF:HelpLabel ID="HelpLabel183" runat="server" LocalizedTag="SHOWTEAM" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ShowTeamTo" runat="server" DataValueField="Value" DataTextField="Name">
+                            <asp:DropDownList Style="width:350px" ID="ShowTeamTo" runat="server" DataValueField="Value" DataTextField="Name" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1347,6 +1408,15 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel236" runat="server" LocalizedTag="AMOUNT_OF_SUBFORUMS" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                            <asp:TextBox Style="width:350px" ID="SubForumsInForumList" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    
+                    <tr>
                         <td class="header1" colspan="2">
                             <YAF:LocalizedLabel ID="LocalizedLabel36" runat="server" LocalizedTag="HEADER_SHOUT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
@@ -1364,7 +1434,7 @@
                             <YAF:HelpLabel ID="HelpLabel221" runat="server" LocalizedTag="VIEWSHOUTBOX_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ShoutboxViewPermissions" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="ShoutboxViewPermissions" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1373,7 +1443,7 @@
                             <YAF:HelpLabel ID="HelpLabel222" runat="server" LocalizedTag="SHOUTBOX_DEFAULTSTATE" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ShoutboxDefaultState" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="ShoutboxDefaultState" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1432,7 +1502,7 @@
                             <YAF:HelpLabel ID="HelpLabel88" runat="server" LocalizedTag="FORUM_EDITOR" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ForumEditor" runat="server" DataValueField="Value" DataTextField="Name">
+                            <asp:DropDownList Style="width:350px" ID="ForumEditor" runat="server" DataValueField="Value" DataTextField="Name" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1530,7 +1600,7 @@
                             <YAF:HelpLabel ID="HelpLabel76" runat="server" LocalizedTag="REPORT_POST_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ReportPostPermissions" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="ReportPostPermissions" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1539,7 +1609,7 @@
                              <YAF:HelpLabel ID="HelpLabel89" runat="server" LocalizedTag="ALLOW_TOPICS_DUPLICATENAME" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="AllowCreateTopicsSameName" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="AllowCreateTopicsSameName" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1556,7 +1626,7 @@
                             <YAF:HelpLabel ID="HelpLabel75" runat="server" LocalizedTag="VIEWPROFILE_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ProfileViewPermissions" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="ProfileViewPermissions" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1565,7 +1635,7 @@
                             <YAF:HelpLabel ID="HelpLabel74" runat="server" LocalizedTag="VIEWMEMBERLIST_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="MembersListViewPermissions" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="MembersListViewPermissions" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1574,7 +1644,7 @@
                             <YAF:HelpLabel ID="HelpLabel73" runat="server" LocalizedTag="VIEWACTIVE_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="ActiveUsersViewPermissions" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="ActiveUsersViewPermissions" runat="server" CssClass="standardSelectMenu">
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -1724,7 +1794,7 @@
                         <td class="post">
                             <asp:TextBox Style="width:350px" ID="UserBoxThanksTo" runat="server"></asp:TextBox>
                         </td>
-                    </tr>s
+                    </tr>
                 </table>
 	</div>
     <asp:PlaceHolder runat="server" ID="AvatarsTab">
@@ -1735,6 +1805,7 @@
                             <YAF:LocalizedLabel ID="LocalizedLabel18" runat="server" LocalizedTag="HEADER_AVATARS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                     </tr>
+                    <asp:PlaceHolder runat="server" ID="AvatarSettingsHolder">
                      <tr>
                         <td class="postheader" style="width:50%">
                             <YAF:HelpLabel ID="HelpLabel189" runat="server" LocalizedTag="AVATAR_GALLERY" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1772,7 +1843,7 @@
                             <YAF:HelpLabel ID="HelpLabel53" runat="server" LocalizedTag="GRAVATAR_RATING" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:350px" ID="GravatarRating" runat="server">
+                            <asp:DropDownList Style="width:350px" ID="GravatarRating" runat="server" CssClass="standardSelectMenu">
                                 <asp:ListItem Value="G"></asp:ListItem>
                                 <asp:ListItem Value="PG"></asp:ListItem>
                                 <asp:ListItem Value="R"></asp:ListItem>
@@ -1780,6 +1851,15 @@
                             </asp:DropDownList>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="postheader">
+                            <YAF:HelpLabel ID="HelpLabel56" runat="server" LocalizedTag="AVATAR_SIZE" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        </td>
+                        <td class="post">
+                            <asp:TextBox Style="width:350px" ID="AvatarSize" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    </asp:PlaceHolder>
                     <tr>
                         <td class="postheader">
                             <YAF:HelpLabel ID="HelpLabel54" runat="server" LocalizedTag="AVATAR_WIDTH" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1794,14 +1874,6 @@
                         </td>
                         <td class="post">
                             <asp:TextBox Style="width:350px" ID="AvatarHeight" runat="server"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="postheader">
-                            <YAF:HelpLabel ID="HelpLabel56" runat="server" LocalizedTag="AVATAR_SIZE" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                        </td>
-                        <td class="post">
-                            <asp:TextBox Style="width:350px" ID="AvatarSize" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
@@ -1952,7 +2024,7 @@
                             <YAF:HelpLabel ID="HelpLabel33" runat="server" LocalizedTag="SEARCH_PERMISS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:99%" ID="SearchPermissions" runat="server">
+                            <asp:DropDownList Style="width:99%" ID="SearchPermissions" runat="server" CssClass="standardSelectMenu">
                                </asp:DropDownList>
                         </td>
                     </tr>
@@ -1993,7 +2065,7 @@
                             <YAF:HelpLabel ID="HelpLabel37" runat="server" LocalizedTag="EXTERN_SEARCH_PERMISS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         </td>
                         <td class="post">
-                            <asp:DropDownList Style="width:99%" ID="ExternalSearchPermissions" runat="server">                               
+                            <asp:DropDownList Style="width:99%" ID="ExternalSearchPermissions" runat="server" CssClass="standardSelectMenu">                               
                             </asp:DropDownList>
                         </td>
                     </tr>

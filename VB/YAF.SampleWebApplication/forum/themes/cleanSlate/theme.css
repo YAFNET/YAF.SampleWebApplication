@@ -435,13 +435,6 @@
   background-color: Yellow;
   color: Black;
 }
-.yafnet .innercode {
-  background-color: #efefef;
-  border: solid 1px #808080;
-  color: #000000;
-  line-height: 1.3em;
-  font-family: "courier new", "times new roman", monospace;
-}
 .yafnet .smallfont {
   font-size: 10px;
 }
@@ -826,9 +819,6 @@
   text-decoration: none;
   background: #f5f5f5;
   border: 1px solid #444444;
-  -moz-border-radius: 0.4em;
-  -webkit-border-radius: 0.4em;
-  border-radius: 0.4em;
   padding: 1px 3px 1px 3px;
   margin-right: 2px;
 }
@@ -998,9 +988,4 @@
   margin: 3px;
   border: 1px solid #777777;
   background: #888888;
-}
-
-/* Sticky &  Announcement Topic Row*/
-.yafnet .priorityRow td {
-	background-color: #f8f8f8
 }

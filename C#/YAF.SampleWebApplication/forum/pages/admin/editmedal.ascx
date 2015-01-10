@@ -54,7 +54,7 @@
 				<YAF:HelpLabel ID="HelpLabel5" runat="server" LocalizedTag="MEDAL_IMAGE" LocalizedPage="ADMIN_EDITMEDAL" />
             </td>
 			<td class="post" colspan="2">
-				<asp:DropDownList Style="width: 250px" ID="MedalImage" runat="server" />
+				<asp:DropDownList Style="width: 250px" ID="MedalImage" runat="server" CssClass="standardSelectMenu" />
 				<img style="vertical-align: top;" runat="server" id="MedalPreview" />
 			</td>
 		</tr>
@@ -63,7 +63,7 @@
 				<YAF:HelpLabel ID="HelpLabel6" runat="server" LocalizedTag="RIBBON_IMAGE" LocalizedPage="ADMIN_EDITMEDAL" />
             </td>
 			<td class="post" colspan="2">
-				<asp:DropDownList Style="width: 250px" ID="RibbonImage" runat="server" />
+				<asp:DropDownList Style="width: 250px" ID="RibbonImage" runat="server" CssClass="standardSelectMenu" />
 				<img style="vertical-align: top;" runat="server" id="RibbonPreview" />
 			</td>
 		</tr>
@@ -72,7 +72,7 @@
 				<YAF:HelpLabel ID="HelpLabel7" runat="server" LocalizedTag="SMALL_IMAGE" LocalizedPage="ADMIN_EDITMEDAL" />
             </td>
 			<td class="post" colspan="2">
-				<asp:DropDownList Style="width: 250px" ID="SmallMedalImage" runat="server" />
+				<asp:DropDownList Style="width: 250px" ID="SmallMedalImage" runat="server" CssClass="standardSelectMenu" />
 				<img style="vertical-align: top;" runat="server" id="SmallMedalPreview" />
 			</td>
 		</tr>
@@ -81,7 +81,7 @@
 				<YAF:HelpLabel ID="HelpLabel8" runat="server" LocalizedTag="SMALL_RIBBON" LocalizedPage="ADMIN_EDITMEDAL" />
             </td>
 			<td class="post" colspan="2">
-				<asp:DropDownList Style="width: 250px" ID="SmallRibbonImage" runat="server" />
+				<asp:DropDownList Style="width: 250px" ID="SmallRibbonImage" runat="server" CssClass="standardSelectMenu" />
 				<img style="vertical-align: top;" runat="server" id="SmallRibbonPreview" />
 			</td>
 		</tr>
@@ -90,7 +90,7 @@
 				<YAF:HelpLabel ID="HelpLabel9" runat="server" LocalizedTag="SORT_ORDER" LocalizedPage="ADMIN_EDITMEDAL" />
             </td>
 			<td class="post" colspan="2">
-				<asp:TextBox Style="width: 250px" ID="SortOrder" MaxLength="5" runat="server" /></td>
+				<asp:TextBox Style="width: 250px" ID="SortOrder" MaxLength="5" runat="server" CssClass="Numeric" /></td>
 		</tr>
 		<tr>
 			<td class="postheader" colspan="2">
@@ -152,11 +152,21 @@
 					<td class="post" colspan="2">
 						<%# Eval("Message") %>
 					</td>
-					<td class="post">
-						<asp:LinkButton runat="server" CommandName="edit" CommandArgument='<%# Eval("GroupID") %>'><YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" LocalizedTag="EDIT" /></asp:LinkButton>
-						|
-						<asp:LinkButton runat="server" CommandName="remove" CommandArgument='<%# Eval("GroupID") %>'
-							OnLoad="GroupRemove_Load"><YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="REMOVE" /></asp:LinkButton>
+					<td class="post" align="right">
+					    <YAF:ThemeButton ID="ThemeButtonEdit" CssClass="yaflittlebutton" 
+                            CommandName='edit' CommandArgument='<%# Eval( "GroupID") %>' 
+                            TitleLocalizedTag="EDIT" 
+                            ImageThemePage="ICONS" ImageThemeTag="EDIT_SMALL_ICON"
+                            TextLocalizedTag="EDIT" 
+                            runat="server">
+					    </YAF:ThemeButton>
+						<YAF:ThemeButton ID="ThemeButtonDelete" CssClass="yaflittlebutton" 
+                                    CommandName='delete' CommandArgument='<%# Eval( "GroupID") %>' 
+                                    TitleLocalizedTag="DELETE" 
+                                    ImageThemePage="ICONS" ImageThemeTag="DELETE_SMALL_ICON"
+                                    TextLocalizedTag="DELETE"
+                                    OnLoad="GroupRemove_Load"  runat="server">
+                                </YAF:ThemeButton>
 					</td>
 				</tr>
 			</ItemTemplate>
@@ -178,7 +188,7 @@
 					<YAF:HelpLabel ID="HelpLabel14" runat="server" LocalizedTag="MEDAL_GROUP" LocalizedPage="ADMIN_EDITMEDAL" />
                 </td>
 				<td class="post" colspan="2">
-					<asp:DropDownList style="width: 250px" runat="server" ID="AvailableGroupList" />
+					<asp:DropDownList style="width: 250px" runat="server" ID="AvailableGroupList" CssClass="standardSelectMenu" />
 				</td>
 			</tr>
 			<tr>
@@ -194,7 +204,7 @@
 					<YAF:HelpLabel ID="HelpLabel16" runat="server" LocalizedTag="OVERRIDE_ORDER" LocalizedPage="ADMIN_EDITMEDAL" />
                 </td>
 				<td class="post" colspan="2">
-					<asp:TextBox Style="width: 250px" ID="GroupSortOrder" runat="server" />
+					<asp:TextBox Style="width: 250px" ID="GroupSortOrder" runat="server" CssClass="Numeric" />
 				</td>
 			</tr>
 			<tr>
@@ -281,7 +291,7 @@
                 </td>
 				<td class="post" colspan="2">
 					<asp:TextBox Style="width: 250px" ID="UserName" runat="server" />
-					<asp:DropDownList  Style="width: 250px" runat="server" ID="UserNameList" Visible="false" />
+					<asp:DropDownList  Style="width: 250px" runat="server" ID="UserNameList" Visible="false" CssClass="standardSelectMenu" />
 					<asp:Button runat="server" ID="FindUsers" Text="Find Users" OnClick="FindUsers_Click" CssClass="pbutton" />
 					<asp:Button runat="server" ID="Clear" Text="Clear" OnClick="Clear_Click" Visible="false" CssClass="pbutton" />
 					<asp:TextBox Visible="false" ID="UserID" runat="server" />
@@ -300,7 +310,7 @@
 					<YAF:HelpLabel ID="HelpLabel20" runat="server" LocalizedTag="OVERRIDE_ORDER" LocalizedPage="ADMIN_EDITMEDAL" />
 				</td>
 				<td class="post" colspan="2">
-					<asp:TextBox Style="width: 250px" ID="UserSortOrder" runat="server" />
+					<asp:TextBox Style="width: 250px" ID="UserSortOrder" runat="server" CssClass="Numeric" />
 				</td>
 			</tr>
 			<tr>
