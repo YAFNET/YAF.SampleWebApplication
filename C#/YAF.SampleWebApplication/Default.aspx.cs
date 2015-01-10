@@ -1,7 +1,7 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014 Ingo Herbote
+ * Copyright (C) 2014-2015 Ingo Herbote
  * http://www.yetanotherforum.net/
  * 
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -21,16 +21,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 namespace YAF.SampleWebApplication
 {
     using System;
     using System.Web.UI;
 
-    using YAF.Classes;
     using YAF.Core;
-    using YAF.Types.Interfaces;
-    using YAF.Utilities;
-    using YAF.Utils;
 
     /// <summary>
     /// The Default Page
@@ -40,34 +37,35 @@ namespace YAF.SampleWebApplication
         /// <summary>
         /// Handles the Load event of the Page control.
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
+        /// <param name="sender">
+        /// The source of the event.
+        /// </param>
+        /// <param name="e">
+        /// The <see cref="EventArgs"/> instance containing the event data.
+        /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                Type csType = typeof(Page);
+                var csType = typeof(Page);
 
-                var uRLToResource = Config.JQueryFile;
-
-                if (!uRLToResource.StartsWith("http"))
-                {
-                    uRLToResource = YafForumInfo.GetURLToResource(Config.JQueryFile);
-                }
-
-                ScriptManager.RegisterClientScriptInclude(this, csType, "JQuery", uRLToResource);
-
-                YafContext.Current.PageElements.AddPageElement("jquery");
-
-                if (!YafContext.Current.Get<YafBoardSettings>().ShowRelativeTime)
+                if (YafContext.Current == null)
                 {
                     return;
                 }
 
-                ScriptManager.RegisterClientScriptInclude(
-                    this, csType, "jqueryTimeagoscript", YafForumInfo.GetURLToResource("js/jquery.timeago.js"));
+                if (YafContext.Current.PageElements.PageElementExists("jquery"))
+                {
+                    return;
+                }
 
-                ScriptManager.RegisterStartupScript(this, csType, "timeagoloadjs", JavaScriptBlocks.TimeagoLoadJs, true);
+                YafContext.Current.PageElements.AddPageElement("jquery");
+
+                ScriptManager.RegisterClientScriptInclude(
+                    this, 
+                    csType, 
+                    "JQuery", 
+                    "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js");
             }
             catch (Exception)
             {
