@@ -7,12 +7,6 @@
  
 */
 
-#IFSRVVER>8#CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}exampleserverversion] as
-BEGIN
-SELECT 'sqlserver version variant example for mssqlserver 2005 and higher'   
-END
- GO
-
 IF  exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}exampleserverversion]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [{databaseOwner}].[{objectQualifier}exampleserverversion]
 GO
@@ -1947,115 +1941,70 @@ declare @FirstSelectRowID int
             a.AttachmentID=@AttachmentID
     else if @UserID is not null
         begin
-            set nocount on
            set @PageIndex = @PageIndex + 1
-           set @FirstSelectRowNumber = 0
-           set @FirstSelectRowID = 0
            set @TotalRows = 0
            
-           select @TotalRows = count(1) from [{databaseOwner}].[{objectQualifier}Attachment] a			
-        where
-            a.UserID = @UserID
-           select @FirstSelectRowNumber = (@PageIndex - 1) * @PageSize + 1
-           
-           if (@FirstSelectRowNumber <= @TotalRows)
-           begin
-           -- find first selectedrowid 
-           set rowcount @FirstSelectRowNumber
-           end
-           else
-           begin  
-           set rowcount 1
-           end
-      -- find first row id for a current page 
-      select @FirstSelectRowID = AttachmentID 
-     from 
-            [{databaseOwner}].[{objectQualifier}Attachment] a			
-        where
-            a.UserID = @UserID
-        order by
-            a.AttachmentID
-
-      -- display page 
-      set rowcount @PageSize
-     select 
-            a.*,
-            TotalRows  = @TotalRows
-        from 
-            [{databaseOwner}].[{objectQualifier}Attachment] a			
-        where
-            a.AttachmentID >= @FirstSelectRowID  and  a.UserID = @UserID
-        order by
-            a.AttachmentID
-            set rowcount 0 
-   set nocount off
+           select @TotalRows = count(1) from [{databaseOwner}].[{objectQualifier}Attachment]
+		   		
+           select top (@PageSize)
+               *
+                   from
+                   (
+				       select 
+					       *,
+					       TotalRows = @TotalRows ,
+					       ROW_NUMBER() over (order by AttachmentID desc) as RowNum
+				       from 
+					       [{databaseOwner}].[{objectQualifier}Attachment] a
+				       where 
+					       UserID=@UserID
+                   ) as Attachments
+           where
+               RowNum > ((@PageIndex -1) * @PageSize)
+           order by 
+               AttachmentID desc
         end
     else
-    begin
-
-               set nocount on
+        begin
            set @PageIndex = @PageIndex + 1
-           set @FirstSelectRowNumber = 0
-           set @FirstSelectRowID = 0
            set @TotalRows = 0
            
            select @TotalRows = count(1) from [{databaseOwner}].[{objectQualifier}Attachment] a
-            inner join [{databaseOwner}].[{objectQualifier}Message] b on b.MessageID = a.MessageID
-            inner join [{databaseOwner}].[{objectQualifier}Topic] c on c.TopicID = b.TopicID
-            inner join [{databaseOwner}].[{objectQualifier}Forum] d on d.ForumID = c.ForumID
-            inner join [{databaseOwner}].[{objectQualifier}Category] e on e.CategoryID = d.CategoryID			
-        where
-            e.BoardID = @BoardID
-           select @FirstSelectRowNumber = (@PageIndex - 1) * @PageSize + 1
-           
-           if (@FirstSelectRowNumber <= @TotalRows)
-           begin
-           -- find first selectedrowid 
-           set rowcount @FirstSelectRowNumber
-           end
-           else
-           begin  
-           set rowcount 1
-           end
-      -- find first row id for a current page 
-      select @FirstSelectRowID = AttachmentID 
-     from 
-            [{databaseOwner}].[{objectQualifier}Attachment] a
-            inner join [{databaseOwner}].[{objectQualifier}Message] b on b.MessageID = a.MessageID
-            inner join [{databaseOwner}].[{objectQualifier}Topic] c on c.TopicID = b.TopicID
-            inner join [{databaseOwner}].[{objectQualifier}Forum] d on d.ForumID = c.ForumID
-            inner join [{databaseOwner}].[{objectQualifier}Category] e on e.CategoryID = d.CategoryID			
-        where
-            e.BoardID = @BoardID
-        order by
-            a.AttachmentID
-
-      -- display page 
-      set rowcount @PageSize
-     select 
-            a.*,
-            BoardID		= @BoardID,
-            Posted		= b.Posted,
-            ForumID		= d.ForumID,
-            ForumName	= d.Name,
-            TopicID		= c.TopicID,
-            TopicName	= c.Topic,
-            TotalRows  = @TotalRows
-        from 
-            [{databaseOwner}].[{objectQualifier}Attachment] a
-            inner join [{databaseOwner}].[{objectQualifier}Message] b on b.MessageID = a.MessageID
-            inner join [{databaseOwner}].[{objectQualifier}Topic] c on c.TopicID = b.TopicID
-            inner join [{databaseOwner}].[{objectQualifier}Forum] d on d.ForumID = c.ForumID
-            inner join [{databaseOwner}].[{objectQualifier}Category] e on e.CategoryID = d.CategoryID			
-        where
-            a.AttachmentID >= @FirstSelectRowID  and e.BoardID = @BoardID
-        order by
-            a.AttachmentID
-            set rowcount 0 
-   set nocount off
-
-        
-    end
+		                                     inner join [{databaseOwner}].[{objectQualifier}Message] b on b.MessageID = a.MessageID
+		                                     inner join [{databaseOwner}].[{objectQualifier}Topic] c on c.TopicID = b.TopicID
+		                                     inner join [{databaseOwner}].[{objectQualifier}Forum] d on d.ForumID = c.ForumID
+		                                     inner join [{databaseOwner}].[{objectQualifier}Category] e on e.CategoryID = d.CategoryID			
+									    where
+		                                     e.BoardID = @BoardID
+		   		
+           select top (@PageSize)
+               *
+                   from
+                   (
+				       select 
+					       a.*,
+					       BoardID		= @BoardID,
+					       Posted		= b.Posted,
+					       ForumID		= d.ForumID,
+					       ForumName	= d.Name,
+					       TopicID		= c.TopicID,
+					       TopicName	= c.Topic,
+					       TotalRows  = @TotalRows,
+					       ROW_NUMBER() over (order by AttachmentID desc) as RowNum
+				       from 
+					       [{databaseOwner}].[{objectQualifier}Attachment] a
+					       inner join [{databaseOwner}].[{objectQualifier}Message] b on b.MessageID = a.MessageID
+					       inner join [{databaseOwner}].[{objectQualifier}Topic] c on c.TopicID = b.TopicID
+					       inner join [{databaseOwner}].[{objectQualifier}Forum] d on d.ForumID = c.ForumID
+					       inner join [{databaseOwner}].[{objectQualifier}Category] e on e.CategoryID = d.CategoryID			
+				       where 
+					       e.BoardID=BoardID
+                   ) as Attachments
+           where
+               RowNum > ((@PageIndex -1) * @PageSize)
+           order by 
+               AttachmentID desc
+        end
 end
 GO
 
@@ -3358,7 +3307,6 @@ BEGIN
         INNER JOIN [{databaseOwner}].[{objectQualifier}Group] b WITH(NOLOCK) ON b.GroupID = a.GroupID
         INNER JOIN [{databaseOwner}].[{objectQualifier}AccessMask] c WITH(NOLOCK) ON c.AccessMaskID = a.AccessMaskID
     where
-        (b.Flags & 1)=0 and
         (c.Flags & 64)<>0
     union all
     select 

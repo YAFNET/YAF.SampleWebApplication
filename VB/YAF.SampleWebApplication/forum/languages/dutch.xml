@@ -233,9 +233,9 @@
     <Resource tag="IMPORT">Import List</Resource>
     <Resource tag="IMPORT_FAILED">Failed to import! Invalid upload format specified: {0} </Resource>
     <Resource tag="IMPORT_FILE">Select Import File:</Resource>
-    <Resource tag="IMPORT_FILE_HELP">Must be *.txt file containing an Email Adress on each line</Resource>
+    <Resource tag="IMPORT_FILE_HELP">Must be *.txt file containing an Email Address on each line</Resource>
     <Resource tag="IMPORT_NOTHING">Nothing imported: no new email address was found in the upload.</Resource>
-    <Resource tag="IMPORT_SUCESS">{0} new email adress(es) imported successfully.</Resource>
+    <Resource tag="IMPORT_SUCESS">{0} new email address(es) imported successfully.</Resource>
     <Resource tag="NOTE">You can find a list of Spam Bot Email Addresses on StopForumSpam.com &lt;a href="http://www.stopforumspam.com/downloads/"&gt;http://www.stopforumspam.com/downloads/&lt;/a&gt;, that can be imported here.</Resource>
     <Resource tag="TITLE">Import Email Addresses</Resource>
   </page>
@@ -243,7 +243,7 @@
     <Resource tag="ADD_IP">Voeg nieuw ip toe</Resource>
     <Resource tag="BAN_BY">Geblokkeerd door</Resource>
     <Resource tag="EXPORT">Export to Text File</Resource>
-    <Resource tag="IMPORT_IPS">Import Adress(es)</Resource>
+    <Resource tag="IMPORT_IPS">Import Address(es)</Resource>
     <Resource tag="MASK">Masker</Resource>
     <Resource tag="REASON">Reden</Resource>
     <Resource tag="SINCE">Sinds</Resource>
@@ -265,9 +265,9 @@
     <Resource tag="IMPORT">Import List</Resource>
     <Resource tag="IMPORT_FAILED">Failed to import! Invalid upload format specified: {0} </Resource>
     <Resource tag="IMPORT_FILE">Select Import File:</Resource>
-    <Resource tag="IMPORT_FILE_HELP">Must be *.txt file containting Ip Adresses on each line</Resource>
+    <Resource tag="IMPORT_FILE_HELP">Must be *.txt file containing an Ip Address on each line</Resource>
     <Resource tag="IMPORT_NOTHING">Nothing imported: no new ip address was found in the upload.</Resource>
-    <Resource tag="IMPORT_SUCESS">{0} new ip adress(es) imported successfully.</Resource>
+    <Resource tag="IMPORT_SUCESS">{0} new ip address(es) imported successfully.</Resource>
     <Resource tag="NOTE">You can find a list of Spam Bot Ips on StopForumSpam.com &lt;a href="http://www.stopforumspam.com/downloads/"&gt;http://www.stopforumspam.com/downloads/&lt;/a&gt;, that can be imported here.</Resource>
     <Resource tag="TITLE">Import IP Addresses</Resource>
   </page>
@@ -2127,6 +2127,36 @@
     <Resource tag="REGMAIL_WILL_BE_SEND">Bij registratie ontvang je een e-mail. Om te kunnen inloggen moet je op de link in dat bericht klikken.</Resource>
     <Resource tag="REPLY">Antwoord</Resource>
     <Resource tag="SAVE">Opslaan</Resource>
+    <Resource tag="SELECT_LOCALE_JS">
+      language:  {
+              errorLoading: function() {
+                    return "The results could not be loaded."
+                },
+                inputTooLong: function(e) {
+                    var t = e.input.length - e.maximum,
+                        n = "Please delete " + t + " character";
+                    return t != 1 &amp;&amp; (n += "s"), n
+                },
+                inputTooShort: function(e) {
+                    var t = e.minimum - e.input.length,
+                        n = "Please enter " + t + " or more characters";
+                    return n
+                },
+                loadingMore: function() {
+                    return "Loading more results…"
+                },
+                maximumSelected: function(e) {
+                    var t = "You can only select " + e.maximum + " item";
+                    return e.maximum != 1 &amp;&amp; (t += "s"), t
+                },
+                noResults: function() {
+                    return "No results found"
+                },
+                searching: function() {
+                    return "Searching…"
+                }
+          }
+  </Resource>
     <Resource tag="SHOWHIDE">Laat zien/Verberg</Resource>
     <Resource tag="SUBMIT">Vastleggen</Resource>
     <Resource tag="TIMEAGO_JS">	  // Dutch
