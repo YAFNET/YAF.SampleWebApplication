@@ -1808,6 +1808,9 @@
     <Resource tag="EXPORT_XML">Export All User(s) as Xml</Resource>
     <Resource tag="FACEBOOK_USER">Facebook User</Resource>
     <Resource tag="FILTER">Filter by join date since:</Resource>
+    <Resource tag="FILTER_BY_GROUP">Filter by Group...</Resource>
+    <Resource tag="FILTER_BY_RANK">Filter by Rank...</Resource>
+    <Resource tag="FILTER_NO">[No Filter]</Resource>
     <Resource tag="HEADER">Search Users</Resource>
     <Resource tag="IMPORT">Import User(s)</Resource>
     <Resource tag="LAST_VISIT">Last Visit</Resource>
@@ -1820,6 +1823,7 @@
     <Resource tag="RANK">Rank:</Resource>
     <Resource tag="ROLE">Role:</Resource>
     <Resource tag="SEARCH">Search</Resource>
+    <Resource tag="SUSPENDED_ONLY">Show only suspended users?</Resource>
     <Resource tag="SYNC_ALL">Sync All Membership Users</Resource>
     <Resource tag="TITLE">Users</Resource>
     <Resource tag="TWITTER_USER">Twitter User</Resource>
@@ -1917,6 +1921,7 @@
     <Resource tag="ADD_FILES">Add file(s)...</Resource>
     <Resource tag="ALLOWED_EXTENSIONS">Dozwolone typy plików</Resource>
     <Resource tag="ASK_DELETE">Usunąć ten załącznik?</Resource>
+    <Resource tag="COMPLETE_WARNING">Please wait until all Upload(s) are completed and the Dialog closes itself!</Resource>
     <Resource tag="CURRENT_UPLOADS">Current Attachment Uploads:</Resource>
     <Resource tag="DELETE">Usuń</Resource>
     <Resource tag="DISALLOWED_EXTENSIONS">Zabronione typy plków</Resource>
@@ -1988,6 +1993,8 @@
     <Resource tag="BUTTON_DELETE">Usuń</Resource>
     <Resource tag="BUTTON_DELETE_TT">Usuń ten post</Resource>
     <Resource tag="BUTTON_DELETEALBUM">Usuń album</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT">Delete Attachment(s)</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT_TT">Delete selected attachment(s)s</Resource>
     <Resource tag="BUTTON_DELETETOPIC">Usuń temat</Resource>
     <Resource tag="BUTTON_DELETETOPIC_TT">Usuń ten temat</Resource>
     <Resource tag="BUTTON_EDIT">Edytuj</Resource>
@@ -4225,6 +4232,7 @@ Spoiler Content
     <Resource tag="AUTH_NO_ACCESS_TOKEN">Brak dostępu!</Resource>
     <Resource tag="AUTO">Zapamiętaj mnie</Resource>
     <Resource tag="BOTH_USERNAME_EMAIL">Wpisz nazwę użytkownika i hasło, które są wymagane.</Resource>
+    <Resource tag="CAPS_LOCK">Caps Lock is on</Resource>
     <Resource tag="CONNECT_VIA">Or Connect via</Resource>
     <Resource tag="EMAIL">Adres e-mail</Resource>
     <Resource tag="EMAIL_SENT_PASSWORD">Mail z nowym hasłem został wysłany do Ciebie.</Resource>
@@ -4241,12 +4249,15 @@ Spoiler Content
     <Resource tag="SSO_DEACTIVATED">Pojedyncze logowanie jest wyłączone przez administratora!</Resource>
     <Resource tag="SSO_DEACTIVATED_BYUSER">Pojedyncze logowanie jest wyłączone dla tego użytkownika. Możesz je aktywować w ustawieniach profilu.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED">Logowanie przez Facebooka nie powiodło się. Użytkownik nie istnieje, albo nie jest połączony.</Resource>
+    <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">Adres e-mail na Facebooku musi być taki sam, jak adres e-mail na forum!</Resource>
     <Resource tag="SSO_FAILED">Rejestracja jest zablokowana.</Resource>
     <Resource tag="SSO_GOOGLE_FAILED">Logowanie przez Google nie powiodło się. Użytkownik nie istnieje, albo nie jest połączony</Resource>
+    <Resource tag="SSO_GOOGLE_FAILED2">The Google Login failed, an user account with the same email address as the Google account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_GOOGLENAME_NOTMATCH">Adres e-mail Google musi być taki sam, jak adres e-mail na forum!</Resource>
     <Resource tag="SSO_ID_NOTMATCH">Konto użytkownika jest niepołączone, lub nie istnieje.</Resource>
     <Resource tag="SSO_TWITTER_FAILED">Logowanie przez Twittera nie powiodło się. Użytkownik nie istnieje, albo nie jest połączony.</Resource>
+    <Resource tag="SSO_TWITTER_FAILED2">The Twitter Login failed, an user account with the same user name as the Twitter account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_TWITTERNAME_NOTMATCH">Nazwa użytkownika na Twitterze musi być taka sama, jak nazwa użytkownika na forum!</Resource>
     <Resource tag="TITLE">Zaloguj</Resource>
     <Resource tag="TWITTER_DM">Otrzymałeś dalsze informacje w prywatnej wiadomości na forum.</Resource>
@@ -4614,6 +4625,7 @@ Spoiler Content
     <Resource tag="QUICKREPLY">Szybka odpowiedź</Resource>
     <Resource tag="QUICKREPLY_HIDE">Ukryj szybką odpowiedź</Resource>
     <Resource tag="QUICKREPLY_SHOW">Pokaż szybką odpowiedź</Resource>
+    <Resource tag="QUOTE_SELECTED">Quote Selected Message</Resource>
     <Resource tag="RANK">Ranga</Resource>
     <Resource tag="REDDIT_TOPIC">Reddit</Resource>
     <Resource tag="REP_VOTE_DOWN_MSG">Zabrałeś -1 pkt reputacji użytkownikowi {0}.</Resource>
@@ -5316,7 +5328,7 @@ Visit {forumname} at {forumlink}
     <Resource tag="MYTOPICS_TITLE">Pokazuje Twoje aktywne i ulubione wątki.</Resource>
     <Resource tag="NEWPM">({0} Nieprzeczytanych)</Resource>
     <Resource tag="REGISTER">Rejestruj</Resource>
-    <Resource tag="REGISTER_CONNECT">register a new account</Resource>
+    <Resource tag="REGISTER_CONNECT">or Register a new forum account</Resource>
     <Resource tag="REGISTER_TITLE">Pokazuje formularz rejestracyjny.</Resource>
     <Resource tag="SEARCH">Szukaj</Resource>
     <Resource tag="SEARCH_TITLE">Przeszukaj forum.</Resource>

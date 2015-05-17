@@ -207,8 +207,8 @@
   <Resource tag="USERS_DAY">Users per day:</Resource>
  </page>
  <page name="ADMIN_ATTACHMENTS">
-  <Resource tag="CONFIRM_DELETE">Delete this attachment?</Resource>
-  <Resource tag="CONTENT_TYPE">Content Type</Resource>
+  <Resource tag="CONFIRM_DELETE">Delete attachment(s)?</Resource>
+  <Resource tag="CONTENT_TYPE">Content Type</Resource>BUTTON_DELETE
   <Resource tag="DOWNLOADS">Downloads</Resource>
   <Resource tag="POSTED">Posted</Resource>
   <Resource tag="TITLE">Attachments</Resource>
@@ -248,7 +248,7 @@
   <Resource tag="REASON">Reason</Resource>
   <Resource tag="SINCE">Since</Resource>
   <Resource tag="TITLE">Banned IP Addresses</Resource>
- </page>s
+ </page>
  <page name="ADMIN_BANNEDIP_EDIT">
   <Resource tag="INVALID_ADRESS">Invalid IP address.</Resource>
   <Resource tag="INVALID_LESS">"{0}" is not a valid IP section value (must be less then 255).</Resource>
@@ -1808,6 +1808,9 @@
   <Resource tag="EXPORT_XML">Export All User(s) as Xml</Resource>
   <Resource tag="FACEBOOK_USER">Facebook User</Resource>
   <Resource tag="FILTER">Filter by join date since:</Resource>
+  <Resource tag="FILTER_BY_RANK">Filter by Rank...</Resource>
+  <Resource tag="FILTER_BY_GROUP">Filter by Group...</Resource>
+  <Resource tag="FILTER_NO">[No Filter]</Resource>
   <Resource tag="HEADER">Search Users</Resource>
   <Resource tag="IMPORT">Import User(s)</Resource>
   <Resource tag="LAST_VISIT">Last Visit</Resource>
@@ -1820,6 +1823,7 @@
   <Resource tag="RANK">Rank:</Resource>
   <Resource tag="ROLE">Role:</Resource>
   <Resource tag="SEARCH">Search</Resource>
+  <Resource tag="SUSPENDED_ONLY">Show only suspended users?</Resource>
   <Resource tag="SYNC_ALL">Sync All Membership Users</Resource>
   <Resource tag="TITLE">Users</Resource>
   <Resource tag="TWITTER_USER">Twitter User</Resource>
@@ -1917,6 +1921,7 @@
   <Resource tag="ADD_FILES">Add file(s)...</Resource>
   <Resource tag="ALLOWED_EXTENSIONS">Allowed File Types</Resource>
   <Resource tag="ASK_DELETE">Delete this attachment?</Resource>
+  <Resource tag="COMPLETE_WARNING">Please wait until all Upload(s) are completed and the Dialog closes itself!</Resource>
   <Resource tag="CURRENT_UPLOADS">Current Attachment Uploads:</Resource>
   <Resource tag="DELETE">Delete</Resource>
   <Resource tag="DISALLOWED_EXTENSIONS">Disallowed File Types</Resource>
@@ -1988,6 +1993,8 @@
   <Resource tag="BUTTON_DELETE">Delete</Resource>
   <Resource tag="BUTTON_DELETE_TT">Delete this Post</Resource>
   <Resource tag="BUTTON_DELETEALBUM">Delete Album</Resource>
+  <Resource tag="BUTTON_DELETEATTACHMENT">Delete Attachment(s)</Resource>
+  <Resource tag="BUTTON_DELETEATTACHMENT_TT">Delete selected attachment(s)s</Resource>
   <Resource tag="BUTTON_DELETETOPIC">Delete Topic</Resource>
   <Resource tag="BUTTON_DELETETOPIC_TT">Delete this topic</Resource>
   <Resource tag="BUTTON_EDIT">Edit</Resource>
@@ -4214,6 +4221,7 @@ Spoiler Content
   <Resource tag="AUTH_CONNECT_GOOGLE">&lt;strong&gt;The Google email address must match the forum user email address to connect the user.&lt;/strong&gt;</Resource>
   <Resource tag="AUTH_LOGIN_EXISTING">Login with an user Account that is connected with {0}. Or if no account is found a new account will be automatically created in the forums.</Resource>
   <Resource tag="AUTH_NO_ACCESS_TOKEN">Could not get access_token!</Resource>
+  <Resource tag="CAPS_LOCK">Caps Lock is on</Resource>
   <Resource tag="CONNECT_VIA">Or Connect via</Resource>
   <Resource tag="BOTH_USERNAME_EMAIL">Both user name and email address must be entered.</Resource>
   <Resource tag="EMAIL">Email Address</Resource>
@@ -4226,17 +4234,20 @@ Spoiler Content
   <Resource tag="PASSWORD_ERROR">The user name or password entered is incorrect. Please try again.</Resource>
   <Resource tag="RECOVER">Recover Password</Resource>
   <Resource tag="RECOVER_ERROR">There was an error when creating your new password.</Resource>
-  <Resource tag="REGISTER_INSTEAD">Register Instead as new User</Resource>SSO_FACEBOOK_FAILED
+  <Resource tag="REGISTER_INSTEAD">Register Instead as new User</Resource>
   <Resource tag="SENDPASSWORD">Send Password</Resource>
   <Resource tag="SSO_DEACTIVATED">Single Sign On is currently deactivated by the Administrator!</Resource>
   <Resource tag="SSO_DEACTIVATED_BYUSER">Single Sign On is deactivated for that User, you need to activate it in your Profile Settings to use that feature.</Resource>
   <Resource tag="SSO_FACEBOOK_FAILED">The Facebook Login failed, User does not exists, or the account is not connected.</Resource>
+  <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
   <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">The Facebook email address must match the Forum email adress!</Resource>
   <Resource tag="SSO_FAILED">New Registrations are disabled.</Resource>
   <Resource tag="SSO_GOOGLE_FAILED">The Google Login failed, User does not exists, or the account is not connected.</Resource>
+  <Resource tag="SSO_GOOGLE_FAILED2">The Google Login failed, an user account with the same email address as the Google account already exists, please try to connect you your forum account instead.</Resource>
   <Resource tag="SSO_GOOGLENAME_NOTMATCH">The Google email address must match the Forum email adress!</Resource>
   <Resource tag="SSO_ID_NOTMATCH">The User Account is not connected or not found!</Resource>
   <Resource tag="SSO_TWITTER_FAILED">The Twitter Login failed, User does not exists, or the account is not connected.</Resource>
+  <Resource tag="SSO_TWITTER_FAILED2">The Twitter Login failed, an user account with the same user name as the Twitter account already exists, please try to connect you your forum account instead.</Resource>
   <Resource tag="SSO_TWITTERNAME_NOTMATCH">The Twitter User Name must match the Forum Username!</Resource>
   <Resource tag="TITLE">Login</Resource>
   <Resource tag="TWITTER_DM">You have received further Information to your new Account as Private Message on the Forum.</Resource>
@@ -4599,6 +4610,7 @@ Spoiler Content
   <Resource tag="PREVTOPIC">Previous Topic</Resource>
   <Resource tag="PRINTTOPIC">Print this topic</Resource>
   <Resource tag="QUESTION">Poll Question</Resource>
+  <Resource tag="QUOTE_SELECTED">Quote Selected Message</Resource>
   <Resource tag="QUICKREPLY">Quick Reply</Resource>
   <Resource tag="QUICKREPLY_HIDE">Hide Quick Reply</Resource>
   <Resource tag="QUICKREPLY_SHOW">Show Quick Reply</Resource>
@@ -5308,7 +5320,7 @@ Visit {forumname} at {forumlink}
   <Resource tag="MYTOPICS_TITLE">Shows the Active and Favorite Topics.</Resource>
   <Resource tag="NEWPM">({0} Unread)</Resource>
   <Resource tag="REGISTER">Register</Resource>
-  <Resource tag="REGISTER_CONNECT">register a new account</Resource>
+  <Resource tag="REGISTER_CONNECT">or Register a new forum account</Resource>
   <Resource tag="REGISTER_TITLE">Shows the Registration Form.</Resource>
   <Resource tag="SEARCH">Search</Resource>
   <Resource tag="SEARCH_TITLE">Use the Forum Search.</Resource>

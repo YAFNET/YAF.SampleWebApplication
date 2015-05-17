@@ -1796,6 +1796,9 @@
     <Resource tag="EXPORT_XML">Экспортировать пользователя(лей) в формате CSV Xml</Resource>
     <Resource tag="FACEBOOK_USER">Пользователь Facebook</Resource>
     <Resource tag="FILTER">Фильтровать по дате регистрации с:</Resource>
+    <Resource tag="FILTER_BY_GROUP">Filter by Group...</Resource>
+    <Resource tag="FILTER_BY_RANK">Filter by Rank...</Resource>
+    <Resource tag="FILTER_NO">[No Filter]</Resource>
     <Resource tag="HEADER">Поиск пользователей</Resource>
     <Resource tag="IMPORT">Импортировать пользователя(лей)</Resource>
     <Resource tag="LAST_VISIT">Последнее посещение</Resource>
@@ -1808,6 +1811,7 @@
     <Resource tag="RANK">Статус:</Resource>
     <Resource tag="ROLE">Роль:</Resource>
     <Resource tag="SEARCH">Поиск</Resource>
+    <Resource tag="SUSPENDED_ONLY">Show only suspended users?</Resource>
     <Resource tag="SYNC_ALL">Синхронизировать всех пользователей в Membership</Resource>
     <Resource tag="TITLE">Пользователи</Resource>
     <Resource tag="TWITTER_USER">Пользователь Twitter</Resource>
@@ -1905,6 +1909,7 @@
     <Resource tag="ADD_FILES">Add file(s)...</Resource>
     <Resource tag="ALLOWED_EXTENSIONS">Разрешённые типы файлов</Resource>
     <Resource tag="ASK_DELETE">Удалить это вложение?</Resource>
+    <Resource tag="COMPLETE_WARNING">Please wait until all Upload(s) are completed and the Dialog closes itself!</Resource>
     <Resource tag="CURRENT_UPLOADS">Current Attachment Uploads:</Resource>
     <Resource tag="DELETE">Удалить</Resource>
     <Resource tag="DISALLOWED_EXTENSIONS">Запрещённые типы файлов</Resource>
@@ -1976,6 +1981,8 @@
     <Resource tag="BUTTON_DELETE">Удалить</Resource>
     <Resource tag="BUTTON_DELETE_TT">Удалить это сообщение</Resource>
     <Resource tag="BUTTON_DELETEALBUM">Удалить альбом</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT">Delete Attachment(s)</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT_TT">Delete selected attachment(s)s</Resource>
     <Resource tag="BUTTON_DELETETOPIC">Удалить Тему</Resource>
     <Resource tag="BUTTON_DELETETOPIC_TT">Удалить эту тему</Resource>
     <Resource tag="BUTTON_EDIT">Изменить</Resource>
@@ -4218,6 +4225,7 @@ Spoiler Content
     <Resource tag="AUTH_NO_ACCESS_TOKEN">Could not get access_token!</Resource>
     <Resource tag="AUTO">Запомните меня</Resource>
     <Resource tag="BOTH_USERNAME_EMAIL">Должны быть введены как адрес почты пользователя, так и его имя.</Resource>
+    <Resource tag="CAPS_LOCK">Caps Lock is on</Resource>
     <Resource tag="CONNECT_VIA">Or Connect via</Resource>
     <Resource tag="EMAIL">Адрес Email</Resource>
     <Resource tag="EMAIL_SENT_PASSWORD">Было послано сообщение по почте с вашим новым паролем.</Resource>
@@ -4234,12 +4242,15 @@ Spoiler Content
     <Resource tag="SSO_DEACTIVATED">Единая регистрация выключена администратором форума!</Resource>
     <Resource tag="SSO_DEACTIVATED_BYUSER">Единая регистрация отключена, Вам необходимо включить её в своём профиле.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED">The Facebook Login failed, User does not exists, or the account is not connected.</Resource>
+    <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">The Facebook email address must match the Forum email adress!</Resource>
     <Resource tag="SSO_FAILED">New Registrations are disabled.</Resource>
     <Resource tag="SSO_GOOGLE_FAILED">The Google Login failed, User does not exists, or the account is not connected.</Resource>
+    <Resource tag="SSO_GOOGLE_FAILED2">The Google Login failed, an user account with the same email address as the Google account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_GOOGLENAME_NOTMATCH">The Google email address must match the Forum email adress!</Resource>
     <Resource tag="SSO_ID_NOTMATCH">Неверный ID пользователя Facebook !</Resource>
     <Resource tag="SSO_TWITTER_FAILED">Вход через Twitter не удался, такой пользователь не существует.</Resource>
+    <Resource tag="SSO_TWITTER_FAILED2">The Twitter Login failed, an user account with the same user name as the Twitter account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_TWITTERID_NOTMATCH"> Twitter ID и/или имя в Twitter неверны!</Resource>
     <Resource tag="SSO_TWITTERNAME_NOTMATCH">The Twitter User Name must match the Forum Username!</Resource>
     <Resource tag="TITLE">Вход</Resource>
@@ -4608,6 +4619,7 @@ Spoiler Content
     <Resource tag="QUICKREPLY">Быстрый ответ</Resource>
     <Resource tag="QUICKREPLY_HIDE">Скрыть форму быстрого ответа</Resource>
     <Resource tag="QUICKREPLY_SHOW">Показать форму быстрого ответа</Resource>
+    <Resource tag="QUOTE_SELECTED">Quote Selected Message</Resource>
     <Resource tag="RANK">Статус</Resource>
     <Resource tag="REDDIT_TOPIC">Поделиться в Reddit</Resource>
     <Resource tag="REP_VOTE_DOWN_MSG">Вы успешно понизили на -1 репутацию {0}.</Resource>
@@ -5311,7 +5323,7 @@ Password: {password}
     <Resource tag="MYTOPICS_TITLE">Активные и избранные темы</Resource>
     <Resource tag="NEWPM">({0} непрочитанных)</Resource>
     <Resource tag="REGISTER">Регистрация</Resource>
-    <Resource tag="REGISTER_CONNECT">register a new account</Resource>
+    <Resource tag="REGISTER_CONNECT">or Register a new forum account</Resource>
     <Resource tag="REGISTER_TITLE">На страницу регистрации</Resource>
     <Resource tag="SEARCH">Поиск</Resource>
     <Resource tag="SEARCH_TITLE">Использовать поиск</Resource>

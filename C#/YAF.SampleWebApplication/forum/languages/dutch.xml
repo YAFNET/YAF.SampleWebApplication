@@ -1808,6 +1808,9 @@
     <Resource tag="EXPORT_XML">Exporteer Alle Gebruiker(s) als Xml</Resource>
     <Resource tag="FACEBOOK_USER">Facebook Gebruiker</Resource>
     <Resource tag="FILTER">Filter op datum aanmelding:</Resource>
+    <Resource tag="FILTER_BY_GROUP">Filter by Group...</Resource>
+    <Resource tag="FILTER_BY_RANK">Filter by Rank...</Resource>
+    <Resource tag="FILTER_NO">[No Filter]</Resource>
     <Resource tag="HEADER">Zoek gebruikers</Resource>
     <Resource tag="IMPORT">Importeer Gebruiker(s)</Resource>
     <Resource tag="LAST_VISIT">Laatste bezoek</Resource>
@@ -1820,6 +1823,7 @@
     <Resource tag="RANK">Rang:</Resource>
     <Resource tag="ROLE">Rol:</Resource>
     <Resource tag="SEARCH">Zoeken</Resource>
+    <Resource tag="SUSPENDED_ONLY">Show only suspended users?</Resource>
     <Resource tag="SYNC_ALL">Synchroniseer alle Membership Gebruikers</Resource>
     <Resource tag="TITLE">Gebruikers</Resource>
     <Resource tag="TWITTER_USER">Twitter Gebruiker</Resource>
@@ -1917,6 +1921,7 @@
     <Resource tag="ADD_FILES">Add file(s)...</Resource>
     <Resource tag="ALLOWED_EXTENSIONS">Toegestane bestandstypen</Resource>
     <Resource tag="ASK_DELETE">Bijlage verwijderen?</Resource>
+    <Resource tag="COMPLETE_WARNING">Please wait until all Upload(s) are completed and the Dialog closes itself!</Resource>
     <Resource tag="CURRENT_UPLOADS">Current Attachment Uploads:</Resource>
     <Resource tag="DELETE">Verwijderen</Resource>
     <Resource tag="DISALLOWED_EXTENSIONS">Verbonden bestandstypen</Resource>
@@ -1988,6 +1993,8 @@
     <Resource tag="BUTTON_DELETE">Verwijder</Resource>
     <Resource tag="BUTTON_DELETE_TT">Verwijder dit bericht</Resource>
     <Resource tag="BUTTON_DELETEALBUM">Album verwijderen</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT">Delete Attachment(s)</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT_TT">Delete selected attachment(s)s</Resource>
     <Resource tag="BUTTON_DELETETOPIC">Verwijder topic</Resource>
     <Resource tag="BUTTON_DELETETOPIC_TT">Verwijder dit topic</Resource>
     <Resource tag="BUTTON_EDIT">Bewerk</Resource>
@@ -4192,6 +4199,7 @@ Spoiler Inhoud
     <Resource tag="AUTH_NO_ACCESS_TOKEN">Could not get access_token!</Resource>
     <Resource tag="AUTO">Automatisch inloggen</Resource>
     <Resource tag="BOTH_USERNAME_EMAIL">Graag zowel je gebruikersnaam als je e-mail adres in te vullen.</Resource>
+    <Resource tag="CAPS_LOCK">Caps Lock is on</Resource>
     <Resource tag="CONNECT_VIA">Or Connect via</Resource>
     <Resource tag="EMAIL">E-mail adres</Resource>
     <Resource tag="EMAIL_SENT_PASSWORD">Er is een e-mail verzonden met je nieuwe wachtwoord.</Resource>
@@ -4208,12 +4216,15 @@ Spoiler Inhoud
     <Resource tag="SSO_DEACTIVATED">Single Sign On is momenteel uitgeschakeld door de Beheerder!</Resource>
     <Resource tag="SSO_DEACTIVATED_BYUSER">Single Sign On is uitgeschakeld voor die gebruiker, je moet het in je profiel activeren..</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED">The Facebook Login failed, User does not exists, or the account is not connected.</Resource>
+    <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">The Facebook email address must match the Forum email adress!</Resource>
     <Resource tag="SSO_FAILED">New Registrations are disabled.</Resource>
     <Resource tag="SSO_GOOGLE_FAILED">The Google Login failed, User does not exists, or the account is not connected.</Resource>
+    <Resource tag="SSO_GOOGLE_FAILED2">The Google Login failed, an user account with the same email address as the Google account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_GOOGLENAME_NOTMATCH">The Google email address must match the Forum email adress!</Resource>
     <Resource tag="SSO_ID_NOTMATCH">Het Facebook ID komt niet overeen!</Resource>
     <Resource tag="SSO_TWITTER_FAILED">Twitter Login is niet gelukt, de gebruiker bestaat niet.</Resource>
+    <Resource tag="SSO_TWITTER_FAILED2">The Twitter Login failed, an user account with the same user name as the Twitter account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_TWITTERNAME_NOTMATCH">The Twitter User Name must match the Forum Username!</Resource>
     <Resource tag="TITLE">Inloggen</Resource>
     <Resource tag="TWITTER_DM">Je hebt nieuwe informatie over je account gekregen per PM.</Resource>
@@ -4580,6 +4591,7 @@ Spoiler Inhoud
     <Resource tag="QUICKREPLY">Snel antwoorden</Resource>
     <Resource tag="QUICKREPLY_HIDE">Verberg Snel antwoorden</Resource>
     <Resource tag="QUICKREPLY_SHOW">Toon Snel antwoorden</Resource>
+    <Resource tag="QUOTE_SELECTED">Quote Selected Message</Resource>
     <Resource tag="RANK">Rang</Resource>
     <Resource tag="REDDIT_TOPIC">Reddit ditTopic</Resource>
     <Resource tag="REP_VOTE_DOWN_MSG">Je hebt {0} een -1 gegeven.</Resource>
@@ -5282,7 +5294,7 @@ Bezoek {forumname} op {forumlink}
     <Resource tag="MYTOPICS_TITLE">Laat de actieve en favoriete topics zien.</Resource>
     <Resource tag="NEWPM">(&lt;b&gt;{0} Ongelezen&lt;/b&gt;)</Resource>
     <Resource tag="REGISTER">Registreren</Resource>
-    <Resource tag="REGISTER_CONNECT">register a new account</Resource>
+    <Resource tag="REGISTER_CONNECT">or Register a new forum account</Resource>
     <Resource tag="REGISTER_TITLE">Laat het registratieformulier zien.</Resource>
     <Resource tag="SEARCH">Zoeken</Resource>
     <Resource tag="SEARCH_TITLE">Gebruik de zoekfunctie.</Resource>

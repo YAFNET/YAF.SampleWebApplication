@@ -1815,6 +1815,9 @@
     <Resource tag="EXPORT_XML">Export All User(s) as Xml</Resource>
     <Resource tag="FACEBOOK_USER">Facebook User</Resource>
     <Resource tag="FILTER">فیلتر بر اساس تاریخ پیوستن:</Resource>
+    <Resource tag="FILTER_BY_GROUP">Filter by Group...</Resource>
+    <Resource tag="FILTER_BY_RANK">Filter by Rank...</Resource>
+    <Resource tag="FILTER_NO">[No Filter]</Resource>
     <Resource tag="HEADER">جستجوی کاربر</Resource>
     <Resource tag="IMPORT">وارد کردن کاربر (ها)</Resource>
     <Resource tag="LAST_VISIT">آخرین بازدید </Resource>
@@ -1827,6 +1830,7 @@
     <Resource tag="RANK">رتبه:</Resource>
     <Resource tag="ROLE">نقش:</Resource>
     <Resource tag="SEARCH">جستجو</Resource>
+    <Resource tag="SUSPENDED_ONLY">Show only suspended users?</Resource>
     <Resource tag="SYNC_ALL">همسان سازی عضویت تمام گروه ها</Resource>
     <Resource tag="TITLE">کاربران</Resource>
     <Resource tag="TWITTER_USER">Twitter User</Resource>
@@ -1926,6 +1930,7 @@
     <Resource tag="ADD_FILES">Add file(s)...</Resource>
     <Resource tag="ALLOWED_EXTENSIONS">فایلهای مجاز</Resource>
     <Resource tag="ASK_DELETE">حذف فایل ضمیمه؟</Resource>
+    <Resource tag="COMPLETE_WARNING">Please wait until all Upload(s) are completed and the Dialog closes itself!</Resource>
     <Resource tag="CURRENT_UPLOADS">Current Attachment Uploads:</Resource>
     <Resource tag="DELETE">حذف</Resource>
     <Resource tag="DISALLOWED_EXTENSIONS">فایل های غیرمجاز</Resource>
@@ -1997,6 +2002,8 @@
     <Resource tag="BUTTON_DELETE">حذف</Resource>
     <Resource tag="BUTTON_DELETE_TT">حذف این مطلب</Resource>
     <Resource tag="BUTTON_DELETEALBUM">حذف آلبوم</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT">Delete Attachment(s)</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT_TT">Delete selected attachment(s)s</Resource>
     <Resource tag="BUTTON_DELETETOPIC">حذف مطلب</Resource>
     <Resource tag="BUTTON_DELETETOPIC_TT">حذف این مطلب</Resource>
     <Resource tag="BUTTON_EDIT">ویرایش</Resource>
@@ -4250,6 +4257,7 @@
     <Resource tag="AUTH_NO_ACCESS_TOKEN">Could not get access_token!</Resource>
     <Resource tag="AUTO">مرا به خاطر داشته باش</Resource>
     <Resource tag="BOTH_USERNAME_EMAIL">نام کاربری و پست الکترونیک تواماً باید وارد شوند.</Resource>
+    <Resource tag="CAPS_LOCK">Caps Lock is on</Resource>
     <Resource tag="CONNECT_VIA">Or Connect via</Resource>
     <Resource tag="EMAIL">آدرس پست الکترونیک</Resource>
     <Resource tag="EMAIL_SENT_PASSWORD">پست الکترونیکی حاوی رمز عبور جدید شما ارسال شد.</Resource>
@@ -4266,12 +4274,15 @@
     <Resource tag="SSO_DEACTIVATED">Single Sign On is currently deactivated by the Administrator!</Resource>
     <Resource tag="SSO_DEACTIVATED_BYUSER">Single Sign On is deactivated for that User, you need to activate it in your Profile Settings to use that feature.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED">The Facebook Login failed, User does not exists, or the account is not connected.</Resource>
+    <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">The Facebook email address must match the Forum email adress!</Resource>
     <Resource tag="SSO_FAILED">ثبت نام جدید غیرفعال شده است</Resource>
     <Resource tag="SSO_GOOGLE_FAILED">The Google Login failed, User does not exists, or the account is not connected.</Resource>
+    <Resource tag="SSO_GOOGLE_FAILED2">The Google Login failed, an user account with the same email address as the Google account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_GOOGLENAME_NOTMATCH">The Google email address must match the Forum email adress!</Resource>
     <Resource tag="SSO_ID_NOTMATCH">The User Account is not connected or not found</Resource>
     <Resource tag="SSO_TWITTER_FAILED">The Twitter Login failed, User does not exists.</Resource>
+    <Resource tag="SSO_TWITTER_FAILED2">The Twitter Login failed, an user account with the same user name as the Twitter account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_TWITTERNAME_NOTMATCH">The Twitter User Name must match the Forum Username!</Resource>
     <Resource tag="TITLE">ورود</Resource>
     <Resource tag="TWITTER_DM">You have received further Information to your new Account as Private Message on the Forum.</Resource>
@@ -4637,6 +4648,7 @@
     <Resource tag="QUICKREPLY">پاسخ سریع</Resource>
     <Resource tag="QUICKREPLY_HIDE">عدم نمایش بخش پاسخ سریع</Resource>
     <Resource tag="QUICKREPLY_SHOW">نمایش بخش پاسخ سریع</Resource>
+    <Resource tag="QUOTE_SELECTED">Quote Selected Message</Resource>
     <Resource tag="RANK">رتبه</Resource>
     <Resource tag="REDDIT_TOPIC">Reddit این موضوع</Resource>
     <Resource tag="REP_VOTE_DOWN_MSG">شما با موفقیت -1 امتیاز از  {0} کم کردید</Resource>
@@ -5308,7 +5320,7 @@ The Message was posted in the {forumname} forum.
     <Resource tag="MYTOPICS_TITLE">نمایش موضوعات فعال و مورد علاقه</Resource>
     <Resource tag="NEWPM">({0} پیغام خوانده نشده)</Resource>
     <Resource tag="REGISTER">ثبت نام</Resource>
-    <Resource tag="REGISTER_CONNECT">register a new account</Resource>
+    <Resource tag="REGISTER_CONNECT">or Register a new forum account</Resource>
     <Resource tag="REGISTER_TITLE">نمایش فرم ثبت نام</Resource>
     <Resource tag="SEARCH">جستجو</Resource>
     <Resource tag="SEARCH_TITLE">استفاده از جستجوی انجمن</Resource>

@@ -1820,6 +1820,9 @@
     <Resource tag="EXPORT_XML">Exportar todos los usuarios como XML</Resource>
     <Resource tag="FACEBOOK_USER">Usuario de Facebook</Resource>
     <Resource tag="FILTER">Filtrar por fecha de ingreso desde:</Resource>
+    <Resource tag="FILTER_BY_GROUP">Filter by Group...</Resource>
+    <Resource tag="FILTER_BY_RANK">Filter by Rank...</Resource>
+    <Resource tag="FILTER_NO">[No Filter]</Resource>
     <Resource tag="HEADER">Buscar usuarios</Resource>
     <Resource tag="IMPORT">Importar usuarios</Resource>
     <Resource tag="LAST_VISIT">Última visita</Resource>
@@ -1832,6 +1835,7 @@
     <Resource tag="RANK">Rango:</Resource>
     <Resource tag="ROLE">Rol:</Resource>
     <Resource tag="SEARCH">Buscar</Resource>
+    <Resource tag="SUSPENDED_ONLY">Show only suspended users?</Resource>
     <Resource tag="SYNC_ALL">Sincronizar todos los usuarios suscritos</Resource>
     <Resource tag="TITLE">Usuarios</Resource>
     <Resource tag="TWITTER_USER">Usuario de Twitter</Resource>
@@ -1929,6 +1933,7 @@
     <Resource tag="ADD_FILES">Add file(s)...</Resource>
     <Resource tag="ALLOWED_EXTENSIONS">Extensiones de archivo permitidas</Resource>
     <Resource tag="ASK_DELETE">¿Eliminar este adjunto?</Resource>
+    <Resource tag="COMPLETE_WARNING">Please wait until all Upload(s) are completed and the Dialog closes itself!</Resource>
     <Resource tag="CURRENT_UPLOADS">Current Attachment Uploads:</Resource>
     <Resource tag="DELETE">Eliminar</Resource>
     <Resource tag="DISALLOWED_EXTENSIONS">Extensiones de archivo no permitidas</Resource>
@@ -2000,6 +2005,8 @@
     <Resource tag="BUTTON_DELETE">Eliminar</Resource>
     <Resource tag="BUTTON_DELETE_TT">Eliminar este mensaje</Resource>
     <Resource tag="BUTTON_DELETEALBUM">Eliminar álbum</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT">Delete Attachment(s)</Resource>
+    <Resource tag="BUTTON_DELETEATTACHMENT_TT">Delete selected attachment(s)s</Resource>
     <Resource tag="BUTTON_DELETETOPIC">Eliminar tema</Resource>
     <Resource tag="BUTTON_DELETETOPIC_TT">Eliminar este tema</Resource>
     <Resource tag="BUTTON_EDIT">Editar</Resource>
@@ -4585,6 +4592,7 @@ public class Hello1
     <Resource tag="AUTH_NO_ACCESS_TOKEN">No se ha podido autorizar la contraseña.</Resource>
     <Resource tag="AUTO">Iniciar sesión automaticamente:</Resource>
     <Resource tag="BOTH_USERNAME_EMAIL">Debe ingresar usuario y correo electrónico.</Resource>
+    <Resource tag="CAPS_LOCK">Caps Lock is on</Resource>
     <Resource tag="CONNECT_VIA">Or Connect via</Resource>
     <Resource tag="EMAIL">Correo electrónico</Resource>
     <Resource tag="EMAIL_SENT_PASSWORD">Se ha enviado un correo con la nueva contraseña.</Resource>
@@ -4601,12 +4609,15 @@ public class Hello1
     <Resource tag="SSO_DEACTIVATED">El inicio de sesión único no está disponible en estos momentos.</Resource>
     <Resource tag="SSO_DEACTIVATED_BYUSER">El inicio de sesión único no está disponible para este usuario, necesitas activarlo en tu configuración de cuenta para usarlo en el futuro.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED">El ingreso en Facebook ha fallado, el usuario no existe o la cuenta no está activada.</Resource>
+    <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">La cuenta de email de Facebook debe coincidir con la cuenta de email del foro.</Resource>
     <Resource tag="SSO_FAILED">Nuevos registros están desactivados.</Resource>
     <Resource tag="SSO_GOOGLE_FAILED">El ingreso en Google ha fallado, el usuario no existe o la cuenta no está activada.</Resource>
+    <Resource tag="SSO_GOOGLE_FAILED2">The Google Login failed, an user account with the same email address as the Google account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_GOOGLENAME_NOTMATCH">La dirección de email de Google debe coincidir con la dirección de email del foro.</Resource>
     <Resource tag="SSO_ID_NOTMATCH">La cuenta de usuario no está activa o no ha sido encontrada.</Resource>
     <Resource tag="SSO_TWITTER_FAILED">El ingreso en Twitter ha fallado, la cuenta de usuario no existe.</Resource>
+    <Resource tag="SSO_TWITTER_FAILED2">The Twitter Login failed, an user account with the same user name as the Twitter account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_TWITTERNAME_NOTMATCH">El nombre de usuario de Twitter debe coincidir con el nombre de usuario del foro.</Resource>
     <Resource tag="TITLE">Iniciar sesión</Resource>
     <Resource tag="TWITTER_DM">Has recibido información adicional sobre tu cuenta como un mensaje privado en el foro.</Resource>
@@ -4973,6 +4984,7 @@ public class Hello1
     <Resource tag="QUICKREPLY">Respuesta rápida</Resource>
     <Resource tag="QUICKREPLY_HIDE">Ocultar respuesta rápida</Resource>
     <Resource tag="QUICKREPLY_SHOW">Mostrar respuesta rápida</Resource>
+    <Resource tag="QUOTE_SELECTED">Quote Selected Message</Resource>
     <Resource tag="RANK">Posición</Resource>
     <Resource tag="REDDIT_TOPIC">Reddit este tema</Resource>
     <Resource tag="REP_VOTE_DOWN_MSG">Has quitado -1 a la reputación de {0}.</Resource>
@@ -5673,7 +5685,7 @@ Visita {forumname} en {forumlink}
     <Resource tag="MYTOPICS_TITLE">Muestra los temas activos y favoritos.</Resource>
     <Resource tag="NEWPM">({0} Sin leer)</Resource>
     <Resource tag="REGISTER">Registrarse</Resource>
-    <Resource tag="REGISTER_CONNECT">register a new account</Resource>
+    <Resource tag="REGISTER_CONNECT">or Register a new forum account</Resource>
     <Resource tag="REGISTER_TITLE">Muestra e formulario de registro.</Resource>
     <Resource tag="SEARCH">Buscar</Resource>
     <Resource tag="SEARCH_TITLE">Usa la búsqueda del foro.</Resource>

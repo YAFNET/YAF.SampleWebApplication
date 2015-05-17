@@ -5,9 +5,11 @@
 
     CKEDITOR.replaceAll(function(textarea, config) {
 
-        config.extraPlugins = 'bbcode,syntaxhighlight,bbcodeselector,codemirror';
+        config.extraPlugins = 'autosave,bbcode,syntaxhighlight,bbcodeselector,codemirror';
         config.disableNativeSpellChecker = false;
         config.scayt_autoStartup = true;
+
+        config.autosave_saveDetectionSelectors = "a[id*='_PostReply'],a[id*='Cancel']";
 
         config.toolbar = [
             ['Source'],

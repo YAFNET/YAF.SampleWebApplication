@@ -17,20 +17,24 @@
         <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="CURRENT_UPLOADS" LocalizedPage="ATTACHMENTS" />
     </td>
     <td class="post">
+        <div id="AttachmentsListPager"></div>
+        <div id="PostAttachmentLoader">
+            <p style="text-align:center">
+                <YAF:LocalizedLabel ID="LoadingText" runat="server" LocalizedTag="LOADING"></YAF:LocalizedLabel>
+                <br /><asp:Image ID="LoadingImage" runat="server" />
+            </p>
+        </div>
         <div id="AttachmentsListBox" class="content">
-            <div id="AttachmentsListPager"></div>
-            <br style="clear:both;" />
-            <div id="AttachmentsPagerResult">
-                <p style="text-align:center"><asp:Label ID="LoadingText" runat="server"></asp:Label><br /><asp:Image ID="LoadingImage" runat="server" /></p>
-            </div>
-
-            <div id="AttachmentsPagerHidden" style="display:none;">
-                <asp:Literal ID="AttachmentsResults" runat="server" />
+            <div id="PostAttachmentListPlaceholder" style="clear: both;">
+                <ul class="PostAttachmentList">
+                </ul>
             </div>
             <span class="UploadNewFileLine">
-                <YAF:ThemeButton ID="UploadNew" TextLocalizedTag="UPLOAD_NEW" TextLocalizedPage="ATTACHMENTS" runat="server"
-                    CssClass="OpenUploadDialog yaflittlebutton">
-                </YAF:ThemeButton>
+               <a class="OpenUploadDialog yaflittlebutton">
+                   <span>
+                       <YAF:LocalizedLabel ID="ThemeButton1" LocalizedTag="UPLOAD_NEW" LocalizedPage="ATTACHMENTS" runat="server" />
+                   </span>
+               </a>
             </span>
         </div>
     </td>
