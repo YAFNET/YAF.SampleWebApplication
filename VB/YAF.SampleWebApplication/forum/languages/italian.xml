@@ -2122,6 +2122,7 @@
     <Resource tag="NOTIFICATION_ON_MODERATOR_REPORTED_MESSAGE">E' stato segnalato un messaggio sul forum {0}</Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL">New SPAM Message on {0} Forum needs to be checked</Resource>
     <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">Registrazione al forum {0} completata</Resource>
+    <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_SUBJECT">Suspension of your {0} Forum Account</Resource>
     <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">Nuovo utente registrato sul forum {0}</Resource>
     <Resource tag="NOTIFICATION_ON_WELCOME_USER_SUBJECT">Welcome to the {0} Forum</Resource>
     <Resource tag="OK">OK</Resource>
@@ -2488,6 +2489,7 @@
     <Resource tag="ERROR_TOOBIG">Non puoi caricare immagini così grandi.</Resource>
     <Resource tag="IMAGES_COUNT_LIMIT">Hai raggiunto il tuo limite di immagini pari a {0} per album.</Resource>
     <Resource tag="IMAGES_INFO">Nota: al momento questo album contiene {0} immagini. Ogni album può contenere al massimo {1} immagini. La dimensione massima di una singola immagine è di {2} KB.</Resource>
+    <Resource tag="SELECT_FILE">Select an Image File ('.jpg', '.gif', '.png' or '.bmp') you want to upload.</Resource>
     <Resource tag="TITLE">Crea/modifica album</Resource>
   </page>
   <page name="CP_EDITAVATAR">
@@ -4198,6 +4200,7 @@ Spoiler Content
     <Resource tag="MODERATED">Un moderatore deve approvare il tuo post prima che sia reso visibile a tutti quando lo invii ad un forum moderato.</Resource>
     <Resource tag="REGISTRATION">Un'e-mail è stata inviata all'indirizzo che hai fornito. Per favore leggi le istruzioni  per effettuare il log in.</Resource>
     <Resource tag="SUSPENDED">Il tuo account è stato sospeso fino a {0}.</Resource>
+    <Resource tag="SUSPENDED_REASON">&lt;br /&gt;&lt;br /&gt;For the following Reason: "{0}".</Resource>
     <Resource tag="TITLE_ACCESSDENIED">Accesso negato</Resource>
     <Resource tag="TITLE_COOKIES">Cookie necessari</Resource>
     <Resource tag="TITLE_ECMAREQUIRED">Javascript necessario</Resource>
@@ -4734,6 +4737,11 @@ Spoiler Content
     <Resource tag="SKYPE">ID Skype:</Resource>
     <Resource tag="STATISTICS">Statistiche</Resource>
     <Resource tag="SUSPEND">Sospendi</Resource>
+    <Resource tag="SUSPEND_BY">Suspended By:</Resource>
+    <Resource tag="SUSPEND_CURRENT">Current Suspension</Resource>
+    <Resource tag="SUSPEND_INFO">&lt;strong&gt;NOTE&lt;/strong&gt; The Suspension is based on the Users current Date and Time which is Now: {0}.</Resource>
+    <Resource tag="SUSPEND_NEW">New Suspension</Resource>
+    <Resource tag="SUSPEND_REASON">Suspend Reason:</Resource>
     <Resource tag="SUSPEND_USER">Sospendi utente:</Resource>
     <Resource tag="THANKSFROM">Ringraziamenti:</Resource>
     <Resource tag="THANKSTOPOSTS">Numero di messaggi per i quali questo utente è stato ringraziato:</Resource>
@@ -4894,8 +4902,13 @@ Spoiler Content
     <Resource tag="NEED_QUESTION">La domanda di sicurezza è obbligatoria.</Resource>
     <Resource tag="NEED_USERNAME">Il nome utente è obbligatorio.</Resource>
     <Resource tag="PASSWORD">Password</Resource>
+    <Resource tag="PASSWORD_GOOD">Good Password!</Resource>
+    <Resource tag="PASSWORD_MIN">Password must be {0} characters long.</Resource>
+    <Resource tag="PASSWORD_NOTMATCH">Password and Confirm Password do not match!</Resource>
     <Resource tag="PASSWORD_REQUIREMENTS_TITLE">Requisiti complessità password</Resource>
     <Resource tag="PASSWORD_REQUIREMENTS_WARN">{0} caratteri di lunghezza minima; minimo {1} caratteri non alfanumerici ($#@!).</Resource>
+    <Resource tag="PASSWORD_STRONGER">Make your password stronger with more capital letters, more numbers and special characters!</Resource>
+    <Resource tag="PASSWORD_WEAK">Weak Password, try using numbers and capital letters.</Resource>
     <Resource tag="PREFERENCES">Opzioni forum</Resource>
     <Resource tag="PROFILE">Informazioni di profilo</Resource>
     <Resource tag="RECAPTCHA_BADSETTING">Le impostazioni Captcha sono errate. Per favore segnala il problema agli amministratori.</Resource>
@@ -5183,6 +5196,30 @@ The Message was posted in the {forumname} forum.
       E-mail: {email} (Per favore non modificare la tua e-mail, altrimenti non potrai più accedere tramite Facebook)
 	  
     </Resource>
+    <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER">
+    Hello {user},
+
+    The suspension of your forum account has ended or was lifted.
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
+    <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
+    Hello {user},
+
+    Your forum account on the {forumname} forum has been temporarily suspended.
+    
+    This suspension is due to end on {suspendedUntil}.
+
+    For the following Reason: '{suspendReason}'
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">
       Ciao {user}.
 

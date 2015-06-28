@@ -2110,6 +2110,7 @@
     <Resource tag="NOTIFICATION_ON_MODERATOR_REPORTED_MESSAGE">Ein Beitrag im {0} Forum wurde gemeldet</Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL">New SPAM Message on {0} Forum needs to be checked</Resource>
     <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">Registrierung im {0} Forum erfolgreich</Resource>
+    <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_SUBJECT">Suspension of your {0} Forum Account</Resource>
     <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">Ein Benutzer hat sich im Forum {0} registriert</Resource>
     <Resource tag="NOTIFICATION_ON_WELCOME_USER_SUBJECT">Welcome to the {0} Forum</Resource>
     <Resource tag="OK">OK</Resource>
@@ -2470,6 +2471,7 @@
     <Resource tag="ERROR_TOOBIG">Sie können Solche großen Bilder nicht Hochladen.</Resource>
     <Resource tag="IMAGES_COUNT_LIMIT">Sie haben ihr Limit erreicht. Sie können nicht mehr als {0} Bilder hinzufügen.</Resource>
     <Resource tag="IMAGES_INFO">Notiz: Aktuell enthält das Album {0} Bilder sie sind berechtigt {1} Bilder pro Album hochzuladen. Die max. Dateigröße für ein Bild ist  {2} kb</Resource>
+    <Resource tag="SELECT_FILE">Select an Image File ('.jpg', '.gif', '.png' or '.bmp') you want to upload.</Resource>
     <Resource tag="TITLE">Hinzufügen/Bearbeiten Album</Resource>
   </page>
   <page name="CP_EDITAVATAR">
@@ -4151,6 +4153,7 @@ Spoiler Content
     <Resource tag="MODERATED">Da du in einem moderierten Forum einen Beitrag geschrieben hast, muss zuerst ein Moderator deinen Beitrag bestätigen, damit dieser sichtbar wird.</Resource>
     <Resource tag="REGISTRATION">Eine E-Mail wurde an die angegebene Adresse geschickt. Bitte lies die darin enthaltenen Informationen, um Dich einzuloggen.</Resource>
     <Resource tag="SUSPENDED">Dein Benutzerkonto wurde temporär gesperrt. Die Sperrung wird am {0} enden.</Resource>
+    <Resource tag="SUSPENDED_REASON">&lt;br /&gt;&lt;br /&gt;For the following Reason: "{0}".</Resource>
     <Resource tag="TITLE_ACCESSDENIED">Zugriff verweigert</Resource>
     <Resource tag="TITLE_COOKIES">Cookies benötigt</Resource>
     <Resource tag="TITLE_ECMAREQUIRED">JavaScript wird benötigt</Resource>
@@ -4685,6 +4688,11 @@ Spoiler Content
     <Resource tag="SKYPE">Skype ID:</Resource>
     <Resource tag="STATISTICS">Statistik</Resource>
     <Resource tag="SUSPEND">Sperren</Resource>
+    <Resource tag="SUSPEND_BY">Suspended By:</Resource>
+    <Resource tag="SUSPEND_CURRENT">Current Suspension</Resource>
+    <Resource tag="SUSPEND_INFO">&lt;strong&gt;NOTE&lt;/strong&gt; The Suspension is based on the Users current Date and Time which is Now: {0}.</Resource>
+    <Resource tag="SUSPEND_NEW">New Suspension</Resource>
+    <Resource tag="SUSPEND_REASON">Suspend Reason:</Resource>
     <Resource tag="SUSPEND_USER">Benutzer sperren:</Resource>
     <Resource tag="THANKSFROM">Anzahl der Danksagungen</Resource>
     <Resource tag="THANKSTOPOSTS">Anzahl der Beiträge für die der Benutzer gedankt wurde</Resource>
@@ -4845,8 +4853,13 @@ Spoiler Content
     <Resource tag="NEED_QUESTION">Die Sicherheitsfrage wird benötigt.</Resource>
     <Resource tag="NEED_USERNAME">Der Benutzername muss angegeben werden.</Resource>
     <Resource tag="PASSWORD">Passwort</Resource>
+    <Resource tag="PASSWORD_GOOD">Good Password!</Resource>
+    <Resource tag="PASSWORD_MIN">Password must be {0} characters long.</Resource>
+    <Resource tag="PASSWORD_NOTMATCH">Password and Confirm Password do not match!</Resource>
     <Resource tag="PASSWORD_REQUIREMENTS_TITLE">Anforderungen an das Passwort</Resource>
     <Resource tag="PASSWORD_REQUIREMENTS_WARN">Mindestens {0} Zeichen benötigt, davon müssen mindestens {1} Zeichen ein Sonderzeichen (z.B: $#@!) sein.</Resource>
+    <Resource tag="PASSWORD_STRONGER">Make your password stronger with more capital letters, more numbers and special characters!</Resource>
+    <Resource tag="PASSWORD_WEAK">Weak Password, try using numbers and capital letters.</Resource>
     <Resource tag="PREFERENCES">Einstellungen</Resource>
     <Resource tag="PROFILE">Profil Informationen</Resource>
     <Resource tag="RECAPTCHA_BADSETTING">Recapture Einstellungen sind falsch. Bitte Informieren Sie die Administratoren darüber.</Resource>
@@ -5091,6 +5104,30 @@ Der Beitrag wurde im {forumname} forum veröffentlicht.
       E-Mail: {email}
 
     </Resource>
+    <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER">
+    Hello {user},
+
+    The suspension of your forum account has ended or was lifted.
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
+    <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
+    Hello {user},
+
+    Your forum account on the {forumname} forum has been temporarily suspended.
+    
+    This suspension is due to end on {suspendedUntil}.
+
+    For the following Reason: '{suspendReason}'
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">
       Hallo {user}.
 

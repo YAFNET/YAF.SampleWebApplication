@@ -2129,6 +2129,7 @@
     <Resource tag="NOTIFICATION_ON_MODERATOR_REPORTED_MESSAGE">یک پیام در {0} گزارش داده شده است</Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL">پیام جدید در {0} انجمن نیاز به بررسی دارد</Resource>
     <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">ثبت نام در انجمن {0} با موفقیت انجام شد</Resource>
+    <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_SUBJECT">Suspension of your {0} Forum Account</Resource>
     <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">کاربر جدیدی در {0} ثبت نام کرده است.</Resource>
     <Resource tag="NOTIFICATION_ON_WELCOME_USER_SUBJECT">Welcome to the {0} Forum</Resource>
     <Resource tag="OK">تائید</Resource>
@@ -2476,6 +2477,7 @@
     <Resource tag="ERROR_TOOBIG">شما مجاز به ارسال تصویری با این حجم نمی باشید.</Resource>
     <Resource tag="IMAGES_COUNT_LIMIT">تعداد عکسهای مجاز شما به اتمام رسید.شما می توانید حداکثر {0} عکس را ارسال کنید.</Resource>
     <Resource tag="IMAGES_INFO">توجه: هم اکنون این آلبوم {0} تصویر دارد و شما مجاز به داشتن {1} تصویر در هر آلبوم هستید. بیشترین حجم برای تصویرر{2} کیلوبایت است</Resource>
+    <Resource tag="SELECT_FILE">Select an Image File ('.jpg', '.gif', '.png' or '.bmp') you want to upload.</Resource>
     <Resource tag="TITLE">افزودن/ویرایش آلبوم</Resource>
   </page>
   <page name="CP_EDITAVATAR">
@@ -4231,6 +4233,7 @@
     <Resource tag="MODERATED">با توجه به اینکه به یک انجمن تحت نظارت مطلب ارسال کرده اید , مطلب شما باید توسط مدیران انجمن برای ارسال نهایی مورد تائید قرار بکیرد .</Resource>
     <Resource tag="REGISTRATION">ایمیلی حاوی دستورالعمل های لازم برای ورود به انجمن برای شما ارسال شد.لطفاً به دقت آنرا مطالعه فرمایید.</Resource>
     <Resource tag="SUSPENDED">حساب شما موقتاً غیر فعال شده است.تعلیق در تاریخ {0} پایان می پذیرد.</Resource>
+    <Resource tag="SUSPENDED_REASON">&lt;br /&gt;&lt;br /&gt;For the following Reason: "{0}".</Resource>
     <Resource tag="TITLE_ACCESSDENIED">دسترسی ممکن نمی باشد</Resource>
     <Resource tag="TITLE_COOKIES">کوکی مورد نیاز است</Resource>
     <Resource tag="TITLE_ECMAREQUIRED">جاوا اسکریپت مورد نیاز است</Resource>
@@ -4765,6 +4768,11 @@
     <Resource tag="SKYPE">مشخصه اسکایپ:</Resource>
     <Resource tag="STATISTICS">آمار</Resource>
     <Resource tag="SUSPEND">تعلیق</Resource>
+    <Resource tag="SUSPEND_BY">Suspended By:</Resource>
+    <Resource tag="SUSPEND_CURRENT">Current Suspension</Resource>
+    <Resource tag="SUSPEND_INFO">&lt;strong&gt;NOTE&lt;/strong&gt; The Suspension is based on the Users current Date and Time which is Now: {0}.</Resource>
+    <Resource tag="SUSPEND_NEW">New Suspension</Resource>
+    <Resource tag="SUSPEND_REASON">Suspend Reason:</Resource>
     <Resource tag="SUSPEND_USER">تعلیق کاربر:</Resource>
     <Resource tag="THANKSFROM">تعداد تشکرها:</Resource>
     <Resource tag="THANKSTOPOSTS">تعداد ارسال هایی که در آنها از این کاربر تشکر شده است:</Resource>
@@ -4925,8 +4933,13 @@
     <Resource tag="NEED_QUESTION">سوال امنیتی ضروری است.</Resource>
     <Resource tag="NEED_USERNAME">نام کاربری ضروری است</Resource>
     <Resource tag="PASSWORD">رمز عبور</Resource>
+    <Resource tag="PASSWORD_GOOD">Good Password!</Resource>
+    <Resource tag="PASSWORD_MIN">Password must be {0} characters long.</Resource>
+    <Resource tag="PASSWORD_NOTMATCH">Password and Confirm Password do not match!</Resource>
     <Resource tag="PASSWORD_REQUIREMENTS_TITLE">نیازمندیهای رمزعبور</Resource>
     <Resource tag="PASSWORD_REQUIREMENTS_WARN">($#@!)حداقل کاراکتر مورد نیاز {0}. حداقل کاراکترهای غیر عددی/حرفی مورد نیاز {1}.</Resource>
+    <Resource tag="PASSWORD_STRONGER">Make your password stronger with more capital letters, more numbers and special characters!</Resource>
+    <Resource tag="PASSWORD_WEAK">Weak Password, try using numbers and capital letters.</Resource>
     <Resource tag="PREFERENCES">تنظیمات انجمن</Resource>
     <Resource tag="PROFILE">اطلاعات پروفایل</Resource>
     <Resource tag="RECAPTCHA_BADSETTING">تنظمیات باز پس گیری مناسب نیست. به مدیری گزارش دهید.</Resource>
@@ -5156,6 +5169,30 @@ The Message was posted in the {forumname} forum.
       User Email: {email}
 	  
     </Resource>
+    <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER">
+    Hello {user},
+
+    The suspension of your forum account has ended or was lifted.
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
+    <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
+    Hello {user},
+
+    Your forum account on the {forumname} forum has been temporarily suspended.
+    
+    This suspension is due to end on {suspendedUntil}.
+
+    For the following Reason: '{suspendReason}'
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">
       Hello {user}.
 

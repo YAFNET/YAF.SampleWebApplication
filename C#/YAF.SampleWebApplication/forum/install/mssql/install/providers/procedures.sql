@@ -4,134 +4,6 @@
 -- Description:	Membership Provider, Roles Provider SPROCS
 -- =============================================
 
-
--- =============================================
--- Membership Drop Procedures
--- =============================================
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_upgrade]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_upgrade]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_createapplication]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_createapplication]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_changepassword]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_changepassword]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_changepasswordquestionandanswer]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_changepasswordquestionandanswer]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_createuser]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_createuser]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_deleteuser]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_deleteuser]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_findusersbyemail]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_findusersbyemail]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_findusersbyname]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_findusersbyname]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_getallusers]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_getallusers]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_getnumberofusersonline]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_getnumberofusersonline]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_getuser]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_getuser]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_getusernamebyemail]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_getusernamebyemail]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_resetpassword]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_resetpassword]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_unlockuser]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_unlockuser]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_updateuser]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_updateuser]
-GO
-
--- =============================================
--- Roles Drop Procedures
--- =============================================
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_list]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_list]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_delete]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_delete]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_addusertorole]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_addusertorole]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_createrole]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_createrole]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_deleterole]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_deleterole]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_findusersinrole]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_findusersinrole]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_getroles]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_getroles]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_isuserinrole]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_isuserinrole]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_removeuserfromrole]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_removeuserfromrole]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_role_exists]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_exists]
-GO
-
--- =============================================
--- Profiles Drop Procedures
--- =============================================
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_profile_deleteinactive]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_profile_deleteinactive]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_profile_deleteprofiles]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_profile_deleteprofiles]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_profile_getprofiles]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_profile_getprofiles]
-GO
-
-IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}prov_profile_getnumberinactiveprofiles]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}prov_profile_getnumberinactiveprofiles]
-GO
-
 -- =============================================
 -- Membership Create Procedures
 -- =============================================
@@ -154,7 +26,7 @@ END
 GO
 
 
-CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}prov_createapplication]
+CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}prov_CreateApplication]
 (
 @ApplicationName nvarchar(256),
 @ApplicationID uniqueidentifier OUTPUT
@@ -166,7 +38,7 @@ BEGIN
 	IF (@ApplicationID IS Null)
 	BEGIN
 		    SELECT  @ApplicationID = NEWID()
-            INSERT  [{databaseOwner}].[{objectQualifier}prov_Application] (ApplicationId, ApplicationName, ApplicationNameLwd)
+            INSERT  [{databaseOwner}].[{objectQualifier}prov_Application] (ApplicationID, ApplicationName, ApplicationNameLwd)
             VALUES  (@ApplicationID, @ApplicationName, LOWER(@ApplicationName))
     END
 END 
@@ -216,7 +88,7 @@ GO
 CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}prov_createuser]
 (
 @ApplicationName nvarchar(256),
-@UserName nvarchar(256),
+@Username nvarchar(256),
 @Password nvarchar(256),
 @PasswordSalt nvarchar(256) = null,
 @PasswordFormat nvarchar(256) = null,
@@ -236,7 +108,7 @@ BEGIN
 		SET @UserKey = NEWID()
 		
 	INSERT INTO [{databaseOwner}].[{objectQualifier}prov_Membership] (UserID,ApplicationID,Joined,Username,UsernameLwd,[Password],PasswordSalt,PasswordFormat,Email,EmailLwd,PasswordQuestion,PasswordAnswer,IsApproved)
-		VALUES (@UserKey, @ApplicationID, @UTCTIMESTAMP ,@UserName, LOWER(@UserName), @Password, @PasswordSalt, @PasswordFormat, @Email, LOWER(@Email), @PasswordQuestion, @PasswordAnswer, @IsApproved);
+		VALUES (@UserKey, @ApplicationID, @UTCTIMESTAMP ,@Username, LOWER(@Username), @Password, @PasswordSalt, @PasswordFormat, @Email, LOWER(@Email), @PasswordQuestion, @PasswordAnswer, @IsApproved);
 END
 GO
 
@@ -546,7 +418,7 @@ BEGIN
 	EXEC [{databaseOwner}].[{objectQualifier}prov_CreateApplication] @ApplicationName, @ApplicationID OUTPUT
 
 	SET @UserID = (SELECT UserID FROM [{databaseOwner}].[{objectQualifier}prov_Membership] m WHERE m.UsernameLwd=LOWER(@UserName) AND m.ApplicationID = @ApplicationID)
-	SET @RoleID = (SELECT RoleID FROM [{databaseOwner}].[{objectQualifier}prov_Role] r WHERE r.RolenameLwd=LOWER(@Rolename) AND r.ApplicationID = @ApplicationID)
+	SET @RoleID = (SELECT RoleID FROM [{databaseOwner}].[{objectQualifier}prov_Role] r WHERE r.RoleNameLwd=LOWER(@Rolename) AND r.ApplicationID = @ApplicationID)
 
 	IF (@UserID IS NULL OR @RoleID IS NULL)
 		RETURN;
@@ -571,7 +443,7 @@ BEGIN
 	EXEC [{databaseOwner}].[{objectQualifier}prov_CreateApplication] @ApplicationName, @ApplicationID OUTPUT	
 	
 	SET @ErrorCode = 0
-	SET @RoleID = (SELECT RoleID FROM [{databaseOwner}].[{objectQualifier}prov_Role] r WHERE r.RolenameLwd=LOWER(@Rolename) AND r.ApplicationID = @ApplicationID)
+	SET @RoleID = (SELECT RoleID FROM [{databaseOwner}].[{objectQualifier}prov_Role] r WHERE r.RoleNameLwd=LOWER(@Rolename) AND r.ApplicationID = @ApplicationID)
 	
 	IF (@DeleteOnlyIfRoleIsEmpty <> 0)
 	BEGIN
@@ -601,7 +473,7 @@ BEGIN
 	
 	EXEC [{databaseOwner}].[{objectQualifier}prov_CreateApplication] @ApplicationName, @ApplicationID OUTPUT
 
-	SET @RoleID = (SELECT RoleID FROM [{databaseOwner}].[{objectQualifier}prov_Role] r INNER JOIN [{databaseOwner}].[{objectQualifier}prov_Application] a ON r.ApplicationID = a.ApplicationID WHERE r.RolenameLwd=LOWER(@Rolename) AND a.ApplicationID = @ApplicationID)
+	SET @RoleID = (SELECT RoleID FROM [{databaseOwner}].[{objectQualifier}prov_Role] r INNER JOIN [{databaseOwner}].[{objectQualifier}prov_Application] a ON r.ApplicationID = a.ApplicationID WHERE r.RoleNameLwd=LOWER(@Rolename) AND a.ApplicationID = @ApplicationID)
 
 	SELECT m.* FROM [{databaseOwner}].[{objectQualifier}prov_Membership] m INNER JOIN [{databaseOwner}].[{objectQualifier}prov_RoleMembership] rm ON m.UserID = rm.UserID WHERE rm.RoleID = @RoleID
 		
@@ -619,7 +491,7 @@ BEGIN
 	
 	EXEC [{databaseOwner}].[{objectQualifier}prov_CreateApplication] @ApplicationName, @ApplicationID OUTPUT
 	
-	IF (NOT EXISTS(SELECT 1 FROM [{databaseOwner}].[{objectQualifier}prov_Role] r WHERE r.ApplicationID = @ApplicationID AND r.RolenameLwd = LOWER(@Rolename)))
+	IF (NOT EXISTS(SELECT 1 FROM [{databaseOwner}].[{objectQualifier}prov_Role] r WHERE r.ApplicationID = @ApplicationID AND r.RoleNameLwd = LOWER(@Rolename)))
 		INSERT INTO [{databaseOwner}].[{objectQualifier}prov_Role] (RoleID, ApplicationID, RoleName, RoleNameLwd) VALUES (NEWID(),@ApplicationID, @Rolename,LOWER(@Rolename));		
 END
 GO
@@ -667,7 +539,7 @@ BEGIN
 	SELECT m.* FROM [{databaseOwner}].[{objectQualifier}prov_RoleMembership] rm 
 		INNER JOIN [{databaseOwner}].[{objectQualifier}prov_Membership] m ON rm.UserID = m.UserID
 		INNER JOIN [{databaseOwner}].[{objectQualifier}prov_Role] r ON rm.RoleID = r.RoleID
-		WHERE m.UsernameLwd=LOWER(@UserName) AND r.RolenameLwd =LOWER(@Rolename) AND r.ApplicationID = @ApplicationID;
+		WHERE m.UsernameLwd=LOWER(@UserName) AND r.RoleNameLwd =LOWER(@Rolename) AND r.ApplicationID = @ApplicationID;
 END 
 GO
 
@@ -685,7 +557,7 @@ BEGIN
 
 	EXEC [{databaseOwner}].[{objectQualifier}prov_CreateApplication] @ApplicationName, @ApplicationID OUTPUT	
 	
-	SET @RoleID = (SELECT RoleID FROM [{databaseOwner}].[{objectQualifier}prov_Role] r WHERE r.RolenameLwd = LOWER(@Rolename) AND r.ApplicationID = @ApplicationID)
+	SET @RoleID = (SELECT RoleID FROM [{databaseOwner}].[{objectQualifier}prov_Role] r WHERE r.RoleNameLwd = LOWER(@Rolename) AND r.ApplicationID = @ApplicationID)
 	SET @UserID = (SELECT UserID FROM [{databaseOwner}].[{objectQualifier}prov_Membership] m WHERE m.UsernameLwd=LOWER(@UserName) AND m.ApplicationID = @ApplicationID)
 	
 	DELETE FROM [{databaseOwner}].[{objectQualifier}prov_RoleMembership] WHERE RoleID = @RoleID AND UserID=@UserID
@@ -696,7 +568,7 @@ GO
 CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}prov_role_exists]
 (
 @ApplicationName nvarchar(256),
-@Rolename nvarchar(256)
+@RoleName nvarchar(256)
 )
 AS
 BEGIN
@@ -705,7 +577,7 @@ BEGIN
 	EXEC [{databaseOwner}].[{objectQualifier}prov_CreateApplication] @ApplicationName, @ApplicationID OUTPUT
 	
 	SELECT COUNT(1) FROM [{databaseOwner}].[{objectQualifier}prov_Role]
-		WHERE RolenameLwd = LOWER(@Rolename) AND ApplicationID = @ApplicationID
+		WHERE RoleNameLwd = LOWER(@RoleName) AND ApplicationID = @ApplicationID
 END 
 GO
 
@@ -828,11 +700,11 @@ BEGIN
         WHERE   ApplicationID = @ApplicationID
             AND m.UserID = p.UserID
             AND (@InactiveSinceDate IS NULL OR LastActivity <= @InactiveSinceDate)
-            AND (@UserNameToMatch IS NULL OR m.UserNameLwd LIKE LOWER(@UserNameToMatch))
-        ORDER BY UserName
+            AND (@UserNameToMatch IS NULL OR m.UsernameLwd LIKE LOWER(@UserNameToMatch))
+        ORDER BY Username
 
 
-    SELECT  m.UserName, m.LastActivity, p.*
+    SELECT  m.Username, m.LastActivity, p.*
     FROM    [{databaseOwner}].[{objectQualifier}prov_Membership] m, [{databaseOwner}].[{objectQualifier}prov_Profile] p, #PageIndexForUsers i
     WHERE   m.UserId = p.UserId AND p.UserId = i.UserID AND i.IndexID >= @PageLowerBound AND i.IndexID <= @PageUpperBound
 

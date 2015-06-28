@@ -1,19 +1,8 @@
-function CKEditor_Load() {
-    if (arguments.callee.done) return;
-
-    arguments.callee.done = true;
-
-
-    CKEDITOR.replaceAll(function(textarea, config) {
-
-        config.disableNativeSpellChecker = false;
-        config.scayt_autoStartup = true;
-
-        config.extraPlugins = 'autosave,bbcodehtml,syntaxhighlight,bbcodeselector,codemirror,textselection';
-
-        config.autosave_saveDetectionSelectors = "a[id*='_PostReply'],a[id*='Cancel']";
-
-        config.toolbar = [
+jQuery(document).ready(function() {
+    var yafCKEditor = jQuery('textarea.YafTextEditor').ckeditor({
+        extraPlugins: 'autosave,bbcodehtml,syntaxhighlight,bbcodeselector,codemirror,textselection,wordcount',
+        autosave_saveDetectionSelectors: "a[id*='_PostReply'],a[id*='Cancel']",
+        toolbar: [
             ['Source'],
             ['Cut', 'Copy', 'Paste'], ['Undo', 'Redo', '-', 'Find', 'Replace', '-', 'SelectAll', 'RemoveFormat'],
             ['-', 'NumberedList', 'BulletedList'],
@@ -24,26 +13,56 @@ function CKEditor_Load() {
             '/',
             ['Bold', 'Italic', 'Underline', '-', 'TextColor', 'Font', 'FontSize'],
             ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'PasteText', 'PasteFromWord'],
-            ['Outdent', 'Indent'],
-            ['Scayt']
-        ];
-
-
-        config.entities_greek = false;
-        config.entities_latin = false;
-        config.language = editorLanguage;
-
-        config.contentsCss = 'Scripts/ckeditor/yaf_contents.css';
-
-        config.codemirror =
+            ['Outdent', 'Indent']
+        ],
+        entities_greek: false,
+        entities_latin: false,
+        language: editorLanguage,
+        contentsCss: 'Scripts/ckeditor/yaf_contents.css',
+        codemirror:
         {
             mode: 'bbcodemixed'
         }
     });
-};
 
-if (document.addEventListener) {
-    document.addEventListener("DOMContentLoaded", CKEditor_Load, false);
-}
+    jQuery("a[id*='_PostReply'],a[id*='_Save']").click(function () {
+        yafCKEditor.editor.updateElement();
+    });
 
-window.onload = CKEditor_Load;
+    yafCKEditor.editor.addCommand('highlight', {
+        modes: { wysiwyg: 1, source: 1 },
+        exec: function (editor) {
+            var selection = editor.getSelection();
+            if (!selection) {
+                editor.insertHtml('[h]' + '[/h]');
+            }
+            var text = selection.getSelectedText();
+
+            editor.insertHtml('[h]' + text + '[/h]');
+        }
+    });
+
+    yafCKEditor.editor.addCommand('codeblock', {
+        modes: { wysiwyg: 1, source: 1 },
+        exec: function (editor) {
+            var selection = editor.getSelection();
+            if (!selection) {
+                editor.insertHtml('[code]' + '[/code]');
+            }
+            var text = selection.getSelectedText();
+
+            editor.insertHtml('[code]' + text + '[/code]');
+        }
+    });
+
+    yafCKEditor.editor.addCommand('postmessage', {
+        modes: { wysiwyg: 1, source: 1 },
+        exec: function () {
+            if (jQuery("a[id*='_PostReply']").length) {
+                __doPostBack(jQuery("a[id*='_PostReply']").attr('id').replace('_', '$').replace('_', '$'), '');
+            } else if (jQuery("a[id*='_Save']").length) {
+                __doPostBack(jQuery("a[id*='_Save']").attr('id').replace('_', '$').replace('_', '$'), '');
+            }
+        }
+    });
+});

@@ -208,7 +208,7 @@
  </page>
  <page name="ADMIN_ATTACHMENTS">
   <Resource tag="CONFIRM_DELETE">Delete attachment(s)?</Resource>
-  <Resource tag="CONTENT_TYPE">Content Type</Resource>BUTTON_DELETE
+  <Resource tag="CONTENT_TYPE">Content Type</Resource>
   <Resource tag="DOWNLOADS">Downloads</Resource>
   <Resource tag="POSTED">Posted</Resource>
   <Resource tag="TITLE">Attachments</Resource>
@@ -2120,6 +2120,7 @@
   <Resource tag="NOTIFICATION_ON_MODERATOR_REPORTED_MESSAGE">A Message on {0} Forum was reported</Resource>
   <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">Registration on {0} Forum successfully</Resource>
   <Resource tag="NOTIFICATION_ON_BOT_USER_REGISTER_EMAIL_SUBJECT">New SPAM BOT User Registered on {0} Forum</Resource>
+  <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_SUBJECT">Suspension of your {0} Forum Account</Resource>
   <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">New User Registered on {0} Forum</Resource>
   <Resource tag="NOTIFICATION_ON_WELCOME_USER_SUBJECT">Welcome to the {0} Forum</Resource>
   <Resource tag="OK">OK</Resource>
@@ -2486,6 +2487,7 @@
   <Resource tag="ERROR_TOOBIG">You cannot upload images that big.</Resource>
   <Resource tag="IMAGES_COUNT_LIMIT">Your image limit is reached. You can add no more than {0} images for each album.</Resource>
   <Resource tag="IMAGES_INFO">Note: Currently this Album contains {0} Image(s) you are allowed to have {1} images for each album. The max. filesize for an Image is {2} kb</Resource>
+  <Resource tag="SELECT_FILE">Select an Image File ('.jpg', '.gif', '.png' or '.bmp') you want to upload.</Resource>
   <Resource tag="TITLE">Add/Edit Album</Resource>
  </page>
  <page name="CP_EDITAVATAR">
@@ -4195,7 +4197,8 @@ Spoiler Content
   <Resource tag="INVALID">You've passed an invalid value to the forum.</Resource>
   <Resource tag="MODERATED">Since you posted to a moderated forum, a forum moderator must approve your post before it will become visible.</Resource>
   <Resource tag="REGISTRATION">An email has been sent to the email address you supplied. Please read the instructions in the email to login.</Resource>
-  <Resource tag="SUSPENDED">Your account has been temporarily suspended. This suspension is due to end on {0}.</Resource>
+  <Resource tag="SUSPENDED">Your account has been temporarily suspended.&lt;br /&gt;&lt;br /&gt;This suspension is due to end on {0}.</Resource>
+  <Resource tag="SUSPENDED_REASON">&lt;br /&gt;&lt;br /&gt;For the following Reason: &quot;{0}&quot;.</Resource>
   <Resource tag="TITLE_ACCESSDENIED">Access Denied</Resource>
   <Resource tag="TITLE_COOKIES">Requires cookies</Resource>
   <Resource tag="TITLE_ECMAREQUIRED">JavaScript required</Resource>
@@ -4730,6 +4733,11 @@ Spoiler Content
   <Resource tag="SKYPE">Skype(tm) ID:</Resource>
   <Resource tag="STATISTICS">Statistics</Resource>
   <Resource tag="SUSPEND">Suspend</Resource>
+  <Resource tag="SUSPEND_BY">Suspended By:</Resource>
+  <Resource tag="SUSPEND_CURRENT">Current Suspension</Resource>
+  <Resource tag="SUSPEND_INFO">&lt;strong&gt;NOTE&lt;/strong&gt; The Suspension is based on the Users current Date and Time which is Now: {0}.</Resource>
+  <Resource tag="SUSPEND_NEW">New Suspension</Resource>
+  <Resource tag="SUSPEND_REASON">Suspend Reason:</Resource>
   <Resource tag="SUSPEND_USER">Suspend User:</Resource>
   <Resource tag="THANKSFROM">Thanks Given:</Resource>
   <Resource tag="THANKSTOPOSTS">Thanked Posts:</Resource>
@@ -4890,8 +4898,11 @@ Spoiler Content
   <Resource tag="NEED_QUESTION">Security question is required.</Resource>
   <Resource tag="NEED_USERNAME">User Name is required.</Resource>
   <Resource tag="PASSWORD">Password</Resource>
-  <Resource tag="PASSWORD_REQUIREMENTS_TITLE">Password Requirements</Resource>
-  <Resource tag="PASSWORD_REQUIREMENTS_WARN">{0} min length. {1} minimum non-alphanumeric characters (#@!).</Resource>
+  <Resource tag="PASSWORD_GOOD">Good Password!</Resource>
+  <Resource tag="PASSWORD_MIN">Password must be {0} characters long.</Resource>
+  <Resource tag="PASSWORD_NOTMATCH">Password and Confirm Password do not match!</Resource>
+  <Resource tag="PASSWORD_STRONGER">Make your password stronger with more capital letters, more numbers and special characters!</Resource>
+  <Resource tag="PASSWORD_WEAK">Weak Password, try using numbers and capital letters.</Resource>
   <Resource tag="PREFERENCES">Forum Preferences</Resource>
   <Resource tag="PROFILE">Profile Information</Resource>
   <Resource tag="RECAPTCHA_BADSETTING">Recapture settings are bad. Report it to administration.</Resource>
@@ -5156,6 +5167,30 @@ The Message was posted in the {forumname} forum.
 
       Administration Link: {adminlink}
     </Resource>
+  <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
+    Hello {user},
+
+    Your forum account on the {forumname} forum has been temporarily suspended.
+    
+    This suspension is due to end on {suspendedUntil}.
+
+    For the following Reason: '{suspendReason}'
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
+  <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER">
+    Hello {user},
+
+    The suspension of your forum account has ended or was lifted.
+
+    Thanks!
+    The {forumname} Team
+    {forumurl}
+
+  </Resource>
   <Resource tag="NOTIFICATION_ON_WELCOME_USER">
     Hello {user},
 

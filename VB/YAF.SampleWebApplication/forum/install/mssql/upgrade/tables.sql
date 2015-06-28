@@ -611,6 +611,8 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		AvatarImageType	nvarchar (50) NULL,
 		RankID			[int] NOT NULL,
 		Suspended		[datetime] NULL,
+		SuspendedReason ntext NULL,
+		SuspendedBy     int not null default (0),
 		LanguageFile	nvarchar(50) NULL,
 		ThemeFile		nvarchar(50) NULL,
 		TextEditor		nvarchar(50) NULL,
@@ -1408,7 +1410,7 @@ end
 GO
 
 -- Only remove User table columns if version is 30+
-IF EXISTS (SELECT ver FROM (SELECT CAST(CAST(value as nvarchar(255)) as int) as ver FROM [{databaseOwner}].[{objectQualifier}Registry] WHERE name = 'version') reg WHERE ver > 30)
+IF EXISTS (SELECT ver FROM (SELECT CAST(CAST(Value as nvarchar(255)) as int) as ver FROM [{databaseOwner}].[{objectQualifier}Registry] WHERE Name = 'version') reg WHERE ver > 30)
 BEGIN
 	if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}User]') and name='Gender')
 	begin
@@ -2824,3 +2826,10 @@ if not exists(select top 1 1 from sys.columns where object_id = object_id(N'[{da
         deallocate curMessages')
     end
 go
+
+if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}User]') and name='SuspendedReason')
+begin
+	alter table [{databaseOwner}].[{objectQualifier}User] add SuspendedReason ntext NULL
+	alter table [{databaseOwner}].[{objectQualifier}User] add SuspendedBy     int not null default (0)
+end
+GO

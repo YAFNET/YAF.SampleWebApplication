@@ -1,72 +1,53 @@
-﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="YAF.SampleWebApplication.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="YAF.SampleWebApplication.SiteMaster" %>
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
-    <meta charset="utf-8" />     
-    <title><%: Page.Title %> - YAF.NET Sample Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" /> 
-    <asp:PlaceHolder runat="server">        
-        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    </asp:PlaceHolder>
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width" />
-    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form runat="server">
-    <asp:ScriptManager runat="server">
-    </asp:ScriptManager>
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title"><a runat="server" href="~/" ><asp:Image ID="Image1" runat="server" ImageUrl="~/forum/images/YafLogo.png" /></a></p>
+        <asp:ScriptManager runat="server" id="YafScriptManager" EnablePartialRendering="true"></asp:ScriptManager>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/forum/images/YafLogo.png" />YAF.NET Sample Application
+                </h1>
             </div>
-            <div class="float-right">
-                <section id="login">
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul>
-                                <li><a id="registerLink" href="<% =GetRegisterUrl() %>">Register</a></li>
-                                <li><a id="loginLink" href="<% =GetLoginUrl() %>">Log In</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <p>
-                                Hello, <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
-                                    <asp:LoginName runat="server" CssClass="username" />
-                                </a>!
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
-                            </p>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
-                </section>
-                <nav>
-                    <ul id="menu">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/forum/Forum.aspx">Forum</a></li>
-                        <li><a runat="server" href="~/About.aspx">About</a></li>
-                        <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
-                    </ul>
-                </nav>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <asp:HyperLink id="LoginLink" runat="server">Log In</asp:HyperLink> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" RenderingMode="List" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/forum/Forum.aspx" Text="Forum"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    </Items>
+                </asp:Menu>
             </div>
         </div>
-    </header>
-    <div id="body">
-        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-        <section class="content-wrapper main-content clear-fix">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-        </section>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
     </div>
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>
-                    &copy; <%: DateTime.Now.Year %> - YAF.NET Sample Application
-                </p>
-            </div>
-        </div>
-    </footer>
+    <div class="footer">
+        
+    </div>
     </form>
 </body>
 </html>
