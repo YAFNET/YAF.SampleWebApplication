@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="YAF.SampleWebApplication.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.vb" Inherits="YAF.SampleWebApplication.Global_asax" Language="vb" %>

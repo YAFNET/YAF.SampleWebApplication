@@ -1375,6 +1375,8 @@
     <Resource tag="SHOW_DEL_MESSAGES_HELP">Удалённые сообщения(пустые) будут видны с уведомлением. Не включайте обе опции одновременно.</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_TOALL">Показывать удалённые сообщения для всех:</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_TOALL_HELP">Это покажет пустое сообщение с уведомлением всем пользователям.&lt;br /&gt; Если не выбрано, то администраторы, модераторы и автор будут видеть это сообщение.</Resource>
+    <Resource tag="SHOW_EDIT_MESSAGE">Show Edit Message:</Resource>
+    <Resource tag="SHOW_EDIT_MESSAGE_HELP">If enabled it shows a Note in the footer of the Message if the Message was edited (incl. the Reason and Time)</Resource>
     <Resource tag="SHOW_FORUM_JUMP">Показывать список быстрого перехода:</Resource>
     <Resource tag="SHOW_FORUM_JUMP_HELP">Показывать список быстрого перехода в разных местах форума.</Resource>
     <Resource tag="SHOW_FORUM_STATS">Показывать статистику конференции:</Resource>
@@ -1699,6 +1701,7 @@
     <Resource tag="MSG_CODE_BRACK">Пожалуйста, используйте код для использования с этой эмоцией в квадратных скобках.</Resource>
     <Resource tag="MSG_CODE_LONG">Код для использования с этой эмоцией не должен превышать 10 символов.</Resource>
     <Resource tag="MSG_CODE_MISSING">Пожалуйста, введите код для использования с этой эмоцией.</Resource>
+    <Resource tag="MSG_CODE_SAME">Please choose a different code, this one is already in use.</Resource>
     <Resource tag="MSG_NO_EMOTICON">Пожалуйста, введите эмоцию для этой иконки.</Resource>
     <Resource tag="MSG_NO_ICON">Пожалуйста, выберите иконку для использования с этой эмоцией.</Resource>
     <Resource tag="MSG_SORT_NMBR">Порядок сортировки должен быть числом от 0 до 255.</Resource>
@@ -1916,6 +1919,7 @@
     <Resource tag="DROP_HERE">Drop file(s) here</Resource>
     <Resource tag="FILEERROR">Файла типа '{0}' не разрешены для загрузки.</Resource>
     <Resource tag="FILENAME">Название файла</Resource>
+    <Resource tag="NO_ATTACHMENTS">You are not having any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
     <Resource tag="SELECT_FILE">Выберите файл для загрузки.</Resource>
     <Resource tag="SIZE">Размер</Resource>
     <Resource tag="START_UPLOADS">Start upload(s)</Resource>
@@ -5272,6 +5276,10 @@ Password: {password}
       Для прочтения этого сообщения, перейдите по следующей ссылке в вашем браузере:
 
       {link}
+
+      You can manage your subscriptions here:
+      
+      {subscriptionlink}
     </Resource>
     <Resource tag="VERIFYEMAIL_HTML" />
     <Resource tag="VERIFYEMAIL_TEXT">

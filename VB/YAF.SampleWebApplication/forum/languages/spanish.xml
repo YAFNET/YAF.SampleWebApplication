@@ -1387,6 +1387,8 @@
     <Resource tag="SHOW_DEL_MESSAGES_HELP">Si está marcado, los mensajes eliminados se dejarán con algunas notas.</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_TOALL">Mostrar mensajes eliminados a todos:</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_TOALL_HELP">Si mostrar mensajes eliminados está marcado más arriba, marcando esta opción forzarán el mostrar los resguardos de los mensajes eliminados a todos los usuarios.&lt;br /&gt; Si se mantiene sin marcar, los resguardos de los mensajes eliminados solo se mostrarán a los administradores, moderadores y el creador del mensaje borrado.</Resource>
+    <Resource tag="SHOW_EDIT_MESSAGE">Show Edit Message:</Resource>
+    <Resource tag="SHOW_EDIT_MESSAGE_HELP">If enabled it shows a Note in the footer of the Message if the Message was edited (incl. the Reason and Time)</Resource>
     <Resource tag="SHOW_FORUM_JUMP">Mostrar Jump Box del foro:</Resource>
     <Resource tag="SHOW_FORUM_JUMP_HELP">Activar o desactivar el mostrar la Jump Box del foro a lo largo del foro.</Resource>
     <Resource tag="SHOW_FORUM_STATS">Mostrar estadísticas del foro:</Resource>
@@ -1723,6 +1725,7 @@
     <Resource tag="MSG_CODE_BRACK">Por favor, introduce el código a usar en esta emoción entre corchetes.</Resource>
     <Resource tag="MSG_CODE_LONG">El código a usar para esta emoción no debe ser mayor de 10 símbolos.</Resource>
     <Resource tag="MSG_CODE_MISSING">Por favor, introduce el código a usar para esta emoción.</Resource>
+    <Resource tag="MSG_CODE_SAME">Please choose a different code, this one is already in use.</Resource>
     <Resource tag="MSG_NO_EMOTICON">Por favor, introduce una emoción para este icono.</Resource>
     <Resource tag="MSG_NO_ICON">Por favor, selecciona un icono a usar para esta emoción.</Resource>
     <Resource tag="MSG_SORT_NMBR">El orden de clasificación debe ser un número entre 0 y 255.</Resource>
@@ -1940,6 +1943,7 @@
     <Resource tag="DROP_HERE">Drop file(s) here</Resource>
     <Resource tag="FILEERROR">'{0}' no es un archivo válido para cargar.</Resource>
     <Resource tag="FILENAME">Nombre del archivo</Resource>
+    <Resource tag="NO_ATTACHMENTS">You are not having any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
     <Resource tag="SELECT_FILE">Selecciona el archivo que quieres subir.</Resource>
     <Resource tag="SIZE">Tamaño</Resource>
     <Resource tag="START_UPLOADS">Start upload(s)</Resource>
@@ -5636,6 +5640,10 @@ Un nuevo mensaje ha sido publicado en el hilo {topic} en {forumname}.
 Para leer el mensaje, abre el siguiente enlace en tu navegador:
 
 {link}
+
+      You can manage your subscriptions here:
+      
+      {subscriptionlink}
 		</Resource>
     <Resource tag="VERIFYEMAIL_HTML" />
     <Resource tag="VERIFYEMAIL_TEXT">

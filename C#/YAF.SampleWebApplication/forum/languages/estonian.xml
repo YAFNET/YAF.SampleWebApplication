@@ -1382,6 +1382,8 @@
     <Resource tag="SHOW_DEL_MESSAGES_HELP">If this is checked, messages that are deleted will leave with some notes</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_TOALL">Show Deleted Messages to All:</Resource>
     <Resource tag="SHOW_DEL_MESSAGES_TOALL_HELP">If Show Deleted Messages is checked above, checking this will force showing the delete message stub to all users.&lt;br /&gt; If it remains unchecked, the deleted message stub will only show to administrators, moderators, and the owner of the deleted message.</Resource>
+    <Resource tag="SHOW_EDIT_MESSAGE">Show Edit Message:</Resource>
+    <Resource tag="SHOW_EDIT_MESSAGE_HELP">If enabled it shows a Note in the footer of the Message if the Message was edited (incl. the Reason and Time)</Resource>
     <Resource tag="SHOW_FORUM_JUMP">Show Forum Jump Box:</Resource>
     <Resource tag="SHOW_FORUM_JUMP_HELP">Enable or disable display of the Forum Jump Box throughout the forum.</Resource>
     <Resource tag="SHOW_FORUM_STATS">Show Forum Statistics:</Resource>
@@ -1719,6 +1721,7 @@
     <Resource tag="MSG_CODE_BRACK">Please enter the code to use for this emotion in square brackets.</Resource>
     <Resource tag="MSG_CODE_LONG">The code to use for this emotion should not be more then 10 symbols.</Resource>
     <Resource tag="MSG_CODE_MISSING">Please enter the code to use for this emotion.</Resource>
+    <Resource tag="MSG_CODE_SAME">Please choose a different code, this one is already in use.</Resource>
     <Resource tag="MSG_NO_EMOTICON">Please enter an emotion for this icon.</Resource>
     <Resource tag="MSG_NO_ICON">Please select an icon to use for this emotion.</Resource>
     <Resource tag="MSG_SORT_NMBR">Sort order must be number between 0 and 255.</Resource>
@@ -1937,6 +1940,7 @@
     <Resource tag="ERROR_TOOBIG">Fail on liiga suur manuse jaoks.</Resource>
     <Resource tag="FILEERROR">Faili tüüp '{0}' ei ole üleslaadimiseks lubatud</Resource>
     <Resource tag="FILENAME">Faili nimi</Resource>
+    <Resource tag="NO_ATTACHMENTS">You are not having any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
     <Resource tag="SELECT_FILE">Valige failid üleslaadimiseks.</Resource>
     <Resource tag="SIZE">Suurus</Resource>
     <Resource tag="START_UPLOADS">Start upload(s)</Resource>
@@ -5287,15 +5291,20 @@ Sõnumi lugemiseks avage allolev link:
 {link}
 </Resource>
     <Resource tag="TOPICPOST_HTML" />
-    <Resource tag="TOPICPOST_TEXT">Foorumi {forumname} teemas "{topic}" on uus postitus:
+    <Resource tag="TOPICPOST_TEXT">
+      Foorumi {forumname} teemas "{topic}" on uus postitus:
 
-{postedby}: 
-"{bodytruncated}"
+      {postedby}:
+      "{bodytruncated}"
 
-Lugemiseks vajutage allolevale lingile või kopeerige link oma veebilehitsejasse:
+      Lugemiseks vajutage allolevale lingile või kopeerige link oma veebilehitsejasse:
 
-{link}
-</Resource>
+      {link}
+
+      You can manage your subscriptions here:
+
+      {subscriptionlink}
+    </Resource>
     <Resource tag="VERIFYEMAIL_HTML" />
     <Resource tag="VERIFYEMAIL_TEXT">Te taotlesite {forumname} foorumiga liitumist, kuid kõigepealt on vaja kontrollida Teie e-posti aadressi.
 
