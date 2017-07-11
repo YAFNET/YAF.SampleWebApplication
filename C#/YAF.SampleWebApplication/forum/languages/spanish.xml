@@ -403,6 +403,7 @@
     <Resource tag="DISABLED">Desactivado</Resource>
     <Resource tag="NO">No</Resource>
     <Resource tag="SAVE">Guardar</Resource>
+    <Resource tag="TABLE_RESPONSIVE">Swipe Table to the left to Reveal More Data</Resource>
     <Resource tag="YES">Si</Resource>
   </page>
   <page name="ADMIN_DELETEFORUM">
@@ -954,7 +955,7 @@
     <Resource tag="ACTIVETOPIC_FEEDS_ACCESS">Acceso a los feeds de temas activos:</Resource>
     <Resource tag="ACTIVETOPIC_FEEDS_ACCESS_HELP">Restringe la visualización de feeds de temas activos.</Resource>
     <Resource tag="AKISMET_KEY">Llave API para Akismet:</Resource>
-    <Resource tag="AKISMET_KEY_HELP">Para usar el servicio de comentado de SPAM de Akismet necesitas una llave API &lt;a href="https://akismet.com/signup/"&gt;Regístrate aquí&lt;a&gt;</Resource>
+    <Resource tag="AKISMET_KEY_HELP">Para usar el servicio de comentado de SPAM de Akismet necesitas una llave API &lt;a href="https://akismet.com/signup/"&gt;Regístrate aquí&lt;a&gt;.</Resource>
     <Resource tag="ALBUMS_PER_PAGE">Álbumes por página:</Resource>
     <Resource tag="ALBUMS_PER_PAGE_HELP">Número de álbumes para mostrar por página.</Resource>
     <Resource tag="ALL_USERS">Todos los usuarios</Resource>
@@ -1048,7 +1049,7 @@
     <Resource tag="BOT_MESSAGE_1">Aprobar usuario, registrarlo y enviar un email al administrador.</Resource>
     <Resource tag="BOT_MESSAGE_2">Bloquear usuario.</Resource>
     <Resource tag="BOTSCOUT_KEY">Llave API para BotScout.com:</Resource>
-    <Resource tag="BOTSCOUT_KEY_HELP">Para usar el servicio de BotScout necesitas una llave API &lt;a href="http://botscout.com/getkey.htm"&gt;Regístrate aquí&lt;a&gt;</Resource>
+    <Resource tag="BOTSCOUT_KEY_HELP">Para usar el servicio de BotScout necesitas una llave API &lt;a href="http://botscout.com/getkey.htm"&gt;Regístrate aquí&lt;a&gt;.</Resource>
     <Resource tag="CAPTCHA_FOR_REGISTER">Activar CAPTCHA/reCAPTCHA en el registro:</Resource>
     <Resource tag="CAPTCHA_FOR_REGISTER_HELP">Obliga a los usuarios a introducir el CAPTCHA cuando se registran en el foro.</Resource>
     <Resource tag="CAPTCHA_GUEST_POSTING">Activar CAPTCHA para publicación como invitado:</Resource>
@@ -1059,8 +1060,6 @@
     <Resource tag="CAT_CACHE_TIMEOUT_HELP">En minutos</Resource>
     <Resource tag="CDN_JQUERY">Use Google Hosted CDN jQuery Script File?</Resource>
     <Resource tag="CDN_JQUERY_HELP">You can use the Google Hosted Script File, or instead use internal.</Resource>
-    <Resource tag="CDN_JQUERY_UI">Use Google Hosted CDN jQuery-UI Script File?</Resource>
-    <Resource tag="CDN_JQUERY_UI_HELP">You can use the Google Hosted Script File, or instead use internal.</Resource>
     <Resource tag="CDN_SCRIPTMANAGER">Use CDN Hosted Script Manager JS Files?</Resource>
     <Resource tag="CDN_SCRIPTMANAGER_HELP">You can use the CDN Hosted Script Files, or instead use internal.</Resource>
     <Resource tag="CHECK_FOR_BOTSPAM">Selecciona un servicio para comprobar usuarios bot automáticamente.</Resource>
@@ -1454,6 +1453,8 @@
     <Resource tag="SPAM_SERVICE_TYP_1">BlogSpam.NET API</Resource>
     <Resource tag="SPAM_SERVICE_TYP_2">Akismet API (Needs Registration)</Resource>
     <Resource tag="SPAM_SERVICE_TYP_3">Internal Spam Check Words</Resource>
+    <Resource tag="SPAMCHECK_ALLOWED_URLS">Allowed Number of URLs before flagged as SPAM:</Resource>
+    <Resource tag="SPAMCHECK_ALLOWED_URLS_HELP">If the user posts in one Message more then the allowed URLs the message is flagged as spam. This Check also depends how many user the posts have.</Resource>
     <Resource tag="SQL_FULLTEXT">Usar búsqueda de texto completo SQL:</Resource>
     <Resource tag="SQL_FULLTEXT_HELP">Cambiar el si las búsquedas de texto completo SQL son soportadas en las búsquedas.</Resource>
     <Resource tag="SSL_LOGIN">Usar SSL mientras se está iniciando sesión:</Resource>
@@ -1463,7 +1464,7 @@
     <Resource tag="STATS_CACHE_TIMEOUT">Caducidad de la caché de las estadísticas del foro.</Resource>
     <Resource tag="STATS_CACHE_TIMEOUT_HELP">En minutos</Resource>
     <Resource tag="STOPFORUMSPAM_KEY">StopForumSpam.com API Key:</Resource>
-    <Resource tag="STOPFORUMSPAM_KEY_HELP">In order to Report a User as Bot you need an StopForumSpam.com API Key &lt;a href="http://www.stopforumspam.com/signup"&gt;Sign Up here&lt;a&gt;</Resource>
+    <Resource tag="STOPFORUMSPAM_KEY_HELP">In order to Report a User as Bot you need an StopForumSpam.com API Key &lt;a href="http://www.stopforumspam.com/signup"&gt;Sign Up here&lt;a&gt;.</Resource>
     <Resource tag="STYLED_NICKS">Usar nicks con estilo:</Resource>
     <Resource tag="STYLED_NICKS_HELP">Si está marcado, puedes usar colores, cambiar tamaño de fuentes, etc. para los nicks de los usuarios activos.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Usar títulos de temas con estilo:</Resource>
@@ -1658,6 +1659,8 @@
     <Resource tag="RECOVERY2">Simple (La recuperación simple permite que la base de datos sea recuperada a la copia de seguridad más reciente. Necesitas hacer copias de tu BD regularmente.)</Resource>
     <Resource tag="RECOVERY3">Registro masivo (La recuperación de registro masivo permite las operaciones de registro masivo.)</Resource>
     <Resource tag="REINDEX">Con cualquier operación de modificación de datos puede ocurrir una fragmentación de tabla. Este comando puede ser usado para reconstruir todos los índices de las tables de la base de datos para mejorar el rendimiento.</Resource>
+    <Resource tag="REINDEX_MSG">Please do not navigate away from this page...</Resource>
+    <Resource tag="REINDEX_TITLE">Updating Tables</Resource>
     <Resource tag="REINDEXTBL_BTN">Reindexar tablas</Resource>
     <Resource tag="SETRECOVERY_BTN">Fijar el modo de recuperación</Resource>
     <Resource tag="SHOW_STATS">Muestra información estadísticas sobre los índices de las tablas YAF.</Resource>
@@ -1825,6 +1828,7 @@
     <Resource tag="FILTER">Filtrar por fecha de ingreso desde:</Resource>
     <Resource tag="FILTER_BY_GROUP">Filter by Group...</Resource>
     <Resource tag="FILTER_BY_RANK">Filter by Rank...</Resource>
+    <Resource tag="FILTER_DROPDOWN">Filter</Resource>
     <Resource tag="FILTER_NO">[No Filter]</Resource>
     <Resource tag="HEADER">Buscar usuarios</Resource>
     <Resource tag="IMPORT">Importar usuarios</Resource>
@@ -1840,6 +1844,8 @@
     <Resource tag="SEARCH">Buscar</Resource>
     <Resource tag="SUSPENDED_ONLY">Show only suspended users?</Resource>
     <Resource tag="SYNC_ALL">Sincronizar todos los usuarios suscritos</Resource>
+    <Resource tag="SYNC_MSG">Please do not navigate away from this page while the sync is in progress...</Resource>
+    <Resource tag="SYNC_TITLE">Syncing Users</Resource>
     <Resource tag="TITLE">Usuarios</Resource>
     <Resource tag="TWITTER_USER">Usuario de Twitter</Resource>
     <Resource tag="USER_NAME">Nombre de usuario</Resource>
@@ -2072,7 +2078,7 @@
     <Resource tag="BBCODE_QUOTEPOSTED_TT">Ir a la publicación citada</Resource>
     <Resource tag="BBCODE_QUOTEWROTE">{0} escribió:</Resource>
     <Resource tag="CAL_JQ_CULTURE">es</Resource>
-    <Resource tag="CAL_JQ_CULTURE_DFORMAT">dd/MM/yy</Resource>
+    <Resource tag="CAL_JQ_CULTURE_DFORMAT">dd/MM/YYYY</Resource>
     <Resource tag="CAL_JQ_TT">Haz click aquí para elegir fecha</Resource>
     <Resource tag="CAN_DELETE">[b]Puedes[/b] eliminar sus temas en este foro.</Resource>
     <Resource tag="CAN_EDIT">[b]Puedes[/b] editar sus temas en este foro.</Resource>
@@ -2122,6 +2128,7 @@
     <Resource tag="HTMLTAG_WRONG">Los datos que has introducido contienen {0} etiquetas HTML no permitidas.</Resource>
     <Resource tag="LOADING">Cargando...</Resource>
     <Resource tag="MAX_ONLINE">El número máximo de usuarios activos fue {0:N0} on {1}.</Resource>
+    <Resource tag="MENU">Menu</Resource>
     <Resource tag="MESSAGE">Mensaje</Resource>
     <Resource tag="MOBILE_FULLSITE">Ver el sitio completo</Resource>
     <Resource tag="MOBILE_VIEWSITE">Ver el sitio para móviles</Resource>
@@ -4617,6 +4624,7 @@ public class Hello1
     <Resource tag="SSO_DEACTIVATED_BYUSER">El inicio de sesión único no está disponible para este usuario, necesitas activarlo en tu configuración de cuenta para usarlo en el futuro.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED">El ingreso en Facebook ha fallado, el usuario no existe o la cuenta no está activada.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
+    <Resource tag="SSO_FACEBOOK_FAILED3">The Facebook Login failed, because the user does not provide a email address for the account.</Resource>
     <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">La cuenta de email de Facebook debe coincidir con la cuenta de email del foro.</Resource>
     <Resource tag="SSO_FAILED">Nuevos registros están desactivados.</Resource>
     <Resource tag="SSO_GOOGLE_FAILED">El ingreso en Google ha fallado, el usuario no existe o la cuenta no está activada.</Resource>

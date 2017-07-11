@@ -403,6 +403,7 @@
     <Resource tag="DISABLED">Uit</Resource>
     <Resource tag="NO">Nee</Resource>
     <Resource tag="SAVE">Bewaar</Resource>
+    <Resource tag="TABLE_RESPONSIVE">Swipe Table to the left to Reveal More Data</Resource>
     <Resource tag="YES">Ja</Resource>
   </page>
   <page name="ADMIN_DELETEFORUM">
@@ -1047,7 +1048,7 @@
     <Resource tag="BOT_MESSAGE_1">Approve User &amp; Log User &amp; Send Admin an Email</Resource>
     <Resource tag="BOT_MESSAGE_2">Block User</Resource>
     <Resource tag="BOTSCOUT_KEY">BotScout.com API Key:</Resource>
-    <Resource tag="BOTSCOUT_KEY_HELP">To Use the BotScout Bot Service you need an API Key &lt;a href="http://botscout.com/getkey.htm"&gt;Sign Up here&lt;a&gt;</Resource>
+    <Resource tag="BOTSCOUT_KEY_HELP">To Use the BotScout Bot Service you need an API Key &lt;a href="http://botscout.com/getkey.htm"&gt;Sign Up here&lt;a&gt;.</Resource>
     <Resource tag="CAPTCHA_FOR_REGISTER">Gebruik CAPTCHA/reCAPTCHA bij het Registratieproces:</Resource>
     <Resource tag="CAPTCHA_FOR_REGISTER_HELP">Eis dat gebruikers de CAPTCHA invullen wanneer ze het registratieproces doorlopen.</Resource>
     <Resource tag="CAPTCHA_GUEST_POSTING">Gebruik CAPTCHA voor berichten door Gasten:</Resource>
@@ -1058,8 +1059,6 @@
     <Resource tag="CAT_CACHE_TIMEOUT_HELP">In minuten</Resource>
     <Resource tag="CDN_JQUERY">Use Google Hosted CDN jQuery Script File?</Resource>
     <Resource tag="CDN_JQUERY_HELP">You can use the Google Hosted Script File, or instead use internal.</Resource>
-    <Resource tag="CDN_JQUERY_UI">Use Google Hosted CDN jQuery-UI Script File?</Resource>
-    <Resource tag="CDN_JQUERY_UI_HELP">You can use the Google Hosted Script File, or instead use internal.</Resource>
     <Resource tag="CDN_SCRIPTMANAGER">Use CDN Hosted Script Manager JS Files?</Resource>
     <Resource tag="CDN_SCRIPTMANAGER_HELP">You can use the CDN Hosted Script Files, or instead use internal.</Resource>
     <Resource tag="CHECK_FOR_BOTSPAM">Choose a Service for Automatically User Bot Checking:</Resource>
@@ -1443,6 +1442,8 @@
     <Resource tag="SPAM_SERVICE_TYP_1">BlogSpam.NET API</Resource>
     <Resource tag="SPAM_SERVICE_TYP_2">Akismet API (Needs Registration)</Resource>
     <Resource tag="SPAM_SERVICE_TYP_3">Internal Spam Check Words</Resource>
+    <Resource tag="SPAMCHECK_ALLOWED_URLS">Allowed Number of URLs before flagged as SPAM:</Resource>
+    <Resource tag="SPAMCHECK_ALLOWED_URLS_HELP">If the user posts in one Message more then the allowed URLs the message is flagged as spam. This Check also depends how many user the posts have.</Resource>
     <Resource tag="SQL_FULLTEXT">Gebruik SQL Full Text Search:</Resource>
     <Resource tag="SQL_FULLTEXT_HELP">Zet het gebruik van FULLTEXT SQL Server support aan of uit bij zoekopdrachten.</Resource>
     <Resource tag="SSL_LOGIN">Gebruik SSL bij het inloggen:</Resource>
@@ -1452,7 +1453,7 @@
     <Resource tag="STATS_CACHE_TIMEOUT">Forum Statistieken Cache Timeout:</Resource>
     <Resource tag="STATS_CACHE_TIMEOUT_HELP">In minuten</Resource>
     <Resource tag="STOPFORUMSPAM_KEY">StopForumSpam.com API Key:</Resource>
-    <Resource tag="STOPFORUMSPAM_KEY_HELP">In order to Report a User as Bot you need an StopForumSpam.com API Key &lt;a href="http://www.stopforumspam.com/signup"&gt;Sign Up here&lt;a&gt;</Resource>
+    <Resource tag="STOPFORUMSPAM_KEY_HELP">In order to Report a User as Bot you need an StopForumSpam.com API Key &lt;a href="http://www.stopforumspam.com/signup"&gt;Sign Up here&lt;a&gt;.</Resource>
     <Resource tag="STYLED_NICKS">Gebruik opgemaakte aliassen:</Resource>
     <Resource tag="STYLED_NICKS_HELP">Als aangevinkt, kun je kleuren, lettergroottes, etc. gebruiken voor actieve gebruikers.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Gebruik opgemaakte topictitels:</Resource>
@@ -1646,6 +1647,8 @@
     <Resource tag="RECOVERY2">Simple (met Simple Recovery kun je de DB terughalen tot het moment van de laatste backup. Je moet dus regelmatig backuppen.)</Resource>
     <Resource tag="RECOVERY3">Bulk-Logged (met Bulk-Logged Recovery kun je de DB terughalen tot het moment van een willekeurige backup.)</Resource>
     <Resource tag="REINDEX">Met elke data-wijziging kunnen de tabellen gefragmenteerd raken. Deze actie kan door het opnieuw indexeren van de tabellen een snelheidswinst opleveren.</Resource>
+    <Resource tag="REINDEX_MSG">Please do not navigate away from this page...</Resource>
+    <Resource tag="REINDEX_TITLE">Updating Tables</Resource>
     <Resource tag="REINDEXTBL_BTN">Tabellen herindexeren</Resource>
     <Resource tag="SETRECOVERY_BTN">Recovery mode instellen</Resource>
     <Resource tag="SHOW_STATS">Show statistiekenover de YAF tabel indexen.</Resource>
@@ -1813,6 +1816,7 @@
     <Resource tag="FILTER">Filter op datum aanmelding:</Resource>
     <Resource tag="FILTER_BY_GROUP">Filter by Group...</Resource>
     <Resource tag="FILTER_BY_RANK">Filter by Rank...</Resource>
+    <Resource tag="FILTER_DROPDOWN">Filter</Resource>
     <Resource tag="FILTER_NO">[No Filter]</Resource>
     <Resource tag="HEADER">Zoek gebruikers</Resource>
     <Resource tag="IMPORT">Importeer Gebruiker(s)</Resource>
@@ -1828,6 +1832,8 @@
     <Resource tag="SEARCH">Zoeken</Resource>
     <Resource tag="SUSPENDED_ONLY">Show only suspended users?</Resource>
     <Resource tag="SYNC_ALL">Synchroniseer alle Membership Gebruikers</Resource>
+    <Resource tag="SYNC_MSG">Please do not navigate away from this page while the sync is in progress...</Resource>
+    <Resource tag="SYNC_TITLE">Syncing Users</Resource>
     <Resource tag="TITLE">Gebruikers</Resource>
     <Resource tag="TWITTER_USER">Twitter Gebruiker</Resource>
     <Resource tag="USER_NAME">Gebruikersnaam</Resource>
@@ -2060,7 +2066,7 @@
     <Resource tag="BBCODE_QUOTEPOSTED_TT">Ga naar gequote bericht</Resource>
     <Resource tag="BBCODE_QUOTEWROTE">{0} schreef:</Resource>
     <Resource tag="CAL_JQ_CULTURE">nl</Resource>
-    <Resource tag="CAL_JQ_CULTURE_DFORMAT">MM/dd/YY</Resource>
+    <Resource tag="CAL_JQ_CULTURE_DFORMAT">MM/dd/YYYY</Resource>
     <Resource tag="CAL_JQ_TT">Klik hier om een datum te kiezen</Resource>
     <Resource tag="CAN_DELETE">Je [b]kunt[/b] hier je eigen berichten verwijderen.</Resource>
     <Resource tag="CAN_EDIT">Je [b]kunt[/b] hier je eigen berichten bewerken.</Resource>
@@ -2110,6 +2116,7 @@
     <Resource tag="HTMLTAG_WRONG">Je tekst bevat een verboden {0} HTML tag.</Resource>
     <Resource tag="LOADING">Bezig met laden...</Resource>
     <Resource tag="MAX_ONLINE">Grootste aantal gebruikers ooit online was {0:N0} on {1}.</Resource>
+    <Resource tag="MENU">Menu</Resource>
     <Resource tag="MESSAGE">Bericht</Resource>
     <Resource tag="MOBILE_FULLSITE">Bekijk volledige site</Resource>
     <Resource tag="MOBILE_VIEWSITE">Bekijk mobiele site</Resource>
@@ -4224,6 +4231,7 @@ Spoiler Inhoud
     <Resource tag="SSO_DEACTIVATED_BYUSER">Single Sign On is uitgeschakeld voor die gebruiker, je moet het in je profiel activeren..</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED">The Facebook Login failed, User does not exists, or the account is not connected.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
+    <Resource tag="SSO_FACEBOOK_FAILED3">The Facebook Login failed, because the user does not provide a email address for the account.</Resource>
     <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">The Facebook email address must match the Forum email adress!</Resource>
     <Resource tag="SSO_FAILED">New Registrations are disabled.</Resource>
     <Resource tag="SSO_GOOGLE_FAILED">The Google Login failed, User does not exists, or the account is not connected.</Resource>
