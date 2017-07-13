@@ -377,8 +377,8 @@
     <Resource tag="BOARD_EMAIL_REPORTMODS_HELP">هنگام گزارش یک مطلب تمام ناظران مطلب از آن مطلع شوند؟</Resource>
     <Resource tag="BOARD_FILE_EXTENSIONS">فهرست پسوند فایل ها:</Resource>
     <Resource tag="BOARD_FILE_EXTENSIONS_HELP">لیست پسوند‌های فایل های مجاز و غیرمجاز (امنیت پائین تر)؟</Resource>
-    <Resource tag="BOARD_JQ_THEME">قالب JQueryUI:</Resource>
-    <Resource tag="BOARD_JQ_THEME_HELP">قالب jQuery برای استفاده در تابلو برای Tab ها و Accordion ها</Resource>
+    <Resource tag="BOARD_JQ_THEME">jQuery UI Theme:</Resource>
+    <Resource tag="BOARD_JQ_THEME_HELP">The jQuery UI Theme to use on this board for the Tabs and Accordion.</Resource>
     <Resource tag="BOARD_MOBILE_THEME">قالب موبایل:</Resource>
     <Resource tag="BOARD_MOBILE_THEME_HELP">قالب موبایل برای استفاده در این تابلو.</Resource>
     <Resource tag="BOARD_NAME">نام تابلو:</Resource>
@@ -403,6 +403,7 @@
     <Resource tag="DISABLED">غیرفعال</Resource>
     <Resource tag="NO">خیر</Resource>
     <Resource tag="SAVE">ذخیره</Resource>
+    <Resource tag="TABLE_RESPONSIVE">Swipe Table to the left to Reveal More Data</Resource>
     <Resource tag="YES">بلی</Resource>
   </page>
   <page name="ADMIN_DELETEFORUM">
@@ -952,7 +953,7 @@
     <Resource tag="ACTIVETOPIC_FEEDS_ACCESS">دسترسی به فید موضوعات فعال:</Resource>
     <Resource tag="ACTIVETOPIC_FEEDS_ACCESS_HELP">محدود کردن نمایش فید موضوعات فعال.</Resource>
     <Resource tag="AKISMET_KEY">Akismet API Key:</Resource>
-    <Resource tag="AKISMET_KEY_HELP">برای استفاده از سرویس اسپم کامنت Akismet شما باید یک API Key ارایه دهید&lt;a href="https://akismet.com/signup/"&gt;از این قسمت اقدام کنید&lt;a&gt;</Resource>
+    <Resource tag="AKISMET_KEY_HELP">برای استفاده از سرویس اسپم کامنت Akismet شما باید یک API Key ارایه دهید&lt;a href="https://akismet.com/signup/"&gt;از این قسمت اقدام کنید&lt;a&gt;.</Resource>
     <Resource tag="ALBUMS_PER_PAGE">تعداد آلبوم در صفحه :</Resource>
     <Resource tag="ALBUMS_PER_PAGE_HELP">تعداد آلبوم ها برای نمایش در هر صفحه.</Resource>
     <Resource tag="ALL_USERS">تمام کاربران</Resource>
@@ -1046,7 +1047,7 @@
     <Resource tag="BOT_MESSAGE_1">Approve User &amp; Log User &amp; Send Admin an Email</Resource>
     <Resource tag="BOT_MESSAGE_2">Block User</Resource>
     <Resource tag="BOTSCOUT_KEY">BotScout.com API Key:</Resource>
-    <Resource tag="BOTSCOUT_KEY_HELP">برای استفاده از BotScout به یک  API Key نیاز دارید &lt;a href="http://botscout.com/getkey.htm"&gt;از اینجا ثبت نام کنید&lt;a&gt;</Resource>
+    <Resource tag="BOTSCOUT_KEY_HELP">برای استفاده از BotScout به یک  API Key نیاز دارید &lt;a href="http://botscout.com/getkey.htm"&gt;از اینجا ثبت نام کنید&lt;a&gt;.</Resource>
     <Resource tag="CAPTCHA_FOR_REGISTER">فعال سازی CAPTCHA/reCAPTCHA برای ثبت نام :</Resource>
     <Resource tag="CAPTCHA_FOR_REGISTER_HELP">برای ثبت نام کاربران را ملزم به ورود CAPTCHA می کند.</Resource>
     <Resource tag="CAPTCHA_GUEST_POSTING">فعال سازی CAPTCHA برای ارسال‌های میهمان‌ها.</Resource>
@@ -1057,8 +1058,6 @@
     <Resource tag="CAT_CACHE_TIMEOUT_HELP">به دقیقه</Resource>
     <Resource tag="CDN_JQUERY">استفاه از فایل اسکریپت Jquery موجود در سایت گوگل؟</Resource>
     <Resource tag="CDN_JQUERY_HELP">شما می توانید از فایل های اسکریپت موجود در سرورهای گوگل استفاده کنید. و یا می توانید از فایل های موجود در سرور سایت استفاده کنید</Resource>
-    <Resource tag="CDN_JQUERY_UI">استفاده از فایل اسکریپت jQuery-UI موجود در سایت گوگل</Resource>
-    <Resource tag="CDN_JQUERY_UI_HELP">شما می توانید از فایل های اسکریپت موجود در سرورهای گوگل استفاده کنید. و یا می توانید از فایل های موجود در سرور سایت استفاده کنید</Resource>
     <Resource tag="CDN_SCRIPTMANAGER">استفاده از فایل های JS موجود در CDN؟</Resource>
     <Resource tag="CDN_SCRIPTMANAGER_HELP">شما می توانید از فایل های JS موجود در CDN استفاده نمایید و یا بصورت ساده می توانید از فایل های JS موجود استفاده کنید</Resource>
     <Resource tag="CHECK_FOR_BOTSPAM">یک سرویس برای بررسی خودکار کاربران روبات انتخاب کنید:</Resource>
@@ -1070,7 +1069,7 @@
     <Resource tag="COUNTRYIMAGE_TEMPLATE">قالب تصویر کشور</Resource>
     <Resource tag="COUNTRYIMAGE_TEMPLATE_HELP">قالب برای نمایش تصویر کشور</Resource>
     <Resource tag="CREATE_NNTPNAMES">ساخت نام های کاربری NNTP:</Resource>
-    <Resource tag="CREATE_NNTPNAMES_HELP">در صورت انتخاب کاربران بصورت خود کار هنگام 
+    <Resource tag="CREATE_NNTPNAMES_HELP">در صورت انتخاب کاربران بصورت خود کار هنگام
 دانلود پیام های یوزنت ایجاد خواهند شد. این ویژگی را فقط در محیط تست فعال کنید و  &lt;em&gt;هیچ‌گاه&lt;/em&gt; در روی سایت فعال و اصلی فعال نکنید. هدف اصلی این گزینه برای تست پرفورمنس و سرعت است</Resource>
     <Resource tag="CROP_IMAGE_ATTACH">برش پیش نمایش فایل تصویر ضمیمه شده:</Resource>
     <Resource tag="CROP_IMAGE_ATTACH_HELP">برش تصویر پیش نمایش و استفاده از ابعاد بالا به عنوان اندازه تصویر</Resource>
@@ -1445,6 +1444,8 @@
     <Resource tag="SPAM_SERVICE_TYP_1">BlogSpam.NET API</Resource>
     <Resource tag="SPAM_SERVICE_TYP_2">Akismet API (Needs Registration)</Resource>
     <Resource tag="SPAM_SERVICE_TYP_3">Internal Spam Check Words</Resource>
+    <Resource tag="SPAMCHECK_ALLOWED_URLS">Allowed Number of URLs before flagged as SPAM:</Resource>
+    <Resource tag="SPAMCHECK_ALLOWED_URLS_HELP">If the user posts in one Message more then the allowed URLs the message is flagged as spam. This Check also depends how many user the posts have.</Resource>
     <Resource tag="SQL_FULLTEXT">استفاده از جستجوی تمام متنی اس کیو ال:</Resource>
     <Resource tag="SQL_FULLTEXT_HELP">استفاده از SQL FullText برای جستجو.</Resource>
     <Resource tag="SSL_LOGIN">از SSL برای ورود استفاده کن :</Resource>
@@ -1454,7 +1455,7 @@
     <Resource tag="STATS_CACHE_TIMEOUT">انقضای حافظه موقت آمار انجمن:</Resource>
     <Resource tag="STATS_CACHE_TIMEOUT_HELP">به دقیقه</Resource>
     <Resource tag="STOPFORUMSPAM_KEY">StopForumSpam.com API Key:</Resource>
-    <Resource tag="STOPFORUMSPAM_KEY_HELP">In order to Report a User as Bot you need an StopForumSpam.com API Key &lt;a href="http://www.stopforumspam.com/signup"&gt;Sign Up here&lt;a&gt;</Resource>
+    <Resource tag="STOPFORUMSPAM_KEY_HELP">In order to Report a User as Bot you need an StopForumSpam.com API Key &lt;a href="http://www.stopforumspam.com/signup"&gt;Sign Up here&lt;a&gt;.</Resource>
     <Resource tag="STYLED_NICKS">از نیک های حالت دار استفاده کن:</Resource>
     <Resource tag="STYLED_NICKS_HELP">در صورت علامت زدن می توانید رنگ، قلم و اندازه برای نیک کاربران فعال استفاده نمائید.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Use styled Topic Titles:</Resource>
@@ -1659,6 +1660,8 @@
       با هر عملیات اصلاحیه، تکه تکه شدن جداول ممکن است رخ دهد.
       این فرمان می تواند به منظور ساخت مجدد شاخص های جداول برای سرعت بخشیدن و افزایش راندمان استفاده گردد.
     </Resource>
+    <Resource tag="REINDEX_MSG">Please do not navigate away from this page...</Resource>
+    <Resource tag="REINDEX_TITLE">Updating Tables</Resource>
     <Resource tag="REINDEXTBL_BTN">شاخص سازی مجدد جدول</Resource>
     <Resource tag="SETRECOVERY_BTN">تنظیم حالت بازیابی</Resource>
     <Resource tag="SHOW_STATS">اطلاعات آماری درباره جداول YAF را نمایش می دهد.</Resource>
@@ -1683,7 +1686,7 @@
     <Resource tag="GOOD_HELP">عبارات منظم.</Resource>
     <Resource tag="MSG_REGEX_BAD">
 عبارات منظم. از نقطه گذاری بپرهیزید و برای نقطه ای یک بک اسلش و نقطه استفاده کنید
- 
+
 </Resource>
     <Resource tag="TITLE">افزودن/ویرایش کلمه جایگزینی</Resource>
   </page>
@@ -1831,6 +1834,7 @@
     <Resource tag="FILTER">فیلتر بر اساس تاریخ پیوستن:</Resource>
     <Resource tag="FILTER_BY_GROUP">فیلتر با گروه</Resource>
     <Resource tag="FILTER_BY_RANK">فیلتر با رتیه</Resource>
+    <Resource tag="FILTER_DROPDOWN">Filter</Resource>
     <Resource tag="FILTER_NO">[بدون فیلتر]</Resource>
     <Resource tag="HEADER">جستجوی کاربر</Resource>
     <Resource tag="IMPORT">درون‌ریزی کاربر (ها)</Resource>
@@ -1846,6 +1850,8 @@
     <Resource tag="SEARCH">جستجو</Resource>
     <Resource tag="SUSPENDED_ONLY">فقط نمایش کاربران معلق؟</Resource>
     <Resource tag="SYNC_ALL">همسان سازی عضویت تمام گروه ها</Resource>
+    <Resource tag="SYNC_MSG">Please do not navigate away from this page while the sync is in progress...</Resource>
+    <Resource tag="SYNC_TITLE">Syncing Users</Resource>
     <Resource tag="TITLE">کاربران</Resource>
     <Resource tag="TWITTER_USER">کاربر توئیتر</Resource>
     <Resource tag="USER_NAME">نام کاربری</Resource>
@@ -2133,6 +2139,7 @@
     <Resource tag="HTMLTAG_WRONG">داده های ورودی شما شامل تگ های {0} غیر مجاز HTML  میباشد.</Resource>
     <Resource tag="LOADING">در حال بارگذاری...</Resource>
     <Resource tag="MAX_ONLINE">بیشترین تعداد کاربرانی که بطور همزمان آنلاین بوده اند {0} کاربر بوده اند که در تاریخ {1} آنلاین بوده اند</Resource>
+    <Resource tag="MENU">Menu</Resource>
     <Resource tag="MESSAGE">پیام</Resource>
     <Resource tag="MOBILE_FULLSITE">نمایش نسخه کامل سایت</Resource>
     <Resource tag="MOBILE_VIEWSITE">نمایش نسخه موبایل سایت</Resource>
@@ -4295,6 +4302,7 @@
     <Resource tag="SSO_DEACTIVATED_BYUSER">Single Sign On is deactivated for that User, you need to activate it in your Profile Settings to use that feature.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED">The Facebook Login failed, User does not exists, or the account is not connected.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
+    <Resource tag="SSO_FACEBOOK_FAILED3">The Facebook Login failed, because the user does not provide a email address for the account.</Resource>
     <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">The Facebook email address must match the Forum email adress!</Resource>
     <Resource tag="SSO_FAILED">ثبت نام جدید غیرفعال شده است</Resource>
     <Resource tag="SSO_GOOGLE_FAILED">The Google Login failed, User does not exists, or the account is not connected.</Resource>

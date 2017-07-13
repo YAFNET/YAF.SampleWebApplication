@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="c#" CodeBehind="../../../pages/posts.ascx.cs" AutoEventWireup="True" Inherits="YAF.Pages.posts" %>
 <%@ Import Namespace="YAF.Core" %>
+<%@ Import Namespace="YAF.Controls" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayPost" Src="DisplayPost.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayAd" Src="DisplayAd.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="PollList" Src="../../../controls/PollList.ascx" %>
@@ -133,6 +134,12 @@
                         </table>
                         <br />
                     </div>
+                    <div>
+                         <asp:PlaceHolder runat="server" ID="QuickReplyWatchTopic">
+                             <asp:CheckBox ID="TopicWatch" runat="server" />
+                             <YAF:LocalizedLabel ID="TopicWatchLabel" runat="server" LocalizedTag="TOPICWATCH" />
+                         </asp:PlaceHolder>
+                     </div>
                     &nbsp;<div align="center" style="margin: 7px;">
                         <asp:Button ID="QuickReply" CssClass="pbutton" runat="server" />
                         &nbsp;</div>

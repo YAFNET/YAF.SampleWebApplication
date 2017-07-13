@@ -1,6 +1,79 @@
 YetAnotherForum.NET Changelog
 ====================
 
+# YetAnotherForum.NET v2.2.4
+
+## New Features:
+
+* [NEW] Impoved spam detection now you can define how many urls are allowed inside a message before flagged a spam
+* [NEW] Sitemap Provider for DNN Platform
+* [NEW] Redirect Forum Remote URL to new Window
+* [NEW #353] Added Spam Check when sending PM's
+* [NEW #341] IP lookup also in the banned IP section
+
+
+## Fixed Issues:
+
+* [FIXED #329] check box to enable topic watching and receive notification in quick reply form
+* [FIXED] Unable to Cast to object error during install.
+* [FIXED] when converting from html to bbcode preserve paragraphs
+* [FIXED] unable to cast object issue
+* [FIXED #334] Error on Ban User Page when there is no IP Address
+* [FIXED] user style cache was not cleared after changing Rank/Group
+* [FIXED] added a check if email address is provided when connect via Facebook
+* [FIXED #338] user was not deleted when have attachments
+* [FIXED #337] similar topics shows topics with no posts
+* [FIXED #342] url encode values when rewriting querystring
+* [FIXED] admins are not listed as mods and don't receive mod emails
+* [FIXED] board_poststats SP which do not delete readtracking before trying to delete removed topics
+* Added Canonical Meta Tag Module
+* [FIXED] issue with url search when use the word install or error
+* [FIXED] little issue with the finish language
+* [FIXED] updated SSO Facebook API to version 2.9
+* [FIXED] Issue with IP v6 Addresses
+* [FIXED #357] Quoting when user name contains html code
+
+
+### Full Change log here:
+https://github.com/YAFNET/YAFNET/commits/master
+
+
+
+# YetAnotherForum.NET v2.2.3
+
+## New Features:
+
+* 
+
+## Fixed Issues:
+
+* [FIXED #300](https://github.com/YAFNET/YAFNET/issues/300) Warning message for duplicate Smiley Codes
+* [FIXED] Issue with password check on the Register page
+* [FIXED] Back Button on the Profile Modify Avatar page
+* [FIXED] Host Setting for the Visibility of the Retweet Button was ignored
+* [FIXED] Notification for all posts on all topics
+* [FIXED] Register Page
+* [FIXED #310] Attachment Render Error
+* Moderating of users is now limited to Admin/Host/ and Mini admin. Toavoid security issues.
+* tiny fix for the swedish language file
+* [FIXED] Shoutbox was not corretly disabled when using the mobile theme
+* Upgrades JS Libaries
+* Use Mobile Theme option is now always available
+* [FIXED] an Issue with the Preview function when using CKEditor
+* [FIXED #316] XSS Prevention for the login page
+* [FIXED #269] Thanks Button is disabled now when post is deleted
+* [FIXED] Moderate Pages where visible for all Users
+* [FIXED] Team Page now only lists moderators from the current Board
+* All boards are now upgraded on a Upgrade
+* [FIXED] Attachments in Multi Board installations
+* [FIXED] issue with Attachments with the same name override old attachments
+* [FIXED] When creating a new Board the BBCode Extensions and other are correctly installed
+
+
+### Full Change log here:
+https://github.com/YAFNET/YAFNET/commits/master
+
+
 # YetAnotherForum.NET v2.2.2
 
 ## New Features:
@@ -15,6 +88,7 @@ YetAnotherForum.NET Changelog
 * Banned IP/Email/Names Admin Pages now are sorted by newest first
 
 ## Fixed Issues:
+
 * [FIXED #282](https://github.com/YAFNET/YAFNET/issues/290) Code Highlighting on the post message page inside the last posts
 * [FIXED #282](https://github.com/YAFNET/YAFNET/issues/282) Attachment images dimensions where not correctly set
 * [FIXED #276](https://github.com/YAFNET/YAFNET/issues/276) Banned IP/Email/Names now are sorted by newest first

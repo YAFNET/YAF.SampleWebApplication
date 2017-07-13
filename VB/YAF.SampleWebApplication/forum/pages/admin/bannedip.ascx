@@ -1,7 +1,11 @@
 <%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.bannedip" Codebehind="bannedip.ascx.cs" %>
+<%@ Register TagPrefix="YAF" Namespace="YAF.Controls" Assembly="YAF.Controls" %>
 <%@ Import Namespace="YAF.Core"%>
 <%@ Import Namespace="YAF.Core.Services" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
+<%@ Import Namespace="YAF.Classes" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
+<%@ Import Namespace="YAF.Utils.Helpers" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 <YAF:AdminMenu runat="server">
   <table cellspacing="0" cellpadding="0" class="content" width="100%">
@@ -59,7 +63,12 @@
 			<tr>
 				<td class="post">
 				<asp:HiddenField ID="fID" Value='<%# Eval("ID") %>' runat="server"/>
-				<asp:Label ID="MaskBox" Text='<%# Eval("Mask") %>' runat="server"></asp:Label>	
+				    <asp:HyperLink runat="server" ID="Mask" 
+				                   Href='<%# this.Get<YafBoardSettings>().IPInfoPageURL.FormatWith(IPHelper.GetIp4Address(this.Eval("Mask").ToString())) %>'
+				                   ToolTip='<%#this.GetText("COMMON", "TT_IPDETAILS") %>'
+				                   Target="_blank">
+				        <%# this.HtmlEncode(IPHelper.GetIp4Address(this.Eval("Mask").ToString())) %>
+				    </asp:HyperLink>	
 				</td>
 				<td class="post">
 					<%# this.Get<IDateTime>().FormatDateTime(Eval("Since")) %>
@@ -68,7 +77,7 @@
 					<%# Eval("Reason") %>
 				</td>
 				<td class="post">
-				<YAF:UserLink ID="UserLink1" runat="server" UserID='<%# string.IsNullOrEmpty(Eval("UserID").ToString())? -1 :Eval("UserID") %>' />
+				<YAF:UserLink ID="UserLink1" runat="server" UserID='<%# string.IsNullOrEmpty(Eval("UserID").ToString())? -1 :Eval("UserID").ToType<int>() %>' />
 				</td>
 				<td class="post" align="right">
 				<YAF:ThemeButton ID="ThemeButtonEdit" CssClass="yaflittlebutton" CommandName='edit' CommandArgument='<%# Eval("ID") %>'
