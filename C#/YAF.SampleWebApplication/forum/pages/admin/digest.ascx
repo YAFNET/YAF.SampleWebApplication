@@ -48,7 +48,7 @@
                         LocalizedPage="ADMIN_DIGEST" />
                 </td>
                 <td class="post" width="75%">
-                    <iframe id="DigestFrame" runat="server" style="width: 100%; height: 500px"></iframe>
+                    <asp:HtmlIframe id="DigestFrame" runat="server" style="width: 100%; height: 500px"></asp:HtmlIframe>
                 </td>
             </tr>
         </asp:PlaceHolder>

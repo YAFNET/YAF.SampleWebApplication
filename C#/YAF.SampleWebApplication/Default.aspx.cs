@@ -25,9 +25,15 @@
 namespace YAF.SampleWebApplication
 {
     using System;
+    using System.Web;
     using System.Web.UI;
 
     using YAF.Core;
+    using YAF.Core.Model;
+    using YAF.Types.Extensions;
+    using YAF.Types.Interfaces;
+    using YAF.Types.Models;
+    using YAF.Utils;
 
     /// <summary>
     /// The Default Page
@@ -45,6 +51,20 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Check if forum is installed
+            try
+            {
+                var boards = YafContext.Current.GetRepository<Board>().List();
+                var isForumInstalled = boards.HasRows();
+            }
+            catch
+            {
+                // failure... no boards.    
+                HttpContext.Current.Response.Redirect(
+                    "{0}install/default.aspx".FormatWith(YafForumInfo.ForumClientFileRoot));
+            }
+
+
             try
             {
                 var csType = typeof(Page);
