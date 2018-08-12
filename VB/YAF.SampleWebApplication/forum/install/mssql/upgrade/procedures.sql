@@ -2296,7 +2296,7 @@ CREATE procedure [{databaseOwner}].[{objectQualifier}board_create](
 ) as
 begin
     declare @BoardID				int
-    declare @TimeZone				int
+    declare @TimeZone				nvarchar(max)
     declare @ForumEmail				nvarchar(50)
     declare	@GroupIDAdmin			int
     declare	@GroupIDGuest			int
@@ -2320,7 +2320,7 @@ begin
     INSERT INTO [{databaseOwner}].[{objectQualifier}Board](Name, AllowThreaded, MembershipAppName, RolesAppName ) values(@BoardName,0, @MembershipAppName, @RolesAppName)
     SET @BoardID = SCOPE_IDENTITY()
 
-    SET @TimeZone = (SELECT ISNULL(CAST([{databaseOwner}].[{objectQualifier}registry_value](N'TimeZone', @BoardID) as int), 0))
+    SET @TimeZone = (SELECT ISNULL([{databaseOwner}].[{objectQualifier}registry_value](N'TimeZone', @BoardID), N'Dateline Standard Time'))
     SET @ForumEmail = (SELECT [{databaseOwner}].[{objectQualifier}registry_value](N'ForumEmail', @BoardID))
 
     EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'culture',@Culture,@BoardID
@@ -6189,8 +6189,7 @@ begin
     -- initalize required 'registry' settings
     EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'version','1'
     EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'versionname','1.0.0'
-    SET @tmpValue = CAST(@TimeZone AS nvarchar(100))
-    EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'timezone', @tmpValue
+    EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'timezone', @TimeZone
     EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'culture', @Culture
     EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'language', @LanguageFile
     EXEC [{databaseOwner}].[{objectQualifier}registry_save] 'smtpserver', @SmtpServer
@@ -7616,7 +7615,7 @@ CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}user_aspnet](@BoardID int,@
 BEGIN
         SET NOCOUNT ON
 
-    DECLARE @UserID int, @RankID int, @approvedFlag int, @TimeZone int
+    DECLARE @UserID int, @RankID int, @approvedFlag int, @TimeZone nvarchar(max)
 
     SET @approvedFlag = 0;
     IF (@IsApproved = 1) SET @approvedFlag = 2;
@@ -7646,7 +7645,7 @@ BEGIN
             SET @DisplayName = @UserName
         END
 
-        SET @TimeZone = (SELECT ISNULL(CAST([{databaseOwner}].[{objectQualifier}registry_value]('TimeZone', @BoardID) as int), 0))
+        set @TimeZone = (SELECT ISNULL([{databaseOwner}].[{objectQualifier}registry_value](N'TimeZone', @BoardID), N'Dateline Standard Time'))
 
         INSERT INTO [{databaseOwner}].[{objectQualifier}User](BoardID,RankID,[Name],DisplayName,Password,Email,Joined,LastVisit,NumPosts,TimeZone,Flags,ProviderUserKey)
         VALUES(@BoardID,@RankID,@UserName,@DisplayName,'-',@Email,@UTCTIMESTAMP ,@UTCTIMESTAMP ,0, @TimeZone,@approvedFlag,@ProviderUserKey)
@@ -8484,6 +8483,7 @@ create procedure [{databaseOwner}].[{objectQualifier}user_nntp](@BoardID int,@Us
 begin
 
     declare @UserID int
+	declare @TimeZonetmp nvarchar(max)
 
     set @UserName = @UserName + ' (NNTP)'
 
@@ -8495,9 +8495,11 @@ begin
         BoardID=@BoardID and
         Name=@UserName
 
+    SET @TimeZonetmp = (SELECT ISNULL([{databaseOwner}].[{objectQualifier}registry_value](N'TimeZone', @BoardID), N'Dateline Standard Time'))
+
     if @@ROWCOUNT<1
     begin
-        exec [{databaseOwner}].[{objectQualifier}user_save] null,@BoardID,@UserName,@UserName,@Email,@TimeZone,null,null,null,null,null, 1, null, null, null, 0, 0,@UTCTIMESTAMP
+        exec [{databaseOwner}].[{objectQualifier}user_save] null,@BoardID,@UserName,@UserName,@Email,@TimeZonetmp,null,null,null,null,null, 1, null, null, null, 0, 0,@UTCTIMESTAMP
 
         -- The next one is not safe, but this procedure is only used for testing
         select @UserID = @@IDENTITY
@@ -10763,16 +10765,6 @@ as
             FROM    [{databaseOwner}].[{objectQualifier}UserAlbumImage] a
                     INNER JOIN [{databaseOwner}].[{objectQualifier}UserAlbum] b ON b.AlbumID = a.AlbumID
             WHERE   ImageID = @ImageID
-    END
-    GO
-
-CREATE procedure [{databaseOwner}].[{objectQualifier}album_images_by_user](@UserID INT = null)
-as
-    BEGIN
-        SELECT      a.*
-        FROM    [{databaseOwner}].[{objectQualifier}UserAlbumImage] a
-                    INNER JOIN [{databaseOwner}].[{objectQualifier}UserAlbum] b ON b.AlbumID = a.AlbumID
-        WHERE  b.UserID = @UserID
     END
     GO
 

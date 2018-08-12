@@ -537,8 +537,24 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 	)
 GO
 
-if exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Smiley]') and type in (N'U'))
-	drop table [{databaseOwner}].[{objectQualifier}Smiley]
+if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Smiley]') and type in (N'U'))
+	create table [{databaseOwner}].[{objectQualifier}Smiley](
+		SmileyID		int IDENTITY (1,1) NOT NULL,
+		BoardID			int NOT NULL,
+		Code			nvarchar (10) NOT NULL,
+		Icon			nvarchar (50) NOT NULL,
+		Emoticon		nvarchar (50) NULL,
+		SortOrder		tinyint	NOT NULL default 0,
+ constraint [PK_{objectQualifier}Smiley] PRIMARY KEY CLUSTERED 
+(
+	[SmileyID] ASC
+)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF),
+ constraint [IX_{objectQualifier}Smiley] UNIQUE NONCLUSTERED 
+(
+	[BoardID] ASC,
+	[Code] ASC
+)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
+	)
 GO
 
 if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Topic]') and type in (N'U'))
@@ -590,7 +606,7 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		LastVisit		datetime NOT NULL,
 		IP				nvarchar (39) NULL,
 		NumPosts		int NOT NULL,
-		TimeZone		int NOT NULL,
+		TimeZone		nvarchar(max) NULL,
 		Avatar			nvarchar (255) NULL,
 		[Signature]		nvarchar(max) NULL,
 		AvatarImage		image NULL,
@@ -2823,15 +2839,6 @@ go
 if exists (select top 1 1 from sys.columns where object_id = object_id('[{databaseOwner}].[{objectQualifier}Mail]') and name = 'BodyHtml' and system_type_id = 99)
 begin
     alter table [{databaseOwner}].[{objectQualifier}Mail] alter column [BodyHtml] nvarchar(max)
-end
-go
-
-if exists (select top 1 1 from sys.columns where object_id = object_id('[{databaseOwner}].[{objectQualifier}Message]') and name = 'Message' and system_type_id = 99 
-   and exists(select * from sys.sysfulltextcatalogs where name = N'YafSearch'))
-begin
-    alter fulltext index on [dbo].[yaf_Message] drop ([Message])
-   
-    alter table [{databaseOwner}].[{objectQualifier}Message] alter column [Message] nvarchar(max)
 end
 go
 

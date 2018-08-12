@@ -306,7 +306,7 @@
                 LocalizedTag="TIMEZONE2" />
         </td>
         <td class="post">
-            <asp:DropDownList runat="server" ID="TimeZones" DataTextField="Name" DataValueField="Value" CssClass="standardSelectMenu" />
+            <asp:DropDownList runat="server" ID="TimeZones" CssClass="standardSelectMenu" DataTextField="Name" DataValueField="Value"   />
         </td>
     </tr>
     <tr runat="server" id="ForumSettingsRows">

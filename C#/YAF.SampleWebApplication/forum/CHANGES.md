@@ -1,6 +1,91 @@
 YetAnotherForum.NET Changelog
 ====================
 
+# YetAnotherForum.NET v2.2.4.14
+## Fixed Issues:
+* [FIXED] Attachments Upload on Private Message
+* [FIXED] horizontal scrollbar
+* Remove non-breaking spaces from Thanks List
+* [FIXED #400] using default prism.js theme
+* [FIXED] ceebox script for jquery 3.x
+
+
+# YetAnotherForum.NET v2.2.4.13
+## New Features:
+
+* [NEW] Send Email to user on role (un)assignment
+* [NEW] Added GDPR Cookie Consent Check and Page
+* Updated the Rule and Privacy Policy with GDPR Info
+
+## Fixed Issues:
+* [FIXED] not working attachments upload
+* [FIXED] yafeditor script was not automatically minified
+* [FIXED] Send Email to User
+* [FIXED #402] correctly display local datetime
+* Updated recommended web.configs
+
+
+# YetAnotherForum.NET v2.2.4.12
+
+## Fixed Issues:
+* Editor Dropdown with album images now uses sql paging
+
+
+# YetAnotherForum.NET v2.2.4.11
+
+## Fixed Issues:
+* [NEW #392] Security Question & Answer can be changed now
+
+# YetAnotherForum.NET v2.2.4.10
+
+## Fixed Issues:
+* [FIXED #394]  Timezone was not correctly loaded on the Edit Profile Page
+
+# YetAnotherForum.NET v2.2.4.9
+
+## Fixed Issues:
+* [FIXED] Admin Edit User
+* [FIXED] Admin Create New User Page
+
+
+# YetAnotherForum.NET v2.2.4.8
+
+## Fixed Issues:
+* [FIXED] Issue Registering New User
+* [FIXED] Database Ugrade Issue when Fulltext is enabled
+
+# YetAnotherForum.NET v2.2.4.7
+
+## Fixed Issues:
+* [FIXED #3]Stored XSS via file upload
+* [FIXED #386] Hover Card Layout Issue
+
+
+# YetAnotherForum.NET v2.2.4.6
+
+## Fixed Issues:
+* [FIXED] always use forum email as sender address
+
+
+* # YetAnotherForum.NET v2.2.4.5
+
+## Fixed Issues:
+* [FIXED #380] DB User Read Tracking without Session tracking
+* [FIXED #377] deleting of a banned ip address
+* [FIXED] handling of urls with parenthesis
+* [FIXED] attachments control was visible when uploads are disabled
+* [FIXED] handling of old attachments
+* [FIXED] ignore ThreadAbortExceptions when adding a album image
+* Extended Logging
+
+# YetAnotherForum.NET v2.2.4.4
+
+## Fixed Issues:
+* [FIXED] Remote Avatars
+* Removed Editor overriding when using a Mobile device
+* Improved BBCode <-> HTML Code Converter
+
+
 # YetAnotherForum.NET v2.2.4
 
 ## New Features:

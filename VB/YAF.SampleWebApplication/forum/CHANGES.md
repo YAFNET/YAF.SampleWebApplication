@@ -1,10 +1,63 @@
 YetAnotherForum.NET Changelog
 ====================
 
+# YetAnotherForum.NET v2.2.4.14
+## Fixed Issues:
+* [FIXED] Attachments Upload on Private Message
+* [FIXED] horizontal scrollbar
+* Remove non-breaking spaces from Thanks List
+* [FIXED #400] using default prism.js theme
+* [FIXED] ceebox script for jquery 3.x
+
+
+# YetAnotherForum.NET v2.2.4.13
+## New Features:
+
+* [NEW] Send Email to user on role (un)assignment
+* [NEW] Added GDPR Cookie Consent Check and Page
+* Updated the Rule and Privacy Policy with GDPR Info
+
+## Fixed Issues:
+* [FIXED] not working attachments upload
+* [FIXED] yafeditor script was not automatically minified
+* [FIXED] Send Email to User
+* [FIXED #402] correctly display local datetime
+* Updated recommended web.configs
+
+
+# YetAnotherForum.NET v2.2.4.12
+
+## Fixed Issues:
+* Editor Dropdown with album images now uses sql paging
+
+
+# YetAnotherForum.NET v2.2.4.11
+
+## Fixed Issues:
+* [NEW #392] Security Question & Answer can be changed now
+
+# YetAnotherForum.NET v2.2.4.10
+
+## Fixed Issues:
+* [FIXED #394]  Timezone was not correctly loaded on the Edit Profile Page
+
+# YetAnotherForum.NET v2.2.4.9
+
+## Fixed Issues:
+* [FIXED] Admin Edit User
+* [FIXED] Admin Create New User Page
+
+
+# YetAnotherForum.NET v2.2.4.8
+
+## Fixed Issues:
+* [FIXED] Issue Registering New User
+* [FIXED] Database Ugrade Issue when Fulltext is enabled
+
 # YetAnotherForum.NET v2.2.4.7
 
 ## Fixed Issues:
-* Stored XSS via file upload
+* [FIXED #3]Stored XSS via file upload
 * [FIXED #386] Hover Card Layout Issue
 
 
