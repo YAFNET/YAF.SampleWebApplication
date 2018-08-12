@@ -459,9 +459,17 @@
     <Content Include="forum\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
     <Content Include="forum\Content\themes\base\images\ui-icons_222222_256x240.png" />
     <Content Include="forum\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="forum\Content\themes\base\images\ui-icons_444444_256x240.png" />
     <Content Include="forum\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="forum\Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="forum\Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="forum\Content\themes\base\images\ui-icons_777777_256x240.png" />
     <Content Include="forum\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="forum\Content\themes\base\images\ui-icons_cc0000_256x240.png" />
     <Content Include="forum\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="forum\Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="forum\Content\themes\base\jquery-ui.css" />
+    <Content Include="forum\Content\themes\base\jquery-ui.min.css" />
     <Content Include="forum\Content\themes\base\menu.css" />
     <Content Include="forum\Content\themes\base\progressbar.css" />
     <Content Include="forum\Content\themes\base\resizable.css" />
@@ -890,6 +898,7 @@
     <Content Include="forum\controls\AlbumList.ascx" />
     <Content Include="forum\controls\AttachmentsUploadDialog.ascx" />
     <Content Include="forum\controls\BuddyList.ascx" />
+    <Content Include="forum\controls\CookieConsent.ascx" />
     <Content Include="forum\controls\DialogBox.ascx" />
     <Content Include="forum\controls\DisplayAd.ascx" />
     <Content Include="forum\controls\DisplayConnect.ascx" />
@@ -1048,6 +1057,7 @@
     <Content Include="forum\install\mssql\install\tables.sql" />
     <Content Include="forum\install\mssql\install\views.sql" />
     <Content Include="forum\install\mssql\upgrade\constraints.sql" />
+    <Content Include="forum\install\mssql\upgrade\fulltext.sql" />
     <Content Include="forum\install\mssql\upgrade\functions.sql" />
     <Content Include="forum\install\mssql\upgrade\indexes.sql" />
     <Content Include="forum\install\mssql\upgrade\procedures.sql" />
@@ -1165,6 +1175,7 @@
     <Content Include="forum\pages\approve.ascx" />
     <Content Include="forum\pages\attachments.ascx" />
     <Content Include="forum\pages\avatar.ascx" />
+    <Content Include="forum\pages\cookies.ascx" />
     <Content Include="forum\pages\cp_changepassword.ascx" />
     <Content Include="forum\pages\cp_editalbumimages.ascx" />
     <Content Include="forum\pages\cp_editavatar.ascx" />
@@ -1246,6 +1257,7 @@
     <Content Include="forum\Scripts\ckeditor\lang\en-gb.js" />
     <Content Include="forum\Scripts\ckeditor\lang\en.js" />
     <Content Include="forum\Scripts\ckeditor\lang\eo.js" />
+    <Content Include="forum\Scripts\ckeditor\lang\es-mx.js" />
     <Content Include="forum\Scripts\ckeditor\lang\es.js" />
     <Content Include="forum\Scripts\ckeditor\lang\et.js" />
     <Content Include="forum\Scripts\ckeditor\lang\eu.js" />
@@ -1309,9 +1321,11 @@
     <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en-au.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\es-mx.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
@@ -1389,6 +1403,7 @@
     <Content Include="forum\Scripts\ckeditor\plugins\bbcodeselector\lang\en.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\bbcodeselector\plugin.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\bbcode\plugin.js" />
+    <Content Include="forum\Scripts\ckeditor\plugins\clipboard\dialogs\paste.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\codemirror\css\codemirror.min.css" />
     <Content Include="forum\Scripts\ckeditor\plugins\codemirror\icons\autocomplete.png" />
     <Content Include="forum\Scripts\ckeditor\plugins\codemirror\icons\autoformat.png" />
@@ -1629,6 +1644,7 @@
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\es-mx.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
@@ -1655,6 +1671,7 @@
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\ro.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
@@ -1690,6 +1707,7 @@
     <Content Include="forum\Scripts\ckeditor\plugins\templates\templates\images\template2.gif" />
     <Content Include="forum\Scripts\ckeditor\plugins\templates\templates\images\template3.gif" />
     <Content Include="forum\Scripts\ckeditor\plugins\textselection\plugin.js" />
+    <Content Include="forum\Scripts\ckeditor\plugins\widget\images\handle.png" />
     <Content Include="forum\Scripts\ckeditor\plugins\wordcount\css\wordcount.css" />
     <Content Include="forum\Scripts\ckeditor\plugins\wordcount\lang\ar.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\wordcount\lang\ca.js" />
@@ -1719,6 +1737,7 @@
     <Content Include="forum\Scripts\ckeditor\plugins\wordcount\lang\sv.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\wordcount\lang\tr.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\wordcount\lang\zh-cn.js" />
+    <Content Include="forum\Scripts\ckeditor\plugins\wordcount\lang\zh.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\wordcount\plugin.js" />
     <Content Include="forum\Scripts\ckeditor\plugins\wsc\dialogs\ciframe.html" />
     <Content Include="forum\Scripts\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
@@ -1749,6 +1768,7 @@
     <Content Include="forum\Scripts\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="forum\Scripts\ckeditor\styles.js" />
     <Content Include="forum\Scripts\ckeditor\yaf_contents.css" />
+    <Content Include="forum\Scripts\cookiealert-standalone.js" />
     <Content Include="forum\Scripts\i18n\ar.js" />
     <Content Include="forum\Scripts\i18n\az.js" />
     <Content Include="forum\Scripts\i18n\bg.js" />
@@ -1869,12 +1889,15 @@
     <Content Include="forum\Scripts\i18n\zh-CN.js" />
     <Content Include="forum\Scripts\i18n\zh-TW.js" />
     <Content Include="forum\Scripts\InstallWizard.comb.min.js" />
-    <None Include="forum\Scripts\jquery-3.1.1.intellisense.js" />
+    <None Include="forum\Scripts\jquery-2.2.4.intellisense.js" />
+    <Content Include="forum\Scripts\jquery-2.2.4.js" />
+    <Content Include="forum\Scripts\jquery-2.2.4.min.js" />
     <Content Include="forum\Scripts\jquery-3.1.1.js" />
     <Content Include="forum\Scripts\jquery-3.1.1.min.js" />
     <Content Include="forum\Scripts\jquery-3.1.1.slim.js" />
     <Content Include="forum\Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="forum\Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="forum\Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="forum\Scripts\jquery-ui-i18n.min.js" />
     <Content Include="forum\Scripts\jquery.fileupload.comb.min.js" />
     <Content Include="forum\Scripts\jquery.ForumExtensions.min.js" />
@@ -3605,7 +3628,9 @@
     <Content Include="App_Browsers\OceanSpiders.browser" />
     <Content Include="App_Browsers\w3cvalidator.browser" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="forum\Scripts\jquery-3.1.1.intellisense.js" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
