@@ -102,6 +102,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\YAF.dll</HintPath>
     </Reference>
+    <Reference Include="YAF.Classes.Config, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\YAF.Classes.Config.dll</HintPath>
+    </Reference>
     <Reference Include="YAF.Core, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Bin\YAF.Core.dll</HintPath>
