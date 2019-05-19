@@ -27,9 +27,11 @@ namespace YAF.SampleWebApplication
     using System;
     using System.Web;
     using System.Web.UI;
+    using System.Web.UI.WebControls;
 
     using YAF.Core;
     using YAF.Core.Model;
+    using YAF.Types.Constants;
     using YAF.Types.Extensions;
     using YAF.Types.Interfaces;
     using YAF.Types.Models;
@@ -69,12 +71,10 @@ namespace YAF.SampleWebApplication
                 var sr = new ScriptReference("forum/Scripts/jquery-3.4.1.min.js");
                 var sm = (ScriptManager)this.Master.FindControl("ScriptManager");
                 sm.Scripts.Add(sr);
-
-                
             }
             catch (Exception)
             {
-                this.Response.Redirect("~/forum/install/default.aspx");
+               this.Response.Redirect("~/forum/install/default.aspx");
             }
         }
     }

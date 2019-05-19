@@ -25,13 +25,34 @@
 namespace YAF.SampleWebApplication
 {
     using System;
+    using System.Web;
     using System.Web.UI;
     using System.Web.UI.HtmlControls;
+    using System.Web.UI.WebControls;
 
     using Microsoft.AspNet.Web.Optimization.WebForms;
 
+    using YAF.Types.Constants;
+    using YAF.Types.Extensions;
+    using YAF.Utils;
+    using YAF.Utils.Helpers;
+
     public partial class SiteMaster : MasterPage
     {
+        /// <summary>
+        /// The get return url.
+        /// </summary>
+        /// <returns>
+        /// The url.
+        /// </returns>
+        protected string GetReturnUrl()
+        {
+            return HttpContext.Current.Server.UrlEncode(
+                HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl").IsSet()
+                    ? General.GetSafeRawUrl(HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl"))
+                    : General.GetSafeRawUrl());
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             var forum = this.MainContent.FindControl("forum");
@@ -55,6 +76,19 @@ namespace YAF.SampleWebApplication
                 var bundleReference = new BundleReference { Path = "~/Content/css" };
 
                 this.Page.Header.Controls.Add(bundleReference);
+            }
+
+            var loginLink = this.HeadLoginView.FindControlAs<HyperLink>("LoginLink");
+            var registerLink = this.HeadLoginView.FindControlAs<HyperLink>("RegisterLink");
+
+            if (loginLink != null)
+            {
+                loginLink.NavigateUrl = YafBuildLink.GetLink(ForumPages.login, "ReturnUrl={0}", this.GetReturnUrl());
+            }
+
+            if (registerLink != null)
+            {
+                registerLink.NavigateUrl = YafBuildLink.GetLink(ForumPages.register);
             }
         }
     }

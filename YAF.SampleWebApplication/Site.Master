@@ -52,6 +52,21 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
                     </ul>
+                    <div class="form-inline mt-2 mt-md-0 text-white">
+                        <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                            <AnonymousTemplate>
+                                <asp:Button id="LoginLink" runat="server" CssClass="btn btn-outline-success my-2 my-sm-0 mr-sm-2" Text="Login"></asp:Button>
+                                <asp:Button id="RegisterLink" runat="server" CssClass="btn btn-outline-success my-2 my-sm-0" Text="Register"></asp:Button>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                Welcome <strong><asp:LoginName ID="HeadLoginName" runat="server" /></strong>
+                                <asp:LoginStatus ID="HeadLoginStatus" runat="server" 
+                                                 LogoutAction="Redirect" 
+                                                 LogoutText="Log Out" 
+                                                 CssClass="btn btn-outline-success my-2 my-sm-0" LogoutPageUrl="~/"/>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </div>
                 </div>
             </nav>
         </header>
