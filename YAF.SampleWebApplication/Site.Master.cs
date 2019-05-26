@@ -37,6 +37,9 @@ namespace YAF.SampleWebApplication
     using YAF.Utils;
     using YAF.Utils.Helpers;
 
+    /// <summary>
+    /// The site master.
+    /// </summary>
     public partial class SiteMaster : MasterPage
     {
         /// <summary>
@@ -53,6 +56,9 @@ namespace YAF.SampleWebApplication
                     : General.GetSafeRawUrl());
         }
 
+        /// <summary>Handles the Load event of the Page control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
             var forum = this.MainContent.FindControl("forum");
@@ -72,6 +78,12 @@ namespace YAF.SampleWebApplication
                 link.Attributes.Add("type", "text/css");
 
                 this.Page.Header.Controls.Add(link);
+
+                var linkForum = new HtmlLink { Href = "~/Forum/Content/forum.min.css" };
+                linkForum.Attributes.Add("rel", "stylesheet");
+                linkForum.Attributes.Add("type", "text/css");
+
+                this.Page.Header.Controls.Add(linkForum);
 
                 var bundleReference = new BundleReference { Path = "~/Content/css" };
 

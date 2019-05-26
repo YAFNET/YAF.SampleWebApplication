@@ -25,67 +25,64 @@
 namespace YAF.SampleWebApplication
 {
     using System;
-    using System.Web;
     using System.Web.UI;
 
     using YAF.Core;
-    using YAF.Core.Model;
-    using YAF.Types.Extensions;
     using YAF.Types.Interfaces;
-    using YAF.Types.Models;
-    using YAF.Utils;
 
     /// <summary>
-    /// The _ default.
+    /// The chat.
     /// </summary>
-    public partial class _Default : Page
+    public partial class Chat : Page
     {
+        /// <summary>
+        /// The user name.
+        /// </summary>
+        public string UserName = "test";
+
+        /// <summary>
+        /// The user id.
+        /// </summary>
+        public int UserId;
+
+        /// <summary>
+        /// The user image.
+        /// </summary>
+        public string UserImage;
+
         /// <summary>Handles the Load event of the Page control.</summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Check if forum is installed
-            try
+            if (!this.PageContext().IsGuest)
             {
-                var boards = YafContext.Current.GetRepository<Board>().List();
-                var isForumInstalled = boards.HasRows();
+                this.UserName = this.PageContext().PageUserName;
+                this.UserId = this.PageContext().PageUserID;
+
+                this.GetUserImage(this.UserName);
             }
-            catch
+            else
             {
-                // failure... no boards.    
-                HttpContext.Current.Response.Redirect(
-                    "{0}install/default.aspx".FormatWith(YafForumInfo.ForumClientFileRoot));
+                this.Response.Redirect("Login.aspx");
             }
 
-            try
+            this.Header.DataBind();
+        }
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            this.Session.Clear();
+            this.Session.Abandon();
+            this.Response.Redirect("Login.aspx");
+        }
+
+        public void GetUserImage(string Username)
+        {
+            if (Username != null)
             {
-                if (YafContext.Current == null)
-                {
-                    return;
-                }
-
-                if (YafContext.Current.PageElements.PageElementExists("jquery"))
-                {
-                    return;
-                }
-
-                YafContext.Current.PageElements.AddPageElement("jquery");
-
-                var sr = new ScriptReference("forum/Scripts/jquery-3.4.1.min.js");
-                var masterPage = this.Master;
-
-                if (masterPage == null)
-                {
-                    return;
-                }
-
-                var sm = (ScriptManager)masterPage.FindControl("ScriptManager");
-                sm.Scripts.Add(sr);
-            }
-            catch (Exception)
-            {
-               this.Response.Redirect("~/forum/install/default.aspx");
+                // string query = "select Photo from tbl_Users where UserName='" + Username + "'";
+                this.UserImage = YafContext.Current.Get<IAvatars>().GetAvatarUrlForCurrentUser();
             }
         }
     }
