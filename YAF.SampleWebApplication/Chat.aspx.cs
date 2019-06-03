@@ -28,7 +28,9 @@ namespace YAF.SampleWebApplication
     using System.Web.UI;
 
     using YAF.Core;
+    using YAF.Types.Constants;
     using YAF.Types.Interfaces;
+    using YAF.Utils;
 
     /// <summary>
     /// The chat.
@@ -50,6 +52,16 @@ namespace YAF.SampleWebApplication
         /// </summary>
         public string UserImage;
 
+        /// <summary>Gets the user image.</summary>
+        /// <param name="username">The username.</param>
+        public void GetUserImage(string username)
+        {
+            if (username != null)
+            {
+                this.UserImage = YafContext.Current.Get<IAvatars>().GetAvatarUrlForCurrentUser();
+            }
+        }
+
         /// <summary>Handles the Load event of the Page control.</summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
@@ -64,26 +76,10 @@ namespace YAF.SampleWebApplication
             }
             else
             {
-                this.Response.Redirect("Login.aspx");
+                YafBuildLink.Redirect(ForumPages.login);
             }
 
             this.Header.DataBind();
-        }
-
-        protected void btnSignOut_Click(object sender, EventArgs e)
-        {
-            this.Session.Clear();
-            this.Session.Abandon();
-            this.Response.Redirect("Login.aspx");
-        }
-
-        public void GetUserImage(string Username)
-        {
-            if (Username != null)
-            {
-                // string query = "select Photo from tbl_Users where UserName='" + Username + "'";
-                this.UserImage = YafContext.Current.Get<IAvatars>().GetAvatarUrlForCurrentUser();
-            }
         }
     }
 }

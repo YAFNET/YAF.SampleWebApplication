@@ -32,8 +32,12 @@ namespace YAF.SampleWebApplication
 
     using Microsoft.AspNet.Web.Optimization.WebForms;
 
+    using YAF.Core;
+    using YAF.Core.Model;
     using YAF.Types.Constants;
     using YAF.Types.Extensions;
+    using YAF.Types.Interfaces;
+    using YAF.Types.Models;
     using YAF.Utils;
     using YAF.Utils.Helpers;
 
@@ -61,6 +65,18 @@ namespace YAF.SampleWebApplication
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Check if forum is installed
+            try
+            {
+                var boards = YafContext.Current.GetRepository<Board>().List();
+                var isForumInstalled = boards.HasRows();
+            }
+            catch
+            {
+                // failure... no boards.    
+                HttpContext.Current.Response.Redirect($"{YafForumInfo.ForumClientFileRoot}install/default.aspx");
+            }
+
             var forum = this.MainContent.FindControl("forum");
 
             if (forum != null)
@@ -73,9 +89,18 @@ namespace YAF.SampleWebApplication
             }
             else
             {
-                var link = new HtmlLink { Href = "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css" };
+                var sr = new ScriptReference("forum/Scripts/jquery-3.4.1.min.js");
+                var sm = (ScriptManager)this.FindControl("ScriptManager");
+                sm.Scripts.Insert(0, sr);
+
+                var link = new HtmlLink();
+
                 link.Attributes.Add("rel", "stylesheet");
                 link.Attributes.Add("type", "text/css");
+
+                link.Href = YafContext.Current != null
+                                ? YafContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
+                                : "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css";
 
                 this.Page.Header.Controls.Add(link);
 
