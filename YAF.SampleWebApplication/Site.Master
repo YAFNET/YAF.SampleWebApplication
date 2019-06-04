@@ -19,24 +19,10 @@
     <form runat="server">
         <asp:ScriptManager runat="server" ID="ScriptManager">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                
-                
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Path="~/Scripts/date.format.js" />
                 <asp:ScriptReference Path="~/Scripts/emojionearea.js" />
                 <asp:ScriptReference Path="~/Scripts/jquery.signalR-2.4.1.min.js" />
                 <asp:ScriptReference Path="~/Scripts/jquery.slimscroll.min.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
@@ -59,8 +45,14 @@
                     <div class="form-inline mt-2 mt-md-0 text-white">
                         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                             <AnonymousTemplate>
-                                <asp:Button id="LoginLink" runat="server" CssClass="btn btn-outline-success my-2 my-sm-0 mr-sm-2" Text="Login"></asp:Button>
-                                <asp:Button id="RegisterLink" runat="server" CssClass="btn btn-outline-success my-2 my-sm-0" Text="Register"></asp:Button>
+                                <asp:Button id="LoginLink" runat="server" 
+                                            CssClass="btn btn-outline-success my-2 my-sm-0 mr-sm-2" 
+                                            Text="Login"
+                                            OnClick="LoginLink_OnClick"></asp:Button>
+                                <asp:Button id="RegisterLink" runat="server" 
+                                            CssClass="btn btn-outline-success my-2 my-sm-0" 
+                                            Text="Register"
+                                            OnClick="RegisterLink_OnClick"></asp:Button>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
                                 Welcome &nbsp;<span class="font-weight-bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>&nbsp;

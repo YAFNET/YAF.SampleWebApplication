@@ -28,7 +28,6 @@ namespace YAF.SampleWebApplication
     using System.Web;
     using System.Web.UI;
     using System.Web.UI.HtmlControls;
-    using System.Web.UI.WebControls;
 
     using Microsoft.AspNet.Web.Optimization.WebForms;
 
@@ -39,7 +38,6 @@ namespace YAF.SampleWebApplication
     using YAF.Types.Interfaces;
     using YAF.Types.Models;
     using YAF.Utils;
-    using YAF.Utils.Helpers;
 
     /// <summary>
     /// The site master.
@@ -114,19 +112,16 @@ namespace YAF.SampleWebApplication
 
                 this.Page.Header.Controls.Add(bundleReference);
             }
+        }
 
-            var loginLink = this.HeadLoginView.FindControlAs<HyperLink>("LoginLink");
-            var registerLink = this.HeadLoginView.FindControlAs<HyperLink>("RegisterLink");
+        protected void LoginLink_OnClick(object sender, EventArgs e)
+        {
+            this.Response.Redirect(YafBuildLink.GetLink(ForumPages.login, "ReturnUrl={0}", this.GetReturnUrl()));
+        }
 
-            if (loginLink != null)
-            {
-                loginLink.NavigateUrl = YafBuildLink.GetLink(ForumPages.login, "ReturnUrl={0}", this.GetReturnUrl());
-            }
-
-            if (registerLink != null)
-            {
-                registerLink.NavigateUrl = YafBuildLink.GetLink(ForumPages.register);
-            }
+        protected void RegisterLink_OnClick(object sender, EventArgs e)
+        {
+            this.Response.Redirect(YafBuildLink.GetLink(ForumPages.register));
         }
     }
 }
