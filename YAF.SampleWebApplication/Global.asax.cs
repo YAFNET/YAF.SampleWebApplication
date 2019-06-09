@@ -25,17 +25,28 @@
 namespace YAF.SampleWebApplication
 {
     using System;
-    using System.Web;
     using System.Web.Optimization;
-    using System.Web.Routing;
 
-    public class Global : HttpApplication
+    using YAF.Core.Context;
+
+    public class Global : YafHttpApplication
     {
-        void Application_Start(object sender, EventArgs e)
+        /// <summary>
+        /// The application_ start.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        protected override void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            base.Application_Start(sender, e);
         }
+       
     }
 }

@@ -10,8 +10,8 @@
     <div class="row">
         <div class="col">
             <div class="card mb-3">
-                <div class="card-header">
-                    <i class="fa fa-comments fa-fw"></i>&nbsp;<%= this.GetSubForumTitle()%>
+                <div class="card-header d-flex align-items-center">
+                    <i class="fas fa-comments fa-fw text-secondary"></i>&nbsp;<%= this.GetSubForumTitle()%>
                 </div>
                 <div class="card-body">
                     <YAF:ForumList AltLastPost="<%# this.LastPostImageTT %>" runat="server" ID="ForumList" />
@@ -20,18 +20,18 @@
         </div>
     </div>
 </asp:PlaceHolder>
-<div class="row mb-3">
-    <div class="col">
+<div class="row mb-3 align-items-center justify-content-between">
+    <div class="col-md-6">
         <YAF:Pager runat="server" ID="Pager" UsePostBack="False" />
     </div>
-    <div class="col">
+    <div class="col-md-6 mt-1 mt-md-0">
         <YAF:ThemeButton ID="moderate1" runat="server"
-                         CssClass="float-right mr-1 mt-1"
+                         CssClass="float-right mr-1"
                          TextLocalizedTag="BUTTON_MODERATE" TitleLocalizedTag="BUTTON_MODERATE_TT"
                          Type="Secondary"
                          Icon="tasks"/>
         <YAF:ThemeButton ID="NewTopic1" runat="server" 
-                         CssClass="float-right mr-1 mt-1"
+                         CssClass="float-right mr-1"
                          TextLocalizedTag="BUTTON_NEWTOPIC" TitleLocalizedTag="BUTTON_NEWTOPIC_TT" 
                          OnClick="NewTopic_Click"
                          Icon="plus"/>
@@ -41,7 +41,7 @@
     <div class="col">
         <div class="card mb-3 mt-3">
             <div class="card-header">
-                <i class="fa fa-comments fa-fw"></i>&nbsp;<asp:Label ID="PageTitle" runat="server"></asp:Label>
+                <i class="fas fa-comments fa-fw text-secondary"></i>&nbsp;<asp:Label ID="PageTitle" runat="server"></asp:Label>
             </div>
             <div class="card-body">
                 <asp:PlaceHolder runat="server" ID="NoPostsPlaceHolder">
@@ -75,26 +75,43 @@
                 </asp:Repeater>
             </div>
             <div class="card-footer">
-                <div class="mb-1 form-inline">
-                    <YAF:LocalizedLabel ID="LocalizedLabel11" runat="server" LocalizedTag="showtopics" />: 
-                    &nbsp;<asp:DropDownList ID="ShowList" runat="server" AutoPostBack="True" CssClass="standardSelectMenu" />
+                <div class="form-group row align-items-center">
+                    <div class="col-sm-3">
+                        <YAF:LocalizedLabel ID="LocalizedLabel11" runat="server" LocalizedTag="showtopics" />:
+                    </div>
+                    <div class="col-sm-9">
+                        <asp:DropDownList ID="ShowList" runat="server" AutoPostBack="True" CssClass="standardSelectMenu" />                            
+                    </div>
                 </div>
                 <asp:PlaceHolder ID="ForumJumpHolder" runat="server">
-                        <div class="mb-1 form-inline">
-                            <YAF:LocalizedLabel ID="ForumJumpLabel" runat="server" LocalizedTag="FORUM_JUMP" />: 
-                            &nbsp;<YAF:ForumJump ID="ForumJump1" runat="server" />
-                        </div>
-                </asp:PlaceHolder>
-                <asp:PlaceHolder ID="ForumSearchHolder" runat="server">
-                    <div class="mb-1 form-inline">
-                        <YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" LocalizedTag="SEARCH_FORUM" />:
-                        &nbsp;<asp:TextBox id="forumSearch" CssClass="form-control" runat="server"></asp:TextBox>
-                        &nbsp;<YAF:ThemeButton ID="forumSearchOK" runat="server" 
-                                               Size="Small"
-                                               CssClass="mt-1"
-                                               TextLocalizedTag="OK" TitleLocalizedTag="OK_TT" 
-                                               OnClick="ForumSearch_Click" />
+                <div class="form-group row align-items-center">
+                    <div class="col-sm-3">
+                        <YAF:LocalizedLabel ID="ForumJumpLabel" runat="server" LocalizedTag="FORUM_JUMP" />:
                     </div>
+                    <div class="col-sm-9">
+                        <YAF:ForumJump ID="ForumJump1" runat="server" />        
+                    </div>
+                </div>
+                </asp:PlaceHolder>
+
+                <asp:PlaceHolder ID="ForumSearchHolder" runat="server">
+                <div class="form-group row align-items-center">
+                    <label class="col-sm-3 col-form-label">
+                        <YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" LocalizedTag="SEARCH_FORUM" />:
+                    </label>
+                    <div class="col-sm-9">
+						<div class="input-group">
+                            <asp:TextBox id="forumSearch" CssClass="form-control" runat="server"></asp:TextBox>
+                            <div class="input-group-append">
+                                <YAF:ThemeButton ID="forumSearchOK" runat="server" 
+                                                Size="Small"
+                                                CssClass="input-group-text"
+                                                TextLocalizedTag="OK" TitleLocalizedTag="OK_TT" 
+                                                OnClick="ForumSearch_Click" />
+                            </div>
+						</div>
+                    </div>
+                </div>
                 </asp:PlaceHolder>
             </div>
         </div>
@@ -127,27 +144,29 @@
     </div>
 </div>
 
-<div class="row mb-3">
-    <div class="col">
+<div class="row mb-3 align-items-center justify-content-between">
+    <div class="col-md-6">
             <YAF:Pager ID="PagerBottom" runat="server" LinkedPager="Pager" UsePostBack="False" />
     </div>
-    <div class="col">
+    <div class="col-md-6 mt-1 mt-md-0">
             <YAF:ThemeButton ID="moderate2" runat="server" 
-                             CssClass="float-right mr-1 mt-1"
+                             CssClass="float-right mr-1"
                              TextLocalizedTag="BUTTON_MODERATE" TitleLocalizedTag="BUTTON_MODERATE_TT"
                              Type="Secondary"
                              Icon="tasks"/>
             <YAF:ThemeButton ID="NewTopic2" runat="server" 
-                             CssClass="float-right mr-1 mt-1"
+                             CssClass="float-right mr-1"
                              TextLocalizedTag="BUTTON_NEWTOPIC" TitleLocalizedTag="BUTTON_NEWTOPIC_TT" 
                              OnClick="NewTopic_Click"
                              Icon="plus"/>
     </div>
 </div>
 
-<div class="float-left">
+<div class="row justify-content-between">
+<div class="col-md py-3">
     <YAF:IconLegend ID="IconLegend1" runat="server" />
 </div>
-<div class="float-right">
+<div class="col-md py-3">
     <YAF:PageAccess ID="PageAccess1" runat="server" />
+</div>
 </div>

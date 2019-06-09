@@ -2637,6 +2637,7 @@
     <Resource tag="FACEBOOK">Your Facebook Profile URL:</Resource>
     <Resource tag="FIELD_TOOLONG">{0} length cannot be more than {1} characters.</Resource>
     <Resource tag="FORUM_SETTINGS">Forumas Parametrai </Resource>
+    <Resource tag="GET_LOCATION">Get Location from IP Address</Resource>
     <Resource tag="GOOGLE">Your Google Profile URL:</Resource>
     <Resource tag="HIDEME">Hide me from active users</Resource>
     <Resource tag="HOMEPAGE">Pradžia </Resource>
@@ -2822,6 +2823,7 @@
     <Resource tag="MAIN_FORUM_ATOM">Main Forum Atom</Resource>
     <Resource tag="MAIN_FORUM_RSS">Main Forum RSS </Resource>
     <Resource tag="MARKALL">Pažymėti visus forumus kaip skaitytus </Resource>
+    <Resource tag="MARKALL_MESSAGE">All forums has been marked as read</Resource>
     <Resource tag="MODERATORS">Moderatoriai </Resource>
     <Resource tag="NO_FORUM_ACCESS">(Nėra prieigos) </Resource>
     <Resource tag="NO_POSTS">Komentarų nėra </Resource>
@@ -2845,6 +2847,8 @@
     <Resource tag="VIEWING">({0} Viewing) </Resource>
     <Resource tag="VOTE_DOWN_TITLE">Remove -1 of the Users Reputation</Resource>
     <Resource tag="VOTE_UP_TITLE">Add +1 to the Users Reputation.</Resource>
+    <Resource tag="WATCHFORUM_ALL">Watch all forums</Resource>
+    <Resource tag="WATCHFORUM_ALL_HELP">Watch all forums and get Email Notifications when a new Topic is created</Resource>
   </page>
   <page name="DELETEMESSAGE">
     <Resource tag="DELETE">Delete</Resource>

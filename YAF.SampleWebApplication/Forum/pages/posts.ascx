@@ -3,6 +3,7 @@
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="ServiceStack" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayPost" Src="../controls/DisplayPost.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayConnect" Src="../controls/DisplayConnect.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayAd" Src="../controls/DisplayAd.ascx" %>
@@ -190,7 +191,7 @@
         <div class="col">
             <YAF:RssFeedLink ID="RssFeed" runat="server"
                              FeedType="Posts"  
-                             AdditionalParameters='<%# "t={0}".FormatWith(this.PageContext.PageTopicID) %>' 
+                             AdditionalParameters='<%# "t={0}".Fmt(this.PageContext.PageTopicID) %>' 
                              Visible="<%# this.Get<IPermissions>().Check(this.Get<YafBoardSettings>().PostsFeedAccess) %>" 
             />
         </div>
@@ -200,7 +201,7 @@
     <div class="col align-self-start">
         <YAF:ForumUsers ID="ForumUsers1" runat="server" />
     </div>
-    <YAF:SimilarTopics ID="SimilarTopics"  runat="server" Topic='<%# this.PageContext.PageTopicName %>'>
+    <YAF:SimilarTopics ID="SimilarTopics"  runat="server">
     </YAF:SimilarTopics>
 </div>
 <div class="row mb-3">

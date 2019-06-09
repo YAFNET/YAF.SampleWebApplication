@@ -2588,6 +2588,7 @@
     <Resource tag="FACEBOOK">آدرس پروفایل فیسبوک شما:</Resource>
     <Resource tag="FIELD_TOOLONG">طول {0} نباید بیش از {1} کاراکتر باشد.</Resource>
     <Resource tag="FORUM_SETTINGS">تنظیمات انجمن</Resource>
+    <Resource tag="GET_LOCATION">Get Location from IP Address</Resource>
     <Resource tag="GOOGLE">آدرس پروفایل گوگل شما:</Resource>
     <Resource tag="HIDEME">مخفی شدن من از لیست کاربران فعال</Resource>
     <Resource tag="HOMEPAGE">صفحه اصلی</Resource>
@@ -2752,6 +2753,7 @@
     <Resource tag="MAIN_FORUM_ATOM">Atom اصلی انجمن</Resource>
     <Resource tag="MAIN_FORUM_RSS">Rss اصلی انجمن</Resource>
     <Resource tag="MARKALL">تمام انجمن‌ها بصورت خوانده شده در آیند</Resource>
+    <Resource tag="MARKALL_MESSAGE">All forums has been marked as read</Resource>
     <Resource tag="MODERATORS">ناظران</Resource>
     <Resource tag="NO_FORUM_ACCESS">(بدون دسترسی)</Resource>
     <Resource tag="NO_POSTS">ارسالی وجود ندارد</Resource>
@@ -2775,6 +2777,8 @@
     <Resource tag="VIEWING">({0} نفر در حال مشاهده)</Resource>
     <Resource tag="VOTE_DOWN_TITLE">حذف -1 از امتیاز کاربران</Resource>
     <Resource tag="VOTE_UP_TITLE">افزودن +1 به امتیاز کاربران</Resource>
+    <Resource tag="WATCHFORUM_ALL">Watch all forums</Resource>
+    <Resource tag="WATCHFORUM_ALL_HELP">Watch all forums and get Email Notifications when a new Topic is created</Resource>
   </page>
   <page name="DELETEMESSAGE">
     <Resource tag="DELETE">حذف</Resource>
