@@ -35,10 +35,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/SignalRChat.aspx">Chat</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Forum/Forum.aspx">Forum</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About.aspx">About</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact.aspx">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Chat">Chat</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Forum/">Forum</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
                     </ul>
                     <div class="form-inline mt-2 mt-md-0 text-white">
                         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
