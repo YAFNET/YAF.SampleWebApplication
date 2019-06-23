@@ -91,6 +91,8 @@ namespace YAF.SampleWebApplication
                 var sm = (ScriptManager)this.FindControl("ScriptManager");
                 sm.Scripts.Insert(0, sr);
 
+                sm.Scripts.Add(new ScriptReference("forum/Scripts/jquery.ForumAdminExtensions.min.js"));
+
                 var link = new HtmlLink();
 
                 link.Attributes.Add("rel", "stylesheet");
