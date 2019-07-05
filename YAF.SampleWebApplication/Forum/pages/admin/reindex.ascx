@@ -1,5 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.reindex" Codebehind="reindex.ascx.cs" %>
 
+
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
 <div class="row">
@@ -30,10 +31,12 @@
                     <p class="card-text">
                         <YAF:ThemeButton ID="RecoveryMode" Type="Primary" runat="server" OnClick="RecoveryModeClick"
                                          Icon="database" TextLocalizedTag="SETRECOVERY_BTN" />
-					    <asp:RadioButtonList ID="RadioButtonList1" runat="server" 
-                                             CssClass="form-check"
-                                             RepeatLayout="Flow" RepeatDirection="Horizontal" >
-					    </asp:RadioButtonList>
+                        <div class="custom-control custom-radio custom-control-inline">
+					        <asp:RadioButtonList ID="RadioButtonList1" runat="server"
+                                                 RepeatLayout="UnorderedList"
+                                                 CssClass="list-unstyled">
+					        </asp:RadioButtonList>
+                        </div>
                     </p>
                     <hr />
                 </asp:Placeholder>

@@ -7,6 +7,7 @@
 <%@ Register TagPrefix="YAF" TagName="ForumSubForumList" Src="ForumSubForumList.ascx" %>
 
 
+
 <asp:Repeater ID="ForumList1" runat="server" OnItemCreated="ForumList1_ItemCreated">
     <SeparatorTemplate>
         <div class="row">
@@ -20,7 +21,7 @@
     <div class="col-md-6">
         <h5>
             <asp:PlaceHolder runat="server" ID="ForumIcon"></asp:PlaceHolder>
-            <img id="ForumImage1" class="" src="" alt="image" visible="false" runat="server" style="border-width:0" />
+            <img id="ForumImage1" class="" src="#" alt="image" visible="false" runat="server" style="border-width:0" />
           
             <%# this.GetForumLink((System.Data.DataRow)Container.DataItem) %>
             
@@ -29,31 +30,32 @@
                 <%# this.GetViewing(Container.DataItem) %>
             </asp:Label>
         </h5>
-        <asp:Label runat="server" ID="Description"  Visible='<%# DataBinder.Eval(Container.DataItem, "[\"Description\"]").ToString().IsSet() %>'>
+        <asp:Label runat="server" ID="Description" 
+                   Visible='<%# DataBinder.Eval(Container.DataItem, "[\"Description\"]").ToString().IsSet() %>'
+                   CssClass="font-italic">
             <%# this.Page.HtmlEncode(DataBinder.Eval(Container.DataItem, "[\"Description\"]")) %>
         </asp:Label>
-
-        <p class="card-text">
+        <div>
             <YAF:ForumModeratorList ID="ForumModeratorListMob" Visible="false" runat="server"  />
-            <YAF:ForumSubForumList ID="SubForumList" runat="server" 
+            <YAF:ForumSubForumList ID="SubForumList" runat="server"
                                    DataSource='<%# this.GetSubforums( (System.Data.DataRow)Container.DataItem ) %>'
                                    Visible='<%# this.HasSubforums((System.Data.DataRow)Container.DataItem) %>' />
-        </p>
+        </div>
     </div>
     <asp:PlaceHolder runat="server" Visible='<%# ((System.Data.DataRow)Container.DataItem)["RemoteURL"] == DBNull.Value %>'>
     <div class="col-md-2">
-        <ul class="list-unstyled">
-            <li>
-                <YAF:LocalizedLabel ID="LocalizedLabel4" runat="server" 
-                                    LocalizedTag="TOPICS" />:
-                <%# this.Topics(Container.DataItem) %>
-            </li>
-            <li>
-                <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                    LocalizedTag="POSTS" />:
-                <%# this.Posts(Container.DataItem) %>
-            </li>
-        </ul>
+        <div class="d-flex flex-row flex-md-column justify-content-between justify-content-md-start">
+            <div>
+                <YAF:LocalizedLabel ID="LocalizedLabel2" runat="server"
+                    LocalizedTag="TOPICS" />:
+                    <%# this.Topics(Container.DataItem) %>
+            </div>
+            <div>
+                <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server"
+                    LocalizedTag="POSTS" />:
+                    <%# this.Posts(Container.DataItem) %>
+            </div>
+        </div>
     </div>
     
     <div class="col-md-4">

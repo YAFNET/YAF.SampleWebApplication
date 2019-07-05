@@ -1,5 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BannedNameImport.ascx.cs" Inherits="YAF.Dialogs.BannedNameImport" %>
 
+
 <div class="modal fade" id="ImportDialog" tabindex="-1" role="dialog" aria-labelledby="ImportDialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
 
@@ -23,9 +24,14 @@
                                                 LocalizedTag="NOTE" LocalizedPage="ADMIN_BANNEDNAME">
                             </YAF:LocalizedLabel>
                         </YAF:Alert>
-                        <p>
+                        <div class="custom-file">
                             <input type="file" id="importFile" class="form-control-file" runat="server" />
-                        </p>
+                            <asp:Label runat="server" CssClass="custom-file-label" AssociatedControlID="importFile">
+                                <YAF:LocalizedLabel runat="server" 
+                                                    LocalizedTag="SELECT_IMPORT" 
+                                                    LocalizedPage="ADMIN_EXTENSIONS_IMPORT"></YAF:LocalizedLabel>
+                            </asp:Label>
+                        </div>
                         <!-- Modal Content END !-->
                     </div>
                     <div class="modal-footer">

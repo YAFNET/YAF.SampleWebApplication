@@ -1,5 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ExtensionsImport.ascx.cs" Inherits="YAF.Dialogs.ExtensionsImport" %>
 
+
 <div class="modal fade" id="ExtensionsImportDialog" tabindex="-1" role="dialog" aria-labelledby="ExtensionsImportDialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
 
@@ -16,11 +17,18 @@
                     <div class="modal-body">
                         <!-- Modal Content START !-->
                         <h4>
-                            <YAF:HelpLabel ID="LocalizedLabel2" runat="server" LocalizedTag="SELECT_IMPORT" LocalizedPage="ADMIN_EXTENSIONS_IMPORT" />
+                            <YAF:HelpLabel ID="LocalizedLabel2" runat="server" 
+                                           LocalizedTag="SELECT_IMPORT" 
+                                           LocalizedPage="ADMIN_EXTENSIONS_IMPORT" />
                         </h4>
-                        <p>
+                        <div class="custom-file">
                             <input type="file" id="importFile" class="form-control-file" runat="server" />
-                        </p>
+                            <asp:Label runat="server" CssClass="custom-file-label" AssociatedControlID="importFile">
+                                <YAF:LocalizedLabel runat="server" 
+                                                    LocalizedTag="SELECT_IMPORT" 
+                                                    LocalizedPage="ADMIN_EXTENSIONS_IMPORT"></YAF:LocalizedLabel>
+                            </asp:Label>
+                        </div>
                         <!-- Modal Content END !-->
                     </div>
                     <div class="modal-footer">

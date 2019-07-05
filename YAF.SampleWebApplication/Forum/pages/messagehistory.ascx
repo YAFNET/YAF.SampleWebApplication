@@ -1,4 +1,5 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.messagehistory"CodeBehind="messagehistory.ascx.cs" %>
+
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Utils.Helpers" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
@@ -72,7 +73,7 @@
                     <YAF:UserLink ID="UserLink3" runat="server" UserID='<%# Container.DataItemToField<int>("EditedBy") %>' />
                     <br />
                     <span id="IPSpan1" runat="server" visible='<%#
-    this.PageContext.IsAdmin || (this.Get<YafBoardSettings>().AllowModeratorsViewIPs && this.PageContext.ForumModeratorAccess)%>'>
+    this.PageContext.IsAdmin || this.Get<YafBoardSettings>().AllowModeratorsViewIPs && this.PageContext.ForumModeratorAccess%>'>
                         <strong>
                             <%# this.GetText("IP") %>:</strong><a id="IPLink1" href='<%# string.Format(this.Get<YafBoardSettings>().IPInfoPageURL, IPHelper.GetIp4Address(Container.DataItemToField<string>("IP"))) %>'
                                 title='<%# this.GetText("COMMON","TT_IPDETAILS") %>'
@@ -102,12 +103,13 @@
             </div>
             <div class="card-footer text-center">
                         <a onclick="RenderMessageDiff('<%# this.GetText("MESSAGEHISTORY","MESSAGE_EDITEDAT") %>','<%# this.GetText("MESSAGEHISTORY","NOTHING_SELECTED") %>','<%# this.GetText("MESSAGEHISTORY","SELECT_BOTH") %>','<%# this.GetText("MESSAGEHISTORY","SELECT_DIFFERENT") %>');" 
-                           class="btn btn-primary">
+                           class="btn btn-primary mt-1">
                             <span style="color: white">
                                 <%# this.GetText("MESSAGEHISTORY","COMPARE_VERSIONS") %>
                             </span>
                         </a>            
                         <YAF:ThemeButton ID="ReturnBtn" 
+                                         CssClass="mt-1"
                                          OnClick="ReturnBtn_OnClick"
                                          TextLocalizedTag="TOMESSAGE" 
                                          Visible="false" 
@@ -115,7 +117,8 @@
                                          Icon="external-link-square-alt"
                                          runat="server">
                         </YAF:ThemeButton>
-                        <YAF:ThemeButton ID="ReturnModBtn" 
+                        <YAF:ThemeButton ID="ReturnModBtn"  
+                                         CssClass="mt-1"
                                          OnClick="ReturnModBtn_OnClick"
                                          TextLocalizedTag="GOMODERATE" 
                                          Visible="false" 
@@ -139,7 +142,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">
                     <YAF:LocalizedLabel ID="LocalizedLabel8" runat="server" LocalizedTag="TEXT_CHANGES" />
                 </h6>
-                <div class="post" id="diffContent">
+                <div id="diffContent">
                     <YAF:Alert runat="server" Type="warning">
                         <%# this.GetText("MESSAGEHISTORY","SELECT_DIFFERENT") %>
                     </YAF:Alert>

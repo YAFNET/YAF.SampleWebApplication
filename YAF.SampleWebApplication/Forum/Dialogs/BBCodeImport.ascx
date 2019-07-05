@@ -1,5 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BBCodeImport.ascx.cs" Inherits="YAF.Dialogs.BBCodeImport" %>
 
+
 <div class="modal fade" id="BBCodeImportDialog" tabindex="-1" role="dialog" aria-labelledby="BBCodeImportDialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
 
@@ -18,9 +19,14 @@
                         <h4>
                             <YAF:HelpLabel ID="LocalizedLabel2" runat="server" LocalizedTag="SELECT_IMPORT" LocalizedPage="ADMIN_EXTENSIONS_IMPORT" />
                         </h4>
-                        <p>
+                        <div class="custom-file">
                             <input type="file" id="importFile" class="form-control-file" runat="server" />
-                        </p>
+                            <asp:Label runat="server" CssClass="custom-file-label" AssociatedControlID="importFile">
+                                <YAF:LocalizedLabel runat="server" 
+                                                    LocalizedTag="SELECT_IMPORT" 
+                                                    LocalizedPage="ADMIN_EXTENSIONS_IMPORT"></YAF:LocalizedLabel>
+                            </asp:Label>
+                        </div>
                         <!-- Modal Content END !-->
                     </div>
                     <div class="modal-footer">

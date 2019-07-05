@@ -1,5 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NntpServerEdit.ascx.cs" Inherits="YAF.Dialogs.NntpServerEdit" %>
 
+
 <div class="modal fade" id="NntpServerEditDialog" tabindex="-1" role="dialog" aria-labelledby="NntpServerEditDialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
 
@@ -54,7 +55,7 @@
                     <div class="modal-footer">
                         <YAF:ThemeButton id="Save" runat="server" OnClick="Save_OnClick" 
                             TextLocalizedTag="ADMIN_EDITNNTPSERVER" TextLocalizedPage="TITLE"
-                            Type="Primary" Icon="upload">
+                            Type="Primary" Icon="save">
                         </YAF:ThemeButton>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             <i class="fa fa-times fa-fw"></i>&nbsp;<YAF:LocalizedLabel runat="server" LocalizedTag="CANCEL"></YAF:LocalizedLabel>

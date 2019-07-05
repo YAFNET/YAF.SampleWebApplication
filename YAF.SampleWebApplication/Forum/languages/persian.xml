@@ -390,6 +390,9 @@
     <Resource tag="BOARD_THREADED_HELP">مجوز نمایش پشت سر هم مطالب.</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT">نحوه نمایش موضوعات</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT_HELP">تابلو پیش فرض فاصله انتخاب موضوع را نمایش می دهد.</Resource>
+    <Resource tag="CDVVERSION">CRM Version</Resource>
+    <Resource tag="CDVVERSION_BUTTON">Increase CRM Version</Resource>
+    <Resource tag="CDVVERSION_HELP">CRM Version, increase number to Force a Browser reload of all Java Script and CSS Files</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY">کلید حذف کپی رایت:</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_DOWN">Purchase Removal Key</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_HELP">حذف نام و عنوان YAF از زیر انجمن موجود در لینک : &lt;a href="http://yetanotherforum.net/purchase.aspx"&gt;سایت YAF&lt;/a&gt;. </Resource>
@@ -2200,6 +2203,7 @@
     <Resource tag="TT_LISTORDERED">فهرست مرتب</Resource>
     <Resource tag="TT_LISTUNORDERED">فهرست نامرتب</Resource>
     <Resource tag="TT_QUOTE">نقل قول</Resource>
+    <Resource tag="TT_SAVE">Save Message Draft</Resource>
     <Resource tag="TT_UNDERLINE">زیرخط دار</Resource>
     <Resource tag="UNREAD_MSG">شما {0} پیغام خوانده نشده دارید</Resource>
     <Resource tag="UNREAD_MSG_TITLE">پیام خصوصی جدید</Resource>
@@ -2755,6 +2759,7 @@
     <Resource tag="MARKALL">تمام انجمن‌ها بصورت خوانده شده در آیند</Resource>
     <Resource tag="MARKALL_MESSAGE">All forums has been marked as read</Resource>
     <Resource tag="MODERATORS">ناظران</Resource>
+    <Resource tag="MOST_ACTIVE">Most Active Users in the last {0} Days</Resource>
     <Resource tag="NO_FORUM_ACCESS">(بدون دسترسی)</Resource>
     <Resource tag="NO_POSTS">ارسالی وجود ندارد</Resource>
     <Resource tag="ONDATE">در تاریخ {0}</Resource>
@@ -2771,6 +2776,10 @@
     <Resource tag="STATS_LASTPOST">آخرین ارسال {0} بوسیله</Resource>
     <Resource tag="STATS_MEMBERS">تعداد {0:N0} کاربر ثبت نام کرده اند.</Resource>
     <Resource tag="STATS_POSTS">تعداد {0:N0} ارسال در {1:N0} موضوع در {2:N0} انجمن موجود می باشد.</Resource>
+    <Resource tag="STATS_SPAM">Anti Spam Statistics</Resource>
+    <Resource tag="STATS_SPAM_BANNED">{0} Spammers Permanently Banned</Resource>
+    <Resource tag="STATS_SPAM_DENIED">{0} Spammers Denied Registration</Resource>
+    <Resource tag="STATS_SPAM_REPORTED">{0} Spammers submitted to StopForumSpam.com</Resource>
     <Resource tag="TOPICS">موضوعات</Resource>
     <Resource tag="UNREAD0">شما تعداد {0} پیغام خوانده نشده دارید.</Resource>
     <Resource tag="UNREAD1">شما تعداد {0} پیغام خوانده نشده دارید.</Resource>

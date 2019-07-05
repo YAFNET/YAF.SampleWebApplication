@@ -1,5 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NntpForumEdit.ascx.cs" Inherits="YAF.Dialogs.NntpForumEdit" %>
 
+
 <div class="modal fade" id="NntpForumEditDialog" tabindex="-1" role="dialog" aria-labelledby="NntpForumEditDialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
 
@@ -46,15 +47,15 @@
                         <h4>
                             <YAF:HelpLabel ID="LocalizedLabel5" runat="server" LocalizedTag="ACTIVE" LocalizedPage="ADMIN_EDITNNTPFORUM" />
                         </h4>
-                        <p>
-                            <asp:CheckBox ID="Active" runat="server" Checked="true" CssClass="form-control" />
-                        </p>
+                        <div class="custom-control custom-switch">
+                            <asp:CheckBox ID="Active" runat="server" Checked="true" Text="&nbsp;" />
+                        </div>
                         <!-- Modal Content END !-->
                     </div>
                     <div class="modal-footer">
                         <YAF:ThemeButton id="Save" runat="server" OnClick="Save_OnClick" 
                             TextLocalizedTag="ADMIN_EDITNNTPFORUM" TextLocalizedPage="TITLE"
-                            Type="Primary" Icon="upload">
+                            Type="Primary" Icon="save">
                         </YAF:ThemeButton>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             <i class="fa fa-times fa-fw"></i>&nbsp;<YAF:LocalizedLabel runat="server" LocalizedTag="CANCEL"></YAF:LocalizedLabel>

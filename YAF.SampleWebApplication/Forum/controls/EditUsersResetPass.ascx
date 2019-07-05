@@ -1,4 +1,5 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Controls.EditUsersResetPass"CodeBehind="EditUsersResetPass.ascx.cs" %>
+
 <asp:UpdatePanel ID="PasswordUpdatePanel" runat="server" UpdateMode="Conditional">
     <ContentTemplate>
         
@@ -19,11 +20,14 @@
                     <strong><YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="PASS_OPTION" LocalizedPage="ADMIN_EDITUSER" /></strong>
                 </h4>
                 <p>
-                    <asp:RadioButtonList ID="rblPasswordResetFunction" runat="server" AutoPostBack="true"
-                        OnSelectedIndexChanged="rblPasswordResetFunction_SelectedIndexChanged" 
-                                         CssClass="form-check"
-                                         RepeatLayout="Flow" RepeatDirection="Horizontal">
+                    <div class="custom-control custom-radio custom-control-inline">
+                    <asp:RadioButtonList ID="rblPasswordResetFunction" runat="server" 
+                                         AutoPostBack="true"
+                                         OnSelectedIndexChanged="rblPasswordResetFunction_SelectedIndexChanged" 
+                                         RepeatLayout="UnorderedList"
+                                         CssClass="list-unstyled">
                     </asp:RadioButtonList>
+                    </div>
                 </p>
             <asp:PlaceHolder ID="ChangePasswordHolder" runat="server" Visible="false">
                 <hr />

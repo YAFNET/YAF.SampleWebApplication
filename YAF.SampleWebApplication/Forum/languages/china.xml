@@ -390,6 +390,9 @@
     <Resource tag="BOARD_THREADED_HELP">Allow threaded view for posts.</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT">Show Topic Default:</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT_HELP">The default board show topic interval selection.</Resource>
+    <Resource tag="CDVVERSION">CRM Version</Resource>
+    <Resource tag="CDVVERSION_BUTTON">Increase CRM Version</Resource>
+    <Resource tag="CDVVERSION_HELP">CRM Version, increase number to Force a Browser reload of all Java Script and CSS Files</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY">Copyright Removal Key:</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_DOWN">Purchase Removal Key</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_HELP">Remove the copyright information and link back to YAF from the footer of your entire forum domain. Available&lt;a href="http://yetanotherforum.net/purchase.aspx"&gt;from YAF.NET site&lt;/a&gt;. </Resource>
@@ -2186,6 +2189,7 @@
     <Resource tag="TT_LISTORDERED">Ordered List</Resource>
     <Resource tag="TT_LISTUNORDERED">Unordered List</Resource>
     <Resource tag="TT_QUOTE">引用</Resource>
+    <Resource tag="TT_SAVE">Save Message Draft</Resource>
     <Resource tag="TT_UNDERLINE">下划线</Resource>
     <Resource tag="UNREAD_MSG">你有 {0} 条未读悄悄话.</Resource>
     <Resource tag="UNREAD_MSG_TITLE">新私信</Resource>
@@ -2740,6 +2744,7 @@
     <Resource tag="MARKALL">标注所有论坛板块为已读.</Resource>
     <Resource tag="MARKALL_MESSAGE">All forums has been marked as read</Resource>
     <Resource tag="MODERATORS">版主</Resource>
+    <Resource tag="MOST_ACTIVE">Most Active Users in the last {0} Days</Resource>
     <Resource tag="NO_FORUM_ACCESS">你没有访问这个论坛板块的权限.</Resource>
     <Resource tag="NO_POSTS">无新贴</Resource>
     <Resource tag="ONDATE">on {0}</Resource>
@@ -2756,6 +2761,10 @@
     <Resource tag="STATS_LASTPOST">最后由 {1} 发表于 {0}.</Resource>
     <Resource tag="STATS_MEMBERS">共有 {0:N0} 个注册会员.</Resource>
     <Resource tag="STATS_POSTS">共有 {0:N0} 个帖子，{1:N0} 个话题，{2:N0} 个论坛.</Resource>
+    <Resource tag="STATS_SPAM">Anti Spam Statistics</Resource>
+    <Resource tag="STATS_SPAM_BANNED">{0} Spammers Permanently Banned</Resource>
+    <Resource tag="STATS_SPAM_DENIED">{0} Spammers Denied Registration</Resource>
+    <Resource tag="STATS_SPAM_REPORTED">{0} Spammers submitted to StopForumSpam.com</Resource>
     <Resource tag="TOPICS">话题数量</Resource>
     <Resource tag="UNREAD0">您有 {0} 个未读悄悄话.</Resource>
     <Resource tag="UNREAD1">您有 {0} 个未读悄悄话.</Resource>

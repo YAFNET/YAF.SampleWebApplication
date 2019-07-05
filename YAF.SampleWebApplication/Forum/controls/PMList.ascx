@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Controls.PMList" EnableTheming="true" Codebehind="PMList.ascx.cs" EnableViewState="true" %>
+
 <%@ Import Namespace="YAF.Core" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="YAF.Types.Constants" %>
@@ -122,11 +123,15 @@
 <YAF:Pager ID="PagerBottom" runat="server" LinkedPager="PagerTop" />
 <hr />
 <asp:Label id="lblExportType" runat="server"></asp:Label>
-<asp:RadioButtonList runat="server" id="ExportType" RepeatDirection="Horizontal">
+<div class="custom-control custom-radio custom-control-inline">
+<asp:RadioButtonList runat="server" id="ExportType" 
+                     RepeatLayout="UnorderedList"
+                     CssClass="list-unstyled">
     <asp:ListItem Text="XML" Selected="True" Value="xml"></asp:ListItem>
     <asp:ListItem Text="CSV" Value="csv"></asp:ListItem>
     <asp:ListItem Text="Text" Value="txt"></asp:ListItem>
 </asp:RadioButtonList>
+    </div>
 </div>
 
 <div class="card-footer">

@@ -390,6 +390,9 @@
     <Resource tag="BOARD_THREADED_HELP">Allow threaded view for posts.</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT">Show Topic Default:</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT_HELP">The default board show topic interval selection.</Resource>
+    <Resource tag="CDVVERSION">CRM Version</Resource>
+    <Resource tag="CDVVERSION_BUTTON">Increase CRM Version</Resource>
+    <Resource tag="CDVVERSION_HELP">CRM Version, increase number to Force a Browser reload of all Java Script and CSS Files</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY">Copyright Removal Key:</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_DOWN">Purchase Removal Key</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_HELP">Remove the copyright information and link back to YAF from the footer of your entire forum domain. Available&lt;a href="http://yetanotherforum.net/purchase.aspx"&gt;from YAF.NET site&lt;/a&gt;. </Resource>
@@ -2179,6 +2182,7 @@
     <Resource tag="TT_LISTORDERED">Elenco numerato</Resource>
     <Resource tag="TT_LISTUNORDERED">Elenco puntato</Resource>
     <Resource tag="TT_QUOTE">Citazione</Resource>
+    <Resource tag="TT_SAVE">Save Message Draft</Resource>
     <Resource tag="TT_UNDERLINE">Sottolineato</Resource>
     <Resource tag="UNREAD_MSG">Ci sono {0} messaggi non letti nella tua cassetta postale.</Resource>
     <Resource tag="UNREAD_MSG_TITLE">Nuovi messaggi privati</Resource>
@@ -2734,6 +2738,7 @@
     <Resource tag="MARKALL">Contrassegna tutti i forum come letti</Resource>
     <Resource tag="MARKALL_MESSAGE">All forums has been marked as read</Resource>
     <Resource tag="MODERATORS">Moderatori</Resource>
+    <Resource tag="MOST_ACTIVE">Most Active Users in the last {0} Days</Resource>
     <Resource tag="NO_FORUM_ACCESS">(Nessun Accesso)</Resource>
     <Resource tag="NO_POSTS">Nessun messaggio</Resource>
     <Resource tag="ONDATE">il {0}</Resource>
@@ -2750,6 +2755,10 @@
     <Resource tag="STATS_LASTPOST">Ultimo messaggio {0} di</Resource>
     <Resource tag="STATS_MEMBERS">Abbiamo {0:N0} utenti registrati.</Resource>
     <Resource tag="STATS_POSTS">Ci sono {0:N0} messaggi in {1:N0} discussioni in {2:N0} forum.</Resource>
+    <Resource tag="STATS_SPAM">Anti Spam Statistics</Resource>
+    <Resource tag="STATS_SPAM_BANNED">{0} Spammers Permanently Banned</Resource>
+    <Resource tag="STATS_SPAM_DENIED">{0} Spammers Denied Registration</Resource>
+    <Resource tag="STATS_SPAM_REPORTED">{0} Spammers submitted to StopForumSpam.com</Resource>
     <Resource tag="TOPICS">Discussioni</Resource>
     <Resource tag="UNREAD0">Hai {0} messaggi privati non letti.</Resource>
     <Resource tag="UNREAD1">Hai {0} messaggio privato non letto.</Resource>

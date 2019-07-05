@@ -1,7 +1,8 @@
 <%@ Control Language="C#" AutoEventWireup="true"
 	Inherits="YAF.Controls.EditUsersSuspend" Codebehind="EditUsersSuspend.ascx.cs" %>
 
-	<h2 runat="server" id="trHeader">
+
+<h2 runat="server" id="trHeader">
 			<YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedPage="PROFILE" LocalizedTag="SUSPEND_USER" />
 		</h2>
 	<hr />
@@ -60,8 +61,13 @@
 			<YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedPage="PROFILE" LocalizedTag="SUSPEND_USER" />
 		</h4>
 		<p>
-			<asp:TextBox runat="server" ID="SuspendCount" CssClass="Numeric form-control" TextMode="Number" />&nbsp;<asp:RadioButtonList
-				runat="server" ID="SuspendUnit" CssClass="form-check form-check-inline" RepeatLayout="Flow" RepeatDirection="Horizontal" />
+			<asp:TextBox runat="server" ID="SuspendCount" CssClass="Numeric form-control" TextMode="Number" />&nbsp;
+            <div class="custom-control custom-radio custom-control-inline">
+            <asp:RadioButtonList
+				runat="server" ID="SuspendUnit" 
+                RepeatLayout="UnorderedList"
+                CssClass="list-unstyled" />
+            </div>
 		</p>
 	<hr />
 <YAF:Alert runat="server" Type="info">

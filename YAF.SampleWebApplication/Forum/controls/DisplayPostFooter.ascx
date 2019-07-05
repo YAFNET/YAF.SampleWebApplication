@@ -11,17 +11,18 @@
 <YAF:ThemeButton ID="ReportPost" runat="server"
                  Visible="false"
                  Type="Link" 
-                 Size="Small"
                  TextLocalizedPage="POSTS" 
                  TextLocalizedTag="REPORTPOST"
-                 Icon="exclamation-triangle" 
-                 TitleLocalizedTag="REPORTPOST_TITLE" />
+                 Icon="exclamation-triangle"
+                 IconColor="text-danger"
+                 TitleLocalizedTag="REPORTPOST_TITLE"
+                 CssClass="text-left" />
 <YAF:ThemeButton ID="MarkAsAnswer" runat="server" 
                  Visible="false" 
                  Type="Link" 
-                 Size="Small"
                  TextLocalizedPage="POSTS" 
                  TextLocalizedTag="MARK_ANSWER" 
                  TitleLocalizedTag="MARK_ANSWER_TITLE"
-                 Icon="check-square" 
+                 Icon="check-square"
+                 IconColor="text-success"
                  OnClick="MarkAsAnswerClick" />	

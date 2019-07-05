@@ -1,5 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BannedNameEdit.ascx.cs" Inherits="YAF.Dialogs.BannedNameEdit" %>
 
+
 <div class="modal fade" id="EditDialog" tabindex="-1" role="dialog" aria-labelledby="EditDialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
 
@@ -33,7 +34,7 @@
                     <div class="modal-footer">
                         <YAF:ThemeButton id="Save" runat="server" OnClick="Save_OnClick" 
                             TextLocalizedTag="ADMIN_BANNEDNAME_EDIT" TextLocalizedPage="SAVE"
-                            Type="Primary" Icon="upload">
+                            Type="Primary" Icon="save">
                         </YAF:ThemeButton>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             <i class="fa fa-times fa-fw"></i>&nbsp;<YAF:LocalizedLabel runat="server" LocalizedTag="CANCEL"></YAF:LocalizedLabel>

@@ -388,6 +388,9 @@
   <Resource tag="BOARD_THREADED_HELP">Allow threaded view for posts.</Resource>
   <Resource tag="BOARD_TOPIC_DEFAULT">Show Topic Default:</Resource>
   <Resource tag="BOARD_TOPIC_DEFAULT_HELP">The default board show topic interval selection.</Resource>
+  <Resource tag="CDVVERSION">CRM Version</Resource>
+  <Resource tag="CDVVERSION_HELP">CRM Version, increase number to Force a Browser reload of all Java Script and CSS Files</Resource>
+  <Resource tag="CDVVERSION_BUTTON">Increase CRM Version</Resource>
   <Resource tag="COPYRIGHT_REMOVAL_KEY">Copyright Removal Key:</Resource>
   <Resource tag="COPYRIGHT_REMOVAL_KEY_HELP">Remove the copyright information and link back to YAF from the footer of your entire forum domain.</Resource>
   <Resource tag="COPYRIGHT_REMOVAL_KEY_DOWN">Purchase Removal Key</Resource>
@@ -2192,6 +2195,7 @@
   <Resource tag="TT_LISTORDERED">Ordered List</Resource>
   <Resource tag="TT_LISTUNORDERED">Unordered List</Resource>
   <Resource tag="TT_QUOTE">Quote</Resource>
+  <Resource tag="TT_SAVE">Save Message Draft</Resource>
   <Resource tag="TT_UNDERLINE">Underline</Resource>
   <Resource tag="UNREAD_MSG">You have {0} unread message(s) in your Inbox.</Resource>
   <Resource tag="UNREAD_MSG_TITLE">New Private Message(s)</Resource>
@@ -2720,6 +2724,7 @@
   <Resource tag="WATCHFORUM_ALL">Watch all forums</Resource>
   <Resource tag="WATCHFORUM_ALL_HELP">Watch all forums and get Email Notifications when a new Topic is created</Resource>
   <Resource tag="MODERATORS">Moderators</Resource>
+  <Resource tag="MOST_ACTIVE">Most Active Users in the last {0} Days</Resource>
   <Resource tag="NO_FORUM_ACCESS">(No Access)</Resource>
   <Resource tag="NO_POSTS">No Posts</Resource>
   <Resource tag="ONDATE">on {0}</Resource>
@@ -2731,11 +2736,14 @@
   <Resource tag="RSSICONTOOLTIPFORUM">Subscribe to forum RSS feed.</Resource>
   <Resource tag="SHOW_UNREAD_ONLY">Show only Unread Topics.</Resource>
   <Resource tag="STATS">Statistics</Resource>
-  <Resource tag="STATS_BIRTHDAYS">Today's Birthdays: </Resource>
   <Resource tag="STATS_LASTMEMBER">The newest member is</Resource>
   <Resource tag="STATS_LASTPOST">Last post {0} by</Resource>
   <Resource tag="STATS_MEMBERS">We have {0:N0} registered members.</Resource>
   <Resource tag="STATS_POSTS">There are {0:N0} posts in {1:N0} topics in {2:N0} forums.</Resource>
+  <Resource tag="STATS_SPAM">Anti Spam Statistics</Resource>
+  <Resource tag="STATS_SPAM_BANNED">{0} Spammers Permanently Banned</Resource>
+  <Resource tag="STATS_SPAM_DENIED">{0} Spammers Denied Registration</Resource>
+  <Resource tag="STATS_SPAM_REPORTED">{0} Spammers submitted to StopForumSpam.com</Resource>
   <Resource tag="TOPICS">Topics</Resource>
   <Resource tag="UNREAD0">You have {0} unread messages in your inbox.</Resource>
   <Resource tag="UNREAD1">You have {0} unread message in your inbox.</Resource>
