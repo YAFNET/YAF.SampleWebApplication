@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="YAF.SampleWebApplication.SiteMaster" %>
-<%@ Register TagPrefix="url" Namespace="YAF.UrlRewriter" Assembly="YAF.UrlRewriter, Version=2.1.0.2, Culture=neutral, PublicKeyToken=0573f3650687980d" %>
 
 <!DOCTYPE html>
 
@@ -8,14 +7,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: this.Page.Title %> - YAF.NET SampleWebApplication</title>
-
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body id="YafBody" runat="server">
-    <url:Form runat="server" ID="form1">
+    <YAF:Form runat="server" ID="form1">
         <asp:ScriptManager runat="server" ID="ScriptManager">
             <Scripts>
                 <asp:ScriptReference Path="~/Scripts/date.format.js" />
@@ -73,6 +68,6 @@
             </footer>
         </div>
 
-    </url:Form>
+    </YAF:Form>
 </body>
 </html>

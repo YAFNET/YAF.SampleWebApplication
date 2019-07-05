@@ -30,6 +30,9 @@ namespace YAF.SampleWebApplication
 
     using YAF.Core.Context;
 
+    /// <summary>
+    /// The global.
+    /// </summary>
     public class Global : YafHttpApplication
     {
         /// <summary>
@@ -44,12 +47,11 @@ namespace YAF.SampleWebApplication
         protected override void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             base.Application_Start(sender, e);
         }
-       
     }
 }
