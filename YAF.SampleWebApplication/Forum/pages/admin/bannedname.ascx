@@ -22,17 +22,22 @@
                      <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="SEARCH" LocalizedPage="TOOLBAR" />
                 </div>
                 <div class="card-body">
-                     
-                        <YAF:LocalizedLabel ID="LocalizedLabel12" runat="server" LocalizedTag="MASK" LocalizedPage="ADMIN_BANNEDIP" />
-                     
-                    <p>
-                        <asp:TextBox ID="SearchInput" runat="server" Width="90%" CssClass="form-control"></asp:TextBox>
-                    </p>
+                    <div class="form-group">
+                        <YAF:HelpLabel ID="HelpLabel1" runat="server"
+                                       AssociatedControlID="SearchInput"
+                                       LocalizedTag="MASK" LocalizedPage="ADMIN_BANNEDNAME" />
+                        <asp:TextBox ID="SearchInput" runat="server" 
+                                     Width="90%" 
+                                     CssClass="form-control"></asp:TextBox>
+                    </div>
                 </div>
                 <div class="card-footer text-center">
-                    <YAF:ThemeButton ID="search" runat="server"  Type="Primary" Size="Small"
-                        TextLocalizedTag="BTNSEARCH" TextLocalizedPage="SEARCH" Icon="search"
-                        OnClick="Search_Click">
+                    <YAF:ThemeButton ID="search" runat="server" 
+                                     Type="Primary" 
+                                     Size="Small"
+                                     TextLocalizedTag="BTNSEARCH" TextLocalizedPage="SEARCH" 
+                                     Icon="search"
+                                     OnClick="Search_Click">
                     </YAF:ThemeButton>
                 </div>
             </div>
@@ -43,7 +48,7 @@
              <YAF:Pager ID="PagerTop" runat="server" OnPageChange="PagerTop_PageChange" />
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-hand-paper fa-fw"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel4" runat="server" LocalizedTag="TITLE" LocalizedPage="ADMIN_BANNEDNAME" />
+                    <i class="fa fa-hand-paper fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel4" runat="server" LocalizedTag="TITLE" LocalizedPage="ADMIN_BANNEDNAME" />
                 </div>
                 <div class="card-body">
     <asp:Repeater ID="list" runat="server" OnItemCommand="List_ItemCommand">

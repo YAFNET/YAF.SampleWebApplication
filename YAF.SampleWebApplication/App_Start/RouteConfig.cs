@@ -28,8 +28,17 @@ namespace YAF.SampleWebApplication
 
     using Microsoft.AspNet.FriendlyUrls;
 
+    /// <summary>
+    /// The route config.
+    /// </summary>
     public static class RouteConfig
     {
+        /// <summary>
+        /// The register routes.
+        /// </summary>
+        /// <param name="routes">
+        /// The routes.
+        /// </param>
         public static void RegisterRoutes(RouteCollection routes)
         {
             var settings = new FriendlyUrlSettings { AutoRedirectMode = RedirectMode.Permanent };

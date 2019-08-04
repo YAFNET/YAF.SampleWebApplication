@@ -2886,6 +2886,7 @@ BEGIN
         ModeratorID = a.GroupID,
         ModeratorName = b.Name,
         ModeratorEmail = '',
+		ModeratorBlockFlags = 0,
         ModeratorAvatar = '',
         ModeratorAvatarImage = CAST(0 as bit),
         ModeratorDisplayName = b.Name,
@@ -2908,6 +2909,7 @@ BEGIN
         ModeratorID = usr.UserID,
         ModeratorName = usr.Name,
         ModeratorEmail = usr.Email,
+		ModeratorBlockFlags = usr.BlockFlags,
         ModeratorAvatar = ISNULL(usr.Avatar, ''),
         ModeratorAvatarImage = CAST((select count(1) from [{databaseOwner}].[{objectQualifier}User] x where x.UserID=usr.UserID and AvatarImage is not null)as bit),
         ModeratorDisplayName = usr.DisplayName,
@@ -3399,6 +3401,7 @@ begin
     -- should it be physically deleter or not?
     if (@EraseMessage = 1) begin
         delete [{databaseOwner}].[{objectQualifier}Attachment] where MessageID = @MessageID
+		delete [{databaseOwner}].[{objectQualifier}Activity] where MessageID = @MessageID
         delete [{databaseOwner}].[{objectQualifier}MessageReportedAudit] where MessageID = @MessageID
         delete [{databaseOwner}].[{objectQualifier}MessageReported] where MessageID = @MessageID
         --delete thanks related to this message
@@ -5772,6 +5775,8 @@ BEGIN
 
         DELETE FROM  [{databaseOwner}].[{objectQualifier}topic] WHERE TopicMovedID = @TopicID
 
+		
+		delete [{databaseOwner}].[{objectQualifier}Activity] where TopicID = @TopicID
         DELETE  [{databaseOwner}].[{objectQualifier}Attachment] WHERE MessageID IN (SELECT MessageID FROM  [{databaseOwner}].[{objectQualifier}message] WHERE TopicID = @TopicID)
         DELETE  [{databaseOwner}].[{objectQualifier}MessageHistory] WHERE MessageID IN (SELECT MessageID FROM  [{databaseOwner}].[{objectQualifier}message] WHERE TopicID = @TopicID)
 
@@ -7247,6 +7252,7 @@ begin
         a.[DailyDigest],
         a.[NotificationType],
         a.[Flags],
+		a.[BlockFlags],
         a.[Points],
         a.[IsApproved],
         a.[IsGuest],
@@ -7311,6 +7317,7 @@ begin
         a.[DailyDigest],
         a.[NotificationType],
         a.[Flags],
+		a.[BlockFlags],
         a.[Points],
         a.[IsApproved],
         a.[IsGuest],
@@ -7428,6 +7435,7 @@ begin
         a.[DailyDigest],
         a.[NotificationType],
         a.[Flags],
+		a.[BlockFlags],
         a.[Points],
         a.[IsApproved],
         a.[IsGuest],
@@ -9802,7 +9810,6 @@ GO
 CREATE procedure [{databaseOwner}].[{objectQualifier}user_lazydata](
     @UserID	int,
     @BoardID int,
-    @ShowPendingMails bit = 0,
     @ShowPendingBuddies bit = 0,
     @ShowUnreadPMs bit = 0,
     @ShowUserAlbums bit = 0,
@@ -9859,9 +9866,20 @@ begin
         IsDirty				= SIGN(a.IsDirty),
         IsFacebookUser      = a.IsFacebookUser,
         IsTwitterUser       = a.IsTwitterUser,
-        MailsPending		= CASE WHEN @ShowPendingMails > 0 THEN (select count(1) from [{databaseOwner}].[{objectQualifier}Mail] WHERE [ToUserName] = a.Name) ELSE 0 END,
-		ModeratePosts       = (select count(1) from [{databaseOwner}].[{objectQualifier}Message] where (Flags & 128)=128 and IsDeleted = 0 or IsApproved=0 and IsDeleted = 0 and BoardID = @BoardID),
+        ModeratePosts       = (select count(1)
+                                from [{databaseOwner}].[{objectQualifier}Message] a
+                                join [{databaseOwner}].[{objectQualifier}Topic] b ON a.TopicID=b.TopicID
+                                join [{databaseOwner}].[{objectQualifier}Forum] c ON b.ForumID=c.ForumID
+                                join [{databaseOwner}].[{objectQualifier}Category] d ON c.CategoryID=d.CategoryID
+                                 where (a.Flags & 128)=128 and a.IsDeleted = 0 and d.BoardID =1 or a.IsApproved=0 and a.IsDeleted = 0 AND d.BoardID=@BoardID
+                            ),
+		ReceivedThanks      = (select count(1) from [{databaseOwner}].[{objectQualifier}Activity] where UserID=@UserID and (Flags & 1024)=1024 and Notification = 1),
+		Mention             = (select count(1) from [{databaseOwner}].[{objectQualifier}Activity] where UserID=@UserID and (Flags & 512)=512 and Notification = 1),
+        Quoted             = (select count(1) from [{databaseOwner}].[{objectQualifier}Activity] where UserID=@UserID and (Flags & 4096)=4096 and Notification = 1),
         UnreadPrivate		= CASE WHEN @ShowUnreadPMs > 0 THEN (select count(1) from [{databaseOwner}].[{objectQualifier}UserPMessage] where UserID=@UserID and IsRead=0 and IsDeleted = 0 and IsArchived = 0) ELSE 0 END,
+        LastReceivedThanks  = (SELECT TOP 1 MessageID FROM [{databaseOwner}].[{objectQualifier}Activity] where UserID=@UserID and (Flags & 1024)=1024 and Notification = 1),
+		LastMention		    = (SELECT TOP 1 MessageID FROM [{databaseOwner}].[{objectQualifier}Activity] where UserID=@UserID and (Flags & 512)=512 and Notification = 1),
+        LastQuoted		    = (SELECT TOP 1 MessageID FROM [{databaseOwner}].[{objectQualifier}Activity] where UserID=@UserID and (Flags & 5096)=4096 and Notification = 1),
         LastUnreadPm		= CASE WHEN @ShowUnreadPMs > 0 THEN (SELECT TOP 1 Created FROM [{databaseOwner}].[{objectQualifier}PMessage] pm INNER JOIN [{databaseOwner}].[{objectQualifier}UserPMessage] upm ON pm.PMessageID = upm.PMessageID WHERE upm.UserID=@UserID and upm.IsRead=0  and upm.IsDeleted = 0 and upm.IsArchived = 0 ORDER BY pm.Created DESC) ELSE NULL END,
         PendingBuddies      = CASE WHEN @ShowPendingBuddies > 0 THEN (SELECT COUNT(ID) FROM [{databaseOwner}].[{objectQualifier}Buddy] WHERE ToUserID = @UserID AND Approved = 0) ELSE 0 END,
         LastPendingBuddies	= CASE WHEN @ShowPendingBuddies > 0 THEN (SELECT TOP 1 Requested FROM [{databaseOwner}].[{objectQualifier}Buddy] WHERE ToUserID=@UserID and Approved = 0 ORDER BY Requested DESC) ELSE NULL END,
@@ -10508,8 +10526,8 @@ BEGIN
 		m.[Message],
 		m.Flags,
 		m.Posted,
-		m.UserDisplayName,
-		m.UserName,
+		ISNULL(m.UserDisplayName, u.DisplayName) as UserDisplayName,
+        ISNULL(m.UserName, u.Name) as UserName,
 		u.UserStyle,
 		m.UserID,
         t.TopicID,
@@ -10524,7 +10542,7 @@ BEGIN
 		join [{databaseOwner}].[{objectQualifier}Message] m on m.TopicID = t.TopicID
 		join  [{databaseOwner}].[{objectQualifier}User] u on u.UserID = m.UserID
     where
-        c.BoardID=1 and
+        c.BoardID=@BoardID and
 		t.IsDeleted = 0 and
 		m.IsDeleted = 0 and
 		m.IsApproved = 1 and

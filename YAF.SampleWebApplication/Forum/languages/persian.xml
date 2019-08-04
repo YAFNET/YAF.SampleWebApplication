@@ -76,6 +76,7 @@
     <Resource tag="ATTACHMENTS">مدیریت فایل‌های ضمیمه</Resource>
     <Resource tag="AVATAR">نمایش تصویر پروفایل</Resource>
     <Resource tag="COOKIES">Views the cookie policy page</Resource>
+    <Resource tag="CP_BLOCKOPTIONS">Edits his Ignored users and block option</Resource>
     <Resource tag="CP_CHANGEPASSWORD">تغییر کلمه رمز</Resource>
     <Resource tag="CP_EDITALBUMIMAGES">ویرایش تصاویر آلبوم</Resource>
     <Resource tag="CP_EDITAVATAR">ویرایش تصویر پروفایل</Resource>
@@ -1847,7 +1848,7 @@
     <Resource tag="RUNNING_VERSION">شما در حال استفاده از YetAnotherForum.NET نسخه &lt;strong&gt;{0}&lt;/strong&gt; (تاریخ :{1}) هستید.</Resource>
     <Resource tag="TITLE">کنترل نسخه</Resource>
     <Resource tag="UPGRADE_VERSION">&lt;p dir="rtl"&gt;شما می توانید آخرین نسخه را از
-&lt;a href="http://yafnet.codeplex.com/"&gt;اینجا&lt;/a&gt; دریافت کنید.&lt;/p&gt;
+&lt;a href="http://yetanotherforum.net/download/"&gt;اینجا&lt;/a&gt; دریافت کنید.&lt;/p&gt;
       &lt;p dir="rtl"&gt;&lt;/p&gt;
     </Resource>
   </page>
@@ -1935,7 +1936,7 @@
     <Resource tag="DROP_HERE">فایل (ها) را اینجا بکشید</Resource>
     <Resource tag="FILEERROR">'{0}' فایل مجاز برای ارسال نمی باشد.</Resource>
     <Resource tag="FILENAME">نام فایل</Resource>
-    <Resource tag="NO_ATTACHMENTS">You are not having any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
+    <Resource tag="NO_ATTACHMENTS">You don't have any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
     <Resource tag="SELECT_FILE">فایلی را که مایل به ارسال آن هستید انتخاب کنید.</Resource>
     <Resource tag="SIZE">اندازه</Resource>
     <Resource tag="START_UPLOADS">شروع آپلود</Resource>
@@ -2205,9 +2206,15 @@
     <Resource tag="TT_QUOTE">نقل قول</Resource>
     <Resource tag="TT_SAVE">Save Message Draft</Resource>
     <Resource tag="TT_UNDERLINE">زیرخط دار</Resource>
+    <Resource tag="UNREAD_MENTION_MSG">You have {0} unread Mentions, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_MENTION_TITLE">Somebody Mentioned you in a Topic</Resource>
     <Resource tag="UNREAD_MSG">شما {0} پیغام خوانده نشده دارید</Resource>
     <Resource tag="UNREAD_MSG_TITLE">پیام خصوصی جدید</Resource>
     <Resource tag="UNREAD_MSG2">شما {0} پیام در صندوق خود دارید. آیا مایل به باز کردن صندوق پستی خود هستید؟</Resource>
+    <Resource tag="UNREAD_QUOTED_MSG">You have {0} unread quoted Posts, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_QUOTED_TITLE">Somebody Quoted you in a Topic</Resource>
+    <Resource tag="UNREAD_THANKS_MSG">You have {0} unread received Thanks, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_THANKS_TITLE">Somebody Thanked you for a Message</Resource>
     <Resource tag="UPDATE">بروزرسانی</Resource>
     <Resource tag="USERNAME_TOOLONG">نام کاربری یا نام نمایشی باید بیش از {0} کاراکتر باشد.</Resource>
     <Resource tag="USERNAME_TOOSMALL">نام کاربری یا نام نمایشی باید بیش از {0} کاراکتر باشد.</Resource>
@@ -2487,6 +2494,18 @@
     <Resource tag="ZM">زامبیا</Resource>
     <Resource tag="ZW">زیمباوه</Resource>
   </page>
+  <page name="CP_BLOCKOPTIONS">
+    <Resource tag="BLOCK_BUDDYS">Block Friend Requests</Resource>
+    <Resource tag="BLOCK_BUDDYS">Block Private Messages</Resource>
+    <Resource tag="BLOCK_EMAILS">Block E-Mails</Resource>
+    <Resource tag="BLOCK_OPTIONS">Block Options</Resource>
+    <Resource tag="BLOCK_PMS">Block Private Messages</Resource>
+    <Resource tag="IGNORED_USERS">Ignored User List</Resource>
+    <Resource tag="NOTE_BLOCK">Admins and Users in the Friend List will be excluded from the Blocking!</Resource>
+    <Resource tag="NOTE_USERS">Posts of Ignored Users will be hidden. This does not include Quoted Posts</Resource>
+    <Resource tag="SELECT_OPTIONS">Options to Block other Users from Contacting you...</Resource>
+    <Resource tag="TITLE">User Block Options &amp; Ignored Users</Resource>
+  </page>
   <page name="CP_CHANGEPASSWORD">
     <Resource tag="CHANGE_BUTTON">تائید</Resource>
     <Resource tag="CHANGE_SUCCESS">رمز عبور با موفقیت تغییر پیدا کرد.</Resource>
@@ -2662,12 +2681,19 @@
     <Resource tag="TO">به</Resource>
   </page>
   <page name="CP_PROFILE">
+    <Resource tag="ACTIVITY">Your Activity</Resource>
     <Resource tag="ARCHIVE">آرشیو</Resource>
     <Resource tag="CHANGE_PASSWORD">تغییر رمز عبور</Resource>
     <Resource tag="CONTROL_PANEL">کنترل پنل</Resource>
+    <Resource tag="CREATED_REPLY">Replied to a Post</Resource>
+    <Resource tag="CREATED_REPLY_MSG">Added an Reply to the Topic {0}</Resource>
+    <Resource tag="CREATED_TOPIC">Created a new Topic</Resource>
+    <Resource tag="CREATED_TOPIC_MSG">Created a new Topic {0}</Resource>
     <Resource tag="EDIT_AVATAR">ویرایش تصویر پروفایل</Resource>
     <Resource tag="EDIT_PROFILE">ویرایش پروفایل</Resource>
     <Resource tag="EDIT_SIGNATURE">ویرایش امضا</Resource>
+    <Resource tag="GIVEN_THANKS">Given Thanks to a Post</Resource>
+    <Resource tag="GIVEN_THANKS_MSG">Given Thanks to {0} in the Topic {1}</Resource>
     <Resource tag="GROUPS">شما عضو این گروه ها هستید:</Resource>
     <Resource tag="INBOX">صندوق ورودی</Resource>
     <Resource tag="JOINED">شما از این تاریخ عضو بوده اید:</Resource>
@@ -2675,10 +2701,16 @@
     <Resource tag="NEW_MESSAGE">پیغام جدید</Resource>
     <Resource tag="NUMPOSTS">تعداد ارسال‌ها:</Resource>
     <Resource tag="PERSONAL_PROFILE">پروفایل شخصی:</Resource>
+    <Resource tag="RECEIVED_THANKS">Received a Thanks to a Post</Resource>
+    <Resource tag="RECEIVED_THANKS_MSG">Has Received a Thanks from {0} in the Topic {1}</Resource>
     <Resource tag="SENTITEMS">موارد ارسال شده</Resource>
     <Resource tag="SIGNATURE">امضا</Resource>
     <Resource tag="SUBSCRIPTIONS">تنظیمات اطلاع رسانی ایمیل</Resource>
     <Resource tag="VIEW_PROFILE">نمایش پروفایل</Resource>
+    <Resource tag="WAS_MENTIONED">Was Mentioned</Resource>
+    <Resource tag="WAS_MENTIONED_MSG">Was Mentioned by {0} in the Topic {1}</Resource>
+    <Resource tag="WAS_QUOTED">Was Quoted</Resource>
+    <Resource tag="WAS_QUOTED_MSG">Was Quoted by {0} in the Topic {1}</Resource>
     <Resource tag="YOUR_ACCOUNT">حساب کاربری شما:</Resource>
     <Resource tag="YOUR_EMAIL">آدرس ایمیل شما:</Resource>
     <Resource tag="YOUR_USERDISPLAYNAME">نام نمایشی شما:</Resource>

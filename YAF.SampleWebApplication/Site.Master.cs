@@ -116,11 +116,29 @@ namespace YAF.SampleWebApplication
             }
         }
 
+        /// <summary>
+        /// The login link_ on click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void LoginLink_OnClick(object sender, EventArgs e)
         {
             this.Response.Redirect(YafBuildLink.GetLink(ForumPages.login, "ReturnUrl={0}", this.GetReturnUrl()));
         }
 
+        /// <summary>
+        /// The register link_ on click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void RegisterLink_OnClick(object sender, EventArgs e)
         {
             this.Response.Redirect(YafBuildLink.GetLink(ForumPages.register));

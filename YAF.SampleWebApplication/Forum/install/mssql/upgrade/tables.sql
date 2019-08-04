@@ -1917,11 +1917,8 @@ GO
 if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Message]') and name='UserDisplayName')
 begin
 	alter table [{databaseOwner}].[{objectQualifier}Message] add UserDisplayName nvarchar(255) 
-
 end
 GO
-
-
 
 if not exists (select top 1 1 from sys.columns where object_id =  object_id('[{databaseOwner}].[{objectQualifier}Message]') and name='IsApproved')
 begin
@@ -2881,4 +2878,23 @@ if exists (select top 1 1 from sys.columns where object_id = object_id('[{databa
 begin
     drop table [{databaseOwner}].[{objectQualifier}TopicStatus]
 end
+go
+
+if not exists (select top 1 1 from sys.columns where object_id = object_id(N'[{databaseOwner}].[{objectQualifier}User]') and name='BlockFlags')
+ 	alter table [{databaseOwner}].[{objectQualifier}User] add [BlockFlags] [int]	NOT NULL  constraint [DF_{objectQualifier}User_Block_Flags]  default (0)
+GO
+
+/* Create Activity Table */
+if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Activity]') and type in (N'U'))
+CREATE TABLE [{databaseOwner}].[{objectQualifier}Activity](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[UserID] [int] NOT NULL,
+	[Created] [datetime] NOT NULL,
+	[Flags] [int] NOT NULL,
+	[TopicID] [int] NULL,
+	[MessageID] [int] NULL,
+	[FromUserID] [int] NULL,
+	[Notification]  bit NOT NULL default (0),
+	constraint [PK_{objectQualifier}Activity] primary key(ID)
+	)
 go

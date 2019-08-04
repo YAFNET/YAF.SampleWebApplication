@@ -2,7 +2,6 @@
 
 <%@ Import Namespace="YAF.Utils.Helpers" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
-<%@ Import Namespace="YAF.Classes" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
 
 <div class="row">
@@ -58,7 +57,7 @@
             <div>
                 <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
                                     LocalizedPage="MODERATE" LocalizedTag="VIEWS" />:
-                <% this.Response.Write(FormatViews());%>
+                <% this.Response.Write(this.FormatViews());%>
             </div>
         </div>
     </div>

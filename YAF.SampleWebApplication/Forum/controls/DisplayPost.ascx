@@ -5,8 +5,21 @@
 <%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="ServiceStack" %>
 
+<asp:PlaceHolder runat="server" ID="ShowHideIgnoredUserPost" Visible="False">
+    <YAF:Alert runat="server" Type="info" Dismissing="True">
+        <YAF:ThemeButton ID="btnTogglePost" runat="server" 
+                         Type="Info"
+                         TextLocalizedPage="POSTS"
+                         TextLocalizedTag="TOGGLEPOST"
+                         Icon="eye"
+                         DataToggle="collapse"
+                         DataTarget='<%# this.MessageRow.ClientID %>'/>
+    </YAF:Alert>
+</asp:PlaceHolder>
 
-<div class="row">
+
+<asp:Panel runat="server" ID="MessageRow">
+    <div class="row">
     <div class="col-xl-12">
         <div class="card mb-3">
             <div class="card-header">
@@ -115,10 +128,10 @@
                             DataRow="<%# this.DataRow %>"></YAF:DisplayPostFooter>
                     </div>
                     <div class="col-md-6 px-2">
-                        <div id="<%# "dvThanksInfo{0}".Fmt(this.DataRow["MessageID"]) %>" class="pl-1">
+                        <div id="<%# "dvThanksInfo{0}".Fmt(this.DataRow["MessageID"]) %>" class="pl-1 small">
                             <asp:Literal runat="server" Visible="false" ID="ThanksDataLiteral"></asp:Literal>
                         </div>
-                        <div id="<%# "dvThanks{0}".Fmt(this.DataRow["MessageID"]) %>" class="pl-1">
+                        <div id="<%# "dvThanks{0}".Fmt(this.DataRow["MessageID"]) %>" class="pl-1 small">
                             <asp:Literal runat="server" Visible="false" ID="thanksDataExtendedLiteral"></asp:Literal>
                         </div>
                     </div>
@@ -181,4 +194,5 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
+</asp:Panel>

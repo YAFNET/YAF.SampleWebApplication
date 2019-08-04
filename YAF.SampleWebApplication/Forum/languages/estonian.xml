@@ -76,6 +76,7 @@
     <Resource tag="ATTACHMENTS">Käsitleb manused</Resource>
     <Resource tag="AVATAR">Avab avatari</Resource>
     <Resource tag="COOKIES">Views the cookie policy page</Resource>
+    <Resource tag="CP_BLOCKOPTIONS">Edits his Ignored users and block option</Resource>
     <Resource tag="CP_CHANGEPASSWORD">Muudab parooli</Resource>
     <Resource tag="CP_EDITALBUMIMAGES">Muudab albumi pildid</Resource>
     <Resource tag="CP_EDITAVATAR">Muudab avatari</Resource>
@@ -1836,7 +1837,7 @@
     <Resource tag="LATEST_VERSION">The latest final version available is &lt;strong&gt;{0}&lt;/strong&gt; released &lt;strong&gt;{1}&lt;/strong&gt;.</Resource>
     <Resource tag="RUNNING_VERSION">You are running YetAnotherForum.NET version &lt;strong&gt;{0}&lt;/strong&gt; (Date: {1}).</Resource>
     <Resource tag="TITLE">Version Check</Resource>
-    <Resource tag="UPGRADE_VERSION">You can download the latest version from &lt;a target="_top" href="http://yafnet.codeplex.com/"&gt;
+    <Resource tag="UPGRADE_VERSION">You can download the latest version from &lt;a target="_top" href="http://yetanotherforum.net/download/"&gt;
                   here&lt;/a&gt;.</Resource>
   </page>
   <page name="ADMINMENU">
@@ -1921,7 +1922,7 @@
     <Resource tag="ERROR_TOOBIG">Fail on liiga suur manuse jaoks.</Resource>
     <Resource tag="FILEERROR">Faili tüüp '{0}' ei ole üleslaadimiseks lubatud</Resource>
     <Resource tag="FILENAME">Faili nimi</Resource>
-    <Resource tag="NO_ATTACHMENTS">You are not having any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
+    <Resource tag="NO_ATTACHMENTS">You don't have any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
     <Resource tag="SELECT_FILE">Valige failid üleslaadimiseks.</Resource>
     <Resource tag="SIZE">Suurus</Resource>
     <Resource tag="START_UPLOADS">Start upload(s)</Resource>
@@ -2188,9 +2189,15 @@
     <Resource tag="TT_QUOTE">Tsitaat</Resource>
     <Resource tag="TT_SAVE">Save Message Draft</Resource>
     <Resource tag="TT_UNDERLINE">Allajoonitud</Resource>
+    <Resource tag="UNREAD_MENTION_MSG">You have {0} unread Mentions, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_MENTION_TITLE">Somebody Mentioned you in a Topic</Resource>
     <Resource tag="UNREAD_MSG">Teie postkastis on {0} lugemata kirja.</Resource>
     <Resource tag="UNREAD_MSG_TITLE">New Private Message(s)</Resource>
     <Resource tag="UNREAD_MSG2">You have {0} unread message(s) in your Inbox. Would You Like to go to your Inbox now?</Resource>
+    <Resource tag="UNREAD_QUOTED_MSG">You have {0} unread quoted Posts, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_QUOTED_TITLE">Somebody Quoted you in a Topic</Resource>
+    <Resource tag="UNREAD_THANKS_MSG">You have {0} unread received Thanks, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_THANKS_TITLE">Somebody Thanked you for a Message</Resource>
     <Resource tag="UPDATE">Uuenda</Resource>
     <Resource tag="USERNAME_TOOLONG">Kasutajanimi ei tohi olla pikem kui {0} sümbolit.</Resource>
     <Resource tag="USERNAME_TOOSMALL">User Name or Display User Name must be more than {0} characters.</Resource>
@@ -2470,6 +2477,18 @@
     <Resource tag="ZM">Zambia</Resource>
     <Resource tag="ZW">Zimbabwe</Resource>
   </page>
+  <page name="CP_BLOCKOPTIONS">
+    <Resource tag="BLOCK_BUDDYS">Block Friend Requests</Resource>
+    <Resource tag="BLOCK_BUDDYS">Block Private Messages</Resource>
+    <Resource tag="BLOCK_EMAILS">Block E-Mails</Resource>
+    <Resource tag="BLOCK_OPTIONS">Block Options</Resource>
+    <Resource tag="BLOCK_PMS">Block Private Messages</Resource>
+    <Resource tag="IGNORED_USERS">Ignored User List</Resource>
+    <Resource tag="NOTE_BLOCK">Admins and Users in the Friend List will be excluded from the Blocking!</Resource>
+    <Resource tag="NOTE_USERS">Posts of Ignored Users will be hidden. This does not include Quoted Posts</Resource>
+    <Resource tag="SELECT_OPTIONS">Options to Block other Users from Contacting you...</Resource>
+    <Resource tag="TITLE">User Block Options &amp; Ignored Users</Resource>
+  </page>
   <page name="CP_CHANGEPASSWORD">
     <Resource tag="CHANGE_BUTTON">Saada</Resource>
     <Resource tag="CHANGE_SUCCESS">Parool on muudetud.</Resource>
@@ -2645,12 +2664,19 @@
     <Resource tag="TO">Kellele</Resource>
   </page>
   <page name="CP_PROFILE">
+    <Resource tag="ACTIVITY">Your Activity</Resource>
     <Resource tag="ARCHIVE">Arhiiv</Resource>
     <Resource tag="CHANGE_PASSWORD">Muuda parooli</Resource>
     <Resource tag="CONTROL_PANEL">Juhtpaneel</Resource>
+    <Resource tag="CREATED_REPLY">Replied to a Post</Resource>
+    <Resource tag="CREATED_REPLY_MSG">Added an Reply to the Topic {0}</Resource>
+    <Resource tag="CREATED_TOPIC">Created a new Topic</Resource>
+    <Resource tag="CREATED_TOPIC_MSG">Created a new Topic {0}</Resource>
     <Resource tag="EDIT_AVATAR">Muuda avatari</Resource>
     <Resource tag="EDIT_PROFILE">Muuda profiili</Resource>
     <Resource tag="EDIT_SIGNATURE">Muuda allkirja</Resource>
+    <Resource tag="GIVEN_THANKS">Given Thanks to a Post</Resource>
+    <Resource tag="GIVEN_THANKS_MSG">Given Thanks to {0} in the Topic {1}</Resource>
     <Resource tag="GROUPS">Kuulute gruppidesse:</Resource>
     <Resource tag="INBOX">Postkast</Resource>
     <Resource tag="JOINED">Olete foorumi liige alates:</Resource>
@@ -2658,10 +2684,16 @@
     <Resource tag="NEW_MESSAGE">Uus sõnum</Resource>
     <Resource tag="NUMPOSTS">Postituste arv:</Resource>
     <Resource tag="PERSONAL_PROFILE">Personaalne profiil:</Resource>
+    <Resource tag="RECEIVED_THANKS">Received a Thanks to a Post</Resource>
+    <Resource tag="RECEIVED_THANKS_MSG">Has Received a Thanks from {0} in the Topic {1}</Resource>
     <Resource tag="SENTITEMS">Saadetud</Resource>
     <Resource tag="SIGNATURE">Allkiri</Resource>
     <Resource tag="SUBSCRIPTIONS">E-kirja teadete eelistused</Resource>
     <Resource tag="VIEW_PROFILE">Vaata profiili</Resource>
+    <Resource tag="WAS_MENTIONED">Was Mentioned</Resource>
+    <Resource tag="WAS_MENTIONED_MSG">Was Mentioned by {0} in the Topic {1}</Resource>
+    <Resource tag="WAS_QUOTED">Was Quoted</Resource>
+    <Resource tag="WAS_QUOTED_MSG">Was Quoted by {0} in the Topic {1}</Resource>
     <Resource tag="YOUR_ACCOUNT">Teie konto</Resource>
     <Resource tag="YOUR_EMAIL">Teie e-kirja aadress:</Resource>
     <Resource tag="YOUR_USERDISPLAYNAME">Teistele kuvatav nimi:</Resource>

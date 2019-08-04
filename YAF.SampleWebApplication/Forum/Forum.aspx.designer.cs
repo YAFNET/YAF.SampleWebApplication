@@ -19,6 +19,6 @@ namespace YAF.SampleWebApplication {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::YAF.Forum forum;
+        protected global::YAF.Web.Controls.Forum forum;
     }
 }

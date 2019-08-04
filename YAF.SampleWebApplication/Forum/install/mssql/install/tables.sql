@@ -595,6 +595,7 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		[DailyDigest] [bit] NOT NULL constraint [DF_{objectQualifier}User_DailyDigest] default (0),
 		[NotificationType] [int] default (10),
 		[Flags] [int]	NOT NULL  constraint [DF_{objectQualifier}User_Flags]  default (0),
+		[BlockFlags] [int]	NOT NULL  constraint [DF_{objectQualifier}User_Block_Flags]  default (0),
 		[Points] [int]	NOT NULL constraint [DF_{objectQualifier}User_Points] default (1),		
 		[IsApproved]	AS (CONVERT([bit],sign([Flags]&(2)),(0))),
 		[IsGuest]	AS (CONVERT([bit],sign([Flags]&(4)),(0))),
@@ -1060,6 +1061,21 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 )WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
 	)
 GO
+
+/* Create Activity Table */
+if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Activity]') and type in (N'U'))
+CREATE TABLE [{databaseOwner}].[{objectQualifier}Activity](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[UserID] [int] NOT NULL,
+	[Created] [datetime] NOT NULL,
+	[Flags] [int] NOT NULL,
+	[TopicID] [int] NULL,
+	[MessageID] [int] NULL,
+	[FromUserID] [int] NULL,
+	[Notification]  bit NOT NULL default (0),
+	constraint [PK_{objectQualifier}Activity] primary key(ID)
+	)
+go
 
 exec('[{databaseOwner}].[{objectQualifier}drop_defaultconstraint_oncolumn] {objectQualifier}Board, BoardUID')
 GO

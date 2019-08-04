@@ -28,7 +28,7 @@ namespace YAF.SampleWebApplication {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::YAF.Controls.Form form1;
+        protected global::YAF.Web.Controls.Form form1;
         
         /// <summary>
         /// ScriptManager control.

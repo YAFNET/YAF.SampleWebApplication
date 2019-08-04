@@ -76,6 +76,7 @@
     <Resource tag="ATTACHMENTS">Handles attachments</Resource>
     <Resource tag="AVATAR">Views avatar</Resource>
     <Resource tag="COOKIES">Views the cookie policy page</Resource>
+    <Resource tag="CP_BLOCKOPTIONS">Edits his Ignored users and block option</Resource>
     <Resource tag="CP_CHANGEPASSWORD">Changes password</Resource>
     <Resource tag="CP_EDITALBUMIMAGES">Edits album images</Resource>
     <Resource tag="CP_EDITAVATAR">Edits his avatar</Resource>
@@ -1836,7 +1837,7 @@
     <Resource tag="LATEST_VERSION">The latest final version available is &lt;strong&gt;{0}&lt;/strong&gt; released &lt;strong&gt;{1}&lt;/strong&gt;.</Resource>
     <Resource tag="RUNNING_VERSION">You are running YetAnotherForum.NET version &lt;strong&gt;{0}&lt;/strong&gt; (Date: {1}).</Resource>
     <Resource tag="TITLE">Version Check</Resource>
-    <Resource tag="UPGRADE_VERSION">You can download the latest version from &lt;a target="_top" href="http://yafnet.codeplex.com/"&gt;
+    <Resource tag="UPGRADE_VERSION">You can download the latest version from &lt;a target="_top" href="http://yetanotherforum.net/download/"&gt;
 						here&lt;/a&gt;.</Resource>
   </page>
   <page name="ADMINMENU">
@@ -1921,7 +1922,7 @@
     <Resource tag="ERROR_TOOBIG">Você não pode anexar arquivos grandes demais.</Resource>
     <Resource tag="FILEERROR">'{0}' não é um arquivo válido para ser carregado.</Resource>
     <Resource tag="FILENAME">Nome do Arquivo</Resource>
-    <Resource tag="NO_ATTACHMENTS">You are not having any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
+    <Resource tag="NO_ATTACHMENTS">You don't have any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
     <Resource tag="SELECT_FILE">Selecione o arquivo que você deseja carregar.</Resource>
     <Resource tag="SIZE">Tamanho</Resource>
     <Resource tag="START_UPLOADS">Start upload(s)</Resource>
@@ -2191,9 +2192,15 @@
     <Resource tag="TT_QUOTE">Quote</Resource>
     <Resource tag="TT_SAVE">Save Message Draft</Resource>
     <Resource tag="TT_UNDERLINE">Underline</Resource>
+    <Resource tag="UNREAD_MENTION_MSG">You have {0} unread Mentions, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_MENTION_TITLE">Somebody Mentioned you in a Topic</Resource>
     <Resource tag="UNREAD_MSG">Você tem {0} mensagem(s) não lida(s) em sua Caixa de Entrada.</Resource>
     <Resource tag="UNREAD_MSG_TITLE">New Private Message(s)</Resource>
     <Resource tag="UNREAD_MSG2">You have {0} unread message(s) in your Inbox. Would You Like to go to your Inbox now?</Resource>
+    <Resource tag="UNREAD_QUOTED_MSG">You have {0} unread quoted Posts, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_QUOTED_TITLE">Somebody Quoted you in a Topic</Resource>
+    <Resource tag="UNREAD_THANKS_MSG">You have {0} unread received Thanks, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_THANKS_TITLE">Somebody Thanked you for a Message</Resource>
     <Resource tag="UPDATE">Atualizar</Resource>
     <Resource tag="USERNAME_TOOLONG">User Name or Display User Name cannot be more than {0} characters.</Resource>
     <Resource tag="USERNAME_TOOSMALL">User Name or Display User Name must be more than {0} characters.</Resource>
@@ -2473,6 +2480,18 @@
     <Resource tag="ZM">Zambia</Resource>
     <Resource tag="ZW">Zimbabwe</Resource>
   </page>
+  <page name="CP_BLOCKOPTIONS">
+    <Resource tag="BLOCK_BUDDYS">Block Friend Requests</Resource>
+    <Resource tag="BLOCK_BUDDYS">Block Private Messages</Resource>
+    <Resource tag="BLOCK_EMAILS">Block E-Mails</Resource>
+    <Resource tag="BLOCK_OPTIONS">Block Options</Resource>
+    <Resource tag="BLOCK_PMS">Block Private Messages</Resource>
+    <Resource tag="IGNORED_USERS">Ignored User List</Resource>
+    <Resource tag="NOTE_BLOCK">Admins and Users in the Friend List will be excluded from the Blocking!</Resource>
+    <Resource tag="NOTE_USERS">Posts of Ignored Users will be hidden. This does not include Quoted Posts</Resource>
+    <Resource tag="SELECT_OPTIONS">Options to Block other Users from Contacting you...</Resource>
+    <Resource tag="TITLE">User Block Options &amp; Ignored Users</Resource>
+  </page>
   <page name="CP_CHANGEPASSWORD">
     <Resource tag="CHANGE_BUTTON">Submit</Resource>
     <Resource tag="CHANGE_SUCCESS">Password has been successfully changed.</Resource>
@@ -2648,12 +2667,19 @@
     <Resource tag="TO">To</Resource>
   </page>
   <page name="CP_PROFILE">
+    <Resource tag="ACTIVITY">Your Activity</Resource>
     <Resource tag="ARCHIVE">Archive</Resource>
     <Resource tag="CHANGE_PASSWORD">Change Password</Resource>
     <Resource tag="CONTROL_PANEL">Painel de Controle</Resource>
+    <Resource tag="CREATED_REPLY">Replied to a Post</Resource>
+    <Resource tag="CREATED_REPLY_MSG">Added an Reply to the Topic {0}</Resource>
+    <Resource tag="CREATED_TOPIC">Created a new Topic</Resource>
+    <Resource tag="CREATED_TOPIC_MSG">Created a new Topic {0}</Resource>
     <Resource tag="EDIT_AVATAR">Modificar Avatar</Resource>
     <Resource tag="EDIT_PROFILE">Editar Perfil</Resource>
     <Resource tag="EDIT_SIGNATURE">Editar Assinatura</Resource>
+    <Resource tag="GIVEN_THANKS">Given Thanks to a Post</Resource>
+    <Resource tag="GIVEN_THANKS_MSG">Given Thanks to {0} in the Topic {1}</Resource>
     <Resource tag="GROUPS">Você é membro destes grupos:</Resource>
     <Resource tag="INBOX">Caixa de Entrada</Resource>
     <Resource tag="JOINED">Você é membro desde:</Resource>
@@ -2661,10 +2687,16 @@
     <Resource tag="NEW_MESSAGE">Nova Mensagem</Resource>
     <Resource tag="NUMPOSTS">Número de envios:</Resource>
     <Resource tag="PERSONAL_PROFILE">Perfil Pessoal:</Resource>
+    <Resource tag="RECEIVED_THANKS">Received a Thanks to a Post</Resource>
+    <Resource tag="RECEIVED_THANKS_MSG">Has Received a Thanks from {0} in the Topic {1}</Resource>
     <Resource tag="SENTITEMS">Itens Enviados</Resource>
     <Resource tag="SIGNATURE">Assinatura</Resource>
     <Resource tag="SUBSCRIPTIONS">Inscrições</Resource>
     <Resource tag="VIEW_PROFILE">View Profile</Resource>
+    <Resource tag="WAS_MENTIONED">Was Mentioned</Resource>
+    <Resource tag="WAS_MENTIONED_MSG">Was Mentioned by {0} in the Topic {1}</Resource>
+    <Resource tag="WAS_QUOTED">Was Quoted</Resource>
+    <Resource tag="WAS_QUOTED_MSG">Was Quoted by {0} in the Topic {1}</Resource>
     <Resource tag="YOUR_ACCOUNT">Sua Conta</Resource>
     <Resource tag="YOUR_EMAIL">Seu endereço de email:</Resource>
     <Resource tag="YOUR_USERDISPLAYNAME">Your display name:</Resource>

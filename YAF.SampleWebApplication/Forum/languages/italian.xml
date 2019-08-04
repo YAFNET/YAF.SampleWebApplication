@@ -76,6 +76,7 @@
     <Resource tag="ATTACHMENTS">Handles attachments</Resource>
     <Resource tag="AVATAR">Views avatar</Resource>
     <Resource tag="COOKIES">Views the cookie policy page</Resource>
+    <Resource tag="CP_BLOCKOPTIONS">Edits his Ignored users and block option</Resource>
     <Resource tag="CP_CHANGEPASSWORD">Changes password</Resource>
     <Resource tag="CP_EDITALBUMIMAGES">Edits album images</Resource>
     <Resource tag="CP_EDITAVATAR">Edits his avatar</Resource>
@@ -1914,7 +1915,7 @@
     <Resource tag="DROP_HERE">Trascina qui i file</Resource>
     <Resource tag="FILEERROR">'{0}' non e' un file che e' possibile caricare.</Resource>
     <Resource tag="FILENAME">Nome del file</Resource>
-    <Resource tag="NO_ATTACHMENTS">You are not having any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
+    <Resource tag="NO_ATTACHMENTS">You don't have any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
     <Resource tag="SELECT_FILE">Seleziona il file da allegare.</Resource>
     <Resource tag="SIZE">Dimensione</Resource>
     <Resource tag="START_UPLOADS">Avvia caricamento</Resource>
@@ -2184,9 +2185,15 @@
     <Resource tag="TT_QUOTE">Citazione</Resource>
     <Resource tag="TT_SAVE">Save Message Draft</Resource>
     <Resource tag="TT_UNDERLINE">Sottolineato</Resource>
+    <Resource tag="UNREAD_MENTION_MSG">You have {0} unread Mentions, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_MENTION_TITLE">Somebody Mentioned you in a Topic</Resource>
     <Resource tag="UNREAD_MSG">Ci sono {0} messaggi non letti nella tua cassetta postale.</Resource>
     <Resource tag="UNREAD_MSG_TITLE">Nuovi messaggi privati</Resource>
     <Resource tag="UNREAD_MSG2">Hai {0} nuovi messaggi nella tua cassetta postale. Vuoi leggerli ora?</Resource>
+    <Resource tag="UNREAD_QUOTED_MSG">You have {0} unread quoted Posts, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_QUOTED_TITLE">Somebody Quoted you in a Topic</Resource>
+    <Resource tag="UNREAD_THANKS_MSG">You have {0} unread received Thanks, would you like to go to the newest one?</Resource>
+    <Resource tag="UNREAD_THANKS_TITLE">Somebody Thanked you for a Message</Resource>
     <Resource tag="UPDATE">Aggiorna</Resource>
     <Resource tag="USERNAME_TOOLONG">Il nome utente od il nome utente da visualizzare non può essere più lungo di {0} caratteri.</Resource>
     <Resource tag="USERNAME_TOOSMALL">Il nome utente od il nome utente da visualizzare devono essere piu' lunghi di {0} caratteri.</Resource>
@@ -2466,6 +2473,18 @@
     <Resource tag="ZM">Zambia</Resource>
     <Resource tag="ZW">Zimbabwe</Resource>
   </page>
+  <page name="CP_BLOCKOPTIONS">
+    <Resource tag="BLOCK_BUDDYS">Block Friend Requests</Resource>
+    <Resource tag="BLOCK_BUDDYS">Block Private Messages</Resource>
+    <Resource tag="BLOCK_EMAILS">Block E-Mails</Resource>
+    <Resource tag="BLOCK_OPTIONS">Block Options</Resource>
+    <Resource tag="BLOCK_PMS">Block Private Messages</Resource>
+    <Resource tag="IGNORED_USERS">Ignored User List</Resource>
+    <Resource tag="NOTE_BLOCK">Admins and Users in the Friend List will be excluded from the Blocking!</Resource>
+    <Resource tag="NOTE_USERS">Posts of Ignored Users will be hidden. This does not include Quoted Posts</Resource>
+    <Resource tag="SELECT_OPTIONS">Options to Block other Users from Contacting you...</Resource>
+    <Resource tag="TITLE">User Block Options &amp; Ignored Users</Resource>
+  </page>
   <page name="CP_CHANGEPASSWORD">
     <Resource tag="CHANGE_BUTTON">Cambia</Resource>
     <Resource tag="CHANGE_SUCCESS">Password cambiata.</Resource>
@@ -2643,12 +2662,19 @@
     <Resource tag="TO">A</Resource>
   </page>
   <page name="CP_PROFILE">
+    <Resource tag="ACTIVITY">Your Activity</Resource>
     <Resource tag="ARCHIVE">Archivio</Resource>
     <Resource tag="CHANGE_PASSWORD">Cambia password</Resource>
     <Resource tag="CONTROL_PANEL">Pannello di controllo</Resource>
+    <Resource tag="CREATED_REPLY">Replied to a Post</Resource>
+    <Resource tag="CREATED_REPLY_MSG">Added an Reply to the Topic {0}</Resource>
+    <Resource tag="CREATED_TOPIC">Created a new Topic</Resource>
+    <Resource tag="CREATED_TOPIC_MSG">Created a new Topic {0}</Resource>
     <Resource tag="EDIT_AVATAR">Modifica avatar</Resource>
     <Resource tag="EDIT_PROFILE">Modifica profilo</Resource>
     <Resource tag="EDIT_SIGNATURE">Modifica firma</Resource>
+    <Resource tag="GIVEN_THANKS">Given Thanks to a Post</Resource>
+    <Resource tag="GIVEN_THANKS_MSG">Given Thanks to {0} in the Topic {1}</Resource>
     <Resource tag="GROUPS">Tu sei membro di questi gruppi:</Resource>
     <Resource tag="INBOX">In arrivo</Resource>
     <Resource tag="JOINED">Iscritto:</Resource>
@@ -2656,10 +2682,16 @@
     <Resource tag="NEW_MESSAGE">Nuovo messaggio</Resource>
     <Resource tag="NUMPOSTS">Numero di messaggi:</Resource>
     <Resource tag="PERSONAL_PROFILE">Profilo personale:</Resource>
+    <Resource tag="RECEIVED_THANKS">Received a Thanks to a Post</Resource>
+    <Resource tag="RECEIVED_THANKS_MSG">Has Received a Thanks from {0} in the Topic {1}</Resource>
     <Resource tag="SENTITEMS">Inviati</Resource>
     <Resource tag="SIGNATURE">Firma</Resource>
     <Resource tag="SUBSCRIPTIONS">Notifiche</Resource>
     <Resource tag="VIEW_PROFILE">Mostra profilo</Resource>
+    <Resource tag="WAS_MENTIONED">Was Mentioned</Resource>
+    <Resource tag="WAS_MENTIONED_MSG">Was Mentioned by {0} in the Topic {1}</Resource>
+    <Resource tag="WAS_QUOTED">Was Quoted</Resource>
+    <Resource tag="WAS_QUOTED_MSG">Was Quoted by {0} in the Topic {1}</Resource>
     <Resource tag="YOUR_ACCOUNT">Il tuo account</Resource>
     <Resource tag="YOUR_EMAIL">Il tuo indirizzo e-mail:</Resource>
     <Resource tag="YOUR_USERDISPLAYNAME">Il tuo nome visualizzato:</Resource>

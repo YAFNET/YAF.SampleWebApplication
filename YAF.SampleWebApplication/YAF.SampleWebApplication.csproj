@@ -59,14 +59,14 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -122,9 +122,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\YAF.dll</HintPath>
     </Reference>
-    <Reference Include="YAF.Classes.Config, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
+    <Reference Include="YAF.Configuration, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\YAF.Classes.Config.dll</HintPath>
+      <HintPath>bin\YAF.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="YAF.Core, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -141,6 +141,10 @@
     <Reference Include="YAF.Utils, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\YAF.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="YAF.Web, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\YAF.Web.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -680,8 +684,7 @@
     <Content Include="Forum\Content\images\play-pause.svg" />
     <Content Include="Forum\Content\images\progressbar.gif" />
     <Content Include="Forum\Content\images\spacer.gif" />
-    <Content Include="Forum\Content\images\YafLogo.png" />
-    <Content Include="Forum\Content\images\YafLogoSmall.png" />
+    <Content Include="Forum\Content\images\YAFLogo.svg" />
     <Content Include="Forum\Content\InstallWizard.min.css" />
     <Content Include="Forum\Content\jquery.fileupload.comb.min.css" />
     <Content Include="Forum\Content\Themes\cerulean\bootstrap-forum.css" />
@@ -767,6 +770,7 @@
     <Content Include="Forum\controls\PollList.ascx" />
     <Content Include="Forum\controls\PostAttachments.ascx" />
     <Content Include="Forum\controls\PostOptions.ascx" />
+    <Content Include="Forum\controls\ProfileTimeline.ascx" />
     <Content Include="Forum\controls\ProfileYourAccount.ascx" />
     <Content Include="Forum\controls\ReportedPosts.ascx" />
     <Content Include="Forum\controls\SimilarTopics.ascx" />
@@ -784,6 +788,7 @@
     <Content Include="Forum\Dialogs\DialogBox.ascx" />
     <Content Include="Forum\Dialogs\ExtensionsEdit.ascx" />
     <Content Include="Forum\Dialogs\ExtensionsImport.ascx" />
+    <Content Include="Forum\Dialogs\GroupMedalEdit.ascx" />
     <Content Include="Forum\Dialogs\ImageGallery.ascx" />
     <Content Include="Forum\Dialogs\LoginBox.ascx" />
     <Content Include="Forum\Dialogs\NntpForumEdit.ascx" />
@@ -793,6 +798,7 @@
     <Content Include="Forum\Dialogs\ReplaceWordsImport.ascx" />
     <Content Include="Forum\Dialogs\SpamWordsEdit.ascx" />
     <Content Include="Forum\Dialogs\SpamWordsImport.ascx" />
+    <Content Include="Forum\Dialogs\UserMedalEdit.ascx" />
     <Content Include="Forum\Dialogs\UsersImport.ascx" />
     <Content Include="Forum\digest.aspx" />
     <Content Include="Forum\Forum.aspx" />
@@ -940,6 +946,7 @@
     <Content Include="Forum\pages\attachments.ascx" />
     <Content Include="Forum\pages\avatar.ascx" />
     <Content Include="Forum\pages\cookies.ascx" />
+    <Content Include="Forum\pages\cp_blockoptions.ascx" />
     <Content Include="Forum\pages\cp_changepassword.ascx" />
     <Content Include="Forum\pages\cp_editalbumimages.ascx" />
     <Content Include="Forum\pages\cp_editavatar.ascx" />
@@ -1659,6 +1666,11 @@
     <Content Include="Forum\Content\webfonts\fa-regular-400.woff2" />
     <Content Include="Forum\Content\webfonts\fa-solid-900.eot" />
     <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
