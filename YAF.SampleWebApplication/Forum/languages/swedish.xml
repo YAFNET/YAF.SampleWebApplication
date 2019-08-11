@@ -82,6 +82,7 @@
     <Resource tag="CP_EDITAVATAR">Edits his avatar</Resource>
     <Resource tag="CP_EDITBUDDIES">Edits Friends</Resource>
     <Resource tag="CP_EDITPROFILE">Edits his profile</Resource>
+    <Resource tag="CP_EDITSETTINGS">Edit the user settings</Resource>
     <Resource tag="CP_MESSAGE">Views Private Messages</Resource>
     <Resource tag="CP_PM">Views Private Messages</Resource>
     <Resource tag="CP_PROFILE">Views a user profile</Resource>
@@ -823,6 +824,7 @@
     <Resource tag="USER_PROFILE">User Profile</Resource>
     <Resource tag="USER_REPUTATION">User Reputation</Resource>
     <Resource tag="USER_ROLES">User Roles</Resource>
+    <Resource tag="USER_SETTINGS">User Settings</Resource>
     <Resource tag="USER_SIG">User Signature</Resource>
     <Resource tag="USER_SUSPEND">User Suspend</Resource>
     <Resource tag="USERINFO_APPROVED">Is Approved:</Resource>
@@ -846,6 +848,7 @@
     <Resource tag="DELETE_ALL">Delete All</Resource>
     <Resource tag="DELETE_ALLOWED">Clean Up</Resource>
     <Resource tag="HIDE">Hide</Resource>
+    <Resource tag="NO_ENTRY">No Entries found</Resource>
     <Resource tag="SHOW">Show</Resource>
     <Resource tag="SINCEDATE">Start Date</Resource>
     <Resource tag="SINCEDATE_HELP">Select the start date for the log to show.</Resource>
@@ -857,48 +860,6 @@
     <Resource tag="TYPE">Type</Resource>
     <Resource tag="TYPES">Type</Resource>
     <Resource tag="TYPES_HELP">Choose to restrict the Log to certain types of events.</Resource>
-  </page>
-  <page name="ADMIN_EVENTLOGGROUPS">
-    <Resource tag="CANACCESS">Allowed</Resource>
-    <Resource tag="CANCEL">Cancel</Resource>
-    <Resource tag="GRANTALL">Grant All</Resource>
-    <Resource tag="GROUPNAME">Role</Resource>
-    <Resource tag="HEADER">Event Log Roles</Resource>
-    <Resource tag="PAGE">Real Page</Resource>
-    <Resource tag="REVOKEALL">Revoke All</Resource>
-    <Resource tag="SAVE">Save</Resource>
-    <Resource tag="TITLE">Event Log Roles</Resource>
-  </page>
-  <page name="ADMIN_EVENTLOGROUPACCESS">
-    <Resource tag="BOARDNAME">Board Name</Resource>
-    <Resource tag="CANCEL">Cancel</Resource>
-    <Resource tag="DELETEACCESS">Can Delete</Resource>
-    <Resource tag="EVENT">Log Name</Resource>
-    <Resource tag="GRANTALL">Grant All View</Resource>
-    <Resource tag="GRANTALLDELETE">Grant All Delete</Resource>
-    <Resource tag="GROUPNAME">Role</Resource>
-    <Resource tag="HEADER">Event Log Access For</Resource>
-    <Resource tag="LT_DEBUG">Debug</Resource>
-    <Resource tag="LT_ERROR">Errors</Resource>
-    <Resource tag="LT_INFORMATION">Information</Resource>
-    <Resource tag="LT_IPBANDETECTED">Detected a Banned IP</Resource>
-    <Resource tag="LT_IPBANLIFTED">Canceling IP ban</Resource>
-    <Resource tag="LT_IPBANSET">Setting IP ban</Resource>
-    <Resource tag="LT_SpamBotDetected">Spam Bot Detected</Resource>
-    <Resource tag="LT_SpamBotReported">Spam Bot Reported</Resource>
-    <Resource tag="LT_SpamMessageDetected">Spam Message Detected</Resource>
-    <Resource tag="LT_SpamMessageReported">Spam Message Reported</Resource>
-    <Resource tag="LT_SQLERROR">Sql Errors</Resource>
-    <Resource tag="LT_TRACE">Trace</Resource>
-    <Resource tag="LT_USERDELETED">Deleting users</Resource>
-    <Resource tag="LT_USERSUSPENDED">Suspending users</Resource>
-    <Resource tag="LT_USERUNSUSPENDED">Unsuspending users</Resource>
-    <Resource tag="LT_WARNING">Warnings</Resource>
-    <Resource tag="REVOKEALL">Revoke All View</Resource>
-    <Resource tag="REVOKEALLDELETE">Revoke All Delete</Resource>
-    <Resource tag="SAVE">Save</Resource>
-    <Resource tag="TITLE">Event Log Role Edit</Resource>
-    <Resource tag="VIEWACCESS">Can View</Resource>
   </page>
   <page name="ADMIN_EXTENSIONS">
     <Resource tag="ADD">Add</Resource>
@@ -1851,8 +1812,6 @@
     <Resource tag="admin_boardsettings">Board Settings</Resource>
     <Resource tag="admin_digest">Digest</Resource>
     <Resource tag="admin_eventlog">Event Log</Resource>
-    <Resource tag="admin_eventloggroupaccess">Event Log Access Edit</Resource>
-    <Resource tag="admin_eventloggroups">Event Log Roles</Resource>
     <Resource tag="admin_extensions">File Extensions</Resource>
     <Resource tag="admin_forums">Forums</Resource>
     <Resource tag="admin_groups">Roles</Resource>
@@ -2630,6 +2589,9 @@
     <Resource tag="XMPP">Your Jabber ID:</Resource>
     <Resource tag="YIM">Your Yahoo ID:</Resource>
   </page>
+  <page name="CP_EDITSETTINGS">
+    <Resource tag="TITLE">Edit Settings</Resource>
+  </page>
   <page name="CP_MESSAGE">
     <Resource tag="INBOX">Inkorg</Resource>
     <Resource tag="MSG_DELETED">Meddelandet raderades.</Resource>
@@ -2677,6 +2639,7 @@
     <Resource tag="CREATED_TOPIC_MSG">Created a new Topic {0}</Resource>
     <Resource tag="EDIT_AVATAR">Modify Avatar</Resource>
     <Resource tag="EDIT_PROFILE">Ändra profil</Resource>
+    <Resource tag="EDIT_SETTINGS">Edit Settings</Resource>
     <Resource tag="EDIT_SIGNATURE">Edit Signature</Resource>
     <Resource tag="GIVEN_THANKS">Given Thanks to a Post</Resource>
     <Resource tag="GIVEN_THANKS_MSG">Given Thanks to {0} in the Topic {1}</Resource>
@@ -3197,7 +3160,7 @@
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
       &lt;strong&gt;Output&lt;/strong&gt;
     &lt;/td&gt;
-    &lt;td&gt;&lt;a href="{0}yaf_postst123_topic_title.aspx" target="_blank" title="Go to Topic"&gt;Go to Topic&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href="{0}posts/t123-topic-title" target="_blank" title="Go to Topic"&gt;Go to Topic&lt;/a&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Post Links&lt;/td&gt;
@@ -3221,7 +3184,7 @@
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
       &lt;strong&gt;Output&lt;/strong&gt;
     &lt;/td&gt;
-    &lt;td&gt;&lt;a href="{0}yaf_postsm123_topic_title.aspx#post123" target="_blank" title="Go to Post"&gt;Go to Post&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href="{0}posts/m123-topic-title#post123" target="_blank" title="Go to Post"&gt;Go to Post&lt;/a&gt;&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 &lt;br /&gt;
@@ -3353,19 +3316,19 @@
       &lt;strong&gt;Usage&lt;/strong&gt;
     &lt;/td&gt;
     &lt;td&gt;
-      [img]{0}forumlogo.jpg[/img]&lt;br /&gt;&lt;br /&gt;
-      [img={0}forumlogo.jpg]YAF Logo[/img]&lt;br /&gt;&lt;br /&gt;
-	  [url={0}] [img]{0}forumlogo.jpg[/img] [/url] (Linked)
+      [img]{0}Content/images/YAFLogo.svg[/img]&lt;br /&gt;&lt;br /&gt;
+      [img={0}Content/images/YAFLogo.svg]YAF Logo[/img]&lt;br /&gt;&lt;br /&gt;
+	  [url={0}] [img]{0}Content/images/YAFLogo.svg[/img] [/url] (Linked)
 	&lt;/td&gt;
   &lt;/tr&gt;
    &lt;tr&gt;
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
       &lt;strong&gt;Output&lt;/strong&gt;
     &lt;/td&gt;
-    &lt;td&gt;&lt;img src="{0}forumlogo.jpg" alt="" /&gt;&lt;br /&gt;
-		&lt;br /&gt;&lt;img src="{0}forumlogo.jpg" alt="YAF Logo" title="YAF Logo" /&gt;&lt;br /&gt;
+    &lt;td&gt;&lt;img src="{0}Content/images/YAFLogo.svg" alt="" /&gt;&lt;br /&gt;
+		&lt;br /&gt;&lt;img src="{0}Content/images/YAFLogo.svg" alt="YAF Logo" title="YAF Logo" /&gt;&lt;br /&gt;
 		&lt;br /&gt;
-		&lt;a href="{0}" target="_blank" title="YAF Logo"&gt;&lt;img class="inlineimg" src="{0}forumlogo.jpg" alt="" /&gt;&lt;/a&gt; (Linked)
+		&lt;a href="{0}" target="_blank" title="YAF Logo"&gt;&lt;img class="inlineimg" src="{0}Content/images/YAFLogo.svg" alt="" /&gt;&lt;/a&gt; (Linked)
 	&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;

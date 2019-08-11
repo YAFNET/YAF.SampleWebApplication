@@ -59,12 +59,6 @@
                                 <YAF:LocalizedLabel runat="server" 
                                                     LocalizedTag="admin_pageaccesslist"></YAF:LocalizedLabel>
                             </a>
-                            <a href="<%= YafBuildLink.GetLink(ForumPages.admin_eventloggroups) %>"
-                               class="dropdown-item">
-                                <i class="fa fa-users fa-fw"></i>&nbsp;
-                                <YAF:LocalizedLabel runat="server" 
-                                                    LocalizedTag="admin_eventloggroups"></YAF:LocalizedLabel>
-                            </a>
                         </div>
                   </li>
                     </asp:PlaceHolder>
@@ -91,11 +85,6 @@
                                class="dropdown-item">
                                 <i class="fa fa-building fa-fw"></i>&nbsp;
                                 <YAF:LocalizedLabel runat="server" LocalizedTag="admin_pageaccesslist"></YAF:LocalizedLabel>
-                            </a>
-                            <a href="<%= YafBuildLink.GetLink(ForumPages.admin_eventloggroups) %>"
-                               class="dropdown-item">
-                                <i class="fa fa-users fa-fw"></i>&nbsp;
-                                <YAF:LocalizedLabel runat="server" LocalizedTag="admin_eventloggroups"></YAF:LocalizedLabel>
                             </a>
                         </div>
                   </li>
@@ -138,7 +127,9 @@
                 </li>
             </ul>
             <asp:Panel ID="quickSearch" runat="server" CssClass="form-inline" Visible="false">
-                <asp:TextBox ID="searchInput" Type="Search" runat="server" CssClass="form-control"></asp:TextBox>&nbsp;
+                <asp:TextBox ID="searchInput" Type="Search" runat="server" 
+                             CssClass="form-control"
+                             aria-label="Search"></asp:TextBox>&nbsp;
                 <YAF:ThemeButton ID="doQuickSearch" runat="server"
                                  CssClass="my-2 my-sm-0"
                                  Type="OutlineInfo"

@@ -82,6 +82,7 @@
     <Resource tag="CP_EDITAVATAR">Редактирует свой аватар</Resource>
     <Resource tag="CP_EDITBUDDIES">Редактирует друзей</Resource>
     <Resource tag="CP_EDITPROFILE">Редактирует свой профиль</Resource>
+    <Resource tag="CP_EDITSETTINGS">Edit the user settings</Resource>
     <Resource tag="CP_MESSAGE">Отправляет личное сообщение</Resource>
     <Resource tag="CP_PM">Просматривает личные сообщения</Resource>
     <Resource tag="CP_PROFILE">Просматривает настройки профиля</Resource>
@@ -821,6 +822,7 @@
     <Resource tag="USER_PROFILE">Профиль пользователя</Resource>
     <Resource tag="USER_REPUTATION">Репутация пользователя</Resource>
     <Resource tag="USER_ROLES">Роли пользователя</Resource>
+    <Resource tag="USER_SETTINGS">User Settings</Resource>
     <Resource tag="USER_SIG">Подпись пользователя</Resource>
     <Resource tag="USER_SUSPEND">Временно запретить</Resource>
     <Resource tag="USERINFO_APPROVED">Одобрен:</Resource>
@@ -844,6 +846,7 @@
     <Resource tag="DELETE_ALL">Удалить всё</Resource>
     <Resource tag="DELETE_ALLOWED">Clean Up</Resource>
     <Resource tag="HIDE">Скрыть</Resource>
+    <Resource tag="NO_ENTRY">No Entries found</Resource>
     <Resource tag="SHOW">Показать</Resource>
     <Resource tag="SINCEDATE">Start Date</Resource>
     <Resource tag="SINCEDATE_HELP">Select the start date for the log to show.</Resource>
@@ -855,45 +858,6 @@
     <Resource tag="TYPE">Тип</Resource>
     <Resource tag="TYPES">Type</Resource>
     <Resource tag="TYPES_HELP">Choose to restrict the Log to certain types of events.</Resource>
-  </page>
-  <page name="ADMIN_EVENTLOGGROUPS">
-    <Resource tag="CANACCESS">Доступ</Resource>
-    <Resource tag="CANCEL">Отмена</Resource>
-    <Resource tag="GROUPNAME">Роль</Resource>
-    <Resource tag="HEADER">Журнал событий и роли</Resource>
-    <Resource tag="SAVE">Save</Resource>
-    <Resource tag="TITLE">Журнал событий и роли</Resource>
-  </page>
-  <page name="ADMIN_EVENTLOGROUPACCESS">
-    <Resource tag="BOARDNAME">Название конференции</Resource>
-    <Resource tag="CANCEL">Отмена</Resource>
-    <Resource tag="DELETEACCESS">Может удалять</Resource>
-    <Resource tag="EVENT">Тип События</Resource>
-    <Resource tag="GRANTALL">Разрешить смотреть всё</Resource>
-    <Resource tag="GRANTALLDELETE">Разрешить удалять всё</Resource>
-    <Resource tag="GROUPNAME">Роль</Resource>
-    <Resource tag="HEADER">Доступ к журналу событий для</Resource>
-    <Resource tag="LT_DEBUG">Debug</Resource>
-    <Resource tag="LT_ERROR">Ошибки</Resource>
-    <Resource tag="LT_INFORMATION">Информация</Resource>
-    <Resource tag="LT_IPBANDETECTED">Detected a Banned IP</Resource>
-    <Resource tag="LT_IPBANLIFTED">Отмена бана по IP</Resource>
-    <Resource tag="LT_IPBANSET">Установка бана по IP </Resource>
-    <Resource tag="LT_SpamBotDetected">Spam Bot Detected</Resource>
-    <Resource tag="LT_SpamBotReported">Spam Bot Reported</Resource>
-    <Resource tag="LT_SpamMessageDetected">Spam Message Detected</Resource>
-    <Resource tag="LT_SpamMessageReported">Spam Message Reported</Resource>
-    <Resource tag="LT_SQLERROR">Ошибки Sql</Resource>
-    <Resource tag="LT_TRACE">Trace</Resource>
-    <Resource tag="LT_USERDELETED">Удаление пользователей</Resource>
-    <Resource tag="LT_USERSUSPENDED">Временное отстранение пользователей</Resource>
-    <Resource tag="LT_USERUNSUSPENDED">Возвращение временно отстранённых пользователей</Resource>
-    <Resource tag="LT_WARNING">Предупреждения</Resource>
-    <Resource tag="REVOKEALL">Запретить смотреть всё</Resource>
-    <Resource tag="REVOKEALLDELETE">Запретить удалять всё</Resource>
-    <Resource tag="SAVE">Сохранить</Resource>
-    <Resource tag="TITLE">Доступ к журналу событий для ролей</Resource>
-    <Resource tag="VIEWACCESS">Просмотр</Resource>
   </page>
   <page name="ADMIN_EXTENSIONS">
     <Resource tag="ADD">Создать</Resource>
@@ -1831,8 +1795,6 @@
     <Resource tag="admin_boardsettings">Данные конференции</Resource>
     <Resource tag="admin_digest">Дайджест</Resource>
     <Resource tag="admin_eventlog">Журнал</Resource>
-    <Resource tag="admin_eventloggroupaccess">Редактирование доступа к журналу</Resource>
-    <Resource tag="admin_eventloggroups">Доступ к журналу</Resource>
     <Resource tag="admin_extensions">Расширения файлов</Resource>
     <Resource tag="admin_forums">Форумы</Resource>
     <Resource tag="admin_groups">Роли</Resource>
@@ -2611,6 +2573,9 @@
     <Resource tag="XMPP">Ваш Jabber ID:</Resource>
     <Resource tag="YIM">Ваш Yahoo ID:</Resource>
   </page>
+  <page name="CP_EDITSETTINGS">
+    <Resource tag="TITLE">Edit Settings</Resource>
+  </page>
   <page name="CP_MESSAGE">
     <Resource tag="INBOX">Входящие</Resource>
     <Resource tag="MSG_DELETED">Сообщение удалено.</Resource>
@@ -2658,6 +2623,7 @@
     <Resource tag="CREATED_TOPIC_MSG">Created a new Topic {0}</Resource>
     <Resource tag="EDIT_AVATAR">Изменить аватар</Resource>
     <Resource tag="EDIT_PROFILE">Изменить профиль</Resource>
+    <Resource tag="EDIT_SETTINGS">Edit Settings</Resource>
     <Resource tag="EDIT_SIGNATURE">Редактировать подпись</Resource>
     <Resource tag="GIVEN_THANKS">Given Thanks to a Post</Resource>
     <Resource tag="GIVEN_THANKS_MSG">Given Thanks to {0} in the Topic {1}</Resource>
@@ -3176,7 +3142,7 @@
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
       &lt;strong&gt;Output&lt;/strong&gt;
     &lt;/td&gt;
-    &lt;td&gt;&lt;a href="{0}yaf_postst123_topic_title.aspx" target="_blank" title="Go to Topic"&gt;Go to Topic&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href="{0}posts/t123-topic-title" target="_blank" title="Go to Topic"&gt;Go to Topic&lt;/a&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Post Links&lt;/td&gt;
@@ -3200,7 +3166,7 @@
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
       &lt;strong&gt;Output&lt;/strong&gt;
     &lt;/td&gt;
-    &lt;td&gt;&lt;a href="{0}yaf_postsm123_topic_title.aspx#post123" target="_blank" title="Go to Post"&gt;Go to Post&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href="{0}posts/m123-topic-title#post123" target="_blank" title="Go to Post"&gt;Go to Post&lt;/a&gt;&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 &lt;br /&gt;
@@ -3332,19 +3298,19 @@
       &lt;strong&gt;Usage&lt;/strong&gt;
     &lt;/td&gt;
     &lt;td&gt;
-      [img]{0}forumlogo.jpg[/img]&lt;br /&gt;&lt;br /&gt;
-      [img={0}forumlogo.jpg]YAF Logo[/img]&lt;br /&gt;&lt;br /&gt;
-	  [url={0}] [img]{0}forumlogo.jpg[/img] [/url] (Linked)
+      [img]{0}Content/images/YAFLogo.svg[/img]&lt;br /&gt;&lt;br /&gt;
+      [img={0}Content/images/YAFLogo.svg]YAF Logo[/img]&lt;br /&gt;&lt;br /&gt;
+	  [url={0}] [img]{0}Content/images/YAFLogo.svg[/img] [/url] (Linked)
 	&lt;/td&gt;
   &lt;/tr&gt;
    &lt;tr&gt;
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
       &lt;strong&gt;Output&lt;/strong&gt;
     &lt;/td&gt;
-    &lt;td&gt;&lt;img src="{0}forumlogo.jpg" alt="" /&gt;&lt;br /&gt;
-		&lt;br /&gt;&lt;img src="{0}forumlogo.jpg" alt="YAF Logo" title="YAF Logo" /&gt;&lt;br /&gt;
+    &lt;td&gt;&lt;img src="{0}Content/images/YAFLogo.svg" alt="" /&gt;&lt;br /&gt;
+		&lt;br /&gt;&lt;img src="{0}Content/images/YAFLogo.svg" alt="YAF Logo" title="YAF Logo" /&gt;&lt;br /&gt;
 		&lt;br /&gt;
-		&lt;a href="{0}" target="_blank" title="YAF Logo"&gt;&lt;img class="inlineimg" src="{0}forumlogo.jpg" alt="" /&gt;&lt;/a&gt; (Linked)
+		&lt;a href="{0}" target="_blank" title="YAF Logo"&gt;&lt;img class="inlineimg" src="{0}Content/images/YAFLogo.svg" alt="" /&gt;&lt;/a&gt; (Linked)
 	&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;

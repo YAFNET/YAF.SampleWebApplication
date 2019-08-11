@@ -47,31 +47,47 @@
                                 <div class="alert alert-danger CapsLockWarning" style="display: none;" role="alert">
                                     <YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" LocalizedTag="CAPS_LOCK" />
                                 </div>
-                                <div class="form-check pl-0">
+                                <div class="custom-control custom-checkbox">
                                     <asp:CheckBox ID="RememberMe" runat="server"></asp:CheckBox>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <asp:Button ID="LoginButton" runat="server"
-                                    CommandName="Login" ValidationGroup="Login1"
-                                    CssClass="btn btn-primary" />
+                                            CommandName="Login" 
+                                            ValidationGroup="Login1"
+                                            CssClass="btn btn-primary" />
                                 <asp:PlaceHolder ID="FaceBookHolder" runat="server" Visible="false">
-                                    <asp:LinkButton runat="server" ID="FacebookRegister"
-                                        CssClass="authLogin facebookLogin" Visible="True"
-                                        OnClick="FacebookRegisterClick">
-                                    </asp:LinkButton>
+                                    <YAF:ThemeButton runat="server" ID="FacebookRegister"
+                                                     Visible="True"
+                                                     Type="None"
+                                                     Size="Small"
+                                                     CssClass="btn btn-social btn-facebook mr-2"
+                                                     Icon="facebook"
+                                                     IconCssClass="fab"
+                                                     OnClick="FacebookRegisterClick">
+                                    </YAF:ThemeButton>
                                 </asp:PlaceHolder>
                                 <asp:PlaceHolder ID="TwitterHolder" runat="server" Visible="false">
-                                    <asp:LinkButton runat="server" ID="TwitterRegister"
-                                        CssClass="authLogin twitterLogin" Visible="True"
-                                        OnClick="TwitterRegisterClick">
-                                    </asp:LinkButton>
+                                    <YAF:ThemeButton runat="server" ID="TwitterRegister"
+                                                     Visible="True"
+                                                     Type="None"
+                                                     Size="Small"
+                                                     CssClass="btn btn-social btn-facebook mr-2"
+                                                     Icon="facebook"
+                                                     IconCssClass="fab"
+                                                     OnClick="TwitterRegisterClick">
+                                    </YAF:ThemeButton>
                                 </asp:PlaceHolder>
                                 <asp:PlaceHolder ID="GoogleHolder" runat="server" Visible="false">
-                                    <asp:LinkButton runat="server" ID="GoogleRegister"
-                                        CssClass="authLogin googleLogin" Visible="True"
-                                        OnClick="GoogleRegisterClick">
-                                    </asp:LinkButton>
+                                    <YAF:ThemeButton runat="server" ID="GoogleRegister"
+                                                     Visible="True"
+                                                     Type="None"
+                                                     Size="Small"
+                                                     CssClass="btn btn-social btn-facebook mr-2"
+                                                     Icon="facebook"
+                                                     IconCssClass="fab"
+                                                     OnClick="GoogleRegisterClick">
+                                    </YAF:ThemeButton>
                                 </asp:PlaceHolder>
                             </div>
                         </div>

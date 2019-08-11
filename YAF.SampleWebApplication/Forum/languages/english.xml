@@ -82,6 +82,7 @@
   <Resource tag="CP_EDITAVATAR">Edit the avatar</Resource>
   <Resource tag="CP_EDITBUDDIES">Edits Friends</Resource>
   <Resource tag="CP_EDITPROFILE">Edit the profile</Resource>
+   <Resource tag="CP_EDITSETTINGS">Edit the user settings</Resource>
   <Resource tag="CP_MESSAGE">Views Private Messages</Resource>
   <Resource tag="CP_PM">Views Private Messages</Resource>
   <Resource tag="CP_PROFILE">Views profile settings</Resource>
@@ -843,6 +844,7 @@
   <Resource tag="USER_KILL">User Kill &amp; Ban</Resource>
   <Resource tag="USER_PASS">User Password</Resource>
   <Resource tag="USER_PROFILE">User Profile</Resource>
+   <Resource tag="USER_SETTINGS">User Settings</Resource>
   <Resource tag="USER_REPUTATION">User Reputation</Resource>
   <Resource tag="USER_ROLES">User Roles</Resource>
   <Resource tag="USER_SIG">User Signature</Resource>
@@ -868,6 +870,7 @@
   <Resource tag="DELETE_ALL">Delete All</Resource>
   <Resource tag="DELETE_ALLOWED">Clean Up</Resource>
   <Resource tag="HIDE">Hide</Resource>
+   <Resource tag="NO_ENTRY">No Entries found</Resource>
   <Resource tag="SHOW">Show</Resource>
   <Resource tag="SINCEDATE">Start Date</Resource>
   <Resource tag="SINCEDATE_HELP">Select the start date for the log to show.</Resource>
@@ -879,45 +882,6 @@
   <Resource tag="TYPE">Type</Resource>
   <Resource tag="TYPES">Type</Resource>
   <Resource tag="TYPES_HELP">Choose to restrict the Log to certain types of events.</Resource>
- </page>
- <page name="ADMIN_EVENTLOGGROUPS">
-  <Resource tag="CANACCESS">Allowed</Resource>
-  <Resource tag="CANCEL">Cancel</Resource>
-  <Resource tag="GROUPNAME">Role</Resource>
-  <Resource tag="HEADER">Event Log Roles</Resource>
-  <Resource tag="SAVE">Save</Resource>
-  <Resource tag="TITLE">Event Log Roles</Resource>
- </page>
- <page name="ADMIN_EVENTLOGROUPACCESS">
-  <Resource tag="BOARDNAME">Board Name</Resource>
-  <Resource tag="CANCEL">Cancel</Resource>
-  <Resource tag="DELETEACCESS">Can Delete</Resource>
-  <Resource tag="EVENT">Log Name</Resource>
-  <Resource tag="GRANTALL">Grant All View</Resource>
-  <Resource tag="GRANTALLDELETE">Grant All Delete</Resource>
-  <Resource tag="GROUPNAME">Role</Resource>
-  <Resource tag="HEADER">Event Log Access For</Resource>
-  <Resource tag="LT_DEBUG">Debug</Resource>
-  <Resource tag="LT_ERROR">Errors</Resource>
-  <Resource tag="LT_INFORMATION">Information</Resource>
-  <Resource tag="LT_IPBANDETECTED">Detected a Banned IP</Resource>
-  <Resource tag="LT_IPBANLIFTED">Canceling IP ban</Resource>
-  <Resource tag="LT_IPBANSET">Setting IP ban</Resource>
-  <Resource tag="LT_SpamBotDetected">Spam Bot Detected</Resource>
-  <Resource tag="LT_SpamBotReported">Spam Bot Reported</Resource>
-  <Resource tag="LT_SpamMessageDetected">Spam Message Detected</Resource>
-  <Resource tag="LT_SpamMessageReported">Spam Message Reported</Resource>
-  <Resource tag="LT_SQLERROR">Sql Errors</Resource>
-  <Resource tag="LT_TRACE">Trace</Resource>
-  <Resource tag="LT_USERDELETED">Deleting users</Resource>
-  <Resource tag="LT_USERSUSPENDED">Suspending users</Resource>
-  <Resource tag="LT_USERUNSUSPENDED">Unsuspending users</Resource>
-  <Resource tag="LT_WARNING">Warnings</Resource>
-  <Resource tag="REVOKEALL">Revoke All View</Resource>
-  <Resource tag="REVOKEALLDELETE">Revoke All Delete</Resource>
-  <Resource tag="SAVE">Save</Resource>
-  <Resource tag="TITLE">Event Log Role Edit</Resource>
-  <Resource tag="VIEWACCESS">Can View</Resource>
  </page>
  <page name="ADMIN_EXTENSIONS">
   <Resource tag="ADD">Add</Resource>
@@ -1859,8 +1823,6 @@
   <Resource tag="admin_boardsettings">Board Settings</Resource>
   <Resource tag="admin_digest">Digest</Resource>
   <Resource tag="admin_eventlog">Event Log</Resource>
-  <Resource tag="admin_eventloggroupaccess">Event Log Access Edit</Resource>
-  <Resource tag="admin_eventloggroups">Event Log Roles</Resource>
   <Resource tag="admin_extensions">File Extensions</Resource>
   <Resource tag="admin_forums">Forums</Resource>
   <Resource tag="admin_groups">Roles</Resource>
@@ -2610,6 +2572,9 @@
   <Resource tag="XMPP">Your Jabber ID:</Resource>
   <Resource tag="YIM">Your Yahoo ID:</Resource>
  </page>
+  <page name="CP_EDITSETTINGS">
+    <Resource tag="TITLE">Edit Settings</Resource>
+  </page>
  <page name="CP_MESSAGE">
   <Resource tag="INBOX">Inbox</Resource>
   <Resource tag="MSG_DELETED">Message was deleted.</Resource>
@@ -2665,6 +2630,7 @@
   <Resource tag="CONTROL_PANEL">Control Panel</Resource>
   <Resource tag="EDIT_AVATAR">Modify Avatar</Resource>
   <Resource tag="EDIT_PROFILE">Edit Profile</Resource>
+   <Resource tag="EDIT_SETTINGS">Edit Settings</Resource>
   <Resource tag="EDIT_SIGNATURE">Edit Signature</Resource>
   <Resource tag="GROUPS">You are a member of these groups:</Resource>
   <Resource tag="INBOX">Inbox</Resource>
@@ -3080,7 +3046,7 @@
 
 
     &lt;h6 class=&quot;card-subtitle mt-2 text-muted&quot;&gt;Output&lt;/h6&gt;
-    &lt;a href=&quot;{0}yaf_postst123_topic_title.aspx&quot; target=&quot;_blank&quot; title=&quot;Go to Topic&quot;&gt;Go to Topic&lt;/a&gt;&lt;/div&gt;
+    &lt;a href=&quot;{0}posts/t123-topic-title&quot; target=&quot;_blank&quot; title=&quot;Go to Topic&quot;&gt;Go to Topic&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
 
     &lt;div class=&quot;card mb-3&quot;&gt;
@@ -3097,7 +3063,7 @@
 
     [post=123]Go to Post[/post]
     &lt;h6 class=&quot;card-subtitle mt-2 text-muted&quot;&gt;Output&lt;/h6&gt;
-    &lt;a href=&quot;{0}yaf_postsm123_topic_title.aspx#post123&quot; target=&quot;_blank&quot; title=&quot;Go to Post&quot;&gt;Go to Post&lt;/a&gt;
+    &lt;a href=&quot;{0}posts/m123-topic-title#post123&quot; target=&quot;_blank&quot; title=&quot;Go to Post&quot;&gt;Go to Post&lt;/a&gt;
     &lt;/div&gt;
     &lt;/div&gt;
 
@@ -3210,7 +3176,7 @@
 
     [img]{0}Content/images/YAFLogo.svg[/img]&lt;br /&gt;&lt;br /&gt;
     [img={0}Content/images/YAFLogo.svg]YAF Logo[/img]&lt;br /&gt;&lt;br /&gt;
-    [url={0}] [img]{0}forumlogo.jpg[/img] [/url] (Linked)
+    [url={0}] [img]{0}Content/images/YAFLogo.svg[/img] [/url] (Linked)
 
 
     &lt;h6 class=&quot;card-subtitle mt-2 text-muted&quot;&gt;Output&lt;/h6&gt;
