@@ -379,6 +379,9 @@
     <Resource tag="BOARD_FILE_EXTENSIONS_HELP">¿La lista de extensiones de fichero es de no permitidos o de permitidos? (cuantos menos más seguro)</Resource>
     <Resource tag="BOARD_JQ_THEME">Tema para jQuery UI:</Resource>
     <Resource tag="BOARD_JQ_THEME_HELP">El tema JQuery UI para usar en este tablero para las tabulaciones y acordeón.</Resource>
+    <Resource tag="BOARD_LOGO">Board Logo:</Resource>
+    <Resource tag="BOARD_LOGO_HELP">Select a Board Logo or use the default YAF Board Logo.</Resource>
+    <Resource tag="BOARD_LOGO_SELECT">Select a Board logo</Resource>
     <Resource tag="BOARD_MOBILE_THEME">Tema para móviles:</Resource>
     <Resource tag="BOARD_MOBILE_THEME_HELP">El tema para móviles para usar en este tablero.</Resource>
     <Resource tag="BOARD_NAME">Nombre de tablero:</Resource>
@@ -1170,6 +1173,10 @@
     <Resource tag="IMAGE_RESIZE_HEIGHT_HELP">Altura máxima de las imágenes adjuntadas redimensionadas.</Resource>
     <Resource tag="IMAGE_RESIZE_WIDTH">Ancho máximo para el redimensionado de imagen</Resource>
     <Resource tag="IMAGE_RESIZE_WIDTH_HELP">Ancho máximo para las imágenes adjuntas redimensionadas.</Resource>
+    <Resource tag="IMAGE_THUMB_HEIGHT">Thumbnail Image  Max Height:</Resource>
+    <Resource tag="IMAGE_THUMB_HEIGHT_HELP">Maximum Height of the attachment and album image thumbnail.</Resource>
+    <Resource tag="IMAGE_THUMB_WIDTH">Thumbnail Image  Max Width:</Resource>
+    <Resource tag="IMAGE_THUMB_WIDTH_HELP">Maximum Width of the attachment and album image thumbnail.</Resource>
     <Resource tag="IMAGES_PER_PAGE">Imágenes por página:</Resource>
     <Resource tag="IMAGES_PER_PAGE_HELP">Número de imágenes a mostrar por página:</Resource>
     <Resource tag="IP_INFOSERVICE">Activar servicio de información de IP:</Resource>

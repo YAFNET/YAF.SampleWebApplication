@@ -379,6 +379,9 @@
     <Resource tag="BOARD_FILE_EXTENSIONS_HELP">Список разрешённых/запрещённых расширений файлов. Последнее менее безопасно.</Resource>
     <Resource tag="BOARD_JQ_THEME">Тема jQuery UI:</Resource>
     <Resource tag="BOARD_JQ_THEME_HELP">Тема jQuery UI для использования на этой конференции для вкладок и аккордеона.</Resource>
+    <Resource tag="BOARD_LOGO">Board Logo:</Resource>
+    <Resource tag="BOARD_LOGO_HELP">Select a Board Logo or use the default YAF Board Logo.</Resource>
+    <Resource tag="BOARD_LOGO_SELECT">Select a Board logo</Resource>
     <Resource tag="BOARD_MOBILE_THEME">Мобильная тема:</Resource>
     <Resource tag="BOARD_MOBILE_THEME_HELP">Мобильная тема для использования на этой конференции.</Resource>
     <Resource tag="BOARD_NAME">Название:</Resource>
@@ -1164,6 +1167,10 @@
     <Resource tag="IMAGE_RESIZE_HEIGHT_HELP">Максимальная высота вложенного изменённого изображения(пикс.).</Resource>
     <Resource tag="IMAGE_RESIZE_WIDTH">Максимальная ширина вложенного изменённого изображения:</Resource>
     <Resource tag="IMAGE_RESIZE_WIDTH_HELP">Максимальная ширина вложенного изменённого изображения(пикс.).</Resource>
+    <Resource tag="IMAGE_THUMB_HEIGHT">Thumbnail Image  Max Height:</Resource>
+    <Resource tag="IMAGE_THUMB_HEIGHT_HELP">Maximum Height of the attachment and album image thumbnail.</Resource>
+    <Resource tag="IMAGE_THUMB_WIDTH">Thumbnail Image  Max Width:</Resource>
+    <Resource tag="IMAGE_THUMB_WIDTH_HELP">Maximum Width of the attachment and album image thumbnail.</Resource>
     <Resource tag="IMAGES_PER_PAGE">Изображение на странице:</Resource>
     <Resource tag="IMAGES_PER_PAGE_HELP">Количество изображений на одной странице.</Resource>
     <Resource tag="IP_INFOSERVICE">Включить информационную службу IP:</Resource>

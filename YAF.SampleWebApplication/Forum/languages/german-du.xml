@@ -379,6 +379,9 @@
     <Resource tag="BOARD_FILE_EXTENSIONS_HELP">Ist die Liste der Dateierweiterungen erlaubt oder nicht erlaubt Dateien Dateien (weniger sicher)?</Resource>
     <Resource tag="BOARD_JQ_THEME">jQuery UI Theme:</Resource>
     <Resource tag="BOARD_JQ_THEME_HELP">The jQuery UI Theme to use on this board for the Tabs and Accordion.</Resource>
+    <Resource tag="BOARD_LOGO">Board Logo:</Resource>
+    <Resource tag="BOARD_LOGO_HELP">Select a Board Logo or use the default YAF Board Logo.</Resource>
+    <Resource tag="BOARD_LOGO_SELECT">Select a Board logo</Resource>
     <Resource tag="BOARD_MOBILE_THEME">Mobiles Skin:</Resource>
     <Resource tag="BOARD_MOBILE_THEME_HELP">Das Mobile Skin das in diesem Board verwendet wird</Resource>
     <Resource tag="BOARD_NAME">Boardname:</Resource>
@@ -1163,6 +1166,10 @@
     <Resource tag="IMAGE_RESIZE_HEIGHT_HELP">Maximale Höhe der verkleinert Angehangen Bilder.</Resource>
     <Resource tag="IMAGE_RESIZE_WIDTH">Bild Max. Breite:</Resource>
     <Resource tag="IMAGE_RESIZE_WIDTH_HELP">Maximale Breite der verkleinert Angehangen Bilder.</Resource>
+    <Resource tag="IMAGE_THUMB_HEIGHT">Thumbnail Image  Max Height:</Resource>
+    <Resource tag="IMAGE_THUMB_HEIGHT_HELP">Maximum Height of the attachment and album image thumbnail.</Resource>
+    <Resource tag="IMAGE_THUMB_WIDTH">Thumbnail Image  Max Width:</Resource>
+    <Resource tag="IMAGE_THUMB_WIDTH_HELP">Maximum Width of the attachment and album image thumbnail.</Resource>
     <Resource tag="IMAGES_PER_PAGE">Bilder pro Seite:</Resource>
     <Resource tag="IMAGES_PER_PAGE_HELP">Anzahl an Bildern die pro Seite gezeigt werden.</Resource>
     <Resource tag="IP_INFOSERVICE">IP Info-Service aktivieren:</Resource>

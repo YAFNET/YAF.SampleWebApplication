@@ -48,11 +48,7 @@
             <YAF:LocalizedLabel ID="LocalizedLabel18" runat="server" 
                                 LocalizedTag="HOST_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
         </a>
-        <a href="#View7" class="nav-link" data-toggle="pill" role="tab">
-            <YAF:LocalizedLabel ID="LocalizedLabel19" runat="server" 
-                                LocalizedTag="HOST_TEMPLATES" LocalizedPage="ADMIN_HOSTSETTINGS" />
-        </a>
-        <a href="#View8" class="nav-link" data-toggle="pill" role="tab">
+                <a href="#View8" class="nav-link" data-toggle="pill" role="tab">
             <YAF:LocalizedLabel ID="LocalizedLabel20" runat="server" 
                                 LocalizedTag="HOST_AVATARS" LocalizedPage="ADMIN_HOSTSETTINGS" />
         </a>
@@ -100,11 +96,7 @@
             <YAF:LocalizedLabel ID="LocalizedLabel49" runat="server" 
                                 LocalizedTag="HOST_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
         </a>
-        <a href="#View7" class="nav-link" data-toggle="pill" role="tab">
-            <YAF:LocalizedLabel ID="LocalizedLabel50" runat="server" 
-                                LocalizedTag="HOST_TEMPLATES" LocalizedPage="ADMIN_HOSTSETTINGS" />
-        </a>
-        <a href="#View8" class="nav-link" data-toggle="pill" role="tab">
+            <a href="#View8" class="nav-link" data-toggle="pill" role="tab">
             <YAF:LocalizedLabel ID="LocalizedLabel51" runat="server" 
                                 LocalizedTag="HOST_AVATARS" LocalizedPage="ADMIN_HOSTSETTINGS" />
         </a>
@@ -322,19 +314,19 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel12" runat="server" 
                                                    AssociatedControlID="MaxReportPostChars"
                                                    LocalizedTag="MAX_POST_CHARS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                     <asp:TextBox CssClass="form-control" ID="MaxReportPostChars" runat="server" />
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel13" runat="server" 
                                                    AssociatedControlID="MaxPostSize"
                                                    LocalizedTag="MAX_POST_SIZE" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                     <asp:TextBox CssClass="form-control" ID="MaxPostSize" runat="server"></asp:TextBox>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel14" runat="server" 
                                                    AssociatedControlID="PostFloodDelay"
                                                    LocalizedTag="FLOOT_DELAY" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -452,7 +444,7 @@
                     <asp:PlaceHolder runat="server" ID="LoginSettings">
                         <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel17" runat="server" 
                                                    AssociatedControlID="DisableRegistrations"
                                                    LocalizedTag="DISABLE_REGISTER" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -460,7 +452,7 @@
                                         <asp:CheckBox Text="&nbsp;" ID="DisableRegistrations" runat="server"></asp:CheckBox>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel4" runat="server" 
                                                    AssociatedControlID="EmailVerification"
                                                    LocalizedTag="EMAIL_VERIFICATION" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -468,7 +460,7 @@
                                         <asp:CheckBox Text="&nbsp;" ID="EmailVerification" runat="server"></asp:CheckBox>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel19" runat="server" 
                                                    AssociatedControlID="RequireLogin"
                                                    LocalizedTag="REQUIRE_LOGIN" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -534,7 +526,7 @@
                                 <asp:TextBox CssClass="form-control" ID="PictureAttachmentDisplayTreshold" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel22" runat="server" 
                                                    AssociatedControlID="EnableImageAttachmentResize"
                                                    LocalizedTag="IMAGE_ATTACH_RESIZE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -542,7 +534,7 @@
                                         <asp:CheckBox Text="&nbsp;" ID="EnableImageAttachmentResize" runat="server" />
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel217" runat="server" 
                                                    AssociatedControlID="ResizePostedImages"
                                                    LocalizedTag="POSTED_IMAGE_RESIZE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -550,13 +542,27 @@
                                         <asp:CheckBox Text="&nbsp;" ID="ResizePostedImages" runat="server" />
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <YAF:HelpLabel ID="HelpLabel25" runat="server" 
-                                                   AssociatedControlID="ImageAttachmentResizeCropped"
-                                                   LocalizedTag="CROP_IMAGE_ATTACH" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                                    <div class="custom-control custom-switch">
-                                        <asp:CheckBox Text="&nbsp;" ID="ImageAttachmentResizeCropped" runat="server"></asp:CheckBox>
-                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <YAF:HelpLabel ID="HelpLabel25" runat="server" 
+                                               AssociatedControlID="ImageAttachmentResizeCropped"
+                                               LocalizedTag="CROP_IMAGE_ATTACH" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                                <div class="custom-control custom-switch">
+                                    <asp:CheckBox Text="&nbsp;" ID="ImageAttachmentResizeCropped" runat="server"></asp:CheckBox>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <YAF:HelpLabel ID="HelpLabel20" runat="server" 
+                                                   AssociatedControlID="ImageThumbnailMaxWidth"
+                                                   LocalizedTag="IMAGE_THUMB_WIDTH" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                                    <asp:TextBox CssClass="form-control" ID="ImageThumbnailMaxWidth" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <YAF:HelpLabel ID="HelpLabel29" runat="server" 
+                                                   AssociatedControlID="ImageThumbnailMaxHeight"
+                                                   LocalizedTag="IMAGE_THUMB_HEIGHT" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                                    <asp:TextBox CssClass="form-control" ID="ImageThumbnailMaxHeight" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -728,24 +734,6 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <YAF:HelpLabel ID="HelpLabel94" runat="server" 
-                                               AssociatedControlID="AllowGenderInUserBox"
-                                               LocalizedTag="ALLOW_DISPLAY_GENDER" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                                <div class="custom-control custom-switch">
-                                    <asp:CheckBox Text="&nbsp;" ID="AllowGenderInUserBox" runat="server"></asp:CheckBox>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <YAF:HelpLabel ID="HelpLabel202" runat="server" 
-                                               AssociatedControlID="ShowCountryInfoInUserBox"
-                                               LocalizedTag="ALLOW_DISPLAY_COUNTRY" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                                <div class="custom-control custom-switch">
-                                    <asp:CheckBox Text="&nbsp;" ID="ShowCountryInfoInUserBox" runat="server"></asp:CheckBox>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel95" runat="server" 
                                                AssociatedControlID="AllowUserHideHimself"
                                                LocalizedTag="ALLOW_USER_HIDE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -849,7 +837,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel113" runat="server"
                                                AssociatedControlID="ShowQuickAnswer"
                                                LocalizedTag="ALLOW_QUICK_ANSWER" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -857,7 +845,7 @@
                                     <asp:CheckBox Text="&nbsp;" ID="ShowQuickAnswer" runat="server"></asp:CheckBox>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel112" runat="server" 
                                                AssociatedControlID="AllowEmailTopic"
                                                LocalizedTag="ALLOW_EMAIL_TOPIC" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -865,7 +853,7 @@
                                     <asp:CheckBox Text="&nbsp;" ID="AllowEmailTopic" runat="server"></asp:CheckBox>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel188" runat="server"
                                                AssociatedControlID="EnableTopicDescription"
                                                LocalizedTag="ALLOW_TOPIC_DESCRIPTION" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -895,21 +883,12 @@
                             <asp:DropDownList CssClass="custom-select" ID="ShowShareTopicTo" runat="server" DataValueField="Value" DataTextField="Name">
                             </asp:DropDownList>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <YAF:HelpLabel ID="HelpLabel184" runat="server"
-                                               AssociatedControlID="ShowRetweetMessageTo"
-                                               LocalizedTag="ENABLE_RETWEET_MSG" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                                <asp:DropDownList CssClass="custom-select" ID="ShowRetweetMessageTo" runat="server" DataValueField="Value" DataTextField="Name">
-                                </asp:DropDownList>
-                            </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group">
                                 <YAF:HelpLabel ID="HelpLabel173" runat="server" 
                                                AssociatedControlID="TwitterUserName"
                                                LocalizedTag="TWITTER_USERNAME" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                 <asp:TextBox CssClass="form-control" ID="TwitterUserName" runat="server"></asp:TextBox>
                             </div>
-                        </div>
                         </div>
                         <div class="tab-pane fade" id="hover" role="tabpanel" aria-labelledby="hover-tab">
                             <div class="form-row">
@@ -945,7 +924,7 @@
                                 </div>
                             </div>
                         <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel117" runat="server"
                                                AssociatedControlID="PollVoteTiedToIP"
                                                LocalizedTag="POLLVOTING_PERIP" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -953,7 +932,7 @@
                                     <asp:CheckBox Text="&nbsp;" ID="PollVoteTiedToIP" runat="server"></asp:CheckBox>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel118" runat="server"
                                                AssociatedControlID="AllowPollChangesAfterFirstVote"
                                                LocalizedTag="ALLOW_CHANGE_AFTERVOTE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -961,7 +940,7 @@
                                     <asp:CheckBox Text="&nbsp;" ID="AllowPollChangesAfterFirstVote" runat="server"></asp:CheckBox>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel119" runat="server"
                                                AssociatedControlID="AllowMultipleChoices"
                                                LocalizedTag="ALLOW_MULTI_VOTING" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -971,7 +950,7 @@
                             </div>
                         </div>
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel120" runat="server"
                                                    AssociatedControlID="AllowUsersHidePollResults"
                                                    LocalizedTag="ALLOW_HIDE_POLLRESULTS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -979,7 +958,7 @@
                                         <asp:CheckBox Text="&nbsp;" ID="AllowUsersHidePollResults" runat="server"></asp:CheckBox>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel121" runat="server"
                                                    AssociatedControlID="AllowGuestsViewPollOptions"
                                                    LocalizedTag="ALLOW_GUESTS_VIEWPOLL" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -987,7 +966,7 @@
                                         <asp:CheckBox Text="&nbsp;" ID="AllowGuestsViewPollOptions" runat="server"></asp:CheckBox>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel122" runat="server" 
                                                    AssociatedControlID="AllowUsersImagedPoll"
                                                    LocalizedTag="ALLOW_USERS_POLLIMAGES" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1031,19 +1010,19 @@
                     </div>
                     <div class="tab-pane fade" id="hot" role="tabpanel" aria-labelledby="hot-tab">
                         <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel197" runat="server" 
                                                AssociatedControlID="PopularTopicViews"
                                                LocalizedTag="POPULAR_VIEWS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                 <asp:TextBox CssClass="form-control" ID="PopularTopicViews" runat="server"></asp:TextBox>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel198" runat="server"
                                                AssociatedControlID="PopularTopicReplys"
                                                LocalizedTag="POPULAR_REPLYS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                 <asp:TextBox CssClass="form-control" ID="PopularTopicReplys" runat="server"></asp:TextBox>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel199" runat="server" 
                                                AssociatedControlID="PopularTopicDays"
                                                LocalizedTag="POPULAR_DAYS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1155,7 +1134,7 @@
                     </div>
                     <div class="tab-pane fade" id="reputation" role="tabpanel" aria-labelledby="reputation-tab">
                         <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel106" runat="server" 
                                                AssociatedControlID="DisplayPoints"
                                                LocalizedTag="DISPLAY_POINTS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1163,7 +1142,7 @@
                                     <asp:CheckBox Text="&nbsp;" ID="DisplayPoints" runat="server"></asp:CheckBox>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel203" runat="server" 
                                                AssociatedControlID="EnableUserReputation"
                                                LocalizedTag="ENABLE_USERREPUTATION" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1171,7 +1150,7 @@
                                     <asp:CheckBox Text="&nbsp;" ID="EnableUserReputation" runat="server"></asp:CheckBox>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel204" runat="server" 
                                                AssociatedControlID="ReputationAllowNegative"
                                                LocalizedTag="REPUTATION_ALLOWNEGATIVE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1291,14 +1270,14 @@
         <asp:TextBox CssClass="form-control" ID="ActiveListTime" runat="server" />
     </div>
     <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel176" runat="server" 
                                AssociatedControlID="ActiveDiscussionsCount"
                                LocalizedTag="LASTPOST_COUNT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:TextBox CssClass="form-control" ID="ActiveDiscussionsCount" runat="server" />
                 
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel156" runat="server" 
                                AssociatedControlID="ShowGuestsInDetailedActiveList"
                                LocalizedTag="SHOW_GUESTS_INACTIVE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1306,7 +1285,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="ShowGuestsInDetailedActiveList" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel157" runat="server" 
                                AssociatedControlID="ShowCrawlersInActiveList"
                                LocalizedTag="SHOW_BOTS_INACTIVE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1317,7 +1296,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel158" runat="server" 
                                AssociatedControlID="ShowDeletedMessages"
                                LocalizedTag="SHOW_DEL_MESSAGES" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1325,7 +1304,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="ShowDeletedMessages" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel159" runat="server" 
                                AssociatedControlID="ShowDeletedMessagesToAll" 
                                LocalizedTag="SHOW_DEL_MESSAGES_TOALL" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1333,7 +1312,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="ShowDeletedMessagesToAll" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel240" runat="server" 
                                AssociatedControlID="ShowEditedMessage"
                                LocalizedTag="SHOW_EDIT_MESSAGE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1343,7 +1322,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="BlankLinksHelpLabel" runat="server" 
                                AssociatedControlID="BlankLinks" 
                                LocalizedTag="SHOW_LINKS_NEWWINDOW" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1351,7 +1330,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="BlankLinks" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="ShowLastUnreadPostHelpLabel" runat="server" 
                                AssociatedControlID="ShowLastUnreadPost"  
                                LocalizedTag="SHOW_UNREAD_LINKS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1359,7 +1338,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="ShowLastUnreadPost" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel177" runat="server" 
                                AssociatedControlID="UseNoFollowLinks"
                                LocalizedTag="NOFOLLOW_LINKTAGS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1369,7 +1348,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel161" runat="server" 
                                AssociatedControlID="NoCountForumsInActiveDiscussions"  
                                LocalizedTag="SHOW_NOCOUNT_POSTS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1377,7 +1356,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="NoCountForumsInActiveDiscussions" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel163" runat="server" 
                                AssociatedControlID="ShowActiveDiscussions"
                                LocalizedTag="SHOW_ACTIVE_DISCUSSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1386,7 +1365,7 @@
 
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel190" runat="server" 
                                AssociatedControlID="ShowRecentUsers"  
                                LocalizedTag="SHOW_RECENT_USERS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1397,7 +1376,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel162" runat="server" 
                                AssociatedControlID="ShowForumStatistics"  
                                LocalizedTag="SHOW_FORUM_STATS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1405,7 +1384,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="ShowForumStatistics" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel171" runat="server" 
                                AssociatedControlID="ShowPageGenerationTime"
                                LocalizedTag="SHOW_RENDERTIME" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1413,7 +1392,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="ShowPageGenerationTime" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel172" runat="server" 
                                AssociatedControlID="ShowYAFVersion"
                                LocalizedTag="SHOW_YAFVERSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1432,7 +1411,7 @@
             </div>
         </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel167" runat="server" 
                            AssociatedControlID="ShowGroups"
                            LocalizedTag="SHOW_GROUPS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1441,7 +1420,7 @@
 
             </div>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel168" runat="server" 
                            AssociatedControlID="ShowGroupsProfile"
                            LocalizedTag="SHOW_GROUPS_INPROFILE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1451,7 +1430,7 @@
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel170" runat="server" 
                            AssociatedControlID="ShowBrowsingUsers"
                            LocalizedTag="SHOW_USERSBROWSING" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1459,7 +1438,7 @@
                 <asp:CheckBox Text="&nbsp;" ID="ShowBrowsingUsers" runat="server"></asp:CheckBox>
             </div>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel181" runat="server" 
                            AssociatedControlID="ShowSimilarTopics"
                            LocalizedTag="SHOW_SIMILARTOPICS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1467,7 +1446,7 @@
                 <asp:CheckBox Text="&nbsp;" ID="ShowSimilarTopics" runat="server"></asp:CheckBox>
             </div>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel164" runat="server" 
                            AssociatedControlID="ShowForumJump"
                            LocalizedTag="SHOW_FORUM_JUMP" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1477,7 +1456,7 @@
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel174" runat="server" 
                            AssociatedControlID="DisplayJoinDate"
                            LocalizedTag="SHOW_JOINDATE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1486,7 +1465,7 @@
 
             </div>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel169" runat="server" 
                            AssociatedControlID="ShowMedals"
                            LocalizedTag="SHOW_MEDALS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1494,7 +1473,7 @@
                 <asp:CheckBox Text="&nbsp;" ID="ShowMedals" runat="server"></asp:CheckBox>
             </div>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel154" runat="server"
                            AssociatedControlID="ShowMoved"
                            LocalizedTag="SHOW_MOVED_TOPICS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1504,21 +1483,21 @@
         </div>
     </div>                     
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel182" runat="server" 
                            AssociatedControlID="ShowHelpTo"
                            LocalizedTag="SHOWHELP" LocalizedPage="ADMIN_HOSTSETTINGS" />
             <asp:DropDownList CssClass="custom-select" ID="ShowHelpTo" runat="server" DataValueField="Value" DataTextField="Name">
             </asp:DropDownList>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel183" runat="server" 
                            AssociatedControlID="ShowTeamTo"
                            LocalizedTag="SHOWTEAM" LocalizedPage="ADMIN_HOSTSETTINGS" />
             <asp:DropDownList CssClass="custom-select" ID="ShowTeamTo" runat="server" DataValueField="Value" DataTextField="Name">
             </asp:DropDownList>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel155" runat="server" 
                            AssociatedControlID="ShowModeratorList"
                            LocalizedTag="SHOW_MODLIST" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1536,19 +1515,19 @@
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel178" runat="server" 
                            AssociatedControlID="PostsPerPage"
                            LocalizedTag="POSTS_PER_PAGE" LocalizedPage="ADMIN_HOSTSETTINGS" />
             <asp:TextBox CssClass="form-control" ID="PostsPerPage" runat="server"></asp:TextBox>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel179" runat="server" 
                            AssociatedControlID="TopicsPerPage" 
                            LocalizedTag="TOPICS_PER_PAGE" LocalizedPage="ADMIN_HOSTSETTINGS" />
             <asp:TextBox CssClass="form-control" ID="TopicsPerPage" runat="server"></asp:TextBox>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <YAF:HelpLabel ID="HelpLabel236" runat="server" 
                            AssociatedControlID="SubForumsInForumList"
                            LocalizedTag="AMOUNT_OF_SUBFORUMS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1656,7 +1635,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel84" runat="server"  
                                AssociatedControlID="AllowUserTheme"
                                LocalizedTag="USER_CHANGE_THEME" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1664,7 +1643,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="AllowUserTheme" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel83" runat="server"  
                                AssociatedControlID="AllowUserLanguage"
                                LocalizedTag="USER_CHANGE_LANGUAGE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1672,7 +1651,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="AllowUserLanguage" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel82" runat="server"  
                                AssociatedControlID="AllowSignatures"
                                LocalizedTag="ALLOW_SIGNATURE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1682,7 +1661,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel81" runat="server"  
                                AssociatedControlID="AllowEmailSending"
                                LocalizedTag="ALLOW_SENDMAIL" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1690,7 +1669,7 @@
                     <asp:CheckBox Text="&nbsp;" ID="AllowEmailSending" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel80" runat="server"  
                                AssociatedControlID="AllowEmailChange"
                                LocalizedTag="ALLOW_EMAIL_CHANGE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1699,7 +1678,7 @@
 
                 </div>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel79" runat="server"  
                                AssociatedControlID="AllowPasswordChange"
                                LocalizedTag="ALLOW_PASS_CHANGE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1710,7 +1689,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel78" runat="server"  
                                AssociatedControlID="AllowModeratorsViewIPs"
                                LocalizedTag="ALLOW_MOD_VIEWIP" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1755,21 +1734,21 @@
             </asp:DropDownList>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel73" runat="server" 
                                AssociatedControlID="ActiveUsersViewPermissions" 
                                LocalizedTag="VIEWACTIVE_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:DropDownList CssClass="custom-select" ID="ActiveUsersViewPermissions" runat="server">
                 </asp:DropDownList>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel75" runat="server" 
                                AssociatedControlID="ProfileViewPermissions"
                                LocalizedTag="VIEWPROFILE_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:DropDownList CssClass="custom-select" ID="ProfileViewPermissions" runat="server">
                 </asp:DropDownList>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel74" runat="server"
                                AssociatedControlID="MembersListViewPermissions"
                                LocalizedTag="VIEWMEMBERLIST_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1785,7 +1764,7 @@
         </div>
         <asp:PlaceHolder runat="server" ID="SSLSettings">
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel71" runat="server"
                                    AssociatedControlID="UseSSLToLogIn"
                                    LocalizedTag="SSL_LOGIN" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1793,7 +1772,7 @@
                         <asp:CheckBox Text="&nbsp;" ID="UseSSLToLogIn" runat="server"></asp:CheckBox>
                     </div>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel70" runat="server"
                                    AssociatedControlID="UseSSLToRegister"
                                    LocalizedTag="SSL_REGISTER" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1806,110 +1785,6 @@
                     </div>
                     <div class="card-footer text-lg-center">
                         <YAF:ThemeButton ID="ThemeButton7" runat="server"  Type="Primary" OnClick="SaveClick"
-                                         Icon="save" TextLocalizedTag="SAVE_SETTINGS" TextLocalizedPage="ADMIN_HOSTSETTINGS">
-                        </YAF:ThemeButton>
-                    </div>
-                </div>
-            </div><div class="tab-pane fade" id="View7" role="tabpanel">
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <i class="fa fa-cog fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel69" runat="server" 
-                                                                                                LocalizedTag="TITLE" 
-                                                                                                LocalizedPage="ADMIN_HOSTSETTINGS" />
-                        - <YAF:LocalizedLabel ID="LocalizedLabel70" runat="server" 
-                                              LocalizedTag="HEADER_TEMPLATES" 
-                                              LocalizedPage="ADMIN_HOSTSETTINGS" />
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                       <YAF:HelpLabel ID="HelpLabel57" runat="server" 
-                                      LocalizedTag="USERBOX_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                       <asp:TextBox ID="UserBox" runat="server" 
-                                    TextMode="MultiLine"
-                                    Height="100"
-                                    CssClass="form-control"></asp:TextBox>
-                       </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel58" runat="server"
-                           AssociatedControlID="UserBoxAvatar"
-                           LocalizedTag="AVATAR_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxAvatar" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel59" runat="server"
-                           AssociatedControlID="UserBoxMedals"
-                           LocalizedTag="MEDALS_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxMedals" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel60" runat="server"
-                           AssociatedControlID="UserBoxRankImage"
-                           LocalizedTag="RANKIMAGE_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxRankImage" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel61" runat="server"
-                           AssociatedControlID="UserBoxRank"
-                           LocalizedTag="RANK_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxRank" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel62" runat="server"
-                           AssociatedControlID="UserBoxGroups"
-                           LocalizedTag="GROUPS_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxGroups" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel63" runat="server" 
-                           AssociatedControlID="UserBoxJoinDate"
-                           LocalizedTag="JOINDATE_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxJoinDate" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel64" runat="server" 
-                           AssociatedControlID="UserBoxPosts"
-                           LocalizedTag="POSTS_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxPosts" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel65" runat="server" 
-                           AssociatedControlID="UserBoxReputation"
-                           LocalizedTag="REPUTATION_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxReputation" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel196" runat="server" 
-                           AssociatedControlID="UserBoxCountryImage"
-                           LocalizedTag="COUNTRYIMAGE_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxCountryImage" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel66" runat="server" 
-                           AssociatedControlID="UserBoxLocation"
-                           LocalizedTag="LOCATION_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxLocation" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel67" runat="server"  
-                           AssociatedControlID="UserBoxGender"
-                           LocalizedTag="GENDER_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxGender" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel68" runat="server"  
-                           AssociatedControlID="UserBoxThanksFrom" 
-                           LocalizedTag="THANKS_FROM_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxThanksFrom" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <YAF:HelpLabel ID="HelpLabel69" runat="server"  
-                           AssociatedControlID="UserBoxThanksTo" 
-                           LocalizedTag="THANKS_TO_TEMPLATE" LocalizedPage="ADMIN_HOSTSETTINGS"/>
-            <asp:TextBox CssClass="form-control" ID="UserBoxThanksTo" runat="server"></asp:TextBox>
-        </div>
-                    </div>
-                    <div class="card-footer text-lg-center">
-                        <YAF:ThemeButton ID="ThemeButton8" runat="server"  Type="Primary" OnClick="SaveClick"
                                          Icon="save" TextLocalizedTag="SAVE_SETTINGS" TextLocalizedPage="ADMIN_HOSTSETTINGS">
                         </YAF:ThemeButton>
                     </div>
@@ -1929,7 +1804,7 @@
                     <div class="card-body">
                         <asp:PlaceHolder runat="server" ID="AvatarSettingsHolder">
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel189" runat="server" 
                                    AssociatedControlID="AvatarGallery"
                                    LocalizedTag="AVATAR_GALLERY" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1937,7 +1812,7 @@
                         <asp:CheckBox Text="&nbsp;" ID="AvatarGallery" runat="server"></asp:CheckBox>
                     </div>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel50" runat="server" 
                                    AssociatedControlID="AvatarRemote"
                                    LocalizedTag="REMOTE_AVATARS" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1945,7 +1820,7 @@
                         <asp:CheckBox Text="&nbsp;" ID="AvatarRemote" runat="server"></asp:CheckBox>
                     </div>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel51" runat="server" 
                                    AssociatedControlID="AvatarUpload"
                                    LocalizedTag="AVATAR_UPLOAD" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -1954,15 +1829,14 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group">
                                 <YAF:HelpLabel ID="HelpLabel52" runat="server"  
                                                AssociatedControlID="AvatarGravatar" LocalizedTag="ALLOW_GRAVATARS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                 <div class="custom-control custom-switch">
                                     <asp:CheckBox Text="&nbsp;" ID="AvatarGravatar" runat="server"></asp:CheckBox>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group">
                                 <YAF:HelpLabel ID="HelpLabel53" runat="server"  
                                                AssociatedControlID="GravatarRating" LocalizedTag="GRAVATAR_RATING" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                 <asp:DropDownList CssClass="custom-select" ID="GravatarRating" runat="server">
@@ -1972,21 +1846,20 @@
                                     <asp:ListItem Value="X"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group">
                                 <YAF:HelpLabel ID="HelpLabel56" runat="server"  
                                                AssociatedControlID="AvatarSize" 
                                                LocalizedTag="AVATAR_SIZE" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                 <asp:TextBox CssClass="form-control" ID="AvatarSize" runat="server"></asp:TextBox>
                             </div>
-                            <div class="form-group col-md-4">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel54" runat="server"  
                                                AssociatedControlID="AvatarWidth" 
                                                LocalizedTag="AVATAR_WIDTH" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                 <asp:TextBox CssClass="form-control" ID="AvatarWidth" runat="server"></asp:TextBox>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <YAF:HelpLabel ID="HelpLabel55" runat="server"  
                                                AssociatedControlID="AvatarHeight" 
                                                LocalizedTag="AVATAR_HEIGHT" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -2015,13 +1888,13 @@
                     </div>
                     <div class="card-body">
                         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel41" runat="server"  
                                AssociatedControlID="ForumStatisticsCacheTimeout" 
                                LocalizedTag="STATS_CACHE_TIMEOUT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:TextBox CssClass="form-control" runat="server" ID="ForumStatisticsCacheTimeout" />
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <YAF:ThemeButton ID="ForumStatisticsCacheReset" runat="server" 
                                  Type="Primary" 
                                  TextLocalizedTag="CLEAR" 
@@ -2031,24 +1904,24 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel42" runat="server" 
                                LocalizedTag="USRSTATS_CACHE_TIMEOUT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:TextBox CssClass="form-control" runat="server" ID="BoardUserStatsCacheTimeout" />
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <YAF:ThemeButton Type="Primary" ID="BoardUserStatsCacheReset" 
                                  TextLocalizedTag="CLEAR"  runat="server" 
                                  Icon="trash"
                                  OnClick="BoardUserStatsCacheResetClick" /></div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel43" runat="server" 
                                LocalizedTag="DISCUSSIONS_CACHE_TIMEOUT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:TextBox CssClass="form-control" runat="server" ID="ActiveDiscussionsCacheTimeout" />
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <YAF:ThemeButton Type="Primary" ID="ActiveDiscussionsCacheReset" 
                                  TextLocalizedTag="CLEAR"  
                                  runat="server" 
@@ -2057,12 +1930,12 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel44" runat="server" 
                                LocalizedTag="CAT_CACHE_TIMEOUT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:TextBox CssClass="form-control" runat="server" ID="BoardCategoriesCacheTimeout" />
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <YAF:ThemeButton Type="Primary" ID="BoardCategoriesCacheReset" 
                                  TextLocalizedTag="CLEAR"  runat="server" 
                                  Icon="trash"
@@ -2070,12 +1943,12 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel45" runat="server" 
                                LocalizedTag="MOD_CACHE_TIMEOUT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:TextBox CssClass="form-control" runat="server" ID="BoardModeratorsCacheTimeout" />
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <YAF:ThemeButton Type="Primary" ID="BoardModeratorsCacheReset" 
                                  TextLocalizedTag="CLEAR"  runat="server" 
                                  Icon="trash"
@@ -2083,12 +1956,12 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel46" runat="server" 
                                LocalizedTag="REPLACE_CACHE_TIMEOUT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:TextBox CssClass="form-control" runat="server" ID="ReplaceRulesCacheTimeout" />
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <YAF:ThemeButton Type="Primary" ID="ReplaceRulesCacheReset" 
                                  TextLocalizedTag="CLEAR"
                                  runat="server" 
@@ -2110,12 +1983,12 @@
             <asp:TextBox CssClass="form-control" runat="server" ID="OnlineStatusCacheTimeout" />
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <YAF:HelpLabel ID="HelpLabel49" runat="server" 
                                LocalizedTag="LAZY_CACHE_TIMEOUT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                 <asp:TextBox CssClass="form-control" runat="server" ID="ActiveUserLazyDataCacheTimeout" />
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <YAF:ThemeButton Type="Primary" ID="ActiveUserLazyDataCacheReset" 
                                  TextLocalizedTag="CLEAR" runat="server" 
                                  Icon="trash"
@@ -2188,31 +2061,31 @@
                 </div>
                 <div class="card-body">
                         <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel140" runat="server" 
                                    LocalizedTag="EVENTLOG_MAX_MESSAGES" LocalizedPage="ADMIN_HOSTSETTINGS" />
                     <asp:TextBox CssClass="form-control" ID="EventLogMaxMessages" runat="server"></asp:TextBox>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel141" runat="server" 
                                    LocalizedTag="EVENTLOG_MAX_DAYS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                     <asp:TextBox CssClass="form-control" ID="EventLogMaxDays" runat="server"></asp:TextBox>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel149" runat="server" 
                                    LocalizedTag="MESSAGE_CHANGE_HISTORY" LocalizedPage="ADMIN_HOSTSETTINGS" />
                     <asp:TextBox CssClass="form-control" ID="MessageHistoryDaysToLog" runat="server"></asp:TextBox>
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel150" runat="server" 
                                    LocalizedTag="ENABLE_LOCATIONPATH_ERRORS" LocalizedPage="ADMIN_HOSTSETTINGS" />
                     <div class="custom-control custom-switch">
                         <asp:CheckBox Text="&nbsp;" ID="EnableActiveLocationErrorsLog" runat="server"></asp:CheckBox>
                     </div>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <YAF:HelpLabel ID="HelpLabel151" runat="server" 
                                    LocalizedTag="UNHANDLED_USERAGENT_LOG" LocalizedPage="ADMIN_HOSTSETTINGS" />
                     <div class="custom-control custom-switch">
@@ -2226,35 +2099,39 @@
             </h2>
             <hr />
             <div class="form-row">
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-6">
                                <YAF:HelpLabel ID="LogErrorLabel" runat="server" 
                                               LocalizedTag="LOG_ERROR" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                <div class="custom-control custom-switch">
                                    <asp:CheckBox Text="&nbsp;" ID="LogError" runat="server"></asp:CheckBox>
                                </div>
                            </div>
-                           <div class="form-group col-md-2">
+                    </div>
+                    <div class="form-row">
+                           <div class="form-group col-md-6">
                                <YAF:HelpLabel ID="HelpLabel142" runat="server" 
                                               LocalizedTag="LOG_WARNING" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                <div class="custom-control custom-switch">
                                    <asp:CheckBox Text="&nbsp;" ID="LogWarning" runat="server"></asp:CheckBox>
                                </div>
                            </div>
-                           <div class="form-group col-md-2">
+                           <div class="form-group col-md-6">
                                <YAF:HelpLabel ID="HelpLabel180" runat="server" 
                                               LocalizedTag="LOG_INFORMATION" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                <div class="custom-control custom-switch">
                                    <asp:CheckBox Text="&nbsp;" ID="LogInformation" runat="server"></asp:CheckBox>
                                </div>
                            </div>
-                           <div class="form-group col-md-2">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
                                <YAF:HelpLabel ID="HelpLabel210" runat="server" 
                                               LocalizedTag="LOG_VIEWSTATEERROR" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                <div class="custom-control custom-switch">
                                    <asp:CheckBox Text="&nbsp;" ID="LogViewStateError" runat="server"></asp:CheckBox>
                                </div>
                            </div>
-                           <div class="form-group col-md-2">
+                           <div class="form-group col-md-6">
                                <YAF:HelpLabel ID="HelpLabel211" runat="server" 
                                               LocalizedTag="LOG_BANNEDIP" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                <div class="custom-control custom-switch">
@@ -2263,14 +2140,14 @@
                            </div>
                        </div>
                       <div class="form-row">
-                          <div class="form-group col-md-2">
+                          <div class="form-group col-md-6">
                               <YAF:HelpLabel ID="HelpLabel212" runat="server"
                                              LocalizedTag="LOG_USERDELETED" LocalizedPage="ADMIN_HOSTSETTINGS" />
                               <div class="custom-control custom-switch">
                                   <asp:CheckBox Text="&nbsp;" ID="LogUserDeleted" runat="server"></asp:CheckBox>
                               </div>
                           </div>
-                          <div class="form-group col-md-2">
+                          <div class="form-group col-md-6">
                               <YAF:HelpLabel ID="HelpLabel213" runat="server"
                                              LocalizedTag="LOG_SUSPENDEDANDCONTRA" LocalizedPage="ADMIN_HOSTSETTINGS" />
                               <div class="custom-control custom-switch">
