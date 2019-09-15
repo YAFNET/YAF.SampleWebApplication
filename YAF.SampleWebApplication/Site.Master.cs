@@ -25,6 +25,7 @@
 namespace YAF.SampleWebApplication
 {
     using System;
+    using System.Linq;
     using System.Web;
     using System.Web.UI;
     using System.Web.UI.HtmlControls;
@@ -32,7 +33,7 @@ namespace YAF.SampleWebApplication
     using Microsoft.AspNet.Web.Optimization.WebForms;
 
     using YAF.Core;
-    using YAF.Core.Model;
+    using YAF.Core.Extensions;
     using YAF.Types.Constants;
     using YAF.Types.Extensions;
     using YAF.Types.Interfaces;
@@ -66,8 +67,8 @@ namespace YAF.SampleWebApplication
             // Check if forum is installed
             try
             {
-                var boards = YafContext.Current.GetRepository<Board>().List();
-                var isForumInstalled = boards.HasRows();
+                var boards = YafContext.Current.GetRepository<Board>().GetAll();
+                var isForumInstalled = boards.Any();
             }
             catch
             {
