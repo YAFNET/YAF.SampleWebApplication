@@ -3418,6 +3418,7 @@ BEGIN
         a.UserID,
         UserName = b.Name,
         UserDisplayName = b.DisplayName,
+		b.UserStyle,
         a.[Message],
         c.TopicID,
         c.ForumID,
@@ -3431,6 +3432,7 @@ BEGIN
         Edited = IsNull(a.Edited,a.Posted),
         TopicFlags = c.Flags,
         ForumFlags = d.Flags,
+		a.Posted,
         a.EditReason,
         a.Position,
         a.IsModeratorChanged,
@@ -3441,6 +3443,7 @@ BEGIN
         a.ReplyTo,
         a.ExternalMessageId,
         a.ReferenceMessageId,
+		ForumName = d.Name,
         HasAttachments	= convert(bit,ISNULL((select top 1 1 from [{databaseOwner}].[{objectQualifier}Attachment] x where x.MessageID=a.MessageID),0))
     FROM
         [{databaseOwner}].[{objectQualifier}Message] a
@@ -3478,8 +3481,7 @@ SELECT
         m.IsModeratorChanged,
         m.DeleteReason,
         m.BlogPostID,
-        t.PollID,
-        m.IP
+        t.PollID
     FROM
         [{databaseOwner}].[{objectQualifier}Topic] t
         join  [{databaseOwner}].[{objectQualifier}Message] m ON m.TopicID = t.TopicID
@@ -9222,7 +9224,16 @@ as
      delete from [{databaseOwner}].[{objectQualifier}MessageHistory]
      where DATEDIFF(day,Edited,@UTCTIMESTAMP ) > @DaysToClean
 
-     SELECT mh.*, m.UserID, m.UserName, IsNull(m.UserDisplayName,(SELECT u.DisplayName FROM [{databaseOwner}].[{objectQualifier}User] u where u.UserID = m.UserID)) AS UserDisplayName, t.ForumID, t.TopicID, t.Topic, m.Posted
+     SELECT 
+	 mh.*, 
+	 m.UserID, 
+	 m.UserName, 
+	 IsNull(m.UserDisplayName,(SELECT u.DisplayName FROM [{databaseOwner}].[{objectQualifier}User] u where u.UserID = m.UserID)) AS UserDisplayName, 
+	 t.ForumID, 
+	 t.TopicID, 
+	 t.Topic, 
+	 m.Posted,
+	 MessageIP = m.IP
      FROM [{databaseOwner}].[{objectQualifier}MessageHistory] mh
      LEFT JOIN [{databaseOwner}].[{objectQualifier}Message] m ON m.MessageID = mh.MessageID
      LEFT JOIN [{databaseOwner}].[{objectQualifier}Topic] t ON t.TopicID = m.TopicID
