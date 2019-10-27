@@ -28,6 +28,7 @@ namespace YAF.SampleWebApplication
     using System.Web.UI;
 
     using YAF.Core;
+    using YAF.Core.Extensions;
     using YAF.Types.Constants;
     using YAF.Types.Interfaces;
     using YAF.Utils;

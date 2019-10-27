@@ -676,14 +676,10 @@
     <Content Include="Forum\Content\flags\4x3\zw.svg" />
     <Content Include="Forum\Content\forum-admin.min.css" />
     <Content Include="Forum\Content\forum.min.css" />
-    <Content Include="Forum\Content\images\error.png" />
     <Content Include="Forum\Content\images\error.svg" />
     <Content Include="Forum\Content\images\InstallBackground.jpg" />
-    <Content Include="Forum\Content\images\play-pause.png" />
     <Content Include="Forum\Content\images\play-pause.svg" />
-    <Content Include="Forum\Content\images\progressbar.gif" />
     <Content Include="Forum\Content\images\spacer.gif" />
-    <Content Include="Forum\Content\images\YAFLogo.svg" />
     <Content Include="Forum\Content\InstallWizard.min.css" />
     <Content Include="Forum\Content\jquery.fileupload.comb.min.css" />
     <Content Include="Forum\Content\Themes\cerulean\bootstrap-forum.css" />

@@ -3908,30 +3908,6 @@ begin
 end
 GO
 
-create procedure [{databaseOwner}].[{objectQualifier}registry_list](@Name nvarchar(50) = null,@BoardID int = null) as
-BEGIN
-        if @BoardID is null
-    begin
-        IF @Name IS NULL OR @Name = ''
-        BEGIN
-            SELECT * FROM [{databaseOwner}].[{objectQualifier}Registry] where BoardID is null
-        END ELSE
-        BEGIN
-            SELECT * FROM [{databaseOwner}].[{objectQualifier}Registry] WHERE LOWER(Name) = LOWER(@Name) and BoardID is null
-        END
-    end else
-    begin
-        IF @Name IS NULL OR @Name = ''
-        BEGIN
-            SELECT * FROM [{databaseOwner}].[{objectQualifier}Registry] where BoardID=@BoardID
-        END ELSE
-        BEGIN
-            SELECT * FROM [{databaseOwner}].[{objectQualifier}Registry] WHERE LOWER(Name) = LOWER(@Name) and BoardID=@BoardID
-        END
-    end
-END
-GO
-
 create procedure [{databaseOwner}].[{objectQualifier}registry_save](
     @Name nvarchar(50),
     @Value nvarchar(max) = NULL,
@@ -8521,7 +8497,7 @@ begin
 end
 GO
 
-CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}message_list_search](@BoardID int) AS
+CREATE PROCEDURE [{databaseOwner}].[{objectQualifier}message_list_search](@ForumID int) AS
 BEGIN
     select
         m.MessageID,
@@ -8539,23 +8515,17 @@ BEGIN
 		t.[Description]
     from
         [{databaseOwner}].[{objectQualifier}Forum] f
-        join [{databaseOwner}].[{objectQualifier}Category] c on c.CategoryID = f.CategoryID
-		join [{databaseOwner}].[{objectQualifier}Topic] t on t.ForumID = f.ForumID
+        join [{databaseOwner}].[{objectQualifier}Topic] t on t.ForumID = f.ForumID
 		join [{databaseOwner}].[{objectQualifier}Message] m on m.TopicID = t.TopicID
 		join  [{databaseOwner}].[{objectQualifier}User] u on u.UserID = m.UserID
     where
-        c.BoardID=@BoardID and
+        f.ForumID=@ForumID and
 		t.IsDeleted = 0 and
 		m.IsDeleted = 0 and
 		m.IsApproved = 1 and
 		t.TopicMovedID is null 
     order by
-        c.SortOrder,
-        f.SortOrder,
-        c.CategoryID,
-        f.ForumID,
-		t.TopicID,
-		m.MessageID
+        m.MessageID desc
 END
 GO
 
