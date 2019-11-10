@@ -24,7 +24,11 @@
         <p class="card-text">
             <YAF:UserLink runat="server" ID="topicStarterLink">
             </YAF:UserLink>
-            <i class="fas fa-calendar-alt fa-fw text-secondary"></i>&nbsp;<YAF:DisplayDateTime runat="server" ID="StartDate">
+            <span class="fa-stack">
+                <i class="fa fa-calendar-day fa-stack-1x text-secondary"></i>
+                <i class="fa fa-circle fa-badge-bg fa-inverse fa-outline-inverse"></i>
+                <i class="fa fa-clock fa-badge text-secondary"></i>
+            </span>&nbsp;<YAF:DisplayDateTime runat="server" ID="StartDate">
             </YAF:DisplayDateTime>
             <%
                 var actualPostCount = this.TopicRow["Replies"].ToType<int>() + 1;
@@ -54,12 +58,12 @@
             <div>
                 <YAF:LocalizedLabel ID="LocalizedLabel4" runat="server" 
                                     LocalizedTag="REPLIES" LocalizedPage="MODERATE" />:
-                <% this.Response.Write(this.FormatReplies()); %>
+                <% this.Get<HttpResponseBase>().Write(this.FormatReplies()); %>
             </div>
             <div>
                 <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
                                     LocalizedPage="MODERATE" LocalizedTag="VIEWS" />:
-                <% this.Response.Write(this.FormatViews());%>
+                <% this.Get<HttpResponseBase>().Write(this.FormatViews());%>
             </div>
         </div>
     </div>
@@ -82,7 +86,11 @@
         <hr/>
         <h6><YAF:UserLink runat="server" ID="UserLast"></YAF:UserLink>
 
-            &nbsp;<i class="fas fa-calendar-alt fa-fw text-secondary"></i>&nbsp;
+            &nbsp;<span class="fa-stack">
+                <i class="fa fa-calendar-day fa-stack-1x text-secondary"></i>
+                <i class="fa fa-circle fa-badge-bg fa-inverse fa-outline-inverse"></i>
+                <i class="fa fa-clock fa-badge text-secondary"></i>
+            </span>&nbsp;
             <YAF:DisplayDateTime runat="server" ID="LastDate"></YAF:DisplayDateTime>
         </h6>
     </div>

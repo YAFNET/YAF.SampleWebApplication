@@ -1,14 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" EnableViewState="false" Inherits="YAF.Controls.ForumActiveDiscussion"
     CodeBehind="ForumActiveDiscussion.ascx.cs" %>
 
+<div class="col">
 <asp:UpdatePanel ID="UpdateStatsPanel" runat="server" UpdateMode="Conditional">
     <ContentTemplate>
-            <asp:PlaceHolder runat="server" ID="ActiveDiscussionPlaceHolder">
+        <asp:PlaceHolder runat="server" ID="ActiveDiscussionPlaceHolder">
                         <div class="card mb-3">
                             <div class="card-header">
-                                <span class="fa-stack"><i class="fas fa-comments fa-fw text-secondary"></i></span><YAF:LocalizedLabel
-                                                                              ID="ActiveDiscussionHeader" runat="server" 
-                                                                              LocalizedTag="ACTIVE_DISCUSSIONS" />
+                                <span class="fa-stack">
+                                    <i class="fas fa-comments fa-2x fa-fw text-secondary mr-1"></i>
+                                </span>
+                                <YAF:LocalizedLabel runat="server" ID="ActiveDiscussionHeader"
+                                                    LocalizedTag="ACTIVE_DISCUSSIONS" />
                             </div>
                             <div class="card-body">
                                 <asp:Repeater runat="server" ID="LatestPosts" 
@@ -20,12 +23,6 @@
                                         <li class="list-group-item px-0">
                                             <h6>
                                                     <asp:PlaceHolder runat="server" ID="PostIcon"></asp:PlaceHolder>
-                                                    <asp:Label runat="server" ID="NewMessage" 
-                                                               Visible="False"
-                                                               CssClass="badge badge-success">
-                                                        <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                                                            LocalizedTag="NEW_POSTS" />
-                                                    </asp:Label>
                                                     <asp:HyperLink ID="TextMessageLink" runat="server" CssClass="font-weight-bold" />&nbsp;
                                                     (<asp:HyperLink ID="ForumLink" runat="server" />)&nbsp;
                                                 <YAF:ThemeButton runat="server" 
@@ -43,15 +40,19 @@
                                                                      TextLocalizedTag="GO_LASTUNREAD_POST"
                                                                      TitleLocalizedTag="GO_LASTUNREAD_POST"></YAF:ThemeButton>
                                             </h6>
-                                            <small>
+                                            <p>
                                                 <YAF:LocalizedLabel ID="ByLabel" runat="server" 
                                                                        LocalizedTag="BY" 
                                                                        LocalizedPage="TOPICS" />
                                                 <YAF:UserLink ID="LastUserLink"  runat="server" />
-                                                <i class="fas fa-calendar fa-fw text-secondary"></i>
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-calendar-day fa-stack-1x text-secondary"></i>
+                                                    <i class="fa fa-circle fa-badge-bg fa-inverse fa-outline-inverse"></i>
+                                                    <i class="fa fa-clock fa-badge text-secondary"></i>
+                                                </span>
                                                 <YAF:DisplayDateTime ID="LastPostDate" runat="server"
                                                                      Format="BothTopic" />
-                                            </small> 
+                                            </p> 
                                         </li>
                                     </ItemTemplate>
                                     <FooterTemplate>
@@ -69,3 +70,4 @@
             </asp:PlaceHolder>
     </ContentTemplate>
 </asp:UpdatePanel>
+</div>
