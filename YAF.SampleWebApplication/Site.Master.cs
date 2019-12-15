@@ -31,7 +31,7 @@ namespace YAF.SampleWebApplication
     using System.Web.UI.HtmlControls;
 
     using Microsoft.AspNet.Web.Optimization.WebForms;
-
+    using YAF.Configuration;
     using YAF.Core;
     using YAF.Core.Extensions;
     using YAF.Types.Constants;
@@ -76,6 +76,8 @@ namespace YAF.SampleWebApplication
                 HttpContext.Current.Response.Redirect($"{YafForumInfo.ForumClientFileRoot}install/default.aspx");
             }
 
+            var scriptManager = ScriptManager.GetCurrent(this.Page);
+
             var forum = this.MainContent.FindControl("forum");
 
             if (forum != null)
@@ -88,11 +90,12 @@ namespace YAF.SampleWebApplication
             }
             else
             {
-                var sr = new ScriptReference("forum/Scripts/jquery-3.4.1.min.js");
-                var sm = (ScriptManager)this.FindControl("ScriptManager");
-                sm.Scripts.Insert(0, sr);
+                scriptManager.Scripts.Insert(
+                    0,
+                    new ScriptReference(YafForumInfo.GetURLToScripts($"jquery-{Config.JQueryVersion}.min.js")));
 
-                sm.Scripts.Add(new ScriptReference("forum/Scripts/jquery.ForumAdminExtensions.min.js"));
+                scriptManager.Scripts.Add(
+                    new ScriptReference(YafForumInfo.GetURLToScripts("jquery.ForumExtensions.min.js")));
 
                 var link = new HtmlLink();
 
