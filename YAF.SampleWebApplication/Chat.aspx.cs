@@ -59,7 +59,7 @@ namespace YAF.SampleWebApplication
         {
             if (username != null)
             {
-                this.UserImage = YafContext.Current.Get<IAvatars>().GetAvatarUrlForCurrentUser();
+                this.UserImage = BoardContext.Current.Get<IAvatars>().GetAvatarUrlForCurrentUser();
             }
         }
 
@@ -77,7 +77,7 @@ namespace YAF.SampleWebApplication
             }
             else
             {
-                YafBuildLink.Redirect(ForumPages.login);
+                BuildLink.Redirect(ForumPages.Login);
             }
 
             this.Header.DataBind();

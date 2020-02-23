@@ -105,7 +105,7 @@ namespace YAF.SampleWebApplication
         /// </returns>
         public string GetUserImage(int userId)
         {
-           return YafContext.Current.Get<IAvatars>().GetAvatarUrlForUser(userId);
+           return BoardContext.Current.Get<IAvatars>().GetAvatarUrlForUser(userId);
         }
 
         /// <summary>

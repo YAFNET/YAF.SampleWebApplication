@@ -46,11 +46,6 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected override void Application_Start(object sender, EventArgs e)
         {
-            // Code that runs on application startup
-            //RouteConfig.RegisterRoutes(RouteTable.Routes);
-
-            //BundleConfig.RegisterBundles(BundleTable.Bundles);
-
             base.Application_Start(sender, e);
         }
     }

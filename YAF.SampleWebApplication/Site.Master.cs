@@ -67,13 +67,13 @@ namespace YAF.SampleWebApplication
             // Check if forum is installed
             try
             {
-                var boards = YafContext.Current.GetRepository<Board>().GetAll();
+                var boards = BoardContext.Current.GetRepository<Board>().GetAll();
                 var isForumInstalled = boards.Any();
             }
             catch
             {
                 // failure... no boards.    
-                HttpContext.Current.Response.Redirect($"{YafForumInfo.ForumClientFileRoot}install/default.aspx");
+                HttpContext.Current.Response.Redirect($"{BoardInfo.ForumClientFileRoot}install/default.aspx");
             }
 
             var scriptManager = ScriptManager.GetCurrent(this.Page);
@@ -92,18 +92,18 @@ namespace YAF.SampleWebApplication
             {
                 scriptManager.Scripts.Insert(
                     0,
-                    new ScriptReference(YafForumInfo.GetURLToScripts($"jquery-{Config.JQueryVersion}.min.js")));
+                    new ScriptReference(BoardInfo.GetURLToScripts($"jquery-{Config.JQueryVersion}.min.js")));
 
                 scriptManager.Scripts.Add(
-                    new ScriptReference(YafForumInfo.GetURLToScripts("jquery.ForumExtensions.min.js")));
+                    new ScriptReference(BoardInfo.GetURLToScripts("jquery.ForumExtensions.min.js")));
 
                 var link = new HtmlLink();
 
                 link.Attributes.Add("rel", "stylesheet");
                 link.Attributes.Add("type", "text/css");
 
-                link.Href = YafContext.Current != null
-                                ? YafContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
+                link.Href = BoardContext.Current != null
+                                ? BoardContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
                                 : "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css";
 
                 this.Page.Header.Controls.Add(link);
@@ -131,7 +131,7 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void LoginLink_OnClick(object sender, EventArgs e)
         {
-            this.Response.Redirect(YafBuildLink.GetLink(ForumPages.login, "ReturnUrl={0}", this.GetReturnUrl()));
+            this.Response.Redirect(BuildLink.GetLink(ForumPages.Login, "ReturnUrl={0}", this.GetReturnUrl()));
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void RegisterLink_OnClick(object sender, EventArgs e)
         {
-            this.Response.Redirect(YafBuildLink.GetLink(ForumPages.register));
+            this.Response.Redirect(BuildLink.GetLink(ForumPages.Register));
         }
     }
 }
