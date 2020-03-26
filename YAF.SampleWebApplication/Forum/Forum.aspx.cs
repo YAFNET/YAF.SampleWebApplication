@@ -25,10 +25,21 @@
 namespace YAF.SampleWebApplication
 {
     using System;
-    using System.Web.UI;
 
-    public partial class Forum : Page
+    /// <summary>
+    /// The forum.
+    /// </summary>
+    public partial class Forum : ForumPageBase
     {
+        /// <summary>
+        /// The page_ load.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
 
