@@ -237,6 +237,8 @@
     <Resource tag="HEADER3">Statistics for</Resource>
     <Resource tag="MSG_MESSAGE_SEND">Verification Mail was send again to the User.</Resource>
     <Resource tag="MSG_VALID_DAYS">You should enter a valid integer value for days.</Resource>
+    <Resource tag="NEW_VERSION">A New Version is available!</Resource>
+    <Resource tag="NEW_VERSION_DOWNLOAD">Go to Downloads page</Resource>
     <Resource tag="NUM_POSTS">帖子数:</Resource>
     <Resource tag="NUM_TOPICS">主题数:</Resource>
     <Resource tag="NUM_USERS">用户数:</Resource>
@@ -1666,6 +1668,7 @@
     <Resource tag="PRUNE_PERMANENT_HELP">All Topics marked with the Deleted flag will be permanently deleted.</Resource>
     <Resource tag="PRUNE_START">Start Prune Task</Resource>
     <Resource tag="TITLE">Prune Topics</Resource>
+    <Resource tag="TITLE_HELP">Option to delete All Topics that are not marked as persistent.</Resource>
   </page>
   <page name="ADMIN_RANKS">
     <Resource tag="COMMAND">Command</Resource>
@@ -1744,6 +1747,20 @@
     <Resource tag="INFO">Restarting the application will reload all .config files.</Resource>
     <Resource tag="MSG_TRUST">Must have High/Unrestricted Trust to Unload Application. Restart Failed.</Resource>
     <Resource tag="TITLE">Restart Application</Resource>
+  </page>
+  <page name="ADMIN_RESTORE">
+    <Resource tag="DELETE_ALL_ZERO">Delete all with 0 Posts</Resource>
+    <Resource tag="FILTER">Search by Topic Name</Resource>
+    <Resource tag="FILTER_HELP">Filter list by Topic Name</Resource>
+    <Resource tag="MSG_DELETED">Topics deleted</Resource>
+    <Resource tag="MSG_RESTORED">Topic restored</Resource>
+    <Resource tag="RESTORE_MESSAGE">Restore Message</Resource>
+    <Resource tag="RESTORE_TOPIC">Restore Topic</Resource>
+    <Resource tag="SEARCH">Reload</Resource>
+    <Resource tag="TITLE">Restore &amp; Delete Topics</Resource>
+    <Resource tag="TITLE_HELP">Option to restore topics that are flagged as deleted topics, or to permanently delete them from the database.</Resource>
+    <Resource tag="TITLE_MESSAGE">Restore &amp; Delete Messages</Resource>
+    <Resource tag="TITLE_MESSAGE_HELP">Option to restore Messages that are flagged as deleted messages, or to permanently delete them from the database.</Resource>
   </page>
   <page name="ADMIN_RUNSQL">
     <Resource tag="HEADER">Run SQL Query</Resource>
@@ -1907,6 +1924,7 @@
     <Resource tag="admin_reindex">DB Maintenance</Resource>
     <Resource tag="admin_replacewords">Replace Words</Resource>
     <Resource tag="admin_restartapp">Restart App</Resource>
+    <Resource tag="admin_restore">Restore &amp; Delete Topics</Resource>
     <Resource tag="admin_runsql">Run SQL Query</Resource>
     <Resource tag="ADMIN_SPAMLOG">Spam Event Log</Resource>
     <Resource tag="admin_spamwords">Spam Check Words</Resource>
@@ -2154,6 +2172,8 @@
     <Resource tag="COPY">复制</Resource>
     <Resource tag="CUSTOM_BBCODE">更多 BBC代码</Resource>
     <Resource tag="DELETE">删除</Resource>
+    <Resource tag="DELETED_MESSAGE">Message with ID: {0} Deleted</Resource>
+    <Resource tag="DELETED_TOPIC">Topic with ID: {0} Deleted</Resource>
     <Resource tag="DISALLOWED">已被禁止</Resource>
     <Resource tag="DOWNLOAD">下载</Resource>
     <Resource tag="EDIT">编辑</Resource>

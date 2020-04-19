@@ -1,7 +1,7 @@
 <%@ Control Language="C#" AutoEventWireup="true" EnableViewState="false" Inherits="YAF.Controls.ForumLastPost" CodeBehind="ForumLastPost.ascx.cs" %>
 
 <asp:PlaceHolder ID="LastPostedHolder" runat="server">
-    <div class="d-flex flex-row flex-md-column justify-content-between justify-content-md-start">
+    <div class="d-flex flex-column">
         <div>
             <asp:Label runat="server" ID="NewMessage" 
                        CssClass="mr-1"></asp:Label>
@@ -40,7 +40,7 @@
 </asp:PlaceHolder>
 
 <asp:PlaceHolder runat="server" ID="NoPostsPlaceHolder">
-    <YAF:Alert runat="server" Type="info">
+    <span class="font-italic">
         <YAF:LocalizedLabel ID="NoPostsLabel" runat="server" LocalizedTag="NO_POSTS" />
-    </YAF:Alert>
+    </span>
 </asp:PlaceHolder>

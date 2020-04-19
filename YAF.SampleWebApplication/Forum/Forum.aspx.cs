@@ -26,6 +26,8 @@ namespace YAF.SampleWebApplication
 {
     using System;
 
+    using YAF.Core.BasePages;
+
     /// <summary>
     /// The forum.
     /// </summary>
@@ -42,7 +44,6 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
