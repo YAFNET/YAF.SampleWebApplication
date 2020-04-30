@@ -245,6 +245,7 @@
     <Resource tag="POSTS_DAY">Posts per dag:</Resource>
     <Resource tag="SIZE_DATABASE">Grootte van de database:</Resource>
     <Resource tag="STATS_DONTCOUNT">Deze cijfers tellen niet de verwijderde topics en posts mee.</Resource>
+    <Resource tag="TITLE">Dashboard</Resource>
     <Resource tag="TOPICS_DAY">Topics per dag:</Resource>
     <Resource tag="USERS_DAY">Nieuwe gebruikers per dag:</Resource>
   </page>
@@ -424,10 +425,6 @@
     <Resource tag="BOARD_EMAIL_ONREGISTER_HELP">Puntkomma (;) gescheiden lijst van mailadressen die bericht worden bij registratie van een nieuwe gebruiker.</Resource>
     <Resource tag="BOARD_EMAIL_REPORTMODS">E-mail de Moderatoren wanneer een post wordt gerapporteerd:</Resource>
     <Resource tag="BOARD_EMAIL_REPORTMODS_HELP">Moeten alle moderatoren bericht krijgen als iemand een bericht rapporteert?</Resource>
-    <Resource tag="BOARD_FILE_EXTENSIONS">Lijst van bestandsextensies:</Resource>
-    <Resource tag="BOARD_FILE_EXTENSIONS_HELP">Is de lijst van bestandstypen voor goed- of afgekeurde typen. (minder veilig)?</Resource>
-    <Resource tag="BOARD_JQ_THEME">jQuery UI Thema:</Resource>
-    <Resource tag="BOARD_JQ_THEME_HELP">Het jQuery UI Thema om op dit board te gebruiken voor de Tabs en de Accordion.</Resource>
     <Resource tag="BOARD_LOGO">Board Logo:</Resource>
     <Resource tag="BOARD_LOGO_HELP">Select a Board Logo or use the default YAF Board Logo.</Resource>
     <Resource tag="BOARD_LOGO_SELECT">Select a Board logo</Resource>
@@ -438,8 +435,6 @@
     <Resource tag="BOARD_SETUP">Board Installatie</Resource>
     <Resource tag="BOARD_THEME">Thema:</Resource>
     <Resource tag="BOARD_THEME_HELP">Theme om op dit board te gebruiken.</Resource>
-    <Resource tag="BOARD_THEME_LOGO">Sta Logo uit thema toe:</Resource>
-    <Resource tag="BOARD_THEME_LOGO_HELP">Logo uit thema gebruiken (Werkt niet in het portaal).</Resource>
     <Resource tag="BOARD_THREADED">Sta flexibele weergave toe:</Resource>
     <Resource tag="BOARD_THREADED_HELP">Sta flexibele weergave (boomstructuur) toe.</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT">Standaard Topic:</Resource>
@@ -1034,8 +1029,6 @@
     <Resource tag="ALLOW_SIGNATURE_HELP">Gebruikers mogen handtekeningen maken. Je moet wel het aantal karakters/toestaan van BBCodes instellen voor elke groep en/of Rang om het te activeren.</Resource>
     <Resource tag="ALLOW_THANKS">Sta Bedankjes toe:</Resource>
     <Resource tag="ALLOW_THANKS_HELP">Als deze is aangevinkt, kunnen Gebruikers elkaar bedanken voor nuttige posts.</Resource>
-    <Resource tag="ALLOW_TOPIC_DESCRIPTION">Laat Topic beschrijving toe:</Resource>
-    <Resource tag="ALLOW_TOPIC_DESCRIPTION_HELP">Als deze is aangevinkt, kunnen gebruikers een beschrijving van het topic toevoegen.</Resource>
     <Resource tag="ALLOW_TOPICS_DUPLICATENAME">Sta meerdere Topics met dezelfde naam toe:</Resource>
     <Resource tag="ALLOW_TOPICS_DUPLICATENAME_HELP">Dubbele Topicnamen toegestaan voor:</Resource>
     <Resource tag="ALLOW_USER_HIDE">Gebruikers mogen zich onzichtbaar maken:</Resource>
@@ -1044,6 +1037,8 @@
     <Resource tag="ALLOW_USERS_POLLIMAGES_HELP">Als deze is aangevinkt, kunnen gebruikers plaatjes als keuzes gebruiken.</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR">Gebruikers mogen tekstverwerker kiezen</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR_HELP">Gebruikers kunnen kiezen tussen verschillende tekstverwerkers in hun profiel.</Resource>
+    <Resource tag="ALLOWED_EXTENSIONS">Allowed File Extensions:</Resource>
+    <Resource tag="ALLOWED_EXTENSIONS_HELP">The list of allowed File Extensions for Attachments.</Resource>
     <Resource tag="AMOUNT_OF_SUBFORUMS">Sub Forums In Forums List:</Resource>
     <Resource tag="AMOUNT_OF_SUBFORUMS_HELP">The amount of Sub Forums In Forums List.</Resource>
     <Resource tag="APP_CORES">Processor Cores:</Resource>
@@ -1119,6 +1114,10 @@
     <Resource tag="DISPLAYNAME_MIN_LENGTH_HELP">Minium Length for Display Names.</Resource>
     <Resource tag="DYNAMIC_METATAGS">Voeg dynamische Meta Tags toe:</Resource>
     <Resource tag="DYNAMIC_METATAGS_HELP">Als deze is aangevinkt, worden de Description en Keywords meta tags dynamisch gevuld op de berichtenpagina.</Resource>
+    <Resource tag="EDITOR_BASCIC_HELP">Editor Toolbar used for Signatures ans Quick Replies.</Resource>
+    <Resource tag="EDITOR_BASIC">Editor Toolbar Basic:</Resource>
+    <Resource tag="EDITOR_FULL">Editor Toolbar Full:</Resource>
+    <Resource tag="EDITOR_FULL_HELP">Editor Toolbar used for Posting and Private Messages.</Resource>
     <Resource tag="EMAIL_VERIFICATION">E-mail verificatie verplichten:</Resource>
     <Resource tag="EMAIL_VERIFICATION_HELP">ren via e-mail.</Resource>
     <Resource tag="ENABLE_ABLBUMS">Zet Album Optie aan:</Resource>
@@ -1287,8 +1286,6 @@
     <Resource tag="MAX_POST_SIZE_HELP">De maximale grootte van een bericht in bytes. Op 0 zetten voor ongelimiteerde grootte (niet aanbevolen).</Resource>
     <Resource tag="MAX_SEARCH_RESULTS">Maximaal aantal Zoekresultaten:</Resource>
     <Resource tag="MAX_SEARCH_RESULTS_HELP">Maximum aantal zoekresultaten wat weergegeven wordt. Bij "0" worden alle zoekresultaten weergegeven (niet aanbevolen).</Resource>
-    <Resource tag="MAX_WORD_LENGTH">Maximale Woord Lengte:</Resource>
-    <Resource tag="MAX_WORD_LENGTH_HELP">Gebruik dit om het aantal letters per woord in topictitels (en sommige andere plaatsen) te limiteren.</Resource>
     <Resource tag="MEDALS_TEMPLATE">Medailles template:</Resource>
     <Resource tag="MEDALS_TEMPLATE_HELP">Sjabloon om de medailles op te bouwen.</Resource>
     <Resource tag="MEMBERLIST_PAGE_SIZE">Gebruikerslijst Pagina grootte:</Resource>
@@ -1514,6 +1511,8 @@
     <Resource tag="TOPICS_PER_PAGE_HELP">Aantal Topics per Pagina.</Resource>
     <Resource tag="TWITTER_USERNAME">Twitter Gebruikersnaam voor Retweets:</Resource>
     <Resource tag="TWITTER_USERNAME_HELP">De Twitter Gebruikersnaam die wordt gebruikt als een topic of een bericht wordt geretweet.</Resource>
+    <Resource tag="TWOCOLUMN_BOARD">Use 2 Column Board layout</Resource>
+    <Resource tag="TWOCOLUMN_BOARD_HELP">If enabled show forums in the left column and forum discussions and Stats in the Right Column</Resource>
     <Resource tag="UNHANDLED_USERAGENT_LOG">Zet Onbehandelde UserAgent Log aan:</Resource>
     <Resource tag="UNHANDLED_USERAGENT_LOG_HELP">Als deze aangevinkt is, worden alle onbehandelde UserAgent teksten gelogd.</Resource>
     <Resource tag="USE_FARSI_CALENDER">Gebruik de Farsi (Shamsi) Persische Kalender:</Resource>
@@ -1650,6 +1649,9 @@
     <Resource tag="PM_NUMBER">berichten:</Resource>
     <Resource tag="TITLE">PB Onderhoud</Resource>
   </page>
+  <page name="ADMIN_PROFILER">
+    <Resource tag="TITLE">Web Profiler</Resource>
+  </page>
   <page name="ADMIN_PRUNE">
     <Resource tag="ALL_FORUMS">Alle Forums</Resource>
     <Resource tag="CONFIRM_PRUNE">Weet je zeker dat je topics wilt schonen? Deze aktie kan niet ongedaan gemaakt worden.</Resource>
@@ -1662,6 +1664,7 @@
     <Resource tag="PRUNE_PERMANENT">Verwijder definitief uit DB:</Resource>
     <Resource tag="PRUNE_PERMANENT_HELP">Alle Topics die gemarkeerd zijn als 'Verwijderd', zullen definitief worden verwijderd.</Resource>
     <Resource tag="PRUNE_START">Start Opschoontaak</Resource>
+    <Resource tag="RESTORE_TOPIC">Restore Topic</Resource>
     <Resource tag="TITLE">Schoon Topics</Resource>
     <Resource tag="TITLE_HELP">Option to delete All Topics that are not marked as persistent.</Resource>
   </page>
@@ -1750,7 +1753,6 @@
     <Resource tag="MSG_DELETED">Topics deleted</Resource>
     <Resource tag="MSG_RESTORED">Topic restored</Resource>
     <Resource tag="RESTORE_MESSAGE">Restore Message</Resource>
-    <Resource tag="RESTORE_TOPIC">Restore Topic</Resource>
     <Resource tag="SEARCH">Reload</Resource>
     <Resource tag="TITLE">Restore &amp; Delete Topics</Resource>
     <Resource tag="TITLE_HELP">Option to restore topics that are flagged as deleted topics, or to permanently delete them from the database.</Resource>
@@ -1914,6 +1916,7 @@
     <Resource tag="admin_pageaccessedit">Edit Admin Page Access</Resource>
     <Resource tag="admin_pageaccesslist">Admin Page Access</Resource>
     <Resource tag="admin_pm">PM's</Resource>
+    <Resource tag="admin_profiler">Web Profiler</Resource>
     <Resource tag="admin_prune">Opschonen van Topics</Resource>
     <Resource tag="admin_ranks">Rangen</Resource>
     <Resource tag="admin_reindex">DB Onderhoud</Resource>
@@ -2260,6 +2263,8 @@
                 }
           }
   </Resource>
+    <Resource tag="SELECTED_QUOTE">Quote Selected Text</Resource>
+    <Resource tag="SELECTED_SEARCH">Search Google for ...</Resource>
     <Resource tag="SHOWHIDE">Laat zien/Verberg</Resource>
     <Resource tag="SUBMIT">Vastleggen</Resource>
     <Resource tag="TOPIC_NOTIFICATION_SUBJECT">Melding van plaatsing nieuw bericht (van {0})</Resource>

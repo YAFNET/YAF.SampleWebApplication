@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.PostMessage" CodeBehind="PostMessage.ascx.cs" %>
+<%@ Import Namespace="YAF.Core.Context" %>
 <%@ Register TagPrefix="YAF" TagName="LastPosts" Src="../controls/LastPosts.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="PostOptions" Src="../controls/PostOptions.ascx" %>
-<%@ Register TagPrefix="YAF" TagName="PostAttachments" Src="../controls/PostAttachments.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="PollList" Src="../controls/PollList.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="AttachmentsUploadDialog" Src="../Dialogs/AttachmentsUpload.ascx" %>
 
@@ -105,20 +105,7 @@
                         <!-- editor goes here -->
                     </asp:PlaceHolder>
                 </div>
-                <asp:PlaceHolder runat="server" ID="maxCharRow">
-                    <div class="d-sm-none d-md-block">
-                    <YAF:Alert runat="server" Type="info">
-                        <strong>
-                            <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="NOTE" LocalizedPage="COMMON" />
-                        </strong>
-                        <YAF:LocalizedLabel ID="LocalizedLblMaxNumberOfPost" runat="server" 
-                                            LocalizedTag="MAXNUMBEROF"/>
-                    </YAF:Alert>
-                    </div>
-                </asp:PlaceHolder>
                 <YAF:PostOptions ID="PostOptions1" runat="server"></YAF:PostOptions>
-
-                <YAF:PostAttachments ID="PostAttachments1" runat="server" Visible="False"></YAF:PostAttachments>
 
                 <asp:PlaceHolder ID="tr_captcha1" runat="server" Visible="false">
                     <div class="form-group">
@@ -131,7 +118,8 @@
                 <asp:PlaceHolder ID="tr_captcha2" runat="server" Visible="false">
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="tbCaptcha">
-                        <YAF:LocalizedLabel runat="server" LocalizedTag="Captcha_Enter" />
+                            <YAF:LocalizedLabel runat="server" 
+                                                LocalizedTag="Captcha_Enter" />
                         </asp:Label>
                         <asp:TextBox ID="tbCaptcha" runat="server" CssClass="form-control" />
                     </div>
@@ -139,7 +127,8 @@
                 <asp:PlaceHolder ID="EditReasonRow" runat="server">
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="ReasonEditor">
-                <YAF:LocalizedLabel runat="server" LocalizedTag="EditReason" />
+                            <YAF:LocalizedLabel runat="server" 
+                                                LocalizedTag="EditReason" />
                         </asp:Label>
                         <asp:TextBox ID="ReasonEditor" runat="server" CssClass="form-control" />
                     </div>

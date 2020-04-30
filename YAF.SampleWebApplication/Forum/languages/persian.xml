@@ -245,6 +245,7 @@
     <Resource tag="POSTS_DAY">ارسال در روز:</Resource>
     <Resource tag="SIZE_DATABASE">حجم پایگاه داده:</Resource>
     <Resource tag="STATS_DONTCOUNT">این آمار تعداد ارسال ها و موضوعات حذف شده را به حساب نمی آورد</Resource>
+    <Resource tag="TITLE">Dashboard</Resource>
     <Resource tag="TOPICS_DAY">موضوعات در روز:</Resource>
     <Resource tag="USERS_DAY">کاربران در روز:</Resource>
   </page>
@@ -424,10 +425,6 @@
     <Resource tag="BOARD_EMAIL_ONREGISTER_HELP">فهرست آدرس های پست الکترونیک که با ؛ جدا شده اند برای ارسال اطلاعیه هنگام ثبت کاربر جدید:</Resource>
     <Resource tag="BOARD_EMAIL_REPORTMODS">ارسال ایمیل به ناظران هنگام گزارش یک مطلب:</Resource>
     <Resource tag="BOARD_EMAIL_REPORTMODS_HELP">هنگام گزارش یک مطلب تمام ناظران مطلب از آن مطلع شوند؟</Resource>
-    <Resource tag="BOARD_FILE_EXTENSIONS">فهرست پسوند فایل ها:</Resource>
-    <Resource tag="BOARD_FILE_EXTENSIONS_HELP">لیست پسوند‌های فایل های مجاز و غیرمجاز (امنیت پائین تر)؟</Resource>
-    <Resource tag="BOARD_JQ_THEME">jQuery UI Theme:</Resource>
-    <Resource tag="BOARD_JQ_THEME_HELP">The jQuery UI Theme to use on this board for the Tabs and Accordion.</Resource>
     <Resource tag="BOARD_LOGO">Board Logo:</Resource>
     <Resource tag="BOARD_LOGO_HELP">Select a Board Logo or use the default YAF Board Logo.</Resource>
     <Resource tag="BOARD_LOGO_SELECT">Select a Board logo</Resource>
@@ -438,8 +435,6 @@
     <Resource tag="BOARD_SETUP">تنظیمات تابلو</Resource>
     <Resource tag="BOARD_THEME">قالب:</Resource>
     <Resource tag="BOARD_THEME_HELP">قالب استفاده شده در این تابلو</Resource>
-    <Resource tag="BOARD_THEME_LOGO">مجوز لوگوی قالب بندی شده:</Resource>
-    <Resource tag="BOARD_THEME_LOGO_HELP">دریافت لوگو از فایل قالب (در پورتال ها کار نمی کند)</Resource>
     <Resource tag="BOARD_THREADED">نمایش پشت سرهم:</Resource>
     <Resource tag="BOARD_THREADED_HELP">مجوز نمایش پشت سر هم مطالب.</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT">نحوه نمایش موضوعات</Resource>
@@ -1033,8 +1028,6 @@
     <Resource tag="ALLOW_SIGNATURE_HELP">مجوز اینکه کاربران بتوانند برای خود امضا ایجاد نمایند. شما می توانید تعداد کاراکترها و BBCode های مجاز را نیز برای هر گروه / رتبه برای فعال کردن ویژگی امضا تنظیم نمایید.</Resource>
     <Resource tag="ALLOW_THANKS">مجوز تشکر از ارسال‌ها:</Resource>
     <Resource tag="ALLOW_THANKS_HELP">در صورت انتخاب به کاربران اجازه می دهید بتوانند از ارسال ها تشکر کنند.</Resource>
-    <Resource tag="ALLOW_TOPIC_DESCRIPTION">مجوز توضیحات موضوع:</Resource>
-    <Resource tag="ALLOW_TOPIC_DESCRIPTION_HELP">در صورت انتخاب کاربران می توانند برای موضوعات خود توضیحی وارد نمایند</Resource>
     <Resource tag="ALLOW_TOPICS_DUPLICATENAME">مجوز وجود موضوعاتی با نام های مشابه:</Resource>
     <Resource tag="ALLOW_TOPICS_DUPLICATENAME_HELP">نام های تکراری موضوعات مجاز است برای :</Resource>
     <Resource tag="ALLOW_USER_HIDE">مجوز مخفی سازی کاربر:</Resource>
@@ -1043,6 +1036,8 @@
     <Resource tag="ALLOW_USERS_POLLIMAGES_HELP">با انتخاب این گزینه کاربران می توانند به جای گزینه ها از تصاویر استفاده کنند.</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR">به کاربر مجوز به‌کارگیری ویرایشگر متنی را می دهد</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR_HELP">به کاربر مجوز به‌کارگیری ویرایشگر متنی را در پروفایلشان می دهد</Resource>
+    <Resource tag="ALLOWED_EXTENSIONS">Allowed File Extensions:</Resource>
+    <Resource tag="ALLOWED_EXTENSIONS_HELP">The list of allowed File Extensions for Attachments.</Resource>
     <Resource tag="AMOUNT_OF_SUBFORUMS">Sub Forums In Forums List:</Resource>
     <Resource tag="AMOUNT_OF_SUBFORUMS_HELP">The amount of Sub Forums In Forums List.</Resource>
     <Resource tag="APP_CORES">تعداد هسته ها:</Resource>
@@ -1119,6 +1114,10 @@
     <Resource tag="DISPLAYNAME_MIN_LENGTH_HELP">حداقل طول برای نام کاربری و نام نمایشی</Resource>
     <Resource tag="DYNAMIC_METATAGS">افزودن داینامیک متاتگ ها به صفحه:</Resource>
     <Resource tag="DYNAMIC_METATAGS_HELP">در صورت انتخاب متاتگ های description و keyword بصورت اتوماتیک در صفحه ی پست‌ها تولید خواهد شد</Resource>
+    <Resource tag="EDITOR_BASCIC_HELP">Editor Toolbar used for Signatures ans Quick Replies.</Resource>
+    <Resource tag="EDITOR_BASIC">Editor Toolbar Basic:</Resource>
+    <Resource tag="EDITOR_FULL">Editor Toolbar Full:</Resource>
+    <Resource tag="EDITOR_FULL_HELP">Editor Toolbar used for Posting and Private Messages.</Resource>
     <Resource tag="EMAIL_VERIFICATION">الزام به تایید ایمیل:</Resource>
     <Resource tag="EMAIL_VERIFICATION_HELP">اگر علامت نداشته باشد کاربران مجبور به تایپ مجدد ایمیل خود نیستند.</Resource>
     <Resource tag="ENABLE_ABLBUMS">فعال کردن آلبوم:</Resource>
@@ -1286,8 +1285,6 @@
     <Resource tag="MAX_POST_SIZE_HELP">حداکثر اندازه یک اراسل بر حسب بایت. 0 نشان دهنده نا محدود است(که پیشنهاد نمی شود).</Resource>
     <Resource tag="MAX_SEARCH_RESULTS">حداکثر نتایج جستجو:</Resource>
     <Resource tag="MAX_SEARCH_RESULTS_HELP">حداکثر تعداد نتایج جستجو که می تواند برگردانده شود. 0 را برای نامحدود وارد کنید(البته توصیه نمی شود)</Resource>
-    <Resource tag="MAX_WORD_LENGTH">حداکثر طول کلمه</Resource>
-    <Resource tag="MAX_WORD_LENGTH_HELP">برای محدود کردن تعداد حروف یک کلمه از این گزینه استفاده نمائید.</Resource>
     <Resource tag="MEDALS_TEMPLATE">قالب نشان ها :</Resource>
     <Resource tag="MEDALS_TEMPLATE_HELP">قالبی که در آن نشان های کاربر بار می شود.</Resource>
     <Resource tag="MEMBERLIST_PAGE_SIZE">اندازه صفحه فهرست اعضاء:</Resource>
@@ -1516,6 +1513,8 @@
     <Resource tag="TOPICS_PER_PAGE_HELP">تعداد عناوین برای نمایش در یک صفحه.</Resource>
     <Resource tag="TWITTER_USERNAME">Twitter Username for Retweets:</Resource>
     <Resource tag="TWITTER_USERNAME_HELP">Twitter Username that is mentioned when Retweeting a Topic or Message.</Resource>
+    <Resource tag="TWOCOLUMN_BOARD">Use 2 Column Board layout</Resource>
+    <Resource tag="TWOCOLUMN_BOARD_HELP">If enabled show forums in the left column and forum discussions and Stats in the Right Column</Resource>
     <Resource tag="UNHANDLED_USERAGENT_LOG">فعال کردن سیاهه کاربران اداره نشده:</Resource>
     <Resource tag="UNHANDLED_USERAGENT_LOG_HELP">در صورت علامت زدن رشته های اداره نشده کاربران سیاهه می گردد.</Resource>
     <Resource tag="USE_FARSI_CALENDER">Use Farsi (Shamsi) Persian Calender:</Resource>
@@ -1652,6 +1651,9 @@
     <Resource tag="PM_NUMBER">تعداد پیام های خصوصی :</Resource>
     <Resource tag="TITLE">نگداری پیام خصوصی</Resource>
   </page>
+  <page name="ADMIN_PROFILER">
+    <Resource tag="TITLE">Web Profiler</Resource>
+  </page>
   <page name="ADMIN_PRUNE">
     <Resource tag="ALL_FORUMS">همه انجمن ها</Resource>
     <Resource tag="CONFIRM_PRUNE">آیا واقعا مایل به اصلاح موضوعات هستید؟ این فرآیند غیر قابل بازگشت است.</Resource>
@@ -1664,6 +1666,7 @@
     <Resource tag="PRUNE_PERMANENT">حذف دائم از پایگه داده:</Resource>
     <Resource tag="PRUNE_PERMANENT_HELP">تمام موضوعات مشخص شده با عنوان حذف شده حذف دائم خواهند شد.</Resource>
     <Resource tag="PRUNE_START">آغاز فرمان اصلاح</Resource>
+    <Resource tag="RESTORE_TOPIC">Restore Topic</Resource>
     <Resource tag="TITLE">اصلاح موضوعات</Resource>
     <Resource tag="TITLE_HELP">Option to delete All Topics that are not marked as persistent.</Resource>
   </page>
@@ -1767,7 +1770,6 @@
     <Resource tag="MSG_DELETED">Topics deleted</Resource>
     <Resource tag="MSG_RESTORED">Topic restored</Resource>
     <Resource tag="RESTORE_MESSAGE">Restore Message</Resource>
-    <Resource tag="RESTORE_TOPIC">Restore Topic</Resource>
     <Resource tag="SEARCH">Reload</Resource>
     <Resource tag="TITLE">Restore &amp; Delete Topics</Resource>
     <Resource tag="TITLE_HELP">Option to restore topics that are flagged as deleted topics, or to permanently delete them from the database.</Resource>
@@ -1934,6 +1936,7 @@
     <Resource tag="admin_pageaccessedit">ویرایش دسترسی صفحه مدیر</Resource>
     <Resource tag="admin_pageaccesslist">دسترسی صفحه مدیر</Resource>
     <Resource tag="admin_pm">پیام های خصوصی</Resource>
+    <Resource tag="admin_profiler">Web Profiler</Resource>
     <Resource tag="admin_prune">اصلاح موضوعات</Resource>
     <Resource tag="admin_ranks">رتبه ها</Resource>
     <Resource tag="admin_reindex">نگهداری پایگاه داده</Resource>
@@ -2283,6 +2286,8 @@
       }
       }
     </Resource>
+    <Resource tag="SELECTED_QUOTE">Quote Selected Text</Resource>
+    <Resource tag="SELECTED_SEARCH">Search Google for ...</Resource>
     <Resource tag="SHOWHIDE">نمایش/عدم نمایش</Resource>
     <Resource tag="SUBMIT">تایید</Resource>
     <Resource tag="TOPIC_NOTIFICATION_SUBJECT">اشتراک در دریافت جدیدترین مطالب  (از {0})</Resource>

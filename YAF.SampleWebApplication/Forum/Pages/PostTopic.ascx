@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.PostTopic" CodeBehind="PostTopic.ascx.cs" %>
-<%@ Register TagPrefix="YAF" TagName="LastPosts" Src="../controls/LastPosts.ascx" %>
+<%@ Import Namespace="YAF.Core.Context" %>
 <%@ Register TagPrefix="YAF" TagName="PostOptions" Src="../controls/PostOptions.ascx" %>
-<%@ Register TagPrefix="YAF" TagName="PostAttachments" Src="../controls/PostAttachments.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="AttachmentsUploadDialog" Src="../Dialogs/AttachmentsUpload.ascx" %>
 
 
@@ -24,16 +23,6 @@
                 <asp:Label ID="Title" runat="server" />
             </div>
             <div class="card-body">
-                <asp:PlaceHolder ID="PreviewRow" runat="server" Visible="false">
-                    <asp:Label runat="server">
-                        <YAF:LocalizedLabel runat="server" LocalizedTag="previewtitle" />
-                    </asp:Label>
-                    <asp:PlaceHolder ID="PreviewCell" runat="server">
-                        <YAF:Alert Type="light" runat="server">
-                            <YAF:MessagePost ID="PreviewMessagePost" runat="server"/>
-                        </YAF:Alert>
-                    </asp:PlaceHolder>
-                </asp:PlaceHolder>
                 <asp:PlaceHolder ID="SubjectRow" runat="server">
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="TopicSubjectTextBox">
@@ -49,17 +38,15 @@
                         data-userid="<%= BoardContext.Current.PageUserID %>">
                     </div>
                 </asp:PlaceHolder>
-                <asp:PlaceHolder ID="DescriptionRow" Visible="false" runat="server">
-                    <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="TopicDescriptionTextBox">
-                            <YAF:LocalizedLabel ID="TopicDescriptionLabel" runat="server" LocalizedTag="description" />
-                        </asp:Label>
-                        <asp:TextBox ID="TopicDescriptionTextBox" runat="server"
-                            CssClass="form-control"
-                            MaxLength="100"
-                            autocomplete="off" />
-                    </div>
-                </asp:PlaceHolder>
+                <div class="form-group">
+                    <asp:Label runat="server" AssociatedControlID="TopicDescriptionTextBox">
+                        <YAF:LocalizedLabel ID="TopicDescriptionLabel" runat="server" LocalizedTag="description" />
+                    </asp:Label>
+                    <asp:TextBox ID="TopicDescriptionTextBox" runat="server"
+                                 CssClass="form-control"
+                                 MaxLength="100"
+                                 autocomplete="off" />
+                </div>
                 <asp:PlaceHolder ID="FromRow" runat="server">
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="From">
@@ -100,25 +87,24 @@
                         <!-- editor goes here -->
                     </asp:PlaceHolder>
                 </div>
-                <asp:PlaceHolder runat="server" ID="maxCharRow">
-                    <div class="d-sm-none d-md-block">
-                    <YAF:Alert runat="server" Type="info">
-                        <strong>
-                            <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="NOTE" LocalizedPage="COMMON" />
-                        </strong>
-                        <YAF:LocalizedLabel ID="LocalizedLblMaxNumberOfPost" runat="server" 
-                                            LocalizedTag="MAXNUMBEROF"/>
-                    </YAF:Alert>
-                    </div>
+                <asp:PlaceHolder ID="PreviewRow" runat="server" Visible="false">
+                    <asp:Label runat="server">
+                        <YAF:LocalizedLabel runat="server" LocalizedTag="previewtitle" />
+                    </asp:Label>
+                    <asp:PlaceHolder ID="PreviewCell" runat="server">
+                        <YAF:Alert Type="light" runat="server">
+                            <YAF:MessagePost ID="PreviewMessagePost" runat="server"/>
+                        </YAF:Alert>
+                    </asp:PlaceHolder>
                 </asp:PlaceHolder>
-                <YAF:PostOptions ID="PostOptions1" runat="server"></YAF:PostOptions>
 
-                <YAF:PostAttachments ID="PostAttachments1" runat="server" Visible="False"></YAF:PostAttachments>
+                <YAF:PostOptions ID="PostOptions1" runat="server"></YAF:PostOptions>
 
                 <asp:PlaceHolder ID="tr_captcha1" runat="server" Visible="false">
                     <div class="form-group">
                         <asp:Label runat="server">
-                <YAF:LocalizedLabel runat="server" LocalizedTag="Captcha_Image" />
+                            <YAF:LocalizedLabel runat="server" 
+                                                LocalizedTag="Captcha_Image" />
                         </asp:Label>
                         <asp:Image ID="imgCaptcha" runat="server" />
                     </div>
@@ -126,9 +112,11 @@
                 <asp:PlaceHolder ID="tr_captcha2" runat="server" Visible="false">
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="tbCaptcha">
-                        <YAF:LocalizedLabel runat="server" LocalizedTag="Captcha_Enter" />
+                            <YAF:LocalizedLabel runat="server" 
+                                                LocalizedTag="Captcha_Enter" />
                         </asp:Label>
-                        <asp:TextBox ID="tbCaptcha" runat="server" CssClass="form-control" />
+                        <asp:TextBox ID="tbCaptcha" runat="server" 
+                                     CssClass="form-control" />
                     </div>
                 </asp:PlaceHolder>
             </div>

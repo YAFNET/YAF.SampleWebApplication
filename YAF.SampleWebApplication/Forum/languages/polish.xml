@@ -245,6 +245,7 @@
     <Resource tag="POSTS_DAY">Postów na dzień:</Resource>
     <Resource tag="SIZE_DATABASE">Rozmiar bazy danych:</Resource>
     <Resource tag="STATS_DONTCOUNT">Te statystyki nie zawierają usuniętych tematów i postów.</Resource>
+    <Resource tag="TITLE">Dashboard</Resource>
     <Resource tag="TOPICS_DAY">Tematów na dzień:</Resource>
     <Resource tag="USERS_DAY">Użytkowników na dzień:</Resource>
   </page>
@@ -424,10 +425,6 @@
     <Resource tag="BOARD_EMAIL_ONREGISTER_HELP">Lista adresów e-mail do wysyłania powiadomień nowym użytkownikom po rejestracji. Oddzielana średnikami (;).</Resource>
     <Resource tag="BOARD_EMAIL_REPORTMODS">E-mail do moderatorów, gdy zostanie zgłoszony post:</Resource>
     <Resource tag="BOARD_EMAIL_REPORTMODS_HELP">Czy wszyscy moderatorzy forum powinni być powiadamiani, że został zgłoszony post?</Resource>
-    <Resource tag="BOARD_FILE_EXTENSIONS">Lista rozszerzeń plików jest:</Resource>
-    <Resource tag="BOARD_FILE_EXTENSIONS_HELP">Czy lista plików to lista dozwolonych plików, czy niedozwolonych (mniejsze bezpieczeństwo)?</Resource>
-    <Resource tag="BOARD_JQ_THEME">Styl UI jQuery:</Resource>
-    <Resource tag="BOARD_JQ_THEME_HELP">Styl UI jQuery używany na tym forum dla zakładek i harmonijek.</Resource>
     <Resource tag="BOARD_LOGO">Board Logo:</Resource>
     <Resource tag="BOARD_LOGO_HELP">Select a Board Logo or use the default YAF Board Logo.</Resource>
     <Resource tag="BOARD_LOGO_SELECT">Select a Board logo</Resource>
@@ -438,8 +435,6 @@
     <Resource tag="BOARD_SETUP">Ustawienia forum</Resource>
     <Resource tag="BOARD_THEME">Styl:</Resource>
     <Resource tag="BOARD_THEME_HELP">Styl używany na tym forum.</Resource>
-    <Resource tag="BOARD_THEME_LOGO">Pozwolenie na logo ze stylu:</Resource>
-    <Resource tag="BOARD_THEME_LOGO_HELP">Wczytuje logo z pliku stylu (nie działa na portalu).</Resource>
     <Resource tag="BOARD_THREADED">Widok drzewa:</Resource>
     <Resource tag="BOARD_THREADED_HELP">Pozwól na widok drzewa dla postów.</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT">Domyślnie pokaż tematy:</Resource>
@@ -1033,8 +1028,6 @@
     <Resource tag="ALLOW_SIGNATURE_HELP">Allow users to create signatures. You should set allowed number of characters and BBCodes for each group and/or rank to really enable the feature.</Resource>
     <Resource tag="ALLOW_THANKS">Allow Users to Thank Posts:</Resource>
     <Resource tag="ALLOW_THANKS_HELP">If checked users can thank posts they consider useful.</Resource>
-    <Resource tag="ALLOW_TOPIC_DESCRIPTION">Allow Topic Description:</Resource>
-    <Resource tag="ALLOW_TOPIC_DESCRIPTION_HELP">If checked, users can add a topic description.</Resource>
     <Resource tag="ALLOW_TOPICS_DUPLICATENAME">Allow Topics With Same Name:</Resource>
     <Resource tag="ALLOW_TOPICS_DUPLICATENAME_HELP">Duplicate topic names are allowed to:</Resource>
     <Resource tag="ALLOW_USER_HIDE">Allow User To Hide Himself:</Resource>
@@ -1043,6 +1036,8 @@
     <Resource tag="ALLOW_USERS_POLLIMAGES_HELP">If enabled Users can add images as poll options.</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR">Allow users to pick text editor</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR_HELP">Allow users to pick text editor in their profiles.</Resource>
+    <Resource tag="ALLOWED_EXTENSIONS">Allowed File Extensions:</Resource>
+    <Resource tag="ALLOWED_EXTENSIONS_HELP">The list of allowed File Extensions for Attachments.</Resource>
     <Resource tag="AMOUNT_OF_SUBFORUMS">Sub Forums In Forums List:</Resource>
     <Resource tag="AMOUNT_OF_SUBFORUMS_HELP">The amount of Sub Forums In Forums List.</Resource>
     <Resource tag="APP_CORES">Processor Cores:</Resource>
@@ -1118,6 +1113,10 @@
     <Resource tag="DISPLAYNAME_MIN_LENGTH_HELP">Minium Length for Display Names.</Resource>
     <Resource tag="DYNAMIC_METATAGS">Add Dynamic Page Meta Tags:</Resource>
     <Resource tag="DYNAMIC_METATAGS_HELP">If checked, description and keywords meta tags will be created dynamically on the post pages.</Resource>
+    <Resource tag="EDITOR_BASCIC_HELP">Editor Toolbar used for Signatures ans Quick Replies.</Resource>
+    <Resource tag="EDITOR_BASIC">Editor Toolbar Basic:</Resource>
+    <Resource tag="EDITOR_FULL">Editor Toolbar Full:</Resource>
+    <Resource tag="EDITOR_FULL_HELP">Editor Toolbar used for Posting and Private Messages.</Resource>
     <Resource tag="EMAIL_VERIFICATION">Require Email Verification:</Resource>
     <Resource tag="EMAIL_VERIFICATION_HELP">If unchecked users will not need to verify their email address.</Resource>
     <Resource tag="ENABLE_ABLBUMS">Enable Album Feature:</Resource>
@@ -1285,8 +1284,6 @@
     <Resource tag="MAX_POST_SIZE_HELP">Maximum size of a post in bytes. Set to 0 for unlimited (not recommended).</Resource>
     <Resource tag="MAX_SEARCH_RESULTS">Max Search Results:</Resource>
     <Resource tag="MAX_SEARCH_RESULTS_HELP">Maximum number of search results that can be returned. Enter "0" for unlimited (not recommended).</Resource>
-    <Resource tag="MAX_WORD_LENGTH">Max Word Length:</Resource>
-    <Resource tag="MAX_WORD_LENGTH_HELP">Use it to limit number of a word characters in topic names and some other places.</Resource>
     <Resource tag="MEDALS_TEMPLATE">Medals template:</Resource>
     <Resource tag="MEDALS_TEMPLATE_HELP">Template for rendering user's medals.</Resource>
     <Resource tag="MEMBERLIST_PAGE_SIZE">Member List Page Size:</Resource>
@@ -1512,6 +1509,8 @@
     <Resource tag="TOPICS_PER_PAGE_HELP">Number of topics to show per page.</Resource>
     <Resource tag="TWITTER_USERNAME">Twitter Username for Retweets:</Resource>
     <Resource tag="TWITTER_USERNAME_HELP">Twitter Username that is mentioned when Retweeting a Topic or Message.</Resource>
+    <Resource tag="TWOCOLUMN_BOARD">Use 2 Column Board layout</Resource>
+    <Resource tag="TWOCOLUMN_BOARD_HELP">If enabled show forums in the left column and forum discussions and Stats in the Right Column</Resource>
     <Resource tag="UNHANDLED_USERAGENT_LOG">Enable Unhandled UserAgent Log:</Resource>
     <Resource tag="UNHANDLED_USERAGENT_LOG_HELP">If checked, all unhandled UserAgent strings are logged.</Resource>
     <Resource tag="USE_FARSI_CALENDER">Use Farsi (Shamsi) Persian Calender:</Resource>
@@ -1650,6 +1649,9 @@
     <Resource tag="PM_NUMBER">Number of private messages:</Resource>
     <Resource tag="TITLE">PM Maintenance</Resource>
   </page>
+  <page name="ADMIN_PROFILER">
+    <Resource tag="TITLE">Web Profiler</Resource>
+  </page>
   <page name="ADMIN_PRUNE">
     <Resource tag="ALL_FORUMS">All Forums</Resource>
     <Resource tag="CONFIRM_PRUNE">Do you really want to prune topics? This process is irreversible.</Resource>
@@ -1662,6 +1664,7 @@
     <Resource tag="PRUNE_PERMANENT">Permanently remove from DB:</Resource>
     <Resource tag="PRUNE_PERMANENT_HELP">All Topics marked with the Deleted flag will be permanently deleted.</Resource>
     <Resource tag="PRUNE_START">Start Prune Task</Resource>
+    <Resource tag="RESTORE_TOPIC">Restore Topic</Resource>
     <Resource tag="TITLE">Prune Topics</Resource>
     <Resource tag="TITLE_HELP">Option to delete All Topics that are not marked as persistent.</Resource>
   </page>
@@ -1750,7 +1753,6 @@
     <Resource tag="MSG_DELETED">Topics deleted</Resource>
     <Resource tag="MSG_RESTORED">Topic restored</Resource>
     <Resource tag="RESTORE_MESSAGE">Restore Message</Resource>
-    <Resource tag="RESTORE_TOPIC">Restore Topic</Resource>
     <Resource tag="SEARCH">Reload</Resource>
     <Resource tag="TITLE">Restore &amp; Delete Topics</Resource>
     <Resource tag="TITLE_HELP">Option to restore topics that are flagged as deleted topics, or to permanently delete them from the database.</Resource>
@@ -1914,6 +1916,7 @@
     <Resource tag="admin_pageaccessedit">Edytuj dostęp do panelu administracyjnego</Resource>
     <Resource tag="admin_pageaccesslist">Dostęp do panelu administracyjnego</Resource>
     <Resource tag="admin_pm">Prywatne wiadomości</Resource>
+    <Resource tag="admin_profiler">Web Profiler</Resource>
     <Resource tag="admin_prune">Czyszczenie tematów</Resource>
     <Resource tag="admin_ranks">Rangi</Resource>
     <Resource tag="admin_reindex">Konserwacja bazy danych</Resource>
@@ -2260,6 +2263,8 @@
                 }
           }
   </Resource>
+    <Resource tag="SELECTED_QUOTE">Quote Selected Text</Resource>
+    <Resource tag="SELECTED_SEARCH">Search Google for ...</Resource>
     <Resource tag="SHOWHIDE">Pokaż/Ukryj</Resource>
     <Resource tag="SUBMIT">Wyślij</Resource>
     <Resource tag="TOPIC_NOTIFICATION_SUBJECT">Subskrypcja temat, powiadomienie o nowych postach (Od {0})</Resource>

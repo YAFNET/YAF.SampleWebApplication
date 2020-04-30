@@ -1,5 +1,5 @@
-<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.editgroup"
-    CodeBehind="editgroup.ascx.cs" %>
+<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.EditGroup"
+    CodeBehind="EditGroup.ascx.cs" %>
 
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
@@ -15,9 +15,9 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-users fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" 
-                                                                                              LocalizedTag="TITLE" 
-                                                                                              LocalizedPage="ADMIN_EDITGROUP" />
+                    <YAF:IconHeader runat="server"
+                                    IconName="users"
+                                    LocalizedPage="ADMIN_EDITGROUP"></YAF:IconHeader>
                 </div>
                 <div class="card-body">
                     <div class="form-row">

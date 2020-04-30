@@ -45,18 +45,21 @@
 <div class="row">
     <div class="col">
         <div class="card mb-3">
-            <div class="card-header">
-                <i class="fa fa-exclamation-triangle fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="HEADER" />
+            <div class="card-header">                
+                <YAF:IconHeader runat="server"
+                                IconName="exclamation-triangle"
+                                LocalizedTag="HEADER"/>
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <asp:Label runat="server" AssociatedControlID="EditorLine">
+                    <h6 class="card-subtitle mb-2 text-muted">
                         <YAF:LocalizedLabel ID="EnterReportTextLabel" runat="server" 
                                             LocalizedTag="ENTER_TEXT" />
-                    </asp:Label>
+                    </h6>
                     <asp:PlaceHolder id="EditorLine" runat="server">
                         <asp:Label ID="IncorrectReportLabel" runat="server"></asp:Label>
-                        <!-- editor goes here -->
+                        <asp:TextBox runat="server" ID="Report"
+                                     CssClass="form-control"></asp:TextBox>
                     </asp:PlaceHolder>
                 </div>
                 <div class="d-sm-none d-md-block">

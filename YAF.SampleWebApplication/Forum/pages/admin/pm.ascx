@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.pm" Codebehind="pm.ascx.cs" %>
+<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.Pm" Codebehind="Pm.ascx.cs" %>
 
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
@@ -12,7 +12,10 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-envelope-square fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" LocalizedTag="HEADER" LocalizedPage="ADMIN_PM" />
+                    <YAF:IconHeader runat="server"
+                                    IconName="envelope-square"
+                                    LocalizedTag="HEADER" 
+                                    LocalizedPage="ADMIN_PM"></YAF:IconHeader>
                 </div>
                 <div class="card-body">
                     <YAF:Alert runat="server"

@@ -1,10 +1,11 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Search" CodeBehind="Search.ascx.cs" %>
+<%@ Import Namespace="YAF.Core.Context" %>
 
 <YAF:PageLinks ID="PageLinks" runat="server" />
 
 <div class="input-group">
     <asp:TextBox runat="server" CssClass="form-control searchInput" ID="searchInput"></asp:TextBox>
-    <div class="input-group-append">
+    <div class="input-group-append dropleft">
         <YAF:ThemeButton runat="server"
             ID="GoSearch"
             Type="Primary"
@@ -63,8 +64,13 @@
                     <asp:DropDownList ID="listResInPage" runat="server" CssClass="custom-select resultsPage" />
                 </div>
             </div>
-            <div class="px-3 text-center pb-2">
-                <button type="button" class="btn btn-primary btn-sm w-25"><%= this.Get<ILocalization>().GetText("COMMON", "OK") %></button>
+            <div class="px-3">
+                <YAF:ThemeButton runat="server"
+                                 Type="Primary"
+                                 Size="Small"
+                                 TextLocalizedTag="OK"
+                                 TextLocalizedPage="COMMON"
+                                 CssClass="btn-block"></YAF:ThemeButton>
             </div>
         </div>
     </div>

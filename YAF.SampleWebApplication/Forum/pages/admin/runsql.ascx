@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.runsql" Codebehind="runsql.ascx.cs" %>
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.RunSql" Codebehind="RunSql.ascx.cs" %>
 
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
@@ -13,9 +13,10 @@
                <div class="col-xl-12">
                     <div class="card mb-3">
                         <div class="card-header">
-                             <i class="fa fa-database fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" 
-                                                                                                          LocalizedTag="SQL_COMMAND" 
-                                                                                                          LocalizedPage="ADMIN_RUNSQL" />
+                            <YAF:IconHeader runat="server"
+                                            IconName="database"
+                                            LocalizedTag="SQL_COMMAND" 
+                                            LocalizedPage="ADMIN_RUNSQL"></YAF:IconHeader>
                         </div>
                         <div class="card-body">
                             <div class="form-group">

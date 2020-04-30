@@ -1,4 +1,4 @@
-﻿<%@ Control language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.editlanguage" Codebehind="editlanguage.ascx.cs" %>
+﻿<%@ Control language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.EditLanguage" Codebehind="EditLanguage.ascx.cs" %>
 
 
 <YAF:PageLinks runat="server" id="PageLinks" />
@@ -7,9 +7,9 @@
     <div class="col-xl-12">
         <div class="card mb-3">
             <div class="card-header">
-                <YAF:Icon runat="server" IconName="language" IconType="text-secondary"></YAF:Icon>
-                <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="HEADER" LocalizedPage="ADMIN_EDITLANGUAGE" />
-                <asp:Label runat="server" id="lblPageName"></asp:Label>
+                <YAF:IconHeader runat="server" ID="IconHeader"
+                                IconName="language"
+                                LocalizedPage="ADMIN_VERSION"></YAF:IconHeader>
             </div>
             <div class="card-body">
                 <div class="form-group">

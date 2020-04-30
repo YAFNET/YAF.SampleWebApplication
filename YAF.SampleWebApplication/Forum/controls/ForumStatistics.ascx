@@ -1,13 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" EnableViewState="false" Inherits="YAF.Controls.ForumStatistics" Codebehind="ForumStatistics.ascx.cs" %>
 
-<asp:UpdatePanel ID="UpdateStatsPanel" runat="server" UpdateMode="Conditional" class="col">
-    <ContentTemplate>
+
         <div class="card mb-3">
-            <div class="card-header">
-                <span class="fa-stack">
-                    <i class="fas fa-chart-bar fa-2x fa-fw text-secondary"></i>
-                </span>
-                &nbsp;<YAF:LocalizedLabel ID="StatsHeader" runat="server" LocalizedTag="STATS" />
+            <div class="card-header d-flex align-items-center">
+                <YAF:IconHeader runat="server"
+                                IconName="chart-bar"
+                                IconSize="fa-2x"
+                                LocalizedTag="STATS" />
             </div>
             <div class="row">
                     <div class="col">
@@ -55,5 +54,3 @@
                     </asp:PlaceHolder>
                 </div>
         </div>
-    </ContentTemplate>
-</asp:UpdatePanel>

@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.reindex" Codebehind="reindex.ascx.cs" %>
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.ReIndex" Codebehind="ReIndex.ascx.cs" %>
 
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
@@ -14,10 +14,10 @@
     <div class="col-xl-12">
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-database fa-fw text-secondary"></i>
-                <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" 
-                                    LocalizedTag="admin_reindex" 
-                                    LocalizedPage="ADMINMENU" />
+                <YAF:IconHeader runat="server"
+                                IconName="database"
+                                LocalizedTag="admin_reindex" 
+                                LocalizedPage="ADMINMENU"></YAF:IconHeader>
             </div>
             <div class="card-body">
                 <asp:TextBox ID="txtIndexStatistics" runat="server" 

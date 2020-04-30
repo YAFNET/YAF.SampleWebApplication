@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.pageaccesslist" Codebehind="pageaccesslist.ascx.cs" %>
+<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.PageAccessList" Codebehind="PageAccessList.ascx.cs" %>
 
 
 <%@ Import Namespace="YAF.Types.Interfaces" %>
@@ -13,7 +13,9 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-building fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" LocalizedTag="TITLE" LocalizedPage="ADMIN_PAGEACCESSLIST" />
+                    <YAF:IconHeader runat="server"
+                                    IconName="building"
+                                    LocalizedPage="ADMIN_PAGEACCESSLIST"></YAF:IconHeader>
                 </div>
                 <div class="card-body">
 		<asp:Repeater ID="List" runat="server" OnItemCommand="ListItemCommand">
@@ -35,16 +37,18 @@
                         <%# this.HtmlEncode(this.Eval( "BoardName")) %>
                     </p>
                     <small>
-                        <YAF:ThemeButton ID="ThemeButtonEdit" runat="server" 
-                                         Type="Info" 
-                                         Size="Small"
-                                         TitleLocalizedPage="ADMIN_PAGEACCESSLIST" 
-                                         CommandName='edit' 
-                                         CommandArgument='<%# this.Eval( "UserID") %>'
-                                         TitleLocalizedTag="EDIT"
-                                         Icon="edit"
-                                         TextLocalizedTag="EDIT">
-                        </YAF:ThemeButton>
+                        <div class="btn-group btn-group-sm">
+                            <YAF:ThemeButton ID="ThemeButtonEdit" runat="server" 
+                                             Type="Info" 
+                                             Size="Small"
+                                             TitleLocalizedPage="ADMIN_PAGEACCESSLIST" 
+                                             CommandName="edit" 
+                                             CommandArgument='<%# this.Eval( "UserID") %>'
+                                             TitleLocalizedTag="EDIT"
+                                             Icon="edit"
+                                             TextLocalizedTag="EDIT">
+                            </YAF:ThemeButton>
+                        </div>
                     </small>
                 </li>
 			</ItemTemplate>

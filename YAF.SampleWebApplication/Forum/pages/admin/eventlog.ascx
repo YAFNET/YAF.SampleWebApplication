@@ -1,5 +1,5 @@
-<%@ Control Language="c#" AutoEventWireup="True" EnableViewState="true" Inherits="YAF.Pages.Admin.eventlog"
-    CodeBehind="eventlog.ascx.cs" %>
+<%@ Control Language="c#" AutoEventWireup="True" EnableViewState="true" Inherits="YAF.Pages.Admin.EventLog"
+    CodeBehind="EventLog.ascx.cs" %>
 
 
 <%@ Import Namespace="YAF.Types.Interfaces" %>
@@ -19,10 +19,9 @@
              <YAF:Pager ID="PagerTop" runat="server" OnPageChange="PagerTopPageChange" />
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-book fa-fw text-secondary pr-1"></i>
-                    <YAF:LocalizedLabel ID="LocalizedLabel8" runat="server" 
-                                        LocalizedTag="TITLE" 
-                                        LocalizedPage="ADMIN_EVENTLOG" />
+                    <YAF:IconHeader runat="server"
+                                    IconName="book"
+                                    LocalizedPage="ADMIN_EVENTLOG"></YAF:IconHeader>
                     <div class="float-right">
                         &nbsp;
                         <YAF:ThemeButton runat="server"
@@ -73,6 +72,7 @@
                                 <div class="form-group">
                                     <YAF:ThemeButton ID="ApplyButton" runat="server"
                                                      Type="Primary" 
+                                                     CssClass="btn-block"
                                                      OnClick="ApplyButtonClick"
                                                      TextLocalizedPage="ADMIN_EVENTLOG" 
                                                      TextLocalizedTag="APPLY" 
@@ -83,14 +83,14 @@
                         </div>
             </div>
                 <div class="card-body">
-        <asp:Repeater runat="server" ID="List">
+        <asp:Repeater runat="server" ID="List" OnItemDataBound="List_OnItemDataBound">
             <HeaderTemplate>
                 <ul class="list-group">
             </HeaderTemplate>
             <ItemTemplate>
                 <li class="list-group-item list-group-item-action list-group-item-menu">
                     <div class="d-flex w-100 justify-content-between text-break" 
-                         onclick="javascript:$('<%# ".btn-toggle-{0}".Fmt(this.Eval("EventLogID")) %>').click();">
+                         onclick="javascript:$('<%#  ".btn-toggle-{0}".Fmt(this.Eval("EventLogID")) %>').click();">
                         <h5 class="mb-1">
                             <asp:HiddenField ID="EventTypeID" Value='<%# this.Eval("Type")%>' runat="server"/>
                             <%# this.EventIcon(Container.DataItem) %>
@@ -107,29 +107,33 @@
                         </small>
                     </div>
                     <p class="mb-1">
-                        <span class="font-weight-bold"><YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="NAME" LocalizedPage="ADMIN_EVENTLOG" />:</span>&nbsp;
+                        <span class="font-weight-bold"><YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" 
+                                                                           LocalizedTag="NAME" 
+                                                                           LocalizedPage="ADMIN_EVENTLOG" />:</span>&nbsp;
                         <%# this.HtmlEncode(this.Eval( "UserName")).IsSet() ? this.HtmlEncode(this.Eval( "UserName")) : "N/A" %>&nbsp;
                         <span><YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="TYPE" LocalizedPage="ADMIN_EVENTLOG" />:</span>&nbsp;
                         <%# this.HtmlEncode(this.Eval( "Name")).IsSet() ? this.HtmlEncode(this.Eval( "Name")) : "N/A" %>&nbsp;
                     </p>
                     <small>
-                        <YAF:ThemeButton runat="server"
-                                         Type="Info"
-                                         Size="Small"
-                                         TextLocalizedTag="SHOW" TextLocalizedPage="ADMIN_EVENTLOG"
-                                         Icon="caret-square-down"
-                                         CssClass='<%# "btn-toggle-{0}".Fmt(this.Eval("EventLogID")) %>'
-                                         DataToggle="collapse"
-                                         DataTarget='<%# "eventDetails{0}".Fmt(this.Eval("EventLogID")) %>'>
-                        </YAF:ThemeButton>
-                        <YAF:ThemeButton runat="server" 
-                                         Type="Danger"
-                                         Size="Small"
-                                         CommandName="delete" CommandArgument='<%# this.Eval( "EventLogID") %>'
-                                         ReturnConfirmText='<%# this.GetText("ADMIN_EVENTLOG", "CONFIRM_DELETE") %>'
-                                         Icon="trash" 
-                                         TextLocalizedTag="DELETE">
-                        </YAF:ThemeButton>
+                        <div class="btn-group btn-group-sm">
+                            <YAF:ThemeButton runat="server"
+                                             Type="Info"
+                                             Size="Small"
+                                             TextLocalizedTag="SHOW" TextLocalizedPage="ADMIN_EVENTLOG"
+                                             Icon="caret-square-down"
+                                             DataToggle="collapse"
+                                             CssClass='<%# "btn-toggle-{0}".Fmt(this.Eval("EventLogID")) %>'
+                                             DataTarget='<%# "eventDetails{0}".Fmt(this.Eval("EventLogID")) %>'>
+                            </YAF:ThemeButton>
+                            <YAF:ThemeButton runat="server" 
+                                             Type="Danger"
+                                             Size="Small"
+                                             CommandName="delete" CommandArgument='<%# this.Eval( "EventLogID") %>'
+                                             ReturnConfirmText='<%# this.GetText("ADMIN_EVENTLOG", "CONFIRM_DELETE") %>'
+                                             Icon="trash" 
+                                             TextLocalizedTag="DELETE">
+                            </YAF:ThemeButton>
+                        </div>
                     </small>
                     <div class="dropdown-menu context-menu" aria-labelledby="context menu">
                         <YAF:ThemeButton runat="server" 
@@ -140,16 +144,18 @@
                                          Icon="trash" 
                                          TextLocalizedTag="DELETE">
                         </YAF:ThemeButton>
-                        <div class="dropdown-divider"></div>
-                        <YAF:ThemeButton runat="server" 
-                                         Visible="<%# this.List.Items.Count > 0 %>" 
-                                         Type="None" 
-                                         CssClass="dropdown-item"
-                                         Icon="trash" 
-                                         OnClick="DeleteAllClick" 
-                                         TextLocalizedPage="ADMIN_EVENTLOG" TextLocalizedTag="DELETE_ALLOWED"
-                                         ReturnConfirmText='<%#this.GetText("ADMIN_EVENTLOG", "CONFIRM_DELETE_ALL") %>'>
-                        </YAF:ThemeButton>
+                        <asp:PlaceHolder runat="server" ID="FooterMenu">
+                            <div class="dropdown-divider"></div>
+                            <YAF:ThemeButton runat="server" 
+                                             Visible="<%# this.List.Items.Count > 0 %>" 
+                                             Type="None" 
+                                             CssClass="dropdown-item"
+                                             Icon="trash" 
+                                             OnClick="DeleteAllClick" 
+                                             TextLocalizedPage="ADMIN_EVENTLOG" TextLocalizedTag="DELETE_ALLOWED"
+                                             ReturnConfirmText='<%#this.GetText("ADMIN_EVENTLOG", "CONFIRM_DELETE_ALL") %>'>
+                            </YAF:ThemeButton>
+                        </asp:PlaceHolder>
                     </div>
                     
                       <div class="collapse mt-3" id="eventDetails<%# this.Eval("EventLogID") %>">

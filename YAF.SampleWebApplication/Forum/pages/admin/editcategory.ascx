@@ -1,5 +1,5 @@
 <%@ Control Language="c#" AutoEventWireup="True"
-    Inherits="YAF.Pages.Admin.editcategory" Codebehind="editcategory.ascx.cs" %>
+    Inherits="YAF.Pages.Admin.EditCategory" Codebehind="EditCategory.ascx.cs" %>
 
 
 <YAF:PageLinks ID="PageLinks" runat="server" />
@@ -17,12 +17,8 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-comments fa-fw text-secondary pr-1"></i>
-                    <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                        LocalizedTag="HEADER" 
-                                        LocalizedPage="ADMIN_EDITCATEGORY" />
-                    <asp:Label ID="CategoryNameTitle" runat="server" 
-                               CssClass="font-weight-bold"></asp:Label>
+                    <YAF:IconHeader runat="server" ID="IconHeader"
+                                    IconName="comments"></YAF:IconHeader>
                 </div>
                 <div class="card-body">
                     <div class="form-row">

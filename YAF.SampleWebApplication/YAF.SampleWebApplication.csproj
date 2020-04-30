@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YAF.SampleWebApplication</RootNamespace>
     <AssemblyName>YAF.SampleWebApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -72,10 +73,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -86,6 +88,7 @@
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -148,6 +151,7 @@
     <Content Include="Forum\Content\favicons\favicon.ico" />
     <Content Include="Forum\Content\favicons\mstile-150x150.png" />
     <Content Include="Forum\Content\favicons\safari-pinned-tab.svg" />
+    <Content Include="Forum\Content\favicons\site.webmanifest" />
     <Content Include="Forum\Content\flags\1x1\ad.svg" />
     <Content Include="Forum\Content\flags\1x1\ae.svg" />
     <Content Include="Forum\Content\flags\1x1\af.svg" />
@@ -715,8 +719,17 @@
     <Content Include="Forum\Content\Themes\yeti\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\yeti\bootstrap-forum.min.css" />
     <Content Include="Forum\Content\webfonts\fa-brands-400.svg" />
+    <Content Include="Forum\Content\webfonts\fa-brands-400.ttf" />
+    <Content Include="Forum\Content\webfonts\fa-brands-400.woff" />
+    <Content Include="Forum\Content\webfonts\fa-brands-400.woff2" />
     <Content Include="Forum\Content\webfonts\fa-regular-400.svg" />
+    <Content Include="Forum\Content\webfonts\fa-regular-400.ttf" />
+    <Content Include="Forum\Content\webfonts\fa-regular-400.woff" />
+    <Content Include="Forum\Content\webfonts\fa-regular-400.woff2" />
     <Content Include="Forum\Content\webfonts\fa-solid-900.svg" />
+    <Content Include="Forum\Content\webfonts\fa-solid-900.ttf" />
+    <Content Include="Forum\Content\webfonts\fa-solid-900.woff" />
+    <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
     <Content Include="Forum\Controls\AdminMenu.ascx" />
     <Content Include="Forum\Controls\AlbumImageList.ascx" />
     <Content Include="Forum\Controls\AlbumList.ascx" />
@@ -749,12 +762,12 @@
     <Content Include="Forum\Controls\ForumWelcome.ascx" />
     <Content Include="Forum\Controls\Header.ascx" />
     <Content Include="Forum\Controls\LastPosts.ascx" />
+    <Content Include="Forum\Controls\MostActiveUsers.ascx" />
     <Content Include="Forum\Controls\MyNotifications.ascx" />
     <Content Include="Forum\Controls\MyTopicsList.ascx" />
     <Content Include="Forum\Controls\PMList.ascx" />
     <Content Include="Forum\Controls\PollChoiceList.ascx" />
     <Content Include="Forum\Controls\PollList.ascx" />
-    <Content Include="Forum\Controls\PostAttachments.ascx" />
     <Content Include="Forum\Controls\PostOptions.ascx" />
     <Content Include="Forum\Controls\ProfileTimeline.ascx" />
     <Content Include="Forum\Controls\ProfileYourAccount.ascx" />
@@ -772,8 +785,6 @@
     <Content Include="Forum\Dialogs\BannedNameImport.ascx" />
     <Content Include="Forum\Dialogs\BBCodeImport.ascx" />
     <Content Include="Forum\Dialogs\DialogBox.ascx" />
-    <Content Include="Forum\Dialogs\ExtensionsEdit.ascx" />
-    <Content Include="Forum\Dialogs\ExtensionsImport.ascx" />
     <Content Include="Forum\Dialogs\GroupMedalEdit.ascx" />
     <Content Include="Forum\Dialogs\ImageGallery.ascx" />
     <Content Include="Forum\Dialogs\LoginBox.ascx" />
@@ -821,7 +832,6 @@
     <Content Include="Forum\install\custom\custom.sql" />
     <Content Include="Forum\install\custom\dnn.sql" />
     <Content Include="Forum\install\default.aspx" />
-    <Content Include="Forum\install\FileExtensions.xml" />
     <Content Include="Forum\install\mssql\install\azure\InstallCommon.sql" />
     <Content Include="Forum\install\mssql\install\azure\InstallMembership.sql" />
     <Content Include="Forum\install\mssql\install\azure\InstallProfile.SQL" />
@@ -875,13 +885,12 @@
     <Content Include="Forum\Pages\ActiveUsers.ascx" />
     <Content Include="Forum\Pages\admin\accessmasks.ascx" />
     <Content Include="Forum\Pages\admin\admin.ascx" />
-    <Content Include="Forum\Pages\admin\bannedemail.ascx" />
-    <Content Include="Forum\Pages\admin\bannedip.ascx" />
-    <Content Include="Forum\Pages\admin\bannedname.ascx" />
-    <Content Include="Forum\Pages\admin\bbcode.ascx" />
+    <Content Include="Forum\Pages\admin\BannedEmails.ascx" />
+    <Content Include="Forum\Pages\admin\BannedIps.ascx" />
+    <Content Include="Forum\Pages\admin\BannedNames.ascx" />
+    <Content Include="Forum\Pages\admin\BBCodes.ascx" />
     <Content Include="Forum\Pages\admin\bbcode_edit.ascx" />
     <Content Include="Forum\Pages\admin\boards.ascx" />
-    <Content Include="Forum\Pages\admin\boardsettings.ascx" />
     <Content Include="Forum\Pages\admin\deleteforum.ascx" />
     <Content Include="Forum\Pages\admin\digest.ascx" />
     <Content Include="Forum\Pages\admin\editaccessmask.ascx" />
@@ -894,7 +903,6 @@
     <Content Include="Forum\Pages\admin\editrank.ascx" />
     <Content Include="Forum\Pages\admin\edituser.ascx" />
     <Content Include="Forum\Pages\admin\eventlog.ascx" />
-    <Content Include="Forum\Pages\admin\extensions.ascx" />
     <Content Include="Forum\Pages\admin\forums.ascx" />
     <Content Include="Forum\Pages\admin\groups.ascx" />
     <Content Include="Forum\Pages\admin\hostsettings.ascx" />
@@ -907,13 +915,16 @@
     <Content Include="Forum\Pages\admin\pageaccessedit.ascx" />
     <Content Include="Forum\Pages\admin\pageaccesslist.ascx" />
     <Content Include="Forum\Pages\admin\pm.ascx" />
+    <Content Include="Forum\Pages\admin\Profiler.ascx" />
     <Content Include="Forum\Pages\admin\prune.ascx" />
     <Content Include="Forum\Pages\admin\ranks.ascx" />
-    <Content Include="Forum\Pages\admin\reguser.ascx" />
+    <Content Include="Forum\Pages\admin\RegisterUser.ascx" />
     <Content Include="Forum\Pages\admin\reindex.ascx" />
     <Content Include="Forum\Pages\admin\replacewords.ascx" />
     <Content Include="Forum\Pages\admin\restartapp.ascx" />
+    <Content Include="Forum\Pages\admin\Restore.ascx" />
     <Content Include="Forum\Pages\admin\runsql.ascx" />
+    <Content Include="Forum\Pages\admin\Settings.ascx" />
     <Content Include="Forum\Pages\admin\spamlog.ascx" />
     <Content Include="Forum\Pages\admin\spamwords.ascx" />
     <Content Include="Forum\Pages\admin\taskmanager.ascx" />
@@ -925,6 +936,7 @@
     <Content Include="Forum\Pages\Attachments.ascx" />
     <Content Include="Forum\Pages\Avatar.ascx" />
     <Content Include="Forum\Pages\Blockoptions.ascx" />
+    <Content Include="Forum\Pages\Board.ascx" />
     <Content Include="Forum\Pages\ChangePassword.ascx" />
     <Content Include="Forum\Pages\Cookies.ascx" />
     <Content Include="Forum\Pages\DeleteAccount.ascx" />
@@ -937,10 +949,10 @@
     <Content Include="Forum\Pages\Email.ascx" />
     <Content Include="Forum\Pages\EmailTopic.ascx" />
     <Content Include="Forum\Pages\Error.ascx" />
-    <Content Include="Forum\Pages\Forum.ascx" />
     <Content Include="Forum\Pages\Friends.ascx" />
     <Content Include="Forum\Pages\Help.ascx" />
     <Content Include="Forum\Pages\Info.ascx" />
+    <Content Include="Forum\Pages\Jabber.ascx" />
     <Content Include="Forum\Pages\Login.ascx" />
     <Content Include="Forum\Pages\Logout.ascx" />
     <Content Include="Forum\Pages\Members.ascx" />
@@ -966,19 +978,19 @@
     <Content Include="Forum\Pages\Register.ascx" />
     <Content Include="Forum\Pages\ReportPost.ascx" />
     <Content Include="Forum\Pages\RssTopic.ascx" />
-    <Content Include="Forum\Pages\Rules.ascx" />
+    <Content Include="Forum\Pages\RulesAndPrivacy.ascx" />
     <Content Include="Forum\Pages\Search.ascx" />
     <Content Include="Forum\Pages\Subscriptions.ascx" />
     <Content Include="Forum\Pages\Team.ascx" />
     <Content Include="Forum\Pages\Topics.ascx" />
-    <Content Include="Forum\Pages\Xmpp.ascx" />
     <Content Include="Forum\Resources\HelpMenuList.xml" />
     <Content Include="Forum\Resources\ProviderExceptions.xml" />
+    <Content Include="Forum\Scripts\blueimp-gallery\blueimp-gallery-indicator.js" />
+    <Content Include="Forum\Scripts\blueimp-gallery\blueimp-gallery.js" />
+    <Content Include="Forum\Scripts\blueimp-gallery\jquery.blueimp-gallery.js" />
     <Content Include="Forum\Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Forum\Scripts\ckeditor\build-config.js" />
     <Content Include="Forum\Scripts\ckeditor\ckeditor.js" />
-    <Content Include="Forum\Scripts\ckeditor\ckeditor_init.js" />
-    <Content Include="Forum\Scripts\ckeditor\ckeditor_initbbcode.js" />
     <Content Include="Forum\Scripts\ckeditor\config.js" />
     <Content Include="Forum\Scripts\ckeditor\contents.css" />
     <Content Include="Forum\Scripts\ckeditor\lang\af.js" />
@@ -1051,79 +1063,71 @@
     <Content Include="Forum\Scripts\ckeditor\lang\vi.js" />
     <Content Include="Forum\Scripts\ckeditor\lang\zh-cn.js" />
     <Content Include="Forum\Scripts\ckeditor\lang\zh.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\az.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en-au.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\es-mx.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\oc.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\about\dialogs\about.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\albumsbrowser\images\images-regular.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\albumsbrowser\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\albumsbrowser\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\api\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\attachments\images\paperclip-solid.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\attachments\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\attachments\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autocomplete\skins\default.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ar.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\az.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\bg.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ca.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\cs.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\da.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\de-ch.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\de.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\el.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\en-au.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\eo.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\es-mx.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\es.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\et.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\eu.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\fa.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\fr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\gl.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\hr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\hu.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\it.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ja.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\km.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ko.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ku.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\lt.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\lv.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\mk.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\nb.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\nl.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\oc.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\pl.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\pt-br.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\pt.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ro.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ru.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sk.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sq.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sr-latn.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sv.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\tr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ug.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\uk.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\vi.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\zh-cn.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\zh.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autolink\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\autosave\css\autosave.min.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\autosave\js\extensions.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodehtml\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\dialogs\bbcodeselector.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\images\yafbbcode.gif" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\images\plug-solid.svg" />
     <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\lang\en.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\bbcode\dev\bbcode.html" />
@@ -1286,13 +1290,10 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\dialog\dialogDefinition.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\dialog\styles\dialog.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\div\dialogs\div.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\emojione\dialogs\emojione.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\emojione\libs\emojione\emojione.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\emojione\styles\emojione-awesome.css" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\emojione\styles\emojione.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\emoji\assets\iconsall.png" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\emoji\assets\iconsall.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\emoji\skins\default.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\find\dialogs\find.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\flash\dialogs\flash.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\flash\images\placeholder.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\button.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\checkbox.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\form.js" />
@@ -1302,6 +1303,9 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\textarea.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\textfield.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\highlight\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\highlight\pen-square-solid.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\highlight\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\icons.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\icons_hidpi.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\image\dialogs\image.js" />
@@ -1319,7 +1323,13 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\pastefromgdocs\filter\default.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\pastefromword\filter\default.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\pastetools\filter\common.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\pastetools\filter\image.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\preview\images\pagebreak.gif" />
     <Content Include="Forum\Scripts\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\preview\styles\screen.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\quote\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\quote\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\quote\quote-left-solid.svg" />
     <Content Include="Forum\Scripts\ckeditor\plugins\scayt\dialogs\dialog.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\scayt\dialogs\options.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\scayt\dialogs\toolbar.css" />
@@ -1442,15 +1452,12 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\dialogs\syntaxhighlight.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\tableselection\styles\tableselection.css" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\table\dialogs\table.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\dialogs\templates.css" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\dialogs\templates.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\templates\default.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\templates\images\template1.gif" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\templates\images\template2.gif" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\icons\code-solid.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\lang\de.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\lang\fr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\lang\zh-cn.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\widget\images\handle.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\wordcount\css\wordcount.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\wsc\dialogs\ciframe.html" />
@@ -1481,19 +1488,23 @@
     <Content Include="Forum\Scripts\ckeditor\skins\moono-lisa\images\refresh.png" />
     <Content Include="Forum\Scripts\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Forum\Scripts\ckeditor\styles.js" />
-    <Content Include="Forum\Scripts\ckeditor\yaf_contents.css" />
+    <Content Include="Forum\Scripts\hammer.min.js" />
     <Content Include="Forum\Scripts\InstallWizard.comb.min.js" />
-    <Content Include="Forum\Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Forum\Scripts\jquery-3.5.0.min.js" />
     <Content Include="Forum\Scripts\jquery.fileupload.comb.min.js" />
     <Content Include="Forum\Scripts\jquery.ForumAdminExtensions.min.js" />
     <Content Include="Forum\Scripts\jquery.ForumExtensions.min.js" />
-    <Content Include="Forum\Scripts\yafEditor\yafEditor.min.js" />
     <Content Include="Global.asax" />
     <Content Include="app.config" />
     <Content Include="db.config" />
     <Content Include="mail.config" />
     <Content Include="Scripts\date.format.js" />
     <Content Include="Scripts\emojionearea.js" />
+    <None Include="Scripts\jquery-3.5.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.0.js" />
+    <Content Include="Scripts\jquery-3.5.0.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.js" />
     <Content Include="Scripts\jquery.signalR-2.4.1.js" />
     <Content Include="Scripts\jquery.signalR-2.4.1.min.js">
       <DependentUpon>jquery.signalR-2.4.1.js</DependentUpon>
@@ -1549,6 +1560,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -1558,6 +1570,7 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bundleconfig.json" />
@@ -1566,19 +1579,11 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Forum\CHANGES.md" />
-    <Content Include="Forum\Content\favicons\site.webmanifest" />
-    <Content Include="Forum\Content\webfonts\fa-brands-400.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-brands-400.woff" />
-    <Content Include="Forum\Content\webfonts\fa-brands-400.woff2" />
-    <Content Include="Forum\Content\webfonts\fa-regular-400.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-regular-400.woff" />
-    <Content Include="Forum\Content\webfonts\fa-regular-400.woff2" />
-    <Content Include="Forum\Content\webfonts\fa-solid-900.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-solid-900.woff" />
-    <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
     <Content Include="Forum\LICENSE.md" />
     <Content Include="Forum\README.md" />
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

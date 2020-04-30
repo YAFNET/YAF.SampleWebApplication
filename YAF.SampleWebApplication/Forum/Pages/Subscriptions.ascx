@@ -16,7 +16,8 @@
             <div class="col">
                 <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fa fa-envelope fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel12" runat="server" LocalizedTag="TITLE" />
+                        <YAF:IconHeader runat="server"
+                                        IconName="envelope" />
                     </div>
                     <div class="card-body">
                         
@@ -76,7 +77,7 @@
                                         <asp:CheckBox ID="unsubf" runat="server" CssClass="custom-control custom-checkbox d-inline-block" Text="&nbsp;" />
                                         <asp:Label ID="tfid" runat="server" Text='<%# this.Eval("Item1.ID") %>'
                                                Visible="false" />
-                                        <a href="<%# BuildLink.GetLinkNotEscaped(ForumPages.topics, "f={0}&name={1}",  this.Eval("Item1.ForumID"), this.Eval("Item2.Name"))%>">
+                                        <a href="<%# BuildLink.GetLinkNotEscaped(ForumPages.Topics, "f={0}&name={1}",  this.Eval("Item1.ForumID"), this.Eval("Item2.Name"))%>">
                                                 <%# this.HtmlEncode(this.Eval("Item2.Name"))%></a>
                                     </li>
                                 </ItemTemplate>

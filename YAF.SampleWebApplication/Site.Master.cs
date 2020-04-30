@@ -32,7 +32,7 @@ namespace YAF.SampleWebApplication
 
     using Microsoft.AspNet.Web.Optimization.WebForms;
     using YAF.Configuration;
-    using YAF.Core;
+    using YAF.Core.Context;
     using YAF.Core.Extensions;
     using YAF.Types.Constants;
     using YAF.Types.Extensions;

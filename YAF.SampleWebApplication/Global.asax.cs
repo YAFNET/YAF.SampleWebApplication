@@ -24,10 +24,6 @@
 
 namespace YAF.SampleWebApplication
 {
-    using System;
-    using System.Web.Optimization;
-    using System.Web.Routing;
-
     using YAF.Core.Context;
 
     /// <summary>
@@ -35,18 +31,5 @@ namespace YAF.SampleWebApplication
     /// </summary>
     public class Global : YafHttpApplication
     {
-        /// <summary>
-        /// The application_ start.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        protected override void Application_Start(object sender, EventArgs e)
-        {
-            base.Application_Start(sender, e);
-        }
     }
 }

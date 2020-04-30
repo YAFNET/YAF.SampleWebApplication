@@ -1,5 +1,5 @@
-﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.deleteforum"
-    CodeBehind="deleteforum.ascx.cs" %>
+﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.DeleteForum"
+    CodeBehind="DeleteForum.ascx.cs" %>
 
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
@@ -15,10 +15,8 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-comments fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" 
-                                                                                                 LocalizedTag="HEADER1" 
-                                                                                                 LocalizedPage="ADMIN_DELETEFORUM" />
-                    <asp:Label ID="ForumNameTitle" runat="server" CssClass="font-weight-bold"></asp:Label>
+                    <YAF:IconHeader runat="server" ID="IconHeader"
+                                    IconName="comments"></YAF:IconHeader>
                 </div>
                 <div class="card-body">
                     <div class="form-group">

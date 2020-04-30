@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.bbcode_edit" Codebehind="bbcode_edit.ascx.cs" %>
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.BBCode_Edit" Codebehind="BBCode_Edit.ascx.cs" %>
 
 <YAF:PageLinks runat="server" id="PageLinks" />
 
@@ -13,9 +13,10 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-plug fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel4" runat="server" 
-                                                                                             LocalizedTag="HEADER" 
-                                                                                             LocalizedPage="ADMIN_BBCODE_EDIT" />
+                    <YAF:IconHeader runat="server"
+                                    IconName="plug"
+                                    LocalizedTag="HEADER" 
+                                    LocalizedPage="ADMIN_BBCODE_EDIT"></YAF:IconHeader>
                 </div>
                 <div class="card-body">
                     <h2><YAF:LocalizedLabel ID="HelpLabel13" runat="server" 

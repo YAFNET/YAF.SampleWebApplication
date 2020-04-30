@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.languages" Codebehind="languages.ascx.cs" %>
+<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.Languages" Codebehind="Languages.ascx.cs" %>
 
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
@@ -12,7 +12,9 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-language fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" LocalizedTag="TITLE" LocalizedPage="ADMIN_LANGUAGES" />
+                    <YAF:IconHeader runat="server"
+                                    IconName="language"
+                                    LocalizedPage="ADMIN_LANGUAGES"></YAF:IconHeader>
                 </div>
                 <div class="card-body">
 		<asp:Repeater runat="server" ID="List">

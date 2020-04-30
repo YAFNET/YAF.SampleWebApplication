@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.medals" Codebehind="medals.ascx.cs" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.Medals" Codebehind="Medals.ascx.cs" %>
 
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
@@ -12,9 +12,9 @@
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-trophy fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" 
-                                                                                LocalizedTag="TITLE" 
-                                                                                LocalizedPage="ADMIN_MEDALS" />
+                    <YAF:IconHeader runat="server"
+                                    IconName="medal"
+                                    LocalizedPage="ADMIN_MEDALS"></YAF:IconHeader>
                 </div>
                 <div class="card-body">
                     <asp:Repeater ID="MedalList" 
@@ -50,7 +50,8 @@
                                 <%# this.Eval("Description") %>
                             </p>
                             <small>
-                                <YAF:ThemeButton ID="ThemeButtonEdit" 
+                                <div class="btn-group btn-group-sm">
+                                    <YAF:ThemeButton ID="ThemeButtonEdit" 
                                                  Type="Info" 
                                                  Size="Small"
                                                  CommandName="edit" 
@@ -89,6 +90,7 @@
                                                  ReturnConfirmText='<%# this.GetText("ADMIN_MEDALS", "CONFIRM_DELETE") %>'
                                                  runat="server">
                                 </YAF:ThemeButton>
+                                </div>
                             </small>
                                 <div class="dropdown-menu context-menu" aria-labelledby="context menu">
                                     <YAF:ThemeButton ID="ThemeButton1" 

@@ -554,7 +554,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		SuspendedBy     int not null default (0),
 		LanguageFile	nvarchar(50) NULL,
 		ThemeFile		nvarchar(50) NULL,
-		TextEditor		nvarchar(50) NULL,
 		[PMNotification] [bit] NOT NULL constraint [DF_{objectQualifier}User_PMNotification] default (1),
 		[AutoWatchTopics] [bit] NOT NULL constraint [DF_{objectQualifier}User_AutoWatchTopics] default (0),
 		[DailyDigest] [bit] NOT NULL constraint [DF_{objectQualifier}User_DailyDigest] default (0),
@@ -871,17 +870,6 @@ begin
 		constraint [PK_{objectQualifier}EventLog] primary key(EventLogID)
 	)
 end
-GO
-
-if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Extension]') and type in (N'U'))
-BEGIN
-	CREATE TABLE [{databaseOwner}].[{objectQualifier}Extension](
-		ExtensionID int IDENTITY(1,1) NOT NULL,
-		BoardId int NOT NULL,
-		Extension nvarchar(10) NOT NULL,
-		constraint [PK_{objectQualifier}Extension] PRIMARY KEY(ExtensionID)
-	)
-END
 GO
 
 if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}BBCode]') and type in (N'U'))

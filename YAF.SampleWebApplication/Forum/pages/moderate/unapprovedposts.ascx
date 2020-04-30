@@ -16,12 +16,9 @@
             <div class="col-xl-12">
                 <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fa fa-comment fa-fw text-secondary pr-1"></i>
-                        <span class="font-weight-bold">
-                            <YAF:LocalizedLabel
-                                ID="TopicLabel" runat="server"
-                                LocalizedTag="TOPIC" />
-                        </span>
+                        <YAF:IconHeader runat="server"
+                                        IconName="comment" 
+                                        LocalizedTag="Topic"></YAF:IconHeader>
                         <a id="TopicLink"
                            href='<%# BuildLink.GetLink(ForumPages.Posts, "t={0}", this.Eval("TopicID")) %>'
                            runat="server" 
@@ -46,7 +43,7 @@
                                              TextLocalizedTag="ADMIN_USER" TextLocalizedPage="PROFILE"
                                              Icon="users-cog" 
                                              Type="Danger"
-                                             NavigateUrl='<%# BuildLink.GetLinkNotEscaped( ForumPages.admin_edituser,"u={0}", this.Eval("UserID").ToType<int>() ) %>'>
+                                             NavigateUrl='<%# BuildLink.GetLinkNotEscaped( ForumPages.Admin_EditUser,"u={0}", this.Eval("UserID").ToType<int>() ) %>'>
                             </YAF:ThemeButton>
                         </div>
                     </div>

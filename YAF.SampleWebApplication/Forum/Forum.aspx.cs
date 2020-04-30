@@ -24,8 +24,6 @@
 
 namespace YAF.SampleWebApplication
 {
-    using System;
-
     using YAF.Core.BasePages;
 
     /// <summary>
@@ -33,17 +31,5 @@ namespace YAF.SampleWebApplication
     /// </summary>
     public partial class Forum : ForumPageBase
     {
-        /// <summary>
-        /// The page_ load.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

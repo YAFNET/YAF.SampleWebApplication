@@ -245,6 +245,7 @@
     <Resource tag="POSTS_DAY">Сообщений в день:</Resource>
     <Resource tag="SIZE_DATABASE">Размер базы данных:</Resource>
     <Resource tag="STATS_DONTCOUNT">Эта статистика не учитывает удалённые посты и темы.</Resource>
+    <Resource tag="TITLE">Dashboard</Resource>
     <Resource tag="TOPICS_DAY">Тем в день:</Resource>
     <Resource tag="USERS_DAY">Пользователей в день:</Resource>
   </page>
@@ -424,10 +425,6 @@
     <Resource tag="BOARD_EMAIL_ONREGISTER_HELP">Разделённый точкой с запятой (;) список адресов электронной почты дял посылки уведомлений при регистрации нового пользователя.</Resource>
     <Resource tag="BOARD_EMAIL_REPORTMODS">Отправить модератором сообщение Email при жалобе:</Resource>
     <Resource tag="BOARD_EMAIL_REPORTMODS_HELP">Должны ли все модераторы форума быть уведомлены если кто-то пожаловался на сообщение?</Resource>
-    <Resource tag="BOARD_FILE_EXTENSIONS">Список разрешённых расширений файлов:</Resource>
-    <Resource tag="BOARD_FILE_EXTENSIONS_HELP">Список разрешённых/запрещённых расширений файлов. Последнее менее безопасно.</Resource>
-    <Resource tag="BOARD_JQ_THEME">Тема jQuery UI:</Resource>
-    <Resource tag="BOARD_JQ_THEME_HELP">Тема jQuery UI для использования на этой конференции для вкладок и аккордеона.</Resource>
     <Resource tag="BOARD_LOGO">Board Logo:</Resource>
     <Resource tag="BOARD_LOGO_HELP">Select a Board Logo or use the default YAF Board Logo.</Resource>
     <Resource tag="BOARD_LOGO_SELECT">Select a Board logo</Resource>
@@ -438,8 +435,6 @@
     <Resource tag="BOARD_SETUP">Настройки текущей конференции</Resource>
     <Resource tag="BOARD_THEME">Тема:</Resource>
     <Resource tag="BOARD_THEME_HELP">Тема, используемая по умолчанию во всех форумах конференции.</Resource>
-    <Resource tag="BOARD_THEME_LOGO">Разрешить логотип из темы:</Resource>
-    <Resource tag="BOARD_THEME_LOGO_HELP">Загружать логотип из темы. Не работает при интеграции</Resource>
     <Resource tag="BOARD_THREADED">Разрешить отображение в виде дерева:</Resource>
     <Resource tag="BOARD_THREADED_HELP">Разрешить отображение в виде дерева для сообщений.</Resource>
     <Resource tag="BOARD_TOPIC_DEFAULT">Показывать темы по умолчанию:</Resource>
@@ -1034,8 +1029,6 @@
     <Resource tag="ALLOW_SIGNATURE_HELP">Разрешить пользователям добавлять подписи к сообщениям. Вы должны также установить параметры подписи(кол-во символов, разрешённые BBCode...) для каждой роли и/или статуса, чтобы действительно включить эту опцию.</Resource>
     <Resource tag="ALLOW_THANKS">Разрешить «Спасибо»</Resource>
     <Resource tag="ALLOW_THANKS_HELP">Пользователи могут благодарить других пользователей за понравившиеся сообщения.</Resource>
-    <Resource tag="ALLOW_TOPIC_DESCRIPTION">Разрешить описание темы:</Resource>
-    <Resource tag="ALLOW_TOPIC_DESCRIPTION_HELP">Если включено, пользователи могут добавлять описание темы.</Resource>
     <Resource tag="ALLOW_TOPICS_DUPLICATENAME">Разрешить темы с совпадающим именем для:</Resource>
     <Resource tag="ALLOW_TOPICS_DUPLICATENAME_HELP">Темы с совпадающим именем разрешены для пользователей из списка.</Resource>
     <Resource tag="ALLOW_USER_HIDE">Разрешить пользователю скрывать себя:</Resource>
@@ -1044,6 +1037,8 @@
     <Resource tag="ALLOW_USERS_POLLIMAGES_HELP">Пользователи могут добавлять изображения как опции опроса или как вопрос.</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR">Разрешить выбор текстового редактора</Resource>
     <Resource tag="ALLOW_USERTEXTEDITOR_HELP">Пользователи смогут выбирать текстовой редактор в своих профилях.</Resource>
+    <Resource tag="ALLOWED_EXTENSIONS">Allowed File Extensions:</Resource>
+    <Resource tag="ALLOWED_EXTENSIONS_HELP">The list of allowed File Extensions for Attachments.</Resource>
     <Resource tag="AMOUNT_OF_SUBFORUMS">Sub Forums In Forums List:</Resource>
     <Resource tag="AMOUNT_OF_SUBFORUMS_HELP">The amount of Sub Forums In Forums List.</Resource>
     <Resource tag="APP_CORES">Processor Cores:</Resource>
@@ -1119,6 +1114,10 @@
     <Resource tag="DISPLAYNAME_MIN_LENGTH_HELP">Minium Length for Display Names.</Resource>
     <Resource tag="DYNAMIC_METATAGS">Добавить динамические метатеги к странице:</Resource>
     <Resource tag="DYNAMIC_METATAGS_HELP">Если включено, то описание и ключевые слова будут для метаданных будет добавлены динамически к страницам сообщений.</Resource>
+    <Resource tag="EDITOR_BASCIC_HELP">Editor Toolbar used for Signatures ans Quick Replies.</Resource>
+    <Resource tag="EDITOR_BASIC">Editor Toolbar Basic:</Resource>
+    <Resource tag="EDITOR_FULL">Editor Toolbar Full:</Resource>
+    <Resource tag="EDITOR_FULL_HELP">Editor Toolbar used for Posting and Private Messages.</Resource>
     <Resource tag="EMAIL_VERIFICATION">Требовать подтверждения по Email:</Resource>
     <Resource tag="EMAIL_VERIFICATION_HELP">Требовать проверки адреса email.</Resource>
     <Resource tag="ENABLE_ABLBUMS">Включить альбомы:</Resource>
@@ -1286,8 +1285,6 @@
     <Resource tag="MAX_POST_SIZE_HELP">Максимальный размер сообщения в байтах. Установите 0 для неограниченного (не рекомендуется).</Resource>
     <Resource tag="MAX_SEARCH_RESULTS">Максимальное число результатов поиска:</Resource>
     <Resource tag="MAX_SEARCH_RESULTS_HELP">Максимальное число возвращаемых результатов поиска. Установите 0 для неограниченного (не рекомендуется).</Resource>
-    <Resource tag="MAX_WORD_LENGTH">Максимальная длина слова:</Resource>
-    <Resource tag="MAX_WORD_LENGTH_HELP">Используйте это, чтобы ограничить максимальную длину слова в названиях тем и некоторых других местах.</Resource>
     <Resource tag="MEDALS_TEMPLATE">Шаблон медали:</Resource>
     <Resource tag="MEDALS_TEMPLATE_HELP">Шаблон для отображения медалей пользователя в его данных в сообщениях.</Resource>
     <Resource tag="MEMBERLIST_PAGE_SIZE">Размер страницы списка участников:</Resource>
@@ -1513,6 +1510,8 @@
     <Resource tag="TOPICS_PER_PAGE_HELP">Количество тем для отображения на одной странице.</Resource>
     <Resource tag="TWITTER_USERNAME">Имя пользователя твитера для ретвитов:</Resource>
     <Resource tag="TWITTER_USERNAME_HELP">Упомянутое имя пользователя при ретвите темы или сообщения.</Resource>
+    <Resource tag="TWOCOLUMN_BOARD">Use 2 Column Board layout</Resource>
+    <Resource tag="TWOCOLUMN_BOARD_HELP">If enabled show forums in the left column and forum discussions and Stats in the Right Column</Resource>
     <Resource tag="UNHANDLED_USERAGENT_LOG">Включить журналирование для UserAgent:</Resource>
     <Resource tag="UNHANDLED_USERAGENT_LOG_HELP">Все неидентифицируемые UserAgent будут в журнале. Не включайте это постоянно.</Resource>
     <Resource tag="USE_FARSI_CALENDER">Использовать Фарси/арабский календарь :</Resource>
@@ -1638,6 +1637,9 @@
     <Resource tag="PM_NUMBER">Число личных сообщений:</Resource>
     <Resource tag="TITLE">Управление ЛС</Resource>
   </page>
+  <page name="ADMIN_PROFILER">
+    <Resource tag="TITLE">Web Profiler</Resource>
+  </page>
   <page name="ADMIN_PRUNE">
     <Resource tag="ALL_FORUMS">Все форумы</Resource>
     <Resource tag="CONFIRM_PRUNE">Вы действительно желаете почистить темы? Этот процесс необратим.</Resource>
@@ -1650,6 +1652,7 @@
     <Resource tag="PRUNE_PERMANENT">Навсегда удалить из базы данных:</Resource>
     <Resource tag="PRUNE_PERMANENT_HELP">Все темы с помеченные как удалённые будут удалены.</Resource>
     <Resource tag="PRUNE_START">Начать задачу очистки</Resource>
+    <Resource tag="RESTORE_TOPIC">Restore Topic</Resource>
     <Resource tag="TITLE">Почистить темы</Resource>
     <Resource tag="TITLE_HELP">Option to delete All Topics that are not marked as persistent.</Resource>
   </page>
@@ -1738,7 +1741,6 @@
     <Resource tag="MSG_DELETED">Topics deleted</Resource>
     <Resource tag="MSG_RESTORED">Topic restored</Resource>
     <Resource tag="RESTORE_MESSAGE">Restore Message</Resource>
-    <Resource tag="RESTORE_TOPIC">Restore Topic</Resource>
     <Resource tag="SEARCH">Reload</Resource>
     <Resource tag="TITLE">Restore &amp; Delete Topics</Resource>
     <Resource tag="TITLE_HELP">Option to restore topics that are flagged as deleted topics, or to permanently delete them from the database.</Resource>
@@ -1902,6 +1904,7 @@
     <Resource tag="admin_pageaccessedit">Редактирование прав доступа </Resource>
     <Resource tag="admin_pageaccesslist">Страницы администратора</Resource>
     <Resource tag="admin_pm">Личные сообщения</Resource>
+    <Resource tag="admin_profiler">Web Profiler</Resource>
     <Resource tag="admin_prune">Чистка тем</Resource>
     <Resource tag="admin_ranks">Статусы</Resource>
     <Resource tag="admin_reindex">Обслуживание БД</Resource>
@@ -2248,6 +2251,8 @@
                 }
           }
   </Resource>
+    <Resource tag="SELECTED_QUOTE">Quote Selected Text</Resource>
+    <Resource tag="SELECTED_SEARCH">Search Google for ...</Resource>
     <Resource tag="SHOWHIDE">Показать/Скрыть</Resource>
     <Resource tag="SUBMIT">Отправить</Resource>
     <Resource tag="TOPIC_NOTIFICATION_SUBJECT">Уведомление о новом сообщении в теме по подписке(От {0})</Resource>
