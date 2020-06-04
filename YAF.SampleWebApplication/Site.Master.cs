@@ -31,6 +31,7 @@ namespace YAF.SampleWebApplication
     using System.Web.UI.HtmlControls;
 
     using Microsoft.AspNet.Web.Optimization.WebForms;
+
     using YAF.Configuration;
     using YAF.Core;
     using YAF.Core.Extensions;
@@ -103,8 +104,8 @@ namespace YAF.SampleWebApplication
                 link.Attributes.Add("type", "text/css");
 
                 link.Href = BoardContext.Current != null
-                                ? BoardContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
-                                : "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css";
+                    ? BoardContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
+                    : "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css";
 
                 this.Page.Header.Controls.Add(link);
 

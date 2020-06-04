@@ -25,8 +25,6 @@
 namespace YAF.SampleWebApplication
 {
     using System;
-    using System.Web.Optimization;
-    using System.Web.Routing;
 
     using YAF.Core.Context;
 

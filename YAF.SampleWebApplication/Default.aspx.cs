@@ -37,7 +37,6 @@ namespace YAF.SampleWebApplication
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
     }
 }

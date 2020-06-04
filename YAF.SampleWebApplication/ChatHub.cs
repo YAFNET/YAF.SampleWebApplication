@@ -156,7 +156,7 @@ namespace YAF.SampleWebApplication
                 return;
             }
 
-            var currentDateTime = DateTime.Now.ToString();
+            var currentDateTime = DateTime.Now.ToString(CultureInfo.InvariantCulture);
             var userImg = this.GetUserImage(fromUser.UserId);
 
             // send to 
