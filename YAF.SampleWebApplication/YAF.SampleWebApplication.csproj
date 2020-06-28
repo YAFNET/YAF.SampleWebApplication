@@ -726,6 +726,7 @@
     <Content Include="Forum\Controls\DisplayAd.ascx" />
     <Content Include="Forum\Controls\DisplayConnect.ascx" />
     <Content Include="Forum\Controls\DisplayPost.ascx" />
+    <Content Include="Forum\Controls\EditUsersAttachments.ascx" />
     <Content Include="Forum\Controls\EditUsersAvatar.ascx" />
     <Content Include="Forum\Controls\EditUsersGroups.ascx" />
     <Content Include="Forum\Controls\EditUsersInfo.ascx" />
