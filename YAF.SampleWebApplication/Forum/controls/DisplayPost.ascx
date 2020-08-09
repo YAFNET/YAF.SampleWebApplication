@@ -23,7 +23,7 @@
         <div class="card mb-3">
             <div class="card-header py-1 px-2">
                 <div class="d-flex">
-                    <div class="mr-2">
+                    <div class="mr-2" style="flex:0 0 2.33333%">
                         <asp:Image runat="server" ID="Avatar" 
                                    CssClass="img-avatar-sm mt-2" />
                     </div>
@@ -89,13 +89,13 @@
                             </ul>
                         </asp:PlaceHolder>
                     </div>
-                    <asp:Panel runat="server" CssClass="ml-auto dropleft" id="ToolsHolder">
+                    <asp:Panel runat="server" CssClass="ml-auto" id="ToolsHolder">
                         <YAF:ThemeButton ID="Tools1" runat="server"
                                          Type="Link"
                                          DataToggle="dropdown"
                                          TitleLocalizedTag="TOOLS"
                                          Icon="ellipsis-h" />
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
                             <YAF:ThemeButton ID="MarkAsAnswer" runat="server" 
                                              Visible="false" 
                                              Type="None" 
