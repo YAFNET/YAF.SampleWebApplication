@@ -70,7 +70,7 @@ namespace YAF.SampleWebApplication
         {
             if (!this.PageContext().IsGuest)
             {
-                this.UserName = this.PageContext().PageUserName;
+                this.UserName = BoardContext.Current.Get<IUserDisplayName>().GetName(this.PageContext().User);
                 this.UserId = this.PageContext().PageUserID;
 
                 this.GetUserImage(this.UserName);

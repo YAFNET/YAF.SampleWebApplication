@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
 	                        <table class="table tablesorter table-bordered table-striped" id="ActiveUsers">
-                                <thead class="thead-light">
+                                <thead class="table-light">
                                     <tr>
                                         <th>
                                             <YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" 
@@ -48,7 +48,7 @@
                                                                 LocalizedTag="platform" />
 		                                </th>
                                         <th id="Iptd_header1" runat="server" 
-                                            visible='<%# this.PageContext.IsAdmin %>'>
+                                            visible="<%# this.PageContext.IsAdmin %>">
                                             IP
 		                                </th>
                                     </tr>
@@ -59,6 +59,7 @@
                         <tr>
 				        <td>		
 					        <YAF:UserLink ID="NameLink" runat="server" 
+                                          Suspended='<%# this.Eval("Suspended").ToType<DateTime?>() %>'
                                           ReplaceName='<%# this.Eval(this.Get<BoardSettings>().EnableDisplayName ? "UserDisplayName" : "UserName") %>' 
                                           CrawlerName='<%# this.Eval("IsCrawler").ToType<int>() > 0 ? this.Eval("Browser").ToString() : string.Empty %>'
                                           UserID='<%# this.Eval("UserID").ToType<int>() %>' 
@@ -94,7 +95,7 @@
 				        <td>
 					        <%# this.Eval("Platform") %>
 				        </td>
-                        <td id="Iptd1" runat="server" visible='<%# this.PageContext.IsAdmin %>'>
+                        <td id="Iptd1" runat="server" visible="<%# this.PageContext.IsAdmin %>">
 					         <a id="Iplink1" href='<%# string.Format(this.PageContext.BoardSettings.IPInfoPageURL,IPHelper.GetIp4Address(this.Eval("IP").ToString())) %>'
                                 title='<%# this.GetText("COMMON","TT_IPDETAILS") %>' target="_blank" runat="server">
                              <%# IPHelper.GetIp4Address(this.Eval("IP").ToString())%></a>
@@ -106,14 +107,13 @@
                         </div>
                         </div>
             <div class="card-footer">
-            <div id="ActiveUsersPager" class="tableSorterPager form-inline">
-                <select class="pagesize custom-select custom-select-sm">
+            <div id="ActiveUsersPager" class="tableSorterPager d-flex">
+                <select class="pagesize form-select form-select-sm mr-2">
                     <option selected="selected"  value="10">10</option>
                     <option value="20">20</option>
                     <option value="30">30</option>
                     <option  value="40">40</option>
                 </select>
-                &nbsp;
                 <div class="btn-group"  role="group">
                     <a href="#" class="first btn btn-secondary btn-sm"><span><i class="fas fa-angle-double-left"></i></span></a>
                     <a href="#" class="prev btn btn-secondary btn-sm"><span><i class="fas fa-angle-left"></i></span></a>

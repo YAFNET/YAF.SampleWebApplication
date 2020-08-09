@@ -15,7 +15,10 @@
     <ItemTemplate>
         <li class="list-group-item">
             <YAF:UserLink ID="UserProfileLink" runat="server" 
-                          UserID='<%# this.CurrentUserID == this.Eval("UserID").ToType<int>() ? (int)this.Eval("FromUserID") : (int)this.Eval("UserID") %>' />
+                          ReplaceName='<%# this.Eval(this.PageContext.BoardSettings.EnableDisplayName ? "DisplayName" : "Name") %>'
+                          Suspended='<%# this.Eval("Suspended").ToType<DateTime?>() %>'
+                          Style='<%# this.Eval("UserStyle") %>'
+                          UserID='<%#  this.Eval(this.CurrentUserID == this.Eval("UserID").ToType<int>() ? "FromUserID": "UserID").ToType<int>() %>' />
             <div class="btn-group" role="group">
             <asp:PlaceHolder ID="pnlRemove" runat="server" Visible="false">
                 <YAF:ThemeButton ID="lnkRemove" runat="server"
@@ -79,7 +82,8 @@
         </asp:PlaceHolder>
     </FooterTemplate>
 </asp:Repeater>
-<YAF:Pager ID="Pager1" runat="server" LinkedPager="Pager" OnPageChange="Pager_PageChange" />
+<YAF:Pager ID="Pager1" runat="server" LinkedPager="Pager" 
+           OnPageChange="Pager_PageChange" />
 <asp:PlaceHolder runat="server" Visible="<%# this.rptBuddy.Items.Count == 0 %>">
     <div class="card-body">
         <YAF:Alert runat="server" Type="info" ID="Info"></YAF:Alert>

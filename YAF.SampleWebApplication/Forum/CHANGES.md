@@ -1,7 +1,38 @@
 YetAnotherForum.NET Changelog
 ====================
 
-Avatars are now visible for posts on mobile devices 
+# YetAnotherForum.NET v2.3.1.08
+* Upgraded to Bootstrap 4.5.2
+* [FIXED] Cookie Alert 
+* [FIXED] Dropdowns for small devices
+* [FIXED] Attachments
+
+# YetAnotherForum.NET v2.3.1.07
+* Upgraded to jQuery 3.5.1
+* Upgraded to Bootstrap 4.5.0
+* [NEW] user attachments can be managed
+* [FIXED] font size in quotes
+* [FIXED] Pruning of private messages
+* [FIXED #569] Instagram BB Code
+* [FIXED] Links to Moved topics
+* [FIXED #580] wrong DateTime format for Sitemap Urls
+* [FIXED #579] Clear cache on user delete
+
+
+# YetAnotherForum.NET v2.3.1.06
+* [FIXED] Emoji Button in CKEditor
+* Upgraded to CKEditor 4.14.0
+* Bug fixes
+ 
+
+# YetAnotherForum.NET v2.3.1.05
+* [FIXED] sending watch emails + added erro handling
+* [FIXED] MultiQuote Button
+* Bug fixes
+
+
+# YetAnotherForum.NET v2.3.1.04
+* Avatars are now visible for posts on mobile devices 
 * Removed spacing from Quotes
 * [FIXED] Display Date Times in Posts
 * [FIXED] dont send email notifications after edit post

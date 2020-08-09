@@ -15,9 +15,8 @@
                 <ul class="list-group list-group-flush">
                 </HeaderTemplate>
             <ItemTemplate>
-                <li class="list-group-item pt-2 pb-0 list-group-item-action">
-                    <h6>
-                        <asp:Label runat="server" ID="PostIcon"></asp:Label>
+                <li class="list-group-item pt-2 list-group-item-action">
+                    <asp:Label runat="server" ID="PostIcon" Visible="False"></asp:Label>
                         <asp:HyperLink ID="TextMessageLink" runat="server" 
                                        CssClass="font-weight-bold" />
                         <asp:HyperLink runat="server" ID="ForumLink"></asp:HyperLink>
@@ -46,14 +45,14 @@
                                              TitleLocalizedTag="GO_LAST_POST">
                             </YAF:ThemeButton>
                         </div>
-                    </h6>
                 </li>
             </ItemTemplate>
             <FooterTemplate>
                 </ul>
             </FooterTemplate>
         </asp:Repeater>
-        <asp:Panel runat="server" ID="Footer" CssClass="card-footer" >
+        <asp:Panel runat="server" ID="Footer" 
+                   CssClass="card-footer">
             <div class="btn-group float-right" role="group" aria-label="Tools">
                 <YAF:RssFeedLink ID="RssFeed" runat="server" FeedType="LatestPosts" />
             </div>

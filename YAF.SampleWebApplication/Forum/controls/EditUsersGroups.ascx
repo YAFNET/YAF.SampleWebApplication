@@ -6,16 +6,18 @@
 		<HeaderTemplate>
 			
 				<h2>
-					<YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="HEAD_USER_GROUPS" LocalizedPage="ADMIN_EDITUSER" />
+					<YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
+                                        LocalizedTag="HEAD_USER_GROUPS" 
+                                        LocalizedPage="ADMIN_EDITUSER" />
                 </h2>
-			<div class="form-row">
+			<div class="row">
         </HeaderTemplate>
 		<ItemTemplate>
-              <div class="form-group col-md-4">
+              <div class="mb-3 col-md-4">
 			    <asp:Label runat="server" AssociatedControlID="GroupMember">
 			        <%# DataBinder.Eval(Container.DataItem, "Name") %>
 			    </asp:Label>
-				<div class="custom-control custom-switch">
+				<div class="form-check form-switch">
 					<asp:CheckBox Text="&nbsp;" runat="server" ID="GroupMember" 
                                   Checked='<%# this.IsMember(DataBinder.Eval(Container.DataItem,"Member")) %>'/>
                 </div>
@@ -28,14 +30,20 @@
 	</asp:Repeater>
 	<hr/>
                 
-<div class="text-lg-center">
-    <div class="custom-control custom-switch">
-        <asp:CheckBox runat="server" Text="&nbsp;" ID="SendEmail"/>
+<div class="row justify-content-md-center g-3 align-items-center">
+    <div class="col-md-auto">
+        <div class="form-check form-switch">
+            <asp:CheckBox runat="server" ID="SendEmail"/>
                     
+        </div>
     </div>
-    <YAF:ThemeButton ID="Save" runat="server" 
-                     Type="Primary" 
-                     OnClick="Save_Click" 
-                     Icon="save" 
-                     TextLocalizedTag="SAVE" />
+    <div class="col-md-auto">
+        <YAF:ThemeButton ID="Save" runat="server" 
+                         Type="Primary" 
+                         OnClick="Save_Click" 
+                         Icon="save" 
+                         TextLocalizedTag="SAVE" />
+    </div>
+    
+    
 </div>

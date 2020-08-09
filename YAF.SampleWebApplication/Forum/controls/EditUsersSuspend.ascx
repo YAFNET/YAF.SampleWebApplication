@@ -12,9 +12,9 @@
                 <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" LocalizedPage="PROFILE" LocalizedTag="SUSPEND_CURRENT" />
             </h4>
             <p><strong><YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" LocalizedPage="PROFILE" LocalizedTag="SUSPEND_REASON" /></strong> 
-                <asp:Label runat="server" ID="CurrentSuspendedReason"></asp:Label>
+                <asp:Label runat="server" ID="CurrentSuspendedReason" />
                 <strong><YAF:LocalizedLabel ID="LocalizedLabel8" runat="server" LocalizedPage="PROFILE" LocalizedTag="SUSPEND_BY" /></strong>
-                <YAF:UserLink runat="server" ID="SuspendedBy"></YAF:UserLink>
+                <YAF:UserLink runat="server" ID="SuspendedBy" />
                 <strong><YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" LocalizedPage="PROFILE" LocalizedTag="ENDS" /></strong>
                 <%= this.GetSuspendedTo() %>
             </p>
@@ -34,18 +34,18 @@
         <h2>
             <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedPage="PROFILE" LocalizedTag="SUSPEND_NEW" />
         </h2>
-<div class="form-group">
+<div class="mb-3">
     <asp:Label runat="server" AssociatedControlID="SuspendedReason">
         <YAF:LocalizedLabel ID="LocalizedLabel4" runat="server" LocalizedPage="PROFILE" LocalizedTag="SUSPEND_REASON" />
     </asp:Label>
     <asp:TextBox Style="height:80px;" ID="SuspendedReason" runat="server" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
 </div>
-<div class="form-group">
+<div class="mb-3">
     <asp:Label runat="server" AssociatedControlID="SuspendCount">
         <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedPage="PROFILE" LocalizedTag="SUSPEND_USER" />
     </asp:Label>
     <asp:TextBox runat="server" ID="SuspendCount" CssClass="form-control" TextMode="Number" />
-    <div class="custom-control custom-radio custom-control-inline mt-1">
+    <div class="form-check form-check-inline mt-1">
         <asp:RadioButtonList
             runat="server" ID="SuspendUnit" 
             RepeatLayout="UnorderedList"
@@ -53,7 +53,7 @@
     </div>
 </div>
 <YAF:Alert runat="server" Type="info">
-    <asp:Label runat="server" ID="SuspendInfo"></asp:Label>
+    <YAF:Icon runat="server" IconName="info-circle" /><asp:Label runat="server" ID="SuspendInfo"></asp:Label>
 </YAF:Alert>
 
 <div class="text-center">

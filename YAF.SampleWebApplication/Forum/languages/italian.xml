@@ -41,6 +41,12 @@
     <Resource tag="YOUR_USERDISPLAYNAME">Il tuo nome visualizzato:</Resource>
     <Resource tag="YOUR_USERNAME">Nome utente:</Resource>
   </page>
+  <page name="ACCOUNT_RESEST_PASSWORD">
+    <Resource tag="CONFIRM_PASSWORD">Confirm New Password</Resource>
+    <Resource tag="INVALID_MATCH">The Password and Confirmation Password must match.</Resource>
+    <Resource tag="PASSWORD">Enter New Password</Resource>
+    <Resource tag="TITLE">Lost Password</Resource>
+  </page>
   <page name="ACTIVELOCATION">
     <Resource tag="ACCOUNT">Views a user profile</Resource>
     <Resource tag="ACTIVEUSERS">Views Active Users list</Resource>
@@ -86,6 +92,7 @@
     <Resource tag="ADMIN_NNTPRETRIEVE">Retrieves NNTP</Resource>
     <Resource tag="ADMIN_NNTPSERVERS">Views/edits NNTP servers</Resource>
     <Resource tag="ADMIN_PM">Views/edits PMs</Resource>
+    <Resource tag="ADMIN_PROFILEDEFINITIONS">Views the Custom Profile Definitions</Resource>
     <Resource tag="ADMIN_PRUNE">Views/performs pruning</Resource>
     <Resource tag="ADMIN_RANKS">Views ranks in admin section</Resource>
     <Resource tag="ADMIN_REGUSER">Registers a user</Resource>
@@ -261,6 +268,7 @@
   <page name="ADMIN_BANNEDEMAIL_EDIT">
     <Resource tag="MASK">Mask:</Resource>
     <Resource tag="MASK_HELP">The Email address to ban. You can use Regular Expressions.</Resource>
+    <Resource tag="NEED_MASK">You must define an Email address.</Resource>
     <Resource tag="REASON">Reason:</Resource>
     <Resource tag="REASON_HELP">The reason why the email address was banned.</Resource>
     <Resource tag="TITLE">Add/Edit Banned Email Address</Resource>
@@ -296,6 +304,7 @@
     <Resource tag="INVALID_VALUE">One of the IP section does not have a value. Valid values are 0-255 or "*" for a wildcard.</Resource>
     <Resource tag="MASK">Mask:</Resource>
     <Resource tag="MASK_HELP">The ip address to ban. You can use wild cards (127.0.0.*).</Resource>
+    <Resource tag="NEED_MASK">You must define an IP address.</Resource>
     <Resource tag="REASON">Reason:</Resource>
     <Resource tag="REASON_HELP">The reason why the ip was banned.</Resource>
     <Resource tag="TITLE">Add/Edit Banned IP Address</Resource>
@@ -324,6 +333,7 @@
   <page name="ADMIN_BANNEDNAME_EDIT">
     <Resource tag="MASK">Mask:</Resource>
     <Resource tag="MASK_HELP">The User Name to ban. You can use Regular Expressions.</Resource>
+    <Resource tag="NEED_MASK">You must define a User Name.</Resource>
     <Resource tag="REASON">Reason:</Resource>
     <Resource tag="REASON_HELP">The reason why the user name was banned.</Resource>
     <Resource tag="TITLE">Add/Edit Banned Name</Resource>
@@ -369,6 +379,7 @@
     <Resource tag="HEADER1">Name &amp; Description (all fields are required)</Resource>
     <Resource tag="HEADER2">Regular Expression</Resource>
     <Resource tag="HEADER3">Javascript &amp; CSS (all fields are optional)</Resource>
+    <Resource tag="MSG_NAME">You must enter a name.</Resource>
     <Resource tag="MSG_NUMBER">You must enter an number value from 0 to 32767 for sort order.</Resource>
     <Resource tag="MSG_POSITIVE_VALUE">The sort order value should be a positive integer from 0 to 32767.</Resource>
     <Resource tag="ONCLICK_JS">OnClick JS:</Resource>
@@ -447,6 +458,7 @@
     <Resource tag="COPYRIGHT_REMOVAL_KEY_DOWN">Purchase Removal Key</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_HELP">Remove the copyright information and link back to YAF from the footer of your entire forum domain. Available&lt;a href="https://yetanotherforum.net/purchase.aspx"&gt;from YAF.NET site&lt;/a&gt;. </Resource>
     <Resource tag="HEADER">Current Board Settings</Resource>
+    <Resource tag="NEED_MESSAGE">You need to enter an Announcement Message.</Resource>
     <Resource tag="TITLE">Board Settings</Resource>
   </page>
   <page name="ADMIN_COMMON">
@@ -493,6 +505,23 @@
     <Resource tag="MSG_VALID_MAIL">Please enter a valid e-mail address to send a test.</Resource>
     <Resource tag="SEND_TEST">Send Test</Resource>
     <Resource tag="TITLE">Digest</Resource>
+  </page>
+  <page name="ADMIN_EDIT_PROFILEDEFINITION">
+    <Resource tag="DATA_TYPE">Data Type</Resource>
+    <Resource tag="DATA_TYPE_HELP">Select an Data Type for the Profile Definition.</Resource>
+    <Resource tag="DEFAULT">Default Value</Resource>
+    <Resource tag="DEFAULT_HELP">Define a Default Value, would be needed if required is set.</Resource>
+    <Resource tag="LENGTH">Length</Resource>
+    <Resource tag="LENGTH_HELP">Maximum Length of the Field</Resource>
+    <Resource tag="NAME">Name</Resource>
+    <Resource tag="NAME_HELP">Will be used as Profile Name/Label</Resource>
+    <Resource tag="NEED_LENGTH">Maximum Length Value with Minimum 1 is required</Resource>
+    <Resource tag="NEED_NAME">You must define a name</Resource>
+    <Resource tag="REQUIRED">Required</Resource>
+    <Resource tag="REQUIRED_HELP">Define if the field should be required or not</Resource>
+    <Resource tag="SAVE_NEW">Save New</Resource>
+    <Resource tag="TITLE">Add New Profile Definition</Resource>
+    <Resource tag="TITLE_EDIT">Edit Profile Definition</Resource>
   </page>
   <page name="ADMIN_EDITACCESSMASKS">
     <Resource tag="ACCESS">Access</Resource>
@@ -655,6 +684,7 @@
     <Resource tag="IS_START_HELP">If this is checked, all new users will be a member of this role.</Resource>
     <Resource tag="MSG_ALBUM_NUMBER">You should enter integer value for the number of user albums.</Resource>
     <Resource tag="MSG_INTEGER">You should enter integer value for priority.</Resource>
+    <Resource tag="MSG_NAME">You need to enter a Role name.</Resource>
     <Resource tag="MSG_SIG_NUMBER">You should enter integer value for the number of chars in user signature.</Resource>
     <Resource tag="MSG_TOTAL_NUMBER">You should enter integer value for the total number of images in all albums.</Resource>
     <Resource tag="MSG_VALID_NUMBER">You should enter integer value for pmessage number.</Resource>
@@ -720,6 +750,7 @@
     <Resource tag="MEDAL_USER_HELP">Enter a Username or Click on "Find Users" to select a User from the User List</Resource>
     <Resource tag="MSG_AMBIGOUS_USER">Ambiguous user name specified!</Resource>
     <Resource tag="MSG_IMAGE">Medal image must be specified!</Resource>
+    <Resource tag="MSG_NAME">You must enter a medal name!</Resource>
     <Resource tag="MSG_SMALL_IMAGE">Small medal image must be specified!</Resource>
     <Resource tag="MSG_VALID_USER">Please specify valid user!</Resource>
     <Resource tag="ONLY_RIBBON">Show Only Ribbon Bar:</Resource>
@@ -785,6 +816,7 @@
     <Resource tag="MIN_POSTS">Minimum Posts:</Resource>
     <Resource tag="MIN_POSTS_HELP">Minimum number of posts before users are advanced to this rank.</Resource>
     <Resource tag="MSG_RANK_INTEGER">Rank Priority should be small integer.</Resource>
+    <Resource tag="NEED_NAME">You must define a rank name.</Resource>
     <Resource tag="PRIVATE_MESSAGES">Private Messages:</Resource>
     <Resource tag="PRIVATE_MESSAGES_HELP">Max. Private Messages allowed to Rank members.</Resource>
     <Resource tag="RANK_DESC">Description:</Resource>
@@ -1611,6 +1643,7 @@
     <Resource tag="HEADER">Retrieve NNTP Articles</Resource>
     <Resource tag="LAST_MESSAGE">Last Message</Resource>
     <Resource tag="LAST_UPDATE">Last Update</Resource>
+    <Resource tag="NO_GROUPS">No Groups ready for retrieval</Resource>
     <Resource tag="RETRIEVE">Retrieve</Resource>
     <Resource tag="Retrieved">Retrieved {0} articles. {1:N2} articles per second.</Resource>
     <Resource tag="SECONDS">seconds</Resource>
@@ -1651,6 +1684,11 @@
     <Resource tag="HEADER">Private messages</Resource>
     <Resource tag="PM_NUMBER">Number of private messages:</Resource>
     <Resource tag="TITLE">PM Maintenance</Resource>
+  </page>
+  <page name="ADMIN_PROFILEDEFINITIONS">
+    <Resource tag="CONFIRM_DELETE">Delete Definition?</Resource>
+    <Resource tag="NEW_DEF">Add New Definition</Resource>
+    <Resource tag="TITLE">Custom Profile Definitions</Resource>
   </page>
   <page name="ADMIN_PROFILER">
     <Resource tag="TITLE">Web Profiler</Resource>
@@ -1764,6 +1802,7 @@
   </page>
   <page name="ADMIN_RUNSQL">
     <Resource tag="HEADER">Run SQL Query</Resource>
+    <Resource tag="NEED_QUERY">You need to enter a Query.</Resource>
     <Resource tag="RUN_QUERY">Run Query</Resource>
     <Resource tag="RUN_TRANSCATION">Run In Transaction</Resource>
     <Resource tag="SQL_COMMAND">SQL Command:</Resource>
@@ -1784,6 +1823,7 @@
   </page>
   <page name="ADMIN_SPAMWORDS_EDIT">
     <Resource tag="MSG_REGEX_SPAM">The Regular expression statement you have entered is invalid.</Resource>
+    <Resource tag="NEED_SPAM">You must define a Spam word.</Resource>
     <Resource tag="SPAM">"Spam" Word (Find) Expression:</Resource>
     <Resource tag="SPAM_HELP">Regular expression statement. Escape punctation with a preceding slash (e.g. '\.').</Resource>
     <Resource tag="TITLE">Add New Spam Word</Resource>
@@ -1891,8 +1931,7 @@
     <Resource tag="LATEST_VERSION">The Latest Stable Version is: &lt;b&gt;{0}&lt;/b&gt; (Date: {1}).</Resource>
     <Resource tag="RUNNING_VERSION">Your YAF.NET Version: &lt;b&gt;{0}&lt;/b&gt; (Date: {1}).</Resource>
     <Resource tag="TITLE">Version Check</Resource>
-    <Resource tag="UPGRADE_VERSION">Get the Latest Version &lt;a target="_top" href="https://yetanotherforum.net/"&gt;
-                  Here&lt;/a&gt;.</Resource>
+    <Resource tag="UPGRADE_VERSION">Download Upgrade Package</Resource>
   </page>
   <page name="ADMINMENU">
     <Resource tag="admin_accessmasks">Access Masks</Resource>
@@ -1901,6 +1940,7 @@
     <Resource tag="admin_bannedip">Banned IPs</Resource>
     <Resource tag="admin_bannedname">Banned Names</Resource>
     <Resource tag="admin_bbcode">BBCode Extensions</Resource>
+    <Resource tag="ADMIN_BoardAnnouncement">Board Announcement</Resource>
     <Resource tag="admin_boards">Boards</Resource>
     <Resource tag="admin_boardsettings">Board Settings</Resource>
     <Resource tag="admin_digest">Digest</Resource>
@@ -1919,6 +1959,7 @@
     <Resource tag="admin_pageaccessedit">Edit Admin Page Access</Resource>
     <Resource tag="admin_pageaccesslist">Admin Page Access</Resource>
     <Resource tag="admin_pm">Private Messages</Resource>
+    <Resource tag="ADMIN_PROFILEDEFINITIONS">Custom Profile Definitions</Resource>
     <Resource tag="admin_profiler">Web Profiler</Resource>
     <Resource tag="admin_prune">Prune Topics</Resource>
     <Resource tag="admin_ranks">Ranks</Resource>
@@ -1946,6 +1987,7 @@
   <page name="ALBUM">
     <Resource tag="ALBUM_CHANGE_TITLE">Inserisci titolo</Resource>
     <Resource tag="ALBUM_IMAGE_CHANGE_CAPTION">Inserisci didascalia</Resource>
+    <Resource tag="ALBUM_IMAGE_CHANGE_CAPTION2">Change Caption</Resource>
     <Resource tag="ALBUM_IMAGES_NUMBER">{0} immagini</Resource>
     <Resource tag="ALBUM_VIEW">Click per visualizzare gli album</Resource>
     <Resource tag="ALBUMS">Album</Resource>
@@ -2144,6 +2186,7 @@
     <Resource tag="BBCODE_QUOTEPOSTED">Postato in origine da: {0}</Resource>
     <Resource tag="BBCODE_QUOTEPOSTED_TT">Vai al messaggio citato</Resource>
     <Resource tag="BBCODE_QUOTEWROTE">Messaggio originale di [b]{0}[/b]:</Resource>
+    <Resource tag="BROWSE">Browse</Resource>
     <Resource tag="CAL_JQ_CULTURE">it</Resource>
     <Resource tag="CAL_JQ_CULTURE_DFORMAT">dd/MM/YYYY</Resource>
     <Resource tag="CAL_JQ_TT">Click per selezionare la data</Resource>
@@ -2659,6 +2702,7 @@
     <Resource tag="FROM">Da:</Resource>
     <Resource tag="LAST10">Ultimi 10 post (in ordine decrescente)</Resource>
     <Resource tag="MESSAGE">Messaggio:</Resource>
+    <Resource tag="NEED_REASON">You need to enter a Reason why the message is deleted.</Resource>
     <Resource tag="POSTED">Inviato:</Resource>
     <Resource tag="PREVIEWTITLE">Messaggio:</Resource>
     <Resource tag="PRIORITY">Priorità:</Resource>
@@ -2686,10 +2730,13 @@
     <Resource tag="ASK_DELETEIMAGE">Eliminare questa immagine?</Resource>
     <Resource tag="ERROR_MAXALBUMS">Non puoi aggiungere altri album a questo account.</Resource>
     <Resource tag="ERROR_TOOBIG">Non puoi caricare immagini cosi' grandi.</Resource>
+    <Resource tag="IMAGES">Album Image(s)</Resource>
     <Resource tag="IMAGES_COUNT_LIMIT">Hai raggiunto il tuo limite di immagini pari a {0} per album.</Resource>
     <Resource tag="IMAGES_INFO">Nota: al momento questo album contiene {0} immagini. Ogni album può contenere al massimo {1} immagini. La dimensione massima di una singola immagine è di {2} KB.</Resource>
+    <Resource tag="NEED_TITLE">You need to specify a title.</Resource>
     <Resource tag="SELECT_FILE">Seleziona un'immagine ('.jpg', '.gif', '.png' or '.bmp') che vuoi caricare.</Resource>
     <Resource tag="TITLE">Crea/modifica album</Resource>
+    <Resource tag="TITLE_NEW">Create New Album</Resource>
   </page>
   <page name="EDIT_AVATAR">
     <Resource tag="AVATAR">Avatar</Resource>
@@ -2752,6 +2799,7 @@
     <Resource tag="METAWEBLOG_API_USERNAME">Nome utente API MetaWeblog:</Resource>
     <Resource tag="METAWEBLOG_TITLE">Invia su MetaWeblog (impostazioni API)</Resource>
     <Resource tag="MSN">Il tuo nome MSN (Live-ID):</Resource>
+    <Resource tag="OTHER">Other</Resource>
     <Resource tag="OVERRIDE_DEFAULT_THEMES">Seleziona un tema personalizzato per il forum:</Resource>
     <Resource tag="PM_EMAIL_NOTIFICATION">Vuoi ricevere una notifica via e-mail ogni qualvolta ti viene inviato un nuovo messaggio privato?</Resource>
     <Resource tag="REALNAME2">Nome reale:</Resource>
@@ -2795,6 +2843,8 @@
     <Resource tag="FAILED">Invio e-mail fallito.\n\n{0}</Resource>
     <Resource tag="MESSAGE">Messaggio:</Resource>
     <Resource tag="NEED_EMAIL">Devi inserire un indirizzo e-mail.</Resource>
+    <Resource tag="NEED_MESSAGE">You must enter a Message.</Resource>
+    <Resource tag="NEED_SUBJECT">You must enter an email subject.</Resource>
     <Resource tag="SEND">Invia</Resource>
     <Resource tag="SUBJECT">Soggetto:</Resource>
     <Resource tag="TITLE">Invia una pagina ad un amico</Resource>
@@ -2834,15 +2884,15 @@
 &lt;p&gt;Gli annunci vengono visualizzati nella parte più alta della pagina, in posizione superiore ad argomenti normali ed evidenziati.&lt;/p&gt;
         </Resource>
     <Resource tag="ANOUNCETITLE">Annunci</Resource>
-    <Resource tag="ATTACHMENTSCONTENT">&lt;p&gt;To attach a file to a post, you need to be using the main 'Post Reply' or 'New Topic' page and not 'Quick Reply', or Click the 'Attach' button to on an existing Message.&lt;/p&gt;
-&lt;p&gt;On this page, below the message box, you will find a Check box 'Attach files to this post?'. When you Click on the 'Post' button you are redirected to the Attachments Page where you can Upload and Attach Files.&lt;/p&gt;
-&lt;p&gt;To upload a file from your computer, click the 'Browse' button and locate the file. Once you have selected a file, click 'Upload'.&lt;/p&gt;
-&lt;p&gt;Once the upload is completed the file name will appear over the Upload Section. You can click 'Back' to return to the Topic.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;What files types can be used? How large can attachments be?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;In the attachment window you will find a list of the allowed file types you can use. There may also be an overall quota limit to the number of attachments you can post to the board.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;How to add an image to a post?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you have uploaded an image as an attachment, they will be automatically generated a thumbnail that will displayed in your message, with an Link to the Full Size Image&lt;/p&gt;
-&lt;p&gt;To include an image that is not uploaded as an attachment and is located on another website, you can do so by copying the full URL to the image, (not the page on which the image is located), and either pressing the 'Insert Image' icon or by typing [img] before the URL and [/img] after it, ensuring that you do not have any spaces before or after the URL of the image.&lt;/p&gt;</Resource>
+    <Resource tag="ATTACHMENTSCONTENT">
+      &lt;p&gt;To attach a file to a post, simply copy and paste the file, in to the editor. &lt;/p&gt;
+      &lt;p&gt;From the Attachments (paper clip icon) toolbar button in the editor you can also select an previous uploaded attachment, or upload a new one.&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;What files types can be used? How large can attachments be?&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;In the attachment window you will find a list of the allowed file types you can use. There may also be an overall quota limit to the number of attachments you can post to the board.&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;How to add an image to a post?&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;If you have uploaded an image as an attachment, they will be automatically generated a thumbnail that will displayed in your message, with an Link to the Full Size Image&lt;/p&gt;
+      &lt;p&gt;To include an image that is not uploaded as an attachment and is located on another website, you can do so by copying the full URL to the image, (not the page on which the image is located), and either pressing the 'Insert Image' icon or by typing [img] before the URL and [/img] after it, ensuring that you do not have any spaces before or after the URL of the image.&lt;/p&gt;
+    </Resource>
     <Resource tag="ATTACHMENTSTITLE">Attachments and Images</Resource>
     <Resource tag="BBCODESCONTENT">&lt;p&gt;On this Page you find a list  of the BB code tags you can use to format your messages.&lt;/p&gt;
 &lt;table class="content" width="90%"&gt;
@@ -3914,7 +3964,7 @@ Spoiler Content
 </Resource>
     <Resource tag="EDITPROFILETITLE">Editing User Profile &amp; Forum Settings</Resource>
     <Resource tag="FORUMSCONTENT">&lt;p&gt;&lt;strong&gt;What is YAF?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;YetAnotherForum.NET (YAF) is The Open Source Discussion Forum for sites running ASP.NET. 100% written in C#, YAF (pronounced like &amp;quot;laugh&amp;quot;) is a unique combination of Open Source, Microsoft's .NET platform and an international collaboration of the .NET developer community. Growing and changing daily, the YAF project is led by Ingo Herbote. YAF runs on any web server that supports ASP.NET v4.0 (and above) and SQL Server. YAF is licensed under Apache 2.0.&lt;/p&gt;
+&lt;p&gt;YetAnotherForum.NET (YAF) is The Open Source Discussion Forum for sites running ASP.NET. 100% written in C#, YAF (pronounced like &amp;quot;laugh&amp;quot;) is a unique combination of Open Source, Microsoft's .NET platform and an international collaboration of the .NET developer community. Growing and changing daily, the YAF project is led by Ingo Herbote. YAF runs on any web server that supports ASP.NET v4.8 (and above) and SQL Server. YAF is licensed under Apache 2.0.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How is all of this structured?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;A Forum contains various areas, which themselves contain forums (more specific subject areas) which contain topics  which are made up of individual messages (where a user writes something).&lt;/p&gt;
 &lt;p&gt;The Forums home page has a list of categories and forums, with basic statistics for each, including the number of topics and messages, and which member posted the most recent message.&lt;/p&gt;
@@ -4420,6 +4470,7 @@ Spoiler Content
     <Resource tag="REPLYTO">Rispondi tramite MP a</Resource>
     <Resource tag="REPORT_SPAM">Segnala come spam</Resource>
     <Resource tag="REPORTED">Messaggi segnalati</Resource>
+    <Resource tag="REPORTED_TIMES">{0} Reports</Resource>
     <Resource tag="REPORTEDBY">Segnalato da:</Resource>
     <Resource tag="RESOLVE">Risolvi messaggi duplicati</Resource>
     <Resource tag="RESOLVED">Contrassegna come risolto</Resource>
@@ -4889,6 +4940,7 @@ Spoiler Content
     <Resource tag="PASSWORD_SENT">La password è stata inviata al tuo indirizzo e-mail di registrazione.</Resource>
     <Resource tag="PASSWORDRETRIEVAL_EMAIL_SUBJECT">Recupero password per il forum {0}</Resource>
     <Resource tag="QUESTION_FAILURE">La tua risposta è errata. Per favore riprova.</Resource>
+    <Resource tag="SUCCESS">An email with the Reset Link was send to your email address!</Resource>
     <Resource tag="TITLE">Password perduta.</Resource>
     <Resource tag="USERNAME_FAILURE">Impossibile trovare il nome utente specificato.</Resource>
   </page>
@@ -5040,6 +5092,7 @@ Spoiler Content
     <Resource tag="RECATCHA_BADWORDS">Sbagliato! Prova di nuovo.</Resource>
     <Resource tag="REGISTER">Registrati</Resource>
     <Resource tag="REGISTER_AUTH">Register with {0}</Resource>
+    <Resource tag="RESET_PASS_EMAIL_SUBJECT">Reset Password for {0} Forum</Resource>
     <Resource tag="RETYPE_PASSWORD">La password di conferma e' obbligatoria.</Resource>
     <Resource tag="SECURITY_ANSWER">Risposta di sicurezza</Resource>
     <Resource tag="SECURITY_QUESTION">Domanda di sicurezza</Resource>
@@ -5056,6 +5109,7 @@ Spoiler Content
     <Resource tag="CANCEL_TITLE">Annulla segnalazione messaggio</Resource>
     <Resource tag="ENTER_TEXT">Scrivi il motivo della segnalazione:</Resource>
     <Resource tag="HEADER">Segnalazione messaggio</Resource>
+    <Resource tag="NEED_REASON">You need to provide a Report Reason.</Resource>
     <Resource tag="POSTEDBY">Inviato da:</Resource>
     <Resource tag="REPORTTEXT_ALLTAGSFORBIDDEN">I tag non sono ammessi nelle segnalazioni.</Resource>
     <Resource tag="REPORTTEXT_FORBIDDENTAG">Il tag [{0}] non è ammesso nelle segnalazioni.</Resource>
@@ -5463,7 +5517,6 @@ Ciao!
 
       Nome utente: {user}
 	  Password generata automaticamente: {pass}
-	  Risposta di sicurezza generata automaticamente: {answer}
       E-mail: {email} (Per favore non modificare l'e-mail, altrimenti non riuscirai ad accedere.)
 	  
     </Resource>
@@ -5484,7 +5537,7 @@ Ciao!
      &lt;p class="mt-3 mb-4"&gt;You have been successfully registered on the {forumname} forum using Facebook Login:&lt;/p&gt;
      &lt;p class="text-center"&gt;User Name: {user}&lt;/p&gt;
      &lt;p class="text-center"&gt;Auto Generated Password: {pass}&lt;/p&gt;
-     &lt;p class="text-center"&gt;Auto Generated Security Answer: {answer}&lt;/p&gt;
+     &lt;p class="text-center"&gt;&lt;/p&gt;
      &lt;p class="text-center"&gt;User Email: {email} (Please don't change your email, or you are unable to login with Facebook)&lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5502,7 +5555,7 @@ Ciao!
 
       User Name: {user}
 	  Auto Generated Password: {pass}
-	  Auto Generated Security Answer: {answer}
+	  
       User Email: {email} (Please don't change your email, or you are unable to login with Facebook)
 
     </Resource>
@@ -5513,7 +5566,6 @@ Ciao!
 
       Nome utente: {user}
 	  Password generata automaticamente: {pass}
-	  Risposta di sicurezza generata automaticamente: {answer}
       E-mail: {email} (Per favore non modificare l'e-mail, altrimenti non riuscirai ad accedere.)
 	  
     </Resource>
@@ -5534,7 +5586,7 @@ Ciao!
      &lt;p class="mt-3 mb-4"&gt;You have been successfully registered on the {forumname} forum using Google Login:&lt;/p&gt;
      &lt;p class="text-center"&gt;User Name: {user}&lt;/p&gt;
      &lt;p class="text-center"&gt;Auto Generated Password: {pass}&lt;/p&gt;
-     &lt;p class="text-center"&gt;Auto Generated Security Answer: {answer}&lt;/p&gt;
+     &lt;p class="text-center"&gt;&lt;/p&gt;
      &lt;p class="text-center"&gt;User Email: {email} (Please don't change your email, or you are unable to login with Google)&lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5552,7 +5604,7 @@ Ciao!
 
       User Name: {user}
 	  Auto Generated Password: {pass}
-	  Auto Generated Security Answer: {answer}
+	  
       User Email: {email} (Please don't change your email, or you are unable to login with Google)
 
     </Resource>
@@ -5685,7 +5737,6 @@ The Message was posted in the {forumname} forum.
 
       Nome utente: {user}
 	  Password generata automaticamente: {pass}
-	  Risposta di sicurezza generata automaticamente: {answer}
       E-mail: {email} (Per favore non modificare la tua e-mail, altrimenti non potrai più accedere tramite Facebook)
 	  
     </Resource>
@@ -5706,7 +5757,7 @@ The Message was posted in the {forumname} forum.
      &lt;p class="mt-3 mb-4"&gt;You have been successfully registered on the {forumname} forum:&lt;/p&gt;
      &lt;p class="text-center"&gt;User Name: {user}&lt;/p&gt;
      &lt;p class="text-center"&gt;Auto Generated Password: {pass}&lt;/p&gt;
-     &lt;p class="text-center"&gt;Auto Generated Security Answer: {answer}&lt;/p&gt;
+     &lt;p class="text-center"&gt;&lt;/p&gt;
      &lt;p class="text-center"&gt;User Email: {email}&lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5724,7 +5775,7 @@ The Message was posted in the {forumname} forum.
 
     User Name: {user}
     Auto Generated Password: {pass}
-    Auto Generated Security Answer: {answer}
+    
     User Email: {email}
 
   </Resource>
@@ -5846,7 +5897,6 @@ The Message was posted in the {forumname} forum.
 
       Nome utente: {user}
 	  Password generata automaticamente: {pass}
-	  Risposta di sicurezza generata automaticamente: {answer}
       E-mail: {email} (Per favore modifica il tuo indirizzo in modo che corrisponda a quello reale per poter ricevere le e-mail)
 	  
     </Resource>
@@ -6196,6 +6246,39 @@ Utilizza il seguente link per leggerlo:
 
 {link}
 </Resource>
+    <Resource tag="RESET_PASS_HTML">
+     &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+     &lt;html&gt;
+     &lt;head&gt;
+     &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+     &lt;link rel="stylesheet" media="all" href="{themecss}" /&gt;
+     &lt;/head&gt;
+     &lt;body class="bg-light"&gt;
+     &lt;div class="container"&gt;
+     &lt;div class="mx-auto mt-4 mb-3 text-center" style="width:100px;height:40px;background: url('{logo}') no-repeat"&gt;
+     &lt;/div&gt;
+     &lt;div class="card mb-4" style="border-top: 5px solid #3761b5;"&gt;
+     &lt;div class="card-body"&gt;
+     &lt;h4 class="text-center"&gt;Hello &lt;strong&gt;{username}&lt;/strong&gt;,&lt;/h4&gt;
+     &lt;p class="mt-3 mb-4"&gt;You have requested to reset your password for {forumname}.&lt;/p&gt;
+     &lt;p&gt;Please open the following link in your web browser:&lt;/p&gt;
+     &lt;p class="text-center"&gt;&lt;a href="{link}"&gt;{link}&lt;/a&gt;&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;/div&gt;
+
+     &lt;div class="text-center text-muted"&gt;&lt;strong&gt;{forumname}&lt;/strong&gt; at &lt;a href="{forumlink}"&gt;{forumlink}&lt;/a&gt;&lt;/div&gt;
+     &lt;/div&gt;
+
+     &lt;/body&gt;
+     &lt;/html&gt;
+   </Resource>
+    <Resource tag="RESET_PASS_TEXT">
+     You have requested to reset your password for {forumname}.
+
+     Please open the following link in your web browser:
+
+     {link}
+   </Resource>
     <Resource tag="TOPICPOST_HTML">
     &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
     &lt;html&gt;

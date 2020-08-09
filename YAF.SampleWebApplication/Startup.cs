@@ -24,7 +24,7 @@
 
 using Microsoft.Owin;
 
-[assembly: OwinStartup(typeof(YAF.SampleWebApplication.Startup))]
+//[assembly: OwinStartup(typeof(YAF.SampleWebApplication.Startup))]
 
 namespace YAF.SampleWebApplication
 {

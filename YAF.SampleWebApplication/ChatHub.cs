@@ -32,7 +32,10 @@ namespace YAF.SampleWebApplication
 
     using Microsoft.AspNet.SignalR;
     using YAF.Core.Context;
+    using YAF.Core.Extensions;
+    using YAF.SampleWebApplication.Models;
     using YAF.Types.Interfaces;
+    using YAF.Types.Models;
 
     /// <summary>
     /// The chat hub.
@@ -119,7 +122,8 @@ namespace YAF.SampleWebApplication
         /// </returns>
         public string GetUserImage(int userId)
         {
-           return BoardContext.Current.Get<IAvatars>().GetAvatarUrlForUser(userId);
+            var user = BoardContext.Current.GetRepository<User>().GetById(userId);
+           return BoardContext.Current.Get<IAvatars>().GetAvatarUrlForUser(user);
         }
 
         /// <summary>

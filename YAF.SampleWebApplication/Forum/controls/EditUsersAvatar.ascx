@@ -33,7 +33,7 @@
                     <hr />
                 </asp:PlaceHolder>
                 <asp:PlaceHolder runat="server" ID="AvatarOurs">
-                    <div class="form-group">
+                    <div class="mb-3">
                         <h4>
                             <asp:Label runat="server">
                                 <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" 
@@ -50,7 +50,7 @@
                     <hr />
                 </asp:PlaceHolder>
                 <asp:PlaceHolder runat="server" ID="AvatarRemoteRow">
-                    <div class="form-group">
+                    <div class="mb-3">
                         <h4>
                             <asp:Label runat="server" AssociatedControlID="Avatar">
                                 <YAF:LocalizedLabel ID="LocalizedLabel4" runat="server"
@@ -63,9 +63,10 @@
                                      TextMode="Url" />
                     </div>
                     <YAF:Alert runat="server" Type="info">
+                        <YAF:Icon runat="server" IconName="info-circle"></YAF:Icon>
                         <asp:Label ID="noteRemote" runat="server"></asp:Label>
                     </YAF:Alert>
-                    <div class="form-group">
+                    <div class="mb-3">
                         <YAF:ThemeButton ID="UpdateRemote" runat="server"
                                          Type="Primary"
                                          OnClick="RemoteUpdate_Click"
@@ -75,7 +76,7 @@
                     <hr />
                 </asp:PlaceHolder>
                 <asp:PlaceHolder runat="server" ID="AvatarUploadRow">
-                    <div class="form-group">
+                    <div class="mb-3">
                         <h4>
                             <asp:Label runat="server" AssociatedControlID="File">
                                 <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" 
@@ -83,33 +84,38 @@
                                                     LocalizedTag="AVATARUPLOAD" />
                             </asp:Label>
                         </h4>
-                        <div class="input-group">
-                            <div class="custom-file mb-3">
-                                <input type="file" id="File" runat="server" class="custom-file-input" aria-describedby="File" />
-                                <asp:Label runat="server" AssociatedControlID="File" CssClass="custom-file-label">
+                        <div class="form-file">
+                            <input type="file" id="File" runat="server" class="form-file-input" aria-describedby="File" />
+                            <label for="<%# this.File.ClientID %>" class="form-file-label">
+                                <span class="form-file-text">
                                     <YAF:LocalizedLabel ID="LocalizedLabel2" runat="server"
                                                         LocalizedPage="EDIT_AVATAR"
                                                         LocalizedTag="AVATARUPLOAD" />
-                                </asp:Label>
-                            </div>
+                                </span>
+                                <span class="form-file-button">
+                                    <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server"
+                                                        LocalizedTag="BROWSE" />
+                                </span>
+                            </label>
                         </div>
                     </div>
                     <YAF:Alert runat="server" Type="info">
+                        <YAF:Icon runat="server" IconName="info-circle"></YAF:Icon>
                         <asp:Label ID="noteLocal" runat="server"></asp:Label>
                     </YAF:Alert>
                 </asp:PlaceHolder>
-            </div>
-            <div class="card-footer text-center">
-                <YAF:ThemeButton ID="UpdateUpload" runat="server"
-                                 OnClick="UploadUpdate_Click"
-                                 Type="Primary"
-                                 TextLocalizedTag="SAVE"
-                                 Icon="save" />
-                <YAF:ThemeButton ID="Back"
-                                 Type="Secondary" runat="server"
-                                 OnClick="Back_Click"
-                                 Icon="reply"
-                                 TextLocalizedTag="BACK" />
+                <div class="text-lg-center">
+                    <YAF:ThemeButton ID="UpdateUpload" runat="server"
+                                     OnClick="UploadUpdate_Click"
+                                     Type="Primary"
+                                     TextLocalizedTag="SAVE"
+                                     Icon="save" />
+                    <YAF:ThemeButton ID="Back"
+                                     Type="Secondary" runat="server"
+                                     OnClick="Back_Click"
+                                     Icon="reply"
+                                     TextLocalizedTag="BACK" />
+                </div>
             </div>
         </div>
     </div>

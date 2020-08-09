@@ -7,7 +7,7 @@
     <div class="col">
         <div class="card mb-3 mt-2" id="activity">
             <div class="card-header">
-                <div class="row justify-content-between">
+                <div class="row justify-content-between align-items-center">
                     <div class="col-auto">
                         <YAF:IconHeader runat="server"
                                         IconName="stream"
@@ -15,30 +15,31 @@
                                         LocalizedPage="ACCOUNT" />
                     </div>
                     <div class="col-auto">
-                        <div class="btn-group dropleft" role="group" aria-label="Filters">
+                        <div class="btn-group" role="group" aria-label="Filters">
                             <YAF:ThemeButton runat="server"
-                                     CssClass="dropdown-toggle"
-                                     DataToggle="dropdown"
-                                     Type="Secondary"
-                                     Icon="filter"
-                                     TextLocalizedTag="FILTER_DROPDOWN"
-                                     TextLocalizedPage="ADMIN_USERS"></YAF:ThemeButton>
-                            <div class="dropdown-menu">
+                                             CssClass="dropdown-toggle"
+                                             DataToggle="dropdown"
+                                             Type="Secondary"
+                                             Size="Small"
+                                             Icon="filter"
+                                             TextLocalizedTag="FILTER_DROPDOWN"
+                                             TextLocalizedPage="ADMIN_USERS"/>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
                                 <div class="px-3 py-1">
-                                    <div class="form-group">
-                                        <div class="custom-control custom-switch">
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
                                             <asp:CheckBox runat="server" ID="CreatedTopic" 
                                                           Checked="True"/>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-switch">
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
                                             <asp:CheckBox runat="server" ID="CreatedReply" 
                                                           Checked="True"/>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-switch">
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
                                             <asp:CheckBox runat="server" ID="GivenThanks" 
                                                           Checked="True"/>
                                         </div>
@@ -71,13 +72,9 @@
                     <ItemTemplate>
                         <div class="row">
                             <div class="col-auto text-center flex-column d-none d-sm-flex">
-                                <div class="row h-50">
-                                    <div class="col <%# this.GetFirstItemClass(Container.ItemIndex) %>">&nbsp;</div>
-                                    <div class="col">&nbsp;</div>
-                                </div>
                                 <h5 class="m-2">
                                     <asp:Label runat="server" ID="Icon"
-                                               CssClass="fa-stack fa-1x" ></asp:Label>
+                                               CssClass="fa-stack fa-1x pt-3"></asp:Label>
                                 </h5>
                                 <div class="row h-50">
                                     <div class="col <%# this.GetLastItemClass(Container.ItemIndex) %>">&nbsp;</div>
@@ -111,16 +108,14 @@
             </div>
             <div class="card-footer">
                 <div class="input-group col-md-4">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <YAF:LocalizedLabel ID="SinceLabel" runat="server"
-                                                LocalizedTag="ITEMS"/>:
-                        </div>
+                    <div class="input-group-text">
+                        <YAF:LocalizedLabel ID="SinceLabel" runat="server"
+                                            LocalizedTag="ITEMS"/>:
                     </div>
                     <asp:DropDownList ID="PageSize" runat="server" 
                                       AutoPostBack="True"
                                       OnSelectedIndexChanged="PageSizeSelectedIndexChanged" 
-                                      CssClass="select2-select custom-select">
+                                      CssClass="form-select">
                         <asp:ListItem Text="5" Value="5" Selected="True" />
                         <asp:ListItem Text="10" Value="10" />
                         <asp:ListItem Text="20" Value="20" />

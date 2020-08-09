@@ -41,8 +41,8 @@ BEGIN TRY
 
 	-- PRINT N'Create YAF.Net Board:';
 	INSERT INTO  [{databaseOwner}].[{objectQualifier}Board]
-		   (Name, MembershipAppName, RolesAppName, oModuleID)
-	SELECT ModuleTitle, N'', N'', ModuleID
+		   (Name, oModuleID)
+	SELECT ModuleTitle,ModuleID
 	 FROM  dbo.TabModules
 	 WHERE TabModuleID IN (SELECT Min(TabModuleID) FROM dbo.TabModules WHERE ModuleID = @oModuleID)
 
@@ -133,8 +133,8 @@ BEGIN TRY
 	-- PRINT N'Create Guest User:';
 	MERGE INTO  [{databaseOwner}].[{objectQualifier}user] T
 	USING (SELECT * FROM  [{databaseOwner}].[{objectQualifier}User] WHERE BoardID = @tplBoardID AND Name = N'Guest') S ON T.BoardID = @BoardID and T.Name = S.Name
-	WHEN NOT MATCHED THEN INSERT ( BoardID,   ProviderUserKey,   Name,   DisplayName,   Password,   Email,   Joined,   LastVisit,   IP,   NumPosts,   TimeZone,   Avatar,   Signature,   AvatarImage,   AvatarImageType,   RankID,   Suspended,   SuspendedReason,   SuspendedBy,   LanguageFile,   ThemeFile,   PMNotification,   AutoWatchTopics,   DailyDigest,   NotificationType,   Flags,   Points,   Culture,   IsFacebookUser,   IsTwitterUser,   UserStyle,   StyleFlags,   IsGoogleUser)
-						  VALUES (@BoardID, S.ProviderUserKey, S.Name, S.DisplayName, S.Password, S.Email, S.Joined, S.LastVisit, S.IP, S.NumPosts, S.TimeZone, S.Avatar, S.Signature, S.AvatarImage, S.AvatarImageType, S.RankID, S.Suspended, S.SuspendedReason, S.SuspendedBy, S.LanguageFile, S.ThemeFile, S.PMNotification, S.AutoWatchTopics, S.DailyDigest, S.NotificationType, S.Flags, S.Points, S.Culture, S.IsFacebookUser, S.IsTwitterUser, S.UserStyle, S.StyleFlags, S.IsGoogleUser);
+	WHEN NOT MATCHED THEN INSERT ( BoardID,   ProviderUserKey,   Name,   DisplayName,   Password,   Email,   Joined,   LastVisit,   IP,   NumPosts,   TimeZone,   Avatar,   Signature,   AvatarImage,   AvatarImageType,   RankID,   Suspended,   SuspendedReason,   SuspendedBy,   LanguageFile,   ThemeFile,   PMNotification,   AutoWatchTopics,   DailyDigest,   NotificationType,   Flags,   Points,   Culture,   UserStyle,   StyleFlags)
+						  VALUES (@BoardID, S.ProviderUserKey, S.Name, S.DisplayName, S.Password, S.Email, S.Joined, S.LastVisit, S.IP, S.NumPosts, S.TimeZone, S.Avatar, S.Signature, S.AvatarImage, S.AvatarImageType, S.RankID, S.Suspended, S.SuspendedReason, S.SuspendedBy, S.LanguageFile, S.ThemeFile, S.PMNotification, S.AutoWatchTopics, S.DailyDigest, S.NotificationType, S.Flags, S.Points, S.Culture, S.UserStyle, S.StyleFlags);
 
 	-- PRINT N'create all other users, who ever created a post:';
 	WITH xUsers AS
@@ -151,8 +151,8 @@ BEGIN TRY
 	  )
 		MERGE INTO  [{databaseOwner}].[{objectQualifier}user] T
 		USING xUsers S ON T.BoardID = @BoardID and T.Name = S.UserName
-		WHEN NOT MATCHED THEN INSERT ( BoardID, ProviderUserKey,       Name,   DisplayName, Password,   Email,       Joined,    LastVisit,   IP,   NumPosts,   TimeZone,   Avatar,   Signature, AvatarImage, AvatarImageType,   RankID, Suspended, SuspendedReason, SuspendedBy, LanguageFile, ThemeFile, PMNotification, AutoWatchTopics, DailyDigest, NotificationType, Flags, Points, Culture, IsFacebookUser, IsTwitterUser, UserStyle, StyleFlags, IsGoogleUser)
-							  VALUES (@BoardID,       S.UserKey, S.UserName, S.DisplayName,    N'na', S.Email, GetUTCDate(), GetUTCDate(), Null, S.NumPosts, S.TZOffset, S.Avatar, S.Signature,        Null,            Null, @newRank,         0,            Null,           0,         Null,       Null,                          1,               0,           0,                0,     2,      0,    Null,              0,             0,      Null,          0,            0);
+		WHEN NOT MATCHED THEN INSERT ( BoardID, ProviderUserKey,       Name,   DisplayName, Password,   Email,       Joined,    LastVisit,   IP,   NumPosts,   TimeZone,   Avatar,   Signature, AvatarImage, AvatarImageType,   RankID, Suspended, SuspendedReason, SuspendedBy, LanguageFile, ThemeFile, PMNotification, AutoWatchTopics, DailyDigest, NotificationType, Flags, Points, Culture, UserStyle, StyleFlags)
+							  VALUES (@BoardID,       S.UserKey, S.UserName, S.DisplayName,    N'na', S.Email, GetUTCDate(), GetUTCDate(), Null, S.NumPosts, S.TZOffset, S.Avatar, S.Signature,        Null,            Null, @newRank,         0,            Null,           0,         Null,       Null,             1,               0,           0,                0,     2,      0,    Null,      Null,          0);
 
 
 	-- PRINT N'Populate UserProfile:';
@@ -268,8 +268,8 @@ BEGIN TRY
 	-- PRINT N'Copy AF Forum Groups to YAF.Net Categories:';
 	MERGE INTO  [{databaseOwner}].[{objectQualifier}category] T
 	USING (SELECT * FROM dbo.activeforums_Groups WHERE ModuleID = @oModuleID) S ON T.BoardID = @BoardID AND T.Name = S.GroupName
-	WHEN NOT MATCHED THEN INSERT ( BoardID,     [Name],              CategoryImage,   SortOrder, PollgroupID, oGroupID)
-						  VALUES (@BoardID,  GroupName, N'categoryImageSample.gif', S.SortOrder, Null,  S.ForumGroupID);
+	WHEN NOT MATCHED THEN INSERT ( BoardID,     [Name],              CategoryImage,   SortOrder, oGroupID)
+						  VALUES (@BoardID,  GroupName, N'categoryImageSample.gif', S.SortOrder, S.ForumGroupID);
 
 	-- PRINT N'Copy AF Forums to YAF.Net Forums (parent forums):';
 	MERGE INTO  [{databaseOwner}].[{objectQualifier}forum] T
@@ -283,8 +283,8 @@ BEGIN TRY
 			JOIN   [{databaseOwner}].[{objectQualifier}category]        C ON F.ForumGroupID = C.oGroupID
 			WHERE F.ParentForumID = 0
 		  ) S ON S.CategoryID = T.CategoryID AND T.Name = S.ForumName
-	WHEN NOT MATCHED THEN INSERT (  CategoryID,   ParentID,  [Name], Description, SortOrder, LastPosted, LastTopicID, LastMessageID, LastUserID, LastUserName, LastUserDisplayName,     NumTopics, NumPosts, RemoteURL, Flags, ThemeURL, PollGroupID, ImageURL, Styles, IsModeratedNewTopicOnly, oForumID)
-						  VALUES (S.CategoryID,       Null, S.FName,     S.FDesc, S.SortOrder, S.LPDate,        Null,          Null,       Null,         Null,                Null, S.TotalTopics, S.TPosts,      Null,     4,     Null,        Null,     Null,   Null,                      0, S.ForumID);
+	WHEN NOT MATCHED THEN INSERT (  CategoryID,   ParentID,  [Name], Description, SortOrder, LastPosted, LastTopicID, LastMessageID, LastUserID, LastUserName, LastUserDisplayName,     NumTopics, NumPosts, RemoteURL, Flags, ThemeURL, ImageURL, Styles, IsModeratedNewTopicOnly, oForumID)
+						  VALUES (S.CategoryID,       Null, S.FName,     S.FDesc, S.SortOrder, S.LPDate,        Null,          Null,       Null,         Null,                Null, S.TotalTopics, S.TPosts,      Null,     4,     Null,     Null,   Null,                      0, S.ForumID);
 
 	-- PRINT N'Copy AF Forums to YAF.Net Forums (child forums):';
 	MERGE INTO  [{databaseOwner}].[{objectQualifier}forum] T
@@ -299,8 +299,8 @@ BEGIN TRY
 			JOIN   [{databaseOwner}].[{objectQualifier}Category]        C ON F.ForumGroupID  = C.oGroupID
 			JOIN   [{databaseOwner}].[{objectQualifier}Forum]           Y ON F.ParentForumID = Y.oForumID
 		  ) S ON S.CategoryID = T.CategoryID AND T.Name = S.ForumName
-	WHEN NOT MATCHED THEN INSERT (  CategoryID,   ParentID,  [Name], Description, SortOrder, LastPosted, LastTopicID, LastMessageID, LastUserID, LastUserName, LastUserDisplayName,     NumTopics, NumPosts, RemoteURL, Flags, ThemeURL, PollGroupID, ImageURL, Styles, IsModeratedNewTopicOnly, oForumID)
-						  VALUES (S.CategoryID, S.ParentID, S.FName,     S.FDesc, S.SortOrder, S.LPDate,        Null,          Null,       Null,         Null,                Null, S.TotalTopics, S.TPosts,      Null,     4,     Null,        Null,     Null,   Null,                      0, S.ForumID);
+	WHEN NOT MATCHED THEN INSERT (  CategoryID,   ParentID,  [Name], Description, SortOrder, LastPosted, LastTopicID, LastMessageID, LastUserID, LastUserName, LastUserDisplayName,     NumTopics, NumPosts, RemoteURL, Flags, ThemeURL, ImageURL, Styles, IsModeratedNewTopicOnly, oForumID)
+						  VALUES (S.CategoryID, S.ParentID, S.FName,     S.FDesc, S.SortOrder, S.LPDate,        Null,          Null,       Null,         Null,                Null, S.TotalTopics, S.TPosts,      Null,     4,     Null,     Null,   Null,                      0, S.ForumID);
 
 	/* YAF Topic Flags: None = 0, IsLocked = 1, IsDeleted = 8, IsPersistent = 512, IsQuestion = 1024 */
 	-- PRINT N'Create Threads:';

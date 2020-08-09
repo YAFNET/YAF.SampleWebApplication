@@ -3,15 +3,13 @@
 
 <li class="nav-item dropdown">
     <YAF:Themebutton runat="server" ID="UserDropDown">
-        <span class="badge badge-light p-0 border border-light mr-1">
+        <span class="badge bg-light text-dark p-0 border border-light mr-1">
             <asp:Image runat="server" ID="UserAvatar" CssClass="img-navbar-avatar rounded"/>
         </span>
-        <%= this.Get<BoardSettings>().EnableDisplayName ? 
-                this.PageContext.CurrentUserData.DisplayName : 
-                this.PageContext.CurrentUserData.UserName %>
+        <%= this.Get<IUserDisplayName>().GetName(this.PageContext.User) %>
         <asp:PlaceHolder runat="server" id="UnreadPlaceHolder">
             <asp:Label runat="server" ID="UnreadLabel" 
-                       CssClass="ml-1 badge badge-danger">
+                       CssClass="ml-1 badge bg-danger">
             </asp:Label>
         </asp:PlaceHolder>
     </YAF:Themebutton>
@@ -19,15 +17,15 @@
         <asp:PlaceHolder id="MyProfile" runat="server"></asp:PlaceHolder>
         
             <a href="#" data-toggle="dropdown" 
-               class="dropdown-item dropdown-submenu dropdown-toggle<%= this.PageContext.ForumPageType == ForumPages.EditProfile ||
-                                                                        this.PageContext.ForumPageType == ForumPages.EditSettings ||
-                                                                        this.PageContext.ForumPageType == ForumPages.ChangePassword  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Attachments  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Avatar  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.EditAvatar ||
-                                                                        this.PageContext.ForumPageType == ForumPages.EditSignature  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Subscriptions  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.BlockOptions  ? " active" : ""%>"><i class="fa fa-user-cog fa-fw"></i>&nbsp;<YAF:LocalizedLabel runat="server"
+               class="dropdown-item dropdown-submenu dropdown-toggle<%= this.PageContext.ForumPageType == ForumPages.Profile_EditProfile ||
+                                                                        this.PageContext.ForumPageType == ForumPages.Profile_EditSettings ||
+                                                                        this.PageContext.ForumPageType == ForumPages.Profile_ChangePassword  ||
+                                                                        this.PageContext.ForumPageType == ForumPages.Profile_Attachments  ||
+                                                                        this.PageContext.ForumPageType == ForumPages.Profile_Avatar  ||
+                                                                        this.PageContext.ForumPageType == ForumPages.Profile_EditAvatar ||
+                                                                        this.PageContext.ForumPageType == ForumPages.Profile_EditSignature  ||
+                                                                        this.PageContext.ForumPageType == ForumPages.Profile_Subscriptions  ||
+                                                                        this.PageContext.ForumPageType == ForumPages.Profile_BlockOptions  ? " active" : ""%>"><i class="fa fa-user-cog fa-fw"></i>&nbsp;<YAF:LocalizedLabel runat="server"
                                                                            LocalizedTag="MYSETTINGS" LocalizedPage="TOOLBAR"></YAF:LocalizedLabel></a>
             <ul class="dropdown-menu">
                 <asp:PlaceHolder runat="server" ID="MySettings"></asp:PlaceHolder>

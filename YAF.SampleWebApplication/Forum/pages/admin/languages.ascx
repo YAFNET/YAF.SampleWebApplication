@@ -21,7 +21,7 @@
 			<HeaderTemplate>
                 <div class="table-responsive">
 			    <table class="table tablesorter table-bordered table-striped" id="language-table">
-                    <thead class="thead-light">
+                    <thead class="table-light">
                         <tr>
                             <th>
                                 <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="LANG_NAME" LocalizedPage="ADMIN_LANGUAGES" />
@@ -60,7 +60,7 @@
                         <span class="float-right">
                         <YAF:ThemeButton ID="btnEdit"
                             Type="Info" Size="Small"
-                            CommandName='edit'
+                            CommandName="edit"
                             CommandArgument='<%# this.Eval("CultureFile")%>'
                             TitleLocalizedTag="EDIT"
                             Icon="edit"

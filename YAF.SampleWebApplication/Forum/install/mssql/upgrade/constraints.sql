@@ -561,20 +561,12 @@ if (select OBJECTPROPERTY(OBJECT_ID('[{databaseOwner}].[{objectQualifier}UserMed
 	alter table [{databaseOwner}].[{objectQualifier}UserMedal] with nocheck add constraint [PK_{objectQualifier}UserMedal] primary key clustered(MedalID,UserID)
 go
 
-if (select OBJECTPROPERTY(OBJECT_ID('[{databaseOwner}].[{objectQualifier}UserProfile]'), 'TableHasPrimaryKey')) = 0
-	alter table [{databaseOwner}].[{objectQualifier}UserProfile] with nocheck add constraint [PK_{objectQualifier}UserProfile] primary key clustered(UserID,ApplicationName)
-go
-
 if (select OBJECTPROPERTY(OBJECT_ID('[{databaseOwner}].[{objectQualifier}Message]'), 'TableHasPrimaryKey')) = 0
 	alter table [{databaseOwner}].[{objectQualifier}Message] with nocheck add constraint [PK_{objectQualifier}Message] primary key clustered(MessageID)
 go
 
 if (select OBJECTPROPERTY(OBJECT_ID('[{databaseOwner}].[{objectQualifier}PMessage]'), 'TableHasPrimaryKey')) = 0
 	alter table [{databaseOwner}].[{objectQualifier}PMessage] with nocheck add constraint [PK_{objectQualifier}PMessage] primary key clustered(PMessageID)
-go
-
-if (select OBJECTPROPERTY(OBJECT_ID('[{databaseOwner}].[{objectQualifier}PollGroupCluster]'), 'TableHasPrimaryKey')) = 0
-	alter table [{databaseOwner}].[{objectQualifier}PollGroupCluster] with nocheck add constraint [PK_{objectQualifier}PollGroupCluster] primary key clustered(PollGroupID)
 go
 
 if (select OBJECTPROPERTY(OBJECT_ID('[{databaseOwner}].[{objectQualifier}Poll]'), 'TableHasPrimaryKey')) = 0
@@ -692,17 +684,8 @@ go
 ** Unique constraints
 */
 
-if not exists (select top 1 1 from  sys.indexes where object_id=object_id('[{databaseOwner}].[{objectQualifier}CheckEmail]') and name='IX_{objectQualifier}CheckEmail')
-	alter table [{databaseOwner}].[{objectQualifier}CheckEmail] add constraint IX_{objectQualifier}CheckEmail unique nonclustered (Hash)
-go
-
-
 if not exists (select top 1 1 from  sys.indexes where object_id=object_id('[{databaseOwner}].[{objectQualifier}WatchForum]') and name='IX_{objectQualifier}WatchForum')
 	alter table [{databaseOwner}].[{objectQualifier}WatchForum] add constraint IX_{objectQualifier}WatchForum unique nonclustered (ForumID,UserID)
-go
-
-if not exists (select top 1 1 from  sys.indexes where object_id=object_id('[{databaseOwner}].[{objectQualifier}UserProfile]') and name='IX_{objectQualifier}UserProfile')
-	alter table [{databaseOwner}].[{objectQualifier}UserProfile] add constraint IX_{objectQualifier}UserProfile unique nonclustered (UserID,ApplicationName)
 go
 
 if not exists (select top 1 1 from  sys.indexes where object_id=object_id('[{databaseOwner}].[{objectQualifier}WatchTopic]') and name='IX_{objectQualifier}WatchTopic')
@@ -744,11 +727,6 @@ go
 
 if not exists (select top 1 1 from  sys.indexes where object_id=object_id('[{databaseOwner}].[{objectQualifier}Category]') and name='IX_{objectQualifier}Category')
 	alter table [{databaseOwner}].[{objectQualifier}Category] add constraint IX_{objectQualifier}Category unique nonclustered(BoardID,Name)
-go
-
-
-if not exists (select top 1 1 from  sys.indexes where object_id=object_id('[{databaseOwner}].[{objectQualifier}CheckEmail]') and name='IX_{objectQualifier}CheckEmail')
-	alter table [{databaseOwner}].[{objectQualifier}CheckEmail] add constraint IX_{objectQualifier}CheckEmail unique nonclustered(Hash)
 go
 
 
@@ -810,10 +788,6 @@ go
 
 if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}FavoriteTopic_{objectQualifier}User' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}FavoriteTopic]') and type in (N'F'))
 	alter table [{databaseOwner}].[{objectQualifier}FavoriteTopic] add constraint [FK_{objectQualifier}FavoriteTopic_{objectQualifier}User] foreign key (UserID) references [{databaseOwner}].[{objectQualifier}User] (UserID)
-go
-
-if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}UserProfile_{objectQualifier}User' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}UserProfile]') and type in (N'F'))
-	alter table [{databaseOwner}].[{objectQualifier}UserProfile] add constraint [FK_{objectQualifier}UserProfile_{objectQualifier}User] foreign key (UserID) references [{databaseOwner}].[{objectQualifier}User] (UserID) on delete cascade
 go
 
 if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}Forum_{objectQualifier}Category' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}Forum]') and type in (N'F'))
@@ -1017,10 +991,6 @@ if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}U
 	alter table [{databaseOwner}].[{objectQualifier}UserMedal] add constraint [FK_{objectQualifier}UserMedal_{objectQualifier}Medal] foreign key(MedalID) references [{databaseOwner}].[{objectQualifier}Medal] (MedalID)  on delete cascade
 go
 
-if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}UserProfile_{objectQualifier}User' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}UserProfile]') and type in (N'F'))
-	alter table [{databaseOwner}].[{objectQualifier}UserProfile] add constraint [FK_{objectQualifier}UserProfile_{objectQualifier}User] foreign key(UserID) references [{databaseOwner}].[{objectQualifier}User] (UserID)
-go
-
  if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}MessageReportedAudit_{objectQualifier}MessageReported' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}MessageReportedAudit]') and type in (N'F'))
 	alter table [{databaseOwner}].[{objectQualifier}MessageReportedAudit] add constraint [FK_{objectQualifier}MessageReportedAudit_{objectQualifier}MessageReported] foreign key(MessageID) references [{databaseOwner}].[{objectQualifier}MessageReported] (MessageID)
 go
@@ -1066,19 +1036,6 @@ go
 if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}PollVote_{objectQualifier}Poll' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}PollVote]') and type in (N'F'))
 	alter table [{databaseOwner}].[{objectQualifier}PollVote] add constraint [FK_{objectQualifier}PollVote_{objectQualifier}Poll] foreign key(PollID) references [{databaseOwner}].[{objectQualifier}Poll](PollID) on delete cascade
 go
-
-if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}Poll_{objectQualifier}PollGroupCluster' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}Poll]') and type in (N'F'))
-	alter table [{databaseOwner}].[{objectQualifier}Poll] add constraint [FK_{objectQualifier}Poll_{objectQualifier}PollGroupCluster] foreign key(PollGroupID) references [{databaseOwner}].[{objectQualifier}PollGroupCluster](PollGroupID)  on delete cascade
-go
-
- if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}Topic_{objectQualifier}PollGroupCluster' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}Topic]') and type in (N'F'))
-	alter table [{databaseOwner}].[{objectQualifier}Topic] add constraint [FK_{objectQualifier}Topic_{objectQualifier}PollGroupCluster] foreign key(PollID) references [{databaseOwner}].[{objectQualifier}PollGroupCluster](PollGroupID)
-
-if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}Forum_{objectQualifier}PollGroupCluster' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}Forum]') and type in (N'F'))
-	alter table [{databaseOwner}].[{objectQualifier}Forum] add constraint [FK_{objectQualifier}Forum_{objectQualifier}PollGroupCluster] foreign key(PollGroupID) references [{databaseOwner}].[{objectQualifier}PollGroupCluster](PollGroupID)
-
-if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}Category_{objectQualifier}PollGroupCluster' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}Category]') and type in (N'F'))
-	alter table [{databaseOwner}].[{objectQualifier}Category] add constraint [FK_{objectQualifier}Category_{objectQualifier}PollGroupCluster] foreign key(PollGroupID) references [{databaseOwner}].[{objectQualifier}PollGroupCluster](PollGroupID)
 
 if not exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}EventLog_{objectQualifier}User' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}EventLog]') and type in (N'F'))
 	alter table [{databaseOwner}].[{objectQualifier}EventLog] add constraint [FK_{objectQualifier}EventLog_{objectQualifier}User] foreign key(UserID) references [{databaseOwner}].[{objectQualifier}User](UserID) on delete cascade
@@ -1205,4 +1162,8 @@ CREATE UNIQUE CLUSTERED INDEX [{objectQualifier}vaccess_group_UserForum_PK] ON [
 ) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 GO
 
+
+if exists(select top 1 1 from sys.indexes where name=N'IX_{objectQualifier}CheckEmail' and object_id=object_id(N'[{databaseOwner}].[{objectQualifier}CheckEmail]'))
+	alter table [{databaseOwner}].[{objectQualifier}CheckEmail] drop constraint [IX_{objectQualifier}CheckEmail]
+go
 

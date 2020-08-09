@@ -19,14 +19,19 @@
                                             LocalizedPage="ADMIN_RUNSQL"></YAF:IconHeader>
                         </div>
                         <div class="card-body">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <asp:TextBox ID="txtQuery" runat="server" 
                                              TextMode="MultiLine" 
                                              Width="100%" 
                                              Height="100px" 
-                                             CssClass="form-control"></asp:TextBox>
+                                             CssClass="form-control"
+                                             required="required" />
+                                <div class="invalid-feedback">
+                                    <YAF:LocalizedLabel runat="server"
+                                                        LocalizedTag="NEED_QUERY" />
+                                </div>
                             </div>
-                            <div class="custom-control custom-switch">
+                            <div class="form-check form-switch">
                                 <asp:Checkbox ID="chkRunInTransaction" runat="server" 
                                               Text="Run In Transaction" 
                                               Checked="true" />
@@ -35,6 +40,7 @@
                         <div class="card-footer text-center">
                             <YAF:ThemeButton ID="RunQuery" runat="server" 
                                              Type="Primary" 
+                                             CausesValidation="True"
                                              OnClick="RunQueryClick"
                                              Icon="rocket"
                                              TextLocalizedTag="RUN_QUERY" 

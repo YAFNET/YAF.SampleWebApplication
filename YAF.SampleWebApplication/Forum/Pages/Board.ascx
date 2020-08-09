@@ -4,7 +4,6 @@
 <%@ Register TagPrefix="YAF" TagName="ForumStatistics" Src="../controls/ForumStatistics.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="ForumActiveDiscussion" Src="../controls/ForumActiveDiscussion.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="ForumCategoryList" Src="../controls/ForumCategoryList.ascx" %>
-<%@ Register TagPrefix="YAF" TagName="PollList" Src="../controls/PollList.ascx" %>
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
@@ -13,8 +12,6 @@
         <YAF:ForumWelcome runat="server" ID="Welcome" />
     </div>
 </div>
-
-<YAF:PollList ID="PollList" runat="server"/>
 
 <div class="row">
     <div class='<%= this.Get<BoardSettings>().TwoColumnBoardLayout ? "col-md-8" : "col" %>'>

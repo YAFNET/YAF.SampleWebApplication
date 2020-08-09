@@ -220,7 +220,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		[Name]			[nvarchar](128) NOT NULL,
 		[CategoryImage] [nvarchar](255) NULL,		
 		SortOrder		smallint NOT NULL,
-		PollGroupID     int null,
  constraint [PK_{objectQualifier}Category] PRIMARY KEY CLUSTERED 
 (
 	[CategoryID] ASC
@@ -239,14 +238,10 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		UserID			int NOT NULL,
 		Email			nvarchar (255) NOT NULL,
 		Created			datetime NOT NULL,
-		[Hash]			nvarchar (32) NOT NULL,
+		[Hash]			nvarchar (max) NOT NULL,
  constraint [PK_{objectQualifier}CheckEmail] PRIMARY KEY CLUSTERED 
 (
 	[CheckEmailID] ASC
-)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF),
- constraint [IX_{objectQualifier}CheckEmail] UNIQUE NONCLUSTERED 
-(
-	[Hash] ASC
 )WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
 	)
 GO
@@ -258,7 +253,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		Choice			nvarchar (50) NOT NULL,
 		Votes			int NOT NULL,
 		[ObjectPath] nvarchar(255) NULL,
-		[MimeType] varchar(50) NULL,
  constraint [PK_{objectQualifier}Choice] PRIMARY KEY CLUSTERED 
 (
 	[ChoiceID] ASC
@@ -277,15 +271,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 (
 	[PollVoteID] ASC
 )WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
-	)
-GO
-
-if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}PollVoteRefuse]') and type in (N'U'))
-	CREATE TABLE [{databaseOwner}].[{objectQualifier}PollVoteRefuse] (
-		[RefuseID] [int] IDENTITY (1,1) NOT NULL,		
-		[PollID] [int] NOT NULL,
-		[UserID] [int] NULL,
-		[RemoteIP] [varchar] (57) NULL
 	)
 GO
 
@@ -312,7 +297,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		[IsNoCount]		AS (CONVERT([bit],sign([Flags]&(4)),(0))),
 		[IsModerated]	AS (CONVERT([bit],sign([Flags]&(8)),(0))),
 		ThemeURL		nvarchar(50) NULL,
-		PollGroupID     int null,
 		ImageURL        nvarchar(128) NULL,
 	    Styles          nvarchar(255) NULL,
 		UserID          int null,
@@ -460,28 +444,13 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 	)
 GO
 
-if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}PollGroupCluster]') and type in (N'U'))
-	create table [{databaseOwner}].[{objectQualifier}PollGroupCluster](		
-		PollGroupID int IDENTITY (1,1) NOT NULL,
-		UserID	    int not NULL,
-		[Flags]     int NOT NULL constraint [DF_{objectQualifier}PollGroupCluster_Flags] default (0),
-		[IsBound]   AS (CONVERT([bit],sign([Flags]&(2)),(0)))
- constraint [PK_{objectQualifier}PollGroupCluster] PRIMARY KEY CLUSTERED 
-(
-	[PollGroupID] ASC
-)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)	
-	)
-GO
-
 if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Poll]') and type in (N'U'))
 	create table [{databaseOwner}].[{objectQualifier}Poll](
 		PollID			       int IDENTITY (1,1) NOT NULL,
 		Question		       nvarchar (50) NOT NULL,
 		Closes                 datetime NULL,		
-		PollGroupID            int NULL,
 		UserID                 int not NULL constraint [DF_{objectQualifier}Poll_UserID] default (1),	
 		[ObjectPath]           nvarchar(255) NULL,
-		[MimeType]             varchar(50) NULL,
 		[Flags]                int NOT NULL constraint [DF_{objectQualifier}Poll_Flags] default (0),		
 		[IsClosedBound] 	   AS (CONVERT([bit],sign([Flags]&(4)),(0))),
 		[AllowMultipleChoices] AS (CONVERT([bit],sign([Flags]&(8)),(0))),
@@ -569,15 +538,12 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		[IsDirty]	AS (CONVERT([bit],sign([Flags]&(64)),(0))),
 		[Moderated]	AS (CONVERT([bit],sign([Flags]&(128)),(0))),
 		[Activity] [bit] NOT NULL constraint [DF_{objectQualifier}User_Activity] default (1),
-		[Culture] varchar (10) default (10),
-		[IsFacebookUser][bit] NOT NULL constraint [DF_{objectQualifier}User_IsFacebookUser] default (0),
-		[IsTwitterUser][bit] NOT NULL constraint [DF_{objectQualifier}User_IsTwitterUser] default (0),
+		[Culture] varchar (10) null,
 		[UserStyle] [varchar](510) NULL,
 	    [StyleFlags] [int] NOT NULL constraint [DF_{objectQualifier}User_StyleFlags] default (0),
 	    [IsUserStyle]  AS (CONVERT([bit],sign([StyleFlags]&(1)),(0))),
 	    [IsGroupStyle]  AS (CONVERT([bit],sign([StyleFlags]&(2)),(0))),
 	    [IsRankStyle]  AS (CONVERT([bit],sign([StyleFlags]&(4)),(0))),
-		[IsGoogleUser][bit] NOT NULL constraint [DF_{objectQualifier}User_IsGoogleUser] default (0),
  constraint [PK_{objectQualifier}User] PRIMARY KEY CLUSTERED 
 (
 	[UserID] ASC
@@ -588,29 +554,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 	[Name] ASC
 )WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
 )
-GO
-
-IF not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}UserProfile]') and type in (N'U'))
-	CREATE TABLE [{databaseOwner}].[{objectQualifier}UserProfile]
-	(
-		[UserID] [int] NOT NULL,
-		[LastUpdatedDate] [datetime] NOT NULL,
-		-- added columns
-		[LastActivity] [datetime],
-		[ApplicationName] [nvarchar](255) NOT NULL,	
-		[IsAnonymous] [bit] NOT NULL,
-		[UserName] [nvarchar](255) NOT NULL,
- constraint [PK_{objectQualifier}UserProfile] PRIMARY KEY CLUSTERED 
-(
-	[UserID] ASC,
-	[ApplicationName] ASC
-)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF),
- constraint [IX_{objectQualifier}UserProfile] UNIQUE NONCLUSTERED 
-(
-	[UserID] ASC,
-	[ApplicationName] ASC
-)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
-	)
 GO
 
 if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}WatchForum]') and type in (N'U'))
@@ -742,8 +685,6 @@ begin
 	create table [{databaseOwner}].[{objectQualifier}Board](
 		BoardID			int IDENTITY (1,1) NOT NULL,
 		Name			nvarchar(50) NOT NULL,
-		MembershipAppName nvarchar(255) NULL,
-		RolesAppName nvarchar(255) NULL,
  constraint [PK_{objectQualifier}Board] PRIMARY KEY CLUSTERED 
 (
 	[BoardID] ASC
@@ -862,8 +803,7 @@ begin
 	create table [{databaseOwner}].[{objectQualifier}EventLog](
 		EventLogID	int identity(1,1) not null,
 		EventTime	datetime not null constraint [DF_{objectQualifier}EventLog_EventTime] default GETUTCDATE() ,
-		UserID		int, -- deprecated
-		UserName	nvarchar(100) null,
+		UserID		int,
 		[Source]	nvarchar(50) not null,
 		Description	nvarchar(max) not null,
 		[Type] [int] NOT NULL constraint [DF_{objectQualifier}EventLog_Type] default (0),
@@ -909,10 +849,6 @@ begin
 		[RibbonURL] [nvarchar](250) NULL,
 		[SmallMedalURL] [nvarchar](250) NOT NULL,
 		[SmallRibbonURL] [nvarchar](250) NULL,
-		[SmallMedalWidth] [smallint] NOT NULL,
-		[SmallMedalHeight] [smallint] NOT NULL,
-		[SmallRibbonWidth] [smallint] NULL,
-		[SmallRibbonHeight] [smallint] NULL,
 		[SortOrder] [tinyint] NOT NULL constraint [DF_{objectQualifier}Medal_defaultOrder]  default ((255)),
 		[Flags] [int] NOT NULL constraint [DF_{objectQualifier}Medal_Flags]  default ((0)),
 		constraint [PK_{objectQualifier}Medal] PRIMARY KEY CLUSTERED ([MedalID] ASC)

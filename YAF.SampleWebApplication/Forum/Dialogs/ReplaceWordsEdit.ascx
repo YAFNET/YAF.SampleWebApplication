@@ -16,16 +16,22 @@
                     </div>
                     <div class="modal-body">
                         <!-- Modal Content START !-->
-                        <div class="form-group">
+                        <div class="mb-3">
                             <YAF:HelpLabel ID="LocalizedLabel2" runat="server" 
                                            AssociatedControlID="badword"
                                            LocalizedTag="BAD" LocalizedPage="ADMIN_REPLACEWORDS_EDIT" />
                             <asp:TextBox ID="badword" runat="server" 
                                          CssClass="form-control"
+                                         required="required"
                                          Height="100"
                                          TextMode="MultiLine"></asp:TextBox>
+                            <div class="invalid-feedback">
+                                <YAF:LocalizedLabel runat="server"
+                                                    LocalizedPage="ADMIN_REPLACEWORDS_EDIT"
+                                                    LocalizedTag="MSG_REGEX_BAD" />
+                            </div>
                         </div>
-                        <div class="form-group">
+                        <div class="mb-3">
                             <YAF:HelpLabel ID="LocalizedLabel3" runat="server"
                                            AssociatedControlID="goodword"
                                            LocalizedTag="GOOD" LocalizedPage="ADMIN_REPLACEWORDS_EDIT" />
@@ -41,7 +47,8 @@
                                          OnClick="Save_OnClick"
                                          TextLocalizedTag="ADMIN_REPLACEWORDS_EDIT" TextLocalizedPage="TITLE"
                                          Type="Primary" 
-                                         Icon="save">
+                                         Icon="save" 
+                                         CausesValidation="True">
                         </YAF:ThemeButton>
                         <YAF:ThemeButton runat="server" ID="Cancel"
                                          DataDismiss="modal"

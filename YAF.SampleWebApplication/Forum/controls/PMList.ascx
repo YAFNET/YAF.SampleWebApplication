@@ -63,7 +63,7 @@
                         <asp:HiddenField ID="MessageID" runat="server" Value='<%# this.Eval("UserPMessageID") %>' />
                         <asp:CheckBox runat="server" ID="ItemCheck" 
                                        Text="&nbsp;"
-                                       CssClass="custom-control custom-checkbox d-inline-flex"/>
+                                       CssClass="form-check d-inline-flex"/>
                         <YAF:Icon runat="server"
                                   IconName='<%# this.Eval("IsRead").ToType<bool>() ? "envelope-open" : "envelope" %>'
                                   IconType='<%# this.Eval("IsRead").ToType<bool>() ? "text-secondary" : "text-success" %>'></YAF:Icon>
@@ -73,7 +73,8 @@
                     </h5>
                     <small class="d-none d-md-block">
                         <span class="font-weight-bold">
-                            <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" LocalizedTag="DATE" />
+                            <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" 
+                                                LocalizedTag="DATE" />
                         </span>
                         <YAF:DisplayDateTime ID="PostedDateTime" runat="server" 
                                              DateTime='<%# Container.DataItemToField<DateTime>("Created") %>'></YAF:DisplayDateTime>
@@ -81,10 +82,14 @@
                 </div>
                 <p class="mb-1">
                     <span class="font-weight-bold">
-                        <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag='<%# this.View == PmView.Outbox ? "TO" : "FROM" %>' />:
+                        <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" 
+                                            LocalizedTag='<%# this.View == PmView.Outbox ? "TO" : "FROM" %>' />:
                     </span>
-                    <YAF:UserLink ID="UserLink1" runat="server" 
-                                  UserID='<%# (this.View == PmView.Outbox ? this.Eval("ToUserID") : this.Eval("FromUserID" )).ToType<int>() %>' />
+                    <YAF:UserLink ID="UserLink1" runat="server"
+                                  ReplaceName='<%# this.View == PmView.Outbox ? this.Eval(this.PageContext.BoardSettings.EnableDisplayName ? "ToUserDisplayName" : "ToUser") : this.Eval(this.PageContext.BoardSettings.EnableDisplayName ? "FromUserDisplayName" : "FromUser") %>'
+                                  Suspended='<%# this.Eval(this.View == PmView.Outbox ? "ToSuspended" : "FromSuspended").ToType<DateTime?>()  %>'
+                                  Style='<%# this.Eval(this.View == PmView.Outbox ? "ToStyle" : "FromStyle") %>'
+                                  UserID='<%# this.Eval(this.View == PmView.Outbox ? "ToUserID" : "FromUserID").ToType<int>() %>' />
                 </p>
             </li>
     </ItemTemplate>
@@ -93,7 +98,7 @@
 <asp:UpdatePanel ID="upPanExport" runat="server">
     <ContentTemplate>
         <div class="btn-toolbar mt-3" role="toolbar">
-            <div class="btn-group mr-2" role="group">
+            <div class="btn-group mr-2 mb-1" role="group">
                 <YAF:ThemeButton runat="server" ID="MarkAsRead" 
                                  Size="Small"
                                  TextLocalizedTag="MARK_ALL_ASREAD" 
@@ -101,7 +106,7 @@
                                  Type="Secondary" 
                                  Icon="eye"/>
             </div>
-            <div class="btn-group mr-2" role="group">
+            <div class="btn-group mr-2 mb-1" role="group">
                 <YAF:ThemeButton runat="server" ID="ArchiveSelected" 
                                  Size="Small"
                                  TextLocalizedTag="ARCHIVESELECTED" 
@@ -115,7 +120,7 @@
                                  OnClick="ArchiveAll_Click"
                                  Type="Secondary" Icon="archive" />
             </div>
-            <div class="btn-group mr-2" role="group">
+            <div class="btn-group mr-2 mb-1" role="group">
                 <YAF:ThemeButton runat="server" ID="ExportSelected" 
                                  Size="Small"
                                  TextLocalizedTag="EXPORTSELECTED" 
@@ -129,7 +134,7 @@
                                  Type="Secondary" 
                                  Icon="file-export" />
             </div>
-            <div class="btn-group" role="group">
+            <div class="btn-group mb-1" role="group">
                 <YAF:ThemeButton runat="server" ID="DeleteSelected" 
                              Size="Small"
                              TextLocalizedTag="DELETESELECTED" 
@@ -157,7 +162,7 @@
 <YAF:Pager ID="PagerBottom" runat="server" LinkedPager="PagerTop" />
 
 <asp:Label id="lblExportType" runat="server"></asp:Label>
-<div class="custom-control custom-radio custom-control-inline">
+<div class="form-check form-check-inline">
     <asp:RadioButtonList runat="server" id="ExportType" 
                          RepeatLayout="UnorderedList"
                          CssClass="list-unstyled">
@@ -168,15 +173,8 @@
 </div>
 
 <YAF:Alert runat="server" ID="NoMessage" Type="info">
-    <YAF:LocalizedLabel runat="server" LocalizedTag="NO_MESSAGES"></YAF:LocalizedLabel>
+    <YAF:Icon runat="server" 
+              IconName="info-circle" />
+    <YAF:LocalizedLabel runat="server" 
+                        LocalizedTag="NO_MESSAGES" />
 </YAF:Alert>
-
-</div>
-
-
-
-<div class="card-footer">
-    <small class="text-muted">
-        <asp:Label ID="PMInfoLink" runat="server"></asp:Label>
-    </small>
-</div>

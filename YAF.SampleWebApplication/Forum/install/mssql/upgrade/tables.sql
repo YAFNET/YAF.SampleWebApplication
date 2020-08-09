@@ -226,7 +226,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		[Name]			[nvarchar](128) NOT NULL,
 		[CategoryImage] [nvarchar](255) NULL,		
 		SortOrder		smallint NOT NULL,
-		PollGroupID     int null,
  constraint [PK_{objectQualifier}Category] PRIMARY KEY CLUSTERED 
 (
 	[CategoryID] ASC
@@ -245,14 +244,10 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		UserID			int NOT NULL,
 		Email			nvarchar (255) NOT NULL,
 		Created			datetime NOT NULL,
-		[Hash]			nvarchar (32) NOT NULL,
+		[Hash]			nvarchar (max) NOT NULL,
  constraint [PK_{objectQualifier}CheckEmail] PRIMARY KEY CLUSTERED 
 (
 	[CheckEmailID] ASC
-)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF),
- constraint [IX_{objectQualifier}CheckEmail] UNIQUE NONCLUSTERED 
-(
-	[Hash] ASC
 )WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
 	)
 GO
@@ -264,7 +259,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		Choice			nvarchar (50) NOT NULL,
 		Votes			int NOT NULL,
 		[ObjectPath] nvarchar(255) NULL,
-		[MimeType] varchar(50) NULL,
  constraint [PK_{objectQualifier}Choice] PRIMARY KEY CLUSTERED 
 (
 	[ChoiceID] ASC
@@ -283,15 +277,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 (
 	[PollVoteID] ASC
 )WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
-	)
-GO
-
-if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}PollVoteRefuse]') and type in (N'U'))
-	CREATE TABLE [{databaseOwner}].[{objectQualifier}PollVoteRefuse] (
-		[RefuseID] [int] IDENTITY (1,1) NOT NULL,		
-		[PollID] [int] NOT NULL,
-		[UserID] [int] NULL,
-		[RemoteIP] [varchar] (57) NULL
 	)
 GO
 
@@ -318,7 +303,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		[IsNoCount]		AS (CONVERT([bit],sign([Flags]&(4)),(0))),
 		[IsModerated]	AS (CONVERT([bit],sign([Flags]&(8)),(0))),
 		ThemeURL		nvarchar(50) NULL,
-		PollGroupID     int null,
 		ImageURL        nvarchar(128) NULL,
 	    Styles          nvarchar(255) NULL,
 		UserID          int null,
@@ -466,28 +450,13 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 	)
 GO
 
-if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}PollGroupCluster]') and type in (N'U'))
-	create table [{databaseOwner}].[{objectQualifier}PollGroupCluster](		
-		PollGroupID int IDENTITY (1,1) NOT NULL,
-		UserID	    int not NULL,
-		[Flags]     int NOT NULL constraint [DF_{objectQualifier}PollGroupCluster_Flags] default (0),
-		[IsBound]   AS (CONVERT([bit],sign([Flags]&(2)),(0)))
- constraint [PK_{objectQualifier}PollGroupCluster] PRIMARY KEY CLUSTERED 
-(
-	[PollGroupID] ASC
-)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)	
-	)
-GO
-
 if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Poll]') and type in (N'U'))
 	create table [{databaseOwner}].[{objectQualifier}Poll](
 		PollID			       int IDENTITY (1,1) NOT NULL,
 		Question		       nvarchar (50) NOT NULL,
 		Closes                 datetime NULL,		
-		PollGroupID            int NULL,
 		UserID                 int not NULL constraint [DF_{objectQualifier}Poll_UserID] default (1),	
 		[ObjectPath]           nvarchar(255) NULL,
-		[MimeType]             varchar(50) NULL,
 		[Flags]                int NOT NULL constraint [DF_{objectQualifier}Poll_Flags] default (0),		
 		[IsClosedBound] 	   AS (CONVERT([bit],sign([Flags]&(4)),(0))),
 		[AllowMultipleChoices] AS (CONVERT([bit],sign([Flags]&(8)),(0))),
@@ -577,15 +546,12 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 		[IsDST]	AS (CONVERT([bit],sign([Flags]&(32)),(0))),
 		[IsDirty]	AS (CONVERT([bit],sign([Flags]&(64)),(0))),
 		[Moderated]	AS (CONVERT([bit],sign([Flags]&(128)),(0))),
-		[Culture] varchar (10) default (10),
-		[IsFacebookUser][bit] NOT NULL constraint [DF_{objectQualifier}User_IsFacebookUser] default (0),
-		[IsTwitterUser][bit] NOT NULL constraint [DF_{objectQualifier}User_IsTwitterUser] default (0),
+		[Culture] varchar (10) null,
 		[UserStyle] [varchar](510) NULL,
 	    [StyleFlags] [int] NOT NULL constraint [DF_{objectQualifier}User_StyleFlags] default (0),
 	    [IsUserStyle]  AS (CONVERT([bit],sign([StyleFlags]&(1)),(0))),
 	    [IsGroupStyle]  AS (CONVERT([bit],sign([StyleFlags]&(2)),(0))),
 	    [IsRankStyle]  AS (CONVERT([bit],sign([StyleFlags]&(4)),(0))),
-		[IsGoogleUser][bit] NOT NULL constraint [DF_{objectQualifier}User_IsGoogleUser] default (0),
  constraint [PK_{objectQualifier}User] PRIMARY KEY CLUSTERED 
 (
 	[UserID] ASC
@@ -596,29 +562,6 @@ if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{d
 	[Name] ASC
 )WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
 )
-GO
-
-IF not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}UserProfile]') and type in (N'U'))
-	CREATE TABLE [{databaseOwner}].[{objectQualifier}UserProfile]
-	(
-		[UserID] [int] NOT NULL,
-		[LastUpdatedDate] [datetime] NOT NULL,
-		-- added columns
-		[LastActivity] [datetime],
-		[ApplicationName] [nvarchar](255) NOT NULL,	
-		[IsAnonymous] [bit] NOT NULL,
-		[UserName] [nvarchar](255) NOT NULL,
- constraint [PK_{objectQualifier}UserProfile] PRIMARY KEY CLUSTERED 
-(
-	[UserID] ASC,
-	[ApplicationName] ASC
-)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF),
- constraint [IX_{objectQualifier}UserProfile] UNIQUE NONCLUSTERED 
-(
-	[UserID] ASC,
-	[ApplicationName] ASC
-)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
-	)
 GO
 
 if not exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}WatchForum]') and type in (N'U'))
@@ -750,8 +693,6 @@ begin
 	create table [{databaseOwner}].[{objectQualifier}Board](
 		BoardID			int IDENTITY (1,1) NOT NULL,
 		Name			nvarchar(50) NOT NULL,
-		MembershipAppName nvarchar(255) NULL,
-		RolesAppName nvarchar(255) NULL,
  constraint [PK_{objectQualifier}Board] PRIMARY KEY CLUSTERED 
 (
 	[BoardID] ASC
@@ -870,8 +811,7 @@ begin
 	create table [{databaseOwner}].[{objectQualifier}EventLog](
 		EventLogID	int identity(1,1) not null,
 		EventTime	datetime not null constraint [DF_{objectQualifier}EventLog_EventTime] default GETUTCDATE() ,
-		UserID		int, -- deprecated
-		UserName	nvarchar(100) null,
+		UserID		int,
 		[Source]	nvarchar(50) not null,
 		Description	nvarchar(max) not null,
 		[Type] [int] NOT NULL constraint [DF_{objectQualifier}EventLog_Type] default (0),
@@ -916,10 +856,6 @@ begin
 		[RibbonURL] [nvarchar](250) NULL,
 		[SmallMedalURL] [nvarchar](250) NOT NULL,
 		[SmallRibbonURL] [nvarchar](250) NULL,
-		[SmallMedalWidth] [smallint] NOT NULL,
-		[SmallMedalHeight] [smallint] NOT NULL,
-		[SmallRibbonWidth] [smallint] NULL,
-		[SmallRibbonHeight] [smallint] NULL,
 		[SortOrder] [tinyint] NOT NULL constraint [DF_{objectQualifier}Medal_defaultOrder]  default ((255)),
 		[Flags] [int] NOT NULL constraint [DF_{objectQualifier}Medal_Flags]  default ((0)),
 		constraint [PK_{objectQualifier}Medal] PRIMARY KEY CLUSTERED ([MedalID] ASC)
@@ -1048,21 +984,15 @@ if exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{datab
 GO
 
 -- Board Table
-if not exists (select top 1 1 from sys.columns where object_id = object_id('[{databaseOwner}].[{objectQualifier}Board]') and name='MembershipAppName')
+if exists (select top 1 1 from sys.columns where object_id = object_id('[{databaseOwner}].[{objectQualifier}Board]') and name='MembershipAppName')
 begin
-	alter table [{databaseOwner}].[{objectQualifier}Board] add MembershipAppName nvarchar(255)
+	alter table [{databaseOwner}].[{objectQualifier}Board] drop column MembershipAppName
 end
 GO
 
-if not exists (select top 1 1 from sys.columns where object_id = object_id('[{databaseOwner}].[{objectQualifier}Board]') and name='RolesAppName')
+if exists (select top 1 1 from sys.columns where object_id = object_id('[{databaseOwner}].[{objectQualifier}Board]') and name='RolesAppName')
 begin
-	alter table [{databaseOwner}].[{objectQualifier}Board] add RolesAppName nvarchar(255)
-end
-GO
-
-if not exists (select top 1 1 from sys.columns where object_id = object_id('[{databaseOwner}].[{objectQualifier}Board]') and name='MembershipAppName')
-begin
-	alter table [{databaseOwner}].[{objectQualifier}Board] add MembershipAppName nvarchar(255)
+	alter table [{databaseOwner}].[{objectQualifier}Board] drop column RolesAppName
 end
 GO
 
@@ -1170,12 +1100,6 @@ begin
 	exec('update [{databaseOwner}].[{objectQualifier}User] set Flags = Flags | 1 where IsHostAdmin<>0')
 	revoke update on [{databaseOwner}].[{objectQualifier}User] from public
 	alter table [{databaseOwner}].[{objectQualifier}User] drop column IsHostAdmin
-end
-GO
-
-if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}PollVoteRefuse]') and name='BoardID')
-begin
-alter table [{databaseOwner}].[{objectQualifier}PollVoteRefuse] drop column [BoardID] 
 end
 GO
 
@@ -1361,24 +1285,6 @@ begin
 end
 GO
 
-if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}User]') and name='IsFacebookUser')
-begin
-	alter table [{databaseOwner}].[{objectQualifier}User] add [IsFacebookUser][bit] NOT NULL constraint [DF_{objectQualifier}IsFacebookUser] default (0)
-end
-GO
-
-if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}User]') and name='IsTwitterUser')
-begin
-	alter table [{databaseOwner}].[{objectQualifier}User] add [IsTwitterUser][bit] NOT NULL constraint [DF_{objectQualifier}IsTwitterUser] default (0)
-end
-GO
-
-if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}User]') and name='IsGoogleUser')
-begin
-	alter table [{databaseOwner}].[{objectQualifier}User] add [IsGoogleUser][bit] NOT NULL constraint [DF_{objectQualifier}IsGoogleUser] default (0)
-end
-GO
-
 if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}User]') and name='UserStyle')
 begin
 	alter table [{databaseOwner}].[{objectQualifier}User] add [UserStyle] varchar(510) 		
@@ -1473,10 +1379,6 @@ GO
 if not exists (select top 1 1 from sys.columns where object_id = object_id(N'[{databaseOwner}].[{objectQualifier}Forum]') and name='LastUserDisplayName')
  	alter table [{databaseOwner}].[{objectQualifier}Forum] add [LastUserDisplayName]	nvarchar (255) NULL
 	
-GO
-
-if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Forum]') and name='PollGroupID')
-	alter table [{databaseOwner}].[{objectQualifier}Forum] add PollGroupID int NULL
 GO
 
 if not exists (select top 1 1 from sys.columns where object_id =  object_id('[{databaseOwner}].[{objectQualifier}Forum]') and name='IsHidden')
@@ -2080,21 +1982,9 @@ begin
 end
 GO
 
-if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Poll]') and name=N'PollGroupID')
-begin
-	alter table [{databaseOwner}].[{objectQualifier}Poll] add PollGroupID int NULL
-end
-GO
-
 if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Poll]') and name=N'UserID')
 begin
 	alter table [{databaseOwner}].[{objectQualifier}Poll] add [UserID] int NOT NULL constraint [DF_{objectQualifier}Poll_UserID] default (1)
-end
-GO
-
-IF  EXISTS (SELECT top 1 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}pollgroup_migration]') AND type in (N'P', N'PC'))
-begin
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}pollgroup_migration]		
 end
 GO
 
@@ -2109,72 +1999,11 @@ begin
 end
 GO
 
-create procedure [{databaseOwner}].[{objectQualifier}pollgroup_migration]
- as
-  begin
-     declare @ptmp int
-	 declare @ttmp int
-	 declare @utmp int 
-	 declare @PollGroupID int
-
-        declare c cursor for
-        select  PollID,TopicID, UserID from [{databaseOwner}].[{objectQualifier}Topic] where PollID IS NOT NULL
-		        
-        open c
-        
-        fetch next from c into @ptmp, @ttmp, @utmp
-        while @@FETCH_STATUS = 0
-        begin
-		if @ptmp is not null
-		begin
-		insert into [{databaseOwner}].[{objectQualifier}PollGroupCluster](UserID, Flags) values (@utmp, 0)	
-		SET @PollGroupID = SCOPE_IDENTITY()  
-		
-	            update [{databaseOwner}].[{objectQualifier}Topic] SET PollID = @PollGroupID WHERE TopicID = @ttmp
-				update [{databaseOwner}].[{objectQualifier}Poll] SET UserID = @utmp, PollGroupID = @PollGroupID, Flags = 0 WHERE PollID = @ptmp
-		end       
-        fetch next from c into @ptmp, @ttmp, @utmp
-        end
-
-        close c
-        deallocate c 
-
-		end
-GO
-
-if (not exists (select top 1 1 from [{databaseOwner}].[{objectQualifier}PollGroupCluster]) and exists (select top 1 1 from [{databaseOwner}].[{objectQualifier}Poll]))
-begin
-	--vzrus: migrate to independent multiple polls	
-	exec('[{databaseOwner}].[{objectQualifier}pollgroup_migration]')	
-
-		-- vzrus: drop the temporary  sp
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}pollgroup_migration]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [{databaseOwner}].[{objectQualifier}pollgroup_migration]		
-end
-GO
-
-if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Poll]') and name='Flags')
-begin
-	grant update on [{databaseOwner}].[{objectQualifier}Poll] to public
-	exec('update [{databaseOwner}].[{objectQualifier}Poll] set Flags = 0 where Flags is null')
-	revoke update on [{databaseOwner}].[{objectQualifier}Poll] from public
-	-- here computed columns on Flags should be dropped if exist before
-	-- alter table [{databaseOwner}].[{objectQualifier}Poll] alter column Flags int not null
-	-- alter table [{databaseOwner}].[{objectQualifier}Poll] add constraint [DF_{objectQualifier}Poll_Flags] default(0) for Flags
-end
-GO
-
 -- TODO: change userid to not null
 
 if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Poll]') and name=N'ObjectPath')
 begin
 	alter table [{databaseOwner}].[{objectQualifier}Poll] add [ObjectPath] nvarchar(255) NULL
-end
-GO
-
-if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Poll]') and name=N'MimeType')
-begin
-	alter table [{databaseOwner}].[{objectQualifier}Poll] add [MimeType] varchar(50) NULL
 end
 GO
 
@@ -2202,22 +2031,6 @@ begin
 end
 GO
 
- -- PollGroupTable
- if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}PollGroupCluster]') and name=N'IsBound')
- begin
- 	alter table [{databaseOwner}].[{objectQualifier}PollGroupCluster] add [IsBound]	AS (CONVERT([bit],sign([Flags]&(2)),(0)))
- end
-GO
- 
-if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}PollGroupCluster]') and name='Flags')
-begin
-	grant update on [{databaseOwner}].[{objectQualifier}PollGroupCluster] to public
-	exec('update [{databaseOwner}].[{objectQualifier}PollGroupCluster] set Flags = 0 where Flags is null')
-	revoke update on [{databaseOwner}].[{objectQualifier}PollGroupCluster] from public
-	-- alter table [{databaseOwner}].[{objectQualifier}PollGroupCluster] alter column Flags int not null
-	-- alter table [{databaseOwner}].[{objectQualifier}PollGroupCluster] add constraint [DF_{objectQualifier}PollGroupCluster_Flags] default(0) for Flags
-end
-GO
 -- ActiveAccess Table
 if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}ActiveAccess]') and name=N'LastActive')
 begin
@@ -2254,12 +2067,6 @@ begin
 end
 GO
 
-if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Choice]') and name=N'MimeType')
-begin
-	alter table [{databaseOwner}].[{objectQualifier}Choice] add [MimeType] varchar(50) NULL
-end
-GO
-
 -- EventLog Table
 if not exists(select top 1 1 from sys.columns where object_id =  object_id(N'[{databaseOwner}].[{objectQualifier}EventLog]') and name=N'Type')
 begin
@@ -2287,10 +2094,6 @@ IF NOT exists (select top 1 1 from sys.columns where object_id =  Object_id(N'[{
 BEGIN
     ALTER TABLE [{databaseOwner}].[{objectQualifier}Category] ADD [CategoryImage] [nvarchar](255) NULL
 END
-GO
-
-if not exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Category]') and name='PollGroupID')
-	alter table [{databaseOwner}].[{objectQualifier}Category] add PollGroupID int NULL
 GO
 
 
@@ -2865,3 +2668,76 @@ GO
 if exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}Extension]') and type in (N'U'))
 	drop table [{databaseOwner}].[{objectQualifier}Extension]
 GO
+
+if exists (select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{databaseOwner}].[{objectQualifier}UserProfile]') and type in (N'U'))
+	drop table [{databaseOwner}].[{objectQualifier}UserProfile]
+GO
+
+if exists(select top 1 1 from sys.columns where object_id =  object_id(N'[{databaseOwner}].[{objectQualifier}CheckEmail]') and name=N'Hash' and max_length = 64)
+	alter table [{databaseOwner}].[{objectQualifier}CheckEmail] drop constraint [IX_{objectQualifier}CheckEmail]
+	alter table [{databaseOwner}].[{objectQualifier}CheckEmail] alter column [Hash] nvarchar(max) NOT NULL
+GO
+
+if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Choice]') and name=N'MimeType')
+begin
+	alter table [{databaseOwner}].[{objectQualifier}Choice] drop column MimeType
+end
+GO
+
+if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Poll]') and name=N'MimeType')
+begin
+	alter table [{databaseOwner}].[{objectQualifier}Poll] drop column MimeType
+end
+GO
+
+if exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}Topic_{objectQualifier}PollGroupCluster' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}Topic]') and type in (N'F'))
+	alter table [{databaseOwner}].[{objectQualifier}Topic] drop constraint [FK_{objectQualifier}Topic_{objectQualifier}PollGroupCluster]
+go
+
+if exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}Poll_{objectQualifier}PollGroupCluster' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}Poll]') and type in (N'F'))
+	alter table [{databaseOwner}].[{objectQualifier}Poll] drop constraint [FK_{objectQualifier}Poll_{objectQualifier}PollGroupCluster]
+go
+
+if exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}Forum_{objectQualifier}PollGroupCluster' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}Forum]') and type in (N'F'))
+	alter table [{databaseOwner}].[{objectQualifier}Forum] drop constraint [FK_{objectQualifier}Forum_{objectQualifier}PollGroupCluster]
+go
+
+if exists (select top 1 1 from sys.objects where name='FK_{objectQualifier}Category_{objectQualifier}PollGroupCluster' and parent_object_id=object_id('[{databaseOwner}].[{objectQualifier}Category]') and type in (N'F'))
+	alter table [{databaseOwner}].[{objectQualifier}Category] drop constraint [FK_{objectQualifier}Category_{objectQualifier}PollGroupCluster]
+go
+
+if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Poll]') and name=N'PollGroupID')
+begin
+	alter table [{databaseOwner}].[{objectQualifier}Poll] drop column PollGroupID
+end
+
+if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Category]') and name=N'PollGroupID')
+begin
+	alter table [{databaseOwner}].[{objectQualifier}Category] drop column PollGroupID
+end
+
+if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Forum]') and name=N'PollGroupID')
+begin
+	alter table [{databaseOwner}].[{objectQualifier}Forum] drop column PollGroupID
+end
+
+if exists (select top 1 1 from sys.columns where object_id = object_id('[{databaseOwner}].[{objectQualifier}PollVoteRefuse]'))
+begin
+    drop table [{databaseOwner}].[{objectQualifier}PollVoteRefuse]
+end
+go
+
+
+if exists (select top 1 1 from sys.columns where object_id = object_id('[{databaseOwner}].[{objectQualifier}PollGroupCluster]'))
+begin
+    drop table [{databaseOwner}].[{objectQualifier}PollGroupCluster]
+end
+go
+
+if exists (select top 1 1 from sys.columns where object_id=object_id('[{databaseOwner}].[{objectQualifier}Medal]') and name=N'SmallMedalWidth')
+begin
+	alter table [{databaseOwner}].[{objectQualifier}Medal] drop column SmallMedalWidth
+	alter table [{databaseOwner}].[{objectQualifier}Medal] drop column SmallMedalHeight
+	alter table [{databaseOwner}].[{objectQualifier}Medal] drop column SmallRibbonWidth
+	alter table [{databaseOwner}].[{objectQualifier}Medal] drop column SmallRibbonHeight
+end

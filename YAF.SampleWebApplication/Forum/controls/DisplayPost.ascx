@@ -31,7 +31,7 @@
                         <asp:PlaceHolder runat="server" ID="UserInfo">
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <YAF:UserLink  ID="UserProfileLink" runat="server" />
+                                    <YAF:UserLink ID="UserProfileLink" runat="server" />
                                     <YAF:ThemeButton ID="AddReputation" runat="server" 
                                                      CssClass='<%# "AddReputation_{0} mr-1".Fmt(this.DataRow["UserID"])%>'
                                                      Size="Small"
@@ -58,28 +58,29 @@
                                     <li class="list-inline-item d-none d-md-inline-block">
                                         <asp:Label id="IPInfo" runat="server" 
                                                    Visible="false" 
-                                                   CssClass="badge badge-info">
+                                                   CssClass="badge bg-info">
                                             <%# this.GetText("IP") %>:&nbsp;
-                                            <a id="IPLink1" href="#" target="_blank" runat="server" class="text-white"></a>			   
+                                            <a id="IPLink1" href="#" target="_blank" runat="server" class="link-light"></a>			   
                                         </asp:Label> 
                                     </li>
                                 </asp:PlaceHolder>
-                                <asp:PlaceHolder runat="server" ID="UserReputation" Visible='<%#this.Get<BoardSettings>().DisplayPoints && !this.DataRow.Field<bool>("IsGuest") %>'>
+                                <asp:PlaceHolder runat="server" ID="UserReputation" 
+                                                 Visible='<%#this.Get<BoardSettings>().DisplayPoints && !this.DataRow.Field<bool>("IsGuest") %>'>
                                     <li class="list-inline-item d-none d-md-inline-block" style="width:150px">
                                         <%# this.Get<IReputation>().GenerateReputationBar(this.DataRow.Field<int>("Points"), this.PostData.UserId) %>
                                     </li>
                                 </asp:PlaceHolder>
                                 <li class="list-inline-item d-block">
-                                    <span class="badge badge-secondary"><%# this.DataRow["RankName"]%></span>
+                                    <span class="badge bg-secondary"><%# this.DataRow["RankName"]%></span>
                                     <asp:Label ID="TopicStarterBadge" runat="server" 
-                                           CssClass="badge badge-dark mb-2"
+                                           CssClass="badge bg-dark mb-2"
                                            Visible='<%# this.DataRow.Field<int>("TopicOwnerID").Equals(this.PostData.UserId) %>'
                                            ToolTip='<%# this.GetText("POSTS","TOPIC_STARTER_HELP") %>'>
                                     <YAF:LocalizedLabel ID="TopicStarterText" runat="server" 
                                                         LocalizedTag="TOPIC_STARTER" 
                                                         LocalizedPage="POSTS" />
                                     </asp:Label>
-                                    <asp:Label runat="server" CssClass="badge badge-success" ID="MessageIsAnswerBadge" 
+                                    <asp:Label runat="server" CssClass="badge bg-success" ID="MessageIsAnswerBadge" 
                                            Visible="<%# this.PostData.PostIsAnswer %>"
                                            ToolTip='<%# this.GetText("POSTS","MESSAGE_ANSWER_HELP") %>'>
                                     <i class="fas fa-check fa-fw"></i>
@@ -89,7 +90,7 @@
                             </ul>
                         </asp:PlaceHolder>
                     </div>
-                    <asp:Panel runat="server" CssClass="ml-auto dropleft" id="ToolsHolder">
+                    <asp:Panel runat="server" CssClass="ml-auto" id="ToolsHolder">
                         <YAF:ThemeButton ID="Tools1" runat="server"
                                          Type="Link"
                                          DataToggle="dropdown"
@@ -165,12 +166,12 @@
                     </div>
                     <div style="margin-top: 1px">
                         <a id="post<%# this.DataRow["MessageID"] %>" 
-                           href='<%# BuildLink.GetLink(ForumPages.Posts,"m={0}#post{0}", this.DataRow["MessageID"]) %>'>
+                           href='<%# BuildLink.GetLink(ForumPages.Posts,"m={0}&name={1}#post{0}", this.DataRow["MessageID"], this.PageContext.PageTopicName) %>'>
                             #<%# this.CurrentPage * this.Get<BoardSettings>().PostsPerPage + this.PostCount + 1%>
                         </a>
                     </div>
                 </div>
-                <div class="row message">
+                <div class="message">
                     <asp:panel id="panMessage" runat="server">
                             <YAF:MessagePostData runat="server"
                                                  DataRow="<%# this.DataRow %>"
@@ -274,7 +275,7 @@
                                                  DataToggle="tooltip"
                                                  TitleLocalizedTag="BUTTON_QUOTE_TT" />
                                 <asp:CheckBox runat="server" ID="MultiQuote" 
-                                              CssClass="MultiQuoteButton custom-control custom-checkbox btn btn-link" />
+                                              CssClass="btn-multiquote form-check btn btn-link" />
                             </div>
                         </div>
                         </div>

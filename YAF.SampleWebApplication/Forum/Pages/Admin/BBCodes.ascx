@@ -31,10 +31,9 @@
                                  <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">
                                         <asp:CheckBox ID="chkSelected" runat="server"
-                                                      Text="&nbsp;"
-                                                      CssClass="custom-control custom-checkbox d-inline-flex"/>
+                                                      Text='<%# this.Eval("Name") %>'
+                                                      CssClass="form-check" />
                                         <asp:HiddenField ID="hiddenBBCodeID" runat="server" Value='<%# this.Eval("ID") %>' />
-                                        <%# this.Eval("Name") %>
                                     </h5>
                                 </div>
                                 <p class="mb-1">
@@ -107,18 +106,22 @@
                        </ul>
                     </div>
                     <div class="card-footer text-center">
-                        <YAF:ThemeButton runat="server" 
-                                         CommandName="add" ID="Linkbutton3" 
+                        <YAF:ThemeButton runat="server"  ID="Linkbutton3" 
+                                         CssClass="mb-1"
+                                         CommandName="add"
                                          Type="Primary"
                                          Icon="plus-square" 
                                          TextLocalizedTag="ADD" TextLocalizedPage="ADMIN_BBCODE" />
-                        <YAF:ThemeButton runat="server" Icon="upload" 
+                        <YAF:ThemeButton runat="server" ID="Linkbutton5"
+                                         CssClass="mb-1"
+                                         Icon="upload" 
                                          DataTarget="BBCodeImportDialog"  
                                          DataToggle="modal"  
-                                         ID="Linkbutton5" 
                                          Type="Info"
                                          TextLocalizedTag="IMPORT" TextLocalizedPage="ADMIN_BBCODE" />
-                        <YAF:ThemeButton runat="server" CommandName="export" ID="Linkbutton4" 
+                        <YAF:ThemeButton runat="server" ID="Linkbutton4"  
+                                         CssClass="mb-1"
+                                         CommandName="export" 
                                          Type="Warning"
                                          Icon="download" 
                                          TextLocalizedTag="EXPORT" TextLocalizedPage="ADMIN_BBCODE" />

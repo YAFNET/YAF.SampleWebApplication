@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace YAF.SampleWebApplication {
-    
-    
-    public partial class SiteMaster {
-        
+namespace YAF.SampleWebApplication
+{
+
+
+    public partial class SiteMaster
+    {
+
         /// <summary>
         /// YafBody control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace YAF.SampleWebApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl YafBody;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace YAF.SampleWebApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::YAF.Web.Controls.Form form1;
-        
+
         /// <summary>
         /// ScriptManager control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace YAF.SampleWebApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager;
-        
+
         /// <summary>
         /// HeadLoginView control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace YAF.SampleWebApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LoginView HeadLoginView;
-        
+
         /// <summary>
         /// MainContent control.
         /// </summary>

@@ -30,6 +30,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/RazorDemo">MVC Razor View</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/RazorDemo/RenderOtherView">Render other View</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/RazorDemo/Users/25">Razor View with Model</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/AjaxDemo">Ajax and MVC</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Chat">Chat</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Forum/">Forum</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>

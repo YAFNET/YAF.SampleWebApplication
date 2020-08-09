@@ -18,29 +18,34 @@
     </div>
 <div class="row">
     <div class="col-xl-12">
+        <YAF:Pager ID="PagerTop" runat="server" OnPageChange="PagerTopChange" />
         <div class="card mb-3">
-                <div class="card-header">
-                    <YAF:IconHeader runat="server"
-                                    IconName="shield-alt"
-                                    LocalizedPage="ADMIN_SPAMWORDS"></YAF:IconHeader>
-                    <div class="float-right">
+            <div class="card-header">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-auto">
+                        <YAF:IconHeader runat="server"
+                                        IconName="shield-alt"
+                                        LocalizedPage="ADMIN_SPAMWORDS"></YAF:IconHeader>
+                    </div>
+                    <div class="col-auto">
                         <YAF:ThemeButton runat="server"
                                          CssClass="dropdown-toggle"
                                          DataToggle="dropdown"
+                                         Size="Small"
                                          Type="Secondary"
                                          Icon="filter"
                                          TextLocalizedTag="FILTER_DROPDOWN"
                                          TextLocalizedPage="ADMIN_USERS"></YAF:ThemeButton>
                         <div class="dropdown-menu">
                             <div class="px-3 py-1">
-                                <div class="form-group">
+                                <div class="mb-3">
                                     <YAF:HelpLabel ID="HelpLabel1" runat="server"
                                                    AssociatedControlID="SearchInput"
                                                    LocalizedTag="MASK" LocalizedPage="ADMIN_SPAMWORDS" />
                                     <asp:TextBox runat="server" ID="SearchInput"
                                                  CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="form-group">
+                                <div class="mb-3">
                                     <YAF:ThemeButton ID="search" runat="server"  
                                                      Type="Primary"
                                                      CssClass="btn-block"
@@ -53,10 +58,10 @@
                             </div>
                         </div>
                     </div>
-					</div>
+                    </div>
+            </div>
                 <div class="card-body">
-    <YAF:Pager ID="PagerTop" runat="server" OnPageChange="PagerTopChange" />
-            <asp:Repeater ID="list" runat="server">
+                    <asp:Repeater ID="list" runat="server">
                 <HeaderTemplate>
                     <ul class="list-group">
 		</HeaderTemplate>
@@ -135,17 +140,20 @@
             </div>
             <div class="card-footer text-center">
                 <YAF:ThemeButton runat="server" 
+                                 CssClass="mb-1"
                                  Icon="plus-square" 
                                  Type="Primary"
                                  TextLocalizedTag="ADD" TextLocalizedPage="ADMIN_SPAMWORDS"
                                  OnClick="AddClick"></YAF:ThemeButton>
-                <YAF:ThemeButton runat="server" 
+                <YAF:ThemeButton runat="server"  
+                                 CssClass="mb-1"
                                  Icon="upload"   
                                  DataToggle="modal" 
                                  DataTarget="SpamWordsImportDialog" 
                                  Type="Info"
                                  TextLocalizedTag="IMPORT" TextLocalizedPage="ADMIN_SPAMWORDS"></YAF:ThemeButton>
-                <YAF:ThemeButton runat="server" ID="Linkbutton4"
+                <YAF:ThemeButton runat="server" ID="Linkbutton4" 
+                                 CssClass="mb-1"
                                  OnClick="ExportClick"
                                  Type="Warning" 
                                  Icon="download" 
