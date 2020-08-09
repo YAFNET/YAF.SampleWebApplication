@@ -131,7 +131,7 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void LoginLink_OnClick(object sender, EventArgs e)
         {
-            this.Response.Redirect(BuildLink.GetLink(ForumPages.Login, "ReturnUrl={0}", this.GetReturnUrl()));
+            this.Response.Redirect(BuildLink.GetLink(ForumPages.Account_Login, "ReturnUrl={0}", this.GetReturnUrl()));
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void RegisterLink_OnClick(object sender, EventArgs e)
         {
-            this.Response.Redirect(BuildLink.GetLink(ForumPages.Register));
+            this.Response.Redirect(BuildLink.GetLink(ForumPages.Account_Register));
         }
     }
 }

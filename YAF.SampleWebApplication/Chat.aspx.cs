@@ -77,7 +77,7 @@ namespace YAF.SampleWebApplication
             }
             else
             {
-                BuildLink.Redirect(ForumPages.Login);
+                BuildLink.Redirect(ForumPages.Account_Login);
             }
 
             this.Header.DataBind();
