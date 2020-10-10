@@ -23,8 +23,8 @@
   --secondary: #fff;
   --success: #469408;
   --info: #029acf;
-  --warning: #9b479f;
-  --danger: #d9831f;
+  --warning: #d9831f;
+  --danger: #9b479f;
   --light: #fff;
   --dark: #373a3c;
   --breakpoint-xs: 0;
@@ -53,12 +53,12 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 body {
   margin: 0;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1rem;
+  font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #FCFCFC; }
+  background-color: #fcfcfc; }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important; }
@@ -84,8 +84,7 @@ abbr[data-original-title] {
           text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none; }
+  text-decoration-skip-ink: none; }
 
 address {
   margin-bottom: 1rem;
@@ -305,25 +304,25 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.2; }
 
 h1, .h1 {
-  font-size: 2.5rem; }
+  font-size: 2.03125rem; }
 
 h2, .h2 {
-  font-size: 2rem; }
+  font-size: 1.625rem; }
 
 h3, .h3 {
-  font-size: 1.75rem; }
+  font-size: 1.42188rem; }
 
 h4, .h4 {
-  font-size: 1.5rem; }
+  font-size: 1.21875rem; }
 
 h5, .h5 {
-  font-size: 1.25rem; }
+  font-size: 1.01563rem; }
 
 h6, .h6 {
-  font-size: 1rem; }
+  font-size: 0.8125rem; }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1.01563rem;
   font-weight: 300; }
 
 .display-1 {
@@ -381,7 +380,7 @@ mark,
 
 .blockquote {
   margin-bottom: 1rem;
-  font-size: 1.25rem; }
+  font-size: 1.01563rem; }
 
 .blockquote-footer {
   display: block;
@@ -396,7 +395,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -1599,36 +1598,36 @@ pre {
 .table-warning,
 .table-warning > th,
 .table-warning > td {
-  background-color: #e3cbe4; }
+  background-color: #f4dcc0; }
 
 .table-warning th,
 .table-warning td,
 .table-warning thead th,
 .table-warning tbody + tbody {
-  border-color: #cb9fcd; }
+  border-color: #ebbf8b; }
 
 .table-hover .table-warning:hover {
-  background-color: #dabadb; }
+  background-color: #f0d0aa; }
   .table-hover .table-warning:hover > td,
   .table-hover .table-warning:hover > th {
-    background-color: #dabadb; }
+    background-color: #f0d0aa; }
 
 .table-danger,
 .table-danger > th,
 .table-danger > td {
-  background-color: #f4dcc0; }
+  background-color: #e3cbe4; }
 
 .table-danger th,
 .table-danger td,
 .table-danger thead th,
 .table-danger tbody + tbody {
-  border-color: #ebbf8b; }
+  border-color: #cb9fcd; }
 
 .table-hover .table-danger:hover {
-  background-color: #f0d0aa; }
+  background-color: #dabadb; }
   .table-hover .table-danger:hover > td,
   .table-hover .table-danger:hover > th {
-    background-color: #f0d0aa; }
+    background-color: #dabadb; }
 
 .table-light,
 .table-light > th,
@@ -1749,7 +1748,7 @@ pre {
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.5;
   color: #444;
@@ -1782,9 +1781,6 @@ pre {
     color: #777;
     opacity: 1; }
   .form-control::-moz-placeholder, .bootstrap-tagsinput::-moz-placeholder {
-    color: #777;
-    opacity: 1; }
-  .form-control:-ms-input-placeholder, .bootstrap-tagsinput:-ms-input-placeholder {
     color: #777;
     opacity: 1; }
   .form-control::-ms-input-placeholder, .bootstrap-tagsinput::-ms-input-placeholder {
@@ -1827,13 +1823,13 @@ select.form-control:focus::-ms-value, select.bootstrap-tagsinput:focus::-ms-valu
 .col-form-label-lg {
   padding-top: calc(0.5rem + 1px);
   padding-bottom: calc(0.5rem + 1px);
-  font-size: 1.25rem;
+  font-size: 1.01563rem;
   line-height: 1.5; }
 
 .col-form-label-sm {
   padding-top: calc(0.25rem + 1px);
   padding-bottom: calc(0.25rem + 1px);
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   line-height: 1.5; }
 
 .form-control-plaintext {
@@ -1841,7 +1837,7 @@ select.form-control:focus::-ms-value, select.bootstrap-tagsinput:focus::-ms-valu
   width: 100%;
   padding: 0.375rem 0;
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 0.8125rem;
   line-height: 1.5;
   color: #212529;
   background-color: transparent;
@@ -1854,14 +1850,14 @@ select.form-control:focus::-ms-value, select.bootstrap-tagsinput:focus::-ms-valu
 .form-control-sm {
   height: calc(1.5em + 0.5rem + 2px);
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   line-height: 1.5;
   border-radius: 0.2rem; }
 
 .form-control-lg {
   height: calc(1.5em + 1rem + 2px);
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.01563rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
@@ -1938,7 +1934,7 @@ textarea.form-control, textarea.bootstrap-tagsinput {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   line-height: 1.5;
   color: #fff;
   background-color: rgba(70, 148, 8, 0.9);
@@ -2012,7 +2008,7 @@ textarea.form-control, textarea.bootstrap-tagsinput {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
-  color: #d9831f; }
+  color: #9b479f; }
 
 .invalid-tooltip {
   position: absolute;
@@ -2023,10 +2019,10 @@ textarea.form-control, textarea.bootstrap-tagsinput {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   line-height: 1.5;
   color: #fff;
-  background-color: rgba(217, 131, 31, 0.9);
+  background-color: rgba(155, 71, 159, 0.9);
   border-radius: 0.25rem; }
 
 .was-validated :invalid ~ .invalid-feedback,
@@ -2036,32 +2032,32 @@ textarea.form-control, textarea.bootstrap-tagsinput {
   display: block; }
 
 .was-validated .form-control:invalid, .was-validated .bootstrap-tagsinput:invalid, .form-control.is-invalid, .is-invalid.bootstrap-tagsinput {
-  border-color: #d9831f;
+  border-color: #9b479f;
   padding-right: calc(1.5em + 0.75rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23d9831f' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23d9831f' stroke='none'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%239b479f' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%239b479f' stroke='none'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
   .was-validated .form-control:invalid:focus, .was-validated .bootstrap-tagsinput:invalid:focus, .form-control.is-invalid:focus, .is-invalid.bootstrap-tagsinput:focus {
-    border-color: #d9831f;
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.25);
-            box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.25); }
+    border-color: #9b479f;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.25); }
 
 .was-validated textarea.form-control:invalid, .was-validated textarea.bootstrap-tagsinput:invalid, textarea.form-control.is-invalid, textarea.is-invalid.bootstrap-tagsinput {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem); }
 
 .was-validated .custom-select:invalid, .custom-select.is-invalid {
-  border-color: #d9831f;
+  border-color: #9b479f;
   padding-right: calc(0.75em + 2.3125rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23373a3c' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23d9831f' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23d9831f' stroke='none'/%3e%3c/svg%3e") #fff no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23373a3c' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%239b479f' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%239b479f' stroke='none'/%3e%3c/svg%3e") #fff no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
   .was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {
-    border-color: #d9831f;
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.25);
-            box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.25); }
+    border-color: #9b479f;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.25); }
 
 .was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
-  color: #d9831f; }
+  color: #9b479f; }
 
 .was-validated .form-check-input:invalid ~ .invalid-feedback,
 .was-validated .form-check-input:invalid ~ .invalid-tooltip, .form-check-input.is-invalid ~ .invalid-feedback,
@@ -2069,28 +2065,28 @@ textarea.form-control, textarea.bootstrap-tagsinput {
   display: block; }
 
 .was-validated .custom-control-input:invalid ~ .custom-control-label, .was-validated .custom-radio input:invalid ~ .custom-control-label, .custom-radio .was-validated input:invalid ~ .custom-control-label, .was-validated .custom-checkbox input:invalid ~ .custom-control-label, .custom-checkbox .was-validated input:invalid ~ .custom-control-label, .was-validated .custom-switch input:invalid ~ .custom-control-label, .custom-switch .was-validated input:invalid ~ .custom-control-label, .was-validated .custom-radio .custom-control-input:invalid ~ label, .custom-radio .was-validated .custom-control-input:invalid ~ label, .was-validated .custom-radio input:invalid ~ label, .custom-radio .was-validated input:invalid ~ label, .was-validated .custom-checkbox .custom-radio input:invalid ~ label, .custom-radio .custom-checkbox .was-validated input:invalid ~ label, .was-validated .custom-switch .custom-radio input:invalid ~ label, .custom-radio .custom-switch .was-validated input:invalid ~ label, .was-validated .custom-checkbox .custom-control-input:invalid ~ label, .custom-checkbox .was-validated .custom-control-input:invalid ~ label, .was-validated .custom-radio .custom-checkbox input:invalid ~ label, .custom-checkbox .was-validated .custom-radio input:invalid ~ label, .custom-radio .was-validated .custom-checkbox input:invalid ~ label, .custom-checkbox .custom-radio .was-validated input:invalid ~ label, .was-validated .custom-checkbox input:invalid ~ label, .custom-checkbox .was-validated input:invalid ~ label, .was-validated .custom-switch .custom-checkbox input:invalid ~ label, .custom-checkbox .custom-switch .was-validated input:invalid ~ label, .was-validated .custom-switch .custom-control-input:invalid ~ label, .custom-switch .was-validated .custom-control-input:invalid ~ label, .was-validated .custom-radio .custom-switch input:invalid ~ label, .custom-switch .was-validated .custom-radio input:invalid ~ label, .custom-radio .was-validated .custom-switch input:invalid ~ label, .custom-switch .custom-radio .was-validated input:invalid ~ label, .was-validated .custom-checkbox .custom-switch input:invalid ~ label, .custom-switch .was-validated .custom-checkbox input:invalid ~ label, .custom-checkbox .was-validated .custom-switch input:invalid ~ label, .custom-switch .custom-checkbox .was-validated input:invalid ~ label, .was-validated .custom-switch input:invalid ~ label, .custom-switch .was-validated input:invalid ~ label, .custom-control-input.is-invalid ~ .custom-control-label, .custom-radio input.is-invalid ~ .custom-control-label, .custom-checkbox input.is-invalid ~ .custom-control-label, .custom-switch input.is-invalid ~ .custom-control-label, .custom-radio .custom-control-input.is-invalid ~ label, .custom-radio input.is-invalid ~ label, .custom-checkbox .custom-control-input.is-invalid ~ label, .custom-checkbox input.is-invalid ~ label, .custom-switch .custom-control-input.is-invalid ~ label, .custom-switch input.is-invalid ~ label {
-  color: #d9831f; }
+  color: #9b479f; }
   .was-validated .custom-control-input:invalid ~ .custom-control-label::before, .was-validated .custom-radio input:invalid ~ .custom-control-label::before, .custom-radio .was-validated input:invalid ~ .custom-control-label::before, .was-validated .custom-checkbox input:invalid ~ .custom-control-label::before, .custom-checkbox .was-validated input:invalid ~ .custom-control-label::before, .was-validated .custom-switch input:invalid ~ .custom-control-label::before, .custom-switch .was-validated input:invalid ~ .custom-control-label::before, .was-validated .custom-radio .custom-control-input:invalid ~ label::before, .custom-radio .was-validated .custom-control-input:invalid ~ label::before, .was-validated .custom-radio input:invalid ~ label::before, .custom-radio .was-validated input:invalid ~ label::before, .was-validated .custom-checkbox .custom-radio input:invalid ~ label::before, .custom-radio .custom-checkbox .was-validated input:invalid ~ label::before, .was-validated .custom-switch .custom-radio input:invalid ~ label::before, .custom-radio .custom-switch .was-validated input:invalid ~ label::before, .was-validated .custom-checkbox .custom-control-input:invalid ~ label::before, .custom-checkbox .was-validated .custom-control-input:invalid ~ label::before, .was-validated .custom-radio .custom-checkbox input:invalid ~ label::before, .custom-checkbox .was-validated .custom-radio input:invalid ~ label::before, .custom-radio .was-validated .custom-checkbox input:invalid ~ label::before, .custom-checkbox .custom-radio .was-validated input:invalid ~ label::before, .was-validated .custom-checkbox input:invalid ~ label::before, .custom-checkbox .was-validated input:invalid ~ label::before, .was-validated .custom-switch .custom-checkbox input:invalid ~ label::before, .custom-checkbox .custom-switch .was-validated input:invalid ~ label::before, .was-validated .custom-switch .custom-control-input:invalid ~ label::before, .custom-switch .was-validated .custom-control-input:invalid ~ label::before, .was-validated .custom-radio .custom-switch input:invalid ~ label::before, .custom-switch .was-validated .custom-radio input:invalid ~ label::before, .custom-radio .was-validated .custom-switch input:invalid ~ label::before, .custom-switch .custom-radio .was-validated input:invalid ~ label::before, .was-validated .custom-checkbox .custom-switch input:invalid ~ label::before, .custom-switch .was-validated .custom-checkbox input:invalid ~ label::before, .custom-checkbox .was-validated .custom-switch input:invalid ~ label::before, .custom-switch .custom-checkbox .was-validated input:invalid ~ label::before, .was-validated .custom-switch input:invalid ~ label::before, .custom-switch .was-validated input:invalid ~ label::before, .custom-control-input.is-invalid ~ .custom-control-label::before, .custom-radio input.is-invalid ~ .custom-control-label::before, .custom-checkbox input.is-invalid ~ .custom-control-label::before, .custom-switch input.is-invalid ~ .custom-control-label::before, .custom-radio .custom-control-input.is-invalid ~ label::before, .custom-radio input.is-invalid ~ label::before, .custom-checkbox .custom-control-input.is-invalid ~ label::before, .custom-checkbox input.is-invalid ~ label::before, .custom-switch .custom-control-input.is-invalid ~ label::before, .custom-switch input.is-invalid ~ label::before {
-    border-color: #d9831f; }
+    border-color: #9b479f; }
 
 .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before, .was-validated .custom-radio input:invalid:checked ~ .custom-control-label::before, .custom-radio .was-validated input:invalid:checked ~ .custom-control-label::before, .was-validated .custom-checkbox input:invalid:checked ~ .custom-control-label::before, .custom-checkbox .was-validated input:invalid:checked ~ .custom-control-label::before, .was-validated .custom-switch input:invalid:checked ~ .custom-control-label::before, .custom-switch .was-validated input:invalid:checked ~ .custom-control-label::before, .was-validated .custom-radio .custom-control-input:invalid:checked ~ label::before, .custom-radio .was-validated .custom-control-input:invalid:checked ~ label::before, .was-validated .custom-radio input:invalid:checked ~ label::before, .custom-radio .was-validated input:invalid:checked ~ label::before, .was-validated .custom-checkbox .custom-radio input:invalid:checked ~ label::before, .custom-radio .custom-checkbox .was-validated input:invalid:checked ~ label::before, .was-validated .custom-switch .custom-radio input:invalid:checked ~ label::before, .custom-radio .custom-switch .was-validated input:invalid:checked ~ label::before, .was-validated .custom-checkbox .custom-control-input:invalid:checked ~ label::before, .custom-checkbox .was-validated .custom-control-input:invalid:checked ~ label::before, .was-validated .custom-radio .custom-checkbox input:invalid:checked ~ label::before, .custom-checkbox .was-validated .custom-radio input:invalid:checked ~ label::before, .custom-radio .was-validated .custom-checkbox input:invalid:checked ~ label::before, .custom-checkbox .custom-radio .was-validated input:invalid:checked ~ label::before, .was-validated .custom-checkbox input:invalid:checked ~ label::before, .custom-checkbox .was-validated input:invalid:checked ~ label::before, .was-validated .custom-switch .custom-checkbox input:invalid:checked ~ label::before, .custom-checkbox .custom-switch .was-validated input:invalid:checked ~ label::before, .was-validated .custom-switch .custom-control-input:invalid:checked ~ label::before, .custom-switch .was-validated .custom-control-input:invalid:checked ~ label::before, .was-validated .custom-radio .custom-switch input:invalid:checked ~ label::before, .custom-switch .was-validated .custom-radio input:invalid:checked ~ label::before, .custom-radio .was-validated .custom-switch input:invalid:checked ~ label::before, .custom-switch .custom-radio .was-validated input:invalid:checked ~ label::before, .was-validated .custom-checkbox .custom-switch input:invalid:checked ~ label::before, .custom-switch .was-validated .custom-checkbox input:invalid:checked ~ label::before, .custom-checkbox .was-validated .custom-switch input:invalid:checked ~ label::before, .custom-switch .custom-checkbox .was-validated input:invalid:checked ~ label::before, .was-validated .custom-switch input:invalid:checked ~ label::before, .custom-switch .was-validated input:invalid:checked ~ label::before, .custom-control-input.is-invalid:checked ~ .custom-control-label::before, .custom-radio input.is-invalid:checked ~ .custom-control-label::before, .custom-checkbox input.is-invalid:checked ~ .custom-control-label::before, .custom-switch input.is-invalid:checked ~ .custom-control-label::before, .custom-radio .custom-control-input.is-invalid:checked ~ label::before, .custom-radio input.is-invalid:checked ~ label::before, .custom-checkbox .custom-control-input.is-invalid:checked ~ label::before, .custom-checkbox input.is-invalid:checked ~ label::before, .custom-switch .custom-control-input.is-invalid:checked ~ label::before, .custom-switch input.is-invalid:checked ~ label::before {
-  border-color: #e59b46;
-  background-color: #e59b46; }
+  border-color: #b461b8;
+  background-color: #b461b8; }
 
 .was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before, .was-validated .custom-radio input:invalid:focus ~ .custom-control-label::before, .custom-radio .was-validated input:invalid:focus ~ .custom-control-label::before, .was-validated .custom-checkbox input:invalid:focus ~ .custom-control-label::before, .custom-checkbox .was-validated input:invalid:focus ~ .custom-control-label::before, .was-validated .custom-switch input:invalid:focus ~ .custom-control-label::before, .custom-switch .was-validated input:invalid:focus ~ .custom-control-label::before, .was-validated .custom-radio .custom-control-input:invalid:focus ~ label::before, .custom-radio .was-validated .custom-control-input:invalid:focus ~ label::before, .was-validated .custom-radio input:invalid:focus ~ label::before, .custom-radio .was-validated input:invalid:focus ~ label::before, .was-validated .custom-checkbox .custom-radio input:invalid:focus ~ label::before, .custom-radio .custom-checkbox .was-validated input:invalid:focus ~ label::before, .was-validated .custom-switch .custom-radio input:invalid:focus ~ label::before, .custom-radio .custom-switch .was-validated input:invalid:focus ~ label::before, .was-validated .custom-checkbox .custom-control-input:invalid:focus ~ label::before, .custom-checkbox .was-validated .custom-control-input:invalid:focus ~ label::before, .was-validated .custom-radio .custom-checkbox input:invalid:focus ~ label::before, .custom-checkbox .was-validated .custom-radio input:invalid:focus ~ label::before, .custom-radio .was-validated .custom-checkbox input:invalid:focus ~ label::before, .custom-checkbox .custom-radio .was-validated input:invalid:focus ~ label::before, .was-validated .custom-checkbox input:invalid:focus ~ label::before, .custom-checkbox .was-validated input:invalid:focus ~ label::before, .was-validated .custom-switch .custom-checkbox input:invalid:focus ~ label::before, .custom-checkbox .custom-switch .was-validated input:invalid:focus ~ label::before, .was-validated .custom-switch .custom-control-input:invalid:focus ~ label::before, .custom-switch .was-validated .custom-control-input:invalid:focus ~ label::before, .was-validated .custom-radio .custom-switch input:invalid:focus ~ label::before, .custom-switch .was-validated .custom-radio input:invalid:focus ~ label::before, .custom-radio .was-validated .custom-switch input:invalid:focus ~ label::before, .custom-switch .custom-radio .was-validated input:invalid:focus ~ label::before, .was-validated .custom-checkbox .custom-switch input:invalid:focus ~ label::before, .custom-switch .was-validated .custom-checkbox input:invalid:focus ~ label::before, .custom-checkbox .was-validated .custom-switch input:invalid:focus ~ label::before, .custom-switch .custom-checkbox .was-validated input:invalid:focus ~ label::before, .was-validated .custom-switch input:invalid:focus ~ label::before, .custom-switch .was-validated input:invalid:focus ~ label::before, .custom-control-input.is-invalid:focus ~ .custom-control-label::before, .custom-radio input.is-invalid:focus ~ .custom-control-label::before, .custom-checkbox input.is-invalid:focus ~ .custom-control-label::before, .custom-switch input.is-invalid:focus ~ .custom-control-label::before, .custom-radio .custom-control-input.is-invalid:focus ~ label::before, .custom-radio input.is-invalid:focus ~ label::before, .custom-checkbox .custom-control-input.is-invalid:focus ~ label::before, .custom-checkbox input.is-invalid:focus ~ label::before, .custom-switch .custom-control-input.is-invalid:focus ~ label::before, .custom-switch input.is-invalid:focus ~ label::before {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.25);
-          box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.25); }
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.25); }
 
 .was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before, .was-validated .custom-radio input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-radio .was-validated input:invalid:focus:not(:checked) ~ .custom-control-label::before, .was-validated .custom-checkbox input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-checkbox .was-validated input:invalid:focus:not(:checked) ~ .custom-control-label::before, .was-validated .custom-switch input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-switch .was-validated input:invalid:focus:not(:checked) ~ .custom-control-label::before, .was-validated .custom-radio .custom-control-input:invalid:focus:not(:checked) ~ label::before, .custom-radio .was-validated .custom-control-input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-radio input:invalid:focus:not(:checked) ~ label::before, .custom-radio .was-validated input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-checkbox .custom-radio input:invalid:focus:not(:checked) ~ label::before, .custom-radio .custom-checkbox .was-validated input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-switch .custom-radio input:invalid:focus:not(:checked) ~ label::before, .custom-radio .custom-switch .was-validated input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-checkbox .custom-control-input:invalid:focus:not(:checked) ~ label::before, .custom-checkbox .was-validated .custom-control-input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-radio .custom-checkbox input:invalid:focus:not(:checked) ~ label::before, .custom-checkbox .was-validated .custom-radio input:invalid:focus:not(:checked) ~ label::before, .custom-radio .was-validated .custom-checkbox input:invalid:focus:not(:checked) ~ label::before, .custom-checkbox .custom-radio .was-validated input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-checkbox input:invalid:focus:not(:checked) ~ label::before, .custom-checkbox .was-validated input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-switch .custom-checkbox input:invalid:focus:not(:checked) ~ label::before, .custom-checkbox .custom-switch .was-validated input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-switch .custom-control-input:invalid:focus:not(:checked) ~ label::before, .custom-switch .was-validated .custom-control-input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-radio .custom-switch input:invalid:focus:not(:checked) ~ label::before, .custom-switch .was-validated .custom-radio input:invalid:focus:not(:checked) ~ label::before, .custom-radio .was-validated .custom-switch input:invalid:focus:not(:checked) ~ label::before, .custom-switch .custom-radio .was-validated input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-checkbox .custom-switch input:invalid:focus:not(:checked) ~ label::before, .custom-switch .was-validated .custom-checkbox input:invalid:focus:not(:checked) ~ label::before, .custom-checkbox .was-validated .custom-switch input:invalid:focus:not(:checked) ~ label::before, .custom-switch .custom-checkbox .was-validated input:invalid:focus:not(:checked) ~ label::before, .was-validated .custom-switch input:invalid:focus:not(:checked) ~ label::before, .custom-switch .was-validated input:invalid:focus:not(:checked) ~ label::before, .custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-radio input.is-invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-checkbox input.is-invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-switch input.is-invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-radio .custom-control-input.is-invalid:focus:not(:checked) ~ label::before, .custom-radio input.is-invalid:focus:not(:checked) ~ label::before, .custom-checkbox .custom-control-input.is-invalid:focus:not(:checked) ~ label::before, .custom-checkbox input.is-invalid:focus:not(:checked) ~ label::before, .custom-switch .custom-control-input.is-invalid:focus:not(:checked) ~ label::before, .custom-switch input.is-invalid:focus:not(:checked) ~ label::before {
-  border-color: #d9831f; }
+  border-color: #9b479f; }
 
 .was-validated .custom-file-input:invalid ~ .custom-file-label, .custom-file-input.is-invalid ~ .custom-file-label {
-  border-color: #d9831f; }
+  border-color: #9b479f; }
 
 .was-validated .custom-file-input:invalid:focus ~ .custom-file-label, .custom-file-input.is-invalid:focus ~ .custom-file-label {
-  border-color: #d9831f;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.25);
-          box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.25); }
+  border-color: #9b479f;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.25); }
 
 .form-inline {
   display: -webkit-box;
@@ -2183,7 +2179,7 @@ textarea.form-control, textarea.bootstrap-tagsinput {
   background-color: transparent;
   border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 0.8125rem;
   line-height: 1.5;
   border-radius: 0.25rem;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -2324,59 +2320,59 @@ fieldset:disabled a.btn {
 
 .btn-warning {
   color: #fff;
-  background-color: #9b479f;
-  border-color: #9b479f; }
-  .btn-warning:hover {
-    color: #fff;
-    background-color: #813b85;
-    border-color: #79377c; }
-  .btn-warning:focus, .btn-warning.focus {
-    color: #fff;
-    background-color: #813b85;
-    border-color: #79377c;
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(170, 99, 173, 0.5);
-            box-shadow: 0 0 0 0.2rem rgba(170, 99, 173, 0.5); }
-  .btn-warning.disabled, .btn-warning:disabled {
-    color: #fff;
-    background-color: #9b479f;
-    border-color: #9b479f; }
-  .btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active,
-  .show > .btn-warning.dropdown-toggle {
-    color: #fff;
-    background-color: #79377c;
-    border-color: #703373; }
-    .btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus,
-    .show > .btn-warning.dropdown-toggle:focus {
-      -webkit-box-shadow: 0 0 0 0.2rem rgba(170, 99, 173, 0.5);
-              box-shadow: 0 0 0 0.2rem rgba(170, 99, 173, 0.5); }
-
-.btn-danger {
-  color: #fff;
   background-color: #d9831f;
   border-color: #d9831f; }
-  .btn-danger:hover {
+  .btn-warning:hover {
     color: #fff;
     background-color: #b86f1a;
     border-color: #ac6819; }
-  .btn-danger:focus, .btn-danger.focus {
+  .btn-warning:focus, .btn-warning.focus {
     color: #fff;
     background-color: #b86f1a;
     border-color: #ac6819;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(223, 150, 65, 0.5);
             box-shadow: 0 0 0 0.2rem rgba(223, 150, 65, 0.5); }
-  .btn-danger.disabled, .btn-danger:disabled {
+  .btn-warning.disabled, .btn-warning:disabled {
     color: #fff;
     background-color: #d9831f;
     border-color: #d9831f; }
-  .btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active,
-  .show > .btn-danger.dropdown-toggle {
+  .btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active,
+  .show > .btn-warning.dropdown-toggle {
     color: #fff;
     background-color: #ac6819;
     border-color: #a16117; }
-    .btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
-    .show > .btn-danger.dropdown-toggle:focus {
+    .btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-warning.dropdown-toggle:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(223, 150, 65, 0.5);
               box-shadow: 0 0 0 0.2rem rgba(223, 150, 65, 0.5); }
+
+.btn-danger {
+  color: #fff;
+  background-color: #9b479f;
+  border-color: #9b479f; }
+  .btn-danger:hover {
+    color: #fff;
+    background-color: #813b85;
+    border-color: #79377c; }
+  .btn-danger:focus, .btn-danger.focus {
+    color: #fff;
+    background-color: #813b85;
+    border-color: #79377c;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(170, 99, 173, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(170, 99, 173, 0.5); }
+  .btn-danger.disabled, .btn-danger:disabled {
+    color: #fff;
+    background-color: #9b479f;
+    border-color: #9b479f; }
+  .btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active,
+  .show > .btn-danger.dropdown-toggle {
+    color: #fff;
+    background-color: #79377c;
+    border-color: #703373; }
+    .btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-danger.dropdown-toggle:focus {
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(170, 99, 173, 0.5);
+              box-shadow: 0 0 0 0.2rem rgba(170, 99, 173, 0.5); }
 
 .btn-light {
   color: #212529;
@@ -2527,50 +2523,50 @@ fieldset:disabled a.btn {
               box-shadow: 0 0 0 0.2rem rgba(2, 154, 207, 0.5); }
 
 .btn-outline-warning {
-  color: #9b479f;
-  border-color: #9b479f; }
+  color: #d9831f;
+  border-color: #d9831f; }
   .btn-outline-warning:hover {
     color: #fff;
-    background-color: #9b479f;
-    border-color: #9b479f; }
+    background-color: #d9831f;
+    border-color: #d9831f; }
   .btn-outline-warning:focus, .btn-outline-warning.focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5);
-            box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5); }
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5); }
   .btn-outline-warning.disabled, .btn-outline-warning:disabled {
-    color: #9b479f;
+    color: #d9831f;
     background-color: transparent; }
   .btn-outline-warning:not(:disabled):not(.disabled):active, .btn-outline-warning:not(:disabled):not(.disabled).active,
   .show > .btn-outline-warning.dropdown-toggle {
     color: #fff;
-    background-color: #9b479f;
-    border-color: #9b479f; }
-    .btn-outline-warning:not(:disabled):not(.disabled):active:focus, .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
-    .show > .btn-outline-warning.dropdown-toggle:focus {
-      -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5);
-              box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5); }
-
-.btn-outline-danger {
-  color: #d9831f;
-  border-color: #d9831f; }
-  .btn-outline-danger:hover {
-    color: #fff;
     background-color: #d9831f;
     border-color: #d9831f; }
+    .btn-outline-warning:not(:disabled):not(.disabled):active:focus, .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-outline-warning.dropdown-toggle:focus {
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5);
+              box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5); }
+
+.btn-outline-danger {
+  color: #9b479f;
+  border-color: #9b479f; }
+  .btn-outline-danger:hover {
+    color: #fff;
+    background-color: #9b479f;
+    border-color: #9b479f; }
   .btn-outline-danger:focus, .btn-outline-danger.focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5);
-            box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5); }
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5); }
   .btn-outline-danger.disabled, .btn-outline-danger:disabled {
-    color: #d9831f;
+    color: #9b479f;
     background-color: transparent; }
   .btn-outline-danger:not(:disabled):not(.disabled):active, .btn-outline-danger:not(:disabled):not(.disabled).active,
   .show > .btn-outline-danger.dropdown-toggle {
     color: #fff;
-    background-color: #d9831f;
-    border-color: #d9831f; }
+    background-color: #9b479f;
+    border-color: #9b479f; }
     .btn-outline-danger:not(:disabled):not(.disabled):active:focus, .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-danger.dropdown-toggle:focus {
-      -webkit-box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5);
-              box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5); }
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5);
+              box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5); }
 
 .btn-outline-light {
   color: #fff;
@@ -2633,13 +2629,13 @@ fieldset:disabled a.btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.01563rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   line-height: 1.5;
   border-radius: 0.2rem; }
 
@@ -2708,7 +2704,7 @@ input[type="button"].btn-block {
   min-width: 10rem;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
-  font-size: 1rem;
+  font-size: 0.8125rem;
   color: #212529;
   text-align: left;
   list-style: none;
@@ -2871,7 +2867,7 @@ input[type="button"].btn-block {
   display: block;
   padding: 0.5rem 1.5rem;
   margin-bottom: 0;
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   color: #777;
   white-space: nowrap; }
 
@@ -3089,7 +3085,7 @@ input[type="button"].btn-block {
           align-items: center;
   padding: 0.375rem 0.75rem;
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.5;
   color: #444;
@@ -3113,7 +3109,7 @@ input[type="button"].btn-block {
 .input-group-lg > .input-group-prepend > .btn,
 .input-group-lg > .input-group-append > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.01563rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
@@ -3128,7 +3124,7 @@ input[type="button"].btn-block {
 .input-group-sm > .input-group-prepend > .btn,
 .input-group-sm > .input-group-append > .btn {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   line-height: 1.5;
   border-radius: 0.2rem; }
 
@@ -3158,7 +3154,7 @@ input[type="button"].btn-block {
   position: relative;
   z-index: 1;
   display: block;
-  min-height: 1.5rem;
+  min-height: 1.21875rem;
   padding-left: 1.5rem; }
 
 .custom-control-inline, .custom-control-inline li {
@@ -3172,7 +3168,7 @@ input[type="button"].btn-block {
   left: 0;
   z-index: -1;
   width: 1rem;
-  height: 1.25rem;
+  height: 1.10938rem;
   opacity: 0; }
   .custom-control-input:checked ~ .custom-control-label::before, .custom-radio input:checked ~ .custom-control-label::before, .custom-checkbox input:checked ~ .custom-control-label::before, .custom-switch input:checked ~ .custom-control-label::before, .custom-radio .custom-control-input:checked ~ label::before, .custom-radio input:checked ~ label::before, .custom-checkbox .custom-control-input:checked ~ label::before, .custom-checkbox input:checked ~ label::before, .custom-switch .custom-control-input:checked ~ label::before, .custom-switch input:checked ~ label::before {
     color: #fff;
@@ -3198,7 +3194,7 @@ input[type="button"].btn-block {
   vertical-align: top; }
   .custom-control-label::before, .custom-radio label::before, .custom-checkbox label::before, .custom-switch label::before {
     position: absolute;
-    top: 0.25rem;
+    top: 0.10938rem;
     left: -1.5rem;
     display: block;
     width: 1rem;
@@ -3209,7 +3205,7 @@ input[type="button"].btn-block {
     border: #adb5bd solid 1px; }
   .custom-control-label::after, .custom-radio label::after, .custom-checkbox label::after, .custom-switch label::after {
     position: absolute;
-    top: 0.25rem;
+    top: 0.10938rem;
     left: -1.5rem;
     display: block;
     width: 1rem;
@@ -3253,7 +3249,7 @@ input[type="button"].btn-block {
     pointer-events: all;
     border-radius: 0.5rem; }
   .custom-switch .custom-control-label::after, .custom-switch .custom-radio label::after, .custom-radio .custom-switch label::after, .custom-switch .custom-checkbox label::after, .custom-checkbox .custom-switch label::after, .custom-switch label::after {
-    top: calc(0.25rem + 2px);
+    top: calc(0.10938rem + 2px);
     left: calc(-2.25rem + 2px);
     width: calc(1rem - 4px);
     height: calc(1rem - 4px);
@@ -3279,7 +3275,7 @@ input[type="button"].btn-block {
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 1.75rem 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.5;
   color: #444;
@@ -3316,14 +3312,14 @@ input[type="button"].btn-block {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
-  font-size: 0.875rem; }
+  font-size: 0.71094rem; }
 
 .custom-select-lg {
   height: calc(1.5em + 1rem + 2px);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
-  font-size: 1.25rem; }
+  font-size: 1.01563rem; }
 
 .custom-file {
   position: relative;
@@ -3392,12 +3388,12 @@ input[type="button"].btn-block {
   .custom-range:focus {
     outline: none; }
     .custom-range:focus::-webkit-slider-thumb {
-      -webkit-box-shadow: 0 0 0 1px #FCFCFC, 0 0 0 0.2rem rgba(217, 35, 15, 0.25);
-              box-shadow: 0 0 0 1px #FCFCFC, 0 0 0 0.2rem rgba(217, 35, 15, 0.25); }
+      -webkit-box-shadow: 0 0 0 1px #fcfcfc, 0 0 0 0.2rem rgba(217, 35, 15, 0.25);
+              box-shadow: 0 0 0 1px #fcfcfc, 0 0 0 0.2rem rgba(217, 35, 15, 0.25); }
     .custom-range:focus::-moz-range-thumb {
-      box-shadow: 0 0 0 1px #FCFCFC, 0 0 0 0.2rem rgba(217, 35, 15, 0.25); }
+      box-shadow: 0 0 0 1px #fcfcfc, 0 0 0 0.2rem rgba(217, 35, 15, 0.25); }
     .custom-range:focus::-ms-thumb {
-      box-shadow: 0 0 0 1px #FCFCFC, 0 0 0 0.2rem rgba(217, 35, 15, 0.25); }
+      box-shadow: 0 0 0 1px #fcfcfc, 0 0 0 0.2rem rgba(217, 35, 15, 0.25); }
   .custom-range::-moz-focus-outer {
     border: 0; }
   .custom-range::-webkit-slider-thumb {
@@ -3433,13 +3429,15 @@ input[type="button"].btn-block {
     background-color: #d9230f;
     border: 0;
     border-radius: 1rem;
-    -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     -moz-appearance: none;
          appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-moz-range-thumb {
-        -moz-transition: none;
+        -webkit-transition: none;
         transition: none; } }
     .custom-range::-moz-range-thumb:active {
       background-color: #f9aba2; }
@@ -3460,12 +3458,14 @@ input[type="button"].btn-block {
     background-color: #d9230f;
     border: 0;
     border-radius: 1rem;
-    -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-ms-thumb {
-        -ms-transition: none;
+        -webkit-transition: none;
         transition: none; } }
     .custom-range::-ms-thumb:active {
       background-color: #f9aba2; }
@@ -3546,8 +3546,8 @@ input[type="button"].btn-block {
   .nav-tabs .nav-link.active,
   .nav-tabs .nav-item.show .nav-link {
     color: #444;
-    background-color: #FCFCFC;
-    border-color: #ccc #ccc #FCFCFC; }
+    background-color: #fcfcfc;
+    border-color: #ccc #ccc #fcfcfc; }
   .nav-tabs .dropdown-menu {
     margin-top: -1px;
     border-top-left-radius: 0;
@@ -3612,10 +3612,10 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.7125rem;
-  padding-bottom: 0.7125rem;
+  padding-top: 0.74766rem;
+  padding-bottom: 0.74766rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.01563rem;
   line-height: inherit;
   white-space: nowrap; }
   .navbar-brand:hover, .navbar-brand:focus {
@@ -3656,7 +3656,7 @@ input[type="button"].btn-block {
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
+  font-size: 1.01563rem;
   line-height: 1;
   background-color: transparent;
   border: 1px solid transparent;
@@ -4247,7 +4247,7 @@ input[type="button"].btn-block {
 
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;
-  font-size: 1.25rem;
+  font-size: 1.01563rem;
   line-height: 1.5; }
 
 .pagination-lg .page-item:first-child .page-link {
@@ -4260,7 +4260,7 @@ input[type="button"].btn-block {
 
 .pagination-sm .page-link {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   line-height: 1.5; }
 
 .pagination-sm .page-item:first-child .page-link {
@@ -4349,25 +4349,25 @@ input[type="button"].btn-block {
 
 .badge-warning {
   color: #fff;
-  background-color: #9b479f; }
+  background-color: #d9831f; }
   a.badge-warning:hover, a.badge-warning:focus {
     color: #fff;
-    background-color: #79377c; }
-  a.badge-warning:focus, a.badge-warning.focus {
-    outline: 0;
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5);
-            box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5); }
-
-.badge-danger {
-  color: #fff;
-  background-color: #d9831f; }
-  a.badge-danger:hover, a.badge-danger:focus {
-    color: #fff;
     background-color: #ac6819; }
-  a.badge-danger:focus, a.badge-danger.focus {
+  a.badge-warning:focus, a.badge-warning.focus {
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5);
             box-shadow: 0 0 0 0.2rem rgba(217, 131, 31, 0.5); }
+
+.badge-danger {
+  color: #fff;
+  background-color: #9b479f; }
+  a.badge-danger:hover, a.badge-danger:focus {
+    color: #fff;
+    background-color: #79377c; }
+  a.badge-danger:focus, a.badge-danger.focus {
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(155, 71, 159, 0.5); }
 
 .badge-light {
   color: #212529;
@@ -4419,7 +4419,7 @@ input[type="button"].btn-block {
   font-weight: 700; }
 
 .alert-dismissible {
-  padding-right: 4rem; }
+  padding-right: 3.71875rem; }
   .alert-dismissible .close {
     position: absolute;
     top: 0;
@@ -4464,22 +4464,22 @@ input[type="button"].btn-block {
     color: #012b39; }
 
 .alert-warning {
-  color: #512553;
-  background-color: #ebdaec;
-  border-color: #e3cbe4; }
-  .alert-warning hr {
-    border-top-color: #dabadb; }
-  .alert-warning .alert-link {
-    color: #2f1530; }
-
-.alert-danger {
   color: #714410;
   background-color: #f7e6d2;
   border-color: #f4dcc0; }
-  .alert-danger hr {
+  .alert-warning hr {
     border-top-color: #f0d0aa; }
-  .alert-danger .alert-link {
+  .alert-warning .alert-link {
     color: #44290a; }
+
+.alert-danger {
+  color: #512553;
+  background-color: #ebdaec;
+  border-color: #e3cbe4; }
+  .alert-danger hr {
+    border-top-color: #dabadb; }
+  .alert-danger .alert-link {
+    color: #2f1530; }
 
 .alert-light {
   color: #858585;
@@ -4518,7 +4518,7 @@ input[type="button"].btn-block {
   height: 1rem;
   overflow: hidden;
   line-height: 0;
-  font-size: 0.75rem;
+  font-size: 0.60938rem;
   background-color: #ddd;
   border-radius: 0.25rem; }
 
@@ -4778,26 +4778,26 @@ input[type="button"].btn-block {
     border-color: #01506c; }
 
 .list-group-item-warning {
-  color: #512553;
-  background-color: #e3cbe4; }
-  .list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {
-    color: #512553;
-    background-color: #dabadb; }
-  .list-group-item-warning.list-group-item-action.active {
-    color: #fff;
-    background-color: #512553;
-    border-color: #512553; }
-
-.list-group-item-danger {
   color: #714410;
   background-color: #f4dcc0; }
-  .list-group-item-danger.list-group-item-action:hover, .list-group-item-danger.list-group-item-action:focus {
+  .list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {
     color: #714410;
     background-color: #f0d0aa; }
-  .list-group-item-danger.list-group-item-action.active {
+  .list-group-item-warning.list-group-item-action.active {
     color: #fff;
     background-color: #714410;
     border-color: #714410; }
+
+.list-group-item-danger {
+  color: #512553;
+  background-color: #e3cbe4; }
+  .list-group-item-danger.list-group-item-action:hover, .list-group-item-danger.list-group-item-action:focus {
+    color: #512553;
+    background-color: #dabadb; }
+  .list-group-item-danger.list-group-item-action.active {
+    color: #fff;
+    background-color: #512553;
+    border-color: #512553; }
 
 .list-group-item-light {
   color: #858585;
@@ -4823,7 +4823,7 @@ input[type="button"].btn-block {
 
 .close {
   float: right;
-  font-size: 1.5rem;
+  font-size: 1.21875rem;
   font-weight: 700;
   line-height: 1;
   color: #000;
@@ -5098,7 +5098,7 @@ a.close.disabled {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   word-wrap: break-word;
   opacity: 0; }
   .tooltip.show {
@@ -5183,7 +5183,7 @@ a.close.disabled {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.875rem;
+  font-size: 0.71094rem;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: padding-box;
@@ -5272,7 +5272,7 @@ a.close.disabled {
 .popover-header {
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 0.8125rem;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
   border-top-left-radius: calc(0.3rem - 1px);
@@ -5573,20 +5573,20 @@ button.bg-info:focus {
   background-color: #02749c !important; }
 
 .bg-warning {
-  background-color: #9b479f !important; }
+  background-color: #d9831f !important; }
 
 a.bg-warning:hover, a.bg-warning:focus,
 button.bg-warning:hover,
 button.bg-warning:focus {
-  background-color: #79377c !important; }
+  background-color: #ac6819 !important; }
 
 .bg-danger {
-  background-color: #d9831f !important; }
+  background-color: #9b479f !important; }
 
 a.bg-danger:hover, a.bg-danger:focus,
 button.bg-danger:hover,
 button.bg-danger:focus {
-  background-color: #ac6819 !important; }
+  background-color: #79377c !important; }
 
 .bg-light {
   background-color: #fff !important; }
@@ -5653,10 +5653,10 @@ button.bg-dark:focus {
   border-color: #029acf !important; }
 
 .border-warning {
-  border-color: #9b479f !important; }
+  border-color: #d9831f !important; }
 
 .border-danger {
-  border-color: #d9831f !important; }
+  border-color: #9b479f !important; }
 
 .border-light {
   border-color: #fff !important; }
@@ -8208,16 +8208,16 @@ a.text-info:hover, a.text-info:focus {
   color: #016283 !important; }
 
 .text-warning {
-  color: #9b479f !important; }
-
-a.text-warning:hover, a.text-warning:focus {
-  color: #672f6a !important; }
-
-.text-danger {
   color: #d9831f !important; }
 
-a.text-danger:hover, a.text-danger:focus {
+a.text-warning:hover, a.text-warning:focus {
   color: #965b15 !important; }
+
+.text-danger {
+  color: #9b479f !important; }
+
+a.text-danger:hover, a.text-danger:focus {
+  color: #672f6a !important; }
 
 .text-light {
   color: #fff !important; }
@@ -8332,7 +8332,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-width: 1px;
   border-style: solid; }
   .navbar-fixed-top {
-    border-width: 0 0 1px 0; }
+    border-width: 0 0 1px; }
   .navbar-fixed-bottom {
     border-top-width: 1px 0 0 0;
     border-style: solid; }
@@ -8391,21 +8391,21 @@ a.text-dark:hover, a.text-dark:focus {
 
 .btn-warning,
 .btn-warning:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#a54caa), color-stop(6%, #9b479f), to(#914294));
-  background-image: linear-gradient(#a54caa, #9b479f 6%, #914294);
-  background-repeat: no-repeat;
-  -webkit-filter: none;
-          filter: none;
-  border: 1px solid #853d88; }
-
-.btn-danger,
-.btn-danger:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e08b27), color-stop(6%, #d9831f), to(#cc7b1d));
   background-image: linear-gradient(#e08b27, #d9831f 6%, #cc7b1d);
   background-repeat: no-repeat;
   -webkit-filter: none;
           filter: none;
   border: 1px solid #bc711b; }
+
+.btn-danger,
+.btn-danger:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a54caa), color-stop(6%, #9b479f), to(#914294));
+  background-image: linear-gradient(#a54caa, #9b479f 6%, #914294);
+  background-repeat: no-repeat;
+  -webkit-filter: none;
+          filter: none;
+  border: 1px solid #853d88; }
 
 .btn-dark,
 .btn-dark:hover {
@@ -8433,7 +8433,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: #fff; }
 
 .text-secondary {
-  color: #444 !important; }
+  color: #777 !important; }
 
 .breadcrumb {
   border: 1px solid #eeeeee; }
@@ -8446,4 +8446,4 @@ a.text-dark:hover, a.text-dark:focus {
   display: block; }
 
 .blockquote-custom {
-  font-size: 1rem; }
+  font-size: 0.8125rem; }

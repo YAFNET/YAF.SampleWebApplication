@@ -84,8 +84,7 @@ abbr[data-original-title] {
           text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none; }
+  text-decoration-skip-ink: none; }
 
 address {
   margin-bottom: 1rem;
@@ -1785,9 +1784,6 @@ pre {
   .form-control::-moz-placeholder, .bootstrap-tagsinput::-moz-placeholder {
     color: #777;
     opacity: 1; }
-  .form-control:-ms-input-placeholder, .bootstrap-tagsinput:-ms-input-placeholder {
-    color: #777;
-    opacity: 1; }
   .form-control::-ms-input-placeholder, .bootstrap-tagsinput::-ms-input-placeholder {
     color: #777;
     opacity: 1; }
@@ -3434,13 +3430,15 @@ input[type="button"].btn-block {
     background-color: #eb6864;
     border: 0;
     border-radius: 1rem;
-    -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     -moz-appearance: none;
          appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-moz-range-thumb {
-        -moz-transition: none;
+        -webkit-transition: none;
         transition: none; } }
     .custom-range::-moz-range-thumb:active {
       background-color: white; }
@@ -3461,12 +3459,14 @@ input[type="button"].btn-block {
     background-color: #eb6864;
     border: 0;
     border-radius: 1rem;
-    -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-ms-thumb {
-        -ms-transition: none;
+        -webkit-transition: none;
         transition: none; } }
     .custom-range::-ms-thumb:active {
       background-color: white; }
@@ -8337,9 +8337,9 @@ a.text-dark:hover, a.text-dark:focus {
   color: #000;
   border: 1px solid #eee; }
   .bg-light.navbar-fixed-top {
-    border-width: 0 0 1px 0; }
+    border-width: 0 0 1px; }
   .bg-light.navbar-fixed-bottom {
-    border-width: 1px 0 0 0; }
+    border-width: 1px 0 0; }
 
 .navbar {
   font-size: 18px;
@@ -8347,7 +8347,7 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 700; }
 
 .navbar-brand {
-  padding-top: 0.5rem;
+  padding-top: .5rem;
   font-size: inherit;
   font-weight: 700;
   text-transform: uppercase; }

@@ -84,8 +84,7 @@ abbr[data-original-title] {
           text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none; }
+  text-decoration-skip-ink: none; }
 
 address {
   margin-bottom: 1rem;
@@ -1753,7 +1752,7 @@ pre {
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #A9BDBD;
+  background-color: #a9bdbd;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -1773,28 +1772,25 @@ pre {
     text-shadow: 0 0 0 #495057; }
   .form-control:focus, .bootstrap-tagsinput:focus {
     color: #495057;
-    background-color: #A9BDBD;
+    background-color: #a9bdbd;
     border-color: #1394b5;
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(7, 54, 66, 0.25);
             box-shadow: 0 0 0 0.2rem rgba(7, 54, 66, 0.25); }
   .form-control::-webkit-input-placeholder, .bootstrap-tagsinput::-webkit-input-placeholder {
-    color: #657B83;
+    color: #657b83;
     opacity: 1; }
   .form-control::-moz-placeholder, .bootstrap-tagsinput::-moz-placeholder {
-    color: #657B83;
-    opacity: 1; }
-  .form-control:-ms-input-placeholder, .bootstrap-tagsinput:-ms-input-placeholder {
-    color: #657B83;
+    color: #657b83;
     opacity: 1; }
   .form-control::-ms-input-placeholder, .bootstrap-tagsinput::-ms-input-placeholder {
-    color: #657B83;
+    color: #657b83;
     opacity: 1; }
   .form-control::placeholder, .bootstrap-tagsinput::placeholder {
-    color: #657B83;
+    color: #657b83;
     opacity: 1; }
   .form-control:disabled, .bootstrap-tagsinput:disabled, .form-control[readonly], [readonly].bootstrap-tagsinput {
-    background-color: #657B83;
+    background-color: #657b83;
     opacity: 1; }
 
 input[type="date"].form-control, input[type="date"].bootstrap-tagsinput,
@@ -1810,7 +1806,7 @@ input[type="month"].bootstrap-tagsinput {
 
 select.form-control:focus::-ms-value, select.bootstrap-tagsinput:focus::-ms-value {
   color: #495057;
-  background-color: #A9BDBD; }
+  background-color: #a9bdbd; }
 
 .form-control-file,
 .form-control-range {
@@ -1969,7 +1965,7 @@ textarea.form-control, textarea.bootstrap-tagsinput {
 .was-validated .custom-select:valid, .custom-select.is-valid {
   border-color: #2aa198;
   padding-right: calc(0.75em + 2.3125rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23073642' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%232aa198' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #A9BDBD no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23073642' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%232aa198' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #a9bdbd no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
   .was-validated .custom-select:valid:focus, .custom-select.is-valid:focus {
     border-color: #2aa198;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(42, 161, 152, 0.25);
@@ -2055,7 +2051,7 @@ textarea.form-control, textarea.bootstrap-tagsinput {
 .was-validated .custom-select:invalid, .custom-select.is-invalid {
   border-color: #d33682;
   padding-right: calc(0.75em + 2.3125rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23073642' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23d33682' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23d33682' stroke='none'/%3e%3c/svg%3e") #A9BDBD no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23073642' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23d33682' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23d33682' stroke='none'/%3e%3c/svg%3e") #a9bdbd no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem); }
   .was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {
     border-color: #d33682;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(211, 54, 130, 0.25);
@@ -3236,7 +3232,7 @@ input[type="button"].btn-block {
   .custom-control-input[disabled] ~ .custom-control-label, .custom-radio input[disabled] ~ .custom-control-label, .custom-checkbox input[disabled] ~ .custom-control-label, .custom-switch input[disabled] ~ .custom-control-label, .custom-radio .custom-control-input[disabled] ~ label, .custom-radio input[disabled] ~ label, .custom-checkbox .custom-control-input[disabled] ~ label, .custom-checkbox input[disabled] ~ label, .custom-switch .custom-control-input[disabled] ~ label, .custom-switch input[disabled] ~ label, .custom-control-input:disabled ~ .custom-control-label, .custom-radio input:disabled ~ .custom-control-label, .custom-checkbox input:disabled ~ .custom-control-label, .custom-switch input:disabled ~ .custom-control-label, .custom-radio .custom-control-input:disabled ~ label, .custom-radio input:disabled ~ label, .custom-checkbox .custom-control-input:disabled ~ label, .custom-checkbox input:disabled ~ label, .custom-switch .custom-control-input:disabled ~ label, .custom-switch input:disabled ~ label {
     color: #839496; }
     .custom-control-input[disabled] ~ .custom-control-label::before, .custom-radio input[disabled] ~ .custom-control-label::before, .custom-checkbox input[disabled] ~ .custom-control-label::before, .custom-switch input[disabled] ~ .custom-control-label::before, .custom-radio .custom-control-input[disabled] ~ label::before, .custom-radio input[disabled] ~ label::before, .custom-checkbox .custom-control-input[disabled] ~ label::before, .custom-checkbox input[disabled] ~ label::before, .custom-switch .custom-control-input[disabled] ~ label::before, .custom-switch input[disabled] ~ label::before, .custom-control-input:disabled ~ .custom-control-label::before, .custom-radio input:disabled ~ .custom-control-label::before, .custom-checkbox input:disabled ~ .custom-control-label::before, .custom-switch input:disabled ~ .custom-control-label::before, .custom-radio .custom-control-input:disabled ~ label::before, .custom-radio input:disabled ~ label::before, .custom-checkbox .custom-control-input:disabled ~ label::before, .custom-checkbox input:disabled ~ label::before, .custom-switch .custom-control-input:disabled ~ label::before, .custom-switch input:disabled ~ label::before {
-      background-color: #657B83; }
+      background-color: #657b83; }
 
 .custom-control-label, .custom-radio label, .custom-checkbox label, .custom-switch label {
   position: relative;
@@ -3251,7 +3247,7 @@ input[type="button"].btn-block {
     height: 1rem;
     pointer-events: none;
     content: "";
-    background-color: #A9BDBD;
+    background-color: #a9bdbd;
     border: #adb5bd solid 1px; }
   .custom-control-label::after, .custom-radio label::after, .custom-checkbox label::after, .custom-switch label::after {
     position: absolute;
@@ -3318,7 +3314,7 @@ input[type="button"].btn-block {
         -webkit-transition: none;
         transition: none; } }
   .custom-switch .custom-control-input:checked ~ .custom-control-label::after, .custom-switch .custom-radio input:checked ~ .custom-control-label::after, .custom-radio .custom-switch input:checked ~ .custom-control-label::after, .custom-switch .custom-checkbox input:checked ~ .custom-control-label::after, .custom-checkbox .custom-switch input:checked ~ .custom-control-label::after, .custom-switch input:checked ~ .custom-control-label::after, .custom-switch .custom-radio .custom-control-input:checked ~ label::after, .custom-radio .custom-switch .custom-control-input:checked ~ label::after, .custom-switch .custom-radio input:checked ~ label::after, .custom-radio .custom-switch input:checked ~ label::after, .custom-switch .custom-checkbox .custom-radio input:checked ~ label::after, .custom-radio .custom-checkbox .custom-switch input:checked ~ label::after, .custom-switch .custom-checkbox .custom-control-input:checked ~ label::after, .custom-checkbox .custom-switch .custom-control-input:checked ~ label::after, .custom-switch .custom-radio .custom-checkbox input:checked ~ label::after, .custom-checkbox .custom-switch .custom-radio input:checked ~ label::after, .custom-radio .custom-switch .custom-checkbox input:checked ~ label::after, .custom-checkbox .custom-radio .custom-switch input:checked ~ label::after, .custom-switch .custom-checkbox input:checked ~ label::after, .custom-checkbox .custom-switch input:checked ~ label::after, .custom-switch .custom-control-input:checked ~ label::after, .custom-switch input:checked ~ label::after {
-    background-color: #A9BDBD;
+    background-color: #a9bdbd;
     -webkit-transform: translateX(0.75rem);
             transform: translateX(0.75rem); }
   .custom-switch .custom-control-input:disabled:checked ~ .custom-control-label::before, .custom-switch .custom-radio input:disabled:checked ~ .custom-control-label::before, .custom-radio .custom-switch input:disabled:checked ~ .custom-control-label::before, .custom-switch .custom-checkbox input:disabled:checked ~ .custom-control-label::before, .custom-checkbox .custom-switch input:disabled:checked ~ .custom-control-label::before, .custom-switch input:disabled:checked ~ .custom-control-label::before, .custom-switch .custom-radio .custom-control-input:disabled:checked ~ label::before, .custom-radio .custom-switch .custom-control-input:disabled:checked ~ label::before, .custom-switch .custom-radio input:disabled:checked ~ label::before, .custom-radio .custom-switch input:disabled:checked ~ label::before, .custom-switch .custom-checkbox .custom-radio input:disabled:checked ~ label::before, .custom-radio .custom-checkbox .custom-switch input:disabled:checked ~ label::before, .custom-switch .custom-checkbox .custom-control-input:disabled:checked ~ label::before, .custom-checkbox .custom-switch .custom-control-input:disabled:checked ~ label::before, .custom-switch .custom-radio .custom-checkbox input:disabled:checked ~ label::before, .custom-checkbox .custom-switch .custom-radio input:disabled:checked ~ label::before, .custom-radio .custom-switch .custom-checkbox input:disabled:checked ~ label::before, .custom-checkbox .custom-radio .custom-switch input:disabled:checked ~ label::before, .custom-switch .custom-checkbox input:disabled:checked ~ label::before, .custom-checkbox .custom-switch input:disabled:checked ~ label::before, .custom-switch .custom-control-input:disabled:checked ~ label::before, .custom-switch input:disabled:checked ~ label::before {
@@ -3335,7 +3331,7 @@ input[type="button"].btn-block {
   line-height: 1.5;
   color: #495057;
   vertical-align: middle;
-  background: #A9BDBD url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23073642' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
+  background: #a9bdbd url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23073642' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
   -webkit-appearance: none;
@@ -3348,7 +3344,7 @@ input[type="button"].btn-block {
             box-shadow: 0 0 0 0.2rem rgba(7, 54, 66, 0.25); }
     .custom-select:focus::-ms-value {
       color: #495057;
-      background-color: #A9BDBD; }
+      background-color: #a9bdbd; }
   .custom-select[multiple], .custom-select[size]:not([size="1"]) {
     height: auto;
     padding-right: 0.75rem;
@@ -3396,7 +3392,7 @@ input[type="button"].btn-block {
             box-shadow: 0 0 0 0.2rem rgba(7, 54, 66, 0.25); }
   .custom-file-input[disabled] ~ .custom-file-label,
   .custom-file-input:disabled ~ .custom-file-label {
-    background-color: #657B83; }
+    background-color: #657b83; }
   .custom-file-input:lang(en) ~ .custom-file-label::after {
     content: "Browse"; }
   .custom-file-input ~ .custom-file-label[data-browse]::after {
@@ -3413,7 +3409,7 @@ input[type="button"].btn-block {
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #A9BDBD;
+  background-color: #a9bdbd;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem; }
   .custom-file-label::after {
@@ -3487,13 +3483,15 @@ input[type="button"].btn-block {
     background: #073642 linear-gradient(180deg, #063440, #073642) repeat-x;
     border: 0;
     border-radius: 1rem;
-    -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     -moz-appearance: none;
          appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-moz-range-thumb {
-        -moz-transition: none;
+        -webkit-transition: none;
         transition: none; } }
     .custom-range::-moz-range-thumb:active {
       background: #18bae3 linear-gradient(180deg, #14a5c9, #18bae3) repeat-x; }
@@ -3514,12 +3512,14 @@ input[type="button"].btn-block {
     background: #073642 linear-gradient(180deg, #063440, #073642) repeat-x;
     border: 0;
     border-radius: 1rem;
-    -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-ms-thumb {
-        -ms-transition: none;
+        -webkit-transition: none;
         transition: none; } }
     .custom-range::-ms-thumb:active {
       background: #18bae3 linear-gradient(180deg, #14a5c9, #18bae3) repeat-x; }
@@ -8461,58 +8461,94 @@ a.text-dark:hover, a.text-dark:focus {
 .table-primary, .table-secondary, .table-dark, .table-success, .table-info, .table-warning, .table-danger {
   color: #fff; }
 
-.table-primary, .table-primary > th, .table-primary > td {
+.table-primary,
+.table-primary > th,
+.table-primary > td {
   background-color: #b58900; }
 
-.table-secondary, .table-secondary > th, .table-secondary > td {
+.table-secondary,
+.table-secondary > th,
+.table-secondary > td {
   background-color: #839496; }
 
-.table-light, .table-light > th, .table-light > td {
+.table-light,
+.table-light > th,
+.table-light > td {
   background-color: #fdf6e3; }
 
-.table-dark, .table-dark > th, .table-dark > td {
+.table-dark,
+.table-dark > th,
+.table-dark > td {
   background-color: #073642; }
 
-.table-success, .table-success > th, .table-success > td {
+.table-success,
+.table-success > th,
+.table-success > td {
   background-color: #2aa198; }
 
-.table-info, .table-info > th, .table-info > td {
+.table-info,
+.table-info > th,
+.table-info > td {
   background-color: #268bd2; }
 
-.table-danger, .table-danger > th, .table-danger > td {
+.table-danger,
+.table-danger > th,
+.table-danger > td {
   background-color: #d33682; }
 
-.table-warning, .table-warning > th, .table-warning > td {
+.table-warning,
+.table-warning > th,
+.table-warning > td {
   background-color: #cb4b16; }
 
-.table-active, .table-active > th, .table-active > td {
+.table-active,
+.table-active > th,
+.table-active > td {
   background-color: rgba(255, 255, 255, 0.075); }
 
-.table-hover .table-primary:hover, .table-hover .table-primary:hover > th, .table-hover .table-primary:hover > td {
+.table-hover .table-primary:hover,
+.table-hover .table-primary:hover > th,
+.table-hover .table-primary:hover > td {
   background-color: #9c7600; }
 
-.table-hover .table-secondary:hover, .table-hover .table-secondary:hover > th, .table-hover .table-secondary:hover > td {
+.table-hover .table-secondary:hover,
+.table-hover .table-secondary:hover > th,
+.table-hover .table-secondary:hover > td {
   background-color: #75888a; }
 
-.table-hover .table-light:hover, .table-hover .table-light:hover > th, .table-hover .table-light:hover > td {
+.table-hover .table-light:hover,
+.table-hover .table-light:hover > th,
+.table-hover .table-light:hover > td {
   background-color: #fbeecb; }
 
-.table-hover .table-dark:hover, .table-hover .table-dark:hover > th, .table-hover .table-dark:hover > td {
+.table-hover .table-dark:hover,
+.table-hover .table-dark:hover > th,
+.table-hover .table-dark:hover > td {
   background-color: #05232b; }
 
-.table-hover .table-success:hover, .table-hover .table-success:hover > th, .table-hover .table-success:hover > td {
+.table-hover .table-success:hover,
+.table-hover .table-success:hover > th,
+.table-hover .table-success:hover > td {
   background-color: #258d85; }
 
-.table-hover .table-info:hover, .table-hover .table-info:hover > th, .table-hover .table-info:hover > td {
+.table-hover .table-info:hover,
+.table-hover .table-info:hover > th,
+.table-hover .table-info:hover > td {
   background-color: #227dbc; }
 
-.table-hover .table-danger:hover, .table-hover .table-danger:hover > th, .table-hover .table-danger:hover > td {
+.table-hover .table-danger:hover,
+.table-hover .table-danger:hover > th,
+.table-hover .table-danger:hover > td {
   background-color: #c42b75; }
 
-.table-hover .table-warning:hover, .table-hover .table-warning:hover > th, .table-hover .table-warning:hover > td {
+.table-hover .table-warning:hover,
+.table-hover .table-warning:hover > th,
+.table-hover .table-warning:hover > td {
   background-color: #b44314; }
 
-.table-hover .table-active:hover, .table-hover .table-active:hover > th, .table-hover .table-active:hover > td {
+.table-hover .table-active:hover,
+.table-hover .table-active:hover > th,
+.table-hover .table-active:hover > td {
   background-color: rgba(255, 255, 255, 0.075); }
 
 .custom-control-input:checked ~ .custom-control-label::before, .custom-radio input:checked ~ .custom-control-label::before, .custom-checkbox input:checked ~ .custom-control-label::before, .custom-switch input:checked ~ .custom-control-label::before, .custom-radio .custom-control-input:checked ~ label::before, .custom-radio input:checked ~ label::before, .custom-checkbox .custom-control-input:checked ~ label::before, .custom-checkbox input:checked ~ label::before, .custom-switch .custom-control-input:checked ~ label::before, .custom-switch input:checked ~ label::before {

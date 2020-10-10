@@ -84,8 +84,7 @@ abbr[data-original-title] {
           text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none; }
+  text-decoration-skip-ink: none; }
 
 address {
   margin-bottom: 1rem;
@@ -1784,9 +1783,6 @@ pre {
   .form-control::-moz-placeholder, .bootstrap-tagsinput::-moz-placeholder {
     color: #8e8c84;
     opacity: 1; }
-  .form-control:-ms-input-placeholder, .bootstrap-tagsinput:-ms-input-placeholder {
-    color: #8e8c84;
-    opacity: 1; }
   .form-control::-ms-input-placeholder, .bootstrap-tagsinput::-ms-input-placeholder {
     color: #8e8c84;
     opacity: 1; }
@@ -3433,13 +3429,15 @@ input[type="button"].btn-block {
     background-color: #325d88;
     border: 0;
     border-radius: 1rem;
-    -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     -moz-appearance: none;
          appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-moz-range-thumb {
-        -moz-transition: none;
+        -webkit-transition: none;
         transition: none; } }
     .custom-range::-moz-range-thumb:active {
       background-color: #95b6d8; }
@@ -3460,12 +3458,14 @@ input[type="button"].btn-block {
     background-color: #325d88;
     border: 0;
     border-radius: 1rem;
-    -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
     appearance: none; }
     @media (prefers-reduced-motion: reduce) {
       .custom-range::-ms-thumb {
-        -ms-transition: none;
+        -webkit-transition: none;
         transition: none; } }
     .custom-range::-ms-thumb:active {
       background-color: #95b6d8; }
@@ -8401,21 +8401,37 @@ a.text-dark:hover, a.text-dark:focus {
   .alert .alert-link {
     color: #fff;
     text-decoration: underline; }
-  .alert-primary, .alert-primary > th, .alert-primary > td {
+  .alert-primary,
+  .alert-primary > th,
+  .alert-primary > td {
     background-color: #325d88; }
-  .alert-secondary, .alert-secondary > th, .alert-secondary > td {
+  .alert-secondary,
+  .alert-secondary > th,
+  .alert-secondary > td {
     background-color: #8e8c84; }
-  .alert-success, .alert-success > th, .alert-success > td {
+  .alert-success,
+  .alert-success > th,
+  .alert-success > td {
     background-color: #93c54b; }
-  .alert-info, .alert-info > th, .alert-info > td {
+  .alert-info,
+  .alert-info > th,
+  .alert-info > td {
     background-color: #29abe0; }
-  .alert-danger, .alert-danger > th, .alert-danger > td {
+  .alert-danger,
+  .alert-danger > th,
+  .alert-danger > td {
     background-color: #d9534f; }
-  .alert-warning, .alert-warning > th, .alert-warning > td {
+  .alert-warning,
+  .alert-warning > th,
+  .alert-warning > td {
     background-color: #f47c3c; }
-  .alert-dark, .alert-dark > th, .alert-dark > td {
+  .alert-dark,
+  .alert-dark > th,
+  .alert-dark > td {
     background-color: #3e3f3a; }
-  .alert-light, .alert-light > th, .alert-light > td {
+  .alert-light,
+  .alert-light > th,
+  .alert-light > td {
     background-color: #f8f5f0; }
   .alert-light,
   .alert-light a:not(.btn),
