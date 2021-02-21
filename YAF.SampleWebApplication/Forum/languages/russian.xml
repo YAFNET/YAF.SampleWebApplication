@@ -429,7 +429,7 @@
     <Resource tag="BOARD_JQ_THEME">Тема jQuery UI:</Resource>
     <Resource tag="BOARD_JQ_THEME_HELP">Тема jQuery UI для использования на этой конференции для вкладок и аккордеона.</Resource>
     <Resource tag="BOARD_LOGO">Board Logo:</Resource>
-    <Resource tag="BOARD_LOGO_HELP">Select a Board Logo or use the default YAF Board Logo.</Resource>
+    <Resource tag="BOARD_LOGO_HELP">Select a Board Logo or use the default YAF Board Logo, Logos will be loaded from the Folder Images/Logos.</Resource>
     <Resource tag="BOARD_LOGO_SELECT">Select a Board logo</Resource>
     <Resource tag="BOARD_MOBILE_THEME">Мобильная тема:</Resource>
     <Resource tag="BOARD_MOBILE_THEME_HELP">Мобильная тема для использования на этой конференции.</Resource>
@@ -450,6 +450,8 @@
     <Resource tag="COPYRIGHT_REMOVAL_KEY">Ключ удаления копирайта:</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_DOWN">Purchase Removal Key</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_HELP">Удалить информацию о копирайте и ссылку на YAF из подвала вашего форума. Доступно на &lt;a href="https://yetanotherforum.net/purchase.aspx"&gt;сайта YAF.NET &lt;/a&gt;. </Resource>
+    <Resource tag="FORUM_DEFAULT_ACCESSMASK">New Forum Default Access mask:</Resource>
+    <Resource tag="FORUM_DEFAULT_ACCESSMASK_HELP">The Default Access Mask when creating a new Forum</Resource>
     <Resource tag="HEADER">Текущие настройки конференции</Resource>
     <Resource tag="TITLE">Настройки конференции</Resource>
   </page>
