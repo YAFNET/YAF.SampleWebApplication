@@ -44,7 +44,7 @@ namespace YAF.SampleWebApplication.Controllers.BaseClass
         /// <returns>
         /// The <see cref="ActionResult"/>.
         /// </returns>
-        public ActionResult RazorView(String viewName, Object model)
+        public ActionResult RazorView(string viewName, object model)
         {
             // pass the viewname to RazorView.aspx
             // the view will be rendered as partial view
@@ -62,12 +62,12 @@ namespace YAF.SampleWebApplication.Controllers.BaseClass
         /// <returns>
         /// The <see cref="ActionResult"/>.
         /// </returns>
-        public ActionResult RazorView(Object model)
+        public ActionResult RazorView(object model)
         {
             return this.RazorView(this.GetCurrentViewName(), model);
         }
 
-        public ActionResult RazorView(String viewName)
+        public ActionResult RazorView(string viewName)
         {
             return this.RazorView(viewName, null);
         }

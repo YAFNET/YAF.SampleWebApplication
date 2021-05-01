@@ -3,7 +3,7 @@
  * Copyright (C) 2006-2013 Jaben Cargman
  * Copyright (C) 2014-2020 Ingo Herbote
  * https://www.yetanotherforum.net/
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -176,7 +176,7 @@ namespace YAF.SampleWebApplication
             var currentDateTime = DateTime.Now.ToString(CultureInfo.InvariantCulture);
             var userImg = this.GetUserImage(fromUser.UserId);
 
-            // send to 
+            // send to
             this.Clients.Client(toUserId).sendPrivateMessage(
                 fromUserId,
                 fromUser.UserName,

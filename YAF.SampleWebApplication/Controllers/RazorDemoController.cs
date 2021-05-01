@@ -3,7 +3,7 @@
  * Copyright (C) 2006-2013 Jaben Cargman
  * Copyright (C) 2014-2020 Ingo Herbote
  * https://www.yetanotherforum.net/
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -24,7 +24,6 @@
 
 namespace YAF.SampleWebApplication.Controllers
 {
-    using System;
     using System.Web.Mvc;
 
     using YAF.SampleWebApplication.Controllers.BaseClass;
@@ -35,13 +34,23 @@ namespace YAF.SampleWebApplication.Controllers
     /// </summary>
     public class RazorDemoController : RazorController
     {
+        /// <summary>
+        /// The index.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="ActionResult"/>.
+        /// </returns>
         public ActionResult Index()
         {
             return this.RazorView();
         }
 
-
-        // Example render some other view
+        /// <summary>
+        /// Example render some other view
+        /// </summary>
+        /// <returns>
+        /// The <see cref="ActionResult"/>.
+        /// </returns>
         public ActionResult RenderOtherView()
         {
             return this.RazorView("Hello");
@@ -56,7 +65,7 @@ namespace YAF.SampleWebApplication.Controllers
         /// <returns>
         /// The <see cref="ActionResult"/>.
         /// </returns>
-        public ActionResult Users(Int32 id)
+        public ActionResult Users(int id)
         {
             var model = new Users { UserId = id, UserName = "Testuser" };
 
@@ -73,7 +82,7 @@ namespace YAF.SampleWebApplication.Controllers
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [HttpGet]
-        public ActionResult SomeAjaxCall(Int32 id)
+        public ActionResult SomeAjaxCall(int id)
         {
             var model = new Users { UserId = id, UserName = "Testuser" };
 

@@ -34,11 +34,12 @@ namespace YAF.SampleWebApplication
     using YAF.Configuration;
     using YAF.Core.Context;
     using YAF.Core.Extensions;
+    using YAF.Core.Services;
+    using YAF.Core.Utilities;
     using YAF.Types.Constants;
     using YAF.Types.Extensions;
     using YAF.Types.Interfaces;
     using YAF.Types.Models;
-    using YAF.Utils;
 
     /// <summary>
     /// The site master.
@@ -67,8 +68,7 @@ namespace YAF.SampleWebApplication
             // Check if forum is installed
             try
             {
-                var boards = BoardContext.Current.GetRepository<Board>().GetAll();
-                var isForumInstalled = boards.Any();
+                BoardContext.Current.GetRepository<Board>().GetAll().Any();
             }
             catch
             {
@@ -131,7 +131,10 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void LoginLink_OnClick(object sender, EventArgs e)
         {
-            this.Response.Redirect(BuildLink.GetLink(ForumPages.Account_Login, "ReturnUrl={0}", this.GetReturnUrl()));
+            BoardContext.Current.Get<LinkBuilder>().Redirect(
+                ForumPages.Account_Login,
+                "ReturnUrl={0}",
+                this.GetReturnUrl());
         }
 
         /// <summary>
@@ -145,7 +148,7 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void RegisterLink_OnClick(object sender, EventArgs e)
         {
-            this.Response.Redirect(BuildLink.GetLink(ForumPages.Account_Register));
+            BoardContext.Current.Get<LinkBuilder>().Redirect(ForumPages.Account_Register);
         }
     }
 }

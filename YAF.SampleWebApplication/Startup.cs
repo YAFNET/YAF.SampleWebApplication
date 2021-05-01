@@ -22,10 +22,6 @@
  * under the License.
  */
 
-using Microsoft.Owin;
-
-//[assembly: OwinStartup(typeof(YAF.SampleWebApplication.Startup))]
-
 namespace YAF.SampleWebApplication
 {
     using Owin;

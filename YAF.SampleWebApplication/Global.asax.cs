@@ -28,7 +28,6 @@ namespace YAF.SampleWebApplication
     using System.Web;
     using System.Web.Http;
     using System.Web.Mvc;
-    using System.Web.Optimization;
     using System.Web.Routing;
     using YAF.Core.Context.Start;
 
@@ -50,7 +49,7 @@ namespace YAF.SampleWebApplication
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            BundleConfig.RegisterBundles();
 
             // Pass a delegate to the Configure method.
             GlobalConfiguration.Configure(WebApiConfig.Register);
