@@ -248,6 +248,9 @@
     <Resource tag="TOPICS_DAY">Themen pro Tag:</Resource>
     <Resource tag="USERS_DAY">Benutzer pro Tag:</Resource>
   </page>
+  <page name="ADMIN_ATTACHMENTS">
+    <Resource tag="TITLE">User Attachments</Resource>
+  </page>
   <page name="ADMIN_BANNEDEMAIL">
     <Resource tag="ADD_IP">Add New Email</Resource>
     <Resource tag="IMPORT_IPS">Import Email(s)</Resource>
@@ -1501,6 +1504,10 @@
     <Resource tag="STYLED_NICKS_HELP">Wenn diese Option aktiviert, können Sie Farben, die Schriftgröße, usw. ändern für aktive Benutzer Nicknamen.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Themen Titel Stil verwenden:</Resource>
     <Resource tag="STYLED_TOPIC_TITLES_HELP">Wenn aktiviert, können Mods. und Admins Schriftfarbe, Schriftgröße und andere Stile von Themen Titeln verändernt.</Resource>
+    <Resource tag="TEMPLATE_TITLE">Page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_HELP">Template for the title meta tag.</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER">Pager page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER_HELP">Template for the page title inside the page title.</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE">Danke von Vorlage:</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE_HELP">Vorlage für die Darstellung des Benutzers Danke von.</Resource>
     <Resource tag="THANKS_TO_TEMPLATE">Danke an Vorlage:</Resource>
@@ -1786,6 +1793,11 @@
     <Resource tag="SELECT_IMPORT_HELP">(Must be *.xml file)</Resource>
     <Resource tag="TITLE">Import Spam Words</Resource>
   </page>
+  <page name="ADMIN_TAGS">
+    <Resource tag="SHOW_TOPICS">Show Topic(s)</Resource>
+    <Resource tag="TITLE">Topic Tags</Resource>
+    <Resource tag="USAGES">Usages:</Resource>
+  </page>
   <page name="ADMIN_TASKMANAGER">
     <Resource tag="DURATION">Dauer</Resource>
     <Resource tag="HEADER">Task-Manager: {0} Aufgabe(n) laufen</Resource>
@@ -1884,6 +1896,7 @@
   <page name="ADMINMENU">
     <Resource tag="admin_accessmasks">Zugriffsmasken</Resource>
     <Resource tag="admin_admin">Admin-Index</Resource>
+    <Resource tag="ADMIN_ATTACHMENTS">Attachments</Resource>
     <Resource tag="admin_bannedemail">Gebannte Emails</Resource>
     <Resource tag="admin_bannedip">Gesperrte IPs</Resource>
     <Resource tag="admin_bannedname">Gebannte Names</Resource>
@@ -1915,6 +1928,7 @@
     <Resource tag="admin_runsql">SQL Query ausführen</Resource>
     <Resource tag="ADMIN_SPAMLOG">Spam Ereignisprotokoll</Resource>
     <Resource tag="admin_spamwords">Spam Check Wörter</Resource>
+    <Resource tag="admin_tags">Tags</Resource>
     <Resource tag="admin_taskmanager">Task-Manager</Resource>
     <Resource tag="admin_test_data">Testdaten generieren</Resource>
     <Resource tag="admin_topicstatus">Topic Status</Resource>
@@ -2211,6 +2225,7 @@
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_SUBJECT">{0} Forum Account Update</Resource>
     <Resource tag="OK">OK</Resource>
     <Resource tag="OR">oder</Resource>
+    <Resource tag="PAGE">Page</Resource>
     <Resource tag="PAGES">Seiten</Resource>
     <Resource tag="PM_NOTIFICATION_SUBJECT">Neue private Nachricht von {0} am {1}</Resource>
     <Resource tag="POST">Beitrag</Resource>
@@ -5684,7 +5699,7 @@ Der Beitrag wurde im {forumname} forum veröffentlicht.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER_HTML">
@@ -5705,7 +5720,7 @@ Der Beitrag wurde im {forumname} forum veröffentlicht.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5723,7 +5738,7 @@ Der Beitrag wurde im {forumname} forum veröffentlicht.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
@@ -5737,7 +5752,7 @@ Der Beitrag wurde im {forumname} forum veröffentlicht.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_HTML">
@@ -5762,7 +5777,7 @@ Der Beitrag wurde im {forumname} forum veröffentlicht.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5784,7 +5799,7 @@ Der Beitrag wurde im {forumname} forum veröffentlicht.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">
@@ -5861,7 +5876,7 @@ Admin-Link: {adminlink}
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_WELCOME_USER_HTML">
@@ -5891,7 +5906,7 @@ Admin-Link: {adminlink}
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5916,7 +5931,7 @@ Admin-Link: {adminlink}
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT">
@@ -5928,7 +5943,7 @@ Admin-Link: {adminlink}
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_HTML">
@@ -5951,7 +5966,7 @@ Admin-Link: {adminlink}
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5972,7 +5987,7 @@ Admin-Link: {adminlink}
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT">
@@ -5984,7 +5999,7 @@ Admin-Link: {adminlink}
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT_HTML">
@@ -6007,7 +6022,7 @@ Admin-Link: {adminlink}
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6028,7 +6043,7 @@ Admin-Link: {adminlink}
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="PASSWORDRETRIEVAL_ADMIN_HTML">

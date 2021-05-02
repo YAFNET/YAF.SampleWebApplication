@@ -248,6 +248,9 @@
     <Resource tag="TOPICS_DAY">Topics per dag:</Resource>
     <Resource tag="USERS_DAY">Nieuwe gebruikers per dag:</Resource>
   </page>
+  <page name="ADMIN_ATTACHMENTS">
+    <Resource tag="TITLE">User Attachments</Resource>
+  </page>
   <page name="ADMIN_BANNEDEMAIL">
     <Resource tag="ADD_IP">Add New Email</Resource>
     <Resource tag="IMPORT_IPS">Import Email(s)</Resource>
@@ -1503,6 +1506,10 @@
     <Resource tag="STYLED_NICKS_HELP">Als aangevinkt, kun je kleuren, lettergroottes, etc. gebruiken voor actieve gebruikers.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Gebruik opgemaakte topictitels:</Resource>
     <Resource tag="STYLED_TOPIC_TITLES_HELP">Als aangevinkt, kunnen Mods en Admins kleuren, tekstgroottes etc. aanpassen voor topictitels.</Resource>
+    <Resource tag="TEMPLATE_TITLE">Page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_HELP">Template for the title meta tag.</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER">Pager page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER_HELP">Template for the page title inside the page title.</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE">Bedankt door sjabloon:</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE_HELP">Sjabloon om 'Bedankt van' op te bouwen.</Resource>
     <Resource tag="THANKS_TO_TEMPLATE">Bedankt aan sjabloon:</Resource>
@@ -1796,6 +1803,11 @@
     <Resource tag="SELECT_IMPORT_HELP">(Must be *.xml file)</Resource>
     <Resource tag="TITLE">Import Spam Words</Resource>
   </page>
+  <page name="ADMIN_TAGS">
+    <Resource tag="SHOW_TOPICS">Show Topic(s)</Resource>
+    <Resource tag="TITLE">Topic Tags</Resource>
+    <Resource tag="USAGES">Usages:</Resource>
+  </page>
   <page name="ADMIN_TASKMANAGER">
     <Resource tag="DURATION">Duur</Resource>
     <Resource tag="HEADER">Taakbeheer: {0} Ta(a)k(en) bezig</Resource>
@@ -1893,6 +1905,7 @@
   <page name="ADMINMENU">
     <Resource tag="admin_accessmasks">Toegangsmaskers</Resource>
     <Resource tag="admin_admin">Beheerdersindex</Resource>
+    <Resource tag="ADMIN_ATTACHMENTS">Attachments</Resource>
     <Resource tag="admin_bannedemail">Banned Emails</Resource>
     <Resource tag="admin_bannedip">Geblokkeerde IPs</Resource>
     <Resource tag="admin_bannedname">Banned Names</Resource>
@@ -1924,6 +1937,7 @@
     <Resource tag="admin_runsql">Draai SQL Query</Resource>
     <Resource tag="ADMIN_SPAMLOG">Spam Event Log</Resource>
     <Resource tag="admin_spamwords">Spam Check Words</Resource>
+    <Resource tag="admin_tags">Tags</Resource>
     <Resource tag="admin_taskmanager">Taakbeheer</Resource>
     <Resource tag="admin_test_data">Maak Test Data</Resource>
     <Resource tag="admin_topicstatus">Topic Status</Resource>
@@ -2220,6 +2234,7 @@
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_SUBJECT">{0} Forum Account Update</Resource>
     <Resource tag="OK">OK</Resource>
     <Resource tag="OR">of</Resource>
+    <Resource tag="PAGE">Page</Resource>
     <Resource tag="PAGES">Pagina's</Resource>
     <Resource tag="PM_NOTIFICATION_SUBJECT">Nieuw privé-bericht van {0} op {1}</Resource>
     <Resource tag="POST">Post</Resource>
@@ -5719,7 +5734,7 @@ Het bericht was gepost op het  {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER_HTML">
@@ -5740,7 +5755,7 @@ Het bericht was gepost op het  {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5758,7 +5773,7 @@ Het bericht was gepost op het  {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
@@ -5772,7 +5787,7 @@ Het bericht was gepost op het  {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_HTML">
@@ -5797,7 +5812,7 @@ Het bericht was gepost op het  {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5819,7 +5834,7 @@ Het bericht was gepost op het  {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">      Je bent met succes geregistreerd op het {forumname} forum via Twitter:
@@ -5890,7 +5905,7 @@ Het bericht was gepost op het  {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_WELCOME_USER_HTML">
@@ -5920,7 +5935,7 @@ Het bericht was gepost op het  {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5945,7 +5960,7 @@ Het bericht was gepost op het  {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT">
@@ -5957,7 +5972,7 @@ Het bericht was gepost op het  {forumname} forum.
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_HTML">
@@ -5980,7 +5995,7 @@ Het bericht was gepost op het  {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6001,7 +6016,7 @@ Het bericht was gepost op het  {forumname} forum.
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT">
@@ -6013,7 +6028,7 @@ Het bericht was gepost op het  {forumname} forum.
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT_HTML">
@@ -6036,7 +6051,7 @@ Het bericht was gepost op het  {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6057,7 +6072,7 @@ Het bericht was gepost op het  {forumname} forum.
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="PASSWORDRETRIEVAL_ADMIN_HTML">

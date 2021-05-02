@@ -248,6 +248,9 @@
     <Resource tag="TOPICS_DAY">Temas por día:</Resource>
     <Resource tag="USERS_DAY">Usuarios por día:</Resource>
   </page>
+  <page name="ADMIN_ATTACHMENTS">
+    <Resource tag="TITLE">User Attachments</Resource>
+  </page>
   <page name="ADMIN_BANNEDEMAIL">
     <Resource tag="ADD_IP">Add New Email</Resource>
     <Resource tag="IMPORT_IPS">Import Email(s)</Resource>
@@ -1514,6 +1517,10 @@
     <Resource tag="STYLED_NICKS_HELP">Si está marcado, puedes usar colores, cambiar tamaño de fuentes, etc. para los nicks de los usuarios activos.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Usar títulos de temas con estilo:</Resource>
     <Resource tag="STYLED_TOPIC_TITLES_HELP">Si está marcado, moderadores y administradores pueden usar colores, cambios en la fuente de letra, etc. en los títulos de los temas.</Resource>
+    <Resource tag="TEMPLATE_TITLE">Page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_HELP">Template for the title meta tag.</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER">Pager page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER_HELP">Template for the page title inside the page title.</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE">Plantilla de agradecimientos de:</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE_HELP">Plantilla para mostrar los agradecimientos de los usuarios.</Resource>
     <Resource tag="THANKS_TO_TEMPLATE">Plantilla de agradecimientos a:</Resource>
@@ -1808,6 +1815,11 @@
     <Resource tag="SELECT_IMPORT_HELP">(Must be *.xml file)</Resource>
     <Resource tag="TITLE">Import Spam Words</Resource>
   </page>
+  <page name="ADMIN_TAGS">
+    <Resource tag="SHOW_TOPICS">Show Topic(s)</Resource>
+    <Resource tag="TITLE">Topic Tags</Resource>
+    <Resource tag="USAGES">Usages:</Resource>
+  </page>
   <page name="ADMIN_TASKMANAGER">
     <Resource tag="DURATION">Duración</Resource>
     <Resource tag="HEADER">Administrador de tareas: {0} tareas en ejecución.</Resource>
@@ -1905,6 +1917,7 @@
   <page name="ADMINMENU">
     <Resource tag="admin_accessmasks">Máscaras de acceso</Resource>
     <Resource tag="admin_admin">Índice de admin</Resource>
+    <Resource tag="ADMIN_ATTACHMENTS">Attachments</Resource>
     <Resource tag="admin_bannedemail">Banned Emails</Resource>
     <Resource tag="admin_bannedip">IPs baneadas</Resource>
     <Resource tag="admin_bannedname">Banned Names</Resource>
@@ -1936,6 +1949,7 @@
     <Resource tag="admin_runsql">Ejecutar query SQL</Resource>
     <Resource tag="ADMIN_SPAMLOG">Spam Event Log</Resource>
     <Resource tag="admin_spamwords">Spam Check Words</Resource>
+    <Resource tag="admin_tags">Tags</Resource>
     <Resource tag="admin_taskmanager">Administrador de tareas</Resource>
     <Resource tag="admin_test_data">Crear datos de prueba</Resource>
     <Resource tag="admin_topicstatus">Estado de temas</Resource>
@@ -2232,6 +2246,7 @@
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_SUBJECT">{0} Forum Account Update</Resource>
     <Resource tag="OK">OK</Resource>
     <Resource tag="OR">o</Resource>
+    <Resource tag="PAGE">Page</Resource>
     <Resource tag="PAGES">Páginas</Resource>
     <Resource tag="PM_NOTIFICATION_SUBJECT">Nuevo mensaje privado de {0} a las {1}</Resource>
     <Resource tag="POST">Publicar</Resource>
@@ -6100,7 +6115,7 @@ Email de usuario: {email}
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER_HTML">
@@ -6121,7 +6136,7 @@ Email de usuario: {email}
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6139,7 +6154,7 @@ Email de usuario: {email}
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
@@ -6153,7 +6168,7 @@ Email de usuario: {email}
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_HTML">
@@ -6178,7 +6193,7 @@ Email de usuario: {email}
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6200,7 +6215,7 @@ Email de usuario: {email}
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">
@@ -6276,7 +6291,7 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_WELCOME_USER_HTML">
@@ -6306,7 +6321,7 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6331,7 +6346,7 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT">
@@ -6343,7 +6358,7 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_HTML">
@@ -6366,7 +6381,7 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6387,7 +6402,7 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT">
@@ -6399,7 +6414,7 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT_HTML">
@@ -6422,7 +6437,7 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6443,7 +6458,7 @@ Email de usuario: {email} (Por favor, cambia tu email a tu dirección real para 
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="PASSWORDRETRIEVAL_ADMIN_HTML">

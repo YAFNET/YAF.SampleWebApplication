@@ -248,6 +248,9 @@
     <Resource tag="TOPICS_DAY">موضوعات در روز:</Resource>
     <Resource tag="USERS_DAY">کاربران در روز:</Resource>
   </page>
+  <page name="ADMIN_ATTACHMENTS">
+    <Resource tag="TITLE">User Attachments</Resource>
+  </page>
   <page name="ADMIN_BANNEDEMAIL">
     <Resource tag="ADD_IP">افزون ایمیل جدید</Resource>
     <Resource tag="IMPORT_IPS">درون‌ریزی ایمیل (ها)</Resource>
@@ -1505,6 +1508,10 @@
     <Resource tag="STYLED_NICKS_HELP">در صورت علامت زدن می توانید رنگ، قلم و اندازه برای نیک کاربران فعال استفاده نمائید.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Use styled Topic Titles:</Resource>
     <Resource tag="STYLED_TOPIC_TITLES_HELP">If checked, Mods and Admins can use colors, font size change etc. for topic titles.</Resource>
+    <Resource tag="TEMPLATE_TITLE">Page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_HELP">Template for the title meta tag.</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER">Pager page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER_HELP">Template for the page title inside the page title.</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE">قالب قدردانی ها از :</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE_HELP">قالبی که قدردانی های شده از کاربر بر اساس آن تولید می شود.</Resource>
     <Resource tag="THANKS_TO_TEMPLATE">قالب قدردانی ها:</Resource>
@@ -1813,6 +1820,11 @@
     <Resource tag="SELECT_IMPORT_HELP">(Must be *.xml file)</Resource>
     <Resource tag="TITLE">Import Spam Words</Resource>
   </page>
+  <page name="ADMIN_TAGS">
+    <Resource tag="SHOW_TOPICS">Show Topic(s)</Resource>
+    <Resource tag="TITLE">Topic Tags</Resource>
+    <Resource tag="USAGES">Usages:</Resource>
+  </page>
   <page name="ADMIN_TASKMANAGER">
     <Resource tag="DURATION">استمرار</Resource>
     <Resource tag="HEADER">مدیر فرمان : {0} فرمان در حال اجرا
@@ -1911,6 +1923,7 @@
   <page name="ADMINMENU">
     <Resource tag="admin_accessmasks">قالب دسترسی</Resource>
     <Resource tag="admin_admin">فهرست مدیر</Resource>
+    <Resource tag="ADMIN_ATTACHMENTS">Attachments</Resource>
     <Resource tag="admin_bannedemail">ایمیل های مسدود شده</Resource>
     <Resource tag="admin_bannedip">IP های مسدود شده</Resource>
     <Resource tag="admin_bannedname">نام های مسدود شده</Resource>
@@ -1942,6 +1955,7 @@
     <Resource tag="admin_runsql">اجرای کوئری SQL</Resource>
     <Resource tag="ADMIN_SPAMLOG">لاگ اسپم</Resource>
     <Resource tag="admin_spamwords">بررسی کلمات اسپم</Resource>
+    <Resource tag="admin_tags">Tags</Resource>
     <Resource tag="admin_taskmanager">مدیریت کارها</Resource>
     <Resource tag="admin_test_data">تولید داده های آزمایشی</Resource>
     <Resource tag="admin_topicstatus">وضعیت موضوع ها</Resource>
@@ -2241,6 +2255,7 @@
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_SUBJECT">{0} Forum Account Update</Resource>
     <Resource tag="OK">تایید</Resource>
     <Resource tag="OR">یا</Resource>
+    <Resource tag="PAGE">Page</Resource>
     <Resource tag="PAGES">صفحات</Resource>
     <Resource tag="PM_NOTIFICATION_SUBJECT">پیغام شخصی جدید از طرف {0} در {1}</Resource>
     <Resource tag="POST">ارسال</Resource>
@@ -5779,7 +5794,7 @@
 
       Thanks!
       The {forumname} Team
-      {forumurl}
+      {forumlink}
 
     </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER_HTML">
@@ -5800,7 +5815,7 @@
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5818,7 +5833,7 @@
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
@@ -5832,7 +5847,7 @@
 
       Thanks!
       The {forumname} Team
-      {forumurl}
+      {forumlink}
 
     </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_HTML">
@@ -5857,7 +5872,7 @@
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5879,7 +5894,7 @@
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">
@@ -5953,7 +5968,7 @@
 
       Thanks!
       The {forumname} Team
-      {forumurl}
+      {forumlink}
 
     </Resource>
     <Resource tag="NOTIFICATION_ON_WELCOME_USER_HTML">
@@ -5983,7 +5998,7 @@
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6008,7 +6023,7 @@
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT">
@@ -6020,7 +6035,7 @@
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_HTML">
@@ -6043,7 +6058,7 @@
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6064,7 +6079,7 @@
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT">
@@ -6076,7 +6091,7 @@
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT_HTML">
@@ -6099,7 +6114,7 @@
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6120,7 +6135,7 @@
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="PASSWORDRETRIEVAL_ADMIN_HTML">

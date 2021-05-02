@@ -248,6 +248,9 @@
     <Resource tag="TOPICS_DAY">Tematów na dzień:</Resource>
     <Resource tag="USERS_DAY">Użytkowników na dzień:</Resource>
   </page>
+  <page name="ADMIN_ATTACHMENTS">
+    <Resource tag="TITLE">User Attachments</Resource>
+  </page>
   <page name="ADMIN_BANNEDEMAIL">
     <Resource tag="ADD_IP">Add New Email</Resource>
     <Resource tag="IMPORT_IPS">Import Email(s)</Resource>
@@ -1501,6 +1504,10 @@
     <Resource tag="STYLED_NICKS_HELP">If checked, you can use colors, font size change etc. for active users nicks.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Use styled Topic Titles:</Resource>
     <Resource tag="STYLED_TOPIC_TITLES_HELP">If checked, Mods and Admins can use colors, font size change etc. for topic titles.</Resource>
+    <Resource tag="TEMPLATE_TITLE">Page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_HELP">Template for the title meta tag.</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER">Pager page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER_HELP">Template for the page title inside the page title.</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE">Thanks From template:</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE_HELP">Template for rendering user's thanks from.</Resource>
     <Resource tag="THANKS_TO_TEMPLATE">Thanks To template:</Resource>
@@ -1796,6 +1803,11 @@
     <Resource tag="SELECT_IMPORT_HELP">(Must be *.xml file)</Resource>
     <Resource tag="TITLE">Import Spam Words</Resource>
   </page>
+  <page name="ADMIN_TAGS">
+    <Resource tag="SHOW_TOPICS">Show Topic(s)</Resource>
+    <Resource tag="TITLE">Topic Tags</Resource>
+    <Resource tag="USAGES">Usages:</Resource>
+  </page>
   <page name="ADMIN_TASKMANAGER">
     <Resource tag="DURATION">Duration</Resource>
     <Resource tag="HEADER">Task Manager: {0} Task(s) Running</Resource>
@@ -1893,6 +1905,7 @@
   <page name="ADMINMENU">
     <Resource tag="admin_accessmasks">Maski uprawnień</Resource>
     <Resource tag="admin_admin">Informacje</Resource>
+    <Resource tag="ADMIN_ATTACHMENTS">Attachments</Resource>
     <Resource tag="admin_bannedemail">Banned Emails</Resource>
     <Resource tag="admin_bannedip">Zbanowane adresy IP</Resource>
     <Resource tag="admin_bannedname">Banned Names</Resource>
@@ -1924,6 +1937,7 @@
     <Resource tag="admin_runsql">Wyślij zapytanie SQL</Resource>
     <Resource tag="ADMIN_SPAMLOG">Spam Event Log</Resource>
     <Resource tag="admin_spamwords">Spam Check Words</Resource>
+    <Resource tag="admin_tags">Tags</Resource>
     <Resource tag="admin_taskmanager">Menedżer zadań</Resource>
     <Resource tag="admin_test_data">Tworzenie danych testowych</Resource>
     <Resource tag="admin_topicstatus">Statusy tematów</Resource>
@@ -2220,6 +2234,7 @@
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_SUBJECT">{0} Forum Account Update</Resource>
     <Resource tag="OK">Tak</Resource>
     <Resource tag="OR">lub</Resource>
+    <Resource tag="PAGE">Page</Resource>
     <Resource tag="PAGES">Strony</Resource>
     <Resource tag="PM_NOTIFICATION_SUBJECT">Nowa prywatna wiadomość od {0} o {0}</Resource>
     <Resource tag="POST">Post</Resource>
@@ -5728,7 +5743,7 @@ The Message was posted in the {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER_HTML">
@@ -5749,7 +5764,7 @@ The Message was posted in the {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5767,7 +5782,7 @@ The Message was posted in the {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
@@ -5781,7 +5796,7 @@ The Message was posted in the {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_HTML">
@@ -5806,7 +5821,7 @@ The Message was posted in the {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5828,7 +5843,7 @@ The Message was posted in the {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">
@@ -5905,7 +5920,7 @@ The Message was posted in the {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_WELCOME_USER_HTML">
@@ -5935,7 +5950,7 @@ The Message was posted in the {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5960,7 +5975,7 @@ The Message was posted in the {forumname} forum.
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT">
@@ -5972,7 +5987,7 @@ The Message was posted in the {forumname} forum.
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_HTML">
@@ -5995,7 +6010,7 @@ The Message was posted in the {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6016,7 +6031,7 @@ The Message was posted in the {forumname} forum.
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT">
@@ -6028,7 +6043,7 @@ The Message was posted in the {forumname} forum.
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT_HTML">
@@ -6051,7 +6066,7 @@ The Message was posted in the {forumname} forum.
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6072,7 +6087,7 @@ The Message was posted in the {forumname} forum.
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="PASSWORDRETRIEVAL_ADMIN_HTML">

@@ -248,6 +248,9 @@
     <Resource tag="TOPICS_DAY">Тем в день:</Resource>
     <Resource tag="USERS_DAY">Пользователей в день:</Resource>
   </page>
+  <page name="ADMIN_ATTACHMENTS">
+    <Resource tag="TITLE">User Attachments</Resource>
+  </page>
   <page name="ADMIN_BANNEDEMAIL">
     <Resource tag="ADD_IP">Add New Email</Resource>
     <Resource tag="IMPORT_IPS">Import Email(s)</Resource>
@@ -1502,6 +1505,10 @@
     <Resource tag="STYLED_NICKS_HELP">Если включено, вы можете использовать цвета или иное форматирование для ников пользователей. Может быть индивидуальным для каждого скина.</Resource>
     <Resource tag="STYLED_TOPIC_TITLES">Использовать стилизированные названия тем:</Resource>
     <Resource tag="STYLED_TOPIC_TITLES_HELP">Если включено, администраторы и модераторы смогут использовать цвете, шрифт и прочее в названиях тем.</Resource>
+    <Resource tag="TEMPLATE_TITLE">Page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_HELP">Template for the title meta tag.</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER">Pager page title template:</Resource>
+    <Resource tag="TEMPLATE_TITLE_PAGER_HELP">Template for the page title inside the page title.</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE">Шаблон для отображения «Спасибо» пользователю:</Resource>
     <Resource tag="THANKS_FROM_TEMPLATE_HELP">Шаблон для отображения Спасибо пользователю.</Resource>
     <Resource tag="THANKS_TO_TEMPLATE">Шаблон для отображения «Спасибо»:</Resource>
@@ -1784,6 +1791,11 @@
     <Resource tag="SELECT_IMPORT_HELP">(Must be *.xml file)</Resource>
     <Resource tag="TITLE">Import Spam Words</Resource>
   </page>
+  <page name="ADMIN_TAGS">
+    <Resource tag="SHOW_TOPICS">Show Topic(s)</Resource>
+    <Resource tag="TITLE">Topic Tags</Resource>
+    <Resource tag="USAGES">Usages:</Resource>
+  </page>
   <page name="ADMIN_TASKMANAGER">
     <Resource tag="DURATION">Продолжительность</Resource>
     <Resource tag="HEADER">Диспетчер задач: {0} задач(s) в процессе</Resource>
@@ -1881,6 +1893,7 @@
   <page name="ADMINMENU">
     <Resource tag="admin_accessmasks">Маски доступа</Resource>
     <Resource tag="admin_admin">Индекс админа</Resource>
+    <Resource tag="ADMIN_ATTACHMENTS">Attachments</Resource>
     <Resource tag="admin_bannedemail">Banned Emails</Resource>
     <Resource tag="admin_bannedip">Запрещённые IP</Resource>
     <Resource tag="admin_bannedname">Banned Names</Resource>
@@ -1912,6 +1925,7 @@
     <Resource tag="admin_runsql">Выполнить запрос SQL</Resource>
     <Resource tag="ADMIN_SPAMLOG">Spam Event Log</Resource>
     <Resource tag="admin_spamwords">Spam Check Words</Resource>
+    <Resource tag="admin_tags">Tags</Resource>
     <Resource tag="admin_taskmanager">Менеджер задач</Resource>
     <Resource tag="admin_test_data">Тестовые данные</Resource>
     <Resource tag="admin_topicstatus">Статусы тем</Resource>
@@ -2208,6 +2222,7 @@
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_SUBJECT">{0} Forum Account Update</Resource>
     <Resource tag="OK">ОК</Resource>
     <Resource tag="OR">или</Resource>
+    <Resource tag="PAGE">Page</Resource>
     <Resource tag="PAGES">Страницы</Resource>
     <Resource tag="PM_NOTIFICATION_SUBJECT">Новое личное сообщение от {0} на {1}</Resource>
     <Resource tag="POST">Пост</Resource>
@@ -5718,7 +5733,7 @@ Spoiler Content
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_ENDED_USER_HTML">
@@ -5739,7 +5754,7 @@ Spoiler Content
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5757,7 +5772,7 @@ Spoiler Content
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER">
@@ -5771,7 +5786,7 @@ Spoiler Content
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_HTML">
@@ -5796,7 +5811,7 @@ Spoiler Content
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5818,7 +5833,7 @@ Spoiler Content
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">
@@ -5895,7 +5910,7 @@ Spoiler Content
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ON_WELCOME_USER_HTML">
@@ -5925,7 +5940,7 @@ Spoiler Content
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -5950,7 +5965,7 @@ Spoiler Content
 
     Thanks!
     The {forumname} Team
-    {forumurl}
+    {forumlink}
 
   </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT">
@@ -5962,7 +5977,7 @@ Spoiler Content
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_HTML">
@@ -5985,7 +6000,7 @@ Spoiler Content
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6006,7 +6021,7 @@ Spoiler Content
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT">
@@ -6018,7 +6033,7 @@ Spoiler Content
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="NOTIFICATION_ROLE_UNASSIGNMENT_HTML">
@@ -6041,7 +6056,7 @@ Spoiler Content
 
      &lt;p&gt;Thanks!&lt;br /&gt;
      The {forumname} Team&lt;br /&gt;
-     {forumurl}
+     {forumlink}
      &lt;/p&gt;
      &lt;/div&gt;
      &lt;/div&gt;
@@ -6062,7 +6077,7 @@ Spoiler Content
 
      Thanks!
      The {forumname} Team
-     {forumurl}
+     {forumlink}
 
    </Resource>
     <Resource tag="PASSWORDRETRIEVAL_ADMIN_HTML">
