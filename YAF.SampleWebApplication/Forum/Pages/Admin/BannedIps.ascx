@@ -1,72 +1,73 @@
 <%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.BannedIps" Codebehind="BannedIps.ascx.cs" %>
 
 <%@ Import Namespace="YAF.Types.Interfaces" %>
-<%@ Import Namespace="YAF.Types.Extensions" %>
-<%@ Import Namespace="YAF.Utils.Helpers" %>
 <%@ Import Namespace="YAF.Core.Extensions" %>
+<%@ Import Namespace="YAF.Core.Utilities.Helpers" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 
 <%@ Register TagPrefix="modal" TagName="Import" Src="../../Dialogs/BannedIpImport.ascx" %>
 <%@ Register TagPrefix="modal" TagName="Edit" Src="../../Dialogs/BannedIpEdit.ascx" %>
-
-
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
 <div class="row">
     <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                LocalizedTag="TITLE" LocalizedPage="ADMIN_BANNEDIP" /></h1>
-    </div>
-</div>
-    
-<div class="row">
-    <div class="col-xl-12">
-            <YAF:Pager ID="PagerTop" runat="server" OnPageChange="PagerTop_PageChange" />
-            <div class="card mb-3">
-                <div class="card-header">
-                    
+        <div class="card mb-3">
+            <div class="card-header">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-auto">
                         <YAF:IconHeader runat="server"
                                         IconName="hand-paper"
                                         LocalizedPage="ADMIN_BANNEDIP"></YAF:IconHeader>
                     </div>
-                        <div class="col-auto">
-                        <YAF:ThemeButton runat="server"
-                                         CssClass="dropdown-toggle"
-                                         DataToggle="dropdown"
-                                         Size="Small"
-                                         Type="Secondary"
-                                         Icon="filter"
-                                         TextLocalizedTag="FILTER_DROPDOWN"
-                                         TextLocalizedPage="ADMIN_USERS"></YAF:ThemeButton>
-                        <div class="dropdown-menu">
-                            <div class="px-3 py-1">
-                                <div class="mb-3">
-                                    <YAF:HelpLabel ID="HelpLabel1" runat="server"
-                                                   AssociatedControlID="SearchInput"
-                                                   LocalizedTag="MASK" LocalizedPage="ADMIN_BANNEDIP" />
-                                    <asp:TextBox ID="SearchInput" runat="server" 
-                                                 CssClass="form-control"></asp:TextBox>
+                    <div class="col-auto">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="input-group input-group-sm me-2" role="group">
+                                <div class="input-group-text">
+                                    <YAF:LocalizedLabel ID="HelpLabel2" runat="server" LocalizedTag="SHOW" />:
                                 </div>
-                                <div class="mb-3">
-                                    <YAF:ThemeButton ID="search" runat="server"  
-                                                     Type="Primary"
-                                                     CssClass="btn-block"
-                                                     TextLocalizedTag="BTNSEARCH" 
-                                                     TextLocalizedPage="SEARCH" 
-                                                     Icon="search"
-                                                     OnClick="Search_Click">
-                                    </YAF:ThemeButton>
+                                <asp:DropDownList runat="server" ID="PageSize"
+                                                  AutoPostBack="True"
+                                                  OnSelectedIndexChanged="PageSizeSelectedIndexChanged"
+                                                  CssClass="form-select">
+                                </asp:DropDownList>
+                            </div>
+                            <div class="btn-group btn-group-sm" role="group">
+                                <YAF:ThemeButton runat="server"
+                                                 CssClass="dropdown-toggle"
+                                                 DataToggle="dropdown"
+                                                 Size="Small"
+                                                 Type="Secondary"
+                                                 Icon="filter"
+                                                 TextLocalizedTag="FILTER_DROPDOWN"
+                                                 TextLocalizedPage="ADMIN_USERS" />
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                    <div class="px-3 py-1">
+                                        <div class="mb-3">
+                                            <YAF:HelpLabel ID="HelpLabel1" runat="server"
+                                                           AssociatedControlID="SearchInput"
+                                                           LocalizedTag="MASK" LocalizedPage="ADMIN_BANNEDIP" />
+                                            <asp:TextBox ID="SearchInput" runat="server" 
+                                                         CssClass="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="mb-3 d-grid gap-2">
+                                            <YAF:ThemeButton ID="search" runat="server"  
+                                                             Type="Primary"
+                                                             TextLocalizedTag="BTNSEARCH" 
+                                                             TextLocalizedPage="SEARCH" 
+                                                             Icon="search"
+                                                             OnClick="Search_Click">
+                                            </YAF:ThemeButton>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
                 </div>
-                <div class="card-body">
-
-		<asp:Repeater ID="list" runat="server" OnItemCommand="List_ItemCommand">
+            </div>
+            <div class="card-body">
+                <asp:Repeater ID="list" runat="server" OnItemCommand="List_ItemCommand">
 		<HeaderTemplate>
             <ul class="list-group">
 			</HeaderTemplate>
@@ -76,22 +77,22 @@
                     <asp:HiddenField ID="fID" Value='<%# this.Eval("ID") %>' runat="server"/>
                     <h5 class="mb-1 text-break">
                         <asp:HyperLink runat="server" ID="Mask" 
-                                       Href='<%# string.Format(this.Get<BoardSettings>().IPInfoPageURL, IPHelper.GetIp4Address(this.Eval("Mask").ToString())) %>'
+                                       Href='<%# string.Format(this.PageContext.BoardSettings.IPInfoPageURL, IPHelper.GetIp4Address(this.Eval("Mask").ToString())) %>'
                                        ToolTip='<%#this.GetText("COMMON", "TT_IPDETAILS") %>'
                                        Target="_blank">
                             <%# this.HtmlEncode(IPHelper.GetIp4Address(this.Eval("Mask").ToString())) %>
                         </asp:HyperLink>
                     </h5>
                     <small class="d-none d-md-block">
-                        <span class="font-weight-bold">
+                        <span class="fw-bold">
                             <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" LocalizedTag="SINCE" LocalizedPage="ADMIN_BANNEDIP" />
                         </span>
-                        <%# this.Get<IDateTime>().FormatDateTime(this.Eval("Since")) %>
+                        <%# this.Get<IDateTimeService>().FormatDateTime(this.Eval("Since")) %>
                         
                     </small>
                 </div>
                 <p class="mb-1">
-                    <span class="font-weight-bold">
+                    <span class="fw-bold">
                         <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="REASON" LocalizedPage="ADMIN_BANNEDIP" />
                     </span>
                     <%# this.Eval("Reason") %>
@@ -179,12 +180,15 @@
                                      TextLocalizedPage="ADMIN_BANNEDIP" TextLocalizedTag="EXPORT"></YAF:ThemeButton>
                 </div>
             </div>
-
-			</FooterTemplate>
+        </FooterTemplate>
 		</asp:Repeater>
-	 <YAF:Pager ID="PagerBottom" runat="server" LinkedPager="PagerTop" />
             </div>
         </div>
+    </div>
+</div>
+<div class="row justify-content-end">
+    <div class="col-auto">
+        <YAF:Pager ID="PagerTop" runat="server" OnPageChange="PagerTop_PageChange" />
     </div>
 </div>
 

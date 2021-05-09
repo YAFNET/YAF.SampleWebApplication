@@ -1,24 +1,11 @@
 <%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Members" CodeBehind="Members.ascx.cs" %>
 
 <%@ Import Namespace="YAF.Types.Interfaces" %>
-<%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="ServiceStack" %>
+<%@ Import Namespace="YAF.Types.Objects.Model" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
-
-<div class="row">
-    <div class="col-xl-12">
-        <h2>
-            <YAF:LocalizedLabel runat="server" LocalizedTag="TITLE" />
-        </h2>
-    </div>
-</div>
-
-<div class="row mb-3">
-    <div class="col-xl-12">
-        <YAF:Pager runat="server" ID="Pager" OnPageChange="Pager_PageChange" />
-    </div>
-</div>
 
 <div class="row">
     <div class="col">
@@ -31,7 +18,17 @@
                     </div>
                     <div class="col-auto">
                         <div class="btn-toolbar" role="toolbar">
-                            <div class="btn-group mr-2" role="group" aria-label="Filters">
+                            <div class="input-group input-group-sm me-2 mb-1" role="group">
+                                <div class="input-group-text">
+                                    <YAF:LocalizedLabel ID="HelpLabel2" runat="server" LocalizedTag="SHOW" />:
+                                </div>
+                                <asp:DropDownList runat="server" ID="PageSize"
+                                                  AutoPostBack="True"
+                                                  OnSelectedIndexChanged="PageSizeSelectedIndexChanged"
+                                                  CssClass="form-select">
+                                </asp:DropDownList>
+                            </div>
+                            <div class="btn-group me-2 mb-1" role="group" aria-label="Filters">
                         <YAF:ThemeButton runat="server"
                                          CssClass="dropdown-toggle"
                                          DataToggle="dropdown"
@@ -41,7 +38,7 @@
                                          TextLocalizedTag="FILTER_DROPDOWN"
                                          TextLocalizedPage="ADMIN_USERS"></YAF:ThemeButton>
                         
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
                             <div class="px-3 py-1">
                                 <div class="mb-3">
                                     <asp:Label runat="server" AssociatedControlID="Group">
@@ -85,7 +82,7 @@
                                 </div>
                                 <YAF:ThemeButton ID="SearchByUserName" runat="server"
                                                  OnClick="Search_Click"
-                                                 CssClass="mr-2"
+                                                 CssClass="me-2"
                                                  TextLocalizedTag="BTNSEARCH"
                                                  Type="Primary"
                                                  Icon="search">
@@ -100,7 +97,7 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="btn-group btn-group-sm" role="group" aria-label="sort">
+                            <div class="btn-group btn-group-sm mb-1" role="group" aria-label="sort">
                                 <YAF:ThemeButton ID="Sort" runat="server"
                                                  CssClass="dropdown-toggle"
                                                  Size="Small"
@@ -108,7 +105,7 @@
                                                  DataToggle="dropdown"
                                                  TextLocalizedTag="SORT_BY"
                                                  Icon="sort" />
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
                                      <YAF:ThemeButton ID="SortUserNameAsc" runat="server"
                                          CssClass="dropdown-item"
                                          Type="None" 
@@ -182,36 +179,37 @@
                                 <li class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1 text-break">
-                                        <img src="<%# this.GetAvatarUrlFileName(this.Eval("UserID").ToType<int>(), this.Eval("Avatar").ToString(), this.Eval("AvatarImage").ToString().IsSet(), this.Eval("Email").ToString()) %>" alt="<%# this.HtmlEncode(DataBinder.Eval(Container.DataItem,"Name").ToString()) %>"
-                                             title="<%# this.HtmlEncode(this.Eval(this.Get<BoardSettings>().EnableDisplayName ? "DisplayName" : "Name").ToString()) %>" 
-                                             class="rounded img-fluid" />
+                                        <img src="<%# this.GetAvatarUrlFileName(((PagedUser)Container.DataItem).UserID, ((PagedUser)Container.DataItem).Avatar, ((PagedUser)Container.DataItem).AvatarImage != null, ((PagedUser)Container.DataItem).Email) %>" alt="<%# this.HtmlEncode(((PagedUser)Container.DataItem).Name) %>"
+                                             title="<%# this.HtmlEncode(this.PageContext.BoardSettings.EnableDisplayName ? ((PagedUser)Container.DataItem).DisplayName : ((PagedUser)Container.DataItem).Name) %>" 
+                                             class="rounded img-fluid"
+                                             style="max-height: 50px; max-width:50px"/>
                                         <YAF:UserLink ID="UserProfileLink" runat="server" 
-                                                      Suspended='<%# this.Eval("Suspended").ToType<DateTime?>() %>'
+                                                      Suspended="<%# ((PagedUser)Container.DataItem).Suspended %>"
                                                       IsGuest="False" 
-                                                      ReplaceName='<%# this.Eval(this.Get<BoardSettings>().EnableDisplayName ? "DisplayName" : "Name").ToString() %>' 
-                                                      UserID='<%# this.Eval("UserID").ToType<int>() %>'
-                                                      Style='<%# this.Eval("Style") %>' />
+                                                      ReplaceName="<%# this.PageContext.BoardSettings.EnableDisplayName ? ((PagedUser)Container.DataItem).DisplayName : ((PagedUser)Container.DataItem).Name %>" 
+                                                      UserID="<%# ((PagedUser)Container.DataItem).UserID %>"
+                                                      Style="<%# ((PagedUser)Container.DataItem).UserStyle %>" />
                                     </h5>
                                     <small class="d-none d-md-block">
                                         <strong><YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" 
                                                                     LocalizedTag="JOINED"
                                                                     LocalizedPage="POSTS"/>:</strong>
-                                        <%# this.Get<IDateTime>().FormatDateLong((DateTime)((System.Data.DataRowView)Container.DataItem)["Joined"]) %>
+                                        <%# this.Get<IDateTimeService>().FormatDateLong(((PagedUser)Container.DataItem).Joined) %>
                                     </small>
                                 </div>
                                 <p class="mb-1">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
                                             <strong><YAF:LocalizedLabel ID="LocalizedLabel8" runat="server" LocalizedTag="RANK"></YAF:LocalizedLabel></strong>
-                                            <%# this.Eval("RankName") %>
+                                            <%# ((PagedUser)Container.DataItem).RankName %>
                                         </li>
                                         <li class="list-inline-item">
                                             <strong><YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" LocalizedTag="POSTS" LocalizedPage="ADMIN_USERS" />:</strong>
-                                            <%# "{0:N0}".Fmt(((System.Data.DataRowView)Container.DataItem)["NumPosts"]) %>
+                                            <%# "{0:N0}".Fmt(((PagedUser)Container.DataItem).NumPosts) %>
                                         </li>
                                         <li class="list-inline-item">
                                             <strong><YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" LocalizedTag="LAST_VISIT" LocalizedPage="ADMIN_USERS" />:</strong>
-                                            <%# this.Get<IDateTime>().FormatDateLong((DateTime)((System.Data.DataRowView)Container.DataItem)["LastVisit"]) %>
+                                            <%# this.Get<IDateTimeService>().FormatDateLong(((PagedUser)Container.DataItem).LastVisit) %>
                                         </li>
                                     </ul>
                                 </p>
@@ -222,5 +220,9 @@
         </div>
     </div>
 </div>
-
-<YAF:Pager runat="server" LinkedPager="Pager" OnPageChange="Pager_PageChange" />
+<div class="row justify-content-end">
+    <div class="col-auto">
+        <YAF:Pager runat="server" ID="Pager"
+                   OnPageChange="Pager_PageChange" />
+    </div>
+</div>

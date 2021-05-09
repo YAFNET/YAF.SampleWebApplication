@@ -10,8 +10,7 @@
                             <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="HEADER" 
                                 LocalizedPage="ADMIN_SPAMWORDS_IMPORT" />
                         </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
                     <div class="modal-body">
@@ -19,19 +18,13 @@
                         <h4>
                             <YAF:HelpLabel ID="LocalizedLabel2" runat="server" LocalizedTag="SELECT_IMPORT" LocalizedPage="ADMIN_SPAMWORDS_IMPORT" />
                         </h4>
-                        <div class="form-file">
-                            <input type="file" id="importFile" class="form-file-input" runat="server" />
-                            <label for="<%# this.importFile.ClientID %>" class="form-file-label">
-                                <span class="form-file-text">
-                                    <YAF:LocalizedLabel runat="server" 
-                                                        LocalizedTag="SELECT_IMPORT" 
-                                                        LocalizedPage="ADMIN_EXTENSIONS_IMPORT"/>
-                                </span>
-                                <span class="form-file-button">
-                                    <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server"
-                                                        LocalizedTag="BROWSE" />
-                                </span>
+                        <div class="mb-3">
+                            <label for="<%# this.importFile.ClientID %>" class="form-label">
+                                <YAF:LocalizedLabel runat="server" 
+                                                    LocalizedTag="SELECT_IMPORT" 
+                                                    LocalizedPage="ADMIN_EXTENSIONS_IMPORT"/>
                             </label>
+                            <input type="file" id="importFile" class="form-control" runat="server" />
                         </div>
                         <!-- Modal Content END !-->
                     </div>

@@ -1,8 +1,11 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.MessageHistory" CodeBehind="MessageHistory.ascx.cs" %>
 
+<%@ Import Namespace="System.Globalization" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="ServiceStack" %>
+<%@ Import Namespace="YAF.Types.Objects.Model" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
@@ -29,49 +32,50 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <li class="list-group-item list-group-item-action">
-                                 <div class="d-flex w-100 justify-content-between">
+                            <div class="d-flex w-100 justify-content-between">
                                      <h5 class="mb-1">
                                          <div class="form-check d-inline-block">
                                              <asp:Checkbox runat="server" ID="Compare" 
                                                            onclick="toggleSelection(this);" 
                                                            Text="&nbsp;" />
                                          </div>
-                                         <asp:HiddenField runat="server" Value='<%#Container.DataItemToField<string>("Message")%>' ID="MessageField" />
+                                         <asp:HiddenField runat="server" 
+                                                          Value="<%#(Container.DataItem as MessageHistoryTopic).Message%>" ID="MessageField" />
                                          <YAF:LocalizedLabel ID="LocalizedLabel9" runat="server" 
                                                              LocalizedPage="POSTMESSAGE"
-                                                             LocalizedTag="EDITEREASON" />: <%# Container.DataItemToField<DateTime>("Edited") != Container.DataItemToField<DateTime>("Posted") ? Container.DataItemToField<string>("EditReason").IsNotSet() ? this.GetText("EDIT_REASON_NA") : Container.DataItemToField<string>("EditReason"): this.GetText("ORIGINALMESSAGE") %>
+                                                             LocalizedTag="EDITEREASON" />: <%# (Container.DataItem as MessageHistoryTopic).Edited != (Container.DataItem as MessageHistoryTopic).Posted  ? (Container.DataItem as MessageHistoryTopic).EditReason.IsNotSet() ? this.GetText("EDIT_REASON_NA") : (Container.DataItem as MessageHistoryTopic).EditReason: this.GetText("ORIGINALMESSAGE") %>
                                          <%# Container.ItemIndex.Equals(this.RevisionsCount-1) ? "({0})".Fmt(this.GetText("MESSAGEHISTORY", "CURRENTMESSAGE")) : string.Empty %>
                                      </h5>
                                      <small class="d-none d-md-block">
                                          <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" 
                                                              LocalizedPage="POSTMESSAGE" 
-                                                             LocalizedTag="EDITED" />: <%# this.Get<IDateTime>().FormatDateTimeTopic( Container.DataItemToField<DateTime>("Edited") ) %>
+                                                             LocalizedTag="EDITED" />: <%# this.Get<IDateTimeService>().FormatDateTimeTopic((Container.DataItem as MessageHistoryTopic).Edited) %>
                                      </small>
                                  </div>
-                                <p class="mb-1">
+                            <p class="mb-1">
                                     <YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" 
                                                         LocalizedPage="POSTMESSAGE"
                                                         LocalizedTag="EDITEDBY" />: <YAF:UserLink ID="UserLink3" runat="server"
-                                                                                                  ReplaceName='<%# Container.DataItemToField<string>(this.PageContext.BoardSettings.EnableDisplayName ? "UserDisplayName" : "UserName") %>'
-                                                                                                  Suspended='<%# Container.DataItemToField<DateTime?>("Suspended") %>'
-                                                                                                  Style='<%# Container.DataItemToField<string>("UserStyle") %>'
-                                                                                                  UserID='<%# Container.DataItemToField<int>("EditedBy") %>' />
-                                    <asp:PlaceHolder runat="server" Visible="<%# this.PageContext.IsAdmin || this.Get<BoardSettings>().AllowModeratorsViewIPs && this.PageContext.ForumModeratorAccess%>">
-                                        <span class="font-weight-bold mr-2">
+                                                                                                  ReplaceName="<%# this.PageContext.BoardSettings.EnableDisplayName ? (Container.DataItem as MessageHistoryTopic).DisplayName : (Container.DataItem as MessageHistoryTopic).Name %>"
+                                                                                                  Suspended="<%# (Container.DataItem as MessageHistoryTopic).Suspended %>"
+                                                                                                  Style="<%# (Container.DataItem as MessageHistoryTopic).UserStyle %>"
+                                                                                                  UserID="<%# (Container.DataItem as MessageHistoryTopic).EditedBy %>" />
+                                    <asp:PlaceHolder runat="server" Visible="<%# this.PageContext.IsAdmin || this.PageContext.BoardSettings.AllowModeratorsViewIPs && this.PageContext.ForumModeratorAccess%>">
+                                        <span class="fw-bold me-2">
                                             <%# this.GetText("IP") %>:
                                         </span><a id="IPLink1" 
-                                                                                  href="<%# string.Format(this.Get<BoardSettings>().IPInfoPageURL, this.GetIpAddress(Container.DataItem)) %>"
-                                                                                  title='<%# this.GetText("COMMON","TT_IPDETAILS") %>'
-                                                                                  target="_blank" runat="server"><%# this.GetIpAddress(Container.DataItem) %></a>
+                                                  href="<%# string.Format(this.PageContext.BoardSettings.IPInfoPageURL, this.GetIpAddress(Container.DataItem as MessageHistoryTopic)) %>"
+                                                  title='<%# this.GetText("COMMON","TT_IPDETAILS") %>'
+                                                  target="_blank" runat="server"><%# this.GetIpAddress(Container.DataItem as MessageHistoryTopic) %></a>
                                     </asp:PlaceHolder>
                                     <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" 
                                                         LocalizedPage="POSTMESSAGE"
-                                                        LocalizedTag="EDITEDBY_MOD" />: <span class="badge bg-secondary"><%# Container.DataItemToField<bool>("IsModeratorChanged") ?  this.GetText("YES") : this.GetText("NO") %></span>
+                                                        LocalizedTag="EDITEDBY_MOD" />: <span class="badge bg-secondary"><%# (Container.DataItem as MessageHistoryTopic).IsModeratorChanged.Value ?  this.GetText("YES") : this.GetText("NO") %></span>
                                 </p>
-                                <small>
-                                    <YAF:ThemeButton ID="ThemeButtonEdit" runat="server"
+                            <small>
+                                <YAF:ThemeButton ID="ThemeButtonEdit" runat="server"
                                                      CommandName="restore" 
-                                                     CommandArgument='<%# Container.DataItemToField<DateTime>("Edited") %>'
+                                                     CommandArgument='<%# (Container.DataItem as MessageHistoryTopic).Edited.ToString("yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture) %>'
                                                      TitleLocalizedTag="RESTORE_MESSAGE" 
                                                      TextLocalizedTag="RESTORE_MESSAGE"
                                                      Visible="<%# (this.PageContext.IsAdmin || this.PageContext.IsModeratorInAnyForum) && !Container.ItemIndex.Equals(this.RevisionsCount-1) %>"
@@ -84,7 +88,7 @@
                         </li>
                     </ItemTemplate>
                     <FooterTemplate>
-                    </ul>
+                        </ul>
                     </FooterTemplate>
                 </asp:Repeater>
             </div>

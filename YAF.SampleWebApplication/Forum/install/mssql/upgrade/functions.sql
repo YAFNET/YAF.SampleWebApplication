@@ -65,34 +65,6 @@ IF  exists(select top 1 1 from sys.objects WHERE object_id = OBJECT_ID(N'[{datab
 DROP FUNCTION [{databaseOwner}].[{objectQualifier}Split]
 GO
 
-CREATE FUNCTION [{databaseOwner}].[{objectQualifier}registry_value] (
-    @Name NVARCHAR(64)
-    ,@BoardID INT = NULL
-    )
-RETURNS NVARCHAR(MAX)
-AS
-BEGIN
-    DECLARE @returnValue NVARCHAR(MAX)
-
-    IF @BoardID IS NOT NULL AND EXISTS(SELECT 1 FROM [{databaseOwner}].[{objectQualifier}Registry] WHERE LOWER([Name]) = LOWER(@Name) AND [BoardID] = @BoardID)
-    BEGIN
-        SET @returnValue = (
-            SELECT CAST([Value] AS NVARCHAR(MAX))
-            FROM [{databaseOwner}].[{objectQualifier}Registry]
-            WHERE LOWER([Name]) = LOWER(@Name) AND [BoardID] = @BoardID)
-    END
-    ELSE
-    BEGIN
-        SET @returnValue = (
-            SELECT CAST([Value] AS NVARCHAR(MAX))
-            FROM [{databaseOwner}].[{objectQualifier}Registry]
-            WHERE LOWER([Name]) = LOWER(@Name) AND [BoardID] IS NULL)
-    END
-
-    RETURN @returnValue
-END
-GO
-
 create function [{databaseOwner}].[{objectQualifier}forum_posts](@ForumID int) returns int as
 begin
     declare @NumPosts int
@@ -185,7 +157,7 @@ BEGIN
                     [{databaseOwner}].[{objectQualifier}Forum] a WITH(NOLOCK)
                     INNER JOIN [{databaseOwner}].[{objectQualifier}ActiveAccess] x WITH(NOLOCK) ON a.ForumID=x.ForumID
                 WHERE
-                    a.ForumID = @ForumID AND a.IsHidden = 0
+                    a.ForumID = @ForumID AND (a.Flags & 2) = 0
         END
         ELSE
         BEGIN
@@ -196,7 +168,7 @@ BEGIN
                     [{databaseOwner}].[{objectQualifier}Forum] a WITH(NOLOCK)
                     INNER JOIN [{databaseOwner}].[{objectQualifier}ActiveAccess] x WITH(NOLOCK) ON a.ForumID=x.ForumID
                 WHERE
-                    (a.IsHidden = 0 or x.ReadAccess <> 0) AND a.ForumID=@ForumID and x.UserID=@UserID
+                    ((a.Flags & 2) = 0 or x.ReadAccess <> 0) AND a.ForumID=@ForumID and x.UserID=@UserID
         END
     END
 
@@ -304,7 +276,7 @@ BEGIN
                     [{databaseOwner}].[{objectQualifier}Forum] a WITH(NOLOCK)
                     INNER JOIN [{databaseOwner}].[{objectQualifier}ActiveAccess] x WITH(NOLOCK) ON a.ForumID=x.ForumID
                 WHERE
-                    a.ForumID = @ForumID AND a.IsHidden = 0
+                    a.ForumID = @ForumID AND (a.Flags & 2) = 0
         END
         ELSE
         BEGIN
@@ -315,7 +287,7 @@ BEGIN
                     [{databaseOwner}].[{objectQualifier}Forum] a WITH(NOLOCK)
                     INNER JOIN [{databaseOwner}].[{objectQualifier}ActiveAccess] x WITH(NOLOCK) ON a.ForumID=x.ForumID
                 WHERE
-                    (a.IsHidden = 0 or x.ReadAccess <> 0) AND a.ForumID=@ForumID and x.UserID=@UserID
+                    ((a.Flags & 2) = 0 or x.ReadAccess <> 0) AND a.ForumID=@ForumID and x.UserID=@UserID
         END
     END
 

@@ -5,11 +5,6 @@
 
 <YAF:PageLinks ID="PageLinks" runat="server" />
 
-<div class="row">
-    <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel4" runat="server" LocalizedTag="TITLE" LocalizedPage="ADMIN_TASKMANAGER" /></h1>
-    </div>
-    </div>
     <div class="row">
         <div class="col-xl-12">
             <div class="card mb-3">
@@ -38,7 +33,7 @@
                             <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" 
                                                 LocalizedTag="DURATION" 
                                                 LocalizedPage="ADMIN_TASKMANAGER" />:
-                            <%# this.FormatTimeSpan(Container.ToDataItemType<KeyValuePair<string, IBackgroundTask>>().Value.Started)%>
+                            <%# this.FormatTimeSpan(((KeyValuePair<string, IBackgroundTask>)Container.DataItem).Value.Started)%>
                         </small>
                     </div>
                     <p class="mb-1">
@@ -49,7 +44,7 @@
                                    CssClass='<%# this.GetItemColor(this.Eval("Value.IsRunning").ToType<bool>()) %>'><%# this.GetItemName(this.Eval("Value.IsRunning").ToType<bool>())%></asp:Label>
                     </p>
                     <asp:PlaceHolder ID="StopTaskHolder" runat="server" 
-                                     Visible="<%# Container.ToDataItemType<KeyValuePair<string, IBackgroundTask>>().Value.IsStoppable() %>">
+                                     Visible="<%# ((KeyValuePair<string, IBackgroundTask>)Container.DataItem).Value.IsStoppable() %>">
                         <small>
                             <YAF:ThemeButton ID="stop" runat="server"
                                              CommandName="stop" 

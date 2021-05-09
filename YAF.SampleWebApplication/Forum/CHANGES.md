@@ -1,6 +1,66 @@
 YetAnotherForum.NET Changelog
 ====================
 
+# YetAnotherForum.NET v3.0.0
+* Minimum .NET Version v4.8
+* Upgraded to Bootstrap 5.0.0
+* [NEW] Custom Profile Properties
+* [NEW] CKEditor is now standard editor
+* [NEW] Html Email Template
+* Replaced obsolete Membership/Role/Profile Provider with ASP.NET Identity
+* Automatic Migration of all old Attachments on Uprade
+* Completed DAL changes
+
+# YetAnotherForum.NET v2.3.1.15
+* [NEW] Added Page Title template option
+* [NEW] Added New Admin Page for managing Attachments
+* [NEW] Added New Admin Page for managing Topic Tags
+ 
+# YetAnotherForum.NET v2.3.1.14
+* added board name to page title
+* [FIXED] Add topic tag to new topic
+* [FIXED] XSS attack attack on fileupload (thanks to User @sushiwushi)
+* [FIXED] XSS on returnurl (thanks to User @sushiwushi)
+* [FIXED] XSS in Hovercard (thanks to User @sushiwushi)
+
+* # YetAnotherForum.NET v2.3.1.13
+* [NEW] Added Board Setting for Default Access Mask when creating a new forum
+* [FIXED] Deleting a Message with an Attachment
+* [FIXED #603] subforums are not saved
+* [FIXED] lock/unlock topic
+* [FIXED] Back Button on Forget Password Page
+* [FIXED] Dont Render Crawlers as Regular Users
+* [FIXED] IP Address Check for IPv6
+* Exclude Favicon inside a Portal (DNN)
+
+# YetAnotherForum.NET v2.3.1.12
+* Upgraded to Bootstrap 4.6.0
+* [NEW] Success Message after Message Report
+* Increased auto save Delay in CKEditor to 60 Seconds
+* [FIXED] DNN Search
+
+# YetAnotherForum.NET v2.3.1.11
+* [FIXED] Admin User page
+* [Fixed] publish solution
+
+# YetAnotherForum.NET v2.3.1.10
+* [FIXED] wrong lanuage code for hebrew
+* [FIXED] version info
+* [FIXED] youtube autoembed
+* Install Membership Provider Scripts on Upgrade for Azure if needed
+* Upgraded to Bootstrap 4.5.3
+
+# YetAnotherForum.NET v2.3.1.09
+* [NEW] added login failure logging
+* [SECURITY FIX] for Private Messages
+* [FIXED] duplicate topic title check
+* [FIXED] Attachments inside PMs
+* [FIXED #589] visiblity of profile
+* [FIXED] Remove line break after code block
+* [FIXED #588] creating of new medals
+* FIXED] show info message after shrink db
+* Removed Postback before logout dialog appears
+
 # YetAnotherForum.NET v2.3.1.08
 * Upgraded to Bootstrap 4.5.2
 * [FIXED] Cookie Alert 
@@ -17,7 +77,6 @@ YetAnotherForum.NET Changelog
 * [FIXED] Links to Moved topics
 * [FIXED #580] wrong DateTime format for Sitemap Urls
 * [FIXED #579] Clear cache on user delete
-
 
 # YetAnotherForum.NET v2.3.1.06
 * [FIXED] Emoji Button in CKEditor

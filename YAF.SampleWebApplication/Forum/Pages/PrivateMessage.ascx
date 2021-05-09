@@ -1,7 +1,6 @@
 <%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.PrivateMessage" Codebehind="PrivateMessage.ascx.cs" %>
 
 <%@ Import Namespace="YAF.Types.Flags" %>
-<%@ Import Namespace="YAF.Types.Extensions" %>
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
@@ -22,7 +21,7 @@
                                         <YAF:Icon runat="server" 
                                                   IconName="envelope-open"
                                                   IconType="text-secondary" />
-                                        <%# this.HtmlEncode(this.Eval("Subject")) %>
+                                        <%# this.HtmlEncode((Container.DataItem as dynamic).Subject) %>
                                     </div>
                                     <div class="col-auto">
                                         <YAF:Icon runat="server"
@@ -31,31 +30,33 @@
                                                   IconNameBadge="clock" 
                                                   IconBadgeType="text-secondary" />
                                         <YAF:DisplayDateTime ID="CreatedDateTime" runat="server"
-                                                             DateTime='<%# Container.DataItemToField<DateTime>("Created") %>' />
-                                        <span class="font-weight-bold ml-2">
+                                                             DateTime="<%# (Container.DataItem as dynamic).Created %>" />
+                                        <span class="fw-bold ms-2">
                                             <YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" 
                                                                 LocalizedTag="FROM" />:
                                         </span>
                                         <YAF:UserLink ID="FromUserLink" runat="server"
-                                                      ReplaceName='<%# this.PageContext.BoardSettings.EnableDisplayName ? this.Eval("FromUserDisplayName").ToString() : this.Eval("FromUser").ToString()  %>'
-                                                      Suspended='<%# this.Eval("FromSuspended").ToType<DateTime?>() %>'
-                                                      Style='<%# this.Eval("FromStyle") %>'
-                                                      UserID='<%# this.Eval("FromUserID").ToType<int>() %>' />
+                                                      ReplaceName="<%# this.PageContext.BoardSettings.EnableDisplayName ? (Container.DataItem as dynamic).FromUserDisplayName : (Container.DataItem as dynamic).FromUser  %>"
+                                                      Suspended="<%# (Container.DataItem as dynamic).FromSuspended %>"
+                                                      Style="<%#(Container.DataItem as dynamic).FromStyle %>"
+                                                      UserID="<%# (Container.DataItem as dynamic).FromUserID %>" />
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <YAF:MessagePost ID="Message" runat="server" 
-                                                 MessageFlags='<%# new MessageFlags(this.Eval("Flags")) %>' 
-                                                 Message='<%# this.Eval("Body").ToType<string>()%>'
-                                                 MessageID='<%# this.Eval("UserPMessageID") %>' />
+                                                 MessageFlags="<%# new MessageFlags((Container.DataItem as dynamic).Flags) %>" 
+                                                 Message="<%# (Container.DataItem as dynamic).Body%>"
+                                                 MessageID="<%# (Container.DataItem as dynamic).UserPMessageID %>" />
                             </div>
                             <div class="card-footer">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-auto px-0">
                                         <YAF:ThemeButton ID="ReportMessage" runat="server"
-                                                         CommandName="report" CommandArgument='<%# this.Eval("UserPMessageID") %>' 
+                                                         CommandName="report" CommandArgument="<%# (Container.DataItem as dynamic).UserPMessageID %>" 
                                                          TextLocalizedTag="REPORTPOST"
+                                                         TitleLocalizedTag="REPORTPOST_TITLE"
+                                                         DataToggle="tooltip"
                                                          TextLocalizedPage="POSTS"
                                                          Type="Link"
                                                          Icon="exclamation-triangle"
@@ -63,21 +64,24 @@
                                     </div>
                                     <div class="col-auto px-0 d-flex flex-wrap">
                                         <YAF:ThemeButton ID="ReplyMessage" runat="server"
-                                                         CommandName="reply" CommandArgument='<%# this.Eval("UserPMessageID") %>' 
+                                                         CommandName="reply" CommandArgument="<%# (Container.DataItem as dynamic).UserPMessageID %>" 
                                                          TextLocalizedTag="BUTTON_REPLY" TitleLocalizedTag="BUTTON_REPLY_TT"
+                                                         DataToggle="tooltip"
                                                          Type="Secondary"
                                                          Icon="reply"
-                                                         CssClass="mr-1"
-                                                         Visible='<%# this.Eval("FromUserID").ToType<int>() != this.PageContext.PageUserID %>'/>
+                                                         CssClass="me-1"
+                                                         Visible="<%# (Container.DataItem as dynamic).FromUserID != this.PageContext.PageUserID %>"/>
                                         <YAF:ThemeButton ID="QuoteMessage" runat="server"
-                                                         CommandName="quote" CommandArgument='<%# this.Eval("UserPMessageID") %>' 
+                                                         CommandName="quote" CommandArgument="<%# (Container.DataItem as dynamic).UserPMessageID %>" 
                                                          TextLocalizedTag="BUTTON_QUOTE" TitleLocalizedTag="BUTTON_QUOTE_TT"
+                                                         DataToggle="tooltip"
                                                          Type="Secondary"
                                                          Icon="reply"
-                                                         CssClass="mr-1"
-                                                         Visible='<%# this.Eval("FromUserID").ToType<int>() != this.PageContext.PageUserID %>'/>
+                                                         CssClass="me-1"
+                                                         Visible="<%# (Container.DataItem as dynamic).FromUserID != this.PageContext.PageUserID %>"/>
                                         <YAF:ThemeButton ID="DeleteMessage" runat="server"
-                                                         CommandName="delete" CommandArgument='<%# this.Eval("UserPMessageID") %>' 
+                                                         CommandName="delete" CommandArgument="<%# (Container.DataItem as dynamic).UserPMessageID %>" 
+                                                         DataToggle="tooltip"
                                                          TextLocalizedTag="BUTTON_DELETE" TitleLocalizedTag="BUTTON_DELETE_TT"
                                                          ReturnConfirmText='<%# this.GetText("confirm_deletemessage") %>'
                                                          Type="Danger"

@@ -2,6 +2,8 @@
     Inherits="YAF.Pages.DeleteMessage" Codebehind="DeleteMessage.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Types.Models" %>
+<%@ Import Namespace="YAF.Core.Extensions" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
 <div class="row">
@@ -29,7 +31,7 @@
                         <asp:Label runat="server">
                             <YAF:LocalizedLabel runat="server" LocalizedTag="previewtitle" />
                         </asp:Label>
-                        <div class="card">
+                        <div class="card bg-light">
                             <div class="card-body">
                                 <YAF:MessagePost ID="MessagePreview" runat="server">
                                 </YAF:MessagePost>
@@ -62,6 +64,13 @@
                 </form>
             </div>
             <div class="card-footer text-center">
+                <YAF:ThemeButton ID="DeleteUndelete" runat="server" 
+                                 OnClick="ToggleDelete_Click"
+                                 CausesValidation="True"
+                                 DataToggle="tooltip"
+                                 Type="Danger"
+                                 Visible="False"
+                                 Icon="trash"/>
                 <YAF:ThemeButton ID="Delete" runat="server" 
                                  OnClick="ToggleDeleteStatus_Click"
                                  CausesValidation="True"
@@ -110,13 +119,13 @@
                                   Suspended="<%# ((Tuple<Message, User>)Container.DataItem).Item2.Suspended %>"
                                   Style="<%# ((Tuple<Message, User>)Container.DataItem).Item2.UserStyle %>"
                                   UserID="<%# ((Tuple<Message, User>)Container.DataItem).Item1.UserID %>"
-                                  ReplaceName="<%# this.Get<IUserDisplayName>().GetName(((Tuple<Message, User>)Container.DataItem).Item2) %>"
+                                  ReplaceName="<%# ((Tuple<Message, User>)Container.DataItem).Item2.DisplayOrUserName() %>"
                                   BlankTarget="true" />
                     <small class="text-muted">
                         <YAF:Icon runat="server" 
                                   IconName="calendar-day"
                                   IconNameBadge="clock"></YAF:Icon>
-                        <%# this.Get<IDateTime>().FormatDateTime(((Tuple<Message, User>)Container.DataItem).Item1.Posted)%>
+                        <%# this.Get<IDateTimeService>().FormatDateTime(((Tuple<Message, User>)Container.DataItem).Item1.Posted)%>
                     </small>
                 </footer>
             </div>

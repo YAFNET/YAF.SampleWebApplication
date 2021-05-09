@@ -69,25 +69,19 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <asp:PlaceHolder id="UploadHolder" runat="server">
-                    <asp:Label runat="server" AssociatedControlID="File">
+				    <h4>
+                        <asp:Label runat="server" AssociatedControlID="File">
                         <YAF:LocalizedLabel ID="UploadTitle" 
                                             LocalizedTag="UPLOAD_TITLE" runat="server" />
-                    </asp:Label>
-                    <div class="input-group">
-                        <div class="form-file mb-3">
-                            <input type="file" id="File" class="form-file-input" runat="server" />
-                            <label for="<%# this.File.ClientID %>" class="form-file-label">
-                                <span class="form-file-text">
-                                    <YAF:LocalizedLabel ID="LocalizedLabel3" 
-                                                        LocalizedTag="SELECT_FILE" 
-                                                        LocalizedPage="EDIT_ALBUMIMAGES" runat="server" />
-                                </span>
-                                <span class="form-file-button">
-                                    <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server"
-                                                        LocalizedTag="BROWSE" />
-                                </span>
+                        </asp:Label>
+					</h4>
+					<label for="<%# this.File.ClientID %>" class="form-label">
+                                <YAF:LocalizedLabel ID="LocalizedLabel3" 
+                                                    LocalizedTag="SELECT_FILE" 
+                                                    LocalizedPage="EDIT_ALBUMIMAGES" runat="server" />
                             </label>
-                        </div>
+                    <div class="input-group mb-3">
+                        <input type="file" id="File" class="form-control mb-3" runat="server" />
                         <YAF:ThemeButton runat="server" ID="Upload" 
                                          CausesValidation="True"
                                          OnClick="Upload_Click" 
@@ -111,7 +105,7 @@
                 <YAF:ThemeButton runat="server" ID="Back" OnClick="Back_Click"
                                  TextLocalizedTag="BACK"
                                  Type="Secondary"
-                                 Icon="arrow-circle-left"/>
+                                 Icon="reply"/>
             </div>
         </div>
     </div>

@@ -1,14 +1,6 @@
 <%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.PageAccessList" Codebehind="PageAccessList.ascx.cs" %>
-
-
-<%@ Import Namespace="YAF.Types.Interfaces" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
-    <div class="row">
-    <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="TITLE" LocalizedPage="ADMIN_PAGEACCESSLIST" /></h1>
-    </div>
-    </div>
     <div class="row">
         <div class="col-xl-12">
             <div class="card mb-3">
@@ -27,7 +19,7 @@
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">
                             <i class="fa fa-user-secret fa-fw"></i>&nbsp;
-                            <%# this.HtmlEncode(this.Get<BoardSettings>().EnableDisplayName ? this.Eval("DisplayName") : this.Eval("Name"))%>
+                            <%# this.HtmlEncode(this.PageContext.BoardSettings.EnableDisplayName ? this.Eval("DisplayName") : this.Eval("Name"))%>
                         </h5>
                     </div>
                     

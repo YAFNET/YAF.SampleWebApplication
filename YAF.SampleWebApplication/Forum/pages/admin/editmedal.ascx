@@ -6,16 +6,9 @@
 
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
-    <div class="row">
-        <div class="col-xl-12">
-            <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                    LocalizedTag="TITLE" 
-                                    LocalizedPage="ADMIN_EDITMEDAL" />
-            </h1>
-        </div>
-    </div>
 <div class="row">
     <div class="col-xl-12">
             <div class="card mb-3">
@@ -117,7 +110,6 @@
                                            LocalizedTag="ALLOW_HIDING" LocalizedPage="ADMIN_EDITMEDAL" />
                             <div class="form-check form-switch">
                                 <asp:CheckBox ID="AllowHiding" runat="server"
-                                              AssociatedControlID=""
                                               Checked="true" 
                                               Text="&nbsp;" />
                             </div> 
@@ -126,7 +118,7 @@
                 </div>
                 <div class="card-footer text-center">
                     <YAF:ThemeButton ID="Save" runat="server" 
-                                     CssClass="mr-2"
+                                     CssClass="me-2"
                                      OnClick="SaveClick" 
                                      CausesValidation="True"
                                      Type="Primary" 
@@ -165,7 +157,7 @@
                     </h5>
                 </div>
                 <p class="mb-1">
-                    <span class="font-weight-bold">
+                    <span class="fw-bold">
                         <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" 
                                             LocalizedTag="MESSAGE" 
                                             LocalizedPage="COMMON" />
@@ -265,16 +257,16 @@
                         <%# this.FormatUserLink(Container.DataItem) %>
                     </h5>
                     <small class="d-none d-md-block">
-                        <span class="font-weight-bold">
+                        <span class="fw-bold">
                             <YAF:LocalizedLabel ID="LocalizedLabel8" runat="server" 
                                                 LocalizedTag="DATE_AWARDED" 
                                                 LocalizedPage="ADMIN_EDITMEDAL" />:
                         </span>
-                        <%# this.Get<IDateTime>().FormatDateTimeTopic((DateTime)this.Eval("Item2.DateAwarded")) %>
+                        <%# this.Get<IDateTimeService>().FormatDateTimeTopic((DateTime)this.Eval("Item2.DateAwarded")) %>
                     </small>
                 </div>
                 <p class="mb-1">
-                    <span class="font-weight-bold">
+                    <span class="fw-bold">
                         <YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" 
                                             LocalizedTag="MESSAGE" 
                                             LocalizedPage="COMMON" />

@@ -5,13 +5,6 @@
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
     <div class="row">
-    <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" 
-                                LocalizedTag="TITLE"  
-                                LocalizedPage="ADMIN_PAGEACCESSEDIT" /></h1>
-    </div>
-    </div>
-    <div class="row">
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
@@ -25,7 +18,7 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <li class="list-group-item list-group-item-action">
-                                <span class="font-weight-bold">
+                                <span class="fw-bold">
                                     <YAF:LocalizedLabel ID="LocalizedLabel4" runat="server" 
                                                         LocalizedTag="PAGE" 
                                                         LocalizedPage="ADMIN_PAGEACCESSEDIT" />:

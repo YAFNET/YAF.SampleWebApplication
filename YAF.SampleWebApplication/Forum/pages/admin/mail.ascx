@@ -5,13 +5,6 @@
 
     <div class="row">
         <div class="col-xl-12">
-            <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                    LocalizedTag="HEADER" 
-                                    LocalizedPage="ADMIN_MAIL" /></h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
                     <YAF:IconHeader runat="server"
@@ -73,7 +66,7 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header">
-                <i class="fa fa-envelope fa-fw text-secondary pr-1"></i>
+                <i class="fa fa-envelope fa-fw text-secondary pe-1"></i>
                 Mail testing
             </div>
             <div class="card-body">

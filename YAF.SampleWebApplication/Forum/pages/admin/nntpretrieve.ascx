@@ -1,16 +1,10 @@
 <%@ Control Language="c#" AutoEventWireup="True"
 	Inherits="YAF.Pages.Admin.NntpRetrieve" Codebehind="NntpRetrieve.ascx.cs" %>
 <%@ Import Namespace="YAF.Core.Extensions" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
-<div class="row">
-    <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                LocalizedTag="HEADER" 
-                                LocalizedPage="ADMIN_NNTPRETRIEVE" /></h1>
-    </div>
-</div>
 <div class="row">
     <div class="col-xl-12">
         <div class="card mb-3">
@@ -45,12 +39,12 @@
                                 </small>
                             </div>
                             <small>
-                                <span class="font-weight-bold">
+                                <span class="fw-bold">
                                     <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" 
                                                         LocalizedTag="LAST_UPDATE" 
                                                         LocalizedPage="ADMIN_NNTPRETRIEVE" />:&nbsp;
                                 </span>
-                                <%# this.Get<IDateTime>().FormatDateTime(this.Eval("Item1.LastUpdate")) %>
+                                <%# this.Get<IDateTimeService>().FormatDateTime(this.Eval("Item1.LastUpdate")) %>
                             </small>
                         </li>
                     </ItemTemplate>

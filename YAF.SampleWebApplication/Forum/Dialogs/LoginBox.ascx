@@ -11,8 +11,7 @@
                                         LocalizedPage="LOGIN"
                                         LocalizedTag="title" />
                 </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <div class="modal-body">
@@ -69,7 +68,7 @@
                                               Checked="True"></asp:CheckBox>
                             </div>
                         </div>
-                        <div class="mb-3 col-md-6 text-right">
+                        <div class="mb-3 col-md-6 text-end">
                             <YAF:ThemeButton ID="PasswordRecovery" runat="server"
                                              CausesValidation="False"
                                              Type="Secondary"
@@ -79,12 +78,12 @@
                                              TextLocalizedTag="LOSTPASSWORD" />
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 d-grid gap-2">
                         <YAF:ThemeButton ID="LoginButton" runat="server"
                                          CausesValidation="True"
                                          Icon="sign-in-alt"
                                          Type="Primary"
-                                         CssClass="btn-loading btn-block"
+                                         CssClass="btn-loading"
                                          TextLocalizedTag="FORUM_LOGIN"
                                          OnClick="SignIn"/>
                     </div>

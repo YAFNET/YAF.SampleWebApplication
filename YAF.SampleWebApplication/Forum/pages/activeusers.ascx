@@ -1,20 +1,21 @@
 <%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.ActiveUsers" Codebehind="ActiveUsers.ascx.cs" %>
 
 <%@ Import Namespace="YAF.Types.Interfaces" %>
-<%@ Import Namespace="YAF.Utils.Helpers" %>
-<%@ Import Namespace="YAF.Types.Extensions" %>
+<%@ Import Namespace="YAF.Core.Utilities.Helpers" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
+
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
-<asp:Repeater ID="UserList" runat="server">
-	<HeaderTemplate>
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <YAF:IconHeader runat="server"
-                                        IconName="users"></YAF:IconHeader>
-                    </div>
-                    <div class="card-body">
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card mb-3">
+            <div class="card-header">
+                <YAF:IconHeader runat="server"
+                                IconName="users"></YAF:IconHeader>
+            </div>
+            <div class="card-body">
+                <asp:Repeater ID="UserList" runat="server">
+                    <HeaderTemplate>
                         <div class="table-responsive">
 	                        <table class="table tablesorter table-bordered table-striped" id="ActiveUsers">
                                 <thead class="table-light">
@@ -54,77 +55,107 @@
                                     </tr>
                                 </thead>
                             <tbody>
-	                    </HeaderTemplate>
+                        </HeaderTemplate>
 		                <ItemTemplate>
                         <tr>
 				        <td>		
 					        <YAF:UserLink ID="NameLink" runat="server" 
-                                          Suspended='<%# this.Eval("Suspended").ToType<DateTime?>() %>'
-                                          ReplaceName='<%# this.Eval(this.Get<BoardSettings>().EnableDisplayName ? "UserDisplayName" : "UserName") %>' 
-                                          CrawlerName='<%# this.Eval("IsCrawler").ToType<int>() > 0 ? this.Eval("Browser").ToString() : string.Empty %>'
-                                          UserID='<%# this.Eval("UserID").ToType<int>() %>' 
-                                          Style='<%# this.Eval("Style").ToString() %>' />
-                            <asp:PlaceHolder ID="HiddenPlaceHolder" runat="server" Visible='<%# Convert.ToBoolean(this.Eval("IsHidden"))%>' >
-                                (<YAF:LocalizedLabel ID="Hidden" LocalizedTag="HIDDEN" runat="server" />)
-                            </asp:PlaceHolder>				    
+                                          Suspended="<%# (Container.DataItem as dynamic).Suspended %>"
+                                          ReplaceName="<%# this.PageContext.BoardSettings.EnableDisplayName ? (Container.DataItem as dynamic).UserDisplayName : (Container.DataItem as dynamic).UserName %>" 
+                                          CrawlerName="<%# (Container.DataItem as dynamic).IsCrawler > 0 ? (string)(Container.DataItem as dynamic).Browser : string.Empty %>"
+                                          UserID="<%# (Container.DataItem as dynamic).UserID %>" 
+                                          Style="<%# (string)(Container.DataItem as dynamic).UserStyle %>"
+                                          PostfixText='<%# (Container.DataItem as dynamic).IsActiveExcluded ? new Icon{IconName = "user-secret"}.RenderToString() : "" %>'/>
 				        </td>
 				        <td>				
 					        <YAF:ActiveLocation ID="ActiveLocation2" 
-                                                UserID='<%# (this.Eval("UserID") == DBNull.Value ? 0 : this.Eval("UserID")).ToType<int>() %>'
-                                                UserName='<%# this.Eval("UserName") %>' 
-                                                HasForumAccess='<%# Convert.ToBoolean(this.Eval("HasForumAccess")) %>' 
-                                                ForumPage='<%# this.Eval("ForumPage") %>'
-                                                ForumID='<%# (this.Eval("ForumID") == DBNull.Value ? 0 : this.Eval("ForumID")).ToType<int>() %>' 
-                                                ForumName='<%# this.Eval("ForumName") %>'
-                                                TopicID='<%# (this.Eval("TopicID") == DBNull.Value ? 0 : this.Eval("TopicID")).ToType<int>() %>' 
-                                                TopicName='<%# this.Eval("TopicName") %>'
+                                                UserID="<%# (Container.DataItem as dynamic).UserID %>"
+                                                UserName="<%# (this.PageContext.BoardSettings.EnableDisplayName ? (Container.DataItem as dynamic).UserDisplayName : (Container.DataItem as dynamic).UserName %>" 
+                                                HasForumAccess="<%# (Container.DataItem as dynamic).HasForumAccess %>" 
+                                                ForumPage="<%#(Container.DataItem as dynamic).ForumPage %>"
+                                                ForumID="<%# (Container.DataItem as dynamic).ForumID == null ? 0 : (Container.DataItem as dynamic).ForumID %>" 
+                                                ForumName="<%# (Container.DataItem as dynamic).ForumName %>"
+                                                TopicID="<%# (Container.DataItem as dynamic).TopicID == null ? 0 : (Container.DataItem as dynamic).TopicID %>" 
+                                                TopicName="<%# (Container.DataItem as dynamic).TopicName %>"
                                                 LastLinkOnly="false"  runat="server"></YAF:ActiveLocation>     
 				        </td>
 				        <td>
-					        <%# this.Get<IDateTime>().FormatTime((DateTime)((System.Data.DataRowView)Container.DataItem)["Login"]) %>
+					        <%# this.Get<IDateTimeService>().FormatTime((DateTime)(Container.DataItem as dynamic).Login) %>
 				        </td>				
 				        <td>
-					        <%# this.Get<IDateTime>().FormatTime((DateTime)((System.Data.DataRowView)Container.DataItem)["LastActive"]) %>
+					        <%# this.Get<IDateTimeService>().FormatTime((DateTime)(Container.DataItem as dynamic).LastActive) %>
 				        </td>
 				        <td>
-					        <%# this.Get<ILocalization>().GetTextFormatted("minutes", ((System.Data.DataRowView)Container.DataItem)["Active"])%>
+					        <%# this.Get<ILocalization>().GetTextFormatted("minutes", (Container.DataItem as dynamic).Active)%>
+				        </td>
+				        <td><%# (Container.DataItem as dynamic).Browser %>
 				        </td>
 				        <td>
-					        <%# this.Eval("Browser") %>
-				        </td>
-				        <td>
-					        <%# this.Eval("Platform") %>
+					        <%#(Container.DataItem as dynamic).Platform %>
 				        </td>
                         <td id="Iptd1" runat="server" visible="<%# this.PageContext.IsAdmin %>">
-					         <a id="Iplink1" href='<%# string.Format(this.PageContext.BoardSettings.IPInfoPageURL,IPHelper.GetIp4Address(this.Eval("IP").ToString())) %>'
+					         <a id="Iplink1" href="<%# string.Format(this.PageContext.BoardSettings.IPInfoPageURL,IPHelper.GetIp4Address((string)(Container.DataItem as dynamic).IP)) %>"
                                 title='<%# this.GetText("COMMON","TT_IPDETAILS") %>' target="_blank" runat="server">
-                             <%# IPHelper.GetIp4Address(this.Eval("IP").ToString())%></a>
+                             <%# IPHelper.GetIp4Address((string)(Container.DataItem as dynamic).IP)%></a>
 				        </td>
                     </tr>	
                         </ItemTemplate>
                         <FooterTemplate>
                             </table>
                         </div>
-                        </div>
+						</div>
             <div class="card-footer">
-            <div id="ActiveUsersPager" class="tableSorterPager d-flex">
-                <select class="pagesize form-select form-select-sm mr-2">
-                    <option selected="selected"  value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option  value="40">40</option>
-                </select>
-                <div class="btn-group"  role="group">
-                    <a href="#" class="first btn btn-secondary btn-sm"><span><i class="fas fa-angle-double-left"></i></span></a>
-                    <a href="#" class="prev btn btn-secondary btn-sm"><span><i class="fas fa-angle-left"></i></span></a>
-                    <input type="button" class="pagedisplay  btn btn-secondary btn-sm disabled"  style="width:150px" />
-                    <a href="#" class="next btn btn-secondary btn-sm"><span><i class="fas fa-angle-right"></i></span></a>
-                    <a href="#" class="last btn btn-secondary btn-sm"><span><i class="fas fa-angle-double-right"></i></span></a>
+                <div id="ActiveUsersPager" class="row justify-content-between align-items-center">
+                <div class="col-auto mb-1">
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-text">
+                            <YAF:LocalizedLabel ID="HelpLabel2" runat="server" LocalizedTag="SHOW" />:
+                        </div>
+                        <select class="pagesize form-select form-select-sm w-25">
+                            <option selected="selected" value="5">
+                                <YAF:LocalizedLabel runat="server" 
+                                                    LocalizedPage="COMMON" LocalizedTag="ENTRIES_5" />
+                            </option>
+                            <option value="10">
+                                <YAF:LocalizedLabel runat="server" 
+                                                    LocalizedPage="COMMON" LocalizedTag="ENTRIES_10" />
+
+                            </option>
+                            <option value="20">
+                                <YAF:LocalizedLabel runat="server" 
+                                                    LocalizedPage="COMMON" LocalizedTag="ENTRIES_20" />
+
+                            </option>
+                            <option value="25">
+                                <YAF:LocalizedLabel runat="server" 
+                                                    LocalizedPage="COMMON" LocalizedTag="ENTRIES_25" />
+
+                            </option>
+                            <option value="50">
+                                <YAF:LocalizedLabel runat="server" 
+                                                    LocalizedPage="COMMON" LocalizedTag="ENTRIES_50" />
+
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-auto mb-1">
+                    <div class="btn-group" role="group">
+                        <a href="#" class="first  btn btn-secondary btn-sm"><span><i class="fas fa-angle-double-left"></i></span></a>
+                        <a href="#" class="prev  btn btn-secondary btn-sm"><span><i class="fas fa-angle-left"></i></span></a>
+                        <input type="button" class="pagedisplay  btn btn-secondary btn-sm disabled"  style="width:150px" />
+                        <a href="#" class="next btn btn-secondary btn-sm"><span><i class="fas fa-angle-right"></i></span></a>
+                        <a href="#" class="last  btn btn-secondary btn-sm"><span><i class="fas fa-angle-double-right"></i></span></a>
+                    </div>
                 </div>
             </div>
-                </div>
+            </div>
             </div>
         </div>
                             </div>
     </FooterTemplate>
-</asp:Repeater>
+                </asp:Repeater>
+            </div>
+        </div>
+    </div>
+</div>

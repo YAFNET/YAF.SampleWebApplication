@@ -4,13 +4,13 @@
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="ServiceStack" %>
 <%@ Import Namespace="YAF.Core.Extensions" %>
-<%@ Import Namespace="YAF.Utils.Helpers" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
+<%@ Import Namespace="YAF.Core.Utilities" %>
+<%@ Import Namespace="YAF.Configuration" %>
 
 
 <div class="bg-light">
     <div class="container">
-        <YAF:Pager runat="server" ID="PagerTop" 
-                   OnPageChange="Pager_PageChange" />
         <asp:Repeater runat="server" ID="AlbumImages" 
                   OnItemDataBound="AlbumImages_ItemDataBound"
                   OnItemCommand="AlbumImages_ItemCommand">
@@ -43,9 +43,9 @@
                                   <span id='<%# "spnTitle{0}".Fmt(this.Eval("ID")) %>'
                                         onclick="showTexBox(this.id)"
                                         title='<%# this.Eval("Caption") == null ? this.GetText("ALBUM_IMAGE_CHANGE_CAPTION") : this.GetText("ALBUM_IMAGE_CHANGE_CAPTION2") %>'
-                                        data-toggle="tooltip">
+                                        data-bs-toggle="tooltip">
                                       <YAF:Icon runat="server" IconName="pen" IconType="text-secondary"/>
-                                      <%# this.Eval("Caption").IsNullOrEmptyDBField() ? this.GetText("ALBUM_IMAGE_CHANGE_CAPTION") : this.HtmlEncode(this.Eval("Caption"))%>
+                                      <%# this.Eval("Caption").IsNullOrEmptyField() ? this.GetText("ALBUM_IMAGE_CHANGE_CAPTION") : this.HtmlEncode(this.Eval("Caption"))%>
                                   </span>
                                   <input type="text" id='<%# "txtTitle{0}".Fmt(this.Eval("ID")) %>' 
                                          class="form-control"
@@ -66,8 +66,11 @@
                   </div>
              </ItemTemplate>
         </asp:Repeater>
-        <YAF:Pager runat="server" ID="PagerBottom" 
-                   LinkedPager="PagerTop" 
+    <div class="row justify-content-end">
+        <div class="col-auto">
+        <YAF:Pager runat="server" ID="PagerTop" 
                    OnPageChange="Pager_PageChange" />
+            </div>
+        </div>
     </div>
 </div>

@@ -75,14 +75,14 @@
                     <ul class="standardList">
                         <li>
                             <asp:Label ID="lblPermissionApp" runat="server" 
-                                       CssClass="badge bg-info float-right">
+                                       CssClass="badge bg-info float-end">
                                 <%# YAF.App_GlobalResources.Install.Unchecked %>
                             </asp:Label>
                             <%# YAF.App_GlobalResources.Install.PermissionApp %>
                         </li>
                         <li>
                             <asp:Label ID="lblPermissionUpload" runat="server" 
-                                       CssClass="badge bg-info float-right">
+                                       CssClass="badge bg-info float-end">
                                 <%# YAF.App_GlobalResources.Install.Unchecked %>
                             </asp:Label>
                             <%# YAF.App_GlobalResources.Install.PermissionUpload %>
@@ -158,7 +158,7 @@
                     <h4>
                         <%# YAF.App_GlobalResources.Install.DBConnection %>
                     </h4>
-                    <div class="form-check">
+                    <div class="form-check form-check-custom">
                         <asp:RadioButtonList ID="rblYAFDatabase" runat="server" 
                                              AutoPostBack="true"
                                              OnSelectedIndexChanged="YafDatabaseSelectedIndexChanged"
@@ -431,16 +431,6 @@
                                      CssClass="form-control"/>
                     </div>
                     <div class="mb-3">
-                        <asp:Label id="Label6" runat="server" 
-                                   AssociatedControlId="TimeZones">
-                            <%# YAF.App_GlobalResources.Install.TimeZone %>
-                        </asp:Label>
-                        <asp:DropDownList ID="TimeZones" runat="server" 
-                                          DataTextField="Name" 
-                                          DataValueField="Value" 
-                                          CssClass="form-select" />
-                    </div>
-                    <div class="mb-3">
                         <asp:Label id="Label7" runat="server" 
                                    AssociatedControlId="Cultures">
                             <%# YAF.App_GlobalResources.Install.Culture %>
@@ -588,7 +578,7 @@
                                         <asp:ListItem Text="Finnish" Value="fi" />
                                         <asp:ListItem Text="French" Value="fr"/>
                                         <asp:ListItem Text="German" Value="de-DE" />
-                                        <asp:ListItem Text="Hebrew" Value="iw" />
+                                        <asp:ListItem Text="Hebrew" Value="he" />
                                         <asp:ListItem Text="Italian" Value="it"/>
                                         <asp:ListItem Text="Lithuanian" Value="lt"/>
                                         <asp:ListItem Text="Norwegian" Value="no"/>
@@ -608,7 +598,7 @@
                             <div class="modal-body">
                                 <asp:PlaceHolder ID="errorMessage" runat="server" Visible="false">
                                     <div class="alert alert-warning">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
                                         <asp:Literal runat="server" ID="errorMessageContent"></asp:Literal>
                                     </div>
                                 </asp:PlaceHolder>

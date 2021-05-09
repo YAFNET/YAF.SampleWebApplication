@@ -3,13 +3,6 @@
 <YAF:PageLinks runat="server" id="PageLinks" />
 
     <div class="row">
-    <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                LocalizedTag="HEADER" 
-                                LocalizedPage="ADMIN_BBCODE_EDIT" /></h1>
-    </div>
-    </div>
-    <div class="row">
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
@@ -23,7 +16,7 @@
                                             LocalizedTag="HEADER1" 
                                             LocalizedPage="ADMIN_BBCODE_EDIT" /></h2>
                     <hr />
-                    <div class="ml-2">
+                    <div class="ms-2">
                         <div class="mb-3">
                             <YAF:HelpLabel ID="HelpLabel1" runat="server" 
                                            AssociatedControlID="txtName"
@@ -74,7 +67,7 @@
                                             LocalizedTag="HEADER2" LocalizedPage="ADMIN_BBCODE_EDIT" />
                     </h2>
                     <hr />
-                    <div class="ml-2">
+                    <div class="ms-2">
                         <div class="mb-3">
                             <YAF:HelpLabel ID="HelpLabel4" runat="server" 
                                            AssociatedControlID="txtSearchRegEx"
@@ -120,7 +113,7 @@
                         <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="HEADER3" LocalizedPage="ADMIN_BBCODE_EDIT" />
                     </h2>
                     <hr />
-                    <div class="ml-2">
+                    <div class="ms-2">
                         <div class="mb-3">
                             <YAF:HelpLabel ID="HelpLabel9" runat="server" 
                                            AssociatedControlID="txtOnClickJS"

@@ -3,13 +3,6 @@
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
     <div class="row">
-    <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                LocalizedTag="admin_forums" 
-                                LocalizedPage="ADMINMENU" /></h1>
-    </div>
-    </div>
-    <div class="row">
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
@@ -17,7 +10,7 @@
                                     IconName="comments"
                                     LocalizedTag="admin_forums" 
                                     LocalizedPage="ADMINMENU"></YAF:IconHeader>
-                 </div>
+                </div>
                 <div class="card-body">
 		<asp:Repeater ID="CategoryList" runat="server" OnItemCommand="CategoryList_ItemCommand" OnItemDataBound="CategoryList_OnItemDataBound">
 			<HeaderTemplate>
@@ -26,7 +19,7 @@
             <ItemTemplate>
                 <li class="list-group-item list-group-item-action active list-group-item-menu">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"><i class="fa fa-folder fa-fw pr-1"></i><%# this.HtmlEncode(this.Eval( "Name"))%></h5>
+                    <h5 class="mb-1"><i class="fa fa-folder fa-fw pe-1"></i><%# this.HtmlEncode(this.Eval( "Name"))%></h5>
                     <small class="d-none d-md-block">
                         <YAF:LocalizedLabel runat="server"
                                             LocalizedTag="SORT_ORDER">
@@ -92,7 +85,7 @@
                         <li class="list-group-item list-group-item-action list-group-item-menu">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">
-                                    <i class="fa fa-comments fa-fw pr-1"></i><%# this.HtmlEncode(DataBinder.Eval(Container.DataItem, "Name")) %>
+                                    <i class="fa fa-comments fa-fw pe-1"></i><%# this.HtmlEncode(DataBinder.Eval(Container.DataItem, "Name")) %>
                                 </h5>
                                 <small class="d-none d-md-block">
                                     <YAF:LocalizedLabel runat="server" LocalizedTag="SORT_ORDER" />&nbsp;

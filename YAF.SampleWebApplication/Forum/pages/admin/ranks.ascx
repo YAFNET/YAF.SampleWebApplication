@@ -1,14 +1,8 @@
 <%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.Ranks" Codebehind="Ranks.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Flags" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
-<%@ Import Namespace="YAF.Core.Extensions" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
-    <div class="row">
-    <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="TITLE" LocalizedPage="ADMIN_RANKS" /></h1>
-    </div>
-    </div>
     <div class="row">
         <div class="col-xl-12">
             <div class="card mb-3">
@@ -34,7 +28,7 @@
                                             LocalizedTag="IS_START" 
                                             LocalizedPage="ADMIN_RANKS" />
                         <asp:Label ID="Label4" runat="server" 
-                                   CssClass='<%# this.GetItemColor(this.Eval( "Flags" ).BinaryAnd(1)) %>'><%# this.GetItemName(this.Eval( "Flags" ).BinaryAnd(1)) %></asp:Label>
+                                   CssClass='<%# this.GetItemColor(((RankFlags)this.Eval("RankFlags")).IsStart) %>'><%# this.GetItemName(((RankFlags)this.Eval("RankFlags")).IsStart) %></asp:Label>
                     </small>
                 </div>
                 <p>
@@ -57,7 +51,7 @@
                             <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" 
                                                 LocalizedTag="IS_LADDER" LocalizedPage="ADMIN_RANKS" />
                             <asp:Label ID="Label1" runat="server" 
-                                       CssClass='<%# this.GetItemColor(this.Eval( "Flags" ).BinaryAnd(RankFlags.Flags.IsLadder)) %>'>
+                                       CssClass='<%# this.GetItemColor(((RankFlags)this.Eval("RankFlags")).IsLadder) %>'>
                                 <%# this.LadderInfo(Container.DataItem) %>
                             </asp:Label>
                             </li>

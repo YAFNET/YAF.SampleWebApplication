@@ -2,6 +2,8 @@
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="YAF.Types.Models" %>
+<%@ Import Namespace="YAF.Core.Extensions" %>
+<%@ Import Namespace="YAF.Types.Objects.Model" %>
 
 
 <%@ Register TagPrefix="modal" TagName="Edit" Src="../../Dialogs/ModForumUser.ascx" %>
@@ -26,15 +28,15 @@
         </HeaderTemplate>
         <ItemTemplate>
             <li class="list-group-item">
-                <span class="font-weight-bold">
+                <span class="fw-bold">
                     <YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" LocalizedTag="USER" LocalizedPage="MODERATE" />:
                 </span>
-                <%#  this.Get<IUserDisplayName>().GetName(this.Eval("Item1").ToType<User>()) %>
-                <span class="font-weight-bold">
+                <%#  this.Eval("Item1").ToType<User>().DisplayOrUserName() %>
+                <span class="fw-bold">
                     <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="ACCEPTED" LocalizedPage="MODERATE" />:
                 </span>
                 <%# this.Eval("Item2.Accepted") %>
-                <span class="font-weight-bold">
+                <span class="fw-bold">
                     <YAF:LocalizedLabel ID="LocalizedLabel4" runat="server" LocalizedTag="ACCESSMASK" LocalizedPage="MODERATE" />:
                 </span>
                 <%# this.Eval("Item3.Name") %>
@@ -69,18 +71,30 @@
 </div>
 </asp:PlaceHolder>
 
-<YAF:Pager ID="PagerTop" runat="server" 
-           OnPageChange="PagerTop_PageChange" 
-           UsePostBack="True" />
-
 <div class="row">
     <div class="col">
         <div class="card mb-3 mt-3">
             <div class="card-header">
-                <YAF:IconHeader runat="server"
-                                IconName="tasks"
-                                LocalizedTag="title" 
-                                LocalizedPage="MODERATE"/>
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-auto">
+                        <YAF:IconHeader runat="server"
+                                        IconName="tasks"
+                                        LocalizedTag="title" 
+                                        LocalizedPage="MODERATE"/>
+                    </div>
+                    <div class="col-auto">
+                        <div class="input-group input-group-sm me-2" role="group">
+                            <div class="input-group-text">
+                                <YAF:LocalizedLabel ID="HelpLabel2" runat="server" LocalizedTag="SHOW" />:
+                            </div>
+                            <asp:DropDownList runat="server" ID="PageSize"
+                                              AutoPostBack="True"
+                                              OnSelectedIndexChanged="PageSizeSelectedIndexChanged"
+                                              CssClass="form-select">
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <asp:Repeater ID="topiclist" runat="server">
@@ -92,7 +106,7 @@
                                               Text="&nbsp;"
                                               CssClass="form-check d-inline-flex align-middle" />
                                 <YAF:TopicContainer runat="server" ID="topicContainer" 
-                                                    DataRow="<%# Container.DataItem %>" 
+                                                    Item="<%# (PagedTopic)Container.DataItem %>"
                                                     AllowSelection="True" />
                     </ItemTemplate>
                     <SeparatorTemplate>
@@ -155,6 +169,12 @@
     </div>
 </div>
 
-<YAF:Pager ID="PagerBottom" runat="server" LinkedPager="PagerTop" UsePostBack="True" />
+<div class="row justify-content-end">
+    <div class="col-auto">
+        <YAF:Pager ID="PagerTop" runat="server"
+                   OnPageChange="PagerTop_PageChange" 
+                   UsePostBack="True" />
+    </div>
+</div>
 
 <modal:Edit ID="ModForumUserDialog" runat="server" />

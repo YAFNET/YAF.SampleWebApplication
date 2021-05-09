@@ -64,7 +64,7 @@
                                                   Checked="True"></asp:CheckBox>
                                 </div>
                             </div>
-                            <div class="mb-3 col-md-6 text-right">
+                            <div class="mb-3 col-md-6 text-end">
                                 <YAF:ThemeButton ID="PasswordRecovery" runat="server" 
                                                  CausesValidation="False"
                                                  Type="Secondary"
@@ -74,13 +74,13 @@
                                                  TextLocalizedTag="LOSTPASSWORD" />
                             </div>
                         </div>
-                    <div class="mb-3">
+                    <div class="mb-3 d-grid gap-2">
                         <YAF:ThemeButton ID="LoginButton" runat="server"
                                          CausesValidation="True"
                                          Icon="sign-in-alt"
                                          Type="Primary"
                                          TextLocalizedTag="FORUM_LOGIN"
-                                         CssClass="btn-block btn-login"
+                                         CssClass="btn-login"
                                          OnClick="SignIn"/>
                     </div>
                     <section>

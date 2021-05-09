@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true"
     Inherits="YAF.Controls.EditUsersProfile" CodeBehind="EditUsersProfile.ascx.cs" %>
 
-<%@ Import Namespace="YAF.Types.Interfaces" %>
 <asp:PlaceHolder ID="ProfilePlaceHolder" runat="server">
     <h2>
         <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server"
@@ -32,13 +31,8 @@
                 LocalizedPage="EDIT_PROFILE"
                 LocalizedTag="BIRTHDAY" />
         </asp:Label>
-        <div class='input-group mb-3 date datepickerinput'>
-            <button class="btn btn-secondary datepickerbutton" type="button">
-                <i class="fa fa-calendar-day fa-fw"></i>
-            </button>
-            <asp:TextBox ID="Birthday" runat="server"
-                CssClass="form-control"></asp:TextBox>
-        </div>
+        <asp:TextBox ID="Birthday" runat="server"
+                     CssClass="form-control"></asp:TextBox>
     </div>
     <div class="mb-3">
         <asp:Label runat="server" AssociatedControlID="Occupation">
@@ -81,7 +75,7 @@
 
     <div class="mb-3">
         <YAF:ThemeButton runat="server" ID="GetLocation"
-            Visible="<%# this.Get<BoardSettings>().EnableIPInfoService %>"
+            Visible="<%# this.PageContext.BoardSettings.EnableIPInfoService %>"
             Icon="location-arrow"
             Type="Secondary"
             TextLocalizedTag="GET_LOCATION"
@@ -238,7 +232,7 @@
     <YAF:ThemeButton ID="UpdateProfile" runat="server"
                      Type="Primary"
                      OnClick="UpdateProfileClick"
-                     CssClass="mr-2"
+                     CssClass="me-2"
                      Icon="save"
                      TextLocalizedTag="SAVE"
                      TextLocalizedPage="COMMON" />

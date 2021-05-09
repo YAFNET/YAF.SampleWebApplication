@@ -6,14 +6,6 @@
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
     <div class="row">
-    <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" 
-                                LocalizedTag="TITLE" LocalizedPage="ADMIN_NNTPSERVERS" />
-
-        </h1>
-    </div>
-    </div>
-    <div class="row">
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
@@ -34,7 +26,7 @@
                         </h5>
                     </div>
                     <p class="mb-1">
-                        <span class="font-weight-bold">
+                        <span class="fw-bold">
                             <YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" LocalizedTag="ADRESS" LocalizedPage="ADMIN_NNTPSERVERS" />:&nbsp;
                         </span>
                         <%# this.Eval("Address") %>

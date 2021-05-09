@@ -30,14 +30,14 @@
                         <div class="text-lg-center">
                             <YAF:ThemeButton ID="DeleteUser" runat="server"
                                              OnClick="DeleteUserClick"
-                                             CssClass="mr-2"
+                                             CssClass="me-2"
                                              TextLocalizedTag="CONTINUE"
                                              Type="Danger"
                                              Icon="user-alt-slash"/>
                             <YAF:ThemeButton ID="Cancel" runat="server"
                                              TextLocalizedTag="CANCEL"
                                              Type="Secondary"
-                                             Icon="reply"/>
+                                             Icon="times"/>
                         </div>
                     </div>
                 </div>

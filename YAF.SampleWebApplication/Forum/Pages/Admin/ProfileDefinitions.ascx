@@ -8,15 +8,6 @@
 
 <div class="row">
     <div class="col-xl-12">
-        <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                LocalizedTag="TITLE" 
-                                LocalizedPage="ADMIN_PROFILEDEFINITIONS" />
-        </h1>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xl-12">
         <asp:Repeater ID="List" runat="server" OnItemCommand="ListItemCommand">
             <HeaderTemplate>
                 <div class="card mb-3">
@@ -35,7 +26,7 @@
                         <%# this.Eval("Name") %>
                     </h5>
                         <small class="d-none d-md-block">
-                            <span class="font-weight-bold">
+                            <span class="fw-bold">
                                 <YAF:LocalizedLabel runat="server" 
                                                     LocalizedTag="REQUIRED"></YAF:LocalizedLabel>
                             </span>
@@ -44,7 +35,8 @@
                             </span>
                         </small>
                     </div>
-                    <p>
+                    <p class="mb-1">
+                        <%# this.Eval("DataType") %>
                     </p>
                     <small>
                         <div class="btn-group btn-group-sm">

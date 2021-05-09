@@ -4,14 +4,6 @@
 
 <div class="row">
     <div class="col-xl-12">
-        <h1>
-            <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                LocalizedTag="HEADER" LocalizedPage="ADMIN_BOARDSETTINGS" />
-        </h1>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xl-12">
          <div class="card mb-3">
              <div class="card-header">
                  <YAF:IconHeader runat="server"
@@ -172,13 +164,23 @@
                                  Enabled="False"></asp:TextBox>
                     <YAF:ThemeButton runat="server"
                                      OnClick="IncreaseVersionOnClick"
-                                     CssClass="float-right"
+                                     CssClass="float-end"
                                      Type="Info"
                                      Icon="file-code"
                                      TextLocalizedTag="CDVVERSION_BUTTON"
                                      TitleLocalizedTag="CDVVERSION_HELP">
                     </YAF:ThemeButton>
                 </div>
+            </div>
+            <div class="mb-3">
+                <YAF:HelpLabel ID="HelpLabel7" runat="server"
+                               AssociatedControlID="ForumDefaultAccessMask"
+                               LocalizedTag="FORUM_DEFAULT_ACCESSMASK"
+                               LocalizedPage="ADMIN_BOARDSETTINGS"/>
+                <asp:DropDownList ID="ForumDefaultAccessMask" runat="server" 
+                                  CssClass="select2-select" 
+                                  placeholder='<%# this.GetText("FORUM_DEFAULT_ACCESSMASK") %>'>
+                </asp:DropDownList>
             </div>
         </div>
         <div class="card-footer text-center">

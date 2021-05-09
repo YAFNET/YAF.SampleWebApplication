@@ -5,19 +5,13 @@
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="ServiceStack" %>
+<%@ Import Namespace="YAF.Types.Objects.Model" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
-<div class="row">
-            <div class="col-xl-12">
-                <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                        LocalizedTag="TITLE" 
-                                        LocalizedPage="ADMIN_SPAMLOG" /></h1>
-            </div>
-    </div>
     <div class="row">
         <div class="col-xl-12">
-                <YAF:Pager ID="PagerTop" runat="server" OnPageChange="PagerTopPageChange" />
             <div class="card mb-3">
                 <div class="card-header">
                     <div class="row justify-content-between align-items-center">
@@ -27,6 +21,18 @@
                                             LocalizedPage="ADMIN_SPAMLOG"></YAF:IconHeader>
                         </div>
                     <div class="col-auto">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="input-group input-group-sm me-2" role="group">
+                                <div class="input-group-text">
+                                    <YAF:LocalizedLabel ID="HelpLabel2" runat="server" LocalizedTag="SHOW" />:
+                                </div>
+                                <asp:DropDownList runat="server" ID="PageSize"
+                                                  AutoPostBack="True"
+                                                  OnSelectedIndexChanged="PageSizeSelectedIndexChanged"
+                                                  CssClass="form-select">
+                                </asp:DropDownList>
+                            </div>
+                            <div class="btn-group btn-group-sm" role="group">
                          <YAF:ThemeButton runat="server"
                                          CssClass="dropdown-toggle"
                                          DataToggle="dropdown"
@@ -35,42 +41,33 @@
                                          Icon="filter"
                                          TextLocalizedTag="FILTER_DROPDOWN"
                                          TextLocalizedPage="ADMIN_USERS"></YAF:ThemeButton>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
                             <div class="px-3 py-1">
                                <div class="mb-3">
-                        <YAF:HelpLabel ID="SinceDateLabel" runat="server" 
-                                       AssociatedControlID="SinceDate"
-                                       LocalizedPage="ADMIN_EVENTLOG" LocalizedTag="SINCEDATE" />
-                     
-                        <div class='input-group mb-3 date datepickerinput'>
-                            <button class="btn btn-secondary datepickerbutton" type="button">
-                                <i class="fa fa-calendar-day fa-fw"></i>
-                            </button>
-                            <asp:TextBox ID="SinceDate" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <YAF:HelpLabel ID="ToDateLabel" runat="server" 
-                                       AssociatedControlID="ToDate"
-                                       LocalizedPage="ADMIN_EVENTLOG" LocalizedTag="TODATE" />
-                         
-                        <div class='input-group mb-3 date datepickerinput'>
-                            <button class="btn btn-secondary datepickerbutton" type="button">
-                                <i class="fa fa-calendar-day fa-fw"></i>
-                            </button>
-                            <asp:TextBox ID="ToDate" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
-                    </div>
+                                   <YAF:HelpLabel ID="SinceDateLabel" runat="server" 
+                                                  AssociatedControlID="SinceDate"
+                                                  LocalizedPage="ADMIN_EVENTLOG" LocalizedTag="SINCEDATE" />
+                                   <asp:TextBox ID="SinceDate" runat="server" 
+                                                CssClass="form-control"></asp:TextBox>
+                               </div>
                                 <div class="mb-3">
+                                    <YAF:HelpLabel ID="ToDateLabel" runat="server" 
+                                                   AssociatedControlID="ToDate"
+                                                   LocalizedPage="ADMIN_EVENTLOG" LocalizedTag="TODATE" />
+                                    <asp:TextBox ID="ToDate" runat="server" 
+                                                 CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <div class="mb-3 d-grid gap-2">
                                     <YAF:ThemeButton ID="ApplyButton" runat="server"
                                                      Type="Primary" 
-                                                     CssClass="btn-block"
                                                      OnClick="ApplyButtonClick"
                                                      TextLocalizedPage="ADMIN_EVENTLOG" 
                                                      TextLocalizedTag="APPLY" 
                                                      Icon="check"></YAF:ThemeButton>
                                 </div>
                             </div>
+                            </div>
+                                </div>
                             </div>
                     </div>
                         </div>
@@ -83,27 +80,27 @@
             <ItemTemplate>
                 <li class="list-group-item list-group-item-action list-group-item-menu">
                     <div class="d-flex w-100 justify-content-between text-break" 
-                         onclick="javascript:document.querySelector('<%# ".btn-toggle-{0}".Fmt(this.Eval("EventLogID")) %>').click();">
+                         onclick="javascript:document.querySelector('<%# ".btn-toggle-{0}".Fmt(((PagedEventLog)Container.DataItem).ID) %>').click();">
                         <h5 class="mb-1">
-                            <asp:HiddenField ID="EventTypeID" Value='<%# this.Eval("Type")%>' runat="server"/>
+                            <asp:HiddenField ID="EventTypeID" Value='<%# ((PagedEventLog)Container.DataItem).Type%>' runat="server"/>
                             <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" 
                                                                                LocalizedTag="SOURCE" 
                                                                                LocalizedPage="ADMIN_EVENTLOG" />:&nbsp;
-                            <%# Container.DataItemToField<string>("Source").IsSet() ? this.HtmlEncode(this.Eval( "Source")) : "N/A" %>
+                            <%# ((PagedEventLog)Container.DataItem).Source.IsSet() ? this.HtmlEncode(((PagedEventLog)Container.DataItem).Source) : "N/A" %>
                         </h5>
                         <small class="d-none d-md-block">
                             <YAF:Icon runat="server" 
                                       IconName="calendar-day"
                                       IconNameBadge="clock"></YAF:Icon>
-                            <%# this.Get<IDateTime>().FormatDateTimeTopic(Container.DataItemToField<DateTime>("EventTime")) %>
+                            <%# this.Get<IDateTimeService>().FormatDateTimeTopic(((PagedEventLog)Container.DataItem).EventTime) %>
                         </small>
                     </div>
                     <p class="mb-1" 
-                       onclick="javascript:document.querySelector('<%# ".btn-toggle-{0}".Fmt(this.Eval("EventLogID")) %>').click();">
-                        <span class="font-weight-bold">
+                       onclick="javascript:document.querySelector('<%# ".btn-toggle-{0}".Fmt(((PagedEventLog)Container.DataItem).ID) %>').click();">
+                        <span class="fw-bold">
                             <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="NAME" LocalizedPage="ADMIN_EVENTLOG" />:
                         </span>
-                        <%# this.UserLink(Container.DataItem) %>
+                        <%# this.UserLink((PagedEventLog)Container.DataItem) %>
                     </p>
                     <small>
                         <div class="btn-group btn-group-sm">
@@ -112,14 +109,14 @@
                                              Size="Small"
                                              TextLocalizedTag="SHOW" TextLocalizedPage="ADMIN_EVENTLOG"
                                              Icon="caret-square-down"
-                                             CssClass='<%# "btn-toggle-{0}".Fmt(this.Eval("EventLogID")) %>'
+                                             CssClass='<%# "btn-toggle-{0}".Fmt(((PagedEventLog)Container.DataItem).ID) %>'
                                              DataToggle="collapse"
-                                             DataTarget='<%# "eventDetails{0}".Fmt(this.Eval("EventLogID")) %>'>
+                                             DataTarget='<%# "eventDetails{0}".Fmt(((PagedEventLog)Container.DataItem).ID) %>'>
                             </YAF:ThemeButton>
                             <YAF:ThemeButton runat="server" 
                                              Type="Danger"
                                              Size="Small"
-                                             CommandName="delete" CommandArgument='<%# this.Eval( "EventLogID") %>'
+                                             CommandName="delete" CommandArgument='<%# ((PagedEventLog)Container.DataItem).ID %>'
                                              ReturnConfirmText='<%# this.GetText("ADMIN_EVENTLOG", "CONFIRM_DELETE") %>'
                                              Icon="trash" 
                                              TextLocalizedTag="DELETE">
@@ -130,7 +127,7 @@
                         <YAF:ThemeButton runat="server" 
                                          Type="None" 
                                          CssClass="dropdown-item"
-                                         CommandName="delete" CommandArgument='<%# this.Eval( "EventLogID") %>'
+                                         CommandName="delete" CommandArgument='<%# ((PagedEventLog)Container.DataItem).ID %>'
                                          ReturnConfirmText='<%# this.GetText("ADMIN_EVENTLOG", "CONFIRM_DELETE") %>'
                                          Icon="trash" 
                                          TextLocalizedTag="DELETE">
@@ -145,11 +142,11 @@
                                          ReturnConfirmText='<%#this.GetText("ADMIN_EVENTLOG", "CONFIRM_DELETE_ALL") %>'>
                         </YAF:ThemeButton>
                     </div>
-                    <div class="collapse mt-3" id="eventDetails<%# this.Eval("EventLogID") %>">
+                    <div class="collapse mt-3" id="eventDetails<%# ((PagedEventLog)Container.DataItem).ID %>">
                         <div class="card card-body py-0">
                             <pre class="pre-scrollable">
                                 <code>
-                                    <%# this.HtmlEncode(this.Eval( "Description")) %>
+                                    <%# this.HtmlEncode(((PagedEventLog)Container.DataItem).Description) %>
                                 </code>
                                </pre>
                         </div>
@@ -178,6 +175,11 @@
                 </YAF:ThemeButton>
             </asp:Panel>
         </div>
-    <YAF:Pager ID="PagerBottom" runat="server" LinkedPager="PagerTop" />
-                </div>
         </div>
+    </div>
+<div class="row justify-content-end">
+    <div class="col-auto">
+        <YAF:Pager ID="PagerTop" runat="server"
+                   OnPageChange="PagerTopPageChange"/>
+    </div>
+</div>

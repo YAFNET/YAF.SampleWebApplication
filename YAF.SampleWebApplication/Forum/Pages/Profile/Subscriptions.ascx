@@ -1,6 +1,7 @@
 <%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Profile.Subscriptions" CodeBehind="Subscriptions.ascx.cs" %>
 
 <%@ Import Namespace="YAF.Types.Extensions" %>
+<%@ Import Namespace="YAF.Core.Services" %>
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
@@ -63,7 +64,26 @@
                 <div class="col">
                     <div class="card mb-3">
                         <div class="card-header">
-                            <i class="fa fa-comments fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="forums" />
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-auto">
+                                    <YAF:IconHeader runat="server"
+                                                    IconName="comments"
+                                                    LocalizedTag="FORUMS"
+                                                    LocalizedPage="SUBSCRIPTIONS"/>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="input-group input-group-sm me-2" role="group">
+                                        <div class="input-group-text">
+                                            <YAF:LocalizedLabel ID="HelpLabel2" runat="server" LocalizedTag="SHOW" />:
+                                        </div>
+                                        <asp:DropDownList runat="server" ID="PageSizeForums"
+                                                          AutoPostBack="True"
+                                                          OnSelectedIndexChanged="PageSizeForumsSelectedIndexChanged"
+                                                          CssClass="form-select">
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body p-0">
                             <asp:Repeater ID="ForumList" runat="server">
@@ -78,7 +98,7 @@
                                         <asp:CheckBox ID="unsubf" runat="server" CssClass="form-check d-inline-block" Text="&nbsp;" />
                                         <asp:Label ID="tfid" runat="server" Text='<%# this.Eval("Item1.ID") %>'
                                                Visible="false" />
-                                        <a href="<%# BuildLink.GetForumLink(this.Eval("Item1.ForumID").ToType<int>(), this.Eval("Item2.Name").ToString())%>">
+                                        <a href="<%# this.Get<LinkBuilder>().GetForumLink(this.Eval("Item1.ForumID").ToType<int>(), this.Eval("Item2.Name").ToString())%>">
                                                 <%# this.HtmlEncode(this.Eval("Item2.Name"))%></a>
                                     </li>
                                 </ItemTemplate>
@@ -94,17 +114,41 @@
                     </div>
                 </div>
             </div>
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <YAF:Pager ID="PagerForums" runat="server" 
+                                   OnPageChange="PagerForums_PageChange" 
+                                   UsePostBack="True" />
+                    </div>
+                </div>
             </asp:PlaceHolder>
             <asp:PlaceHolder runat="server" ID="TopicsHolder">
             <div class="row">
                 <div class="col">
                     <div class="card mb-3">
                         <div class="card-header">
-                            <i class="fa fa-comments fa-fw text-secondary"></i>&nbsp;<YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="topics" />
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-auto">
+                                    <YAF:IconHeader runat="server"
+                                                    IconName="comment"
+                                                    LocalizedTAG="TOPICS"
+                                                    LocalizedPage="SUBSCRIPTIONS" />
+                                </div>
+                                <div class="col-auto">
+                                    <div class="input-group input-group-sm me-2" role="group">
+                                        <div class="input-group-text">
+                                            <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="SHOW" />:
+                                        </div>
+                                        <asp:DropDownList runat="server" ID="PageSizeTopics"
+                                                          AutoPostBack="True"
+                                                          OnSelectedIndexChanged="PageSizeTopicsSelectedIndexChanged"
+                                                          CssClass="form-select">
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body p-0">
-                            <YAF:Pager ID="PagerTop" runat="server" PageSize="25" OnPageChange="PagerTop_PageChange"
-                                       UsePostBack="True" />
                             <asp:Repeater ID="TopicList" runat="server">
                                 <HeaderTemplate>
                                     <ul class="list-group list-group-flush">
@@ -118,12 +162,11 @@
                                         </asp:CheckBox>
                                         <asp:Label ID="ttid" runat="server" Text='<%# this.Eval("Item1.ID") %>'
                                                Visible="false" />
-                                            <a href="<%# BuildLink.GetTopicLink(this.Eval("Item1.TopicID").ToType<int>(), this.Eval("Item2.TopicName").ToString())%>">
+                                            <a href="<%# this.Get<LinkBuilder>().GetTopicLink(this.Eval("Item1.TopicID").ToType<int>(), this.Eval("Item2.TopicName").ToString())%>">
                                                 <%# this.HtmlEncode(this.Eval("Item2.TopicName"))%></a>
                                     </li>
                                 </ItemTemplate>
                             </asp:Repeater>
-                            <YAF:Pager ID="PagerBottom" runat="server" LinkedPager="PagerTop" UsePostBack="True" />
                         </div>
                         <div class="card-footer text-center">
                             <YAF:ThemeButton ID="UnsubscribeTopics" runat="server" 
@@ -135,6 +178,13 @@
                     </div>
                 </div>
             </div>
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <YAF:Pager ID="PagerTopics" runat="server" 
+                                   OnPageChange="PagerTopics_PageChange" 
+                                   UsePostBack="True" />
+                    </div>
+                </div>
             </asp:PlaceHolder>
         </asp:PlaceHolder>
     </ContentTemplate>

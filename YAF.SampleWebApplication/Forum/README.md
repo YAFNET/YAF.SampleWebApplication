@@ -1,8 +1,8 @@
-[![YAF logo](https://yetanotherforum.net/forum/Content/images/YAFLogo.svg)](http://www.yetanotherforum.net)
+[![YAF logo](http://yetanotherforum.net/forum/Content/images/YAFLogo.svg)](http://www.yetanotherforum.net)
 
 **YetAnotherForum.NET** (YAF.NET) ASP.NET Open Source Forum solution! The **YAF.NET** project is an international collaboration of like-minded, skilled, and creative individuals who are striving to make **YAF.NET** the most robust and malleable forum solutions available.
 
-![projectbadge](https://www.ohloh.net/p/yaf/widgets/project_partner_badge.gif)
+![projectbadge](http://www.ohloh.net/p/yaf/widgets/project_partner_badge.gif)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/9905j18xqb16gdy7?svg=true)](https://ci.appveyor.com/project/YAFNET/yafnet)
 
@@ -21,22 +21,26 @@ YAF is also available as a DNN Module, you can download it on the [GitHub Projec
 
 ### Demo Forum
 
-A "sandbox" test forum is available here: https://testforum.yetanotherforum.net/.
+A "sandbox" test forum is available here: http://testforum.yetanotherforum.net/.
 
 ### Screen Shots
 
-![mainscreen](https://yetanotherforum.net/assets/img/main.png)
+![mainscreen](http://yetanotherforum.net/assets/img/main.png)
 
-![forumsscreen](https://yetanotherforum.net/assets/img/forum.png)
+![forumsscreen](http://yetanotherforum.net/assets/img/forum.png)
 
-![topicsscreen](https://yetanotherforum.net/assets/img/topic.png)
+![topicsscreen](http://yetanotherforum.net/assets/img/topic.png)
 
 Admin Control Panel
-![adminpanel](https://yetanotherforum.net/assets/img/admin.png)
+![adminpanel](http://yetanotherforum.net/assets/img/admin.png)
+
+There is also a Second Child Module the *YAF.NET Forums What's New* Module which shows The Latest Posts in a List
+![whatsnew](http://www.watchersnet.de/Portals/0/screenshots/dnn/ScreenshotYafLatestPosts.jpg)
+
 
 ## Community Support Forum
 
-See a real live YAF Forum by visiting the YetAnotherForum.NET community support forum: https://forum.yetanotherforum.net. Also, get your questions answered by the YAF community.
+See a real live YAF Forum by visiting the YetAnotherForum.NET community support forum: http://forum.yetanotherforum.net. Also, get your questions answered by the YAF community.
 
 ## License
 
@@ -45,5 +49,5 @@ Yet Another Forum.NET is licensed under the Apache 2.0 license.
 
 ### Yet Another Forum Community Support
 
-If you have any questions, please visit the YAF Community Support forum: [https://forum.yetanotherforum.net](https://forum.yetanotherforum.net), or visit the Wiki for More Informations.
+If you have any questions, please visit the YAF Community Support forum: [http://forum.yetanotherforum.net](http://forum.yetanotherforum.net), or visit the Wiki for More Informations.
 

@@ -1,9 +1,9 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Posts" CodeBehind="Posts.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
-<%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="ServiceStack" %>
 <%@ Import Namespace="YAF.Core.Extensions" %>
+<%@ Import Namespace="YAF.Types.Objects.Model" %>
 
 <%@ Register TagPrefix="YAF" TagName="DisplayPost" Src="../controls/DisplayPost.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayConnect" Src="../controls/DisplayConnect.ascx" %>
@@ -21,29 +21,25 @@
 <YAF:PollList ID="PollList" runat="server"
               Visible="False" />
 
-<div class="row mb-3 d-flex justify-content-between">
-    <div class="col-md-4">
-        <YAF:Pager ID="Pager" runat="server" UsePostBack="False" />
-    </div>
-    <div class="col-md-8 mt-1 mt-md-0">
-        <div class="d-flex justify-content-end flex-wrap">
+<div class="row justify-content-end">
+    <div class="col-auto">
             <span id="dvFavorite1">
                 <YAF:ThemeButton ID="TagFavorite1" runat="server"
                                  Type="Secondary"
-                                 CssClass="mb-1"
+                                 CssClass="mb-1 me-1"
                                  TextLocalizedTag="BUTTON_TAGFAVORITE" TitleLocalizedTag="BUTTON_TAGFAVORITE_TT"
                                  Icon="star"
                                  IconColor="text-warning" />
             </span>
             <YAF:ThemeButton ID="Tools1" runat="server"
-                             CssClass="dropdown-toggle ml-1 mb-1"
+                             CssClass="dropdown-toggle me-1 mb-1"
                              Type="Danger"
                              DataToggle="dropdown"
                              TextLocalizedTag="MANAGE_TOPIC"
                              TextLocalizedPage="POSTS"
                              NavigateUrl="#"
                              Icon="cogs" />
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="<%# this.Tools1.ClientID %>">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="<%# this.Tools1.ClientID %>">
                 <YAF:ThemeButton ID="MoveTopic1" runat="server"
                                  CssClass="dropdown-item"
                                  Type="None"
@@ -74,23 +70,22 @@
             <YAF:ThemeButton ID="NewTopic1" runat="server"
                              Type="Secondary"
                              TextLocalizedTag="BUTTON_NEWTOPIC" TitleLocalizedTag="BUTTON_NEWTOPIC_TT"
-                             CssClass="ml-1 mb-1"
+                             CssClass="me-1 mb-1"
                              Icon="plus" />
             <YAF:ThemeButton ID="PostReplyLink1" runat="server"
                              Type="Primary"
-                             CssClass="ml-1 mb-1"
+                             CssClass="me-1 mb-1"
                              OnClick="PostReplyLink_Click"
                              TextLocalizedTag="BUTTON_POSTREPLY" TitleLocalizedTag="BUTTON_POSTREPLY_TT"
                              Icon="reply" />
             <YAF:ThemeButton ID="QuickReplyLink1" runat="server"
                              Type="Primary"
-                             CssClass="ml-1 mb-1"
+                             CssClass="mb-1"
                              TextLocalizedTag="QUICKREPLY" TitleLocalizedTag="BUTTON_POSTREPLY_TT"
                              Icon="reply"
                              DataToggle="modal"
                              DataTarget="QuickReplyDialog" />
         </div>
-    </div>
 </div>
 <div class="row mb-3">
     <div class="col">
@@ -101,7 +96,7 @@
                 <asp:Label ID="TopicTitle" runat="server" 
                            CssClass="topic-title" />
             </asp:HyperLink>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -123,7 +118,7 @@
                                          Icon="arrow-circle-right" />
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <YAF:ThemeButton runat="server" ID="ShareLink"
                                          TextLocalizedTag="SHARE" TitleLocalizedTag="SHARE_TOOLTIP"
@@ -153,7 +148,7 @@
 <asp:Repeater ID="MessageList" runat="server" OnItemCreated="MessageList_OnItemCreated">
     <ItemTemplate>
         <YAF:DisplayPost ID="DisplayPost1" runat="server"
-                         DataRow="<%# Container.DataItem.ToType<DataRow>() %>"
+                         DataSource="<%# Container.DataItem.ToType<PagedMessage>() %>"
                          PostCount="<%# Container.ItemIndex %>"
                          CurrentPage="<%# this.Pager.CurrentPageIndex %>" />
         <YAF:DisplayAd ID="DisplayAd" runat="server" 
@@ -164,20 +159,19 @@
 </asp:Repeater>
 
 <asp:PlaceHolder runat="server" 
-                 Visible="<%# this.Get<IPermissions>().Check(this.Get<BoardSettings>().PostsFeedAccess) %>">
+                 Visible="<%# this.Get<IPermissions>().Check(this.PageContext.BoardSettings.PostsFeedAccess) %>">
     <div class="row mb-3">
         <div class="col">
             <YAF:RssFeedLink ID="RssFeed" runat="server"
                              FeedType="Posts"
                              AdditionalParameters='<%# "t={0}&name={1}".Fmt(this.PageContext.PageTopicID, this.PageContext.PageTopicName) %>'
-                             Visible="<%# this.Get<IPermissions>().Check(this.Get<BoardSettings>().PostsFeedAccess) %>" />
+                             Visible="<%# this.Get<IPermissions>().Check(this.PageContext.BoardSettings.PostsFeedAccess) %>" />
         </div>
     </div>
 </asp:PlaceHolder>
 <div class="row mb-3 d-flex justify-content-between">
     <div class="col-md-4">
-        <YAF:Pager ID="PagerBottom" runat="server" 
-                   LinkedPager="Pager" 
+        <YAF:Pager ID="Pager" runat="server" 
                    UsePostBack="False" />
     </div>
     <div class="col-md-8 mt-1 mt-md-0">
@@ -191,13 +185,13 @@
                                  IconColor="text-warning" />
             </span>
             <YAF:ThemeButton ID="Tools2" runat="server"
-                             CssClass="dropdown-toggle ml-1 mb-1"
+                             CssClass="dropdown-toggle ms-1 mb-1"
                              Type="Danger"
                              DataToggle="dropdown"
                              TextLocalizedTag="MANAGE_TOPIC"
                              NavigateUrl="#"
                              Icon="cogs" />
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="<%# this.Tools1.ClientID %>">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="<%# this.Tools1.ClientID %>">
                 <YAF:ThemeButton ID="MoveTopic2" runat="server"
                                  Type="None"
                                  CssClass="dropdown-item"
@@ -228,17 +222,17 @@
             <YAF:ThemeButton ID="NewTopic2" runat="server"
                              Type="Secondary"
                              TextLocalizedTag="BUTTON_NEWTOPIC" TitleLocalizedTag="BUTTON_NEWTOPIC_TT"
-                             CssClass="ml-1 mb-1"
+                             CssClass="ms-1 mb-1"
                              Icon="comment" />
             <YAF:ThemeButton ID="PostReplyLink2" runat="server"
                              Type="Primary"
-                             CssClass="ml-1 mb-1"
+                             CssClass="ms-1 mb-1"
                              OnClick="PostReplyLink_Click"
                              TextLocalizedTag="BUTTON_POSTREPLY" TitleLocalizedTag="BUTTON_POSTREPLY_TT"
                              Icon="reply" />
             <YAF:ThemeButton ID="QuickReplyLink2" runat="server"
                              Type="Primary"
-                             CssClass="ml-1 mb-1"
+                             CssClass="ms-1 mb-1"
                              TextLocalizedTag="QUICKREPLY" TitleLocalizedTag="BUTTON_POSTREPLY_TT"
                              Icon="reply"
                              DataToggle="modal"
@@ -253,8 +247,6 @@
         <YAF:ForumUsers ID="ForumUsers1" runat="server" />
     </div>
 </div>
-<YAF:PageLinks ID="PageLinksBottom" runat="server" 
-               LinkedPageLinkID="PageLinks" />
 
 <modal:MoveTopic ID="MoveTopicDialog" runat="server" />
 <modal:QuickReply ID="QuickReplyDialog" runat="server" />

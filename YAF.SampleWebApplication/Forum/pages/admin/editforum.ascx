@@ -6,21 +6,12 @@
 
     <div class="row">
         <div class="col-xl-12">
-            <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                    LocalizedTag="HEADER1" 
-                                    LocalizedPage="ADMIN_EDITFORUM" />
-                <asp:Label ID="Label1" runat="server"></asp:Label>
-            </h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
                     <YAF:IconHeader runat="server" ID="IconHeader"
                                     IconName="comments"></YAF:IconHeader>
                 </div>
-                <div class="card-body">
+                <asp:Panel CssClass="card-body" runat="server" ID="Body">
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <YAF:HelpLabel ID="HelpLabel3" runat="server" 
@@ -204,10 +195,10 @@
                                    LocalizedTag="STYLES" LocalizedPage="ADMIN_EDITFORUM" />
                     <asp:TextBox ID="Styles" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
-                </div>
+                </asp:Panel>
                 <div class="card-footer text-center">
                 <YAF:ThemeButton ID="Save" runat="server" 
-                                 CssClass="mr-2"
+                                 CssClass="me-2"
                                  CausesValidation="True"
                                  Type="Primary"
                                  Icon="save" 

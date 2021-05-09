@@ -1,31 +1,24 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserMenu.ascx.cs" Inherits="YAF.Controls.UserMenu" %>
 <%@ Import Namespace="YAF.Types.Constants" %>
+<%@ Import Namespace="YAF.Core.Extensions" %>
 
 <li class="nav-item dropdown">
     <YAF:Themebutton runat="server" ID="UserDropDown">
-        <span class="badge bg-light text-dark p-0 border border-light mr-1">
+        <span class="badge bg-light text-dark p-0 border border-light me-1">
             <asp:Image runat="server" ID="UserAvatar" CssClass="img-navbar-avatar rounded"/>
         </span>
-        <%= this.Get<IUserDisplayName>().GetName(this.PageContext.User) %>
+        <%= this.HtmlEncode(this.PageContext.User.DisplayOrUserName()) %>
         <asp:PlaceHolder runat="server" id="UnreadPlaceHolder">
             <asp:Label runat="server" ID="UnreadLabel" 
-                       CssClass="ml-1 badge bg-danger">
+                       CssClass="ms-1 badge bg-danger">
             </asp:Label>
         </asp:PlaceHolder>
     </YAF:Themebutton>
     <div class="dropdown-menu" aria-labelledby="userDropdown">
         <asp:PlaceHolder id="MyProfile" runat="server"></asp:PlaceHolder>
         
-            <a href="#" data-toggle="dropdown" 
-               class="dropdown-item dropdown-submenu dropdown-toggle<%= this.PageContext.ForumPageType == ForumPages.Profile_EditProfile ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Profile_EditSettings ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Profile_ChangePassword  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Profile_Attachments  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Profile_Avatar  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Profile_EditAvatar ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Profile_EditSignature  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Profile_Subscriptions  ||
-                                                                        this.PageContext.ForumPageType == ForumPages.Profile_BlockOptions  ? " active" : ""%>"><i class="fa fa-user-cog fa-fw"></i>&nbsp;<YAF:LocalizedLabel runat="server"
+            <a href="#" data-bs-toggle="dropdown" 
+               class="dropdown-item dropdown-submenu dropdown-toggle<%= this.PageContext.ForumPageType is ForumPages.Profile_EditProfile or ForumPages.Profile_EditSettings or ForumPages.Profile_ChangePassword or ForumPages.Profile_Attachments or ForumPages.Profile_EditAvatar or ForumPages.Profile_EditSignature or ForumPages.Profile_Subscriptions or ForumPages.Profile_BlockOptions  ? " active" : ""%>"><i class="fa fa-user-cog fa-fw"></i>&nbsp;<YAF:LocalizedLabel runat="server"
                                                                            LocalizedTag="MYSETTINGS" LocalizedPage="TOOLBAR"></YAF:LocalizedLabel></a>
             <ul class="dropdown-menu">
                 <asp:PlaceHolder runat="server" ID="MySettings"></asp:PlaceHolder>
@@ -38,10 +31,13 @@
         <asp:PlaceHolder ID="MyTopicItem" runat="server"></asp:PlaceHolder>
         <asp:PlaceHolder ID="LogutItem" runat="server" Visible="false">
             <div class="dropdown-divider"></div>
-            <asp:LinkButton ID="LogOutButton" runat="server" 
-                            CssClass="dropdown-item"
-                            OnClick="LogOutClick">
-            </asp:LinkButton>
+            <YAF:ThemeButton ID="LogOutButton" runat="server" 
+                             TextLocalizedTag="LOGOUT"
+                             TextLocalizedPage="TOOLBAR"
+                             TitleLocalizedTag="LOGOUT"
+                             Icon="sign-out-alt"
+                             CssClass="dropdown-item">
+            </YAF:ThemeButton>
         </asp:PlaceHolder>
     </div>
 </li>

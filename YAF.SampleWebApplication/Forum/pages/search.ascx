@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Search" CodeBehind="Search.ascx.cs" %>
+<%@ Import Namespace="YAF.Core.Utilities" %>
+<%@ Import Namespace="YAF.Configuration" %>
 
 <YAF:PageLinks ID="PageLinks" runat="server" />
 
@@ -18,7 +20,7 @@
                          Icon="cog"
                          TextLocalizedTag="OPTIONS"
                          TextLocalizedPage="ADMIN_USERS"></YAF:ThemeButton>
-        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" aria-labelledby="optionsDropDown">
+        <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="optionsDropDown">
             <div class="px-3 py-1">
                 <div class="mb-3">
                     <asp:Label runat="server" AssociatedControlID="txtSearchStringFromWho">
@@ -62,13 +64,12 @@
                     <asp:DropDownList ID="listResInPage" runat="server" CssClass="form-select resultsPage" />
                 </div>
             </div>
-            <div class="px-3">
+            <div class="px-3 d-grid gap-2">
                 <YAF:ThemeButton runat="server"
                                  Type="Primary"
                                  Size="Small"
                                  TextLocalizedTag="OK"
-                                 TextLocalizedPage="COMMON"
-                                 CssClass="btn-block"></YAF:ThemeButton>
+                                 TextLocalizedPage="COMMON" />
             </div>
     </div>
 </div>
@@ -94,7 +95,7 @@
 
     <div id="SearchResultsPlaceholder"
          data-url="<%= BoardInfo.ForumClientFileRoot %>"
-         data-minimum="<%= this.Get<BoardSettings>().SearchStringMinLength %>"
+         data-minimum="<%= this.PageContext.BoardSettings.SearchStringMinLength %>"
          data-userid="<%= this.PageContext.PageUserID %>"
          data-notext='<%= this.Get<ILocalization>().GetAttributeText("NO_SEARCH_RESULTS") %>'
          data-posted='<%= this.Get<ILocalization>().GetAttributeText("POSTED") %>'

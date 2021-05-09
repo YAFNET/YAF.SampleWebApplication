@@ -5,13 +5,6 @@
 
     <div class="row">
         <div class="col-xl-12">
-            <h1><YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
-                                    LocalizedTag="TITLE" 
-                                    LocalizedPage="ADMIN_EDITRANK" /></h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
                     <YAF:IconHeader runat="server"
@@ -93,6 +86,7 @@
                                            AssociatedControlID="UsrSigChars"
                                            LocalizedTag="SIG_LENGTH" LocalizedPage="ADMIN_EDITRANK" />
                             <asp:TextBox ID="UsrSigChars" runat="server" 
+                                         Text="128"
                                          CssClass="form-control" 
                                          TextMode="Number" />
                         </div>
@@ -144,7 +138,7 @@
 				    <YAF:ThemeButton ID="Save" runat="server" 
                                      OnClick="Save_Click" 
                                      CausesValidation="True"
-                                     CssClass="mr-2"
+                                     CssClass="me-2"
                                      Type="Primary"            
 				                     Icon="save" 
                                      TextLocalizedTag="SAVE">

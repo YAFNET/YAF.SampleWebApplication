@@ -1,12 +1,30 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Controls.BuddyList" Codebehind="BuddyList.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
-<%@ Import Namespace="YAF.Types.Extensions" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 
-<YAF:PageLinks runat="server" ID="PageLinks" />
-
-<YAF:Pager runat="server" ID="Pager" OnPageChange="Pager_PageChange" />
-
-<asp:Repeater ID="rptBuddy" runat="server" OnItemCreated="rptBuddy_ItemCreated" OnItemCommand="rptBuddy_ItemCommand">
+<div class="card mb-3">
+    <div class="card-header">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-auto">
+                <YAF:IconHeader runat="server"
+                                Text="<%# this.GetHeaderText() %>"
+                                IconName="user-friends"/>
+            </div>
+            <div class="col-auto">
+                <div class="input-group input-group-sm me-2" role="group">
+                    <div class="input-group-text">
+                        <YAF:LocalizedLabel ID="HelpLabel2" runat="server" LocalizedTag="SHOW" />:
+                    </div>
+                    <asp:DropDownList runat="server" ID="PageSize"
+                                      AutoPostBack="True"
+                                      OnSelectedIndexChanged="PageSizeSelectedIndexChanged"
+                                      CssClass="form-select">
+                    </asp:DropDownList>
+                </div>
+            </div>
+        </div>
+    </div>
+    <asp:Repeater ID="rptBuddy" runat="server" OnItemCreated="rptBuddy_ItemCreated" OnItemCommand="rptBuddy_ItemCommand">
     <HeaderTemplate>
         <asp:PlaceHolder runat="server" ID="HeaderHolder">
             <ul class="list-group list-group-flush">
@@ -15,16 +33,16 @@
     <ItemTemplate>
         <li class="list-group-item">
             <YAF:UserLink ID="UserProfileLink" runat="server" 
-                          ReplaceName='<%# this.Eval(this.PageContext.BoardSettings.EnableDisplayName ? "DisplayName" : "Name") %>'
-                          Suspended='<%# this.Eval("Suspended").ToType<DateTime?>() %>'
-                          Style='<%# this.Eval("UserStyle") %>'
-                          UserID='<%#  this.Eval(this.CurrentUserID == this.Eval("UserID").ToType<int>() ? "FromUserID": "UserID").ToType<int>() %>' />
+                          ReplaceName="<%# this.PageContext.BoardSettings.EnableDisplayName ? (Container.DataItem as dynamic).DisplayName : (Container.DataItem as dynamic).Name %>"
+                          Suspended="<%# (Container.DataItem as dynamic).Suspended %>"
+                          Style="<%# (Container.DataItem as dynamic).UserStyle %>"
+                          UserID="<%#  this.CurrentUserID == (int)(Container.DataItem as dynamic).UserID ? (Container.DataItem as dynamic).FromUserID: (Container.DataItem as dynamic).UserID %>" />
             <div class="btn-group" role="group">
             <asp:PlaceHolder ID="pnlRemove" runat="server" Visible="false">
                 <YAF:ThemeButton ID="lnkRemove" runat="server"
                                  TextLocalizedTag="REMOVEBUDDY"
                                  ReturnConfirmText='<%# this.GetText("FRIENDS", "NOTIFICATION_REMOVE") %>'
-                                 CommandName="remove" CommandArgument='<%# this.Eval("UserID") %>'
+                                 CommandName="remove" CommandArgument="<%# (Container.DataItem as dynamic).UserID %>"
                                  Size="Small"
                                  Type="Danger"
                                  Icon="trash"/>
@@ -32,27 +50,27 @@
             <asp:PlaceHolder ID="pnlPending" runat="server" Visible="false">
                 <YAF:ThemeButton runat="server" 
                                  Size="Small"
-                                 CommandName="approve" CommandArgument='<%# this.Eval("FromUserID") %>'
+                                 CommandName="approve" CommandArgument="<%# (Container.DataItem as dynamic).FromUserID %>"
                                  TextLocalizedTag="APPROVE"
                                  Type="Success"
                                  Icon="check"/>
                 <YAF:ThemeButton runat="server"
                                  Size="Small"
-                                 CommandName="approveadd" CommandArgument='<%# this.Eval("FromUserID") %>'
+                                 CommandName="approveadd" CommandArgument="<%# (Container.DataItem as dynamic).FromUserID %>"
                                  TextLocalizedTag="APPROVE_ADD"
                                  Type="Success"
                                  Icon="check"/>
                 <YAF:ThemeButton runat="server"
                                  Size="Small"
                                  ReturnConfirmText='<%# this.GetText("FRIENDS", "NOTIFICATION_DENY") %>'
-                                 CommandName="deny" CommandArgument='<%# this.Eval("FromUserID") %>'
+                                 CommandName="deny" CommandArgument="<%# (Container.DataItem as dynamic).FromUserID %>"
                                  TextLocalizedTag="DENY"
                                  Type="Danger"
                                  Icon="times-circle"/>
             </asp:PlaceHolder>
             </div>
             <asp:PlaceHolder ID="pnlRequests" runat="server" Visible="false">
-                <%# this.Get<IDateTime>().FormatDateLong((DateTime)((System.Data.DataRowView)Container.DataItem)["Requested"]) %>
+                <%# this.Get<IDateTimeService>().FormatDateLong((DateTime)(Container.DataItem as dynamic).Requested) %>
             </asp:PlaceHolder>
         </li>
     </ItemTemplate>
@@ -82,10 +100,11 @@
         </asp:PlaceHolder>
     </FooterTemplate>
 </asp:Repeater>
-<YAF:Pager ID="Pager1" runat="server" LinkedPager="Pager" 
+<YAF:Pager ID="Pager" runat="server"
            OnPageChange="Pager_PageChange" />
 <asp:PlaceHolder runat="server" Visible="<%# this.rptBuddy.Items.Count == 0 %>">
     <div class="card-body">
         <YAF:Alert runat="server" Type="info" ID="Info"></YAF:Alert>
     </div>
 </asp:PlaceHolder>
+</div>
