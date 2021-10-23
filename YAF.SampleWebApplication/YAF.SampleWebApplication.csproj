@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YAF.SampleWebApplication</RootNamespace>
     <AssemblyName>YAF.SampleWebApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,35 +49,88 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.4.1.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.4.1.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.2.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Security" />
-    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -87,6 +141,7 @@
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -119,10 +174,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\YAF.UrlRewriter.dll</HintPath>
     </Reference>
-    <Reference Include="YAF.Utils, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\YAF.Utils.dll</HintPath>
-    </Reference>
     <Reference Include="YAF.Web, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\YAF.Web.dll</HintPath>
@@ -130,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AjaxDemo.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -140,7 +192,6 @@
     <Content Include="Default.aspx" />
     <Content Include="error.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="Forum\auth.aspx" />
     <Content Include="Forum\Content\favicons\android-chrome-144x144.png" />
     <Content Include="Forum\Content\favicons\apple-touch-icon.png" />
     <Content Include="Forum\Content\favicons\browserconfig.xml" />
@@ -216,7 +267,8 @@
     <Content Include="Forum\Content\flags\1x1\eg.svg" />
     <Content Include="Forum\Content\flags\1x1\eh.svg" />
     <Content Include="Forum\Content\flags\1x1\er.svg" />
-    <Content Include="Forum\Content\flags\1x1\es-ct.svg" />
+    <Content Include="Forum\Content\flags\1x1\es-ca.svg" />
+    <Content Include="Forum\Content\flags\1x1\es-ga.svg" />
     <Content Include="Forum\Content\flags\1x1\es.svg" />
     <Content Include="Forum\Content\flags\1x1\et.svg" />
     <Content Include="Forum\Content\flags\1x1\eu.svg" />
@@ -473,7 +525,8 @@
     <Content Include="Forum\Content\flags\4x3\eg.svg" />
     <Content Include="Forum\Content\flags\4x3\eh.svg" />
     <Content Include="Forum\Content\flags\4x3\er.svg" />
-    <Content Include="Forum\Content\flags\4x3\es-ct.svg" />
+    <Content Include="Forum\Content\flags\4x3\es-ca.svg" />
+    <Content Include="Forum\Content\flags\4x3\es-ga.svg" />
     <Content Include="Forum\Content\flags\4x3\es.svg" />
     <Content Include="Forum\Content\flags\4x3\et.svg" />
     <Content Include="Forum\Content\flags\4x3\eu.svg" />
@@ -668,61 +721,44 @@
     <Content Include="Forum\Content\images\error.svg" />
     <Content Include="Forum\Content\images\InstallBackground.jpg" />
     <Content Include="Forum\Content\images\play-pause.svg" />
-    <Content Include="Forum\Content\images\spacer.gif" />
     <Content Include="Forum\Content\InstallWizard.min.css" />
     <Content Include="Forum\Content\jquery.fileupload.comb.min.css" />
-    <Content Include="Forum\Content\Themes\cerulean\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\cerulean\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\cosmo\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\cosmo\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\cyborg\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\cyborg\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\darkly\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\darkly\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\flatly\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\flatly\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\journal\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\journal\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\litera\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\litera\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\lumen\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\lumen\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\lux\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\lux\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\materia\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\materia\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\minty\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\minty\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\pulse\bootstrap-forum.css" />
+    <Content Include="Forum\Content\Themes\morph\bootstrap-forum.min.css" />
     <Content Include="Forum\Content\Themes\pulse\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\sandstone\bootstrap-forum.css" />
+    <Content Include="Forum\Content\Themes\quartz\bootstrap-forum.min.css" />
     <Content Include="Forum\Content\Themes\sandstone\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\simplex\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\simplex\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\sketchy\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\sketchy\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\slate\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\slate\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\solar\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\solar\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\spacelab\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\spacelab\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\superhero\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\superhero\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\united\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\united\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\yaf\bootstrap-forum.css" />
+    <Content Include="Forum\Content\Themes\vapor\bootstrap-forum.min.css" />
     <Content Include="Forum\Content\Themes\yaf\bootstrap-forum.min.css" />
-    <Content Include="Forum\Content\Themes\yeti\bootstrap-forum.css" />
     <Content Include="Forum\Content\Themes\yeti\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\zephyr\bootstrap-forum.min.css" />
     <Content Include="Forum\Content\webfonts\fa-brands-400.svg" />
     <Content Include="Forum\Content\webfonts\fa-regular-400.svg" />
     <Content Include="Forum\Content\webfonts\fa-solid-900.svg" />
+    <Content Include="Forum\Controls\ActiveDiscussion.ascx" />
     <Content Include="Forum\Controls\AdminMenu.ascx" />
     <Content Include="Forum\Controls\AlbumImageList.ascx" />
     <Content Include="Forum\Controls\AlbumList.ascx" />
     <Content Include="Forum\Controls\BoardAnnouncement.ascx" />
     <Content Include="Forum\Controls\BuddyList.ascx" />
+    <Content Include="Forum\Controls\CategoryList.ascx" />
     <Content Include="Forum\Controls\CookieConsent.ascx" />
     <Content Include="Forum\Controls\DisplayAd.ascx" />
     <Content Include="Forum\Controls\DisplayConnect.ascx" />
@@ -734,35 +770,32 @@
     <Content Include="Forum\Controls\EditUsersKill.ascx" />
     <Content Include="Forum\Controls\EditUsersPoints.ascx" />
     <Content Include="Forum\Controls\EditUsersProfile.ascx" />
-    <Content Include="Forum\Controls\EditUsersResetPass.ascx" />
     <Content Include="Forum\Controls\EditUsersSettings.ascx" />
     <Content Include="Forum\Controls\EditUsersSignature.ascx" />
     <Content Include="Forum\Controls\EditUsersSuspend.ascx" />
     <Content Include="Forum\Controls\EmailDigest.ascx" />
-    <Content Include="Forum\Controls\ForumActiveDiscussion.ascx" />
-    <Content Include="Forum\Controls\ForumCategoryList.ascx" />
     <Content Include="Forum\Controls\ForumIconLegend.ascx" />
     <Content Include="Forum\Controls\ForumLastPost.ascx" />
     <Content Include="Forum\Controls\ForumList.ascx" />
     <Content Include="Forum\Controls\ForumModeratorList.ascx" />
-    <Content Include="Forum\Controls\ForumStatistics.ascx" />
     <Content Include="Forum\Controls\ForumStatsUsers.ascx" />
     <Content Include="Forum\Controls\ForumSubForumList.ascx" />
     <Content Include="Forum\Controls\ForumWelcome.ascx" />
     <Content Include="Forum\Controls\Header.ascx" />
     <Content Include="Forum\Controls\LastPosts.ascx" />
+    <Content Include="Forum\Controls\MostActiveUsers.ascx" />
     <Content Include="Forum\Controls\MyNotifications.ascx" />
     <Content Include="Forum\Controls\MyTopicsList.ascx" />
+    <Content Include="Forum\Controls\OpenAuthProviders.ascx" />
     <Content Include="Forum\Controls\PMList.ascx" />
     <Content Include="Forum\Controls\PollChoiceList.ascx" />
     <Content Include="Forum\Controls\PollList.ascx" />
-    <Content Include="Forum\Controls\PostAttachments.ascx" />
     <Content Include="Forum\Controls\PostOptions.ascx" />
     <Content Include="Forum\Controls\ProfileTimeline.ascx" />
     <Content Include="Forum\Controls\ProfileYourAccount.ascx" />
-    <Content Include="Forum\Controls\ReportedPosts.ascx" />
     <Content Include="Forum\Controls\ScrollTop.ascx" />
     <Content Include="Forum\Controls\SimilarTopics.ascx" />
+    <Content Include="Forum\Controls\Statistics.ascx" />
     <Content Include="Forum\Controls\TopicTags.ascx" />
     <Content Include="Forum\Controls\UserMenu.ascx" />
     <Content Include="Forum\Dialogs\AttachmentsUpload.ascx" />
@@ -773,12 +806,11 @@
     <Content Include="Forum\Dialogs\BannedNameEdit.ascx" />
     <Content Include="Forum\Dialogs\BannedNameImport.ascx" />
     <Content Include="Forum\Dialogs\BBCodeImport.ascx" />
-    <Content Include="Forum\Dialogs\DialogBox.ascx" />
-    <Content Include="Forum\Dialogs\ExtensionsEdit.ascx" />
-    <Content Include="Forum\Dialogs\ExtensionsImport.ascx" />
+    <Content Include="Forum\Dialogs\EditProfileDefinition.ascx" />
     <Content Include="Forum\Dialogs\GroupMedalEdit.ascx" />
     <Content Include="Forum\Dialogs\ImageGallery.ascx" />
     <Content Include="Forum\Dialogs\LoginBox.ascx" />
+    <Content Include="Forum\Dialogs\ModForumUser.ascx" />
     <Content Include="Forum\Dialogs\MoveTopic.ascx" />
     <Content Include="Forum\Dialogs\NntpForumEdit.ascx" />
     <Content Include="Forum\Dialogs\NntpServerEdit.ascx" />
@@ -792,7 +824,7 @@
     <Content Include="Forum\digest.aspx" />
     <Content Include="Forum\error.aspx" />
     <Content Include="Forum\Forum.aspx" />
-    <Content Include="Forum\Images\Avatars\Common\SampleAvatar.gif" />
+    <Content Include="Forum\Images\Avatars\SampleAvatar.gif" />
     <Content Include="Forum\Images\Categories\categoryImageSample.gif" />
     <Content Include="Forum\Images\Forums\forumImageSample.gif" />
     <Content Include="Forum\Images\Logos\YAFLogo.svg" />
@@ -818,37 +850,10 @@
     <Content Include="Forum\Images\Medals\medal_silver_2.png" />
     <Content Include="Forum\Images\Medals\medal_silver_2_small.png" />
     <Content Include="Forum\Images\Medals\medal_small.png" />
-    <Content Include="Forum\Images\noavatar.svg" />
-    <Content Include="Forum\install\BBCodeExtensions.xml" />
-    <Content Include="Forum\install\custom\custom.sql" />
-    <Content Include="Forum\install\custom\dnn.sql" />
-    <Content Include="Forum\install\default.aspx" />
-    <Content Include="Forum\install\FileExtensions.xml" />
-    <Content Include="Forum\install\mssql\install\azure\InstallCommon.sql" />
-    <Content Include="Forum\install\mssql\install\azure\InstallMembership.sql" />
-    <Content Include="Forum\install\mssql\install\azure\InstallProfile.SQL" />
-    <Content Include="Forum\install\mssql\install\azure\InstallRoles.sql" />
-    <Content Include="Forum\install\mssql\install\constraints.sql" />
-    <Content Include="Forum\install\mssql\install\functions.sql" />
-    <Content Include="Forum\install\mssql\install\indexes.sql" />
-    <Content Include="Forum\install\mssql\install\procedures.sql" />
-    <Content Include="Forum\install\mssql\install\providers\indexes.sql" />
-    <Content Include="Forum\install\mssql\install\providers\procedures.sql" />
-    <Content Include="Forum\install\mssql\install\providers\tables.sql" />
-    <Content Include="Forum\install\mssql\install\tables.sql" />
-    <Content Include="Forum\install\mssql\install\views.sql" />
-    <Content Include="Forum\install\mssql\upgrade\constraints.sql" />
-    <Content Include="Forum\install\mssql\upgrade\fulltext.sql" />
-    <Content Include="Forum\install\mssql\upgrade\functions.sql" />
-    <Content Include="Forum\install\mssql\upgrade\indexes.sql" />
-    <Content Include="Forum\install\mssql\upgrade\procedures.sql" />
-    <Content Include="Forum\install\mssql\upgrade\providers\indexes.sql" />
-    <Content Include="Forum\install\mssql\upgrade\providers\procedures.sql" />
-    <Content Include="Forum\install\mssql\upgrade\providers\tables.sql" />
-    <Content Include="Forum\install\mssql\upgrade\tables.sql" />
-    <Content Include="Forum\install\mssql\upgrade\triggers.sql" />
-    <Content Include="Forum\install\mssql\upgrade\views.sql" />
-    <Content Include="Forum\install\SpamWords.xml" />
+    <Content Include="Forum\Install\BBCodeExtensions.xml" />
+    <Content Include="Forum\Install\default.aspx" />
+    <Content Include="Forum\Install\mssql\upgrade\identity\upgrade.sql" />
+    <Content Include="Forum\Install\SpamWords.xml" />
     <Content Include="Forum\languages\arabic.xml" />
     <Content Include="Forum\languages\china.xml" />
     <Content Include="Forum\languages\czech.xml" />
@@ -873,89 +878,89 @@
     <Content Include="Forum\languages\swedish.xml" />
     <Content Include="Forum\languages\turkish.xml" />
     <Content Include="Forum\languages\vietnam.xml" />
-    <Content Include="Forum\Pages\Account.ascx" />
+    <Content Include="Forum\Pages\Account\Approve.ascx" />
+    <Content Include="Forum\Pages\Account\ForgotPassword.ascx" />
+    <Content Include="Forum\Pages\Account\Login.ascx" />
+    <Content Include="Forum\Pages\Account\Logout.ascx" />
+    <Content Include="Forum\Pages\Account\Register.ascx" />
+    <Content Include="Forum\Pages\Account\ResetPassword.ascx" />
     <Content Include="Forum\Pages\ActiveUsers.ascx" />
-    <Content Include="Forum\Pages\admin\accessmasks.ascx" />
-    <Content Include="Forum\Pages\admin\admin.ascx" />
-    <Content Include="Forum\Pages\admin\bannedemail.ascx" />
-    <Content Include="Forum\Pages\admin\bannedip.ascx" />
-    <Content Include="Forum\Pages\admin\bannedname.ascx" />
-    <Content Include="Forum\Pages\admin\bbcode.ascx" />
-    <Content Include="Forum\Pages\admin\bbcode_edit.ascx" />
-    <Content Include="Forum\Pages\admin\boards.ascx" />
-    <Content Include="Forum\Pages\admin\boardsettings.ascx" />
-    <Content Include="Forum\Pages\admin\deleteforum.ascx" />
-    <Content Include="Forum\Pages\admin\digest.ascx" />
-    <Content Include="Forum\Pages\admin\editaccessmask.ascx" />
-    <Content Include="Forum\Pages\admin\editboard.ascx" />
-    <Content Include="Forum\Pages\admin\editcategory.ascx" />
-    <Content Include="Forum\Pages\admin\editforum.ascx" />
-    <Content Include="Forum\Pages\admin\editgroup.ascx" />
-    <Content Include="Forum\Pages\admin\editlanguage.ascx" />
-    <Content Include="Forum\Pages\admin\editmedal.ascx" />
-    <Content Include="Forum\Pages\admin\editrank.ascx" />
-    <Content Include="Forum\Pages\admin\edituser.ascx" />
-    <Content Include="Forum\Pages\admin\eventlog.ascx" />
-    <Content Include="Forum\Pages\admin\extensions.ascx" />
-    <Content Include="Forum\Pages\admin\forums.ascx" />
-    <Content Include="Forum\Pages\admin\groups.ascx" />
-    <Content Include="Forum\Pages\admin\hostsettings.ascx" />
-    <Content Include="Forum\Pages\admin\languages.ascx" />
-    <Content Include="Forum\Pages\admin\mail.ascx" />
-    <Content Include="Forum\Pages\admin\medals.ascx" />
-    <Content Include="Forum\Pages\admin\nntpforums.ascx" />
-    <Content Include="Forum\Pages\admin\nntpretrieve.ascx" />
-    <Content Include="Forum\Pages\admin\nntpservers.ascx" />
-    <Content Include="Forum\Pages\admin\pageaccessedit.ascx" />
-    <Content Include="Forum\Pages\admin\pageaccesslist.ascx" />
-    <Content Include="Forum\Pages\admin\pm.ascx" />
-    <Content Include="Forum\Pages\admin\prune.ascx" />
-    <Content Include="Forum\Pages\admin\ranks.ascx" />
-    <Content Include="Forum\Pages\admin\reguser.ascx" />
-    <Content Include="Forum\Pages\admin\reindex.ascx" />
-    <Content Include="Forum\Pages\admin\replacewords.ascx" />
-    <Content Include="Forum\Pages\admin\restartapp.ascx" />
-    <Content Include="Forum\Pages\admin\runsql.ascx" />
-    <Content Include="Forum\Pages\admin\spamlog.ascx" />
-    <Content Include="Forum\Pages\admin\spamwords.ascx" />
-    <Content Include="Forum\Pages\admin\taskmanager.ascx" />
-    <Content Include="Forum\Pages\admin\users.ascx" />
-    <Content Include="Forum\Pages\admin\version.ascx" />
+    <Content Include="Forum\Pages\Admin\AccessMasks.ascx" />
+    <Content Include="Forum\Pages\Admin\Admin.ascx" />
+    <Content Include="Forum\Pages\Admin\Attachments.ascx" />
+    <Content Include="Forum\Pages\Admin\BannedEmails.ascx" />
+    <Content Include="Forum\Pages\Admin\BannedIps.ascx" />
+    <Content Include="Forum\Pages\Admin\BannedNames.ascx" />
+    <Content Include="Forum\Pages\Admin\BBCodes.ascx" />
+    <Content Include="Forum\Pages\Admin\BBCode_Edit.ascx" />
+    <Content Include="Forum\Pages\Admin\BoardAnnouncement.ascx" />
+    <Content Include="Forum\Pages\Admin\Boards.ascx" />
+    <Content Include="Forum\Pages\Admin\DeleteForum.ascx" />
+    <Content Include="Forum\Pages\Admin\Digest.ascx" />
+    <Content Include="Forum\Pages\Admin\EditAccessMask.ascx" />
+    <Content Include="Forum\Pages\Admin\EditBoard.ascx" />
+    <Content Include="Forum\Pages\Admin\EditCategory.ascx" />
+    <Content Include="Forum\Pages\Admin\EditForum.ascx" />
+    <Content Include="Forum\Pages\Admin\EditGroup.ascx" />
+    <Content Include="Forum\Pages\Admin\EditLanguage.ascx" />
+    <Content Include="Forum\Pages\Admin\EditMedal.ascx" />
+    <Content Include="Forum\Pages\Admin\EditRank.ascx" />
+    <Content Include="Forum\Pages\Admin\EditUser.ascx" />
+    <Content Include="Forum\Pages\Admin\EventLog.ascx" />
+    <Content Include="Forum\Pages\Admin\Forums.ascx" />
+    <Content Include="Forum\Pages\Admin\Groups.ascx" />
+    <Content Include="Forum\Pages\Admin\HostSettings.ascx" />
+    <Content Include="Forum\Pages\Admin\Languages.ascx" />
+    <Content Include="Forum\Pages\Admin\Mail.ascx" />
+    <Content Include="Forum\Pages\Admin\Medals.ascx" />
+    <Content Include="Forum\Pages\Admin\NntpForums.ascx" />
+    <Content Include="Forum\Pages\Admin\NntpRetrieve.ascx" />
+    <Content Include="Forum\Pages\Admin\NntpServers.ascx" />
+    <Content Include="Forum\Pages\Admin\PageAccessEdit.ascx" />
+    <Content Include="Forum\Pages\Admin\PageAccessList.ascx" />
+    <Content Include="Forum\Pages\Admin\Pm.ascx" />
+    <Content Include="Forum\Pages\Admin\ProfileDefinitions.ascx" />
+    <Content Include="Forum\Pages\Admin\Prune.ascx" />
+    <Content Include="Forum\Pages\Admin\Ranks.ascx" />
+    <Content Include="Forum\Pages\Admin\RegisterUser.ascx" />
+    <Content Include="Forum\Pages\Admin\ReIndex.ascx" />
+    <Content Include="Forum\Pages\Admin\ReplaceWords.ascx" />
+    <Content Include="Forum\Pages\Admin\RestartApp.ascx" />
+    <Content Include="Forum\Pages\Admin\Restore.ascx" />
+    <Content Include="Forum\Pages\Admin\RunSql.ascx" />
+    <Content Include="Forum\Pages\Admin\Settings.ascx" />
+    <Content Include="Forum\Pages\Admin\SpamLog.ascx" />
+    <Content Include="Forum\Pages\Admin\SpamWords.ascx" />
+    <Content Include="Forum\Pages\Admin\Tags.ascx" />
+    <Content Include="Forum\Pages\Admin\TaskManager.ascx" />
+    <Content Include="Forum\Pages\Admin\TestData.ascx" />
+    <Content Include="Forum\Pages\Admin\Users.ascx" />
+    <Content Include="Forum\Pages\Admin\Version.ascx" />
     <Content Include="Forum\Pages\Album.ascx" />
     <Content Include="Forum\Pages\Albums.ascx" />
-    <Content Include="Forum\Pages\Approve.ascx" />
-    <Content Include="Forum\Pages\Attachments.ascx" />
-    <Content Include="Forum\Pages\Avatar.ascx" />
-    <Content Include="Forum\Pages\Blockoptions.ascx" />
-    <Content Include="Forum\Pages\ChangePassword.ascx" />
+    <Content Include="Forum\Pages\Board.ascx" />
     <Content Include="Forum\Pages\Cookies.ascx" />
-    <Content Include="Forum\Pages\DeleteAccount.ascx" />
     <Content Include="Forum\Pages\DeleteMessage.ascx" />
     <Content Include="Forum\Pages\EditAlbumImages.ascx" />
-    <Content Include="Forum\Pages\EditAvatar.ascx" />
-    <Content Include="Forum\Pages\EditProfile.ascx" />
-    <Content Include="Forum\Pages\EditSettings.ascx" />
-    <Content Include="Forum\Pages\EditSignature.ascx" />
+    <Content Include="Forum\Pages\EditMessage.ascx" />
     <Content Include="Forum\Pages\Email.ascx" />
     <Content Include="Forum\Pages\EmailTopic.ascx" />
-    <Content Include="Forum\Pages\Error.ascx" />
-    <Content Include="Forum\Pages\Forum.ascx" />
+    <Content Include="Forum\Pages\Feed.ascx" />
     <Content Include="Forum\Pages\Friends.ascx" />
     <Content Include="Forum\Pages\Help.ascx" />
     <Content Include="Forum\Pages\Info.ascx" />
-    <Content Include="Forum\Pages\Login.ascx" />
-    <Content Include="Forum\Pages\Logout.ascx" />
+    <Content Include="Forum\Pages\Jabber.ascx" />
     <Content Include="Forum\Pages\Members.ascx" />
     <Content Include="Forum\Pages\MessageHistory.ascx" />
+    <Content Include="Forum\Pages\Moderate\Forums.ascx" />
     <Content Include="Forum\Pages\Moderate\Index.ascx" />
     <Content Include="Forum\Pages\Moderate\ReportedPosts.ascx" />
     <Content Include="Forum\Pages\Moderate\UnapprovedPosts.ascx" />
-    <Content Include="Forum\Pages\Moderating.ascx" />
-    <Content Include="Forum\Pages\ModForumUser.ascx" />
     <Content Include="Forum\Pages\MoveMessage.ascx" />
+    <Content Include="Forum\Pages\MyAccount.ascx" />
+    <Content Include="Forum\Pages\MyMessages.ascx" />
     <Content Include="Forum\Pages\MyTopics.ascx" />
     <Content Include="Forum\Pages\Notification.ascx" />
-    <Content Include="Forum\Pages\PM.ascx" />
     <Content Include="Forum\Pages\PollEdit.ascx" />
     <Content Include="Forum\Pages\PostMessage.ascx" />
     <Content Include="Forum\Pages\PostPrivateMessage.ascx" />
@@ -963,24 +968,28 @@
     <Content Include="Forum\Pages\PostTopic.ascx" />
     <Content Include="Forum\Pages\PrintTopic.ascx" />
     <Content Include="Forum\Pages\PrivateMessage.ascx" />
-    <Content Include="Forum\Pages\Profile.ascx" />
-    <Content Include="Forum\Pages\RecoverPassword.ascx" />
-    <Content Include="Forum\Pages\Register.ascx" />
+    <Content Include="Forum\Pages\Profile\Attachments.ascx" />
+    <Content Include="Forum\Pages\Profile\Avatar.ascx" />
+    <Content Include="Forum\Pages\Profile\Blockoptions.ascx" />
+    <Content Include="Forum\Pages\Profile\ChangePassword.ascx" />
+    <Content Include="Forum\Pages\Profile\DeleteAccount.ascx" />
+    <Content Include="Forum\Pages\Profile\EditAvatar.ascx" />
+    <Content Include="Forum\Pages\Profile\EditProfile.ascx" />
+    <Content Include="Forum\Pages\Profile\EditSettings.ascx" />
+    <Content Include="Forum\Pages\Profile\EditSignature.ascx" />
+    <Content Include="Forum\Pages\Profile\Subscriptions.ascx" />
     <Content Include="Forum\Pages\ReportPost.ascx" />
-    <Content Include="Forum\Pages\RssTopic.ascx" />
-    <Content Include="Forum\Pages\Rules.ascx" />
+    <Content Include="Forum\Pages\RulesAndPrivacy.ascx" />
     <Content Include="Forum\Pages\Search.ascx" />
-    <Content Include="Forum\Pages\Subscriptions.ascx" />
     <Content Include="Forum\Pages\Team.ascx" />
     <Content Include="Forum\Pages\Topics.ascx" />
-    <Content Include="Forum\Pages\Xmpp.ascx" />
+    <Content Include="Forum\Pages\UserProfile.ascx" />
+    <Content Include="Forum\Resources\EmailTemplate.html" />
     <Content Include="Forum\Resources\HelpMenuList.xml" />
-    <Content Include="Forum\Resources\ProviderExceptions.xml" />
+    <Content Include="Forum\Scripts\bootstrap.js" />
     <Content Include="Forum\Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Forum\Scripts\ckeditor\build-config.js" />
     <Content Include="Forum\Scripts\ckeditor\ckeditor.js" />
-    <Content Include="Forum\Scripts\ckeditor\ckeditor_init.js" />
-    <Content Include="Forum\Scripts\ckeditor\ckeditor_initbbcode.js" />
     <Content Include="Forum\Scripts\ckeditor\config.js" />
     <Content Include="Forum\Scripts\ckeditor\contents.css" />
     <Content Include="Forum\Scripts\ckeditor\lang\af.js" />
@@ -1121,16 +1130,78 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\about\dialogs\about.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\albumsbrowser\images\images-regular.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\albumsbrowser\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\albumsbrowser\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\api\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\attachments\images\paperclip-solid.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\attachments\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\attachments\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autocomplete\skins\default.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ar.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\az.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\bg.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ca.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\cs.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\da.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\de-ch.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\de.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\el.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\en-au.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\eo.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\es-mx.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\es.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\et.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\eu.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\fa.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\fr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\gl.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\hr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\hu.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\it.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ja.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\km.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ko.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ku.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\lt.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\lv.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\mk.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\nb.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\nl.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\oc.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\pl.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\pt-br.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\pt.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ro.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ru.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sk.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sq.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sr-latn.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\sv.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\tr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\ug.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\uk.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\vi.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\zh-cn.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\lang\zh.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autoembed\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\autolink\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\autosave\css\autosave.min.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\autosave\js\extensions.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodehtml\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeextensions\facebook.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeextensions\instagram.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeextensions\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeextensions\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeextensions\twitter.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeextensions\vimeo.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeextensions\youtube.svg" />
     <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\dialogs\bbcodeselector.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\images\yafbbcode.gif" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\images\plug-solid.svg" />
     <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\lang\en.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\bbcodeselector\plugin.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\bbcode\dev\bbcode.html" />
     <Content Include="Forum\Scripts\ckeditor\plugins\bbcode\plugin.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\bbcode\samples\bbcode.html" />
     <Content Include="Forum\Scripts\ckeditor\plugins\clipboard\dialogs\paste.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\css\codemirror.min.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\icons\autocomplete.png" />
@@ -1149,11 +1220,8 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.min.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.bbcode.min.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.bbcodemixed.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.handlebars.min.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.htmlmixed.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.javascript.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.php.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.twig.min.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.sql.min.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\lang\af.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\lang\ar.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\lang\bg.js" />
@@ -1219,6 +1287,7 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\3024-day.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\3024-night.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\abbott.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\abcdef.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\ambiance-mobile.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\ambiance.css" />
@@ -1242,6 +1311,7 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\icecoder.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\idea.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\isotope.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\juejin.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\lesser-dark.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\liquibyte.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\lucario.css" />
@@ -1288,13 +1358,10 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\dialog\dialogDefinition.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\dialog\styles\dialog.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\div\dialogs\div.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\emojione\dialogs\emojione.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\emojione\libs\emojione\emojione.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\emojione\styles\emojione-awesome.css" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\emojione\styles\emojione.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\emoji\assets\iconsall.png" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\emoji\assets\iconsall.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\emoji\skins\default.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\find\dialogs\find.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\flash\dialogs\flash.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\flash\images\placeholder.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\button.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\checkbox.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\form.js" />
@@ -1304,6 +1371,9 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\textarea.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\dialogs\textfield.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\highlight\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\highlight\pen-square-solid.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\highlight\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\icons.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\icons_hidpi.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\image\dialogs\image.js" />
@@ -1321,7 +1391,13 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\pastefromgdocs\filter\default.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\pastefromword\filter\default.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\pastetools\filter\common.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\pastetools\filter\image.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\preview\images\pagebreak.gif" />
     <Content Include="Forum\Scripts\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\preview\styles\screen.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\quote\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\quote\plugin.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\quote\quote-left-solid.svg" />
     <Content Include="Forum\Scripts\ckeditor\plugins\scayt\dialogs\dialog.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\scayt\dialogs\options.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\scayt\dialogs\toolbar.css" />
@@ -1444,15 +1520,12 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\dialogs\syntaxhighlight.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\tableselection\styles\tableselection.css" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\table\dialogs\table.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\dialogs\templates.css" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\dialogs\templates.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\templates\default.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\templates\images\template1.gif" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\templates\images\template2.gif" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\icons\code-solid.svg" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\lang\de.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\lang\en.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\lang\fr.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\lang\zh-cn.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\syntaxhighlight\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\widget\images\handle.png" />
     <Content Include="Forum\Scripts\ckeditor\plugins\wordcount\css\wordcount.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\wsc\dialogs\ciframe.html" />
@@ -1483,12 +1556,13 @@
     <Content Include="Forum\Scripts\ckeditor\skins\moono-lisa\images\refresh.png" />
     <Content Include="Forum\Scripts\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Forum\Scripts\ckeditor\styles.js" />
-    <Content Include="Forum\Scripts\ckeditor\yaf_contents.css" />
+    <Content Include="Forum\Scripts\ckeditor\vendor\promise.js" />
     <Content Include="Forum\Scripts\InstallWizard.comb.min.js" />
+    <Content Include="Forum\Scripts\jquery-3.6.0.min.js" />
     <Content Include="Forum\Scripts\jquery.fileupload.comb.min.js" />
     <Content Include="Forum\Scripts\jquery.ForumAdminExtensions.min.js" />
     <Content Include="Forum\Scripts\jquery.ForumExtensions.min.js" />
-    <Content Include="Forum\Scripts\yafEditor\yafEditor.min.js" />
+    <Content Include="Forum\Scripts\jquery.netStack.js" />
     <Content Include="Global.asax" />
     <Content Include="app.config" />
     <Content Include="db.config" />
@@ -1504,11 +1578,19 @@
       <DependentUpon>jquery.slimscroll.js</DependentUpon>
     </Content>
     <Content Include="Site.Master" />
+    <Content Include="Views\Shared\RazorView.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="UrlRewriter.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjaxDemo.aspx.cs">
+      <DependentUpon>AjaxDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxDemo.aspx.designer.cs">
+      <DependentUpon>AjaxDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -1533,6 +1615,8 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\BaseClass\RazorController.cs" />
+    <Compile Include="Controllers\RazorDemoController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1550,6 +1634,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -1559,6 +1644,7 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Models\Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forum\CHANGES.md" />
@@ -1572,9 +1658,13 @@
     <Content Include="Forum\Content\webfonts\fa-solid-900.ttf" />
     <Content Include="Forum\Content\webfonts\fa-solid-900.woff" />
     <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
-    <Content Include="Forum\LICENSE.md" />
-    <Content Include="Forum\README.md" />
+    <Content Include="Forum\Resources\mimeTypes.json" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\emoji\emoji.json" />
     <None Include="packages.config" />
+    <Content Include="Views\RazorDemo\Users.cshtml" />
+    <Content Include="Views\RazorDemo\Hello.cshtml" />
+    <Content Include="Views\RazorDemo\Index.cshtml" />
+    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

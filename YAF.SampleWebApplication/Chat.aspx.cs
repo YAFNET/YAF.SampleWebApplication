@@ -3,7 +3,7 @@
  * Copyright (C) 2006-2013 Jaben Cargman
  * Copyright (C) 2014-2021 Ingo Herbote
  * https://www.yetanotherforum.net/
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -27,11 +27,11 @@ namespace YAF.SampleWebApplication
     using System;
     using System.Web.UI;
 
-    using YAF.Core;
+    using YAF.Core.Context;
     using YAF.Core.Extensions;
+    using YAF.Core.Services;
     using YAF.Types.Constants;
     using YAF.Types.Interfaces;
-    using YAF.Utils;
 
     /// <summary>
     /// The chat.
@@ -39,19 +39,19 @@ namespace YAF.SampleWebApplication
     public partial class Chat : Page
     {
         /// <summary>
-        /// The user name.
+        /// Gets or sets the user name.
         /// </summary>
-        public string UserName = "test";
+        public string UserName { get; set; } = "test";
 
         /// <summary>
-        /// The user id.
+        /// Gets or sets the user id.
         /// </summary>
-        public int UserId;
+        public int UserId { get; set; }
 
         /// <summary>
-        /// The user image.
+        /// Gets or sets the user image.
         /// </summary>
-        public string UserImage;
+        public string UserImage { get; set; }
 
         /// <summary>Gets the user image.</summary>
         /// <param name="username">The username.</param>
@@ -70,14 +70,14 @@ namespace YAF.SampleWebApplication
         {
             if (!this.PageContext().IsGuest)
             {
-                this.UserName = this.PageContext().PageUserName;
+                this.UserName = this.PageContext().User.DisplayOrUserName();
                 this.UserId = this.PageContext().PageUserID;
 
                 this.GetUserImage(this.UserName);
             }
             else
             {
-                BuildLink.Redirect(ForumPages.Login);
+                this.PageContext().Get<LinkBuilder>().Redirect(ForumPages.Account_Login);
             }
 
             this.Header.DataBind();

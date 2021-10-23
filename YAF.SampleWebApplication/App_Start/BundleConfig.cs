@@ -24,22 +24,19 @@
 
 namespace YAF.SampleWebApplication
 {
-    using System.Web.Optimization;
+    using YAF.Core.Helpers;
 
+    /// <summary>
+    /// The bundle config.
+    /// </summary>
     public class BundleConfig
     {
         /// <summary>
         /// The register bundles.
         /// </summary>
-        /// <param name="bundles">
-        /// The bundles.
-        /// </param>
-        public static void RegisterBundles(BundleCollection bundles)
+        public static void RegisterBundles()
         {
-            // Use the Development version of Modernizr to develop with and learn from. Then, when you’re
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need
-           /* bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                            "~/Scripts/modernizr-*"));*/
+            ScriptManagerHelper.RegisterJQuery();
         }
     }
 }

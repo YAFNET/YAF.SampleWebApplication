@@ -9,8 +9,6 @@
  *
  */
 
-/// <reference path="Scripts/jquery-1.6.4.js" />
-/// <reference path="jquery.signalR.version.js" />
 (function ($, window, undefined) {
 
     var resources = {
@@ -1546,7 +1544,7 @@
                     headers: requestHeaders
                 });
             }
-            else { 
+            else {
                 // fetch is not available - fallback to $.ajax
                 transportLogic.ajax(connection, {
                     url: url,

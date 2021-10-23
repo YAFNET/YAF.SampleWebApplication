@@ -3,7 +3,7 @@
  * Copyright (C) 2006-2013 Jaben Cargman
  * Copyright (C) 2014-2021 Ingo Herbote
  * https://www.yetanotherforum.net/
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -31,14 +31,26 @@ namespace YAF.SampleWebApplication
     using System.Threading.Tasks;
 
     using Microsoft.AspNet.SignalR;
-
-    using YAF.Core;
+    using YAF.Core.Context;
+    using YAF.Core.Extensions;
+    using YAF.SampleWebApplication.Models;
     using YAF.Types.Interfaces;
+    using YAF.Types.Models;
 
+    /// <summary>
+    /// The chat hub.
+    /// </summary>
     public class ChatHub : Hub
     {
-        static List<Users> ConnectedUsers = new List<Users>();
-        static List<Messages> CurrentMessage = new List<Messages>();
+        /// <summary>
+        /// The connected users.
+        /// </summary>
+        private static readonly List<Users> ConnectedUsers = new List<Users>();
+
+        /// <summary>
+        /// The current message.
+        /// </summary>
+        private static readonly List<Messages> CurrentMessage = new List<Messages>();
 
         /// <summary>Connects the specified user name.</summary>
         /// <param name="userName">Name of the user.</param>
@@ -65,25 +77,30 @@ namespace YAF.SampleWebApplication
             this.Clients.AllExcept(id).onNewUserConnected(id, userName, userId, userImg, loginTime);
         }
 
+        /// <summary>
+        /// The send message to all.
+        /// </summary>
+        /// <param name="userName">
+        /// The user name.
+        /// </param>
+        /// <param name="userId">
+        /// The user id.
+        /// </param>
+        /// <param name="message">
+        /// The message.
+        /// </param>
+        /// <param name="time">
+        /// The time.
+        /// </param>
         public void SendMessageToAll(string userName, int userId, string message, string time)
         {
             var userImg = this.GetUserImage(userId);
 
             // store last 100 messages in cache
-            this.AddMessageinCache(userName, userId, message, time, userImg);
+            AddMessageInCache(userName, userId, message, time, userImg);
 
             // Broad cast message
             this.Clients.All.messageReceived(userName, message, time, userImg);
-        }
-
-        private void AddMessageinCache(string userName, int userId, string message, string time, string UserImg)
-        {
-            CurrentMessage.Add(new Messages { UserName = userName, UserId = userId, Message = message, Time = time, UserImage = UserImg });
-
-            if (CurrentMessage.Count > 100)
-            {
-                CurrentMessage.RemoveAt(0);
-            }
         }
 
         /// <summary>
@@ -105,7 +122,8 @@ namespace YAF.SampleWebApplication
         /// </returns>
         public string GetUserImage(int userId)
         {
-           return BoardContext.Current.Get<IAvatars>().GetAvatarUrlForUser(userId);
+            var user = BoardContext.Current.GetRepository<User>().GetById(userId);
+           return BoardContext.Current.Get<IAvatars>().GetAvatarUrlForUser(user);
         }
 
         /// <summary>
@@ -145,7 +163,6 @@ namespace YAF.SampleWebApplication
         /// </param>
         public void SendPrivateMessage(string toUserId, string message)
         {
-
             var fromUserId = this.Context.ConnectionId;
 
             var toUser = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == toUserId);
@@ -159,7 +176,7 @@ namespace YAF.SampleWebApplication
             var currentDateTime = DateTime.Now.ToString(CultureInfo.InvariantCulture);
             var userImg = this.GetUserImage(fromUser.UserId);
 
-            // send to 
+            // send to
             this.Clients.Client(toUserId).sendPrivateMessage(
                 fromUserId,
                 fromUser.UserName,
@@ -170,68 +187,33 @@ namespace YAF.SampleWebApplication
             // send to caller user
             this.Clients.Caller.sendPrivateMessage(toUserId, fromUser.UserName, message, userImg, currentDateTime);
         }
-    }
-
-    /// <summary>
-    /// The users.
-    /// </summary>
-    public class Users
-    {
-        /// <summary>
-        /// Gets or sets the connection id.
-        /// </summary>
-        public string ConnectionId { get; set; }
 
         /// <summary>
-        /// Gets or sets the user id.
+        /// Add message in cache.
         /// </summary>
-        public int UserId { get; set; }
+        /// <param name="userName">
+        /// The user name.
+        /// </param>
+        /// <param name="userId">
+        /// The user id.
+        /// </param>
+        /// <param name="message">
+        /// The message.
+        /// </param>
+        /// <param name="time">
+        /// The time.
+        /// </param>
+        /// <param name="userImage">
+        /// The user image.
+        /// </param>
+        private static void AddMessageInCache(string userName, int userId, string message, string time, string userImage)
+        {
+            CurrentMessage.Add(new Messages { UserName = userName, UserId = userId, Message = message, Time = time, UserImage = userImage });
 
-        /// <summary>
-        /// Gets or sets the user name.
-        /// </summary>
-        public string UserName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user image.
-        /// </summary>
-        public string UserImage { get; set; }
-
-        /// <summary>
-        /// Gets or sets the login time.
-        /// </summary>
-        public string LoginTime { get; set; }
-    }
-
-    /// <summary>
-    /// The messages.
-    /// </summary>
-    public class Messages
-    {
-        /// <summary>
-        /// Gets or sets the user id.
-        /// </summary>
-        public int UserId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user name.
-        /// </summary>
-        public string UserName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the message.
-        /// </summary>
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Gets or sets the time.
-        /// </summary>
-        public string Time { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user image.
-        /// </summary>
-        public string UserImage { get; set; }
-
+            if (CurrentMessage.Count > 100)
+            {
+                CurrentMessage.RemoveAt(0);
+            }
+        }
     }
 }

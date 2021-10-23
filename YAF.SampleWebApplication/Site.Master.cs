@@ -3,7 +3,7 @@
  * Copyright (C) 2006-2013 Jaben Cargman
  * Copyright (C) 2014-2021 Ingo Herbote
  * https://www.yetanotherforum.net/
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -31,15 +31,14 @@ namespace YAF.SampleWebApplication
     using System.Web.UI.HtmlControls;
 
     using Microsoft.AspNet.Web.Optimization.WebForms;
-
     using YAF.Configuration;
-    using YAF.Core;
+    using YAF.Core.Context;
     using YAF.Core.Extensions;
+    using YAF.Core.Services;
     using YAF.Types.Constants;
     using YAF.Types.Extensions;
     using YAF.Types.Interfaces;
     using YAF.Types.Models;
-    using YAF.Utils;
 
     /// <summary>
     /// The site master.
@@ -56,8 +55,8 @@ namespace YAF.SampleWebApplication
         {
             return HttpContext.Current.Server.UrlEncode(
                 HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl").IsSet()
-                    ? General.GetSafeRawUrl(HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl"))
-                    : General.GetSafeRawUrl());
+                    ? BoardContext.Current.Get<LinkBuilder>().GetSafeRawUrl(HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl"))
+                    : BoardContext.Current.Get<LinkBuilder>().GetSafeRawUrl());
         }
 
         /// <summary>Handles the Load event of the Page control.</summary>
@@ -68,12 +67,11 @@ namespace YAF.SampleWebApplication
             // Check if forum is installed
             try
             {
-                var boards = BoardContext.Current.GetRepository<Board>().GetAll();
-                var isForumInstalled = boards.Any();
+                BoardContext.Current.GetRepository<Board>().GetAll().Any();
             }
             catch
             {
-                // failure... no boards.    
+                // failure... no boards.
                 HttpContext.Current.Response.Redirect($"{BoardInfo.ForumClientFileRoot}install/default.aspx");
             }
 
@@ -104,8 +102,8 @@ namespace YAF.SampleWebApplication
                 link.Attributes.Add("type", "text/css");
 
                 link.Href = BoardContext.Current != null
-                    ? BoardContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
-                    : "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css";
+                                ? BoardContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
+                                : "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css";
 
                 this.Page.Header.Controls.Add(link);
 
@@ -132,7 +130,10 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void LoginLink_OnClick(object sender, EventArgs e)
         {
-            this.Response.Redirect(BuildLink.GetLink(ForumPages.Login, "ReturnUrl={0}", this.GetReturnUrl()));
+            BoardContext.Current.Get<LinkBuilder>().Redirect(
+                ForumPages.Account_Login,
+                "ReturnUrl={0}",
+                this.GetReturnUrl());
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected void RegisterLink_OnClick(object sender, EventArgs e)
         {
-            this.Response.Redirect(BuildLink.GetLink(ForumPages.Register));
+            BoardContext.Current.Get<LinkBuilder>().Redirect(ForumPages.Account_Register);
         }
     }
 }

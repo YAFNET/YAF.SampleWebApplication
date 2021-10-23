@@ -109,7 +109,7 @@
                 $('#spanUser').html(userName);
 
                 // Add All Users
-                for (i = 0; i < allUsers.length; i++) {
+                for (var i = 0; i < allUsers.length; i++) {
 
                     AddUser(chatHub, allUsers[i].ConnectionId, allUsers[i].UserName, allUsers[i].UserImage, allUsers[i].LoginTime);
                 }
@@ -227,7 +227,7 @@
                 code = $('<div class="card-comment">' +
                     '<img class="img-sm" src="' + UserImage + '" alt="User Image" />' +
                     ' <div class="comment-text">' +
-                    '<span class="username">' + name + '<span class="text-muted float-right">' + date + '</span>  </span></div></div>');
+                    '<span class="username">' + name + '<span class="text-muted float-end">' + date + '</span>  </span></div></div>');
 
 
                 Clist = $(
@@ -236,7 +236,7 @@
                     '<img class="contacts-list-img" src="' + UserImage + '" alt="User Image" />' +
 
                     ' <div class="contacts-list-info">' +
-                    ' <span class="contacts-list-name" id="' + id + '">' + name + ' <small class="contacts-list-date float-right">' + date + '</small> </span>' +
+                    ' <span class="contacts-list-name" id="' + id + '">' + name + ' <small class="contacts-list-date float-end">' + date + '</small> </span>' +
                     ' <span class="contacts-list-msg">How have you been? I was...</span></div></a > </li >');
 
             }
@@ -245,7 +245,7 @@
                 code = $('<div class="card-comment" id="Div' + id + '">' +
                     '<img class="img-sm" src="' + UserImage + '" alt="User Image" />' +
                     ' <div class="comment-text">' +
-                    '<span class="username">' + '<a id="' + id + '" class="user" >' + name + '<a>' + '<span class="text-muted float-right">' + date + '</span>  </span></div></div>');
+                    '<span class="username">' + '<a id="' + id + '" class="user" >' + name + '<a>' + '<span class="text-muted float-end">' + date + '</span>  </span></div></div>');
 
 
                 Clist = $(
@@ -254,7 +254,7 @@
                     '<img class="contacts-list-img" src="' + UserImage + '" alt="User Image" />' +
 
                     ' <div class="contacts-list-info">' +
-                    '<span class="contacts-list-name" id="' + id + '">' + name + ' <small class="contacts-list-date float-right">' + date + '</small> </span>' +
+                    '<span class="contacts-list-name" id="' + id + '">' + name + ' <small class="contacts-list-date float-end">' + date + '</small> </span>' +
                     ' <span class="contacts-list-msg">How have you been? I was...</span></div></a > </li >');
 
 
@@ -342,7 +342,7 @@
                 '<div class="card-header with-border">' +
                 ' <h3 class="card-title">' + userName + '</h3>' +
 
-                ' <div class="card-tools float-right">' +
+                ' <div class="card-tools float-end">' +
                 ' <span data-toggle="tooltip" id="MsgCountP" title="0 New Messages" class="badge bg-' + PWClass + '">0</span>' +
                 ' <button type="button" class="btn btn-card-tool" data-widget="collapse">' +
                 '    <i class="fa fa-minus"></i>' +
@@ -430,7 +430,7 @@
                 <!-- Logo -->
                 <a href="#" class="navbar-brand">
                     <!-- logo for regular state and mobile devices -->
-                    <span class="font-weight-bold">SignalR</span> Chat App
+                    <span class="fw-bold">SignalR</span> Chat App
                 </a>
                 <button class="navbar-toggler" type="button" 
                         data-toggle="collapse" 
@@ -449,8 +449,8 @@
                     <!-- DIRECT CHAT PRIMARY -->
                     <div class="card">
                         <div class="card-header">
-                            Welcome to Discussion Room <span id='spanUser' class="font-weight-bold"></span>
-                            <div class="float-right">
+                            Welcome to Discussion Room <span id='spanUser' class="fw-bold"></span>
+                            <div class="float-end">
                                 <button type="button" class="btn btn-secondary btn-sm" id="btnClearChat" data-toggle="tooltip" title="Clear Chat">
                                     <i class="fa fa-trash"></i>
                                 </button>
@@ -475,7 +475,7 @@
 
                             <textarea id="txtMessage"></textarea>
 
-                            <div class="float-right">
+                            <div class="float-end">
                                 <input type="button" class="btn btn-primary" id="btnSendMsg" value="Send" />
                                
                             </div>

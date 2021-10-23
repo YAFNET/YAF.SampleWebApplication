@@ -15,7 +15,7 @@
             <Scripts>
                 <asp:ScriptReference Path="~/Scripts/date.format.js" />
                 <asp:ScriptReference Path="~/Scripts/emojionearea.js" />
-                <asp:ScriptReference Path="~/Scripts/jquery.signalR-2.4.1.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.signalR-2.4.2.min.js" />
                 <asp:ScriptReference Path="~/Scripts/jquery.slimscroll.min.js" />
                 <%--Site Scripts--%>
             </Scripts>
@@ -28,8 +28,12 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/RazorDemo">MVC Razor View</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/RazorDemo/RenderOtherView">Render other View</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/RazorDemo/Users/25">Razor View with Model</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/AjaxDemo">Ajax and MVC</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Chat">Chat</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Forum/">Forum</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
@@ -38,20 +42,20 @@
                     <div class="form-inline mt-2 mt-md-0 text-white">
                         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                             <AnonymousTemplate>
-                                <asp:Button id="LoginLink" runat="server" 
-                                            CssClass="btn btn-outline-success my-2 my-sm-0 mr-sm-2" 
+                                <asp:Button id="LoginLink" runat="server"
+                                            CssClass="btn btn-outline-success my-2 my-sm-0 me-sm-2"
                                             Text="Login"
                                             OnClick="LoginLink_OnClick"></asp:Button>
-                                <asp:Button id="RegisterLink" runat="server" 
-                                            CssClass="btn btn-outline-success my-2 my-sm-0" 
+                                <asp:Button id="RegisterLink" runat="server"
+                                            CssClass="btn btn-outline-success my-2 my-sm-0"
                                             Text="Register"
                                             OnClick="RegisterLink_OnClick"></asp:Button>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
-                                Welcome &nbsp;<span class="font-weight-bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>&nbsp;
-                                <asp:LoginStatus ID="HeadLoginStatus" runat="server" 
-                                                 LogoutAction="Redirect" 
-                                                 LogoutText="Log Out" 
+                                Welcome &nbsp;<span class="fw-bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>&nbsp;
+                                <asp:LoginStatus ID="HeadLoginStatus" runat="server"
+                                                 LogoutAction="Redirect"
+                                                 LogoutText="Log Out"
                                                  CssClass="btn btn-outline-success my-2 my-sm-0" LogoutPageUrl="~/"/>
                             </LoggedInTemplate>
                         </asp:LoginView>

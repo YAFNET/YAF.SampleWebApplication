@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="YAF.SampleWebApplication._Default" %>
 
-<%@ Register TagPrefix="YAF" TagName="ForumActiveDiscussion" Src="forum/controls/ForumActiveDiscussion.ascx" %>
+<%@ Register TagPrefix="YAF" TagName="ActiveDiscussion" Src="forum/controls/ActiveDiscussion.ascx" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
@@ -16,8 +16,8 @@
     <div class="row">
         <div class="col">
             <h2>YAF What's New</h2>
-            <div class="yafWhatsNew">
-                <YAF:ForumActiveDiscussion ID="ActiveDiscussions" runat="server" />
+            <div>
+                <YAF:ActiveDiscussion ID="ActiveDiscussions" runat="server" />
             </div>
         </div>
     </div>

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace YAF.SampleWebApplication {
-    
-    
-    public partial class _Default {
-        
+namespace YAF.SampleWebApplication
+{
+
+
+    public partial class _Default
+    {
+
         /// <summary>
         /// ActiveDiscussions control.
         /// </summary>
@@ -19,6 +21,6 @@ namespace YAF.SampleWebApplication {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::YAF.Controls.ForumActiveDiscussion ActiveDiscussions;
+        protected global::YAF.Controls.ActiveDiscussion ActiveDiscussions;
     }
 }

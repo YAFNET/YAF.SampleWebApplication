@@ -1,7 +1,33 @@
 YetAnotherForum.NET Changelog
 ====================
 
-# YetAnotherForum.NET v2.3.1.13
+# YetAnotherForum.NET v3.0.0
+* Minimum .NET Version v4.8
+* Upgraded to Bootstrap 5.1.3
+* [NEW] Added Support for MySQL
+* [NEW] Added Support for SQLite
+* [NEW] Added Support for PostgreSQL
+* [NEW] Custom Profile Properties
+* [NEW] CKEditor is now standard editor
+* [NEW] Html Email Template
+* [NEW] Standard Text Avatars
+* Replaced obsolete Membership/Role/Profile Provider with ASP.NET Identity
+* Automatic Migration of all old Attachments on Uprade
+* Completed DAL changes
+
+# YetAnotherForum.NET v2.3.1.15
+* [NEW] Added Page Title template option
+* [NEW] Added New Admin Page for managing Attachments
+* [NEW] Added New Admin Page for managing Topic Tags
+ 
+# YetAnotherForum.NET v2.3.1.14
+* added board name to page title
+* [FIXED] Add topic tag to new topic
+* [FIXED] XSS attack attack on fileupload (thanks to User @sushiwushi)
+* [FIXED] XSS on returnurl (thanks to User @sushiwushi)
+* [FIXED] XSS in Hovercard (thanks to User @sushiwushi)
+
+* # YetAnotherForum.NET v2.3.1.13
 * [NEW] Added Board Setting for Default Access Mask when creating a new forum
 * [FIXED] Deleting a Message with an Attachment
 * [FIXED #603] subforums are not saved
