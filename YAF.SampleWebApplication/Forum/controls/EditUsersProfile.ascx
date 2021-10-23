@@ -23,7 +23,8 @@
                 LocalizedPage="EDIT_PROFILE"
                 LocalizedTag="REALNAME2" />
         </asp:Label>
-        <asp:TextBox ID="Realname" runat="server" CssClass="form-control" />
+        <asp:TextBox ID="Realname" runat="server" CssClass="form-control"
+                     MaxLength="255"/>
     </div>
     <div class="mb-3">
         <asp:Label runat="server" AssociatedControlID="Birthday">
@@ -41,10 +42,11 @@
                 LocalizedTag="OCCUPATION" />
         </asp:Label>
         <asp:TextBox ID="Occupation" runat="server"
-            CssClass="form-control" />
+                     CssClass="form-control"
+                     MaxLength="400"/>
     </div>
     <div class="mb-3">
-        <asp:Label runat="server" AssociatedControlID="Gender">
+        <asp:Label runat="server" AssociatedControlID="Interests">
             <YAF:LocalizedLabel ID="LocalizedLabel4" runat="server"
                 LocalizedPage="EDIT_PROFILE"
                 LocalizedTag="INTERESTS" />
@@ -61,11 +63,8 @@
                 LocalizedPage="EDIT_PROFILE"
                 LocalizedTag="GENDER" />
         </asp:Label>
-        <div class="form-check form-check-inline">
-            <asp:RadioButtonList ID="Gender" runat="server"
-                RepeatLayout="UnorderedList"
-                CssClass="list-unstyled" />
-        </div>
+        <asp:DropDownList ID="Gender" runat="server"
+                          CssClass="select2-select" />
     </div>
     <h4>
         <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server"
@@ -112,7 +111,7 @@
                     LocalizedPage="EDIT_PROFILE"
                     LocalizedTag="CITY" />
             </asp:Label>
-            <asp:TextBox ID="City" runat="server" CssClass="form-control" />
+            <asp:TextBox ID="City" runat="server" CssClass="form-control" MaxLength="255" />
         </div>
     </div>
 
@@ -122,7 +121,8 @@
                 LocalizedPage="EDIT_PROFILE"
                 LocalizedTag="where" />
         </asp:Label>
-        <asp:TextBox ID="Location" runat="server" CssClass="form-control" />
+        <asp:TextBox ID="Location" runat="server" CssClass="form-control"
+                     MaxLength="255"/>
     </div>
     <h2>
         <YAF:LocalizedLabel ID="LocalizedLabel8" runat="server"
@@ -148,7 +148,7 @@
             </asp:Label>
             <asp:TextBox runat="server" ID="Weblog"
                 CssClass="form-control"
-                TextMode="Url" />
+                TextMode="Url" MaxLength="255" />
         </div>
     </div>
 
@@ -165,11 +165,12 @@
             <asp:Label runat="server" AssociatedControlID="ICQ">
                 <YAF:LocalizedLabel ID="LocalizedLabel26" runat="server"
                     LocalizedPage="EDIT_PROFILE"
-                    LocalizedTag="ICQ" />
+                    LocalizedTag="ICQ"/>
             </asp:Label>
             <asp:TextBox runat="server" ID="ICQ"
-                CssClass="form-control"
-                TextMode="Number" />
+                         CssClass="form-control"
+                         TextMode="Number"
+                         MaxLength="255" />
         </div>
         <div class="mb-3 col-md-6">
             <asp:Label runat="server" AssociatedControlID="Twitter">
@@ -177,7 +178,8 @@
                     LocalizedPage="EDIT_PROFILE"
                     LocalizedTag="Twitter" />
             </asp:Label>
-            <asp:TextBox runat="server" ID="Twitter" CssClass="form-control" />
+            <asp:TextBox runat="server" ID="Twitter" CssClass="form-control"
+                         MaxLength="400"/>
         </div>
     </div>
     <div class="row">
@@ -187,7 +189,8 @@
                     LocalizedPage="EDIT_PROFILE"
                     LocalizedTag="xmpp" />
             </asp:Label>
-            <asp:TextBox runat="server" ID="Xmpp" CssClass="form-control" />
+            <asp:TextBox runat="server" ID="Xmpp" CssClass="form-control"
+                         MaxLength="255"/>
         </div>
         <div class="mb-3 col-md-6">
             <asp:Label runat="server" AssociatedControlID="Skype">
@@ -195,7 +198,8 @@
                     LocalizedPage="EDIT_PROFILE"
                     LocalizedTag="SKYPE" />
             </asp:Label>
-            <asp:TextBox runat="server" ID="Skype" CssClass="form-control" />
+            <asp:TextBox runat="server" ID="Skype" CssClass="form-control"
+                         MaxLength="255"/>
         </div>
     </div>
 
@@ -206,7 +210,8 @@
                 LocalizedPage="EDIT_PROFILE"
                 LocalizedTag="Facebook" />
         </asp:Label>
-        <asp:TextBox runat="server" ID="Facebook" CssClass="form-control" />
+        <asp:TextBox runat="server" ID="Facebook" CssClass="form-control"
+                     MaxLength="400"/>
     </div>
 </asp:PlaceHolder>
 <asp:Repeater runat="server" ID="CustomProfile" Visible="False" OnItemDataBound="CustomProfile_OnItemDataBound">

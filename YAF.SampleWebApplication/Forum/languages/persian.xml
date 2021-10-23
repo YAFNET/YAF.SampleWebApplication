@@ -763,17 +763,10 @@
     <Resource tag="OVERRIDE_MESSAGE_HELP">پیش فرض ها در صورت تعریف باطل می شوند(اختیاری).</Resource>
     <Resource tag="OVERRIDE_ORDER">ترتیب:</Resource>
     <Resource tag="OVERRIDE_ORDER_HELP">پیش فرض ها در صورت تعریف باطل می شوند(اختیاری).</Resource>
-    <Resource tag="RIBBON_IMAGE">تصویر نوار روبان:</Resource>
-    <Resource tag="RIBBON_IMAGE_HELP">این تصویر در اصلاعات نشان نمایش داده خواهد شد(اختیاری).</Resource>
     <Resource tag="SELECT_IMAGE">تصویر مدال را انتخاب نمائید</Resource>
+    <Resource tag="SELECT_IMAGE_HELP">Medal will be shown in User Profile</Resource>
     <Resource tag="SHOW_MESSAGE">نمایش پیام:</Resource>
     <Resource tag="SHOW_MESSAGE_HELP">یعنی پیامی که دلیل دریافت نشان را نمایش داده یا مخفی کند.</Resource>
-    <Resource tag="SMALL_IMAGE">تصویر کوچک نشان:</Resource>
-    <Resource tag="SMALL_IMAGE_HELP">این تصویر در کادر کاربر نمایش داده خواهد شد.</Resource>
-    <Resource tag="SMALL_RIBBON">تصویر کوچک نوار روبان:</Resource>
-    <Resource tag="SMALL_RIBBON_HELP">این تصویر در کادر کاربر نمایش داده می شود (اختیاری).</Resource>
-    <Resource tag="SORT_ORDER">ترتیب :</Resource>
-    <Resource tag="SORT_ORDER_HELP">ترتیب پیش فرض نشان.</Resource>
     <Resource tag="TITLE">افزودن/ویرایش نشان</Resource>
   </page>
   <page name="ADMIN_EDITNNTPFORUM">
@@ -836,8 +829,6 @@
     <Resource tag="SELECT_IMAGE">تصویر رتبه را انتخاب نمایید</Resource>
     <Resource tag="SIG_BBCODE">BBCode های امضا کاربر:</Resource>
     <Resource tag="SIG_BBCODE_HELP">BBCode های مجاز در امضا کاربران این رتبه که با کاما جدا شده اند.</Resource>
-    <Resource tag="SIG_HTML">User signature HTML tags:</Resource>
-    <Resource tag="SIG_HTML_HELP">Comma separated HTML tags allowed in a user signature in the rank.</Resource>
     <Resource tag="SIG_LENGTH">حداکثر تعداد حروف مجاز در امضا کاربر:</Resource>
     <Resource tag="SIG_LENGTH_HELP">حداکثر تعداد حروف مجاز در امضا کاربران این رتبه:</Resource>
     <Resource tag="TITLE">افزودن/ویرایش رتبه</Resource>
@@ -1033,8 +1024,6 @@
     <Resource tag="ALLOW_EMAIL_TOPIC_HELP">کاربر مجاز به ارسال موضوعات خواهد شد (از طریق ایمیل)</Resource>
     <Resource tag="ALLOW_FORUMS_DUPLICATENAME">مجوز انجمن با نام مشابه:</Resource>
     <Resource tag="ALLOW_FORUMS_DUPLICATENAME_HELP">در صورت انتخاب این گزینه انجمن هایی با نام یکسان می تواند ایجاد گردد</Resource>
-    <Resource tag="ALLOW_GRAVATARS">مجوز Gravatars :</Resource>
-    <Resource tag="ALLOW_GRAVATARS_HELP">به صورت خودکار Gravatar کاربر را در صورت وجود استفاده می کند.</Resource>
     <Resource tag="ALLOW_GUESTS_VIEWPOLL">مجوز نمایش گزینه های نظر سنجی به کاربران میهمان:</Resource>
     <Resource tag="ALLOW_GUESTS_VIEWPOLL_HELP">در صورت فعال شدن میهمان ها می توانند گزینه های نظر سنجی را ببینند.</Resource>
     <Resource tag="ALLOW_HIDE_POLLRESULTS">مجوز  اینکه کاربران بتوانند نتایج نظرسنجی را مخفی نمایند</Resource>
@@ -1047,8 +1036,6 @@
     <Resource tag="ALLOW_MULTI_VOTING_HELP">در صورت انتخاب کاربران می توانند نظرسنجی هایی ایجاد کنند که در آن می توان به چند گزینه رای داد</Resource>
     <Resource tag="ALLOW_NOTIFICATION_ONALL">مجوز اطلاع‌رسانی برای تمام ارسال ها در تمام موضوعات:</Resource>
     <Resource tag="ALLOW_NOTIFICATION_ONALL_HELP">به کاربران اجازه می دهد نامه های جداگانه به ازای هر ارسال داشته باشند -- حجم وسیعی از نامه ها (خطر ناک)</Resource>
-    <Resource tag="ALLOW_PASS_CHANGE">مجوز تغییر کلمه عبور:</Resource>
-    <Resource tag="ALLOW_PASS_CHANGE_HELP">مجوز تغییر کلمه عبور به کاربران</Resource>
     <Resource tag="ALLOW_PM_NOTIFICATION">مجوز اطلاع‌رسانی برای پیام خصوصی :</Resource>
     <Resource tag="ALLOW_PM_NOTIFICATION_HELP">به کاربران هنگام دریافت پیام خصوصی جدید از طریق ایمیل اطلاع‌رسانی خواهد شد</Resource>
     <Resource tag="ALLOW_PMS">مجوز پیام خصوصی:</Resource>
@@ -1206,8 +1193,6 @@
     <Resource tag="FORUM_FEEDS_ACCESS_HELP">محدود کردن فید انجمن.</Resource>
     <Resource tag="GENDER_TEMPLATE">جنسیت :</Resource>
     <Resource tag="GENDER_TEMPLATE_HELP">قالب نمایش جنسیت کاربران</Resource>
-    <Resource tag="GRAVATAR_RATING">رتبه بندی Gravatar :</Resource>
-    <Resource tag="GRAVATAR_RATING_HELP">حداکثر رتبه بندی Gravatar در صورت مجاز بودن.</Resource>
     <Resource tag="GROUPS_TEMPLATE">قالب گروه ها:</Resource>
     <Resource tag="GROUPS_TEMPLATE_HELP">قالب نمایش گروه‌های کاربری</Resource>
     <Resource tag="HEADER_ADVERTS">تنظیمات تبلیغات</Resource>
@@ -1229,6 +1214,7 @@
     <Resource tag="HEADER_LOGIN">تنظیمات ورود/ثبت نام</Resource>
     <Resource tag="HEADER_LOGSCOPE">دامنه‌ی لاگ</Resource>
     <Resource tag="HEADER_MESSAGE_NOTIFICATION">تنظیمات اطلاع‌رسانی پیام‌ها</Resource>
+    <Resource tag="HEADER_PASSWORD">Password Strength Settings</Resource>
     <Resource tag="HEADER_PERMISSION">تنظیمات دسترسی‌ها</Resource>
     <Resource tag="HEADER_PMS">پیام شخصی</Resource>
     <Resource tag="HEADER_POLL">تنظیمات نظرسنجی</Resource>
@@ -1348,6 +1334,16 @@
     <Resource tag="NOTIFICATION_MOBILE_HELP">Option to Show Native Notifcation Dialogs on Mobile Devices.</Resource>
     <Resource tag="ONLINE_STATUS_TIMEOUT">انقضای حافظه موقت وضعیت کاربران بر خط:</Resource>
     <Resource tag="ONLINE_STATUS_TIMEOUT_HELP">می توانید بر اساس فعالیت سایت خود بر حسب میلی ثانیه تنظمی کنید.</Resource>
+    <Resource tag="PASSWORD_LOWER_CASE">Require Lower Case:</Resource>
+    <Resource tag="PASSWORD_LOWER_CASE_HELP">Option to require a lower case letter ('a' - 'z') in a Password.</Resource>
+    <Resource tag="PASSWORD_MIN_LENGTH">Minimum Length:</Resource>
+    <Resource tag="PASSWORD_MIN_LENGTH_HELP">The minimum required password length.</Resource>
+    <Resource tag="PASSWORD_REQUIRE_DIGIT">Require Digit:</Resource>
+    <Resource tag="PASSWORD_REQUIRE_DIGIT_HELP">Option to require a numeric digit ('0' - '9') in a Password.</Resource>
+    <Resource tag="PASSWORD_REQUIRE_NON_LETTER">Require non Letter Or Digit:</Resource>
+    <Resource tag="PASSWORD_REQUIRE_NON_LETTER_HELP">Option to requires a non-letter or digit character in a Password.</Resource>
+    <Resource tag="PASSWORD_UPPER_CASE">Require Upper Case:</Resource>
+    <Resource tag="PASSWORD_UPPER_CASE_HELP">Option to require a upper case letter ('A' - 'Z') in a Password.</Resource>
     <Resource tag="PM_ATTACHMENTS">Allow attachments in Private Messages</Resource>
     <Resource tag="PM_ATTACHMENTS_HELP">Allowes the upload and use of attachments in Private messages.</Resource>
     <Resource tag="POLL_IMAGE_FILESIZE">اندازه تصویر نظر سنجی :</Resource>
@@ -1523,6 +1519,7 @@
     <Resource tag="SSL_LOGIN_HELP">الزام در ورود امن برای کاربران.</Resource>
     <Resource tag="SSL_REGISTER">از SSL برای ثبت نام استفاده کن :</Resource>
     <Resource tag="SSL_REGISTER_HELP">الزام در ثبت نام امن برای کاربران.</Resource>
+    <Resource tag="SSL_REQUIRE">Require SSL</Resource>
     <Resource tag="STATS_CACHE_TIMEOUT">انقضای حافظه موقت آمار انجمن:</Resource>
     <Resource tag="STATS_CACHE_TIMEOUT_HELP">به دقیقه</Resource>
     <Resource tag="STOPFORUMSPAM_KEY">StopForumSpam.com API Key:</Resource>
@@ -2355,7 +2352,7 @@
   <page name="COOKIES">
     <Resource tag="COOKIES_TEXT">
     Cookies are small text files that are placed on your computer by websites that you visit. They are widely used in order to make websites work, or work more efficiently, as well as to provide information to the owners of the site. Depending on your access level and actions on the site, various preference based cookies may be set to enrich your experience.
-    
+
     [br]
     [b]Standard Cookies[/b][br]
     We’re using cookies for the following purposes:
@@ -2369,7 +2366,7 @@
 
     [b]Third Party Cookies[/b][br]
     The site owner may set additional cookies in addition to the standard cookies above. These cookies are often used for website usage tracking, or set by embedded service providers when viewing embedded content from providers such as YouTube and Vimeo, etc.
-    
+
     [br]
 
     [b]How do I change my cookie settings?[/b][br]
@@ -2805,6 +2802,7 @@
     <Resource tag="REALNAME2">نام حقیقی شما چیست؟</Resource>
     <Resource tag="REGION">وضعیت:</Resource>
     <Resource tag="SELECT_LANGUAGE">مایل به استفاده از چه زبانی هستید:</Resource>
+    <Resource tag="SELECT_PAGESIZE">Standard Page Size:</Resource>
     <Resource tag="SELECT_TEXTEDITOR">ویرایشگر متنی خود رار انتخاب کنید:</Resource>
     <Resource tag="SELECT_THEME">قالب مورد علاقه خود را انتخاب کنید:</Resource>
     <Resource tag="SKYPE">شناسه اسکایپ شما:</Resource>
@@ -2878,6 +2876,32 @@
     <Resource tag="REQUEST_DATE">تاریخ درخواست</Resource>
     <Resource tag="YOUR_BUDDYLIST">دوستان من</Resource>
     <Resource tag="YOUR_REQUESTS">درخواست‌های دوستی شما</Resource>
+  </page>
+  <page name="GENDER">
+    <Resource tag="AGENDER">Agender</Resource>
+    <Resource tag="ANDROGYNE">Androgyne</Resource>
+    <Resource tag="BIGENDER">Bigender</Resource>
+    <Resource tag="CISGENDER">Cisgender</Resource>
+    <Resource tag="FEMALETOMALE">Female to Male</Resource>
+    <Resource tag="GENDERFLUID">Gender Fluid</Resource>
+    <Resource tag="GENDERNONCONFORMING">Gender Nonconforming</Resource>
+    <Resource tag="GENDERQUEER">Genderqueer</Resource>
+    <Resource tag="GENDERQUESTIONING">Gender Questioning</Resource>
+    <Resource tag="INTERSEX">Intersex</Resource>
+    <Resource tag="MALETOFEMALE">Male to Female</Resource>
+    <Resource tag="MAN">Man</Resource>
+    <Resource tag="NONBINARY">Non-binary</Resource>
+    <Resource tag="OTHER">Other</Resource>
+    <Resource tag="PANGENDER">Pangender</Resource>
+    <Resource tag="TRANS">Trrans</Resource>
+    <Resource tag="TRANSFEMININE">Transfeminine</Resource>
+    <Resource tag="TRANSGENDER">Transgender</Resource>
+    <Resource tag="TRANSMAN">Transgender Man</Resource>
+    <Resource tag="TRANSMASCULINE">Transmasculine</Resource>
+    <Resource tag="TRANSSEXUAL">Transsexual</Resource>
+    <Resource tag="TRANSWOMAN">Transgender Woman</Resource>
+    <Resource tag="TWOSPIRIT">Two-Spirit</Resource>
+    <Resource tag="WOMAN">Woman</Resource>
   </page>
   <page name="HELP_INDEX">
     <Resource tag="ANOUNCECONTENT">&lt;p&gt;اطلاعیه ها، پیام هایی هستند که توسط مدیران و ناظران ارسال می شوند. آنها وسیله یک طرفه ای برای ارتباط با کاربران هستند که قادر به پاسخگویی آن نیستید. در صورتیکه تمایل به صحبت در مورد اطلاعیه دارید می توانید مبحث جدیدی را برای آن در انجمن باز کنید. &lt;/p&gt;
@@ -4631,10 +4655,10 @@
     <Resource tag="PMLIMIT_ALL">شما دارای {0} پیغام می باشید که شامل {1} پیغام ورودی , {2} پیغام خروجی و {3} پیغام در آرشیو از مجموع {4} پیغام مجاز می باشد.{5} درصد ظرفیت صندوق شما پر شده است.</Resource>
     <Resource tag="PREVIEWTITLE">پیش نمایش:</Resource>
     <Resource tag="RECIPIENTS_PMBOX_FULL">صندوق پیامهای کاربری که مایل به ارسال پیام به او هستید پر شده است.کاربر فوق باید قبل از دریافت پیغام جدید صندوق خود را تخلیه کند.</Resource>
-    <Resource tag="REPORT_BODY">I would like to Report the Message: 
+    <Resource tag="REPORT_BODY">I would like to Report the Message:
 
-  {0} 
-     
+  {0}
+
   for the following Reason...</Resource>
     <Resource tag="REPORT_SUBJECT">Report a Private Message from User: {0}</Resource>
     <Resource tag="REPORTED_SUBJECT">پاسخ درباره گزارش شما</Resource>
@@ -4775,9 +4799,6 @@
     <Resource tag="FACEBOOK_TOPIC">پسندیدن این موضوع</Resource>
     <Resource tag="FORUM_JUMP">رفتن به انجمن</Resource>
     <Resource tag="GO_TO_ANSWER">Go to the topic answer</Resource>
-    <Resource tag="GOOGLE">Google+</Resource>
-    <Resource tag="GOOGLE_TITLE">نمایش  پروفایل Google+ {0} </Resource>
-    <Resource tag="GOOGLEPLUS_TOPIC">اشتراک در Google+</Resource>
     <Resource tag="GROUPS">گروه ها</Resource>
     <Resource tag="HOME">وبسایت</Resource>
     <Resource tag="HOME_TITLE">مشاهده صفحه وبسایت {0}</Resource>
@@ -4920,10 +4941,7 @@
     <Resource tag="FACEBOOK">پروفایل فیسبوک:</Resource>
     <Resource tag="FORUM_ACCESS">Forum Access</Resource>
     <Resource tag="GENDER">جنسیت:</Resource>
-    <Resource tag="GENDER0">مشخص نشده</Resource>
-    <Resource tag="GENDER1">مرد</Resource>
-    <Resource tag="GENDER2">زن</Resource>
-    <Resource tag="GOOGLE">پروفایل گوگل:</Resource>
+    <Resource tag="GOOGLE">Google+ Profile:</Resource>
     <Resource tag="GROUPS">گروه ها:</Resource>
     <Resource tag="HOURS">ساعت</Resource>
     <Resource tag="ICQ">شماره ICQ:</Resource>
@@ -5470,8 +5488,8 @@
       You have been successfully registered on the {forumname} forum using Facebook Login:
 
       User Name: {user}
-	  Auto Generated Password: {pass}
-	  
+    Auto Generated Password: {pass}
+
       User Email: {email} (Please don't change your email, or you are unable to login with Facebook)
 
     </Resource>
@@ -5482,7 +5500,7 @@
 
       User Name: {user}
       Auto Generated Password: {pass}
-      
+
       User Email: {email} (Please don't change your email, or you are unable to login with Google)
 
     </Resource>
@@ -5492,8 +5510,8 @@
       You have been successfully registered on the {forumname} forum using Google Login:
 
       User Name: {user}
-	  Auto Generated Password: {pass}
-	  
+    Auto Generated Password: {pass}
+
       User Email: {email} (Please don't change your email, or you are unable to login with Google)
 
     </Resource>
@@ -5525,7 +5543,7 @@
 
       User Name: {user}
       Auto Generated Password: {pass}
-      
+
       User Email: {email}
 
     </Resource>
@@ -5536,7 +5554,7 @@
 
     User Name: {user}
     Auto Generated Password: {pass}
-    
+
     User Email: {email}
 
   </Resource>
@@ -5595,7 +5613,7 @@
 
       User Name: {user}
       Auto Generated Password: {pass}
-      
+
       User Email: {email} (Please change your Email adress to your real one in order to Receive E-Mails)
 
     </Resource>
@@ -5654,7 +5672,7 @@
      Hello {user},
 
      Your user account on the {forumname} forum has has been recently updated to include access to the following Group(s):
-     
+
      {roles}
 
      Thanks!
@@ -5666,7 +5684,7 @@
      Hello {user},
 
      Your user account on the {forumname} forum has has been recently updated to include access to the following Group(s):
-     
+
      {roles}
 
 
@@ -5679,7 +5697,7 @@
      Hello {user},
 
      Your user account on the {forumname} forum  has been recently updated to restrict access to the following Groups(s):
-     
+
      {roles}
 
      Thanks!
@@ -5691,7 +5709,7 @@
      Hello {user},
 
      Your user account on the {forumname} forum  has been recently updated to restrict access to the following Groups(s):
-     
+
      {roles}
 
 

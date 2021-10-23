@@ -1,8 +1,8 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Controls.DisplayPost" EnableViewState="false" Codebehind="DisplayPost.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Constants" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
-<%@ Import Namespace="ServiceStack" %>
 <%@ Import Namespace="YAF.Core.Services" %>
+<%@ Import Namespace="ServiceStack.Text" %>
 
 <asp:PlaceHolder runat="server" ID="ShowHideIgnoredUserPost" Visible="False">
     <YAF:Alert runat="server" Type="info" Dismissing="True">
@@ -173,7 +173,7 @@
                     </div>
                     <div style="margin-top: 1px">
                         <a id="post<%# this.DataSource.MessageID %>"
-                           href='<%# this.Get<LinkBuilder>().GetLink(ForumPages.Posts,"m={0}&name={1}", this.DataSource.MessageID, this.PageContext.PageTopicName) %>'>
+                           href='<%# this.Get<LinkBuilder>().GetLink(ForumPages.Posts,"m={0}&name={1}", this.DataSource.MessageID, this.PageContext.PageTopic.TopicName) %>'>
                             #<%# this.CurrentPage * this.PageContext.BoardSettings.PostsPerPage + this.PostCount + 1%>
                         </a>
                     </div>
@@ -205,7 +205,8 @@
                                          TextLocalizedTag="REPLY" TitleLocalizedTag="BUTTON_POSTREPLY_TT"
                                          Icon="reply"
                                          CssClass="dropdown-item"  />
-                        <div class="dropdown-divider"></div>
+                        <asp:Panel runat="server" CssClass="dropdown-divider" ID="Separator1"
+                                   Visible="False"></asp:Panel>
                         <YAF:ThemeButton ID="Edit2" runat="server"
                                          Type="None"
                                          Icon="edit"
@@ -234,7 +235,8 @@
                                          TextLocalizedTag="BUTTON_UNDELETE"
                                          TitleLocalizedTag="BUTTON_UNDELETE_TT"
                                          CssClass="dropdown-item" />
-                        <div class="dropdown-divider"></div>
+                        <asp:Panel CssClass="dropdown-divider" runat="server" ID="Separator2"
+                                   Visible="False"></asp:Panel>
                         <asp:PlaceHolder runat="server" ID="UserDropHolder2"></asp:PlaceHolder>
                         <YAF:ThemeButton ID="ReportPost2" runat="server"
                                          Visible="false"

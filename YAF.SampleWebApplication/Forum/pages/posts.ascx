@@ -1,9 +1,9 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Posts" CodeBehind="Posts.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
-<%@ Import Namespace="ServiceStack" %>
 <%@ Import Namespace="YAF.Core.Extensions" %>
 <%@ Import Namespace="YAF.Types.Objects.Model" %>
+<%@ Import Namespace="ServiceStack.Text" %>
 
 <%@ Register TagPrefix="YAF" TagName="DisplayPost" Src="../controls/DisplayPost.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayConnect" Src="../controls/DisplayConnect.ascx" %>
@@ -91,9 +91,9 @@
     <div class="col">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <asp:HyperLink ID="TopicLink" runat="server" 
+                <asp:HyperLink ID="TopicLink" runat="server"
                            CssClass="navbar-brand pt-0">
-                <asp:Label ID="TopicTitle" runat="server" 
+                <asp:Label ID="TopicTitle" runat="server"
                            CssClass="topic-title" />
             </asp:HyperLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -145,33 +145,33 @@
         </nav>
     </div>
 </div>
-<asp:Repeater ID="MessageList" runat="server" OnItemCreated="MessageList_OnItemCreated">
+<asp:Repeater ID="MessageList" runat="server" OnItemDataBound="MessageList_OnItemCreated">
     <ItemTemplate>
         <YAF:DisplayPost ID="DisplayPost1" runat="server"
                          DataSource="<%# Container.DataItem.ToType<PagedMessage>() %>"
                          PostCount="<%# Container.ItemIndex %>"
                          CurrentPage="<%# this.Pager.CurrentPageIndex %>" />
-        <YAF:DisplayAd ID="DisplayAd" runat="server" 
+        <YAF:DisplayAd ID="DisplayAd" runat="server"
                        Visible="False" />
-        <YAF:DisplayConnect ID="DisplayConnect" runat="server" 
+        <YAF:DisplayConnect ID="DisplayConnect" runat="server"
                             Visible="False" />
     </ItemTemplate>
 </asp:Repeater>
 
-<asp:PlaceHolder runat="server" 
+<asp:PlaceHolder runat="server"
                  Visible="<%# this.Get<IPermissions>().Check(this.PageContext.BoardSettings.PostsFeedAccess) %>">
     <div class="row mb-3">
         <div class="col">
             <YAF:RssFeedLink ID="RssFeed" runat="server"
                              FeedType="Posts"
-                             AdditionalParameters='<%# "t={0}&name={1}".Fmt(this.PageContext.PageTopicID, this.PageContext.PageTopicName) %>'
+                             AdditionalParameters='<%# "t={0}&name={1}".Fmt(this.PageContext.PageTopicID, this.PageContext.PageTopic.TopicName) %>'
                              Visible="<%# this.Get<IPermissions>().Check(this.PageContext.BoardSettings.PostsFeedAccess) %>" />
         </div>
     </div>
 </asp:PlaceHolder>
 <div class="row mb-3 d-flex justify-content-between">
     <div class="col-md-4">
-        <YAF:Pager ID="Pager" runat="server" 
+        <YAF:Pager ID="Pager" runat="server"
                    UsePostBack="False" />
     </div>
     <div class="col-md-8 mt-1 mt-md-0">

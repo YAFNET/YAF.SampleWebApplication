@@ -5,6 +5,7 @@
 <%@ Import Namespace="YAF.Types.Models" %>
 <%@ Import Namespace="YAF.Core.Services" %>
 <%@ Import Namespace="YAF.Types.Constants" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
@@ -81,7 +82,7 @@
                     <YAF:Alert runat="server" ID="NoInfo"
                                Type="success"
                                Visible="False">
-                        <YAF:Icon runat="server" IconName="check" IconType="text-success" />
+                        <YAF:Icon runat="server" IconName="check" />
                         <YAF:LocalizedLabel runat="server"
                                             LocalizedTag="NO_ENTRY"></YAF:LocalizedLabel>
                     </YAF:Alert>

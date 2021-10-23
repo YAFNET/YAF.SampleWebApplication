@@ -1,11 +1,12 @@
-<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.MessageHistory" CodeBehind="MessageHistory.ascx.cs" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.MessageHistory" CodeBehind="MessageHistory.ascx.cs" %>
 
 <%@ Import Namespace="System.Globalization" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
-<%@ Import Namespace="ServiceStack" %>
 <%@ Import Namespace="YAF.Types.Objects.Model" %>
 <%@ Import Namespace="YAF.Types.Interfaces.Services" %>
+<%@ Import Namespace="ServiceStack.Text" %>
+<%@ Import Namespace="YAF.Core.Helpers" %>
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
@@ -40,7 +41,7 @@
                                                            Text="&nbsp;" />
                                          </div>
                                          <asp:HiddenField runat="server" 
-                                                          Value="<%#(Container.DataItem as MessageHistoryTopic).Message%>" ID="MessageField" />
+                                                          Value="<%# this.HtmlEncode((Container.DataItem as MessageHistoryTopic).Message)%>" ID="MessageField" />
                                          <YAF:LocalizedLabel ID="LocalizedLabel9" runat="server" 
                                                              LocalizedPage="POSTMESSAGE"
                                                              LocalizedTag="EDITEREASON" />: <%# (Container.DataItem as MessageHistoryTopic).Edited != (Container.DataItem as MessageHistoryTopic).Posted  ? (Container.DataItem as MessageHistoryTopic).EditReason.IsNotSet() ? this.GetText("EDIT_REASON_NA") : (Container.DataItem as MessageHistoryTopic).EditReason: this.GetText("ORIGINALMESSAGE") %>

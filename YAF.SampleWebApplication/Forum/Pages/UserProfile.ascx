@@ -1,8 +1,8 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.UserProfile" CodeBehind="UserProfile.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Constants" %>
-<%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="YAF.Core.Services" %>
 <%@ Import Namespace="YAF.Types.Interfaces.Services" %>
+<%@ Import Namespace="YAF.Types.Models" %>
 
 <%@ Register TagPrefix="YAF" TagName="SignatureEdit" Src="../controls/EditUsersSignature.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="SuspendUser" Src="../controls/EditUsersSuspend.ascx" %>
@@ -17,28 +17,28 @@
         <YAF:ThemeButton ID="lnkBuddy" runat="server"
                          OnCommand="lnk_AddBuddy"
                          CssClass="mb-1"/>
-        <YAF:ThemeButton ID="PM" runat="server" 
+        <YAF:ThemeButton ID="PM" runat="server"
                          Visible="false"
                          TextLocalizedPage="POSTS" TextLocalizedTag="PM"
                          TitleLocalizedTag="PM_TITLE" TitleLocalizedPage="POSTS"
                          CssClass="mb-1"
                          Icon="envelope-open-text"
                          Type="Info" />
-        <YAF:ThemeButton ID="Email" runat="server" 
+        <YAF:ThemeButton ID="Email" runat="server"
                          Visible="false"
                          TextLocalizedPage="POSTS" TextLocalizedTag="EMAIL"
                          TitleLocalizedTag="EMAIL_TITLE" TitleLocalizedPage="POSTS"
                          CssClass="mb-1"
                          Icon="at"
                          Type="Info" />
-        <YAF:ThemeButton ID="AdminUserButton" runat="server" 
+        <YAF:ThemeButton ID="AdminUserButton" runat="server"
                          Visible="false"
                          TextLocalizedTag="ADMIN_USER"
                          NavigateUrl='<%# this.Get<LinkBuilder>().GetLink(ForumPages.Admin_EditUser,"u={0}", this.UserId) %>'
                          CssClass="mb-1"
                          Icon="user-cog"
                          Type="Danger"/>
-        
+
     </div>
     <div class="col-auto">
         <asp:Image ID="Avatar" runat="server"
@@ -283,25 +283,25 @@
                             <div class="card-header">
                                 <YAF:Icon runat="server" IconName="comment" />
                                 <span class="fw-bold">
-                                    <YAF:LocalizedLabel ID="LocalizedLabel16" runat="server" 
+                                    <YAF:LocalizedLabel ID="LocalizedLabel16" runat="server"
                                                         LocalizedTag="topic" />
                                 </span><a
                                     title='<%# this.GetText("COMMON", "VIEW_TOPIC") %>'
-                                    href='<%# this.Get<LinkBuilder>().GetTopicLink(this.Eval("Item2.ID").ToType<int>(), this.Eval("Item2.TopicName").ToString()) %>'>
+                                    href='<%# this.Get<LinkBuilder>().GetTopicLink(((Tuple<Message, Topic, User>)Container.DataItem).Item2.ID, this.Eval("Item2.TopicName").ToString()) %>'>
                                     <%# this.Get<IBadWordReplace>().Replace(this.HtmlEncode(this.Eval("Item2.TopicName").ToString())) %>
                                 </a>
                             </div>
                             <div class="card-body">
-                                <YAF:MessagePostData ID="MessagePost" runat="server" 
-                                                     ShowAttachments="false" 
+                                <YAF:MessagePostData ID="MessagePost" runat="server"
+                                                     ShowAttachments="false"
                                                      CurrentMessage='<%# this.Eval("Item1") %>' />
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">
-                                    <YAF:LocalizedLabel ID="LocalizedLabel17" runat="server" 
+                                    <YAF:LocalizedLabel ID="LocalizedLabel17" runat="server"
                                                         LocalizedTag="posted" />
                                     &nbsp;
-                                            <%# this.Get<IDateTimeService>().FormatDateTime(this.Eval("Item1.Posted").ToType<System.DateTime>())%>
+                                            <%# this.Get<IDateTimeService>().FormatDateTime(((Tuple<Message, Topic, User>)Container.DataItem).Item1.Posted)%>
                                 </small>
                             </div>
                         </div>
@@ -355,12 +355,12 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <li class="list-group-item">
-                                <YAF:UserLink ID="UserProfileLink" runat="server" 
+                                <YAF:UserLink ID="UserProfileLink" runat="server"
                                               ReplaceName="<%# this.PageContext.BoardSettings.EnableDisplayName ? (Container.DataItem as dynamic).DisplayName : (Container.DataItem as dynamic).Name %>"
                                               Suspended="<%# (Container.DataItem as dynamic).Suspended %>"
                                               Style="<%# (Container.DataItem as dynamic).UserStyle %>"
                                               UserID="<%#  this.UserId == (int)(Container.DataItem as dynamic).UserID ? (Container.DataItem as dynamic).FromUserID: (Container.DataItem as dynamic).UserID %>" />
-            
+
                             </li>
                         </ItemTemplate>
                         <FooterTemplate>

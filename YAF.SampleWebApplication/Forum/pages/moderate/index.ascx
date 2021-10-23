@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Moderate.Index" Codebehind="Index.ascx.cs" %>
 
 <%@ Import Namespace="YAF.Types.Objects.Model" %>
-<%@ Import Namespace="ServiceStack" %>
+<%@ Import Namespace="ServiceStack.Text" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
 <div class="row">
@@ -75,7 +75,7 @@
 </div>
 <asp:PlaceHolder id="InfoPlaceHolder" runat="server" Visible="false">
     <YAF:Alert runat="server" Dismissing="False" Type="success">
-        <i class="fa fa-check fa-fw text-success"></i>&nbsp;
+        <i class="fa fa-check fa-fw me-1"></i>
         <YAF:LocalizedLabel ID="NoCountInfo" 
                             LocalizedTag="NOMODERATION" 
                             LocalizedPage="MODERATE" 

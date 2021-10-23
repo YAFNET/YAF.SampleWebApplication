@@ -757,23 +757,14 @@
     <Resource tag="MSG_NAME">You must enter a medal name!</Resource>
     <Resource tag="MSG_SMALL_IMAGE">Er moet een kleine afbeelding van de Medaille worden opgegeven!</Resource>
     <Resource tag="MSG_VALID_USER">Kies een bestaande Gebruiker!</Resource>
-    <Resource tag="ONLY_RIBBON">Alleen Lint laten zien:</Resource>
-    <Resource tag="ONLY_RIBBON_HELP">Als deze is aangevinkt, wordt alleen het lint getoond in het gebruikersvak.</Resource>
     <Resource tag="OVERRIDE_MESSAGE">Bericht:</Resource>
     <Resource tag="OVERRIDE_MESSAGE_HELP">Overschrijf de standaard als deze gespecificeerd is (Optioneel).</Resource>
     <Resource tag="OVERRIDE_ORDER">Sorteervolgorde:</Resource>
     <Resource tag="OVERRIDE_ORDER_HELP">Overschrijf de standaard als deze gespecificeerd is (Optioneel).</Resource>
-    <Resource tag="RIBBON_IMAGE">Lint afbeelding:</Resource>
-    <Resource tag="RIBBON_IMAGE_HELP">Deze afbeelding wordt weergegeven in de info van de medaille (optioneel).</Resource>
     <Resource tag="SELECT_IMAGE">Selecteer Medaille Afbeelding</Resource>
+    <Resource tag="SELECT_IMAGE_HELP">Medal will be shown in User Profile</Resource>
     <Resource tag="SHOW_MESSAGE">Laat Omschrijving zien:</Resource>
     <Resource tag="SHOW_MESSAGE_HELP">Laat de beschrijving zien waarom de Gebruiker de medaille heeft gekregen.</Resource>
-    <Resource tag="SMALL_IMAGE">Kleine Afbeelding bij de Medaille:</Resource>
-    <Resource tag="SMALL_IMAGE_HELP">Deze afbeelding wordt weergegeven in het Gebruikersvak.</Resource>
-    <Resource tag="SMALL_RIBBON">Kleine Lint afbeelding:</Resource>
-    <Resource tag="SMALL_RIBBON_HELP">Deze afbeelding wordt weergegeven in het Gebruikersvak (optioneel).</Resource>
-    <Resource tag="SORT_ORDER">Sorteervolgorde:</Resource>
-    <Resource tag="SORT_ORDER_HELP">Standaard sorteervolgorde van een medaillesort .</Resource>
     <Resource tag="TITLE">Medaille bewerken/toevoegen</Resource>
   </page>
   <page name="ADMIN_EDITNNTPFORUM">
@@ -836,8 +827,6 @@
     <Resource tag="SELECT_IMAGE">Selecteer Rang Afbeelding</Resource>
     <Resource tag="SIG_BBCODE">Toegestane BBCodes voor handtekening:</Resource>
     <Resource tag="SIG_BBCODE_HELP">Kommagescheiden lijst van toegestane BBCodes die gebruikers van deze rang mogen gebruiken in hun handtekening (onderschrift).</Resource>
-    <Resource tag="SIG_HTML">User signature HTML tags:</Resource>
-    <Resource tag="SIG_HTML_HELP">Comma separated HTML tags allowed in a user signature in the rank.</Resource>
     <Resource tag="SIG_LENGTH">Maximum aantal tekens in de handtekening (onderschrift) van de gebruiker:</Resource>
     <Resource tag="SIG_LENGTH_HELP">Maximum aantal tekens dat een gebruiker mag gebruiken in zijn handtekening (onderschrift) bij deze rang.</Resource>
     <Resource tag="TITLE">Rangen bewerken/toevoegen</Resource>
@@ -1034,8 +1023,6 @@
     <Resource tag="ALLOW_EMAIL_TOPIC_HELP">Als deze is aangevinkt, kunnen gebruikers topics versturen via e-mail.</Resource>
     <Resource tag="ALLOW_FORUMS_DUPLICATENAME">Sta meerdere Forums met dezelfde naam toe:</Resource>
     <Resource tag="ALLOW_FORUMS_DUPLICATENAME_HELP">Als aangevinkt, kunnen meerdere forums met dezelfde naam voorkomen.</Resource>
-    <Resource tag="ALLOW_GRAVATARS">Sta Gravatars toe:</Resource>
-    <Resource tag="ALLOW_GRAVATARS_HELP">Gebruik Gravatars automatisch als ze bestaan (nb: kan extra processorkracht vereisen).</Resource>
     <Resource tag="ALLOW_GUESTS_VIEWPOLL">Sta Uitslagen bekijken door Gasten toe:</Resource>
     <Resource tag="ALLOW_GUESTS_VIEWPOLL_HELP">Als deze is aangevinkt, kunnen Gasten Uitslagen van de Polls bekijken.</Resource>
     <Resource tag="ALLOW_HIDE_POLLRESULTS">Sta verbergen van Poll uitslagen toe:</Resource>
@@ -1048,8 +1035,6 @@
     <Resource tag="ALLOW_MULTI_VOTING_HELP">Als deze is aangevinkt, kunnen er multiple choice vragen worden aangemaakt.</Resource>
     <Resource tag="ALLOW_NOTIFICATION_ONALL">Sta bericht abbonnementen toe op Alle Berichten van Alle Topics:</Resource>
     <Resource tag="ALLOW_NOTIFICATION_ONALL_HELP">Sta e-mails to op alle berichten van alle topics -- HEEL VEEL Emailverkeer.</Resource>
-    <Resource tag="ALLOW_PASS_CHANGE">Sta wachtwoord wijzigen toe:</Resource>
-    <Resource tag="ALLOW_PASS_CHANGE_HELP">Gebruikers mogen hun wachtwoord wijzigen.</Resource>
     <Resource tag="ALLOW_PM_NOTIFICATION">bericht Notificaties toe:</Resource>
     <Resource tag="ALLOW_PM_NOTIFICATION_HELP">bericht krijgen.</Resource>
     <Resource tag="ALLOW_PMS"> berichten toe:</Resource>
@@ -1207,8 +1192,6 @@
     <Resource tag="FORUM_FEEDS_ACCESS_HELP">Beperkt weergave van forum feeds.</Resource>
     <Resource tag="GENDER_TEMPLATE">Geslacht:</Resource>
     <Resource tag="GENDER_TEMPLATE_HELP">Sjabloon om het geslacht van de gebruiker op te bouwen.</Resource>
-    <Resource tag="GRAVATAR_RATING">Gravatar Waardering:</Resource>
-    <Resource tag="GRAVATAR_RATING_HELP">Maximale waardering van Gravatar (indien toegestaan).</Resource>
     <Resource tag="GROUPS_TEMPLATE">Groep sjabloon:</Resource>
     <Resource tag="GROUPS_TEMPLATE_HELP">Sjabloon om de groepen van de gebruiker op te bouwen.</Resource>
     <Resource tag="HEADER_ADVERTS">Advertentie instellingen</Resource>
@@ -1230,6 +1213,7 @@
     <Resource tag="HEADER_LOGIN">Login/Registratie instellingen</Resource>
     <Resource tag="HEADER_LOGSCOPE">Log scope</Resource>
     <Resource tag="HEADER_MESSAGE_NOTIFICATION">Message Notification Settings</Resource>
+    <Resource tag="HEADER_PASSWORD">Password Strength Settings</Resource>
     <Resource tag="HEADER_PERMISSION">Machtiging instellingen</Resource>
     <Resource tag="HEADER_PMS"> Berichten</Resource>
     <Resource tag="HEADER_POLL">Poll Opties</Resource>
@@ -1348,6 +1332,16 @@
     <Resource tag="NOTIFICATION_MOBILE_HELP">Option to Show Native Notifcation Dialogs on Mobile Devices.</Resource>
     <Resource tag="ONLINE_STATUS_TIMEOUT">Online Gebruiker Status Cache Timeout:</Resource>
     <Resource tag="ONLINE_STATUS_TIMEOUT_HELP">Dit kun je Fine-tunen afhankelijk van de activiteit op je forum in milliseconden)</Resource>
+    <Resource tag="PASSWORD_LOWER_CASE">Require Lower Case:</Resource>
+    <Resource tag="PASSWORD_LOWER_CASE_HELP">Option to require a lower case letter ('a' - 'z') in a Password.</Resource>
+    <Resource tag="PASSWORD_MIN_LENGTH">Minimum Length:</Resource>
+    <Resource tag="PASSWORD_MIN_LENGTH_HELP">The minimum required password length.</Resource>
+    <Resource tag="PASSWORD_REQUIRE_DIGIT">Require Digit:</Resource>
+    <Resource tag="PASSWORD_REQUIRE_DIGIT_HELP">Option to require a numeric digit ('0' - '9') in a Password.</Resource>
+    <Resource tag="PASSWORD_REQUIRE_NON_LETTER">Require non Letter Or Digit:</Resource>
+    <Resource tag="PASSWORD_REQUIRE_NON_LETTER_HELP">Option to requires a non-letter or digit character in a Password.</Resource>
+    <Resource tag="PASSWORD_UPPER_CASE">Require Upper Case:</Resource>
+    <Resource tag="PASSWORD_UPPER_CASE_HELP">Option to require a upper case letter ('A' - 'Z') in a Password.</Resource>
     <Resource tag="PM_ATTACHMENTS">Allow attachments in Private Messages</Resource>
     <Resource tag="PM_ATTACHMENTS_HELP">Allowes the upload and use of attachments in Private messages.</Resource>
     <Resource tag="POLL_IMAGE_FILESIZE">Poll Afbeelding Bestandsgrootte:</Resource>
@@ -1520,6 +1514,7 @@
     <Resource tag="SSL_LOGIN_HELP">Forceer een beveiligde verbinding bij het inloggen van de gebruikers.</Resource>
     <Resource tag="SSL_REGISTER">Gebruik SSL bij het registratieproces:</Resource>
     <Resource tag="SSL_REGISTER_HELP">Forceer een beveiligde verbinding bij het registreren van nieuwe gebruikers.</Resource>
+    <Resource tag="SSL_REQUIRE">Require SSL</Resource>
     <Resource tag="STATS_CACHE_TIMEOUT">Forum Statistieken Cache Timeout:</Resource>
     <Resource tag="STATS_CACHE_TIMEOUT_HELP">In minuten</Resource>
     <Resource tag="STOPFORUMSPAM_KEY">StopForumSpam.com API Key:</Resource>
@@ -1623,18 +1618,18 @@
   </page>
   <page name="ADMIN_NNTPRETRIEVE">
     <Resource tag="BETA_WARNING">&lt;p style="color: red"&gt;
-	  De NNTP feature van Yet Another Forum.net is nog steeds in beta, en &lt;strong&gt;heeft&lt;/strong&gt; bugs.
-	  Bugs die voorkomen hebben te maken met character set conversion, en fouten in datum-/tijdweergave.
-	  Usenet artikelen worden gepost met de datum van de header, zodat hier datums in de toekomst kunnen voorkomen.
-	  Laat het aub weten als er onbekende tijdzones voorkomen.
+    De NNTP feature van Yet Another Forum.net is nog steeds in beta, en &lt;strong&gt;heeft&lt;/strong&gt; bugs.
+    Bugs die voorkomen hebben te maken met character set conversion, en fouten in datum-/tijdweergave.
+    Usenet artikelen worden gepost met de datum van de header, zodat hier datums in de toekomst kunnen voorkomen.
+    Laat het aub weten als er onbekende tijdzones voorkomen.
    &lt;/p&gt;
    &lt;p style="color: red"&gt;
-	  De forums usenet artikelen die gepost worden zijn alleen-lezen, omdat de artikelen &lt;strong&gt;niet&lt;/strong&gt;
-	  terug op usenet geplaatst worden. Omwille van de snelheid, worden usenet artikelen automatisch goedgekeurd, 
-	  wat betekent dat als het forum wordt gemodereerd, deze artikelen ook automatisch worden goedgekeurd.
+    De forums usenet artikelen die gepost worden zijn alleen-lezen, omdat de artikelen &lt;strong&gt;niet&lt;/strong&gt;
+    terug op usenet geplaatst worden. Omwille van de snelheid, worden usenet artikelen automatisch goedgekeurd,
+    wat betekent dat als het forum wordt gemodereerd, deze artikelen ook automatisch worden goedgekeurd.
    &lt;/p&gt;
    &lt;p style="color: red"&gt;
-	  Om de usenet servers te beschermen, kan een nieuwsgroep maar een keer per 10 minuten worden opgehaald.
+    Om de usenet servers te beschermen, kan een nieuwsgroep maar een keer per 10 minuten worden opgehaald.
    &lt;/p&gt;</Resource>
     <Resource tag="GROUPS">Groepen klaar voor ophalen</Resource>
     <Resource tag="HEADER">Ophalen van NNTP artikelen</Resource>
@@ -2333,7 +2328,7 @@
   <page name="COOKIES">
     <Resource tag="COOKIES_TEXT">
     Cookies are small text files that are placed on your computer by websites that you visit. They are widely used in order to make websites work, or work more efficiently, as well as to provide information to the owners of the site. Depending on your access level and actions on the site, various preference based cookies may be set to enrich your experience.
-    
+
     [br]
     [b]Standard Cookies[/b][br]
     We’re using cookies for the following purposes:
@@ -2347,7 +2342,7 @@
 
     [b]Third Party Cookies[/b][br]
     The site owner may set additional cookies in addition to the standard cookies above. These cookies are often used for website usage tracking, or set by embedded service providers when viewing embedded content from providers such as YouTube and Vimeo, etc.
-    
+
     [br]
 
     [b]How do I change my cookie settings?[/b][br]
@@ -2764,7 +2759,6 @@
     <Resource tag="FIELD_TOOLONG">{0} length cannot be more than {1} characters.</Resource>
     <Resource tag="FORUM_SETTINGS">Forum-instellingen</Resource>
     <Resource tag="GET_LOCATION">Get Location from IP Address</Resource>
-    <Resource tag="GOOGLE">Your Google Profile URL:</Resource>
     <Resource tag="HIDEME">Laat me niet zien aan andere gebruikers</Resource>
     <Resource tag="HOMEPAGE">Homepage</Resource>
     <Resource tag="HOMEPAGE2">Jouw internet homepage:</Resource>
@@ -2784,6 +2778,7 @@
     <Resource tag="REALNAME2">Wat is je echte naam?</Resource>
     <Resource tag="REGION">Staat/Provincie:</Resource>
     <Resource tag="SELECT_LANGUAGE">Welke taal wil je gebruiken:</Resource>
+    <Resource tag="SELECT_PAGESIZE">Standard Page Size:</Resource>
     <Resource tag="SELECT_TEXTEDITOR">Kies je texteditor:</Resource>
     <Resource tag="SELECT_THEME">Selecteer je gewenste forum-thema:</Resource>
     <Resource tag="SKYPE">Je SKYPE ID:</Resource>
@@ -2858,10 +2853,36 @@
     <Resource tag="YOUR_BUDDYLIST">Je vriendenlijst</Resource>
     <Resource tag="YOUR_REQUESTS">Jouw verzoeken</Resource>
   </page>
+  <page name="GENDER">
+    <Resource tag="AGENDER">Agender</Resource>
+    <Resource tag="ANDROGYNE">Androgyne</Resource>
+    <Resource tag="BIGENDER">Bigender</Resource>
+    <Resource tag="CISGENDER">Cisgender</Resource>
+    <Resource tag="FEMALETOMALE">Female to Male</Resource>
+    <Resource tag="GENDERFLUID">Gender Fluid</Resource>
+    <Resource tag="GENDERNONCONFORMING">Gender Nonconforming</Resource>
+    <Resource tag="GENDERQUEER">Genderqueer</Resource>
+    <Resource tag="GENDERQUESTIONING">Gender Questioning</Resource>
+    <Resource tag="INTERSEX">Intersex</Resource>
+    <Resource tag="MALETOFEMALE">Male to Female</Resource>
+    <Resource tag="MAN">Man</Resource>
+    <Resource tag="NONBINARY">Non-binary</Resource>
+    <Resource tag="OTHER">Other</Resource>
+    <Resource tag="PANGENDER">Pangender</Resource>
+    <Resource tag="TRANS">Trrans</Resource>
+    <Resource tag="TRANSFEMININE">Transfeminine</Resource>
+    <Resource tag="TRANSGENDER">Transgender</Resource>
+    <Resource tag="TRANSMAN">Transgender Man</Resource>
+    <Resource tag="TRANSMASCULINE">Transmasculine</Resource>
+    <Resource tag="TRANSSEXUAL">Transsexual</Resource>
+    <Resource tag="TRANSWOMAN">Transgender Woman</Resource>
+    <Resource tag="TWOSPIRIT">Two-Spirit</Resource>
+    <Resource tag="WOMAN">Woman</Resource>
+  </page>
   <page name="HELP_INDEX">
     <Resource tag="ANOUNCECONTENT">&lt;p&gt;Aankondigingen zijn speciale berichten die geplaatst worden door de beheerder of moderatoren. Het zijn berichten waarop niet gereageerd kan worden. Als je er op wilt reageren, moet je een nieuw topic aanmaken.&lt;/p&gt;
 &lt;p&gt;Aankondigingen staan altijd bovenaan, ook boven sticky topics.&lt;/p&gt;
-		</Resource>
+    </Resource>
     <Resource tag="ANOUNCETITLE">Aankondigingen</Resource>
     <Resource tag="ATTACHMENTSCONTENT">
       &lt;p&gt;To attach a file to a post, simply copy and paste the file, in to the editor. &lt;/p&gt;
@@ -3067,7 +3088,7 @@
     &lt;/td&gt;
     &lt;td&gt;
       [left]Deze tekst is links uitgelijnd[/left]&lt;br /&gt;
-	  [center]Deze tekst is gecentreerd[/center]&lt;br /&gt;
+    [center]Deze tekst is gecentreerd[/center]&lt;br /&gt;
       [right]Deze tekst is rechts uitgelijnd[/right]&lt;/td&gt;
   &lt;/tr&gt;
    &lt;tr&gt;
@@ -3075,8 +3096,8 @@
       &lt;strong&gt;Resultaat&lt;/strong&gt;
     &lt;/td&gt;
     &lt;td&gt;&lt;div align="left"&gt;Deze tekst is links uitgelijnd&lt;/div&gt;
-			&lt;div align="center"&gt;Deze tekst is gecentreerd&lt;/div&gt;
-			&lt;div align="right"&gt;Deze tekst is rechts uitgelijnd&lt;/div&gt;&lt;/td&gt;
+      &lt;div align="center"&gt;Deze tekst is gecentreerd&lt;/div&gt;
+      &lt;div align="right"&gt;Deze tekst is rechts uitgelijnd&lt;/div&gt;&lt;/td&gt;
   &lt;/tr&gt;
 &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Markeren&lt;/td&gt;
@@ -3125,14 +3146,14 @@
     &lt;/td&gt;
     &lt;td&gt;
       [email]iemand@mijndomein.nl[/email]&lt;br /&gt;
-			[email=iemand@mijndomein.nl]Klik hier om mij te e-mailen.[/email]&lt;/td&gt;
+      [email=iemand@mijndomein.nl]Klik hier om mij te e-mailen.[/email]&lt;/td&gt;
   &lt;/tr&gt;
    &lt;tr&gt;
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
       &lt;strong&gt;Resultaat&lt;/strong&gt;
     &lt;/td&gt;
     &lt;td&gt;&lt;a href="mailto:iemand@mijndomein.nl" title="iemand@mijndomein.nl"&gt;iemand@mijndomein.nl&lt;/a&gt;&lt;br /&gt;
-			&lt;a href="mailto:iemand@mijndomein.nl" title="Klik hier om mij te e-mailen."&gt;Klik hier om mij te e-mailen.&lt;/a&gt;&lt;/td&gt;
+      &lt;a href="mailto:iemand@mijndomein.nl" title="Klik hier om mij te e-mailen."&gt;Klik hier om mij te e-mailen.&lt;/a&gt;&lt;/td&gt;
   &lt;/tr&gt;
 &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;URL Hyperlinks&lt;/td&gt;
@@ -3150,7 +3171,7 @@
     &lt;/td&gt;
     &lt;td&gt;
       [url]{0}[/url]&lt;br /&gt;
-	 [url={0}]mijn website[/url]&lt;/td&gt;
+   [url={0}]mijn website[/url]&lt;/td&gt;
   &lt;/tr&gt;
    &lt;tr&gt;
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
@@ -3175,7 +3196,7 @@
     &lt;/td&gt;
     &lt;td&gt;
       [modalurl]{0}[/modalurl]&lt;br /&gt;
-	 [modalurl={0}]mijn website[/modalurl]&lt;/td&gt;
+   [modalurl={0}]mijn website[/modalurl]&lt;/td&gt;
   &lt;/tr&gt;
    &lt;tr&gt;
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
@@ -3365,18 +3386,18 @@
     &lt;td&gt;
       [img]{0}Content/images/YAFLogo.svg[/img]&lt;br /&gt;&lt;br /&gt;
       [img={0}Content/images/YAFLogo.svg]YAF Logo[/img]&lt;br /&gt;&lt;br /&gt;
-	  [url={0}] [img]{0}Content/images/YAFLogo.svg[/img] [/url] (Gelinkt)
-	&lt;/td&gt;
+    [url={0}] [img]{0}Content/images/YAFLogo.svg[/img] [/url] (Gelinkt)
+  &lt;/td&gt;
   &lt;/tr&gt;
    &lt;tr&gt;
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
       &lt;strong&gt;Resultaat&lt;/strong&gt;
     &lt;/td&gt;
     &lt;td&gt;&lt;img src="{0}Content/images/YAFLogo.svg" alt="" /&gt;&lt;br /&gt;
-		&lt;br /&gt;&lt;img src="{0}Content/images/YAFLogo.svg" alt="YAF Logo" title="YAF Logo" /&gt;&lt;br /&gt;
-		&lt;br /&gt;
-		&lt;a href="{0}" target="_blank" title="YAF Logo"&gt;&lt;img class="inlineimg" src="{0}Content/images/YAFLogo.svg" alt="" /&gt;&lt;/a&gt; (Linked)
-	&lt;/td&gt;
+    &lt;br /&gt;&lt;img src="{0}Content/images/YAFLogo.svg" alt="YAF Logo" title="YAF Logo" /&gt;&lt;br /&gt;
+    &lt;br /&gt;
+    &lt;a href="{0}" target="_blank" title="YAF Logo"&gt;&lt;img class="inlineimg" src="{0}Content/images/YAFLogo.svg" alt="" /&gt;&lt;/a&gt; (Linked)
+  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;You Tube&lt;/td&gt;
@@ -3508,8 +3529,8 @@
     &lt;/td&gt;
     &lt;td&gt;
       [quote]Andere tekst.[/quote]&lt;br /&gt;&lt;br /&gt;
-		[quote=Arie Kanarie]Andere tekst.[/quote]&lt;br /&gt;&lt;br /&gt;
-		[quote=Arie Kanarie;123]Andere tekst.[/quote]&lt;/td&gt;
+    [quote=Arie Kanarie]Andere tekst.[/quote]&lt;br /&gt;&lt;br /&gt;
+    [quote=Arie Kanarie;123]Andere tekst.[/quote]&lt;/td&gt;
   &lt;/tr&gt;
    &lt;tr&gt;
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
@@ -3537,7 +3558,7 @@
     &lt;/td&gt;
     &lt;td&gt;
       [code]&lt;br /&gt;
-		// Hello1.cs&lt;br /&gt;
+    // Hello1.cs&lt;br /&gt;
 public class Hello1&lt;br /&gt;
 {{&lt;br /&gt;
 &amp;nbsp;&amp;nbsp;public static void Main()&lt;br /&gt;
@@ -3545,9 +3566,9 @@ public class Hello1&lt;br /&gt;
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;System.Console.WriteLine("Hello, World!");&lt;br /&gt;
 &amp;nbsp;&amp;nbsp;}}&lt;br /&gt;
 }}&lt;br /&gt;
-		[/code]&lt;br /&gt;&lt;br /&gt;
+    [/code]&lt;br /&gt;&lt;br /&gt;
         [code=csharp]&lt;br /&gt;
-		// Hello1.cs&lt;br /&gt;
+    // Hello1.cs&lt;br /&gt;
 public class Hello1&lt;br /&gt;
 {{&lt;br /&gt;
 &amp;nbsp;&amp;nbsp;public static void Main()&lt;br /&gt;
@@ -3555,7 +3576,7 @@ public class Hello1&lt;br /&gt;
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;System.Console.WriteLine("Hello, World!");&lt;br /&gt;
 &amp;nbsp;&amp;nbsp;}}&lt;br /&gt;
 }}&lt;br /&gt;
-		[/code]&lt;/td&gt;
+    [/code]&lt;/td&gt;
   &lt;/tr&gt;
    &lt;tr&gt;
     &lt;td style="width:15%;padding-left:10px;vertical-align:top;"&gt;
@@ -3613,12 +3634,12 @@ public class Hello1
     &lt;/td&gt;
     &lt;td&gt;
     &lt;p&gt;Als je geen rechten hebt om deze inhoud te bekijken, zie je een informatiebericht.&lt;/p&gt;
-    &lt;img src="{0}Content/images/HiddenWarnDescription.png" alt="De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken." title="De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken." /&gt;   
+    &lt;img src="{0}Content/images/HiddenWarnDescription.png" alt="De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken." title="De inhoud van dit bericht is verborgen. Als je de auteur bedankt hebt, ververs dan de pagina om de inhoud te bekijken." /&gt;
     &lt;p&gt;Als 'Gast' zie je een informatiebericht:&lt;/p&gt;
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Dit forum vereist dat je bent geregistreerd en ingelogd om verborgen berichten te bekijken.&lt;/div&gt;&lt;/div&gt;
     &lt;p&gt;Als je toegang hebt, zie je verborgen tekst.&lt;/p&gt;&lt;br /&gt;
     &lt;p&gt;Verborgen tekst&lt;/p&gt;
-	&lt;/td&gt;
+  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Group Hide&lt;/td&gt;
@@ -3643,15 +3664,15 @@ public class Hello1
     &lt;/td&gt;
     &lt;td&gt;
     &lt;p&gt;Als je de inhoud niet mag bekijken, zie je een informatiebericht.&lt;/p&gt;
-    
+
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Je hebt onvoldoende rechten om deze inhoud te bekijken.&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als 'gast' zie je dit informatiebericht:&lt;/p&gt;
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Dit forum vereist dat je bent geregistreerd en ingelogd om verborgen berichten te bekijken.&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als je toegang hebt, zie je verborgen tekst.&lt;/p&gt;&lt;br /&gt;
     &lt;p&gt;Verborgen inhoud&lt;/p&gt;
-	&lt;/td&gt;
+  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Verberg-bedankt&lt;/td&gt;
@@ -3676,17 +3697,17 @@ public class Hello1
     &lt;/td&gt;
     &lt;td&gt;
     &lt;p&gt;Als je de verborgen inhoud niet mag zien, zie je een informatiebericht:&lt;/p&gt;
-    
+
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Verborgen Inhoud (Je moet geregistreerd zijn en minimaal 2 bedankjes hebben ontvangen.)&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als 'gast' zie je dit informatiebericht:&lt;/p&gt;
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Dit forum vereist dat je bent geregistreerd en ingelogd om verborgen berichten te bekijken.&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als je toegang hebt, zie je verborgen tekst.&lt;/p&gt;&lt;br /&gt;
     &lt;p&gt;Verborgen tekst&lt;/p&gt;
-	&lt;/td&gt;
+  &lt;/td&gt;
   &lt;/tr&gt;
-  
+
   &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Verberg-Berichten&lt;/td&gt;
   &lt;/tr&gt;
@@ -3710,17 +3731,17 @@ public class Hello1
     &lt;/td&gt;
     &lt;td&gt;
     &lt;p&gt;Als je geen rechten hebt om de inhoud te zien, zie je een informatie-bericht:&lt;/p&gt;
-    
+
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Verborgen inhoud (Je moet geregistreerd zijn en minimaal 10 berichten hebben geplaatst.)&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als 'gast' zie je dit informatiebericht:&lt;/p&gt;
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Dit forum vereist dat je bent geregistreerd en ingelogd om verborgen berichten te bekijken.&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als je toegang hebt, zie je verborgen tekst.&lt;/p&gt;&lt;br /&gt;
     &lt;p&gt;Verborgen inhoud&lt;/p&gt;
-	&lt;/td&gt;
+  &lt;/td&gt;
   &lt;/tr&gt;
-  
+
   &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Verberg antwoord&lt;/td&gt;
   &lt;/tr&gt;
@@ -3744,15 +3765,15 @@ public class Hello1
     &lt;/td&gt;
     &lt;td&gt;
     &lt;p&gt;Als je geen rechten hebt om de inhoud te zien, zie je een informatie-bericht:&lt;/p&gt;
-    
+
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Verborgen inhoud (Je moet geregistreerd zijn en antwoorden in het topic om de verborgen inhoud te kunnen bekijken.)&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als 'gast' zie je dit informatiebericht:&lt;/p&gt;
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Dit forum vereist dat je bent geregistreerd en ingelogd om verborgen berichten te bekijken.&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als je toegang hebt, zie je verborgen inhoud.&lt;/p&gt;&lt;br /&gt;
     &lt;p&gt;Verborgen inhoud&lt;/p&gt;
-	&lt;/td&gt;
+  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Verberg-Antwoord-Bedankt&lt;/td&gt;
@@ -3777,15 +3798,15 @@ public class Hello1
     &lt;/td&gt;
     &lt;td&gt;
     &lt;p&gt;Als je geen rechten hebt om de inhoud te zien, zie je een informatie-bericht:&lt;/p&gt;
-    
+
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Verborgen inhoud (Je moet geregistreerd zijn en antwoorden in dit topic, of de auteur bedanken om de verborgen inhoud te kunnen bekijken.)&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als 'gast' zie je dit informatiebericht:&lt;/p&gt;
     &lt;div class="ui-widget"&gt;&lt;div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"&gt;&lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float: left; padding: 0 0 3px 2px;"&gt;&lt;/span&gt;Dit forum vereist dat je bent geregistreerd en ingelogd om verborgen berichten te bekijken.&lt;/div&gt;&lt;/div&gt;
-    
+
     &lt;p&gt;Als je toegang hebt, zie je verborgen inhoud.&lt;/p&gt;&lt;br /&gt;
     &lt;p&gt;Verborgen inhoud&lt;/p&gt;
-	&lt;/td&gt;
+  &lt;/td&gt;
   &lt;/tr&gt;
 &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Spoiler&lt;/td&gt;
@@ -3811,8 +3832,8 @@ public class Hello1
     &lt;td&gt;
     &lt;!-- BEGIN spoiler --&gt;
     &lt;script type="text/javascript"&gt;
-	function toggleSpoiler(btn,elid){{var el=document.getElementById(elid);if(el==null){{return}}if(el.style.display==''){{el.style.display='none';btn.value='Laat Spoiler zien'}}else{{el.style.display='';btn.value='Hide Spoiler'}}}}
-	&lt;/script&gt;
+  function toggleSpoiler(btn,elid){{var el=document.getElementById(elid);if(el==null){{return}}if(el.style.display==''){{el.style.display='none';btn.value='Laat Spoiler zien'}}else{{el.style.display='';btn.value='Hide Spoiler'}}}}
+  &lt;/script&gt;
 &lt;div class="spoilertitle"&gt;
 &lt;input type="button" value="Show Spoiler" class="spoilerbutton" name="spoilerBtn4360a" onclick="toggleSpoiler(this,'spoil_c3a3b');"/&gt;
 &lt;/div&gt;
@@ -3820,7 +3841,7 @@ public class Hello1
 Spoiler Inhoud
 &lt;/div&gt;
 &lt;!-- END spoiler --&gt;
-	&lt;/td&gt;
+  &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 &lt;br /&gt;
@@ -3853,12 +3874,12 @@ Spoiler Inhoud
     &lt;/td&gt;
     &lt;td&gt;
     &lt;style type="text/css"&gt;.yafnet .userLinkContainer{{background: url({0}Content/icons/user.png) #fff no-repeat 4px 50%;border: 1px solid #eee;padding: 4px 2px 4px 25px;margin: 3px;font-size: 80%;font-weight: bold;    background-color: #fff;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}}.yafnet .userLinkContainer:hover{{border: 1px solid #ddd;background-color: #eee;}}
-	&lt;/style&gt;
+  &lt;/style&gt;
     &lt;span class="userLinkContainer"&gt;
 &lt;a href="{0}yaf_profile1234.aspx" rel="nofollow" title="View profile" target="_blank" id="UserLinkBBCodeFor12224" class="UserLinkBBCode"&gt;Username&lt;/a&gt;
 &lt;img id="OnlineStatusImage" src="{0}/Themes/OrangeGrey/icon_useronline.png" alt="Online" style="vertical-align: bottom" title="Gebruiker is Online"/&gt;
 &lt;/span&gt;
-	&lt;/td&gt;
+  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td class="header2" colspan="2"&gt;Stop BB-Code Gebruik&lt;/td&gt;
@@ -3882,7 +3903,7 @@ Spoiler Inhoud
       &lt;strong&gt;Resultaat&lt;/strong&gt;
     &lt;/td&gt;
     &lt;td&gt;[noparse][b]Voorbeeldtekst.[/b][/noparse]
-	&lt;/td&gt;
+  &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 
@@ -4040,13 +4061,13 @@ Spoiler Inhoud
     <Resource tag="NEWPOSTSCONTENT">
       &lt;p&gt;Als je niet ingelogd bent, geeft de 'Aktieve topics' link aan de bovenkant de lijst met topics aan die zijn aangemaakt sinds je laatste bezoek. Op de tweede tab is een lijst met topics waarin je nog niet hebt geantwoord.&lt;/p&gt;
       &lt;p&gt;Als je bent ingelogd, verandert 'Aktieve topics' naar 'Mijn topics'. Er zijn nu vijf tabbladen, die het volgende laten zien:&lt;/p&gt;
-	  &lt;ul&gt;
+    &lt;ul&gt;
       &lt;li&gt;&lt;strong&gt;Actieve Topics&lt;/strong&gt; - Een lijst met alle topics die zijn gemaakt of geupdate sinds je laatste bezoek.&lt;/li&gt;
       &lt;li&gt;&lt;strong&gt;Onbeantwoorde Topics&lt;/strong&gt; - Een lijst met topics zonder antwoorden.&lt;/li&gt;
       &lt;li&gt;&lt;strong&gt;Ongelezen Topics&lt;/strong&gt; - Een lijst met topics met ongelezen berichten.&lt;/li&gt;
       &lt;li&gt;&lt;strong&gt;Topics waar je in gepost hebt&lt;/strong&gt; - Een lijst met topics die je gestart hebt, of waarin je hebt gepost.&lt;/li&gt;
       &lt;li&gt;&lt;strong&gt;Favoriete Topics&lt;/strong&gt; - Een lijst met je favoriete topics.&lt;/li&gt;
-	  &lt;/ul&gt;
+    &lt;/ul&gt;
     </Resource>
     <Resource tag="NEWPOSTSTITLE">Bekijken van nieuwe berichten</Resource>
     <Resource tag="NORESULTS">Geen resultaten gevonden.</Resource>
@@ -4122,13 +4143,13 @@ Spoiler Inhoud
 &lt;p&gt;Persoonlijke informatie, zoals e-mail adressen en/of wachtwoorden worden &lt;strong&gt;NIET&lt;/strong&gt; getoond.&lt;/p&gt;</Resource>
     <Resource tag="PUBLICPROFILETITLE">Mijn Publieke Profiel</Resource>
     <Resource tag="READPOSTTOPICS">Berichten lezen en plaatsen</Resource>
-    <Resource tag="RECOVERCONTENT">&lt;p&gt;Als je je wachtwoord vergeten bent, kun je op de "&lt;a href="{0}"&gt;Wachtwoord vergeten&lt;/a&gt;" 
+    <Resource tag="RECOVERCONTENT">&lt;p&gt;Als je je wachtwoord vergeten bent, kun je op de "&lt;a href="{0}"&gt;Wachtwoord vergeten&lt;/a&gt;"
   link klikken. Deze is te vinden op pagina's waar je je wachtwoord in moet vullen.&lt;/p&gt;
 &lt;p&gt;De link verwijst je naar een pagina waar je je gebruikersnaam kunt invullen. Vervolgens wordt er een e-mail gestuurd naar het e-mail adres dat bij de
  gebruikersnaam is opgeslagen, met daarin instructies hoe je je wachtwoord kunt resetten.&lt;/p&gt;
-&lt;p&gt; Wachtwoorden worden versleuteld opgeslagen, daarom kunnen we niet je originele wachtwoord opsturen. 
+&lt;p&gt; Wachtwoorden worden versleuteld opgeslagen, daarom kunnen we niet je originele wachtwoord opsturen.
   Met deze optie kun je je wachtwoord resetten.&lt;/p&gt;
-&lt;p&gt;Je moet op het gekoppelde e-mail adres berichten kunnen ontvangen. Ontvang je niets, houd dan ook je spamfilter in de gaten. 
+&lt;p&gt;Je moet op het gekoppelde e-mail adres berichten kunnen ontvangen. Ontvang je niets, houd dan ook je spamfilter in de gaten.
   &lt;/p&gt;</Resource>
     <Resource tag="RECOVERTITLE">Wachtwoord vergeten</Resource>
     <Resource tag="REGISTRATIONCONTENT">berichten naar andere gebruikers&lt;/li&gt;
@@ -4545,13 +4566,13 @@ Spoiler Inhoud
     <Resource tag="NOT_GUEST">Je kunt geen privé-bericht verzenden naar de gastgebruiker.</Resource>
     <Resource tag="OWN_PMBOX_FULL">Je PM box is vol. Het maximum is {0}. Om meer berichten te kunnen ontvangen moet je berichten verwijderen.</Resource>
     <Resource tag="PMLIMIT_ALL">Je hebt {0} privé berichten: {1} in je Postvak In, {2} in je Postvak Uit, {3} in je archief. Het maximum aantal dat is toegestaan, is {4}. Je hebt {5}% van je mailbox in gebruik.
-	</Resource>
+  </Resource>
     <Resource tag="PREVIEWTITLE">Voorbeeld:</Resource>
     <Resource tag="RECIPIENTS_PMBOX_FULL">Gebruiker {0} heeft een volle PM Inbox. Hij/zij moet eerst een aantal berichten verwijderen voordat je hem/haar een PM kunt sturen.</Resource>
-    <Resource tag="REPORT_BODY">I would like to Report the Message: 
+    <Resource tag="REPORT_BODY">I would like to Report the Message:
 
-  {0} 
-     
+  {0}
+
   for the following Reason...</Resource>
     <Resource tag="REPORT_SUBJECT">Report a Private Message from User: {0}</Resource>
     <Resource tag="REPORTED_SUBJECT">Re: Antwoord op je gerapporteerde bericht.</Resource>
@@ -4692,9 +4713,6 @@ Spoiler Inhoud
     <Resource tag="FACEBOOK_TOPIC">Like dit Topic op Facebook</Resource>
     <Resource tag="FORUM_JUMP">Spring naar forum</Resource>
     <Resource tag="GO_TO_ANSWER">Go to the topic answer</Resource>
-    <Resource tag="GOOGLE">Google+</Resource>
-    <Resource tag="GOOGLE_TITLE">Visit {0}'s Google+ Profile</Resource>
-    <Resource tag="GOOGLEPLUS_TOPIC">Deel dit topic op Google+</Resource>
     <Resource tag="GROUPS">Groep</Resource>
     <Resource tag="HOME">WWW</Resource>
     <Resource tag="HOME_TITLE">Bezoek de Homepage van {0}</Resource>
@@ -4837,9 +4855,6 @@ Spoiler Inhoud
     <Resource tag="FACEBOOK">Facebook Profiel:</Resource>
     <Resource tag="FORUM_ACCESS">Forum Access</Resource>
     <Resource tag="GENDER">Geslacht:</Resource>
-    <Resource tag="GENDER0">Niet opgegeven</Resource>
-    <Resource tag="GENDER1">Man</Resource>
-    <Resource tag="GENDER2">Vrouw</Resource>
     <Resource tag="GOOGLE">Google+ Profile:</Resource>
     <Resource tag="GROUPS">Groepen:</Resource>
     <Resource tag="HOURS">uren</Resource>
@@ -5401,7 +5416,7 @@ Als je je e-mail niet wilde wijzigen, dan kun je deze mail negeren.
       Je bent met succes geregistreerd op het {forumname} forum via Facebook:
 
       Gebruikersnaam: {user}
-	  Automatisch gemaakt wachtwoord: {pass}
+    Automatisch gemaakt wachtwoord: {pass}
       E-mail: {email} (Aub niet wijzigen, anders kun je niet meer inloggen met Facebook)</Resource>
     <Resource tag="NOTIFICATION_ON_FACEBOOK_REGISTER_TEXT">
       Hello {user}.
@@ -5409,8 +5424,8 @@ Als je je e-mail niet wilde wijzigen, dan kun je deze mail negeren.
       You have been successfully registered on the {forumname} forum using Facebook Login:
 
       User Name: {user}
-	  Auto Generated Password: {pass}
-	  
+    Auto Generated Password: {pass}
+
       User Email: {email} (Please don't change your email, or you are unable to login with Facebook)
 
     </Resource>
@@ -5420,10 +5435,10 @@ Als je je e-mail niet wilde wijzigen, dan kun je deze mail negeren.
       You have been successfully registered on the {forumname} forum using Google Login:
 
       User Name: {user}
-	  Auto Generated Password: {pass}
-	  
+    Auto Generated Password: {pass}
+
       User Email: {email} (Please don't change your email, or you are unable to login with Google)
-	  
+
     </Resource>
     <Resource tag="NOTIFICATION_ON_GOOGLE_REGISTER_TEXT">
       Hello {user}.
@@ -5431,8 +5446,8 @@ Als je je e-mail niet wilde wijzigen, dan kun je deze mail negeren.
       You have been successfully registered on the {forumname} forum using Google Login:
 
       User Name: {user}
-	  Auto Generated Password: {pass}
-	  
+    Auto Generated Password: {pass}
+
       User Email: {email} (Please don't change your email, or you are unable to login with Google)
 
     </Resource>
@@ -5442,19 +5457,19 @@ Als je je e-mail niet wilde wijzigen, dan kun je deze mail negeren.
     Congratulations you have been awarded with the {medalname} on the {forumname} forum.
   </Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_MESSAGE_APPROVAL_TEXT">		Een nieuw bericht dat goedgekeurd moet worden is geplaatst op het {forumname} forum:
-		
-		Beheerlink: {adminlink}
-	</Resource>
+
+    Beheerlink: {adminlink}
+  </Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_REPORTED_MESSAGE_TEXT">
       Er is een bericht gerapporteed door {reporter} met de volgende reden: {reason}
-	  
+
 Het bericht was gepost op het  {forumname} forum.
-      
+
       Beheerlink: {adminlink}
    </Resource>
     <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL_TEXT">
       A new message (posted in the {forumname} forum) was detected as SPAM, needs to be checked:
-      
+
       Administration Link: {adminlink}
    </Resource>
     <Resource tag="NOTIFICATION_ON_REGISTER">
@@ -5463,9 +5478,9 @@ Het bericht was gepost op het  {forumname} forum.
       Je bent met succes geregistreerd op het {forumname} forum :
 
       Gebruikersnaam: {user}
-	  Automatisch gemaakt wachtwoord: {pass}
+    Automatisch gemaakt wachtwoord: {pass}
       E-mail: {email} (Aub niet wijzigen, anders kun je niet meer inloggen met Facebook)
-	  
+
     </Resource>
     <Resource tag="NOTIFICATION_ON_REGISTER_TEXT">
     Hello {user}.
@@ -5474,7 +5489,7 @@ Het bericht was gepost op het  {forumname} forum.
 
     User Name: {user}
     Auto Generated Password: {pass}
-    
+
     User Email: {email}
 
   </Resource>
@@ -5502,7 +5517,7 @@ Het bericht was gepost op het  {forumname} forum.
     Hello {user},
 
     Your forum account on the {forumname} forum has been temporarily suspended.
-    
+
     This suspension is due to end on {suspendedUntil}.
 
     For the following Reason: '{suspendReason}'
@@ -5529,17 +5544,17 @@ Het bericht was gepost op het  {forumname} forum.
     <Resource tag="NOTIFICATION_ON_TWITTER_REGISTER">      Je bent met succes geregistreerd op het {forumname} forum via Twitter:
 
       Gebruikersnaam: {user}
-	  Automatisch gemaakt wachtwoord: {pass}
+    Automatisch gemaakt wachtwoord: {pass}
       E-mail: {email} (Wijzig aub je e-mail in je echte e-mailadres, zodat je e-mails kunt ontvangen)</Resource>
     <Resource tag="NOTIFICATION_ON_USER_REGISTER">		Hallo!
 
-		Een nieuwe gebruiker heeft zich geregistreerd op het {forumname} forum:
-		
-		Gebruikersnaam: {user}
-		E-mailadres: {email}
-		
-		Beheerlink: {adminlink}
-	</Resource>
+    Een nieuwe gebruiker heeft zich geregistreerd op het {forumname} forum:
+
+    Gebruikersnaam: {user}
+    E-mailadres: {email}
+
+    Beheerlink: {adminlink}
+  </Resource>
     <Resource tag="NOTIFICATION_ON_USER_REGISTER_TEXT">
       Hello!
 
@@ -5588,7 +5603,7 @@ Het bericht was gepost op het  {forumname} forum.
      Hello {user},
 
      Your user account on the {forumname} forum has has been recently updated to include access to the following Group(s):
-     
+
      {roles}
 
      Thanks!
@@ -5600,7 +5615,7 @@ Het bericht was gepost op het  {forumname} forum.
      Hello {user},
 
      Your user account on the {forumname} forum has has been recently updated to include access to the following Group(s):
-     
+
      {roles}
 
 
@@ -5613,7 +5628,7 @@ Het bericht was gepost op het  {forumname} forum.
      Hello {user},
 
      Your user account on the {forumname} forum  has been recently updated to restrict access to the following Groups(s):
-     
+
      {roles}
 
      Thanks!
@@ -5625,7 +5640,7 @@ Het bericht was gepost op het  {forumname} forum.
      Hello {user},
 
      Your user account on the {forumname} forum  has been recently updated to restrict access to the following Groups(s):
-     
+
      {roles}
 
 
@@ -5677,7 +5692,7 @@ Om dit bericht te lezen, gebruik de volgende link:
       {link}
 
       You can manage your subscriptions here:
-      
+
       {subscriptionlink}
     </Resource>
     <Resource tag="VERIFYEMAIL_TEXT">Om je te registreren op {forumname}, moet je e-mailadres gecontroleerd worden.
