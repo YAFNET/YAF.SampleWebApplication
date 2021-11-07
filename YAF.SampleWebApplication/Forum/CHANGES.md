@@ -1,6 +1,10 @@
 YetAnotherForum.NET Changelog
 ====================
 
+# YetAnotherForum.NET v3.0.1
+* [FIXED #645] Send PM for regular users
+* bug fixes
+ 
 # YetAnotherForum.NET v3.0.0
 * Minimum .NET Version v4.8
 * Upgraded to Bootstrap 5.1.3

@@ -49,24 +49,30 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0-preview.3.21201.4\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.4.1.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.4.1.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.2.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -75,6 +81,14 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -82,8 +96,8 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0-preview.3.21201.4\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -186,7 +200,6 @@
     <Content Include="Forum\Content\favicons\favicon.ico" />
     <Content Include="Forum\Content\favicons\mstile-150x150.png" />
     <Content Include="Forum\Content\favicons\safari-pinned-tab.svg" />
-    <Content Include="Forum\Content\favicons\site.webmanifest" />
     <Content Include="Forum\Content\flags\1x1\ad.svg" />
     <Content Include="Forum\Content\flags\1x1\ae.svg" />
     <Content Include="Forum\Content\flags\1x1\af.svg" />
@@ -708,7 +721,6 @@
     <Content Include="Forum\Content\images\error.svg" />
     <Content Include="Forum\Content\images\InstallBackground.jpg" />
     <Content Include="Forum\Content\images\play-pause.svg" />
-    <Content Include="Forum\Content\images\spacer.gif" />
     <Content Include="Forum\Content\InstallWizard.min.css" />
     <Content Include="Forum\Content\jquery.fileupload.comb.min.css" />
     <Content Include="Forum\Content\Themes\cerulean\bootstrap-forum.min.css" />
@@ -738,17 +750,8 @@
     <Content Include="Forum\Content\Themes\yeti\bootstrap-forum.min.css" />
     <Content Include="Forum\Content\Themes\zephyr\bootstrap-forum.min.css" />
     <Content Include="Forum\Content\webfonts\fa-brands-400.svg" />
-    <Content Include="Forum\Content\webfonts\fa-brands-400.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-brands-400.woff" />
-    <Content Include="Forum\Content\webfonts\fa-brands-400.woff2" />
     <Content Include="Forum\Content\webfonts\fa-regular-400.svg" />
-    <Content Include="Forum\Content\webfonts\fa-regular-400.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-regular-400.woff" />
-    <Content Include="Forum\Content\webfonts\fa-regular-400.woff2" />
     <Content Include="Forum\Content\webfonts\fa-solid-900.svg" />
-    <Content Include="Forum\Content\webfonts\fa-solid-900.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-solid-900.woff" />
-    <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
     <Content Include="Forum\Controls\ActiveDiscussion.ascx" />
     <Content Include="Forum\Controls\AdminMenu.ascx" />
     <Content Include="Forum\Controls\AlbumImageList.ascx" />
@@ -847,22 +850,9 @@
     <Content Include="Forum\Images\Medals\medal_silver_2.png" />
     <Content Include="Forum\Images\Medals\medal_silver_2_small.png" />
     <Content Include="Forum\Images\Medals\medal_small.png" />
-    <Content Include="Forum\Images\noavatar.svg" />
     <Content Include="Forum\Install\BBCodeExtensions.xml" />
-    <Content Include="Forum\Install\custom\custom.sql" />
-    <Content Include="Forum\Install\custom\dnn.sql" />
     <Content Include="Forum\Install\default.aspx" />
-    <Content Include="Forum\Install\mssql\install\constraints.sql" />
-    <Content Include="Forum\Install\mssql\install\functions.sql" />
-    <Content Include="Forum\Install\mssql\install\views.sql" />
-    <Content Include="Forum\Install\mssql\upgrade\constraints.sql" />
-    <Content Include="Forum\Install\mssql\upgrade\fulltext.sql" />
-    <Content Include="Forum\Install\mssql\upgrade\functions.sql" />
     <Content Include="Forum\Install\mssql\upgrade\identity\upgrade.sql" />
-    <Content Include="Forum\Install\mssql\upgrade\procedures.sql" />
-    <Content Include="Forum\Install\mssql\upgrade\tables.sql" />
-    <Content Include="Forum\Install\mssql\upgrade\triggers.sql" />
-    <Content Include="Forum\Install\mssql\upgrade\views.sql" />
     <Content Include="Forum\Install\SpamWords.xml" />
     <Content Include="Forum\languages\arabic.xml" />
     <Content Include="Forum\languages\china.xml" />
@@ -943,6 +933,7 @@
     <Content Include="Forum\Pages\Admin\SpamWords.ascx" />
     <Content Include="Forum\Pages\Admin\Tags.ascx" />
     <Content Include="Forum\Pages\Admin\TaskManager.ascx" />
+    <Content Include="Forum\Pages\Admin\TestData.ascx" />
     <Content Include="Forum\Pages\Admin\Users.ascx" />
     <Content Include="Forum\Pages\Admin\Version.ascx" />
     <Content Include="Forum\Pages\Album.ascx" />
@@ -978,6 +969,7 @@
     <Content Include="Forum\Pages\PrintTopic.ascx" />
     <Content Include="Forum\Pages\PrivateMessage.ascx" />
     <Content Include="Forum\Pages\Profile\Attachments.ascx" />
+    <Content Include="Forum\Pages\Profile\Avatar.ascx" />
     <Content Include="Forum\Pages\Profile\Blockoptions.ascx" />
     <Content Include="Forum\Pages\Profile\ChangePassword.ascx" />
     <Content Include="Forum\Pages\Profile\DeleteAccount.ascx" />
@@ -1227,11 +1219,8 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.min.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.bbcode.min.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.bbcodemixed.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.handlebars.min.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.htmlmixed.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.javascript.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.php.min.js" />
-    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.twig.min.js" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\js\codemirror.mode.sql.min.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\lang\af.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\lang\ar.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\lang\bg.js" />
@@ -1297,6 +1286,7 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\plugin.js" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\3024-day.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\3024-night.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\abbott.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\abcdef.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\ambiance-mobile.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\ambiance.css" />
@@ -1320,6 +1310,7 @@
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\icecoder.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\idea.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\isotope.css" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\juejin.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\lesser-dark.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\liquibyte.css" />
     <Content Include="Forum\Scripts\ckeditor\plugins\codemirror\theme\lucario.css" />
@@ -1655,8 +1646,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forum\CHANGES.md" />
-    <Content Include="Forum\LICENSE.md" />
-    <Content Include="Forum\README.md" />
+    <Content Include="Forum\Content\favicons\site.webmanifest" />
+    <Content Include="Forum\Content\webfonts\fa-brands-400.ttf" />
+    <Content Include="Forum\Content\webfonts\fa-brands-400.woff" />
+    <Content Include="Forum\Content\webfonts\fa-brands-400.woff2" />
+    <Content Include="Forum\Content\webfonts\fa-regular-400.ttf" />
+    <Content Include="Forum\Content\webfonts\fa-regular-400.woff" />
+    <Content Include="Forum\Content\webfonts\fa-regular-400.woff2" />
+    <Content Include="Forum\Content\webfonts\fa-solid-900.ttf" />
+    <Content Include="Forum\Content\webfonts\fa-solid-900.woff" />
+    <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
+    <Content Include="Forum\Resources\mimeTypes.json" />
+    <Content Include="Forum\Scripts\ckeditor\plugins\emoji\emoji.json" />
     <None Include="packages.config" />
     <Content Include="Views\RazorDemo\Users.cshtml" />
     <Content Include="Views\RazorDemo\Hello.cshtml" />
