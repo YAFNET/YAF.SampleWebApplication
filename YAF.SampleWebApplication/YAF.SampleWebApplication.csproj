@@ -986,7 +986,6 @@
     <Content Include="Forum\Pages\UserProfile.ascx" />
     <Content Include="Forum\Resources\EmailTemplate.html" />
     <Content Include="Forum\Resources\HelpMenuList.xml" />
-    <Content Include="Forum\Scripts\bootstrap.js" />
     <Content Include="Forum\Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Forum\Scripts\ckeditor\build-config.js" />
     <Content Include="Forum\Scripts\ckeditor\ckeditor.js" />
@@ -1562,7 +1561,6 @@
     <Content Include="Forum\Scripts\jquery.fileupload.comb.min.js" />
     <Content Include="Forum\Scripts\jquery.ForumAdminExtensions.min.js" />
     <Content Include="Forum\Scripts\jquery.ForumExtensions.min.js" />
-    <Content Include="Forum\Scripts\jquery.netStack.js" />
     <Content Include="Global.asax" />
     <Content Include="app.config" />
     <Content Include="db.config" />
