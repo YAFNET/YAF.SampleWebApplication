@@ -1,7 +1,7 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2020 Ingo Herbote
+ * Copyright (C) 2014-2021 Ingo Herbote
  * https://www.yetanotherforum.net/
  * 
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -27,11 +27,20 @@ namespace YAF.SampleWebApplication
     using System;
     using System.Web.UI;
 
+    /// <summary>
+    /// Class Contact.
+    /// Implements the <see cref="System.Web.UI.Page" />
+    /// </summary>
+    /// <seealso cref="System.Web.UI.Page" />
     public partial class Contact : Page
     {
+        /// <summary>
+        /// Handles the Load event of the Page control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
