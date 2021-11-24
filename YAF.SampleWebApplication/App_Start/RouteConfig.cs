@@ -1,7 +1,7 @@
 /* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2020 Ingo Herbote
+ * Copyright (C) 2014-2021 Ingo Herbote
  * https://www.yetanotherforum.net/
  * 
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -24,6 +24,7 @@
 
 namespace YAF.SampleWebApplication
 {
+    using System.Web.Mvc;
     using System.Web.Routing;
 
     using Microsoft.AspNet.FriendlyUrls;
@@ -43,6 +44,15 @@ namespace YAF.SampleWebApplication
         {
             var settings = new FriendlyUrlSettings { AutoRedirectMode = RedirectMode.Permanent };
             routes.EnableFriendlyUrls(settings);
+
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.aspx/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.aspx");
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { action = "Index", id = UrlParameter.Optional });
         }
     }
 }

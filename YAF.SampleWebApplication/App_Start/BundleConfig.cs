@@ -1,7 +1,7 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2020 Ingo Herbote
+ * Copyright (C) 2014-2021 Ingo Herbote
  * https://www.yetanotherforum.net/
  * 
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -24,22 +24,19 @@
 
 namespace YAF.SampleWebApplication
 {
-    using System.Web.Optimization;
+    using YAF.Core.Helpers;
 
+    /// <summary>
+    /// The bundle config.
+    /// </summary>
     public class BundleConfig
     {
         /// <summary>
         /// The register bundles.
         /// </summary>
-        /// <param name="bundles">
-        /// The bundles.
-        /// </param>
-        public static void RegisterBundles(BundleCollection bundles)
+        public static void RegisterBundles()
         {
-            // Use the Development version of Modernizr to develop with and learn from. Then, when you’re
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need
-           /* bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                            "~/Scripts/modernizr-*"));*/
+            ScriptManagerHelper.RegisterJQuery();
         }
     }
 }
