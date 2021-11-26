@@ -1641,7 +1641,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Startup.cs" />
+    <Compile Include="StartupSignalR.cs" />
     <Compile Include="Models\Users.cs" />
   </ItemGroup>
   <ItemGroup>
