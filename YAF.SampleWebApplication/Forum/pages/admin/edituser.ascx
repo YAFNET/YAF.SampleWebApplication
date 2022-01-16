@@ -63,7 +63,7 @@
                                     <YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" LocalizedTag="USER_REPUTATION" LocalizedPage="ADMIN_EDITUSER" />
                                 </a>
                             </li>
-                            <asp:PlaceHolder runat="server" Visible="<%#!this.IsGuestUser%>">
+                            <asp:PlaceHolder runat="server" Visible="<%#!this.EditBoardUser.Item1.UserFlags.IsGuest%>">
                                 <li class="nav-item">
                                 <a class="nav-link" href="#View8" data-bs-toggle="tab" role="tab">
                                     <YAF:LocalizedLabel ID="LocalizedLabel8" runat="server" LocalizedTag="USER_SUSPEND" LocalizedPage="ADMIN_EDITUSER" />
@@ -101,7 +101,7 @@
                             <div class="tab-pane" id="View6" role="tabpanel">
                                 <uc1:PointsEdit runat="server" ID="UserPointsControl" />
                             </div>
-                            <asp:PlaceHolder runat="server" ID="FielsNoGuests" Visible="<%#!this.IsGuestUser%>">
+                            <asp:PlaceHolder runat="server" ID="FielsNoGuests" Visible="<%#!this.EditBoardUser.Item1.UserFlags.IsGuest%>">
                                 <div class="tab-pane" id="View8" role="tabpanel">
                                     <uc1:SuspendEdit runat="server" ID="SuspendUserControl" />
                                 </div>

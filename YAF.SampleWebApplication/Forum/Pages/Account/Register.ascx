@@ -101,22 +101,48 @@
 
                             </div>
                         </div>
+                
+                <asp:Repeater runat="server" ID="CustomProfile" Visible="False" OnItemDataBound="CustomProfile_OnItemDataBound">
+                    <HeaderTemplate>
+                        <hr/>
+                        <h4>
+                            <YAF:LocalizedLabel ID="LocalizedLabel16" runat="server"
+                                                LocalizedPage="EDIT_PROFILE"
+                                                LocalizedTag="OTHER" />
+                        </h4>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <div class="mb-3">
+                            <asp:HiddenField runat="server" ID="DefID" />
+                            <asp:Label runat="server" ID="DefLabel" />
+                            <asp:TextBox runat="server" ID="DefText" Visible="False" />
 
-                        <asp:PlaceHolder runat="server" ID="YafCaptchaHolder" Visible="false">
+                            <asp:PlaceHolder runat="server" ID="CheckPlaceHolder" Visible="False">
+                                <div class="form-check form-switch">
+                                    <asp:CheckBox runat="server" ID="DefCheck" />
+                                </div>
+                            </asp:PlaceHolder>
+                            <div class="invalid-feedback">
+                                <YAF:LocalizedLabel runat="server" ID="RequiredMessage" LocalizedTag="NEED_CUSTOM" />
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+
+                <asp:PlaceHolder runat="server" ID="YafCaptchaHolder" Visible="false">
                             <div class="mb-3">
                                 <YAF:LocalizedLabel ID="LocalizedLabel9" runat="server"
                                                     LocalizedTag="Captcha_Image" />
 
                                 <asp:Image ID="imgCaptcha" runat="server" CssClass="form-control w-25" />
-                                <br />
-                                <asp:LinkButton id="RefreshCaptcha" runat="server"></asp:LinkButton>
                             </div>
                             <div class="mb-3">
                                 <asp:Label runat="server" AssociatedControlID="tbCaptcha">
                                     <YAF:LocalizedLabel ID="LocalizedLabel10" runat="server"
                                                         LocalizedTag="Captcha_Enter" />
                                 </asp:Label>
-                                <asp:TextBox CssClass="form-control" ID="tbCaptcha" runat="server" />
+                                <asp:TextBox CssClass="form-control" ID="tbCaptcha" runat="server"
+                                             required="required" />
                             </div>
                         </asp:PlaceHolder>
                         <asp:PlaceHolder runat="server" ID="RecaptchaPlaceHolder" Visible="false">

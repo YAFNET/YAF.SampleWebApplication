@@ -140,7 +140,6 @@
     <Resource tag="HELP_RECOVER">Brak danych</Resource>
     <Resource tag="IM_AIM">Używa AIM</Resource>
     <Resource tag="IM_EMAIL">Używa poczty e-mail</Resource>
-    <Resource tag="IM_ICQ">Używa ICQ</Resource>
     <Resource tag="IM_MSN">Używa MSN</Resource>
     <Resource tag="IM_SKYPE">Używa Skype</Resource>
     <Resource tag="IM_XMPP">Używa XMPP</Resource>
@@ -522,6 +521,8 @@
     <Resource tag="REQUIRED">Required</Resource>
     <Resource tag="REQUIRED_HELP">Define if the field should be required or not</Resource>
     <Resource tag="SAVE_NEW">Save New</Resource>
+    <Resource tag="SHOW_REGISTER">Show on Register Page</Resource>
+    <Resource tag="SHOW_REGISTER_HELP">Show on User Register Page</Resource>
     <Resource tag="SHOW_USERINFO">Show in User Info</Resource>
     <Resource tag="SHOW_USERINFO_HELP">Show in User Info inside Post Header</Resource>
     <Resource tag="TITLE">Add New Profile Definition</Resource>
@@ -848,6 +849,8 @@
     <Resource tag="CURRENT_POINTS">Current Points:</Resource>
     <Resource tag="DELETE_ACCOUNT">Delete this account</Resource>
     <Resource tag="DELETE_POSTS_USER">Delete all Posts for User?</Resource>
+    <Resource tag="DISABLED">User Disabled</Resource>
+    <Resource tag="DISABLED_HELP">User is Soft-Deleted.</Resource>
     <Resource tag="ERROR_CONFIRM_PASS">Must Enter a Confirm Password</Resource>
     <Resource tag="ERROR_NEW_PASS">Must Enter New Password</Resource>
     <Resource tag="ERROR_NOTE_PASSRESET">Error: Current Membership Provider does not support the "Password Reset" function. Verify that "EnablePasswordReset" is "true" in your provider configuration settings in the web.config.</Resource>
@@ -1868,6 +1871,7 @@
     <Resource tag="MSG_SELF_DELETE">You can't delete yourself.</Resource>
     <Resource tag="NAME_CONTAINS">User Name Contains:</Resource>
     <Resource tag="NEW_USER">New User</Resource>
+    <Resource tag="NOT_APPROVED">Not Approved</Resource>
     <Resource tag="POSTS">Posts</Resource>
     <Resource tag="RANK">Rank:</Resource>
     <Resource tag="ROLE">Role:</Resource>
@@ -2742,7 +2746,6 @@
     <Resource tag="BAD_FACEBOOK">Podałeś błędny adres url jako link do profilu Facebook.</Resource>
     <Resource tag="BAD_GOOGLE">Podałeś błędny adres url jako link do profilu Google.</Resource>
     <Resource tag="BAD_HOME">Wpisałeś nieprawidłowy adres Twojej strony domowej.</Resource>
-    <Resource tag="BAD_ICQ">Wpisałeś nieprawidłową wartość dla Twojego numeru ICQ.</Resource>
     <Resource tag="BAD_MSN">Wpisałeś nieprawidłowy adres email dla Twojego konta MSN.</Resource>
     <Resource tag="BAD_WEBLOG">Wpisałeś nieprawidłowy adres Twojego weblog-u.</Resource>
     <Resource tag="BAD_XMPP">Wpisałeś nieprawidłowy adres email dla Twojego konta XMPP.</Resource>
@@ -2763,7 +2766,6 @@
     <Resource tag="HIDEME">Ukryj moją obecność na forum</Resource>
     <Resource tag="HOMEPAGE">Strona Domowa</Resource>
     <Resource tag="HOMEPAGE2">Twoja strona domowa:</Resource>
-    <Resource tag="ICQ">Twój numer ICQ:</Resource>
     <Resource tag="LOCATION">Lokalizacja</Resource>
     <Resource tag="MAIL_SENT">Mail został wysłany do {0}.\n\n Powinieneś potwierdzić Twój nowy adres e-mail przez \n otwarcie linka w emailu, który został wysłany do Ciebie.</Resource>
     <Resource tag="MESSENGER">Komunikatory</Resource>
@@ -2773,6 +2775,7 @@
     <Resource tag="METAWEBLOG_API_USERNAME">MetaWeblog API Username:</Resource>
     <Resource tag="METAWEBLOG_TITLE">Wyślij do MetaWeblog (API Settings)</Resource>
     <Resource tag="MSN">Twój Windows Live-ID:</Resource>
+    <Resource tag="NEED_CUSTOM">{0} is required</Resource>
     <Resource tag="OTHER">Other</Resource>
     <Resource tag="OVERRIDE_DEFAULT_THEMES">Wybierz inny styl forum:</Resource>
     <Resource tag="PM_EMAIL_NOTIFICATION">Wysłać powiadomienie e-mail, gdy dostaniesz prywatną wiadomość na forum?</Resource>
@@ -3952,7 +3955,7 @@ Spoiler Content
 &lt;p&gt;&lt;strong&gt;Home Page&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Here you can optionally enter a Home page and/or a Blog.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Instant messaging services&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Here you can optionally enter your messenger Ids of services such as MSN, YAHOO, AIM, ICQ, XMPP, SKYPE, Facebook and Twitter.&lt;/p&gt;
+&lt;p&gt;Here you can optionally enter your messenger Ids of services such as MSN, XMPP, SKYPE, Facebook and Twitter.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Time Zone&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Here you can specify the Time Zone to adjust the board Time and Date to your local time. And set the Daylight Saving Time should it be automatically adjusted.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Forum Settings&lt;/strong&gt;&lt;/p&gt;
@@ -4251,13 +4254,6 @@ Spoiler Content
     <Resource tag="TITLE">E-mail</Resource>
     <Resource tag="TITLE2">Send E-mail to {0}</Resource>
   </page>
-  <page name="IM_ICQ">
-    <Resource tag="BODY">Wpisz swoją wiadomość tutaj:</Resource>
-    <Resource tag="EMAIL">Twój E-mail:</Resource>
-    <Resource tag="NAME">Twoja Nazwa:</Resource>
-    <Resource tag="SEND">Wyślij wiadomość</Resource>
-    <Resource tag="TITLE">ICQ</Resource>
-  </page>
   <page name="IM_MSN">
     <Resource tag="TITLE">MSN Messenger</Resource>
   </page>
@@ -4304,6 +4300,7 @@ Spoiler Content
     <Resource tag="CHARSET">#AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ</Resource>
   </page>
   <page name="LOGIN">
+    <Resource tag="ACCOUNT_NOT_APPROVED">Your account is not approved yet because you have not validated your email. Please verify so you can login.</Resource>
     <Resource tag="AUTH_CONNECT">Zaloguj się lub zarejestruj przez {0}</Resource>
     <Resource tag="AUTH_CONNECT_ACCOUNT">Aby połączyć istniejące konto {0} z forum musisz się najpierw zalogować. {1}</Resource>
     <Resource tag="AUTH_CONNECT_FACEBOOK">&lt;strong&gt;E-mail na Facebooku musi być taki sam, jak e-mail w profilu użytkownika na forum, aby móc połączyć.&lt;/strong&gt;</Resource>
@@ -4323,6 +4320,7 @@ Spoiler Content
     <Resource tag="FORUM_LOGIN">Zaloguj</Resource>
     <Resource tag="GOOGLE_LOGIN">Zaloguj przez Google</Resource>
     <Resource tag="LOSTPASSWORD">Utracone Hasło</Resource>
+    <Resource tag="MSG_MESSAGE_SEND">Verification Mail was send again to you.</Resource>
     <Resource tag="PASSWORD">Hasło</Resource>
     <Resource tag="PASSWORD_ERROR">Wpisany użytkownik lub hasło jest nie prawidłowe. Spróbuj jeszcze raz.</Resource>
     <Resource tag="RECOVER">Odzyskaj Hasło</Resource>
@@ -4736,8 +4734,6 @@ Spoiler Content
     <Resource tag="GROUPS">Grupy</Resource>
     <Resource tag="HOME">WWW</Resource>
     <Resource tag="HOME_TITLE">Odwiedź stronę domową użytkownika {0}</Resource>
-    <Resource tag="ICQ">ICQ</Resource>
-    <Resource tag="ICQ_TITLE">Skontaktuj się z {0} przez ICQ</Resource>
     <Resource tag="IMAGE_ATTACHMENT_TEXT">{0} dołączył następujący obraz(y):</Resource>
     <Resource tag="IMAGE_DOWNLOAD">Pobierz obraz</Resource>
     <Resource tag="IMAGE_RESIZE_ENLARGE">Kliknij, aby zobaczyć obraz</Resource>
@@ -4878,7 +4874,6 @@ Spoiler Content
     <Resource tag="GOOGLE">Google+ Profile:</Resource>
     <Resource tag="GROUPS">Grupy:</Resource>
     <Resource tag="HOURS">godzin</Resource>
-    <Resource tag="ICQ">ICQ-Numer:</Resource>
     <Resource tag="INTERESTS">Zainteresowania:</Resource>
     <Resource tag="JOINED">Przystąpił:</Resource>
     <Resource tag="LAST10">Ostatnie 10 Postów</Resource>
