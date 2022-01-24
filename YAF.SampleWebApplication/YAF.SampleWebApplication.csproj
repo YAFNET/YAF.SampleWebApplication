@@ -52,11 +52,11 @@
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.3\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.3\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -1567,10 +1567,8 @@
     <Content Include="mail.config" />
     <Content Include="Scripts\date.format.js" />
     <Content Include="Scripts\emojionearea.js" />
-    <Content Include="Scripts\jquery.signalR-2.4.2.js" />
-    <Content Include="Scripts\jquery.signalR-2.4.2.min.js">
-      <DependentUpon>jquery.signalR-2.4.2.js</DependentUpon>
-    </Content>
+    <Content Include="Scripts\jquery.signalR-2.4.3.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.3.min.js" />
     <Content Include="Scripts\jquery.slimscroll.js" />
     <Content Include="Scripts\jquery.slimscroll.min.js">
       <DependentUpon>jquery.slimscroll.js</DependentUpon>
