@@ -1559,7 +1559,9 @@
     <Content Include="Forum\Scripts\InstallWizard.comb.min.js" />
     <Content Include="Forum\Scripts\jquery-3.6.0.min.js" />
     <Content Include="Forum\Scripts\jquery.fileupload.comb.min.js" />
+    <Content Include="Forum\Scripts\jquery.ForumAdminExtensions.js" />
     <Content Include="Forum\Scripts\jquery.ForumAdminExtensions.min.js" />
+    <Content Include="Forum\Scripts\jquery.ForumExtensions.js" />
     <Content Include="Forum\Scripts\jquery.ForumExtensions.min.js" />
     <Content Include="Global.asax" />
     <Content Include="app.config" />

@@ -28,7 +28,7 @@
                         <div class="form-check">
                             <asp:RadioButtonList ID="rblNotificationType" runat="server" 
                                                  AutoPostBack="true"
-                                                 OnSelectedIndexChanged="rblNotificationType_SelectionChanged"
+                                                 OnSelectedIndexChanged="NotificationType_SelectionChanged"
                                                  RepeatLayout="UnorderedList"
                                                  CssClass="list-unstyled">
                                 </asp:RadioButtonList>
@@ -103,6 +103,12 @@
                                     </li>
                                 </ItemTemplate>
                             </asp:Repeater>
+                            <YAF:Alert runat="server" ID="NoInfoForums"
+                                       Type="success" CssClass="m-3" Visible="False">
+                                <YAF:Icon runat="server" IconName="check" />
+                                <YAF:LocalizedLabel runat="server"
+                                                    LocalizedTag="NO_ENTRY"></YAF:LocalizedLabel>
+                            </YAF:Alert>
                         </div>
                         <div class="card-footer text-center">
                             <YAF:ThemeButton ID="UnsubscribeForums" runat="server" 
@@ -167,6 +173,12 @@
                                     </li>
                                 </ItemTemplate>
                             </asp:Repeater>
+                            <YAF:Alert runat="server" ID="NoInfoTopics"
+                                       Type="success" CssClass="m-3" Visible="False">
+                                <YAF:Icon runat="server" IconName="check" />
+                                <YAF:LocalizedLabel runat="server"
+                                                    LocalizedTag="NO_ENTRY"></YAF:LocalizedLabel>
+                            </YAF:Alert>
                         </div>
                         <div class="card-footer text-center">
                             <YAF:ThemeButton ID="UnsubscribeTopics" runat="server" 

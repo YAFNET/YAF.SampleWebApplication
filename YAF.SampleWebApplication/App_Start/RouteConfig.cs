@@ -1,7 +1,7 @@
 /* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2021 Ingo Herbote
+ * Copyright (C) 2014-2022 Ingo Herbote
  * https://www.yetanotherforum.net/
  * 
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -48,6 +48,7 @@ namespace YAF.SampleWebApplication
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("{resource}.aspx/{*pathInfo}");
             routes.IgnoreRoute("{resource}.aspx");
+            routes.IgnoreRoute("signalr/{*pathInfo}");
 
             routes.MapRoute(
                 name: "Default",

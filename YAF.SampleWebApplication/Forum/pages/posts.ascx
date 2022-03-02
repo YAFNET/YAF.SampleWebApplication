@@ -4,6 +4,7 @@
 <%@ Import Namespace="YAF.Core.Extensions" %>
 <%@ Import Namespace="YAF.Types.Objects.Model" %>
 <%@ Import Namespace="ServiceStack.Text" %>
+<%@ Import Namespace="YAF.Core.Helpers" %>
 
 <%@ Register TagPrefix="YAF" TagName="DisplayPost" Src="../controls/DisplayPost.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayConnect" Src="../controls/DisplayConnect.ascx" %>
@@ -23,14 +24,6 @@
 
 <div class="row justify-content-end">
     <div class="col-auto">
-            <span id="dvFavorite1">
-                <YAF:ThemeButton ID="TagFavorite1" runat="server"
-                                 Type="Secondary"
-                                 CssClass="mb-1 me-1"
-                                 TextLocalizedTag="BUTTON_TAGFAVORITE" TitleLocalizedTag="BUTTON_TAGFAVORITE_TT"
-                                 Icon="star"
-                                 IconColor="text-warning" />
-            </span>
             <YAF:ThemeButton ID="Tools1" runat="server"
                              CssClass="dropdown-toggle me-1 mb-1"
                              Type="Danger"
@@ -164,7 +157,7 @@
         <div class="col">
             <YAF:RssFeedLink ID="RssFeed" runat="server"
                              FeedType="Posts"
-                             AdditionalParameters='<%# "t={0}&name={1}".Fmt(this.PageContext.PageTopicID, this.PageContext.PageTopic.TopicName) %>'
+                             AdditionalParameters='<%# "t={0}&name={1}".Fmt(this.PageContext.PageTopicID, UrlRewriteHelper.CleanStringForURL(this.PageContext.PageTopic.TopicName)) %>'
                              Visible="<%# this.Get<IPermissions>().Check(this.PageContext.BoardSettings.PostsFeedAccess) %>" />
         </div>
     </div>
@@ -176,14 +169,6 @@
     </div>
     <div class="col-md-8 mt-1 mt-md-0">
         <div class="d-flex justify-content-end flex-wrap">
-            <span id="dvFavorite2">
-                <YAF:ThemeButton ID="TagFavorite2" runat="server"
-                                 CssClass="mb-1"
-                                 Type="Secondary"
-                                 TextLocalizedTag="BUTTON_TAGFAVORITE" TitleLocalizedTag="BUTTON_TAGFAVORITE_TT"
-                                 Icon="star"
-                                 IconColor="text-warning" />
-            </span>
             <YAF:ThemeButton ID="Tools2" runat="server"
                              CssClass="dropdown-toggle ms-1 mb-1"
                              Type="Danger"

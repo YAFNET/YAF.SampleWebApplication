@@ -1,4 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="YAF.SampleWebApplication.SiteMaster" %>
+<%@ Import Namespace="YAF.Core.Context" %>
+<%@ Import Namespace="YAF.Core.Services" %>
+<%@ Import Namespace="YAF.Types.Constants" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +9,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: this.Page.Title %> - YAF.NET SampleWebApplication</title>
+    <title><%: HttpUtility.HtmlDecode(this.Page.Title) %> - YAF.NET SampleWebApplication</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body id="YafBody" runat="server">
@@ -42,14 +45,8 @@
                     <div class="form-inline mt-2 mt-md-0 text-white">
                         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                             <AnonymousTemplate>
-                                <asp:Button id="LoginLink" runat="server"
-                                            CssClass="btn btn-outline-success my-2 my-sm-0 me-sm-2"
-                                            Text="Login"
-                                            OnClick="LoginLink_OnClick"></asp:Button>
-                                <asp:Button id="RegisterLink" runat="server"
-                                            CssClass="btn btn-outline-success my-2 my-sm-0"
-                                            Text="Register"
-                                            OnClick="RegisterLink_OnClick"></asp:Button>
+                                <a class="btn btn-outline-success my-2 my-sm-0 me-sm-2" href="<%= BoardContext.Current.Get<LinkBuilder>().GetLink(ForumPages.Account_Login)%>">Login</a>
+                                <a class="btn btn-outline-success my-2 my-sm-0" href="<%= BoardContext.Current.Get<LinkBuilder>().GetLink(ForumPages.Account_Register)%>">Register</a>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
                                 Welcome &nbsp;<span class="fw-bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>&nbsp;

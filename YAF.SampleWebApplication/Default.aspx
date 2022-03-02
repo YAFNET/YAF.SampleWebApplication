@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col">
             <h2>YAF What's New</h2>
-            <div class="yafWhatsNew">
+            <div>
                 <YAF:ActiveDiscussion ID="ActiveDiscussions" runat="server" />
             </div>
         </div>

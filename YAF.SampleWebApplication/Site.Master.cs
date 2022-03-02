@@ -34,9 +34,6 @@ namespace YAF.SampleWebApplication
     using YAF.Configuration;
     using YAF.Core.Context;
     using YAF.Core.Extensions;
-    using YAF.Core.Services;
-    using YAF.Types.Constants;
-    using YAF.Types.Extensions;
     using YAF.Types.Interfaces;
     using YAF.Types.Models;
 
@@ -45,20 +42,6 @@ namespace YAF.SampleWebApplication
     /// </summary>
     public partial class SiteMaster : MasterPage
     {
-        /// <summary>
-        /// The get return url.
-        /// </summary>
-        /// <returns>
-        /// The url.
-        /// </returns>
-        protected string GetReturnUrl()
-        {
-            return HttpContext.Current.Server.UrlEncode(
-                HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl").IsSet()
-                    ? BoardContext.Current.Get<LinkBuilder>().GetSafeRawUrl(HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl"))
-                    : BoardContext.Current.Get<LinkBuilder>().GetSafeRawUrl());
-        }
-
         /// <summary>Handles the Load event of the Page control.</summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
@@ -101,7 +84,7 @@ namespace YAF.SampleWebApplication
                 link.Attributes.Add("rel", "stylesheet");
                 link.Attributes.Add("type", "text/css");
 
-                link.Href = BoardContext.Current != null
+               link.Href = BoardContext.Current != null
                                 ? BoardContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
                                 : "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css";
 
@@ -117,37 +100,6 @@ namespace YAF.SampleWebApplication
 
                 this.Page.Header.Controls.Add(bundleReference);
             }
-        }
-
-        /// <summary>
-        /// The login link_ on click.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        protected void LoginLink_OnClick(object sender, EventArgs e)
-        {
-            BoardContext.Current.Get<LinkBuilder>().Redirect(
-                ForumPages.Account_Login,
-                "ReturnUrl={0}",
-                this.GetReturnUrl());
-        }
-
-        /// <summary>
-        /// The register link_ on click.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        protected void RegisterLink_OnClick(object sender, EventArgs e)
-        {
-            BoardContext.Current.Get<LinkBuilder>().Redirect(ForumPages.Account_Register);
         }
     }
 }
