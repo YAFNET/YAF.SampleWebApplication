@@ -1,6 +1,3 @@
-
-*.dll
-*.pdb
 *.user
 *.CopyComplete
 *.cache
