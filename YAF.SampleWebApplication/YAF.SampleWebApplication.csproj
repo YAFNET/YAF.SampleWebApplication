@@ -166,6 +166,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Bin\YAF.Core.dll</HintPath>
     </Reference>
+    <Reference Include="YAF.Data.SqlServer, Version=3.0.2.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\YAF.Data.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="YAF.Types, Version=2.3.0.0, Culture=neutral, PublicKeyToken=8b49dc47f4701f66, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\YAF.Types.dll</HintPath>
