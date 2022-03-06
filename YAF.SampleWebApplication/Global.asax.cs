@@ -25,19 +25,18 @@
 namespace YAF.SampleWebApplication
 {
     using System;
-    using System.Web;
-    using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Routing;
-    using YAF.Core.Context.Start;
+
+    using YAF.Core.Context;
 
     /// <summary>
     /// The global.
     /// </summary>
-    public class Global : HttpApplication
+    public class Global : YafHttpApplication
     {
         /// <summary>
-        /// The application_ start.
+        /// The application start.
         /// </summary>
         /// <param name="sender">
         /// The sender.
@@ -45,14 +44,13 @@ namespace YAF.SampleWebApplication
         /// <param name="e">
         /// The e.
         /// </param>
-        protected void Application_Start(object sender, EventArgs e)
+        protected override void Application_Start(object sender, EventArgs e)
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles();
 
-            // Pass a delegate to the Configure method.
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            base.Application_Start(sender, e);
         }
     }
 }
