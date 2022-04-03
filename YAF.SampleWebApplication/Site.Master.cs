@@ -34,7 +34,10 @@ namespace YAF.SampleWebApplication
     using YAF.Configuration;
     using YAF.Core.Context;
     using YAF.Core.Extensions;
+    using YAF.Core.Services;
+    using YAF.Types.Extensions;
     using YAF.Types.Interfaces;
+    using YAF.Types.Interfaces.Services;
     using YAF.Types.Models;
 
     /// <summary>
@@ -42,6 +45,20 @@ namespace YAF.SampleWebApplication
     /// </summary>
     public partial class SiteMaster : MasterPage
     {
+        /// <summary>
+        /// The get return url.
+        /// </summary>
+        /// <returns>
+        /// The url.
+        /// </returns>
+        protected string GetReturnUrl()
+        {
+            return HttpContext.Current.Server.UrlEncode(
+                HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl").IsSet()
+                    ? BoardContext.Current.Get<LinkBuilder>().GetSafeRawUrl(HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl"))
+                    : BoardContext.Current.Get<LinkBuilder>().GetSafeRawUrl());
+        }
+
         /// <summary>Handles the Load event of the Page control.</summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>

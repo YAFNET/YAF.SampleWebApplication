@@ -45,8 +45,10 @@
                     <div class="form-inline mt-2 mt-md-0 text-white">
                         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                             <AnonymousTemplate>
-                                <a class="btn btn-outline-success my-2 my-sm-0 me-sm-2" href="<%= BoardContext.Current.Get<LinkBuilder>().GetLink(ForumPages.Account_Login)%>">Login</a>
-                                <a class="btn btn-outline-success my-2 my-sm-0" href="<%= BoardContext.Current.Get<LinkBuilder>().GetLink(ForumPages.Account_Register)%>">Register</a>
+                                <a class="btn btn-outline-success my-2 my-sm-0 me-sm-2" href="<%= BoardContext.Current.Get<LinkBuilder>().GetLink(ForumPages.Account_Login, new {ReturnUrl = this.GetReturnUrl()})%>">Login</a>
+                                <a class="btn btn-outline-success my-2 my-sm-0" href="<%= BoardContext.Current.Get<LinkBuilder>().GetLink(BoardContext.Current.BoardSettings.ShowRulesForRegistration
+                                                                                                                                              ? ForumPages.RulesAndPrivacy
+                                                                                                                                              : ForumPages.Account_Register)%>">Register</a>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
                                 Welcome &nbsp;<span class="fw-bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>&nbsp;

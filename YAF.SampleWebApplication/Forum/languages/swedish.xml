@@ -244,6 +244,8 @@
     <Resource tag="MSG_VALID_DAYS">You should enter a valid integer value for days.</Resource>
     <Resource tag="NEW_VERSION">A New Version is available!</Resource>
     <Resource tag="NEW_VERSION_DOWNLOAD">Go to Downloads page</Resource>
+    <Resource tag="NUM_CATEGORIES">Number of categories:</Resource>
+    <Resource tag="NUM_FORUMS">Number of forums:</Resource>
     <Resource tag="NUM_POSTS">Number of posts:</Resource>
     <Resource tag="NUM_TOPICS">Number of topics:</Resource>
     <Resource tag="NUM_USERS">Number of users:</Resource>
@@ -430,6 +432,8 @@
     <Resource tag="BOARD_CULTURE_HELP">The default culture &amp; language for this forum.</Resource>
     <Resource tag="BOARD_DEFAULT_NOTIFICATION">Default Notification Setting:</Resource>
     <Resource tag="BOARD_DEFAULT_NOTIFICATION_HELP">When a new user account is created, what notification setting does it default to?</Resource>
+    <Resource tag="BOARD_DEFAULT_PANEL_STATE">Default Collapsible Panel State</Resource>
+    <Resource tag="BOARD_DEFAULT_PANEL_STATE_HELP">Show Categories Expanded or Collapsed on the Board Start page</Resource>
     <Resource tag="BOARD_DIGEST_HOURS">Hours Between Digest Sending:</Resource>
     <Resource tag="BOARD_DIGEST_HOURS_HELP">Number of hours before attempting to send another digest. Digest only attempts sending between 12:00 and 6:00am.</Resource>
     <Resource tag="BOARD_DIGEST_NEWUSERS">Default Send Digest "On" for New Users?</Resource>
@@ -457,9 +461,11 @@
     <Resource tag="CDVVERSION">CRM Version</Resource>
     <Resource tag="CDVVERSION_BUTTON">Increase CRM Version</Resource>
     <Resource tag="CDVVERSION_HELP">CRM Version, increase number to Force a Browser reload of all Java Script and CSS Files</Resource>
+    <Resource tag="COLLAPSED">Collapsed</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY">Copyright Removal Key:</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_DOWN">Purchase Removal Key</Resource>
     <Resource tag="COPYRIGHT_REMOVAL_KEY_HELP">Remove the copyright information and link back to YAF from the footer of your entire forum domain. Available&lt;a href="https://yetanotherforum.net/purchase.aspx"&gt;from YAF.NET site&lt;/a&gt;. </Resource>
+    <Resource tag="EXPANDED">Expanded</Resource>
     <Resource tag="FORUM_DEFAULT_ACCESSMASK">New Forum Default Access mask:</Resource>
     <Resource tag="FORUM_DEFAULT_ACCESSMASK_HELP">The Default Access Mask when creating a new Forum</Resource>
     <Resource tag="HEADER">Current Board Settings</Resource>
@@ -976,11 +982,18 @@
     <Resource tag="CONFIRM_DELETE">Permanently delete this Forum including ALL topics, polls, attachments and messages associated with it?</Resource>
     <Resource tag="CONFIRM_DELETE_CAT">Delete this category?</Resource>
     <Resource tag="CONFIRM_DELETE_POSITIVE">Are you POSITIVE?</Resource>
+    <Resource tag="CONFIRM_SORTING">Are you sure? this step is irreversible!</Resource>
     <Resource tag="DELETE_MSG">Please do not navigate away from this page while the deletion is in progress...</Resource>
     <Resource tag="DELETE_TITLE">Deleting Forum</Resource>
     <Resource tag="MSG_NOT_DELETE">You cannot delete this Category as it has at least one forum assigned to it.\nTo move forums click on \"Edit\" and change the category the forum is assigned to.</Resource>
+    <Resource tag="MSG_SORTING_CATEGORIES">All Categories have been re-ordered.</Resource>
+    <Resource tag="MSG_SORTING_FORUMS">All Forums have been re-ordered.</Resource>
     <Resource tag="NEW_CATEGORY">New Category</Resource>
     <Resource tag="NEW_FORUM">New Forum</Resource>
+    <Resource tag="SORT_CATEGORIES_ASC">Re-Order all Categories ASC</Resource>
+    <Resource tag="SORT_CATEGORIES_DESC">Re-Order all Categories DESC</Resource>
+    <Resource tag="SORT_FORUMS_ASC">Re-Order all Forums ASC</Resource>
+    <Resource tag="SORT_FORUMS_DESC">Re-Order all Forums DESC</Resource>
   </page>
   <page name="ADMIN_GROUPS">
     <Resource tag="ADD_ROLETOYAF">Add to YAF</Resource>
@@ -2164,8 +2177,6 @@
     <Resource tag="BBCODE_QUOTEPOSTED_TT">Go to Quoted Post</Resource>
     <Resource tag="BBCODE_QUOTEWROTE">{0} wrote:</Resource>
     <Resource tag="BROWSE">Browse</Resource>
-    <Resource tag="CAL_JQ_CULTURE">sv</Resource>
-    <Resource tag="CAL_JQ_CULTURE_DFORMAT">MM/dd/YYYY</Resource>
     <Resource tag="CAL_JQ_TT">Click here to choose date</Resource>
     <Resource tag="CAN_DELETE">Du [b]kan[/b] radera dina meddelanden i detta forum.</Resource>
     <Resource tag="CAN_EDIT">Du [b]kan[/b] ändra dina meddelanden i detta forum.</Resource>
@@ -2214,6 +2225,8 @@
     <Resource tag="FORMAT_DATE_TIME_SHORT">G</Resource>
     <Resource tag="FORMAT_TIME">T</Resource>
     <Resource tag="FORUM_JUMP">Gå till</Resource>
+    <Resource tag="FORUM_JUMP_PLACEHOLDER">Select a Forum to Go to...</Resource>
+    <Resource tag="FORUMS_SHOWN">{0} of {1} Forums shown</Resource>
     <Resource tag="GENERATED">This page was generated in {0:N3} seconds.</Resource>
     <Resource tag="GO">GO</Resource>
     <Resource tag="GOTOFIRSTPAGE_TT">First page</Resource>
@@ -2226,6 +2239,7 @@
     <Resource tag="HTMLTAG_FORBIDDEN">Your input data should not contain HTML tags.</Resource>
     <Resource tag="HTMLTAG_WRONG">Your input data contains forbidden {0} HTML tag.</Resource>
     <Resource tag="IN_FORUM">in Forum: {0}</Resource>
+    <Resource tag="LOAD_MORE">Show More Categories &amp; Forums...</Resource>
     <Resource tag="LOADING">Loading...</Resource>
     <Resource tag="MANAGE">Manage</Resource>
     <Resource tag="MAX_ONLINE">Flest användare online var {0:N0} on {1}.</Resource>
@@ -2293,6 +2307,7 @@
                 }
           }
   </Resource>
+    <Resource tag="SELECTED_COPY">Copy Selected Text</Resource>
     <Resource tag="SELECTED_QUOTE">Quote Selected Text</Resource>
     <Resource tag="SELECTED_SEARCH">Search Google for ...</Resource>
     <Resource tag="SHOWHIDE">Show/Hide</Resource>
@@ -3999,7 +4014,7 @@ Spoiler Content
     <Resource tag="MAILSETTINGSCONTENT">&lt;p&gt;On the 'Email Notification Preferences' Page inside your User Control Panel you can set up, what type of Email Notifications you want to receive.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Turn off notifications - &lt;/strong&gt;This Options turns off all Notifications and you won’t receive any emails.&lt;/p&gt;
 &lt;p&gt; &lt;strong&gt;Notification for all posts on all topics&lt;/strong&gt; - You will receive Instant Email Notifications when someone has posted a new Message.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Notification for topics you've posted to, watched or marked as favorite&lt;/strong&gt; - You will receive Instant Email Notifications when someone has posted a new Message in a topic, you have posted before, a topic you watch, marked as favorite, or a forum.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notification for topics you've posted to, watched&lt;/strong&gt; - You will receive Instant Email Notifications when someone has posted a new Message in a topic, you have posted before, a topic you watch, marked as favorite, or a forum.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Notification for topics or forums you've selectively watched (listed below)&lt;/strong&gt; - You will receive Instant Email Notifications when someone has posted a new Message in a topic or forum you have selected to watch (See List Below).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Receive once daily digest/summary of activity?&lt;/strong&gt; - If this Function is enabled you can turn this option on to get an Email with all new Activities about new topics and messages from current day as daily digest (summary) in one mail&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Receive an email notification when you get a new private message? &lt;/strong&gt; - You can also turn on/off Email Notifications when you receive a private message.&lt;/p&gt;
@@ -4223,7 +4238,7 @@ Spoiler Content
     <Resource tag="SEARCHINGTITLE">Searching Forums and Topics</Resource>
     <Resource tag="SEARCHLONGER">Search Input is to short, must be at least 3 letters.</Resource>
     <Resource tag="SUBSCRIPTIONSCONTENT">&lt;p&gt;Subscriptions are a way to keep track of different topics and/or forums. You can choose how you are notified about updates.&lt;/p&gt;
-&lt;p&gt;Or if you don't want to manually subscribe to a topic you want to follow you can turn on the Option 'Notification for topics you've posted to, watched or marked as favorite' in the E-mail Notification Preferences Page inside the User CP.&lt;/p&gt;
+&lt;p&gt;Or if you don't want to manually subscribe to a topic you want to follow you can turn on the Option 'Notification for topics you've posted to, watched' in the E-mail Notification Preferences Page inside the User CP.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to  watch a topic?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;To subscribe to a topic, click the 'Options' link at the top of the list of posts then click 'Watch this topic'.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;How to  watch a forum?&lt;/strong&gt;&lt;/p&gt;
@@ -4553,6 +4568,7 @@ Spoiler Content
     <Resource tag="UNANSWEREDTOPICS">Unanswered Topics</Resource>
     <Resource tag="UNREADTOPICS">Unread Topics</Resource>
     <Resource tag="VIEWS">Views</Resource>
+    <Resource tag="WATCHTOPICS">Watch Topics</Resource>
   </page>
   <page name="PM">
     <Resource tag="ARCHIVE">Archive</Resource>
@@ -4886,7 +4902,7 @@ Spoiler Content
   </page>
   <page name="PROFILE">
     <Resource tag="ABOUT">Om</Resource>
-    <Resource tag="ADMIN_USER">Admin User</Resource>
+    <Resource tag="ADMIN_USER">Edit User</Resource>
     <Resource tag="AIM">AIM-namn:</Resource>
     <Resource tag="ALBUMS">Albums</Resource>
     <Resource tag="AVATAR">Avatar</Resource>

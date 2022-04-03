@@ -4,6 +4,7 @@
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Core.Extensions" %>
 <%@ Import Namespace="YAF.Types.Objects" %>
+<%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 
 <asp:PlaceHolder id="SimilarTopicsHolder" runat="server" Visible="true">
     <asp:Repeater ID="Topics" runat="server" Visible="true">
@@ -27,7 +28,7 @@
                    </YAF:LocalizedLabel> 
                     <YAF:UserLink ID="UserName" runat="server" 
                                   UserID="<%#((SearchMessage)Container.DataItem).UserId %>" 
-                                  ReplaceName="<%# this.PageContext.BoardSettings.EnableDisplayName ? ((SearchMessage)Container.DataItem).UserDisplayName : ((SearchMessage)Container.DataItem).UserName %>" 
+                                  ReplaceName="<%# this.PageBoardContext.BoardSettings.EnableDisplayName ? ((SearchMessage)Container.DataItem).UserDisplayName : ((SearchMessage)Container.DataItem).UserName %>" 
                                   Suspended="<%# ((SearchMessage)Container.DataItem).Suspended %>"
 
                        Style="<%# ((SearchMessage)Container.DataItem).UserStyle %>">

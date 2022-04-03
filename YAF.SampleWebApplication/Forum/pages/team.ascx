@@ -37,7 +37,7 @@
                                                 CssClass="rounded img-fluid"/>
                                      <YAF:UserLink ID="AdminLink" runat="server"
                                                    IsGuest="False"
-                                                   ReplaceName='<%#  this.Eval(this.PageContext.BoardSettings.EnableDisplayName ? "DisplayName" : "Name").ToString() %>'
+                                                   ReplaceName='<%#  this.Eval(this.PageBoardContext.BoardSettings.EnableDisplayName ? "DisplayName" : "Name").ToString() %>'
                                                    Suspended='<%# this.Eval("Suspended").ToType<DateTime?>() %>'
                                                    UserID='<%# this.Eval("ID").ToType<int>() %>'
                                                    Style='<%# this.Eval("UserStyle") %>'  />
@@ -70,7 +70,7 @@
                                                      Visible="false"
                                                      Icon="user-cog"
                                                      Type="Danger"
-                                                     NavigateUrl='<%# this.Get<LinkBuilder>().GetLink(ForumPages.Admin_EditUser,"u={0}", this.Eval("ID").ToType<int>() ) %>'>
+                                                     NavigateUrl='<%# this.Get<LinkBuilder>().GetLink(ForumPages.Admin_EditUser,new { u = this.Eval("ID").ToType<int>() } ) %>'>
                                     </YAF:ThemeButton>
                                 </div>
                             </small>
@@ -108,7 +108,7 @@
                                                 CssClass="rounded img-fluid"/>
                                      <YAF:UserLink ID="ModLink" runat="server"
                                                    Suspended='<%# this.Eval("Suspended").ToType<DateTime?>() %>'
-                                                   ReplaceName='<%#  this.Eval(this.PageContext.BoardSettings.EnableDisplayName ? "DisplayName" : "Name").ToString() %>'
+                                                   ReplaceName='<%#  this.Eval(this.PageBoardContext.BoardSettings.EnableDisplayName ? "DisplayName" : "Name").ToString() %>'
                                                    UserID='<%# this.Eval("ModeratorID").ToType<int>() %>'
                                                    IsGuest="False"
                                                    Style='<%# this.Eval("Style") %>'  />
@@ -119,13 +119,7 @@
                                                                 LocalizedTag="FORUMS" />:
                                         </span>
                                     <div class="input-group">
-                                        <YAF:ThemeButton ID="GoToForumButton" runat="server"
-                                                         Icon="external-link-alt"
-                                                         Type="Secondary"
-                                                         TextLocalizedTag="GO"
-                                                         OnClick="GoToForum"></YAF:ThemeButton>
-                                        <asp:DropDownList ID="ModForums" runat="server" CssClass="form-control">
-                                        </asp:DropDownList>
+                                        <YAF:ForumJump ID="Forums" runat="server" />
                                     </div>
                             <small>
                                 <div class="btn-group mt-2" role="group">
@@ -146,7 +140,7 @@
                                                      TextLocalizedTag="ADMIN_USER" TextLocalizedPage="PROFILE"
                                                      Icon="user-cog"
                                                      Type="Danger"
-                                                     NavigateUrl='<%# this.Get<LinkBuilder>().GetLink( ForumPages.Admin_EditUser,"u={0}", this.Eval("ModeratorID").ToType<int>() ) %>'>
+                                                     NavigateUrl='<%# this.Get<LinkBuilder>().GetLink( ForumPages.Admin_EditUser,new { u = this.Eval("ModeratorID").ToType<int>() }) %>'>
                                     </YAF:ThemeButton>
                                 </div>
                             </small>

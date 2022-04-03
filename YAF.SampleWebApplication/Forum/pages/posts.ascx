@@ -3,8 +3,6 @@
 <%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="YAF.Core.Extensions" %>
 <%@ Import Namespace="YAF.Types.Objects.Model" %>
-<%@ Import Namespace="ServiceStack.Text" %>
-<%@ Import Namespace="YAF.Core.Helpers" %>
 
 <%@ Register TagPrefix="YAF" TagName="DisplayPost" Src="../controls/DisplayPost.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="DisplayConnect" Src="../controls/DisplayConnect.ascx" %>
@@ -152,13 +150,10 @@
 </asp:Repeater>
 
 <asp:PlaceHolder runat="server"
-                 Visible="<%# this.Get<IPermissions>().Check(this.PageContext.BoardSettings.PostsFeedAccess) %>">
+                 Visible="<%# this.Get<IPermissions>().Check(this.PageBoardContext.BoardSettings.PostsFeedAccess) %>">
     <div class="row mb-3">
         <div class="col">
-            <YAF:RssFeedLink ID="RssFeed" runat="server"
-                             FeedType="Posts"
-                             AdditionalParameters='<%# "t={0}&name={1}".Fmt(this.PageContext.PageTopicID, UrlRewriteHelper.CleanStringForURL(this.PageContext.PageTopic.TopicName)) %>'
-                             Visible="<%# this.Get<IPermissions>().Check(this.PageContext.BoardSettings.PostsFeedAccess) %>" />
+            <YAF:RssFeedLink ID="RssFeed" runat="server" />
         </div>
     </div>
 </asp:PlaceHolder>

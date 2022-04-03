@@ -55,39 +55,55 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6">
-                                    <div class="card mb-4 mb-xl-0">
+                                    <div class="card mb-4">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col">
                                                     <h5 class="card-title text-uppercase text-muted mb-0">
-                                                        <YAF:LocalizedLabel ID="LocalizedLabel8" runat="server"
-                                                                            LocalizedTag="NUM_POSTS"
+                                                        <YAF:LocalizedLabel ID="LocalizedLabel4" runat="server"
+                                                                            LocalizedTag="NUM_CATEGORIES"
                                                                             LocalizedPage="ADMIN_ADMIN" />
                                                     </h5>
                                                     <span class="h2 fw-bold mb-0">
-                                                        <asp:Label ID="NumPosts" runat="server"></asp:Label>
+                                                        <asp:Label ID="NumCategories" runat="server"></asp:Label>
                                                     </span>
                                                 </div>
                                                 <div class="col-auto">
                                                     <span class="fa-stack fa-2x" style="vertical-align: top;">
-                                                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                                                        <i class="fas fa-comment fa-stack-1x fa-inverse"></i>
+                                                        <i class="fas fa-circle fa-stack-2x text-info"></i>
+                                                        <i class="fas fa-folder fa-stack-1x fa-inverse"></i>
                                                     </span>
                                                 </div>
                                             </div>
-                                            <p class="mt-3 mb-0 text-muted small">
-                                                <YAF:LocalizedLabel ID="LocalizedLabel17" runat="server"
-                                                                    LocalizedTag="POSTS_DAY"
-                                                                    LocalizedPage="ADMIN_ADMIN" />
-                                                <span class="text-nowrap">
-                                                    <asp:Label ID="DayPosts" runat="server"></asp:Label>
-                                                </span>
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-6">
-                                    <div class="card mb-4 mb-xl-0">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">
+                                                        <YAF:LocalizedLabel ID="LocalizedLabel2" runat="server"
+                                                                            LocalizedTag="NUM_FORUMS"
+                                                                            LocalizedPage="ADMIN_ADMIN" />
+                                                    </h5>
+                                                    <span class="h2 fw-bold mb-0">
+                                                        <asp:Label ID="NumForums" runat="server"></asp:Label>
+                                                    </span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span class="fa-stack fa-2x" style="vertical-align: top;">
+                                                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                                                        <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6">
+                                    <div class="card mb-4">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col">
@@ -118,8 +134,40 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-xl-3 col-lg-6">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">
+                                                        <YAF:LocalizedLabel ID="LocalizedLabel8" runat="server"
+                                                                            LocalizedTag="NUM_POSTS"
+                                                                            LocalizedPage="ADMIN_ADMIN" />
+                                                    </h5>
+                                                    <span class="h2 fw-bold mb-0">
+                                                        <asp:Label ID="NumPosts" runat="server"></asp:Label>
+                                                    </span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span class="fa-stack fa-2x" style="vertical-align: top;">
+                                                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                                        <i class="fas fa-comment fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <p class="mt-3 mb-0 text-muted small">
+                                                <YAF:LocalizedLabel ID="LocalizedLabel17" runat="server"
+                                                                    LocalizedTag="POSTS_DAY"
+                                                                    LocalizedPage="ADMIN_ADMIN" />
+                                                <span class="text-nowrap">
+                                                    <asp:Label ID="DayPosts" runat="server"></asp:Label>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             <div class="col-xl-3 col-lg-6">
-                                    <div class="card mb-4 mb-xl-0">
+                                    <div class="card mb-4">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col">
@@ -151,7 +199,7 @@
                                     </div>
                                 </div>
                         <div class="col-xl-3 col-lg-6">
-                            <div class="card mb-4 mb-xl-0">
+                            <div class="card mb-4">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
@@ -180,7 +228,7 @@
                             </div>
                         </div>
                                 <div class="col-xl-3 col-lg-6">
-                                    <div class="card mb-4 mb-xl-0">
+                                    <div class="card mb-4">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col">
@@ -255,7 +303,7 @@
                         <div class="align-items-baseline">
                             <div class="me-2">
                                 <YAF:UserLabel ID="ActiveUserLink"
-                                               ReplaceName="<%# this.PageContext.BoardSettings.EnableDisplayName ? (Container.DataItem as ActiveUser).UserDisplayName : (Container.DataItem as ActiveUser).UserName %>"
+                                               ReplaceName="<%# this.PageBoardContext.BoardSettings.EnableDisplayName ? (Container.DataItem as ActiveUser).UserDisplayName : (Container.DataItem as ActiveUser).UserName %>"
                                                UserID="<%# (Container.DataItem as ActiveUser).UserID %>"
                                                CrawlerName="<%# (Container.DataItem as ActiveUser).IsCrawler ? (Container.DataItem as ActiveUser).Browser : string.Empty %>"
                                                Style="<%# (Container.DataItem as ActiveUser).UserStyle %>" runat="server" />
@@ -265,7 +313,7 @@
                                     <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server"
                                                         LocalizedTag="ADMIN_IPADRESS" LocalizedPage="ADMIN_ADMIN" />
                                 </span>
-                                <a id="A1" href="<%# string.Format(this.PageContext.BoardSettings.IPInfoPageURL, IPHelper.GetIpAddressAsString((Container.DataItem as ActiveUser).IP)) %>"
+                                <a id="A1" href="<%# string.Format(this.PageBoardContext.BoardSettings.IPInfoPageURL, IPHelper.GetIpAddressAsString((Container.DataItem as ActiveUser).IP)) %>"
                                    title='<%# this.GetText("COMMON","TT_IPDETAILS") %>' target="_blank" runat="server">
                                     <%# IPHelper.GetIpAddressAsString((Container.DataItem as ActiveUser).IP)%></a>
                             </div>
@@ -339,7 +387,7 @@
                                     <div class="align-items-baseline">
                                         <div class="me-2">
                                             <span class="fw-bold">
-                                                <%# this.Eval(this.PageContext.BoardSettings.EnableDisplayName ? "DisplayName" : "Name") %>
+                                                <%# this.Eval(this.PageBoardContext.BoardSettings.EnableDisplayName ? "DisplayName" : "Name") %>
                                             </span>
                                         </div>
                                         <div class="me-2">

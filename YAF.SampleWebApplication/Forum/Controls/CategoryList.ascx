@@ -3,10 +3,13 @@
 <%@ Import Namespace="YAF.Types.Objects.Model" %>
 <%@ Import Namespace="YAF.Core.Extensions" %>
 <%@ Import Namespace="ServiceStack.Text" %>
+<%@ Import Namespace="YAF.Core.Services" %>
 
 <%@ Register TagPrefix="YAF" TagName="ForumList" Src="ForumList.ascx" %>
 
-<asp:Repeater ID="Categories" runat="server">
+<asp:UpdatePanel runat="server" UpdateMode="Conditional">
+    <ContentTemplate>
+        <asp:Repeater ID="Categories" runat="server">
     <ItemTemplate>
                     <div class="row">
                         <div class="col">
@@ -17,7 +20,9 @@
                                             <div class="d-none d-md-inline-block icon-category">
                                                 <%#  this.GetCategoryImage((ForumRead)Container.DataItem) %>
                                             </div>
-                                            <%# this.HtmlEncode(((ForumRead)Container.DataItem).Category) %>
+                                            <a href="<%#this.Get<LinkBuilder>().GetCategoryLink(((ForumRead)Container.DataItem).CategoryID, ((ForumRead)Container.DataItem).Category)%>">
+                                                <%# this.HtmlEncode(((ForumRead)Container.DataItem).Category) %>
+                                            </a>
                                         </div>
                                         <div class="col-auto">
                                             <YAF:CollapseButton ID="CollapsibleImage" runat="server"
@@ -48,17 +53,33 @@
                                                  Icon="eye"
                                                  TextLocalizedTag="WATCHFORUM_ALL"
                                                  TitleLocalizedTag="WATCHFORUM_ALL_HELP"
-                                                 CommandArgument="<%# this.PageContext.PageCategoryID != 0 ? this.PageContext.PageCategoryID.ToString() : null %>"
-                                                 Visible="<%# !this.PageContext.IsGuest %>"/>
+                                                 CommandArgument="<%# this.PageBoardContext.PageCategoryID != 0 ? this.PageBoardContext.PageCategoryID.ToString() : null %>"
+                                                 Visible="<%# !this.PageBoardContext.IsGuest %>"/>
                                 <YAF:ThemeButton runat="server" ID="MarkAll"
                                                  OnClick="MarkAllClick"
                                                  Type="Secondary"
                                                  Size="Small"
                                                  Icon="glasses"
                                                  TextLocalizedTag="MARKALL"
-                                                 CommandArgument="<%# this.PageContext.PageCategoryID != 0 ? this.PageContext.PageCategoryID.ToString() : null %>"/>
+                                                 CommandArgument="<%# this.PageBoardContext.PageCategoryID != 0 ? this.PageBoardContext.PageCategoryID.ToString() : null %>"/>
                             </div>
                         </div>
                     </div>
             </FooterTemplate>
 </asp:Repeater>
+        <div class="text-center">
+            <YAF:Alert runat="server" id="ForumsShown" Type="light" Visible="False">
+                <asp:Label runat="server" id="ForumsShownLabel" CssClass="me-3 align-top"></asp:Label>
+                <YAF:ThemeButton runat="server" ID="ShowMore"
+                                 OnClick="ShowMoreClick"
+                                 CssClass="mb-3"
+                                 Type="OutlineSecondary"
+                                 Size="Small"
+                                 Icon="spinner"
+                                 TextLocalizedTag="LOAD_MORE"/>
+            </YAF:Alert>
+            
+        </div>
+    </ContentTemplate>
+
+</asp:UpdatePanel>

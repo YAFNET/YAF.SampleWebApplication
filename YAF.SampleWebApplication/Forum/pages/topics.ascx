@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-auto">
                             <YAF:CollapseButton ID="CollapsibleImage" runat="server"
-                                                PanelID='<%# "forumPanel{0}".Fmt(this.PageContext.PageForumID) %>'
+                                                PanelID='<%# "forumPanel{0}".Fmt(this.PageBoardContext.PageForumID) %>'
                                                 AttachedControlID="body" 
                                                 CssClass="ps-0" />
                         </div>
@@ -29,6 +29,8 @@
                 </div>
                 <div class="card-body" id="body" runat="server">
                     <YAF:ForumList runat="server" ID="ForumList" />
+                    <YAF:Pager ID="PagerSubForums" runat="server"
+                               UsePostBack="False" />
                 </div>
             </div>
         </div>
@@ -172,8 +174,7 @@
                              ID="MarkRead"
                              TextLocalizedTag="MARKREAD"/>
             <YAF:RssFeedLink ID="RssFeed" runat="server" 
-                             FeedType="Topics"
-                             Visible="<%# this.Get<IPermissions>().Check(this.PageContext.BoardSettings.TopicsFeedAccess) %>"  
+                             Visible="<%# this.Get<IPermissions>().Check(this.PageBoardContext.BoardSettings.TopicsFeedAccess) %>"  
             />
         </div>
     </div>

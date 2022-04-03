@@ -35,6 +35,7 @@ namespace YAF.SampleWebApplication
     using YAF.Core.Extensions;
     using YAF.SampleWebApplication.Models;
     using YAF.Types.Interfaces;
+    using YAF.Types.Interfaces.Services;
     using YAF.Types.Models;
 
     /// <summary>

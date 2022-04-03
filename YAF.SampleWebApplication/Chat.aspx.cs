@@ -32,6 +32,7 @@ namespace YAF.SampleWebApplication
     using YAF.Core.Services;
     using YAF.Types.Constants;
     using YAF.Types.Interfaces;
+    using YAF.Types.Interfaces.Services;
 
     /// <summary>
     /// The chat.
@@ -68,16 +69,16 @@ namespace YAF.SampleWebApplication
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.PageContext().IsGuest)
+            if (!this.PageBoardContext().IsGuest)
             {
-                this.UserName = this.PageContext().PageUser.DisplayOrUserName();
-                this.UserId = this.PageContext().PageUserID;
+                this.UserName = this.PageBoardContext().PageUser.DisplayOrUserName();
+                this.UserId = this.PageBoardContext().PageUserID;
 
                 this.GetUserImage(this.UserName);
             }
             else
             {
-                this.PageContext().Get<LinkBuilder>().Redirect(ForumPages.Account_Login);
+                this.PageBoardContext().Get<LinkBuilder>().Redirect(ForumPages.Account_Login);
             }
 
             this.Header.DataBind();
