@@ -45,10 +45,9 @@ namespace YAF.SampleWebApplication
             var settings = new FriendlyUrlSettings { AutoRedirectMode = RedirectMode.Permanent };
             routes.EnableFriendlyUrls(settings);
 
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.IgnoreRoute("{resource}.aspx/{*pathInfo}");
-            routes.IgnoreRoute("{resource}.aspx");
             routes.IgnoreRoute("signalr/{*pathInfo}");
+
+            routes.Ignore("{*legacy}", new { legacy = @".*\.(aspx|ashx|asmx|axd|svc)([/\?].*)?" });
 
             routes.MapRoute(
                 name: "Default",
