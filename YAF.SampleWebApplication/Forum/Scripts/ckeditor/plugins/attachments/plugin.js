@@ -25,7 +25,7 @@ CKEDITOR.dialog.add("attachmentsDialog",
     function(editor) {
         return {
             maxWidth: 400,
-            minWidth: 200,
+            minWidth: 500,
             title: editor.lang.attachments.title,
             onLoad: function() {
                 this.getElement().removeClass("cke_reset_all");
@@ -60,7 +60,7 @@ CKEDITOR.dialog.add("attachmentsDialog",
                                 '<ul class="AttachmentList list-group-albums list-group">' +
                                 "</ul>" +
                                 "</div>" +
-                                '<div class="OpenUploadDialog">' +
+                                '<div class="OpenUploadDialog d-grid gap-2">' +
                                 '<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#UploadDialog">' +
                                 editor.lang.attachments.upload +
                                 "</button></div>"
@@ -79,7 +79,7 @@ CKEDITOR.dialog.add("attachmentsDialog",
             command.modes = { wysiwyg: 1, source: 1 };
 
             CKEDITOR.tools.insertAttachment = function(id) {
-                var dialog = CKEDITOR.dialog.getCurrent()
+                var dialog = CKEDITOR.dialog.getCurrent();
                 var currentEditor = CKEDITOR.currentInstance;
 
                 var insert = "[attach]" + id + "[/attach]";
