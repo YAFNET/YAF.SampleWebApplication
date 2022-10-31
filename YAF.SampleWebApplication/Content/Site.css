@@ -4,6 +4,10 @@ body {
     padding-bottom: 20px;
 }
 
+html {
+    scroll-padding-top: 70px; /* height of sticky header */
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
