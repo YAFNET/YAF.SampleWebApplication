@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.DeleteForum"
     CodeBehind="DeleteForum.ascx.cs" %>
 
-
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
     <div class="row">
@@ -30,9 +29,9 @@
                 </div>
                 <div class="card-footer text-center">
                     <YAF:ThemeButton ID="Delete" runat="server"
-                                     CssClass="btn btn-danger"
+                                     Type="Danger"
                                      Icon="trash"
-                                     TextLocalizedTag="DELETE_FORUM" TextLocalizedPage="ADMIN_DELETEFORUM">
+                                     TextLocalizedTag="DELETE_FORUM" TextLocalizedPage="ADMIN_DELETEFORUM" ReturnConfirmTag="CONFIRM_DELETE">
                     </YAF:ThemeButton>
                     <YAF:ThemeButton ID="Cancel" runat="server"
                                      Type="Secondary"
@@ -42,7 +41,6 @@
             </div>
         </div>
     </div>
-
 
 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
     <ContentTemplate>
@@ -54,7 +52,9 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="DELETE_TITLE" LocalizedPage="ADMIN_DELETEFORUM" />
+                <h5 class="modal-title">
+                    <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="DELETE_TITLE" LocalizedPage="ADMIN_DELETEFORUM" />
+                </h5>
             </div>
             <div class="modal-body text-center">
                 <YAF:LocalizedLabel ID="LocalizedLabel7" runat="server" LocalizedTag="DELETE_MSG" LocalizedPage="ADMIN_DELETEFORUM" />

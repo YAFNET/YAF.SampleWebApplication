@@ -22,15 +22,16 @@
                     <div class="row">
                         <div class="mb-3 col-md-4">
                             <asp:Label runat="server"
-                                       CssClass="fw-bold"
+                                       CssClass="form-label"
                                        AssociatedControlID="Days1">
                                 <YAF:LocalizedLabel ID="LocalizedLabel5" runat="server"
                                                     LocalizedTag="DELETE_READ" LocalizedPage="ADMIN_PM" />
                             </asp:Label>
                             <div class="input-group">
                                 <asp:TextBox runat="server" ID="Days1"
-                                             CssClass="form-control"
-                                             TextMode="Number" />
+                                             CssClass="form-control form-control-days"
+                                             TextMode="Number"
+                                             data-min="1"  />
                                 <div class="input-group-text">
                                     <YAF:LocalizedLabel runat="server"
                                                         LocalizedTag="DAYS"></YAF:LocalizedLabel>
@@ -39,15 +40,16 @@
                         </div>
                         <div class="mb-3 col-md-4">
                             <asp:Label runat="server"
-                                       CssClass="fw-bold"
+                                       CssClass="form-label"
                                        AssociatedControlID="Days2">
                                 <YAF:LocalizedLabel ID="LocalizedLabel4" runat="server"
                                                     LocalizedTag="DELETE_UNREAD" LocalizedPage="ADMIN_PM" />
                             </asp:Label>
                             <div class="input-group">
                                 <asp:TextBox runat="server" ID="Days2"
-                                             CssClass="form-control"
-                                             TextMode="Number" />
+                                             CssClass="form-control form-control-days"
+                                             TextMode="Number"
+                                             data-min="1" />
                                 <div class="input-group-text">
                                     <YAF:LocalizedLabel runat="server"
                                                         LocalizedTag="DAYS"></YAF:LocalizedLabel>
@@ -59,7 +61,7 @@
                 <div class="card-footer text-center">
                     <YAF:ThemeButton ID="commit" Type="Primary" runat="server"
                         Icon="trash" TextLocalizedTag="DELETE" TextLocalizedPage="COMMON"
-                        ReturnConfirmText='<%# this.GetText("ADMIN_PM", "CONFIRM_DELETE") %>'>
+                        ReturnConfirmTag="CONFIRM_DELETE">
                     </YAF:ThemeButton>
                 </div>
             </div>

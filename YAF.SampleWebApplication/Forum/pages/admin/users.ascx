@@ -10,7 +10,6 @@
 
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
-<asp:PlaceHolder runat="server" ID="SearchResults" Visible="False">
     <div class="row">
         <div class="col-xl-12">
 
@@ -259,7 +258,7 @@
                                                          Icon="edit">
                                         </YAF:ThemeButton>
                                         <YAF:ThemeButton ID="ThemeButtonDelete" runat="server"
-                                                         ReturnConfirmText='<%# this.GetText("ADMIN_USERS", "CONFIRM_DELETE") %>'
+                                                         ReturnConfirmTag="CONFIRM_DELETE"
                                                          Type="Danger"
                                                          Size="Small"
                                                          CommandName="delete"
@@ -282,7 +281,7 @@
                                                      Icon="edit">
                                     </YAF:ThemeButton>
                                     <YAF:ThemeButton ID="ThemeButton2" runat="server"
-                                                     ReturnConfirmText='<%# this.GetText("ADMIN_USERS", "CONFIRM_DELETE") %>'
+                                                     ReturnConfirmTag="CONFIRM_DELETE"
                                                      Type="None"
                                                      CssClass="dropdown-item"
                                                      CommandName="delete"
@@ -351,6 +350,5 @@
                UsePostBack="True" />
     </div>
 </div>
-    </asp:PlaceHolder>
 
 <modal:Import ID="ImportDialog" runat="server" />

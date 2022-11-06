@@ -1551,6 +1551,11 @@
     <Content Include="mail.config" />
     <Content Include="Scripts\date.format.js" />
     <Content Include="Scripts\emojionearea.js" />
+    <None Include="Scripts\jquery-3.6.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.1.js" />
+    <Content Include="Scripts\jquery-3.6.1.min.js" />
+    <Content Include="Scripts\jquery-3.6.1.slim.js" />
+    <Content Include="Scripts\jquery-3.6.1.slim.min.js" />
     <Content Include="Scripts\jquery.signalR-2.4.3.js" />
     <Content Include="Scripts\jquery.signalR-2.4.3.min.js" />
     <Content Include="Scripts\jquery.slimscroll.js" />
@@ -1558,7 +1563,6 @@
       <DependentUpon>jquery.slimscroll.js</DependentUpon>
     </Content>
     <Content Include="Site.Master" />
-    <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Shared\RazorView.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -1624,22 +1628,8 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-    </Compile>
     <Compile Include="StartupSignalR.cs" />
     <Compile Include="Models\Users.cs" />
-    <Compile Include="ViewSwitcher.ascx.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.designer.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forum\CHANGES.md" />
@@ -1684,7 +1674,8 @@
     <Content Include="Views\RazorDemo\Hello.cshtml" />
     <Content Include="Views\RazorDemo\Index.cshtml" />
     <Content Include="Views\web.config" />
-    <Content Include="Site.Mobile.Master" />
+    <Content Include="Scripts\jquery-3.6.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

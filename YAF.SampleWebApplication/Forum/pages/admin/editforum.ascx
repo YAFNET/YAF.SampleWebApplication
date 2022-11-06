@@ -103,7 +103,7 @@
                                          MaxLength="5"
                                          Text="10" 
                                          CssClass="form-control" 
-                                         TextMode="Number"></asp:TextBox>
+                                         TextMode="Number" data-min="1"></asp:TextBox>
                         </div>
                         <div class="mb-3 col-md-6">
                             <YAF:HelpLabel ID="HelpLabel13" runat="server" 
@@ -159,7 +159,7 @@
                                            LocalizedTag="MODERATED_NEWTOPIC_ONLY" LocalizedPage="ADMIN_EDITFORUM" />
              
                             <div class="form-check form-switch">
-                                <asp:CheckBox ID="ModerateNewTopicOnly" runat="server" AutoPostBack="true" Text="&nbsp;"></asp:CheckBox>
+                                <asp:CheckBox ID="ModerateNewTopicOnly" runat="server" Text="&nbsp;"></asp:CheckBox>
                             </div>
                         </div>
                     </asp:PlaceHolder>

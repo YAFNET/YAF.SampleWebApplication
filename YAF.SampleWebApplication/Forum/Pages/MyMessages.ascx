@@ -31,11 +31,6 @@
                          <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" LocalizedTag="SENTITEMS" />
                      </a>
                  </li>
-                 <li class="nav-item">
-                     <a href="#View2" class="nav-link" data-bs-toggle="tab" role="tab">
-                         <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="ARCHIVE" />
-                     </a>
-                 </li>
             </ul>
             <div class="tab-content">
                 <div id="View0" class="tab-pane" role="tabpanel">
@@ -60,17 +55,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="View2" class="tab-pane" role="tabpanel">
-                    <div class="card mb-3">
-                        <YAF:PMList runat="server" ID="ArchivePMList"
-                                    View="Archive"  />
-                        <div class="card-footer">
-                            <small class="text-muted">
-                                <asp:Label ID="InfoArchive" runat="server"/>
-                            </small>
-                        </div>
-                    </div>
-                </div>
             </div>
         </asp:Panel>
         <asp:HiddenField runat="server" ID="hidLastTab"
@@ -88,3 +72,4 @@
         </div>
     </div>
 </div>
+

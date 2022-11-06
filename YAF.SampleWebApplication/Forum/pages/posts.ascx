@@ -54,7 +54,7 @@
                                  Type="None"
                                  CssClass="dropdown-item"
                                  OnClick="DeleteTopic_Click"
-                                 ReturnConfirmText='<%# this.GetText("confirm_deletetopic") %>'
+                                 ReturnConfirmTag="confirm_deletetopic"
                                  TextLocalizedTag="BUTTON_DELETETOPIC" TitleLocalizedTag="BUTTON_DELETETOPIC_TT"
                                  Icon="trash" />
             </div>
@@ -195,7 +195,7 @@
                                  Type="None"
                                  CssClass="dropdown-item"
                                  OnClick="DeleteTopic_Click"
-                                 ReturnConfirmText='<%# this.GetText("confirm_deletetopic") %>'
+                                 ReturnConfirmTag="confirm_deletetopic"
                                  TextLocalizedTag="BUTTON_DELETETOPIC" TitleLocalizedTag="BUTTON_DELETETOPIC_TT"
                                  Icon="trash" />
             </div>
@@ -203,7 +203,7 @@
                              Type="Secondary"
                              TextLocalizedTag="BUTTON_NEWTOPIC" TitleLocalizedTag="BUTTON_NEWTOPIC_TT"
                              CssClass="ms-1 mb-1"
-                             Icon="comment" />
+                             Icon="plus" />
             <YAF:ThemeButton ID="PostReplyLink2" runat="server"
                              Type="Primary"
                              CssClass="ms-1 mb-1"

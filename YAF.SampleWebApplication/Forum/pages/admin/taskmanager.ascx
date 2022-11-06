@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.Admin.TaskManager"
     CodeBehind="TaskManager.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
-<%@ Import Namespace="YAF.Core.Extensions" %>
 
 <YAF:PageLinks ID="PageLinks" runat="server" />
 
@@ -16,7 +15,7 @@
                                     Param0="<%# this.Get<ITaskModuleManager>().TaskCount.ToString() %>"></YAF:IconHeader>
                     </div>
                 <div class="card-body">
-        <asp:Repeater ID="taskRepeater" runat="server" OnItemCommand="TaskRepeaterItemCommand">
+        <asp:Repeater ID="taskRepeater" runat="server">
             <HeaderTemplate>
                 <ul class="list-group">
             </HeaderTemplate>
@@ -43,28 +42,6 @@
                         <asp:Label ID="Label2" runat="server" 
                                    CssClass='<%# this.GetItemColor(this.Eval("Value.IsRunning").ToType<bool>()) %>'><%# this.GetItemName(this.Eval("Value.IsRunning").ToType<bool>())%></asp:Label>
                     </p>
-                    <asp:PlaceHolder ID="StopTaskHolder" runat="server" 
-                                     Visible="<%# ((KeyValuePair<string, IBackgroundTask>)Container.DataItem).Value.IsStoppable() %>">
-                        <small>
-                            <YAF:ThemeButton ID="stop" runat="server"
-                                             CommandName="stop" 
-                                             CommandArgument='<%# this.Eval("Key") %>'
-                                             TextLocalizedTag="STOP_TASK" TextLocalizedPage="ADMIN_TASKMANAGER"
-                                             Icon="hand-paper" 
-                                             Type="Danger" 
-                                             Size="Small">
-                            </YAF:ThemeButton>
-                            <div class="dropdown-menu context-menu" aria-labelledby="context menu">
-                                <YAF:ThemeButton ID="ThemeButton1" runat="server"
-                                                 CommandName="stop" 
-                                                 CommandArgument='<%# this.Eval("Key") %>'
-                                                 TextLocalizedTag="STOP_TASK" TextLocalizedPage="ADMIN_TASKMANAGER"
-                                                 Icon="hand-paper" 
-                                                 Type="None"
-                                                 CssClass="dropdown-item" />
-                            </div>
-                        </small>
-                    </asp:PlaceHolder>
                 </li>
             </ItemTemplate>
         </asp:Repeater>

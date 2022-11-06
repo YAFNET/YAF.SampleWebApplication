@@ -149,12 +149,12 @@
                         <YAF:ThemeButton ID="ThemeButtonDelete" runat="server"
                                          Type="Danger"
                                          Size="Small"
-                                         CommandName="delete"
+                                         CommandName="remove"
                                          CommandArgument='<%# this.Eval( "Item2.GroupID") %>'
                                          TitleLocalizedTag="REMOVE"
                                          Icon="trash"
                                          TextLocalizedTag="REMOVE"
-                                         ReturnConfirmText='<%# this.GetText("ADMIN_EDITMEDAL", "CONFIRM_REMOVE_USER") %>'>
+                                         ReturnConfirmTag="CONFIRM_REMOVE_USER">
                         </YAF:ThemeButton>
                     </div>
                 </small>
@@ -171,12 +171,12 @@
                         <YAF:ThemeButton ID="ThemeButton2" runat="server"
                                          Type="None"
                                          CssClass="dropdown-item"
-                                         CommandName="delete"
+                                         CommandName="remove"
                                          CommandArgument='<%# this.Eval( "Item2.GroupID") %>'
                                          TitleLocalizedTag="REMOVE"
                                          Icon="trash"
                                          TextLocalizedTag="REMOVE"
-                                         ReturnConfirmText='<%# this.GetText("ADMIN_EDITMEDAL", "CONFIRM_REMOVE_USER") %>'>
+                                         ReturnConfirmTag="CONFIRM_REMOVE_USER">
                         </YAF:ThemeButton>
                         <div class="dropdown-divider"></div>
                         <YAF:ThemeButton runat="server"
@@ -312,6 +312,6 @@
     </div>
 
 
-<modal:GroupEdit ID="GroupEditDialog" runat="server" />
-<modal:UserEdit ID="UserEditDialog" runat="server" />
+<modal:GroupEdit ID="GroupEditDialog" runat="server" Visible="False" />
+<modal:UserEdit ID="UserEditDialog" runat="server" Visible="False"  />
 </asp:PlaceHolder>

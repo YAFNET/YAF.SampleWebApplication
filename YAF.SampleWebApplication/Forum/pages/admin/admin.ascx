@@ -262,12 +262,6 @@
              </div>
     </div>
 
-<p id="UpgradeNotice" runat="server" visible="false">
-    <YAF:LocalizedLabel ID="LocalizedLabel9" runat="server"
-                        LocalizedTag="ADMIN_UPGRADE"
-                        LocalizedPage="ADMIN_ADMIN" />
-</p>
-
 <div class="row">
     <div class="col">
                     <div class="card mb-3">
@@ -426,7 +420,6 @@
                                          CommandArgument='<%# this.Eval("ID") %>'
                                          Type="None"
                                          CssClass="dropdown-item"
-                                         ReturnConfirmText='<%# this.GetText("ADMIN_ADMIN", "CONFIRM_APPROVE") %>'
                                          Icon="check"
                                          TextLocalizedTag="ADMIN_APPROVE">
                         </YAF:ThemeButton>
@@ -435,7 +428,7 @@
                                          CommandArgument='<%# this.Eval("ID") %>'
                                          Type="None"
                                          CssClass="dropdown-item"
-                                         ReturnConfirmText='<%# this.GetText("ADMIN_ADMIN", "CONFIRM_DELETE") %>'
+                                         ReturnConfirmTag="CONFIRM_DELETE"
                                          Icon="trash"
                                          TextLocalizedTag="ADMIN_DELETE">
                         </YAF:ThemeButton>
@@ -463,13 +456,13 @@
                                                              Icon="check"
                                                              TextLocalizedTag="APROVE_ALL"
                                                              CssClass="mb-1"
-                                                             ReturnConfirmText='<%# this.GetText("ADMIN_ADMIN", "CONFIRM_APROVE_ALL") %>'/>
+                                                             ReturnConfirmTag="CONFIRM_APROVE_ALL"/>
                                             <YAF:ThemeButton runat="server"
                                                              CommandName="deleteall"
                                                              Type="Danger"
                                                              Icon="trash"
                                                              TextLocalizedTag="DELETE_ALL"
-                                                             ReturnConfirmText='<%# this.GetText("ADMIN_ADMIN", "CONFIRM_DELETE_ALL") %>'
+                                                             ReturnConfirmTag="CONFIRM_DELETE_ALL"
                                                              CssClass="me-1 mb-1"/>
                                         </div>
                                         <div>

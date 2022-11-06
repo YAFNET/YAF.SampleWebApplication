@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.AccessMasks" Codebehind="AccessMasks.ascx.cs" %>
 
-<%@ Import Namespace="YAF.Types.Flags" %>
 <%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="YAF.Types.Models" %>
 
@@ -131,7 +130,7 @@
                                              TitleLocalizedTag="DELETE"
                                              Icon="trash"
                                              TextLocalizedTag="DELETE"
-                                             ReturnConfirmText='<%# this.GetText("ADMIN_ACCESSMASKS", "CONFIRM_DELETE") %>'>
+                                             ReturnConfirmTag="CONFIRM_DELETE">
                             </YAF:ThemeButton>
                         </div>
 
@@ -153,7 +152,7 @@
                                              TitleLocalizedTag="DELETE"
                                              Icon="trash"
                                              TextLocalizedTag="DELETE"
-                                             ReturnConfirmText='<%# this.GetText("ADMIN_ACCESSMASKS", "CONFIRM_DELETE") %>'>
+                                             ReturnConfirmTag="CONFIRM_DELETE">
                             </YAF:ThemeButton>
                             <div class="dropdown-divider"></div>
                             <YAF:ThemeButton ID="New" runat="server"

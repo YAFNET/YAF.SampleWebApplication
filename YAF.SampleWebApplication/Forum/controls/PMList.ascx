@@ -116,8 +116,7 @@
     </ItemTemplate>
 </asp:Repeater>
 
-<asp:UpdatePanel ID="upPanExport" runat="server">
-    <ContentTemplate>
+    <asp:PlaceHolder runat="server" ID="Tools">
         <div class="btn-toolbar mt-3" role="toolbar">
             <div class="btn-group me-2 mb-1" role="group">
                 <YAF:ThemeButton runat="server" ID="MarkAsRead" 
@@ -128,24 +127,6 @@
                                  OnClick="MarkAsRead_Click"
                                  Type="Secondary" 
                                  Icon="eye"/>
-            </div>
-            <div class="btn-group me-2 mb-1" role="group">
-                <YAF:ThemeButton runat="server" ID="ArchiveSelected" 
-                                 Size="Small"
-                                 TextLocalizedTag="ARCHIVESELECTED" 
-                                 TitleLocalizedTag="ARCHIVESELECTED" 
-                                 DataToggle="tooltip"
-                                 OnClick="ArchiveSelected_Click"
-                                 Type="Secondary"
-                                 Icon="archive" />
-                <YAF:ThemeButton runat="server" ID="ArchiveAll" 
-                                 Size="Small"
-                                 TextLocalizedTag="ARCHIVEALL" 
-                                 TitleLocalizedTag="ARCHIVEALL" 
-                                 DataToggle="tooltip"
-                                 ReturnConfirmText='<%#this.GetText("CONFIRM_ARCHIVEALL") %>'
-                                 OnClick="ArchiveAll_Click"
-                                 Type="Secondary" Icon="archive" />
             </div>
             <div class="btn-group me-2 mb-1" role="group">
                 <YAF:ThemeButton runat="server" ID="ExportSelected" 
@@ -169,9 +150,8 @@
                 <YAF:ThemeButton runat="server" ID="DeleteSelected" 
                                  Size="Small"
                                  TextLocalizedTag="DELETESELECTED" 
-                                 TitleLocalizedTag="DELETESELECTED" 
-                                 DataToggle="tooltip"
-                                 ReturnConfirmText='<%#this.GetText("CONFIRM_DELETE") %>'
+                                 TitleLocalizedTag="DELETESELECTED"
+                                 ReturnConfirmTag="CONFIRM_DELETE"
                                  OnClick="DeleteSelected_Click"
                                  Type="Secondary" 
                                  Icon="trash" />
@@ -179,22 +159,16 @@
                                  Size="Small"
                                  TextLocalizedTag="DELETEALL" 
                                  TitleLocalizedTag="DELETEALL" 
-                                 DataToggle="tooltip"
-                                 ReturnConfirmText='<%#this.GetText("CONFIRM_DELETEALL") %>'
+                                 ReturnConfirmTag="CONFIRM_DELETEALL"
                                  OnClick="DeleteAll_Click"
                                  Type="Secondary" 
                                  Icon="trash" />
             </div>
         </div>
         <hr />
-    </ContentTemplate> 
-    <Triggers>
-        <asp:PostBackTrigger ControlID="ExportSelected" />
-        <asp:PostBackTrigger ControlID="ExportAll" />
-    </Triggers>
-</asp:UpdatePanel>
-    
-<div class="row justify-content-end">
+    </asp:PlaceHolder>
+
+    <div class="row justify-content-end">
     <div class="col-auto">
         <YAF:Pager ID="PagerTop" runat="server" 
                    OnPageChange="PagerTop_PageChange" />
