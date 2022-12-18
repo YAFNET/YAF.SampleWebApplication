@@ -31,6 +31,7 @@ namespace YAF.SampleWebApplication
     using System.Threading.Tasks;
 
     using Microsoft.AspNet.SignalR;
+
     using YAF.Core.Context;
     using YAF.Core.Extensions;
     using YAF.SampleWebApplication.Models;

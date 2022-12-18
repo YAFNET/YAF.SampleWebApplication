@@ -31,6 +31,7 @@ namespace YAF.SampleWebApplication
     using System.Web.UI.HtmlControls;
 
     using Microsoft.AspNet.Web.Optimization.WebForms;
+
     using YAF.Configuration;
     using YAF.Core.Context;
     using YAF.Core.Extensions;

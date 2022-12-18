@@ -4,13 +4,8 @@
 <html lang="en">
 <head runat="server" id="YafHead">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta id="YafMetaScriptingLanguage" http-equiv="Content-Script-Type" runat="server"
-        name="scriptlanguage" content="text/javascript" />
-    <meta id="YafMetaStyles" http-equiv="Content-Style-Type" runat="server" name="styles"
-        content="text/css" />
-   <title>YAF.NET <%# Localization.GetText("Installation") %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YAF.NET <%# Localization.GetText("Installation") %></title>
    <link href="../Content/InstallWizard.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -386,6 +381,6 @@
             </StepNavigationTemplate>
         </asp:Wizard>
     </form>
-    <script src="../Scripts/InstallWizard.comb.min.js" type="text/javascript" async></script>
+    <script src="../Scripts/InstallWizard.comb.min.js" async></script>
 </body>
 </html>
