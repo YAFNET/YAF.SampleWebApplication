@@ -1,7 +1,7 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2022 Ingo Herbote
+ * Copyright (C) 2014-2023 Ingo Herbote
  * https://www.yetanotherforum.net/
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -92,7 +92,7 @@ namespace YAF.SampleWebApplication
             {
                 scriptManager.Scripts.Insert(
                     0,
-                    new ScriptReference(BoardInfo.GetURLToScripts($"jquery-{Config.JQueryVersion}.min.js")));
+                    new ScriptReference(BoardInfo.GetURLToScripts("jquery.min.js")));
 
                 scriptManager.Scripts.Add(
                     new ScriptReference(BoardInfo.GetURLToScripts("jquery.ForumExtensions.min.js")));
