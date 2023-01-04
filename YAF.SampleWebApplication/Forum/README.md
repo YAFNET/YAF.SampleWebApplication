@@ -1,4 +1,4 @@
-[![YAF logo](https://yetanotherforum.net/forum/Images/Logos/YAFLogo.svg)](http://www.yetanotherforum.net)
+[![YAF logo](https://yetanotherforum.net/forum/Images/Logos/YAFLogo.svg)](httpa://www.yetanotherforum.net)
 
 **YetAnotherForum.NET** (YAF.NET) ASP.NET Open Source Forum solution! The **YAF.NET** project is an international collaboration of like-minded, skilled, and creative individuals who are striving to make **YAF.NET** the most robust and malleable forum solutions available.
 
@@ -7,6 +7,10 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/9905j18xqb16gdy7?svg=true)](https://ci.appveyor.com/project/YAFNET/yafnet)
 
 If you have any questions or would like to get in touch with the project, please see the contact information at the bottom of this document.
+
+## Prerequisites:
+* ASP.NET .NET Framework 4.8 (YAF v3.x)
+* BuildPackages requires .NET v7
 
 ### Installation & Upgrade
 
