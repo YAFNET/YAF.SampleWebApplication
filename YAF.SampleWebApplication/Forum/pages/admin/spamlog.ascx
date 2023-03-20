@@ -127,7 +127,7 @@
                         <YAF:ThemeButton runat="server"
                                          Type="None"
                                          CssClass="dropdown-item"
-                                         CommandName="delete" CommandArgument='<%# ((PagedEventLog)Container.DataItem).ID %>'
+                                         CommandName="delete" CommandArgument="<%# ((PagedEventLog)Container.DataItem).ID %>"
                                          ReturnConfirmTag="CONFIRM_DELETE"
                                          Icon="trash"
                                          TextLocalizedTag="DELETE">
@@ -143,11 +143,9 @@
                         </YAF:ThemeButton>
                     </div>
                     <div class="collapse mt-3" id="eventDetails<%# ((PagedEventLog)Container.DataItem).ID %>">
-                        <div class="card card-body py-0">
-                            <pre class="pre-scrollable">
-                                <code>
-                                    <%# this.HtmlEncode(((PagedEventLog)Container.DataItem).Description) %>
-                                </code>
+                        <div class="card card-body">
+                            <pre class="pre-scrollable stacktrace">
+                                <code><%# this.FormatStackTrace(((PagedEventLog)Container.DataItem).Description) %></code>
                                </pre>
                         </div>
                     </div>
