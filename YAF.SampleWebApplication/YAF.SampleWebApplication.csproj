@@ -81,7 +81,7 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -195,7 +195,6 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="error.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Forum\Content\favicons\android-chrome-144x144.png" />
     <Content Include="Forum\Content\favicons\apple-touch-icon.png" />
@@ -1538,7 +1537,6 @@
     <Content Include="Forum\Scripts\ckeditor\styles.js" />
     <Content Include="Forum\Scripts\ckeditor\vendor\promise.js" />
     <Content Include="Forum\Scripts\InstallWizard.comb.min.js" />
-    <Content Include="Forum\Scripts\jquery-3.6.0.min.js" />
     <Content Include="Forum\Scripts\jquery.fileupload.comb.min.js" />
     <Content Include="Forum\Scripts\jquery.ForumAdminExtensions.js" />
     <Content Include="Forum\Scripts\jquery.ForumAdminExtensions.min.js" />
@@ -1550,11 +1548,6 @@
     <Content Include="mail.config" />
     <Content Include="Scripts\date.format.js" />
     <Content Include="Scripts\emojionearea.js" />
-    <None Include="Scripts\jquery-3.6.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.6.1.js" />
-    <Content Include="Scripts\jquery-3.6.1.min.js" />
-    <Content Include="Scripts\jquery-3.6.1.slim.js" />
-    <Content Include="Scripts\jquery-3.6.1.slim.min.js" />
     <Content Include="Scripts\jquery.signalR-2.4.3.js" />
     <Content Include="Scripts\jquery.signalR-2.4.3.min.js" />
     <Content Include="Scripts\jquery.slimscroll.js" />
@@ -1673,8 +1666,6 @@
     <Content Include="Views\RazorDemo\Hello.cshtml" />
     <Content Include="Views\RazorDemo\Index.cshtml" />
     <Content Include="Views\web.config" />
-    <Content Include="Scripts\jquery-3.6.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.6.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

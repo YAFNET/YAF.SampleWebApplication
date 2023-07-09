@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.EditMessage" CodeBehind="EditMessage.ascx.cs" %>
 <%@ Import Namespace="YAF.Configuration" %>
 
-<%@ Register TagPrefix="YAF" TagName="LastPosts" Src="../controls/LastPosts.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="PostOptions" Src="../controls/PostOptions.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="PollList" Src="../controls/PollList.ascx" %>
 <%@ Register TagPrefix="YAF" TagName="AttachmentsUploadDialog" Src="../Dialogs/AttachmentsUpload.ascx" %>
@@ -77,13 +76,15 @@
                         <asp:TextBox ID="TopicStylesTextBox" runat="server" CssClass="form-control" />
                     </div>
                 </asp:PlaceHolder>
-                <div class="mb-3">
-                    <asp:Label runat="server" AssociatedControlID="TagsValue">
-                        <YAF:LocalizedLabel runat="server" LocalizedTag="TAGS" />
-                    </asp:Label>
-                    <select id="Tags" multiple="multiple" class="form-control"></select>
-                    <asp:HiddenField runat="server" ID="TagsValue"/>
-                </div>
+                <asp:PlaceHolder runat="server" ID="TagsRow">
+                    <div class="mb-3">
+                        <asp:Label runat="server" AssociatedControlID="TagsValue">
+                            <YAF:LocalizedLabel runat="server" LocalizedTag="TAGS" />
+                        </asp:Label>
+                        <select id="Tags" multiple="multiple" class="form-control"></select>
+                        <asp:HiddenField runat="server" ID="TagsValue"/>
+                    </div>
+                </asp:PlaceHolder>
                 <div class="mb-3">
                     <asp:Label runat="server">
                         <YAF:LocalizedLabel runat="server" LocalizedTag="message" />
@@ -94,21 +95,6 @@
                 </div>
                 <YAF:PostOptions ID="PostOptions1" runat="server"></YAF:PostOptions>
 
-                <asp:PlaceHolder ID="tr_captcha1" runat="server" Visible="false">
-                    <div class="mb-3">
-                        <asp:Label runat="server">
-                <YAF:LocalizedLabel runat="server" LocalizedTag="Captcha_Image" />
-                        </asp:Label>
-                        <asp:Image ID="imgCaptcha" runat="server" />
-                    </div>
-                    <div class="mb-3">
-                        <asp:Label runat="server" AssociatedControlID="tbCaptcha">
-                            <YAF:LocalizedLabel runat="server"
-                                                LocalizedTag="Captcha_Enter" />
-                        </asp:Label>
-                        <asp:TextBox ID="tbCaptcha" runat="server" CssClass="form-control" />
-                    </div>
-                </asp:PlaceHolder>
                 <div class="mb-3">
                     <asp:Label runat="server" AssociatedControlID="ReasonEditor">
                         <YAF:LocalizedLabel runat="server"

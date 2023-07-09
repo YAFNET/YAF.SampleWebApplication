@@ -119,5 +119,27 @@ namespace YAF.SampleWebApplication
                 this.Page.Header.Controls.Add(bundleReference);
             }
         }
+
+        /// <summary>
+        /// Gets the language tag and direction tag for the root html Tag
+        /// </summary>
+        /// <returns>System.String.</returns>
+        protected string GetLanguageTags()
+        {
+            return BoardContext.Current.Get<ILocalization>().Culture.TextInfo.IsRightToLeft
+                       ? $@"lang=""{BoardContext.Current.Get<ILocalization>().Culture.TwoLetterISOLanguageName}"" dir=""rtl"""
+                       : $@"lang=""{BoardContext.Current.Get<ILocalization>().Culture.TwoLetterISOLanguageName}""";
+        }
+
+        /// <summary>
+        /// Gets the Theme Mode (dark or light) for the root html Tag
+        /// </summary>
+        /// <returns>System.String.</returns>
+        protected string GetThemeMode()
+        {
+            return BoardContext.Current.PageUser.DarkMode
+                       ? @" data-bs-theme=""dark"""
+                       : string.Empty;
+        }
     }
 }

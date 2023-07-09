@@ -268,16 +268,16 @@
                 </div>
             </div>
         </asp:PlaceHolder>
-        <div class="card mb-3">
-            <div class="card-header">
-                <YAF:LocalizedLabel ID="LocalizedLabel43" runat="server" LocalizedTag="LAST10" />
-            </div>
-            <div class="card-body">
-                <YAF:ThemeButton ID="SearchUser" runat="server"
-                    TextLocalizedPage="POSTS" TextLocalizedTag="SEARCHUSER"
-                    Icon="search" Type="Secondary" CssClass="mb-3" />
-
-                <asp:Repeater ID="LastPosts" runat="server">
+        <asp:PlaceHolder runat="server" id="LastPostsHolder">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <YAF:LocalizedLabel ID="LocalizedLabel43" runat="server" LocalizedTag="LAST10" />
+                </div>
+                <div class="card-body">
+                    <YAF:ThemeButton ID="SearchUser" runat="server"
+                                     TextLocalizedPage="POSTS" TextLocalizedTag="SEARCHUSER"
+                                     Icon="search" Type="Secondary" CssClass="mb-3" />
+                    <asp:Repeater ID="LastPosts" runat="server">
                     <ItemTemplate>
                         <div class="card mb-3">
                             <div class="card-header">
@@ -297,7 +297,7 @@
                                                      CurrentMessage='<%# this.Eval("Item1") %>' />
                             </div>
                             <div class="card-footer">
-                                <small class="text-muted">
+                                <small class="text-body-secondary">
                                     <YAF:LocalizedLabel ID="LocalizedLabel17" runat="server"
                                                         LocalizedTag="posted" />
                                     &nbsp;
@@ -307,8 +307,9 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
+                </div>
             </div>
-        </div>
+        </asp:PlaceHolder>
         <div runat="server" id="ModerateTab" class="card mb-3">
             <div class="card-header">
                 <YAF:LocalizedLabel ID="LocalizedLabel46" runat="server" LocalizedTag="MODERATION" />
