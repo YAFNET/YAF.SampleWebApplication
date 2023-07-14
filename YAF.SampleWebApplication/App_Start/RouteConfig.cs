@@ -1,7 +1,7 @@
 /* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2022 Ingo Herbote
+ * Copyright (C) 2014-2023 Ingo Herbote
  * https://www.yetanotherforum.net/
  * 
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -50,10 +50,10 @@ namespace YAF.SampleWebApplication
 
             routes.Ignore("{*legacy}", new { legacy = @".*\.(aspx|ashx|asmx|axd|svc)([/\?].*)?" });
 
-            /*routes.MapRoute(
+           routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { action = "Index", id = UrlParameter.Optional });*/
+                defaults: new { action = "Index", id = UrlParameter.Optional });
         }
     }
 }

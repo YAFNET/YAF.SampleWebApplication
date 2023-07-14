@@ -25,10 +25,12 @@
 namespace YAF.SampleWebApplication
 {
     using System;
+    using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Routing;
 
     using YAF.Core.Context;
+    using YAF.Core.Context.Start;
 
     /// <summary>
     /// The global.
@@ -46,11 +48,12 @@ namespace YAF.SampleWebApplication
         /// </param>
         protected override void Application_Start(object sender, EventArgs e)
         {
+            base.Application_Start(sender, e);
+
             AreaRegistration.RegisterAllAreas();
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles();
-
-            base.Application_Start(sender, e);
         }
     }
 }
