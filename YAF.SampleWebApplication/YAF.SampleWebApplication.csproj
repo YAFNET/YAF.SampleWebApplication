@@ -162,6 +162,7 @@
     </Content>
     <Content Include="Chat.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\emojionearea.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -1668,15 +1669,11 @@
     <Content Include="Global.asax" />
     <Content Include="app.config" />
     <Content Include="db.config" />
+    <Content Include="Gruntfile.js" />
     <Content Include="mail.config" />
-    <Content Include="Scripts\date.format.js" />
-    <Content Include="Scripts\emojionearea.js" />
-    <Content Include="Scripts\jquery.signalR-2.4.3.js" />
-    <Content Include="Scripts\jquery.signalR-2.4.3.min.js" />
-    <Content Include="Scripts\jquery.slimscroll.js" />
-    <Content Include="Scripts\jquery.slimscroll.min.js">
-      <DependentUpon>jquery.slimscroll.js</DependentUpon>
-    </Content>
+    <Content Include="Scripts\emojionearea.min.js" />
+    <Content Include="Scripts\jquery.signalR.min.js" />
+    <Content Include="Scripts\jquery.slimscroll.min.js" />
     <Content Include="Site.Master" />
     <Content Include="Views\Shared\RazorView.aspx" />
     <Content Include="Web.config" />
@@ -1785,6 +1782,7 @@
     <Content Include="Forum\Scripts\ckeditor\README.md" />
     <Content Include="Forum\Scripts\ckeditor\SECURITY.md" />
     <Content Include="Forum\Scripts\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="package.json" />
     <None Include="packages.config" />
     <Content Include="Views\RazorDemo\Hello.cshtml" />
     <Content Include="Views\RazorDemo\Index.cshtml" />

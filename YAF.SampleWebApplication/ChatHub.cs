@@ -32,9 +32,12 @@ namespace YAF.SampleWebApplication
 
     using Microsoft.AspNet.SignalR;
 
+    using YAF.Configuration;
     using YAF.Core.Context;
     using YAF.Core.Extensions;
+    using YAF.Core.Helpers;
     using YAF.SampleWebApplication.Models;
+    using YAF.Types.Constants;
     using YAF.Types.Interfaces;
     using YAF.Types.Interfaces.Services;
     using YAF.Types.Models;
@@ -91,18 +94,17 @@ namespace YAF.SampleWebApplication
         /// <param name="message">
         /// The message.
         /// </param>
-        /// <param name="time">
-        /// The time.
-        /// </param>
-        public void SendMessageToAll(string userName, int userId, string message, string time)
+        public void SendMessageToAll(string userName, int userId, string message)
         {
+            var currentDateTime = DateTime.UtcNow.ToLongTimeString();
+
             var userImg = this.GetUserImage(userId);
 
             // store last 100 messages in cache
-            AddMessageInCache(userName, userId, message, time, userImg);
+            AddMessageInCache(userName, userId, message, currentDateTime, userImg);
 
             // Broad cast message
-            this.Clients.All.messageReceived(userName, message, time, userImg);
+            this.Clients.All.messageReceived(userName, message, currentDateTime, userImg);
         }
 
         /// <summary>
@@ -175,7 +177,7 @@ namespace YAF.SampleWebApplication
                 return;
             }
 
-            var currentDateTime = DateTime.Now.ToString(CultureInfo.InvariantCulture);
+            var currentDateTime = DateTime.UtcNow.ToLongTimeString();
             var userImg = this.GetUserImage(fromUser.UserId);
 
             // send to

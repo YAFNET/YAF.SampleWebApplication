@@ -81,9 +81,7 @@
                     var userName = $('#hdUserName').val();
                     var userId = $('#hdUserId').val();
 
-                    var date = GetCurrentDateTime(new Date());
-
-                    chatHub.server.sendMessageToAll(userName, userId, msg, date);
+                    chatHub.server.sendMessageToAll(userName, userId, msg);
                     $("#txtMessage").val('');
                 }
             });
@@ -167,7 +165,7 @@
                 var ctrId = 'private_' + windowId;
                 if ($('#' + ctrId).length == 0) {
 
-                    OpenPrivateChatcard(chatHub, windowId, ctrId, fromUserName, userimg);
+                    OpenPrivateChatCard(chatHub, windowId, ctrId, fromUserName, userimg);
 
                 }
 
@@ -210,30 +208,23 @@
 
         }
 
-        function GetCurrentDateTime(now) {
-
-            var localdate = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
-
-            return localdate;
-        }
-
-        function AddUser(chatHub, id, name, UserImage, date) {
+        function AddUser(chatHub, id, name, userImage, date) {
 
             var userId = $('#hdId').val();
 
-            var code, Clist;
+            var code, clist;
             if (userId == id) {
 
                 code = $('<div class="card-comment">' +
-                    '<img class="img-sm" src="' + UserImage + '" alt="User Image" />' +
+                    '<img class="img-sm" src="' + userImage + '" alt="User Image" />' +
                     ' <div class="comment-text">' +
                     '<span class="username">' + name + '<span class="text-muted float-end">' + date + '</span>  </span></div></div>');
 
 
-                Clist = $(
+                clist = $(
                     '<li style="background:#494949;">' +
                     '<a href="#">' +
-                    '<img class="contacts-list-img" src="' + UserImage + '" alt="User Image" />' +
+                    '<img class="contacts-list-img" src="' + userImage + '" alt="User Image" />' +
 
                     ' <div class="contacts-list-info">' +
                     ' <span class="contacts-list-name" id="' + id + '">' + name + ' <small class="contacts-list-date float-end">' + date + '</small> </span>' +
@@ -243,42 +234,42 @@
             else {
 
                 code = $('<div class="card-comment" id="Div' + id + '">' +
-                    '<img class="img-sm" src="' + UserImage + '" alt="User Image" />' +
+                    '<img class="img-sm" src="' + userImage + '" alt="User Image" />' +
                     ' <div class="comment-text">' +
                     '<span class="username">' + '<a id="' + id + '" class="user" >' + name + '<a>' + '<span class="text-muted float-end">' + date + '</span>  </span></div></div>');
 
 
-                Clist = $(
+                clist = $(
                     '<li>' +
                     '<a href="#">' +
-                    '<img class="contacts-list-img" src="' + UserImage + '" alt="User Image" />' +
+                    '<img class="contacts-list-img" src="' + userImage + '" alt="User Image" />' +
 
                     ' <div class="contacts-list-info">' +
                     '<span class="contacts-list-name" id="' + id + '">' + name + ' <small class="contacts-list-date float-end">' + date + '</small> </span>' +
                     ' <span class="contacts-list-msg">How have you been? I was...</span></div></a > </li >');
 
 
-                var UserLink = $('<a id="' + id + '" class="user" >' + name + '<a>');
+                var userLink = $('<a id="' + id + '" class="user" >' + name + '<a>');
                 $(code).click(function () {
 
-                    var id = $(UserLink).attr('id');
+                    var id = $(userLink).attr('id');
 
                     if (userId != id) {
                         var ctrId = 'private_' + id;
-                        OpenPrivateChatcard(chatHub, id, ctrId, name);
+                        OpenPrivateChatCard(chatHub, id, ctrId, name);
 
                     }
 
                 });
 
                 var link = $('<span class="contacts-list-name" id="' + id + '">');
-                $(Clist).click(function () {
+                $(clist).click(function () {
 
                     var id = $(link).attr('id');
 
                     if (userId != id) {
                         var ctrId = 'private_' + id;
-                        OpenPrivateChatcard(chatHub, id, ctrId, name);
+                        OpenPrivateChatCard(chatHub, id, ctrId, name);
 
                     }
 
@@ -288,7 +279,7 @@
 
             $("#divusers").append(code);
 
-            $("#ContactList").append(Clist);
+            $("#ContactList").append(clist);
 
         }
 
@@ -326,7 +317,7 @@
 
         }
 
-        function OpenPrivateChatcard(chatHub, userId, ctrId, userName) {
+        function OpenPrivateChatCard(chatHub, userId, ctrId, userName) {
 
             var PWClass = $('#PWCount').val();
 
@@ -504,7 +495,7 @@
 
                             <!-- End Contact Item -->
                         </ul>
-                        <!-- /.contatcts-list -->
+                        <!-- /.contacts-list -->
                     </div>
                     <!-- /.direct-chat-pane -->
                 </div>
@@ -540,20 +531,7 @@
         <input id="hdUserName" type="hidden" />
         <input id="hdUserId" type="hidden" />
 
-
-        
-
-        <style>
-            
-            .img-sm {
-                width: 200px;
-            }
-            .direct-chat-text img {
-                width: 20px;
-            }
-        </style>
-
-        <script>
+    <script>
             $(function () {
                 $("#txtMessage").emojioneArea();
 

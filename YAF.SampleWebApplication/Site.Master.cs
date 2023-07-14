@@ -68,7 +68,7 @@ namespace YAF.SampleWebApplication
             // Check if forum is installed
             try
             {
-                BoardContext.Current.GetRepository<Board>().GetAll().Any();
+                var _ = BoardContext.Current.GetRepository<Board>().GetAll().Any();
             }
             catch
             {
@@ -123,7 +123,7 @@ namespace YAF.SampleWebApplication
         /// <summary>
         /// Gets the language tag and direction tag for the root html Tag
         /// </summary>
-        /// <returns>System.String.</returns>
+        /// <returns>Returns language tag</returns>
         protected string GetLanguageTags()
         {
             return BoardContext.Current.Get<ILocalization>().Culture.TextInfo.IsRightToLeft
@@ -134,7 +134,7 @@ namespace YAF.SampleWebApplication
         /// <summary>
         /// Gets the Theme Mode (dark or light) for the root html Tag
         /// </summary>
-        /// <returns>System.String.</returns>
+        /// <returns>Returns data attribute for the bootstrap theme</returns>
         protected string GetThemeMode()
         {
             return BoardContext.Current.PageUser.DarkMode
