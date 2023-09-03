@@ -8,6 +8,7 @@
         <div class="row justify-content-between align-items-center">
             <div class="col-auto">
                 <YAF:IconHeader runat="server"
+                                IconType="text-secondary"
                                 Text="<%# this.GetHeaderText() %>"
                                 IconName="user-friends"/>
             </div>
@@ -76,14 +77,8 @@
                                 <asp:PlaceHolder ID="pnlPending" runat="server" Visible="false">
                                     <YAF:ThemeButton runat="server"
                                                      Size="Small"
-                                                     CommandName="approve" CommandArgument="<%# (Container.DataItem as BuddyUser).FromUserID %>"
-                                                     TextLocalizedTag="APPROVE"
-                                                     Type="Success"
-                                                     Icon="check"/>
-                                    <YAF:ThemeButton runat="server"
-                                                     Size="Small"
                                                      CommandName="approveadd" CommandArgument="<%# (Container.DataItem as BuddyUser).FromUserID %>"
-                                                     TextLocalizedTag="APPROVE_ADD"
+                                                     TextLocalizedTag="APPROVE"
                                                      Type="Success"
                                                      Icon="check"/>
                                     <YAF:ThemeButton runat="server"
@@ -106,16 +101,10 @@
     </div>
     <asp:PlaceHolder runat="server" ID="Footer" Visible="False">
         <div class="btn-group btn-group-sm" role="group" aria-label="Buddy tools">
-            <YAF:ThemeButton ID="Button1" runat="server"
-                             ReturnConfirmTag="NOTIFICATION_APPROVEALL"
-                             CommandName="approveall"
-                             TextLocalizedTag="APPROVE_ALL"
-                             Type="OutlineSecondary"
-                             Icon="check-double"/>
             <YAF:ThemeButton ID="Button3" runat="server"
                              ReturnConfirmTag="NOTIFICATION_APPROVEALLADD"
                              CommandName="approveaddall"
-                             TextLocalizedTag="APPROVE_ADD_ALL"
+                             TextLocalizedTag="APPROVE_ALL"
                              Type="OutlineSecondary"
                              Icon="check-double"/>
             <YAF:ThemeButton ID="Button2" runat="server"

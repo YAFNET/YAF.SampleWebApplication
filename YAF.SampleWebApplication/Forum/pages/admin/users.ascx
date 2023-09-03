@@ -18,6 +18,7 @@
                 <div class="row justify-content-between align-items-center">
                     <div class="col-auto">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="users"
                                         LocalizedPage="ADMIN_USERS"></YAF:IconHeader>
                     </div>
@@ -195,7 +196,7 @@
                                                                 LocalizedTag="TITLE_SUSPENDED"
                                                                 LocalizedPage="INFO" />&nbsp;:&nbsp;
                                         </span>
-                                        <asp:Label runat="server" ID="Suspended" CssClass='<%# ((PagedUser)Container.DataItem).Suspended.HasValue ? "badge bg-danger" : "badge bg-success"  %>'><%# this.GetSuspendedString(((PagedUser)Container.DataItem).Suspended.ToString())%></asp:Label>
+                                        <asp:Label runat="server" ID="Suspended" CssClass='<%# ((PagedUser)Container.DataItem).Suspended.HasValue ? "badge text-bg-danger" : "badge text-bg-success"  %>'><%# this.GetSuspendedString(((PagedUser)Container.DataItem).Suspended.ToString())%></asp:Label>
                                     </small>
                                 </div>
                                 <p class="mb-1">

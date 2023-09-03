@@ -22,6 +22,7 @@
         <div class="card mb-3">
             <div class="card-header">
                 <YAF:IconHeader runat="server"
+                                IconType="text-secondary"
                                 IconName="history"/>
             </div>
             <div class="card-body">
@@ -70,7 +71,7 @@
                                     </asp:PlaceHolder>
                                     <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" 
                                                         LocalizedPage="POSTMESSAGE"
-                                                        LocalizedTag="EDITEDBY_MOD" />: <span class="badge bg-secondary"><%# (Container.DataItem as MessageHistoryTopic).IsModeratorChanged.Value ?  this.GetText("YES") : this.GetText("NO") %></span>
+                                                        LocalizedTag="EDITEDBY_MOD" />: <span class="badge text-bg-secondary"><%# (Container.DataItem as MessageHistoryTopic).IsModeratorChanged.Value ?  this.GetText("YES") : this.GetText("NO") %></span>
                                 </p>
                             <small>
                                 <YAF:ThemeButton ID="ThemeButtonEdit" runat="server"

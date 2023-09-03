@@ -10,6 +10,7 @@
         <div class="card mb-3">
             <div class="card-header">
                 <YAF:IconHeader runat="server"
+                                IconType="text-secondary"
                                 IconName="id-card"
                                 LocalizedPage="ADMIN_PROFILEDEFINITIONS"></YAF:IconHeader>
             </div>
@@ -33,7 +34,7 @@
                                 <YAF:LocalizedLabel runat="server"
                                                     LocalizedTag="REQUIRED"></YAF:LocalizedLabel>
                             </span>
-                            <span class='badge bg-<%# this.Eval("Required").ToType<bool>() ? "danger" : "secondary" %>'>
+                            <span class='badge text-bg-<%# this.Eval("Required").ToType<bool>() ? "danger" : "secondary" %>'>
                                 <%# this.GetText(this.Eval("Required").ToType<bool>() ? "YES" : "NO") %>
                             </span>
                         </small>

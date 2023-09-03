@@ -9,6 +9,7 @@
         <div class="card mx-auto" style="max-width:450px">
             <div class="card-header">
                 <YAF:IconHeader runat="server"
+                                IconType="text-secondary"
                                 LocalizedPage="LOGIN"
                                 LocalizedTag="TITLE"
                                 IconName="sign-in-alt"></YAF:IconHeader>
@@ -59,6 +60,7 @@
                                           IconType="text-secondary"/>
                             </span>
                             <asp:TextBox runat="server" ID="Password"
+                                         autocomplete="current-password"
                                          CssClass="form-control"
                                          TextMode="Password"
                                          required="required"/>
@@ -66,7 +68,7 @@
                                 <YAF:LocalizedLabel runat="server"
                                                     LocalizedTag="NEED_PASSWORD" />
                             </div>
-                            <span class="input-group-text" id="PasswordToggle">
+                            <span class="input-group-text link-offset-2 link-underline link-underline-opacity-0" id="PasswordToggle">
                                 <i class="fa fa-eye-slash" aria-hidden="true"></i>
                             </span>
                         </div>
@@ -97,9 +99,11 @@
                                          CssClass="btn-login"
                                          OnClick="SignIn"/>
                     </div>
+                <asp:PlaceHolder runat="server" ID="OpenAuthProvidersHolder" Visible="False">
                     <section>
                         <YAF:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
                     </section>
+                </asp:PlaceHolder>
                 </div>
             <div class="card-footer text-center">
                 <YAF:ThemeButton ID="RegisterLink" runat="server"

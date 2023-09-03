@@ -14,6 +14,7 @@
                 <div class="row justify-content-between align-items-center">
                     <div class="col-auto">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="users" LocalizedTag="TITLE" LocalizedPage="ACTIVEUSERS"></YAF:IconHeader>
                     </div>
                     <div class="col-auto">
@@ -52,7 +53,7 @@
                                     <asp:PlaceHolder runat="server" ID="IPContent" Visible="<%# this.PageBoardContext.IsAdmin %>">
                                         <small class="d-none d-md-block">
                                             <YAF:LocalizedLabel ID="LocalizedLabel3" runat="server" LocalizedTag="IP" />:
-                                            <span class="badge bg-secondary">
+                                            <span class="badge text-bg-secondary">
                                                 <a id="Iplink1" href="<%# string.Format(this.PageBoardContext.BoardSettings.IPInfoPageURL,IPHelper.GetIpAddressAsString((Container.DataItem as ActiveUser).IP)) %>"
                                                    title='<%# this.GetText("COMMON","TT_IPDETAILS") %>' target="_blank" runat="server"
                                                    class="link-light">

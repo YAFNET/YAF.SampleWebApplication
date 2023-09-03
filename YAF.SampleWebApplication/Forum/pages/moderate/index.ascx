@@ -16,6 +16,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="folder"
                                         Text='<%# this.Eval( "Name") %>'
                                         LocalizedPage="ADMIN_BOARDS"></YAF:IconHeader>
@@ -37,7 +38,7 @@
                                                          Size="Small">
                                             <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
                                                                 LocalizedTag="UNAPPROVED" />
-                                            <span class="badge bg-light text-dark"><%# ((ModerateForum)Container.DataItem).MessageCount %></span>
+                                            <span class="badge text-bg-light"><%# ((ModerateForum)Container.DataItem).MessageCount %></span>
                                         </YAF:ThemeButton>
                                         <YAF:ThemeButton ID="NoUnapprovedInfo" runat="server"
                                                          TextLocalizedTag="NO_POSTS" TextLocalizedPage="MODERATE" 
@@ -54,7 +55,7 @@
                                                          Size="Small">
                                             <YAF:LocalizedLabel ID="ReportedCountLabel" runat="server" 
                                                                 LocalizedTag="REPORTED" /> 
-                                            <span class="badge bg-light text-dark"><%# ((ModerateForum)Container.DataItem).ReportedCount %></span>
+                                            <span class="badge text-bg-light"><%# ((ModerateForum)Container.DataItem).ReportedCount %></span>
                                         </YAF:ThemeButton>
                                         <YAF:ThemeButton ID="NoReportedInfo" runat="server"
                                                          TextLocalizedTag="NO_POSTS" TextLocalizedPage="MODERATE"

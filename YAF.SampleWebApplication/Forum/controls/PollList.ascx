@@ -7,9 +7,10 @@
 <asp:PlaceHolder id="PollListHolder" runat="server" Visible="true">
     <div class="row">
         <div class="col">
-            <div class="card bg-light mb-3">
+            <div class="card text-bg-light mb-3">
                 <div class="card-header">
                     <YAF:IconHeader runat="server"
+                                    IconType="text-secondary"
                                     IconName="question-circle"
                                     LocalizedTag="question" />:
                     <asp:Label ID="QuestionLabel" runat="server" />

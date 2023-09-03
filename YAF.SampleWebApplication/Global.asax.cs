@@ -25,12 +25,10 @@
 namespace YAF.SampleWebApplication
 {
     using System;
-    using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Routing;
 
     using YAF.Core.Context;
-    using YAF.Core.Context.Start;
 
     /// <summary>
     /// The global.

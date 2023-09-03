@@ -4,7 +4,7 @@
 
 <li class="nav-item dropdown">
     <YAF:Themebutton runat="server" ID="UserDropDown">
-        <span class="badge bg-light text-dark p-0 border border-light me-1">
+        <span class="badge text-bg-light p-0 border border-light me-1">
             <asp:Image runat="server" ID="UserAvatar"
                        AlternateText="avatar"
                        CssClass="img-navbar-avatar rounded"/>
@@ -12,7 +12,7 @@
         <%= this.HtmlEncode(this.PageBoardContext.PageUser.DisplayOrUserName()) %>
         <asp:PlaceHolder runat="server" id="UnreadPlaceHolder">
             <asp:Label runat="server" ID="UnreadLabel"
-                       CssClass="ms-1 badge bg-danger">
+                       CssClass="ms-1 badge text-bg-danger">
             </asp:Label>
         </asp:PlaceHolder>
     </YAF:Themebutton>
@@ -59,7 +59,7 @@
                          TitleLocalizedPage="TOOLBAR">
             <YAF:Icon runat="server" ID="UnreadIcon"
                       IconName="dot-circle"
-                      IconType="fa-xs text-primary unread"></YAF:Icon>
+                      IconType="fa-xs text-danger unread"></YAF:Icon>
             <YAF:Icon runat="server" ID="NotifyIcon"
                       IconName="bell"></YAF:Icon>
 

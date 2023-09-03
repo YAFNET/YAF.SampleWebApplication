@@ -8,6 +8,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <YAF:IconHeader runat="server"
+                                    IconType="text-secondary"
                                     IconName="envelope-square"
                                     LocalizedTag="HEADER"
                                     LocalizedPage="ADMIN_PM"></YAF:IconHeader>
@@ -17,7 +18,7 @@
                                Type="Info">
                         <YAF:Icon runat="server" IconName="info-circle" />
                         <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="PM_NUMBER" LocalizedPage="ADMIN_PM" />
-                        <span class="badge bg-info"><asp:Label runat="server" ID="Count" /></span>
+                        <span class="badge text-bg-info"><asp:Label runat="server" ID="Count" /></span>
                     </YAF:Alert>
                     <div class="row">
                         <div class="mb-3 col-md-4">

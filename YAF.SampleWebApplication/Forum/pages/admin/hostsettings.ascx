@@ -116,6 +116,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="cog"
                                         LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                         - <YAF:LocalizedLabel ID="LocalizedLabel56" runat="server" LocalizedTag="HEADER_SERVER_INFO" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -170,6 +171,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="cog"
                                         LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                         - <YAF:LocalizedLabel ID="LocalizedLabel58" runat="server"
@@ -248,7 +250,9 @@
                                 <YAF:HelpLabel ID="HelpLabel2" runat="server"
                                                AssociatedControlID="ServerTimeCorrection"
                                                LocalizedTag="SERVERTIME_CORRECT" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                                <asp:TextBox CssClass="form-control serverTime-Input" ID="ServerTimeCorrection" runat="server"></asp:TextBox>
+                                <div class="input-group">
+                                    <asp:TextBox CssClass="form-control serverTime-Input" ID="ServerTimeCorrection" runat="server" TextMode="Number"></asp:TextBox>
+                                </div>
                                 <small class="form-text text-body-secondary"><%# DateTime.UtcNow %></small>
                             </div>
                             <asp:PlaceHolder runat="server" ID="SSLSettings">
@@ -659,6 +663,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="cog"
                                         LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                         - <YAF:LocalizedLabel ID="LocalizedLabel60" runat="server"
@@ -888,12 +893,6 @@
                             <asp:DropDownList CssClass="form-select" ID="ShowShareTopicTo" runat="server" DataValueField="Value" DataTextField="Name">
                             </asp:DropDownList>
                         </div>
-                            <div class="mb-3">
-                                <YAF:HelpLabel ID="HelpLabel173" runat="server"
-                                               AssociatedControlID="TwitterUserName"
-                                               LocalizedTag="TWITTER_USERNAME" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                                <asp:TextBox CssClass="form-control" ID="TwitterUserName" runat="server"></asp:TextBox>
-                            </div>
                         </div>
                         <div class="tab-pane fade" id="hover" role="tabpanel" aria-labelledby="hover-tab">
                             <div class="row">
@@ -1143,6 +1142,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="cog"
                                         LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                         - <YAF:LocalizedLabel ID="LocalizedLabel62" runat="server"
@@ -1374,11 +1374,19 @@
         </div>
     </div>
                     <div class="mb-3">
-                        <YAF:HelpLabel ID="HelpLabel25" runat="server"
+                        <YAF:HelpLabel ID="HelpLabel37" runat="server"
                                        AssociatedControlID="ShowScrollBackToTopButton"
                                        LocalizedTag="SHOW_SCROLL" LocalizedPage="ADMIN_HOSTSETTINGS" />
                         <div class="form-check form-switch">
                             <asp:CheckBox Text="&nbsp;" ID="ShowScrollBackToTopButton" runat="server"></asp:CheckBox>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <YAF:HelpLabel ID="HelpLabel25" runat="server"
+                                       AssociatedControlID="ScrollToPost"
+                                       LocalizedTag="SCROLL_TO_POST" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                        <div class="form-check form-switch">
+                            <asp:CheckBox Text="&nbsp;" ID="ScrollToPost" runat="server"></asp:CheckBox>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -1423,6 +1431,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="cog"
                                         LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                         - <YAF:LocalizedLabel ID="LocalizedLabel64" runat="server"
@@ -1459,6 +1468,7 @@
         <div class="card mb-3">
             <div class="card-header">
                 <YAF:IconHeader runat="server"
+                                IconType="text-secondary"
                                 IconName="cog"
                                 LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                 - <YAF:LocalizedLabel ID="LocalizedLabel66" runat="server"
@@ -1466,24 +1476,6 @@
                                       LocalizedPage="ADMIN_HOSTSETTINGS" />
             </div>
             <div class="card-body">
-                <div class="mb-3">
-                    <YAF:HelpLabel ID="HelpLabel87" runat="server"
-                                   AssociatedControlID="EditorToolbarBasic"
-                                   LocalizedTag="EDITOR_BASIC" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                    <asp:TextBox ID="EditorToolbarBasic" runat="server"
-                                 CssClass="form-control"
-                                 Height="150px"
-                                 TextMode="MultiLine"></asp:TextBox>
-                </div>
-                <div class="mb-3">
-                    <YAF:HelpLabel ID="HelpLabel37" runat="server"
-                                   AssociatedControlID="EditorToolbarFull"
-                                   LocalizedTag="EDITOR_FULL" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                    <asp:TextBox ID="EditorToolbarFull" runat="server"
-                                 CssClass="form-control"
-                                 Height="150px"
-                                 TextMode="MultiLine"></asp:TextBox>
-                </div>
             </div>
             <div class="card-footer text-lg-center">
                 <YAF:ThemeButton ID="ThemeButton6" runat="server"  Type="Primary" OnClick="SaveClick"
@@ -1495,6 +1487,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="cog"
                                         LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                         - <YAF:LocalizedLabel ID="LocalizedLabel68" runat="server"
@@ -1617,6 +1610,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="cog"
                                         LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                         - <YAF:LocalizedLabel ID="LocalizedLabel72" runat="server"
@@ -1678,6 +1672,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="cog"
                                         LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                         - <YAF:LocalizedLabel ID="LocalizedLabel74" runat="server"
@@ -1764,6 +1759,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <YAF:IconHeader runat="server"
+                                        IconType="text-secondary"
                                         IconName="cog"
                                         LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                         - <YAF:LocalizedLabel ID="LocalizedLabel76" runat="server"
@@ -1818,6 +1814,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <YAF:IconHeader runat="server"
+                                    IconType="text-secondary"
                                     IconName="cog"
                                     LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
                     - <YAF:LocalizedLabel ID="LocalizedLabel78" runat="server"
@@ -1847,15 +1844,6 @@
                                                 LocalizedTag="HEADER_LOGSCOPE" LocalizedPage="ADMIN_HOSTSETTINGS" />
             </h2>
             <hr />
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <YAF:HelpLabel ID="HelpLabel151" runat="server"
-                                           LocalizedTag="UNHANDLED_USERAGENT_LOG" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                            <div class="form-check form-switch">
-                                <asp:CheckBox Text="&nbsp;" ID="UserAgentBadLog" runat="server"></asp:CheckBox>
-                            </div>
-                        </div>
-                    </div>
             <div class="row">
                 <div class="mb-3 col-md-6">
                                <YAF:HelpLabel ID="LogErrorLabel" runat="server"

@@ -1,6 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="YAF.Pages.ReportPost" CodeBehind="ReportPost.ascx.cs" %>
-
-<%@ Import Namespace="YAF.Types.Interfaces" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
 <div class="row">
@@ -11,9 +9,10 @@
 
 <div class="row">
     <div class="col">
-        <div class="card bg-light mb-3">
+        <div class="card text-bg-light mb-3">
             <div class="card-header">
                 <YAF:IconHeader runat="server"
+                                IconType="text-secondary"
                                 IconName="comment"
                                 LocalizedTag="REPORTPOST_TITLE"/>
             </div>

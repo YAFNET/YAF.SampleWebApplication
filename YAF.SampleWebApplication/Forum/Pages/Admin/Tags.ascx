@@ -16,6 +16,7 @@
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto">
                             <YAF:IconHeader runat="server"
+                                            IconType="text-secondary"
                                             IconName="tags"
                                             LocalizedPage="ADMIN_TAGS"></YAF:IconHeader>
                             </div>
@@ -49,7 +50,7 @@
                         </h5>
                         <small class="d-none d-md-block">
                             <YAF:LocalizedLabel runat="server" LocalizedTag="USAGES"></YAF:LocalizedLabel>
-                            <span class="badge bg-secondary">
+                            <span class="badge text-bg-secondary">
                                 <%# this.GetRepository<TopicTag>().Count(x => x.TagID == ((Tag)Container.DataItem).ID)  %>
                             </span>
                         </small>

@@ -8,6 +8,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <YAF:IconHeader runat="server"
+                                    IconType="text-secondary"
                                     IconName="envelope"
                                     LocalizedPage="ADMIN_DIGEST"></YAF:IconHeader>
                 </div>
@@ -19,14 +20,14 @@
                                            LocalizedTag="DIGEST_ENABLED"
                                            LocalizedPage="ADMIN_DIGEST" />
                             <asp:Label ID="DigestEnabled" runat="server"
-                                       CssClass="badge bg-secondary"></asp:Label>
+                                       CssClass="badge text-bg-secondary"></asp:Label>
                         </div>
                         <div class="mb-3 col-md-4">
                             <YAF:HelpLabel ID="LocalizedLabel5" runat="server" 
                                            AssociatedControlID="LastDigestSendLabel"
                                            LocalizedTag="DIGEST_LAST" LocalizedPage="ADMIN_DIGEST" />
                             <asp:Label ID="LastDigestSendLabel" runat="server" 
-                                       CssClass="badge bg-secondary"></asp:Label>
+                                       CssClass="badge text-bg-secondary"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -39,6 +40,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <YAF:IconHeader runat="server"
+                                    IconType="text-secondary"
                                     IconName="envelope"
                                     LocalizedTag="HEADER2" 
                                     LocalizedPage="ADMIN_DIGEST"></YAF:IconHeader>
@@ -64,6 +66,7 @@
             <div class="card mb-3">
                 <div class="card-header">
                     <YAF:IconHeader runat="server"
+                                    IconType="text-secondary"
                                     IconName="envelope"
                                     LocalizedTag="HEADER3" 
                                     LocalizedPage="ADMIN_DIGEST"></YAF:IconHeader>
