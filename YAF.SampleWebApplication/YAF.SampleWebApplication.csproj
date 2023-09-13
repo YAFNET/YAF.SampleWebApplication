@@ -160,9 +160,7 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <Content Include="Chat.aspx" />
     <Content Include="Contact.aspx" />
-    <Content Include="Content\emojionearea.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -1015,9 +1013,6 @@
     <Content Include="db.config" />
     <Content Include="Gruntfile.js" />
     <Content Include="mail.config" />
-    <Content Include="Scripts\emojionearea.min.js" />
-    <Content Include="Scripts\jquery.signalR.min.js" />
-    <Content Include="Scripts\jquery.slimscroll.min.js" />
     <Content Include="Site.Master" />
     <Content Include="Views\Shared\RazorView.aspx" />
     <Content Include="Web.config" />
@@ -1041,14 +1036,6 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Chat.aspx.cs">
-      <DependentUpon>Chat.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Chat.aspx.designer.cs">
-      <DependentUpon>Chat.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ChatHub.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1076,6 +1063,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Messages.cs" />
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -1084,8 +1072,6 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="StartupSignalR.cs" />
-    <Compile Include="Models\Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forum\CHANGES.md" />
