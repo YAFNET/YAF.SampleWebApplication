@@ -15,6 +15,7 @@
             </div>
             <div class="modal-body">
              <!-- Modal Content START !-->
+                <YAF:LocalizedLabel ID="LocalizedLabel2" runat="server" LocalizedTag="USER" />
                 <div class="input-group mb-3">
                     <asp:TextBox ID="UserName" runat="server"
                                  CssClass="form-control"/>

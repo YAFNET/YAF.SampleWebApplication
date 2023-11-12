@@ -16,10 +16,6 @@
     <YAF:Form runat="server" ID="form1">
         <asp:ScriptManager runat="server" ID="ScriptManager">
             <Scripts>
-                <asp:ScriptReference Path="~/Scripts/date.format.js" />
-                <asp:ScriptReference Path="~/Scripts/emojionearea.min.js" />
-                <asp:ScriptReference Path="~/Scripts/jquery.signalR.min.js" />
-                <asp:ScriptReference Path="~/Scripts/jquery.slimscroll.min.js" />
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>

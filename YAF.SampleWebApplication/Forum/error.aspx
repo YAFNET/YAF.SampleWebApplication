@@ -6,10 +6,9 @@
        <meta charset="utf-8">
        <title>Forum Error</title>
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link href="~/Forum/Content/Themes/yaf/bootstrap-forum.min.css" rel="stylesheet" runat="server" />
-       <link href="~/Forum/Content/forum.min.css" rel="stylesheet" runat="server" />
-       <script src="//code.jquery.com/jquery-3.7.0.min.js"></script>
-       <script src="<%= this.ResolveUrl("~/Forum/Scripts/jquery.ForumExtensions.min.js") %>"></script>
+       <link href="~/Content/Themes/yaf/bootstrap-forum.min.css" rel="stylesheet" runat="server" />
+       <link href="~/Content/forum.min.css" rel="stylesheet" runat="server" />
+       <script src="<%= this.ResolveUrl("~/Scripts/forumExtensions.min.js") %>"></script>
    </head>
    <body>
    <div class="container">

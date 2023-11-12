@@ -107,45 +107,9 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        src: "**/digest.aspx",
+                        src: "**/error.aspx",
                         cwd: "upgrade/",
                         dest: "forum/"
-                    }
-                ]
-            },
-            emojionearea: {
-                files: [
-                    {
-                        expand: true,
-                        src: "emojionearea.min.js",
-                        cwd: "node_modules/emojionearea/dist",
-                        dest: "Scripts/"
-                    },
-                    {
-                        expand: true,
-                        src: "emojionearea.css",
-                        cwd: "node_modules/emojionearea/dist",
-                        dest: "Content/"
-                    }
-                ]
-            },
-            signalR: {
-                files: [
-                    {
-                        expand: true,
-                        src: "jquery.signalR.min.js",
-                        cwd: "node_modules/signalr",
-                        dest: "Scripts/"
-                    }
-                ]
-            },
-            jquerySlimScroll: {
-                files: [
-                    {
-                        expand: true,
-                        src: "jquery.slimscroll.min.js",
-                        cwd: "node_modules/jquery-slimscroll",
-                        dest: "Scripts/"
                     }
                 ]
             }
