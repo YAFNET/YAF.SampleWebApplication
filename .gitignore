@@ -1,3 +1,4 @@
 *.user
 *.CopyComplete
 *.cache
+YAF.SampleWebApplication/package-lock.json

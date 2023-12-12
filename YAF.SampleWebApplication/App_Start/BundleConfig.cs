@@ -24,8 +24,6 @@
 
 namespace YAF.SampleWebApplication
 {
-    using YAF.Core.Helpers;
-
     /// <summary>
     /// The bundle config.
     /// </summary>
@@ -36,7 +34,6 @@ namespace YAF.SampleWebApplication
         /// </summary>
         public static void RegisterBundles()
         {
-            ScriptManagerHelper.RegisterJQuery();
         }
     }
 }
