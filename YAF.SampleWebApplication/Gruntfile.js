@@ -10,29 +10,29 @@ module.exports = function(grunt) {
 
     // CONFIGURATION
     grunt.initConfig({
-        pkg: grunt.file.readJSON("package.json"),
+        pkg: grunt.file.readJSON('package.json'),
 
         downloadfile: {
             options: {
-                dest: "./",
+                dest: './',
                 overwriteEverytime: true
             },
             files: {
-                'YAF.SqlServer-Upgrade.zip': "https://github.com/YAFNET/YAFNET/releases/download/v<%= pkg.version %>/YAF.SqlServer-v<%= pkg.version %>-Upgrade.zip"
+                'YAF.SqlServer-Upgrade.zip': 'https://github.com/YAFNET/YAFNET/releases/download/v<%= pkg.version %>/YAF.SqlServer-v<%= pkg.version %>-Upgrade.zip'
             }
         },
 
         unzip: {
-            "upgrade/": "YAF.SqlServer-Upgrade.zip"
+            "upgrade/": 'YAF.SqlServer-Upgrade.zip'
         },
 
         shell: {
             delete: {
                 command: [
-                    "@echo off",
-                    "rmdir upgrade /s /q ",
+                    '@echo off',
+                    'rmdir upgrade /s /q ',
                     'del "YAF.SqlServer-Upgrade.zip"'
-                ].join("&&")
+                ].join('&&')
             }
         },
 
@@ -41,75 +41,75 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        src: "**/*.dll",
-                        cwd: "upgrade/bin",
-                        dest: "bin/"
+                        src: '**/*.dll',
+                        cwd: 'upgrade/bin',
+                        dest: 'bin/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/Content/",
-                        dest: "forum/Content/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/Content/',
+                        dest: 'forum/Content/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/Controls/",
-                        dest: "forum/Controls/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/Controls/',
+                        dest: 'forum/Controls/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/Dialogs/",
-                        dest: "forum/Dialogs/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/Dialogs/',
+                        dest: 'forum/Dialogs/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/Images/",
-                        dest: "forum/Images/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/Images/',
+                        dest: 'forum/Images/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/Install/",
-                        dest: "forum/Install/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/Install/',
+                        dest: 'forum/Install/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/Content/",
-                        dest: "forum/Content/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/Content/',
+                        dest: 'forum/Content/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/languages/",
-                        dest: "forum/languages/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/languages/',
+                        dest: 'forum/languages/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/Pages/",
-                        dest: "forum/Pages/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/Pages/',
+                        dest: 'forum/Pages/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/Resources/",
-                        dest: "forum/Resources/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/Resources/',
+                        dest: 'forum/Resources/'
                     },
                     {
                         expand: true,
-                        src: "**/*.*",
-                        cwd: "upgrade/Scripts/",
-                        dest: "forum/Scripts/"
+                        src: '**/*.*',
+                        cwd: 'upgrade/Scripts/',
+                        dest: 'forum/Scripts/'
                     },
                     {
                         expand: true,
-                        src: "**/error.aspx",
-                        cwd: "upgrade/",
-                        dest: "forum/"
+                        src: '**/error.aspx',
+                        cwd: 'upgrade/',
+                        dest: 'forum/'
                     }
                 ]
             }
@@ -119,7 +119,7 @@ module.exports = function(grunt) {
             main: {
                 options: {
                     reportUpdated: true,
-                    updateType: "force",
+                    updateType: 'force',
                     semver: false,
                     packages: {
                         devDependencies: true, //only check for devDependencies
@@ -131,14 +131,14 @@ module.exports = function(grunt) {
     });
 
     // PLUGINS
-    grunt.loadNpmTasks("grunt-contrib-copy");
-    grunt.loadNpmTasks("grunt-dev-update");
-    grunt.loadNpmTasks("grunt-zip");
-    grunt.loadNpmTasks("grunt-downloadfile");
-    grunt.loadNpmTasks("grunt-shell");
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('@w8tcha/grunt-dev-update');
+    grunt.loadNpmTasks('grunt-zip');
+    grunt.loadNpmTasks('grunt-downloadfile');
+    grunt.loadNpmTasks('grunt-shell');
 
-    grunt.registerTask("default",
+    grunt.registerTask('default',
         [
-            "devUpdate", "downloadfile", "unzip", "copy", "shell"
+            'devUpdate', 'downloadfile', 'unzip', 'copy', 'shell'
         ]);
 };

@@ -1,6 +1,6 @@
 {
   "name": "yaf.samplewebapplication",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "This Application is a Standard Visual Studio Sample ASP.NET Application, including YAF.NET integrated as Control on a Page.",
   "repository": {
     "type": "git",
@@ -13,10 +13,10 @@
   },
   "homepage": "https://github.com/YAFNET/YAF.SampleWebApplication#readme",
   "devDependencies": {
-    "eslint": "^8.55.0",
+    "@w8tcha/grunt-dev-update": "^2.3.1",
+    "eslint": "^8.56.0",
     "grunt": "^1.6.1",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-dev-update": "^2.3.0",
     "grunt-downloadfile": "^2.1.1",
     "grunt-shell": "^4.0.0",
     "grunt-zip": "^1.0.0"
