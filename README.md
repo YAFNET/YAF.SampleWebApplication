@@ -1,5 +1,4 @@
 YAF.SampleWebApplication
 ========================
 
-This Application is a Standard Visual Studio Sample ASP.NET Application, 
-including YAF.NET v3.2.0 integrated as Control on a Page.
+This Application is a Standard Visual Studio Sample ASP.NET Application (.NET Framework 4.8.1), including YAF.NET v3.2.2 integrated as Control on a Page.
