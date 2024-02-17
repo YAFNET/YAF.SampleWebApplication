@@ -69,14 +69,19 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - YAF.SampleApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2024 - YAF.SampleApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+</footer>
 
-    <script src="@(Current.Get<BoardInfo>().GetUrlToScripts("forumExtensions.min.js"))" asp-append-version="true"></script>
+<script src="@(Current.Get<BoardInfo>().GetUrlToScripts("forumExtensions.min.js"))" asp-append-version="true"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+@if (!Current.IsGuest)
+{
+    @await Html.PartialAsync("_LogoutConfirm")
+}
+
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
