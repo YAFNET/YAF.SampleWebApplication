@@ -26,6 +26,7 @@ using Autofac;
 
 using YAF.Core.Context;
 using YAF.Core.Extensions;
+using YAF.Core.Hubs;
 using YAF.Core.Middleware;
 
 namespace YAF.SampleApp;
@@ -120,7 +121,11 @@ public class Startup : IHaveServiceLocator
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             endpoints.MapControllers();
 
-            endpoints.MapYafHubs();
+            //endpoints.MapYafHubs();
+            endpoints.MapHub<NotificationHub>("/NotificationHub");
+            endpoints.MapHub<ChatHub>("/ChatHub");
+
+            endpoints.MapHub<AllChatHub>("/AllChatHub");
         });
     }
 }
