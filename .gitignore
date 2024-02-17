@@ -2,3 +2,4 @@
 *.CopyComplete
 *.cache
 YAF.SampleWebApplication/package-lock.json
+YAF.SampleApp/package-lock.json

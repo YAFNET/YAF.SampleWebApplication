@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\Shared\LayoutFooter.html" />
+    <None Remove="Pages\Shared\LayoutHeader.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Shared\LayoutFooter.html" />
+    <Content Include="Pages\Shared\LayoutHeader.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.5" />
+    <PackageReference Include="YAFNET.Core" Version="4.0.0-beta04" />
+    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.0-beta04" />
+    <PackageReference Include="YAFNET.Web" Version="4.0.0-beta04" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Pages\Shared\_Layout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_ValidationScriptPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
