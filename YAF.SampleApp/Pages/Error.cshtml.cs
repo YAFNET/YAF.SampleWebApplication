@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
+
 using System.Diagnostics;
 
 namespace YAF.SampleApp.Pages;

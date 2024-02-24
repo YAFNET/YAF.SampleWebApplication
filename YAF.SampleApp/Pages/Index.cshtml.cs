@@ -1,16 +1,34 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using YAF.Core.Context;
+
 namespace YAF.SampleApp.Pages;
 
-public class IndexModel : PageModel
+/// <summary>
+/// Class IndexModel.
+/// Implements the <see cref="PageModel" />
+/// Implements the <see cref="YAF.Types.Interfaces.IHaveServiceLocator" />
+/// </summary>
+/// <seealso cref="PageModel" />
+/// <seealso cref="YAF.Types.Interfaces.IHaveServiceLocator" />
+public class IndexModel : PageModel, IHaveServiceLocator
 {
-    private readonly ILogger<IndexModel> _logger;
+    /// <summary>
+    /// Gets the service locator.
+    /// </summary>
+    /// <value>The service locator.</value>
+    public IServiceLocator ServiceLocator => BoardContext.Current.ServiceLocator;
 
-    public IndexModel(ILogger<IndexModel> logger)
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IndexModel"/> class.
+    /// </summary>
+    public IndexModel()
     {
-        _logger = logger;
     }
 
+    /// <summary>
+    /// Called when [get].
+    /// </summary>
     public void OnGet()
     {
     }

@@ -22,7 +22,6 @@
  * under the License.
  */
 
-using Microsoft.AspNetCore.Http.HttpResults;
 using ServiceStack.DataAnnotations;
 using ServiceStack.OrmLite;
 
@@ -31,7 +30,6 @@ using YAF.Core.Context;
 using YAF.Core.Extensions;
 using YAF.Core.Helpers;
 using YAF.Types.Interfaces.Data;
-using YAF.Types.Models;
 
 namespace YAF.SampleApp;
 
