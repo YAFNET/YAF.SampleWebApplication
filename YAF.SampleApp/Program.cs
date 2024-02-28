@@ -43,8 +43,9 @@ public class Program
     public static Task Main(string[] args)
     {
         var host = Host.CreateDefaultBuilder(args).UseAutofacServiceProviderFactory()
-            .ConfigureYafAppConfiguration().ConfigureYafLogging()
-            .ConfigureWebHostDefaults(webHostBuilder => webHostBuilder.UseStartup<Startup>()).Build();
+            .ConfigureYafLogging()
+            .ConfigureWebHostDefaults(webHostBuilder =>
+                webHostBuilder.UseStartup<Startup>()).Build();
 
         return host.RunAsync();
     }

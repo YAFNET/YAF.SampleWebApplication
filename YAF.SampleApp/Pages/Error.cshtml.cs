@@ -27,6 +27,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using System.Diagnostics;
 
+using Microsoft.AspNetCore.Mvc;
+
 namespace YAF.SampleApp.Pages;
 
 [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -24,10 +24,10 @@
 
 using Autofac;
 
-using YAF.Core.Context;
 using YAF.Core.Extensions;
 using YAF.Core.Hubs;
 using YAF.Core.Middleware;
+using YAF.RazorPages;
 
 namespace YAF.SampleApp;
 
@@ -39,12 +39,12 @@ public class Startup : IHaveServiceLocator
     /// <summary>
     /// Initializes a new instance of the <see cref="Startup"/> class.
     /// </summary>
-    /// <param name="configuration">
-    /// The configuration.
-    /// </param>
-    public Startup(IConfiguration configuration)
+    /// <param name="configuration">The configuration.</param>
+    /// <param name="env">The environment</param>
+    public Startup(IConfiguration configuration, IWebHostEnvironment env)
     {
         this.Configuration = configuration;
+        this.Environment = env;
     }
 
     /// <summary>
@@ -58,6 +58,12 @@ public class Startup : IHaveServiceLocator
     public IConfiguration Configuration { get; }
 
     /// <summary>
+    /// Gets the environment.
+    /// </summary>
+    /// <value>The environment.</value>
+    public IWebHostEnvironment Environment { get; }
+
+    /// <summary>
     /// Configures the services.
     /// </summary>
     /// <param name="services">The services.</param>
@@ -66,7 +72,7 @@ public class Startup : IHaveServiceLocator
         services.AddRazorPages(options =>
         {
             options.Conventions.AddPageRoute("/SiteMap", "Sitemap.xml");
-        });
+        }).AddYafRazorPages(this.Environment);
 
         services.AddControllers();
 
@@ -116,9 +122,12 @@ public class Startup : IHaveServiceLocator
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapRazorPages();
-            endpoints.MapControllerRoute(
+
+            endpoints.MapAreaControllerRoute(
                 name: "default",
+                areaName:"Forums",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
             endpoints.MapControllers();
 
             //endpoints.MapYafHubs();

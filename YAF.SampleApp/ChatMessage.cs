@@ -25,10 +25,9 @@
 using ServiceStack.DataAnnotations;
 using ServiceStack.OrmLite;
 
-using YAF.Configuration;
-using YAF.Core.Context;
 using YAF.Core.Extensions;
 using YAF.Core.Helpers;
+using YAF.Types.Constants;
 using YAF.Types.Interfaces.Data;
 
 namespace YAF.SampleApp;
