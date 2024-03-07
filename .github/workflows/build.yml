@@ -1,4 +1,4 @@
-name: YAF.NET v4 (.NET v8)
+name: YAF.SampleApp v4 (.NET v8)
 on:
   push:
     branches:
