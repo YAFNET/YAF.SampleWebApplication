@@ -1,0 +1,26 @@
+name: YAF.NET v4 (.NET v8)
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  build:
+
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '8.0.x' ]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+      - name: Install dependencies
+        working-directory: ./
+        run: dotnet restore ./YAF.SampleApp.sln
+      - name: Build
+        working-directory: ./
+        run: dotnet build ./YAF.SampleApp.sln
