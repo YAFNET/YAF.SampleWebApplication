@@ -1,7 +1,8 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Moderate.Index" Codebehind="Index.ascx.cs" %>
 
 <%@ Import Namespace="YAF.Types.Objects.Model" %>
-<%@ Import Namespace="ServiceStack.Text" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
+<%@ Import Namespace="YAF.Core.Helpers" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
 <div class="row">
@@ -28,7 +29,7 @@
                                 <div class="list-group list-group-flush small">
                                     <div class="list-group-item list-group-item-action">
                                         <h5 class="fw-bold">
-                                            <%# "{0}{1}".Fmt(((ModerateForum)Container.DataItem).ParentID.HasValue ? "--" : "-", ((ModerateForum)Container.DataItem).Name) %>
+                                            <%# "{0}{1}".FormatWith(((ModerateForum)Container.DataItem).ParentID.HasValue ? "--" : "-", ((ModerateForum)Container.DataItem).Name) %>
                                         </h5>
                                         <YAF:ThemeButton ID="ViewUnapprovedPostsBtn" runat="server" 
                                                          CommandName="viewunapprovedposts" 
@@ -38,7 +39,7 @@
                                                          Size="Small">
                                             <YAF:LocalizedLabel ID="LocalizedLabel1" runat="server" 
                                                                 LocalizedTag="UNAPPROVED" />
-                                            <span class="badge text-bg-light"><%# ((ModerateForum)Container.DataItem).MessageCount %></span>
+                                            <span class="<%# StringHelper.GetTextBgColor("badge text-bg-light") %>"><%# ((ModerateForum)Container.DataItem).MessageCount %></span>
                                         </YAF:ThemeButton>
                                         <YAF:ThemeButton ID="NoUnapprovedInfo" runat="server"
                                                          TextLocalizedTag="NO_POSTS" TextLocalizedPage="MODERATE" 
@@ -55,7 +56,7 @@
                                                          Size="Small">
                                             <YAF:LocalizedLabel ID="ReportedCountLabel" runat="server" 
                                                                 LocalizedTag="REPORTED" /> 
-                                            <span class="badge text-bg-light"><%# ((ModerateForum)Container.DataItem).ReportedCount %></span>
+                                            <span class="<%# StringHelper.GetTextBgColor("badge text-bg-light") %>"><%# ((ModerateForum)Container.DataItem).ReportedCount %></span>
                                         </YAF:ThemeButton>
                                         <YAF:ThemeButton ID="NoReportedInfo" runat="server"
                                                          TextLocalizedTag="NO_POSTS" TextLocalizedPage="MODERATE"

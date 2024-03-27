@@ -48,21 +48,6 @@
                 <asp:TextBox ID="ForumBaseUrlMask" runat="server" TextMode="Url" CssClass="form-control"></asp:TextBox>
             </div>
             <div class="mb-3">
-                <YAF:HelpLabel ID="HelpLabel2" runat="server"
-                               AssociatedControlID="CopyrightRemovalKey"
-                               LocalizedTag="COPYRIGHT_REMOVAL_KEY" LocalizedPage="ADMIN_BOARDSETTINGS"/>
-                <div class="input-group">
-                    <asp:TextBox ID="CopyrightRemovalKey" runat="server" 
-                                 CssClass="form-control"></asp:TextBox>
-                    <YAF:ThemeButton runat="server" ID="GetRemovalKey"
-                                     NavigateUrl="https://yetanotherforum.net/purchase.aspx"
-                                     Type="Info"
-                                     Icon="key"
-                                     TextLocalizedTag="COPYRIGHT_REMOVAL_KEY_DOWN">
-                    </YAF:ThemeButton>
-                </div>
-            </div>
-            <div class="mb-3">
                 <YAF:HelpLabel ID="LocalizedLabel5" runat="server"
                                AssociatedControlID="Theme"
                                LocalizedTag="BOARD_THEME" LocalizedPage="ADMIN_BOARDSETTINGS"/>

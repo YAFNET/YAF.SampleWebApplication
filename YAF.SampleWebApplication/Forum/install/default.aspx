@@ -1,4 +1,4 @@
-﻿<%@ Page Language="c#" AutoEventWireup="True" Inherits="YAF.Install._default" CodeBehind="default.aspx.cs" %>
+﻿<%@ Page Language="c#" AutoEventWireup="True" Inherits="YAF.Install.install" CodeBehind="default.aspx.cs" %>
 
 <!doctype html>
 <html lang="en">
@@ -56,6 +56,13 @@
                                 <%# Localization.GetText("Unchecked") %>
                             </asp:Label>
                             <%# Localization.GetText("PermissionUpload") %>
+                        </li>
+                        <li>
+                            <asp:Label ID="PermissionAppData" runat="server"
+                                       CssClass="badge text-bg-info float-end">
+                                <%# Localization.GetText("Unchecked") %>
+                            </asp:Label>
+                            <%# Localization.GetText("PermissionAppData") %>
                         </li>
                     </ul>
                     <YAF:ThemeButton ID="btnTestPermissions" runat="server"

@@ -2,7 +2,7 @@
 <%@ Import Namespace="YAF.Types.Constants" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
 <%@ Import Namespace="YAF.Core.Services" %>
-<%@ Import Namespace="ServiceStack.Text" %>
+<%@ Import Namespace="YAF.Types.Extensions" %>
 
 <asp:PlaceHolder runat="server" ID="ShowHideIgnoredUserPost" Visible="False">
     <YAF:Alert runat="server" Type="info" Dismissing="True">
@@ -31,7 +31,7 @@
                                 <li class="list-inline-item">
                                     <YAF:UserLink ID="UserProfileLink" runat="server" />
                                     <YAF:ThemeButton ID="AddReputation" runat="server"
-                                                     CssClass='<%# "AddReputation_{0} me-1".Fmt(this.DataSource.UserID)%>'
+                                                     CssClass='<%# "AddReputation_{0} me-1".FormatWith(this.DataSource.UserID)%>'
                                                      Size="Small"
                                                      Icon="thumbs-up"
                                                      IconColor="text-success"
@@ -41,7 +41,7 @@
                                                      OnClick="AddUserReputation">
                                     </YAF:ThemeButton>
                                     <YAF:ThemeButton ID="RemoveReputation" runat="server"
-                                                     CssClass='<%# "RemoveReputation_{0}".Fmt(this.DataSource.UserID)%>'
+                                                     CssClass='<%# "RemoveReputation_{0}".FormatWith(this.DataSource.UserID)%>'
                                                      Type="None"
                                                      Size="Small"
                                                      IconColor="text-danger"
@@ -255,10 +255,10 @@
                 <div class="card-footer py-0">
                 <div class="row">
                     <div class="col px-0">
-                        <span id="<%# "dvThanksInfo{0}".Fmt(this.DataSource.MessageID) %>">
+                        <span id="<%# "dvThanksInfo{0}".FormatWith(this.DataSource.MessageID) %>">
                             <asp:Literal runat="server" Visible="false" ID="ThanksDataLiteral"></asp:Literal>
                         </span>
-                        <span id="<%# "dvThankBox{0}".Fmt(this.DataSource.MessageID) %>">
+                        <span id="<%# "dvThankBox{0}".FormatWith(this.DataSource.MessageID) %>">
                             <YAF:ThemeButton ID="Thank" runat="server"
                                              Type="Link"
                                              Icon="thumbs-up"

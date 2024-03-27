@@ -33,10 +33,6 @@
             <YAF:LocalizedLabel ID="LocalizedLabel16" runat="server"
                                 LocalizedTag="HOST_ADVERTS" LocalizedPage="ADMIN_HOSTSETTINGS" />
         </a>
-                <a href="#View5" class="nav-link" data-bs-toggle="pill" role="tab">
-                    <YAF:LocalizedLabel ID="LocalizedLabel17" runat="server"
-                                        LocalizedTag="HOST_EDITORS" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                </a>
                 <a href="#View6" class="nav-link" data-bs-toggle="pill" role="tab">
             <YAF:LocalizedLabel ID="LocalizedLabel18" runat="server"
                                 LocalizedTag="HOST_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -83,10 +79,6 @@
             <YAF:LocalizedLabel ID="LocalizedLabel47" runat="server"
                                 LocalizedTag="HOST_ADVERTS" LocalizedPage="ADMIN_HOSTSETTINGS" />
         </a>
-            <a href="#View5" class="nav-link" data-bs-toggle="pill" role="tab">
-                <YAF:LocalizedLabel ID="LocalizedLabel48" runat="server"
-                                    LocalizedTag="HOST_EDITORS" LocalizedPage="ADMIN_HOSTSETTINGS" />
-            </a>
             <a href="#View6" class="nav-link" data-bs-toggle="pill" role="tab">
             <YAF:LocalizedLabel ID="LocalizedLabel49" runat="server"
                                 LocalizedTag="HOST_PERMISSION" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -267,6 +259,14 @@
                             </asp:PlaceHolder>
                             <div class="row">
                                 <div class="mb-3 col-md-6">
+                                    <YAF:HelpLabel ID="HelpLabel16" runat="server"
+                                                   AssociatedControlID="EnableWysiwygEditor"
+                                                   LocalizedTag="ENABLE_WYSIWYG" LocalizedPage="ADMIN_HOSTSETTINGS" />
+                                    <div class="form-check form-switch">
+                                        <asp:CheckBox Text="&nbsp;" ID="EnableWysiwygEditor" runat="server"></asp:CheckBox>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-md-6">
                                     <YAF:HelpLabel ID="HelpLabel5" runat="server"
                                                    AssociatedControlID="UseFileTable"
                                                    LocalizedTag="FILE_TABLE" LocalizedPage="ADMIN_HOSTSETTINGS" />
@@ -296,15 +296,6 @@
                                                AssociatedControlID="EditTimeOut"
                                                LocalizedTag="POSTEDIT_TIMEOUT" LocalizedPage="ADMIN_HOSTSETTINGS" />
                                 <asp:TextBox CssClass="form-control" ID="EditTimeOut" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="mb-3">
-                                <YAF:HelpLabel ID="HelpLabel16" runat="server"
-                                               AssociatedControlID="CreateNntpUsers"
-                                               LocalizedTag="CREATE_NNTPNAMES" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                                <div class="form-check form-switch">
-                                    <asp:CheckBox Text="&nbsp;" ID="CreateNntpUsers" runat="server"></asp:CheckBox>
-
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-md-6">
@@ -1193,14 +1184,6 @@
                     <asp:CheckBox Text="&nbsp;" ID="ShowDeletedMessagesToAll" runat="server"></asp:CheckBox>
                 </div>
             </div>
-            <div class="mb-3 col-md-6">
-                <YAF:HelpLabel ID="HelpLabel240" runat="server"
-                               AssociatedControlID="ShowEditedMessage"
-                               LocalizedTag="SHOW_EDIT_MESSAGE" LocalizedPage="ADMIN_HOSTSETTINGS" />
-                <div class="form-check form-switch">
-                    <asp:CheckBox Text="&nbsp;" ID="ShowEditedMessage" runat="server"></asp:CheckBox>
-                </div>
-            </div>
         </div>
         <div class="row">
             <div class="mb-3 col-md-6">
@@ -1265,6 +1248,8 @@
                     <asp:CheckBox Text="&nbsp;" ID="ShowPageGenerationTime" runat="server"></asp:CheckBox>
                 </div>
             </div>
+            </div>
+                    <div class="row">
             <div class="mb-3 col-md-6">
                 <YAF:HelpLabel ID="HelpLabel172" runat="server"
                                AssociatedControlID="ShowYAFVersion"
@@ -1272,6 +1257,15 @@
                 <div class="form-check form-switch">
                     <asp:CheckBox Text="&nbsp;" ID="ShowYAFVersion" runat="server"></asp:CheckBox>
 
+                </div>
+            </div>
+            
+            <div class="mb-3 col-md-6">
+                <YAF:HelpLabel ID="HelpLabel10" runat="server"
+                               AssociatedControlID="HideCopyright"
+                               LocalizedTag="COPYRIGHT_REMOVAL_KEY" LocalizedPage="ADMIN_BOARDSETTINGS"/>
+                <div class="form-check form-switch">
+                    <asp:CheckBox ID="HideCopyright" runat="server" Text="&nbsp;"></asp:CheckBox>
                 </div>
             </div>
         </div>
@@ -1458,25 +1452,6 @@
                         </YAF:ThemeButton>
                     </div>
                 </div>
-            </div><div class="tab-pane fade" id="View5" role="tabpanel">
-        <div class="card mb-3">
-            <div class="card-header">
-                <YAF:IconHeader runat="server"
-                                IconType="text-secondary"
-                                IconName="cog"
-                                LocalizedPage="ADMIN_HOSTSETTINGS"></YAF:IconHeader>
-                - <YAF:LocalizedLabel ID="LocalizedLabel66" runat="server"
-                                      LocalizedTag="HEADER_EDITORS"
-                                      LocalizedPage="ADMIN_HOSTSETTINGS" />
-            </div>
-            <div class="card-body">
-            </div>
-            <div class="card-footer text-lg-center">
-                <YAF:ThemeButton ID="ThemeButton6" runat="server"  Type="Primary" OnClick="SaveClick"
-                                 Icon="save" TextLocalizedTag="SAVE_SETTINGS" TextLocalizedPage="ADMIN_HOSTSETTINGS">
-                </YAF:ThemeButton>
-            </div>
-        </div>
             </div><div class="tab-pane fade" id="View6" role="tabpanel">
                 <div class="card mb-3">
                     <div class="card-header">
