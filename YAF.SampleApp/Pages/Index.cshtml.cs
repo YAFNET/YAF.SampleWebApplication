@@ -51,11 +51,4 @@ public class IndexModel : PageModel, IHaveServiceLocator
     public IndexModel()
     {
     }
-
-    /// <summary>
-    /// Called when [get].
-    /// </summary>
-    public void OnGet()
-    {
-    }
 }

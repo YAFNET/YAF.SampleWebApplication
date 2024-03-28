@@ -28,6 +28,7 @@ using YAF.Core.Extensions;
 using YAF.Core.Hubs;
 using YAF.Core.Middleware;
 using YAF.RazorPages;
+using YAF.UI.Chat;
 
 namespace YAF.SampleApp;
 
@@ -103,7 +104,6 @@ public class Startup : IHaveServiceLocator
         }
         else
         {
-            //app.UseExceptionHandler("/Error");
             app.UseDeveloperExceptionPage();
 
             app.UseHsts();
@@ -130,7 +130,6 @@ public class Startup : IHaveServiceLocator
 
             endpoints.MapControllers();
 
-            //endpoints.MapYafHubs();
             endpoints.MapHub<NotificationHub>("/NotificationHub");
             endpoints.MapHub<ChatHub>("/ChatHub");
 
