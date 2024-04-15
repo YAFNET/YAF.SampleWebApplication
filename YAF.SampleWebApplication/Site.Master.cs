@@ -35,8 +35,6 @@ namespace YAF.SampleWebApplication
     using YAF.Configuration;
     using YAF.Core.Context;
     using YAF.Core.Extensions;
-    using YAF.Core.Services;
-    using YAF.Types.Extensions;
     using YAF.Types.Interfaces;
     using YAF.Types.Interfaces.Services;
     using YAF.Types.Models;
@@ -46,21 +44,7 @@ namespace YAF.SampleWebApplication
     /// </summary>
     public partial class SiteMaster : MasterPage
     {
-        /// <summary>
-        /// The get return url.
-        /// </summary>
-        /// <returns>
-        /// The url.
-        /// </returns>
-        protected string GetReturnUrl()
-        {
-            return HttpContext.Current.Server.UrlEncode(
-                HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl").IsSet()
-                    ? BoardContext.Current.Get<LinkBuilder>().GetSafeRawUrl(HttpContext.Current.Request.QueryString.GetFirstOrDefault("ReturnUrl"))
-                    : BoardContext.Current.Get<LinkBuilder>().GetSafeRawUrl());
-        }
-
-        /// <summary>Handles the Load event of the Page control.</summary>
+	    /// <summary>Handles the Load event of the Page control.</summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
@@ -68,15 +52,15 @@ namespace YAF.SampleWebApplication
             // Check if forum is installed
             try
             {
-                var _ = BoardContext.Current.GetRepository<Board>().GetAll().Any();
+                _ = BoardContext.Current.GetRepository<Board>().GetAll().Any();
             }
             catch
             {
                 // failure... no boards.
                 HttpContext.Current.Response.Redirect($"{BoardInfo.ForumClientFileRoot}install/default.aspx");
-            }
+			}
 
-            var scriptManager = ScriptManager.GetCurrent(this.Page);
+			var scriptManager = ScriptManager.GetCurrent(this.Page);
 
             var forum = this.MainContent.FindControl("forum");
 
@@ -129,17 +113,6 @@ namespace YAF.SampleWebApplication
             return BoardContext.Current.Get<ILocalization>().Culture.TextInfo.IsRightToLeft
                        ? $@"lang=""{BoardContext.Current.Get<ILocalization>().Culture.TwoLetterISOLanguageName}"" dir=""rtl"""
                        : $@"lang=""{BoardContext.Current.Get<ILocalization>().Culture.TwoLetterISOLanguageName}""";
-        }
-
-        /// <summary>
-        /// Gets the Theme Mode (dark or light) for the root html Tag
-        /// </summary>
-        /// <returns>Returns data attribute for the bootstrap theme</returns>
-        protected string GetThemeMode()
-        {
-            return BoardContext.Current.PageUser.DarkMode
-                       ? @" data-bs-theme=""dark"""
-                       : string.Empty;
         }
     }
 }
