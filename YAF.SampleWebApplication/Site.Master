@@ -47,10 +47,7 @@
                             </AnonymousTemplate>
                             <LoggedInTemplate>
                                 Welcome &nbsp;<span class="fw-bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>&nbsp;
-                                <asp:LoginStatus ID="HeadLoginStatus" runat="server"
-                                                 LogoutAction="Redirect"
-                                                 LogoutText="Log Out"
-                                                 CssClass="btn btn-outline-success my-2 my-sm-0" LogoutPageUrl="~/"/>
+                                <a class="btn btn-outline-success my-2 my-sm-0" href="javascript:LogOutClick()">Log Out</a>
                             </LoggedInTemplate>
                         </asp:LoginView>
                     </div>
