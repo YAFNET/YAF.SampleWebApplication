@@ -987,7 +987,9 @@
     <Content Include="Forum\Scripts\codemirror.min.js" />
     <Content Include="Forum\Scripts\editor\editor.min.js" />
     <Content Include="Forum\Scripts\fileUploader.min.js" />
+    <Content Include="Forum\Scripts\forumAdminExtensions.js" />
     <Content Include="Forum\Scripts\forumAdminExtensions.min.js" />
+    <Content Include="Forum\Scripts\forumExtensions.js" />
     <Content Include="Forum\Scripts\forumExtensions.min.js" />
     <Content Include="Forum\Scripts\InstallWizard.comb.min.js" />
     <Content Include="Forum\Scripts\sceditor\languages\ar.js" />
@@ -1131,6 +1133,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forum\Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.25.0.90414\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.25.0.90414\analyzers\SonarAnalyzer.CFG.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.25.0.90414\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.9.25.0.90414\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

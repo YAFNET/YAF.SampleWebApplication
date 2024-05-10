@@ -33,6 +33,13 @@ module.exports = function(grunt) {
                     'rmdir upgrade /s /q ',
                     'del "YAF.SqlServer-Upgrade.zip"'
                 ].join('&&')
+            },
+            copyDebug: {
+	            command: [
+		            '@echo off',
+                    'copy forum\\Scripts\\forumAdminExtensions.min.js forum\\Scripts\\forumAdminExtensions.js ',
+		            'copy forum\\Scripts\\forumExtensions.min.js forum\\Scripts\\forumExtensions.js'
+	            ].join('&&')
             }
         },
 

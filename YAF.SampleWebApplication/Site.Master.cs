@@ -74,12 +74,8 @@ namespace YAF.SampleWebApplication
             }
             else
             {
-                scriptManager.Scripts.Insert(
-                    0,
-                    new ScriptReference(BoardInfo.GetURLToScripts("jquery.min.js")));
-
                 scriptManager.Scripts.Add(
-                    new ScriptReference(BoardInfo.GetURLToScripts("jquery.ForumExtensions.min.js")));
+                    new ScriptReference(BoardInfo.GetURLToScripts("forumExtensions.min.js")));
 
                 var link = new HtmlLink();
 
