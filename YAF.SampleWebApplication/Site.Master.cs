@@ -22,6 +22,8 @@
  * under the License.
  */
 
+using YAF.Core.Helpers;
+
 namespace YAF.SampleWebApplication
 {
     using System;
@@ -35,6 +37,9 @@ namespace YAF.SampleWebApplication
     using YAF.Configuration;
     using YAF.Core.Context;
     using YAF.Core.Extensions;
+    using YAF.Core.Services;
+    using YAF.Core.Utilities;
+    using YAF.Types.Constants;
     using YAF.Types.Interfaces;
     using YAF.Types.Interfaces.Services;
     using YAF.Types.Models;
@@ -77,14 +82,33 @@ namespace YAF.SampleWebApplication
                 scriptManager.Scripts.Add(
                     new ScriptReference(BoardInfo.GetURLToScripts("forumExtensions.min.js")));
 
+                if (BoardContext.Current is not null)
+                {
+                    var logoutScript = JavaScriptBlocks.LogOutJs(
+                        BoardContext.Current.Get<ILocalization>().GetText("TOOLBAR", "LOGOUT_TITLE"),
+                        BoardContext.Current.Get<ILocalization>().GetText("TOOLBAR", "LOGOUT_QUESTION"),
+                        BoardContext.Current.Get<ILocalization>().GetText("TOOLBAR", "LOGOUT"),
+                        BoardContext.Current.Get<ILocalization>().GetText("COMMON", "CANCEL"),
+                        BoardContext.Current.Get<LinkBuilder>().GetLink(ForumPages.Account_Logout));
+
+
+                    ScriptManager.RegisterStartupScript(
+                        this.Page,
+                        this.Page.GetType(),
+                        nameof(JavaScriptBlocks.LogOutJs),
+                        JsAndCssHelper.CompressJavaScript(logoutScript),
+                        true);
+                }
+
+
                 var link = new HtmlLink();
 
                 link.Attributes.Add("rel", "stylesheet");
                 link.Attributes.Add("type", "text/css");
 
-               link.Href = BoardContext.Current != null
-                                ? BoardContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
-                                : "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css";
+                link.Href = BoardContext.Current != null
+                    ? BoardContext.Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css")
+                    : "~/Forum/Content/Themes/yaf/bootstrap-forum.min.css";
 
                 this.Page.Header.Controls.Add(link);
 
