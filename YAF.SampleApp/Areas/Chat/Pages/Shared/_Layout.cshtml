@@ -18,6 +18,7 @@
     <link href="~/favicons/site.webmanifest" rel="manifest" />
     <link href="~/favicons/safari-pinned-tab.svg" rel="mask-icon" color="#5bbad5" />
     <link href="~/favicons/favicon.ico" rel="shortcut icon" />
+    <script src="~/js/themeSelector.min.js"></script>
 </head>
 <body>
     <header>
@@ -30,21 +31,21 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="Forums" asp-page="/Index">Forums</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="Chat" asp-page="/Index">Chat</a>
-                        </li>
+	                    <li class="nav-item">
+		                    <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+	                    </li>
+	                    <li class="nav-item">
+		                    <a class="nav-link" asp-area="Forums" asp-page="/Index">Forums</a>
+	                    </li>
+	                    <li class="nav-item">
+                            <a class="nav-link active" asp-area="Chat" asp-page="/Index">Chat</a>
+	                    </li>
                     </ul>
                     <div class="form-inline mt-2 mt-md-0">
                         @if (Current.IsGuest)
                         {
-                            <a class="btn btn-outline-success my-2 my-sm-0 me-sm-2" asp-page="/Account/Login" asp-area="Forums">Login</a>
-                            <a class="btn btn-outline-success my-2 my-sm-0" asp-page="@(Current.BoardSettings.ShowRulesForRegistration ? "/Privacy" : "/Account/Register")" asp-area="Forums">Register</a>
+                            <a class="btn btn-outline-primary my-2 my-sm-0 me-sm-2" asp-page="/Account/Login" asp-area="Forums">Login</a>
+                            <a class="btn btn-outline-secondary my-2 my-sm-0" asp-page="@(Current.BoardSettings.ShowRulesForRegistration ? "/Privacy" : "/Account/Register")" asp-area="Forums">Register</a>
                         }
                         else
                         {
