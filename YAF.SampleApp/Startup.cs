@@ -70,16 +70,9 @@ public class Startup : IHaveServiceLocator
     /// <param name="services">The services.</param>
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddRazorPages(options =>
-        {
-            options.Conventions.AddPageRoute("/SiteMap", "Sitemap.xml");
-        }).AddYafRazorPages(this.Environment);
-
-        services.AddControllers();
-
-        services.AddSignalR();
-
         services.AddYafCore(this.Configuration);
+
+        services.AddServerSideBlazor();
     }
 
     /// <summary>
@@ -123,7 +116,11 @@ public class Startup : IHaveServiceLocator
         {
             endpoints.MapRazorPages();
 
-            endpoints.MapAreaControllerRoute(
+            endpoints.MapBlazorHub();
+
+            endpoints.MapFallbackToPage("/_Host");
+
+			endpoints.MapAreaControllerRoute(
                 name: "default",
                 areaName:"Forums",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
