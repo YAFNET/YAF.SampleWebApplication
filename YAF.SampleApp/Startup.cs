@@ -70,6 +70,11 @@ public class Startup : IHaveServiceLocator
     /// <param name="services">The services.</param>
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddRazorPages(options =>
+        {
+            options.Conventions.AddAreaPageRoute("Forums","/SiteMap", "/Sitemap.xml");
+        }).AddYafRazorPages(this.Environment);
+
         services.AddYafCore(this.Configuration);
 
         services.AddServerSideBlazor();
@@ -97,7 +102,7 @@ public class Startup : IHaveServiceLocator
         }
         else
         {
-            app.UseDeveloperExceptionPage();
+            app.UseExceptionHandler("/Forums/Error");
 
             app.UseHsts();
         }
