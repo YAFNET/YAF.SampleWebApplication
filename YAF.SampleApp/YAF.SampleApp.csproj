@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.0-beta09" />
-    <PackageReference Include="YAFNET.RazorPages" Version="4.0.0-beta09" />
-    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.0-beta09" />
+    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.0-rc01" />
+    <PackageReference Include="YAFNET.RazorPages" Version="4.0.0-rc01" />
+    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.0-rc01" />
   </ItemGroup>
 
   <ItemGroup>
