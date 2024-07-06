@@ -117,6 +117,8 @@ public class Startup : IHaveServiceLocator
 
         app.UseYafCore(this.ServiceLocator, env);
 
+        app.UseRobotsTxt(env);
+
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapRazorPages();

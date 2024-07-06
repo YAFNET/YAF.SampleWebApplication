@@ -6,9 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.0-rc02" />
-    <PackageReference Include="YAFNET.RazorPages" Version="4.0.0-rc02" />
-    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.0-rc02" />
+    <Content Remove="C:\Users\iherb\.nuget\packages\yafnet.ui.chat\4.0.0-rc02\contentFiles\any\net8.0\libman.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.0-rc03" />
+    <PackageReference Include="YAFNET.RazorPages" Version="4.0.0-rc03" />
+    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.0-rc03" />
   </ItemGroup>
 
   <ItemGroup>
