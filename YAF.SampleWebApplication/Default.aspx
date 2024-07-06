@@ -9,7 +9,7 @@
             This Is a Sample Demo Application that shows the Integration of YAF.NET as a Control in to an existing ASP.NET Application.
         </p>
         <p>
-            To learn more about YAF.NET visit <a href="http://www.yetanotherforum.net" title="YAF.NET Website">YAF.NET Website</a>.
+            To learn more about YAF.NET visit <a href="https://www.yetanotherforum.net" title="YAF.NET Website">YAF.NET Website</a>.
         </p>
     </div>
 

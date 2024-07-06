@@ -12,7 +12,7 @@
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
 
- * http://www.apache.org/licenses/LICENSE-2.0
+ * https://www.apache.org/licenses/LICENSE-2.0
 
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
@@ -27,7 +27,6 @@ using YAF.Core.Helpers;
 namespace YAF.SampleWebApplication
 {
     using System;
-    using System.Linq;
     using System.Web;
     using System.Web.UI;
     using System.Web.UI.HtmlControls;
@@ -54,17 +53,6 @@ namespace YAF.SampleWebApplication
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Check if forum is installed
-            try
-            {
-                _ = BoardContext.Current.GetRepository<Board>().GetAll().Any();
-            }
-            catch
-            {
-                // failure... no boards.
-                HttpContext.Current.Response.Redirect($"{BoardInfo.ForumClientFileRoot}install/default.aspx");
-			}
-
 			var scriptManager = ScriptManager.GetCurrent(this.Page);
 
             var forum = this.MainContent.FindControl("forum");
@@ -79,27 +67,41 @@ namespace YAF.SampleWebApplication
             }
             else
             {
-                scriptManager.Scripts.Add(
-                    new ScriptReference(BoardInfo.GetURLToScripts("forumExtensions.min.js")));
-
-                if (BoardContext.Current is not null)
+                // Check if forum is installed
+                try
                 {
-                    var logoutScript = JavaScriptBlocks.LogOutJs(
-                        BoardContext.Current.Get<ILocalization>().GetText("TOOLBAR", "LOGOUT_TITLE"),
-                        BoardContext.Current.Get<ILocalization>().GetText("TOOLBAR", "LOGOUT_QUESTION"),
-                        BoardContext.Current.Get<ILocalization>().GetText("TOOLBAR", "LOGOUT"),
-                        BoardContext.Current.Get<ILocalization>().GetText("COMMON", "CANCEL"),
-                        BoardContext.Current.Get<LinkBuilder>().GetLink(ForumPages.Account_Logout));
-
-
-                    ScriptManager.RegisterStartupScript(
-                        this.Page,
-                        this.Page.GetType(),
-                        nameof(JavaScriptBlocks.LogOutJs),
-                        JsAndCssHelper.CompressJavaScript(logoutScript),
-                        true);
+                    _ = BoardContext.Current.GetRepository<Board>().TableExists() &&
+                        BoardContext.Current.GetRepository<Board>().Exists(b => b.ID > 0);
+                }
+                catch
+                {
+                    // failure... no boards.
+                    HttpContext.Current.Response.Redirect($"{BoardInfo.ForumClientFileRoot}install/default.aspx");
                 }
 
+                if (scriptManager is not null)
+                {
+                    scriptManager.Scripts.Add(
+                        new ScriptReference(BoardInfo.GetURLToScripts("forumExtensions.min.js")));
+
+                    if (BoardContext.Current is not null)
+                    {
+                        var logoutScript = JavaScriptBlocks.LogOutJs(
+                            BoardContext.Current.Get<ILocalization>().GetText("TOOLBAR", "LOGOUT_TITLE"),
+                            BoardContext.Current.Get<ILocalization>().GetText("TOOLBAR", "LOGOUT_QUESTION"),
+                            BoardContext.Current.Get<ILocalization>().GetText("TOOLBAR", "LOGOUT"),
+                            BoardContext.Current.Get<ILocalization>().GetText("COMMON", "CANCEL"),
+                            BoardContext.Current.Get<LinkBuilder>().GetLink(ForumPages.Account_Logout));
+
+
+                        ScriptManager.RegisterStartupScript(
+                            this.Page,
+                            this.Page.GetType(),
+                            nameof(JavaScriptBlocks.LogOutJs),
+                            JsAndCssHelper.CompressJavaScript(logoutScript),
+                            true);
+                    }
+                }
 
                 var link = new HtmlLink();
 
@@ -130,9 +132,15 @@ namespace YAF.SampleWebApplication
         /// <returns>Returns language tag</returns>
         protected string GetLanguageTags()
         {
+            var languageTag = BoardContext.Current.Get<ILocalization>().Culture.TwoLetterISOLanguageName;
+
             return BoardContext.Current.Get<ILocalization>().Culture.TextInfo.IsRightToLeft
-                       ? $@"lang=""{BoardContext.Current.Get<ILocalization>().Culture.TwoLetterISOLanguageName}"" dir=""rtl"""
-                       : $@"lang=""{BoardContext.Current.Get<ILocalization>().Culture.TwoLetterISOLanguageName}""";
+                       ? $"""
+                          lang="{languageTag}" dir="rtl"
+                          """
+                       : $"""
+                          lang="{languageTag}"
+                          """;
         }
     }
 }
