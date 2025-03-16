@@ -22,11 +22,7 @@
  * under the License.
  */
 
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using YAF.Types.Objects.Language;
 
 namespace YAF.SampleApp.Pages;
 

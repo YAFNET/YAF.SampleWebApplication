@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+	<CompressionEnabled>false</CompressionEnabled>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.0-rc04" />
-    <PackageReference Include="YAFNET.RazorPages" Version="4.0.0-rc04" />
-    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.0-rc04" />
+    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.0" />
+    <PackageReference Include="YAFNET.RazorPages" Version="4.0.0" />
+    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>
