@@ -1,7 +1,7 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2023 Ingo Herbote
+ * Copyright (C) 2014-2025 Ingo Herbote
  * https://www.yetanotherforum.net/
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -22,14 +22,13 @@
  * under the License.
  */
 
-namespace YAF.SampleWebApplication
-{
-    using System.Web.UI;
+namespace YAF.SampleWebApplication;
 
-    /// <summary>
-    /// The _ default.
-    /// </summary>
-    public partial class _Default : Page
-    {
-    }
+using System.Web.UI;
+
+/// <summary>
+/// The _ default.
+/// </summary>
+public partial class _Default : Page
+{
 }

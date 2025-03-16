@@ -1,9 +1,9 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2023 Ingo Herbote
+ * Copyright (C) 2014-2025 Ingo Herbote
  * https://www.yetanotherforum.net/
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -22,36 +22,35 @@
  * under the License.
  */
 
-namespace YAF.SampleWebApplication
+namespace YAF.SampleWebApplication;
+
+using System;
+using System.Web.Mvc;
+using System.Web.Routing;
+
+using YAF.Core.Context;
+
+/// <summary>
+/// The global.
+/// </summary>
+public class Global : YafHttpApplication
 {
-    using System;
-    using System.Web.Mvc;
-    using System.Web.Routing;
-
-    using YAF.Core.Context;
-
     /// <summary>
-    /// The global.
+    /// The application start.
     /// </summary>
-    public class Global : YafHttpApplication
+    /// <param name="sender">
+    /// The sender.
+    /// </param>
+    /// <param name="e">
+    /// The e.
+    /// </param>
+    protected override void Application_Start(object sender, EventArgs e)
     {
-        /// <summary>
-        /// The application start.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        protected override void Application_Start(object sender, EventArgs e)
-        {
-            base.Application_Start(sender, e);
+        base.Application_Start(sender, e);
 
-            AreaRegistration.RegisterAllAreas();
+        AreaRegistration.RegisterAllAreas();
 
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles();
-        }
+        RouteConfig.RegisterRoutes(RouteTable.Routes);
+        BundleConfig.RegisterBundles();
     }
 }

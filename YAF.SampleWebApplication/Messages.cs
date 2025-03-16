@@ -1,7 +1,7 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2023 Ingo Herbote
+ * Copyright (C) 2014-2025 Ingo Herbote
  * https://www.yetanotherforum.net/
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -22,36 +22,35 @@
  * under the License.
  */
 
-namespace YAF.SampleWebApplication
+namespace YAF.SampleWebApplication;
+
+/// <summary>
+/// The messages.
+/// </summary>
+public class Messages
 {
     /// <summary>
-    /// The messages.
+    /// Gets or sets the user id.
     /// </summary>
-    public class Messages
-    {
-        /// <summary>
-        /// Gets or sets the user id.
-        /// </summary>
-        public int UserId { get; set; }
+    public int UserId { get; set; }
 
-        /// <summary>
-        /// Gets or sets the user name.
-        /// </summary>
-        public string UserName { get; set; }
+    /// <summary>
+    /// Gets or sets the user name.
+    /// </summary>
+    public string UserName { get; set; }
 
-        /// <summary>
-        /// Gets or sets the message.
-        /// </summary>
-        public string Message { get; set; }
+    /// <summary>
+    /// Gets or sets the message.
+    /// </summary>
+    public string Message { get; set; }
 
-        /// <summary>
-        /// Gets or sets the time.
-        /// </summary>
-        public string Time { get; set; }
+    /// <summary>
+    /// Gets or sets the time.
+    /// </summary>
+    public string Time { get; set; }
 
-        /// <summary>
-        /// Gets or sets the user image.
-        /// </summary>
-        public string UserImage { get; set; }
-    }
+    /// <summary>
+    /// Gets or sets the user image.
+    /// </summary>
+    public string UserImage { get; set; }
 }

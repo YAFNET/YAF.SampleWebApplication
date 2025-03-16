@@ -1,7 +1,7 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2023 Ingo Herbote
+ * Copyright (C) 2014-2025 Ingo Herbote
  * https://www.yetanotherforum.net/
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -22,71 +22,70 @@
  * under the License.
  */
 
-namespace YAF.SampleWebApplication.Controllers
-{
-    using System.Web.Mvc;
+namespace YAF.SampleWebApplication.Controllers;
 
-    using YAF.SampleWebApplication.Controllers.BaseClass;
-    using YAF.SampleWebApplication.Models;
+using System.Web.Mvc;
+
+using YAF.SampleWebApplication.Controllers.BaseClass;
+using YAF.SampleWebApplication.Models;
+
+/// <summary>
+/// The razor demo controller.
+/// </summary>
+public class RazorDemoController : RazorController
+{
+    /// <summary>
+    /// The index.
+    /// </summary>
+    /// <returns>
+    /// The <see cref="ActionResult"/>.
+    /// </returns>
+    public ActionResult Index()
+    {
+        return this.RazorView();
+    }
 
     /// <summary>
-    /// The razor demo controller.
+    /// Example render some other view
     /// </summary>
-    public class RazorDemoController : RazorController
+    /// <returns>
+    /// The <see cref="ActionResult"/>.
+    /// </returns>
+    public ActionResult RenderOtherView()
     {
-        /// <summary>
-        /// The index.
-        /// </summary>
-        /// <returns>
-        /// The <see cref="ActionResult"/>.
-        /// </returns>
-        public ActionResult Index()
-        {
-            return this.RazorView();
-        }
+        return this.RazorView("Hello");
+    }
 
-        /// <summary>
-        /// Example render some other view
-        /// </summary>
-        /// <returns>
-        /// The <see cref="ActionResult"/>.
-        /// </returns>
-        public ActionResult RenderOtherView()
-        {
-            return this.RazorView("Hello");
-        }
+    /// <summary>
+    /// Example Render view with Model
+    /// </summary>
+    /// <param name="id">
+    /// The id.
+    /// </param>
+    /// <returns>
+    /// The <see cref="ActionResult"/>.
+    /// </returns>
+    public ActionResult Users(int id)
+    {
+        var model = new Users { UserId = id, UserName = "Testuser" };
 
-        /// <summary>
-        /// Example Render view with Model
-        /// </summary>
-        /// <param name="id">
-        /// The id.
-        /// </param>
-        /// <returns>
-        /// The <see cref="ActionResult"/>.
-        /// </returns>
-        public ActionResult Users(int id)
-        {
-            var model = new Users { UserId = id, UserName = "Testuser" };
+        return this.RazorView(model);
+    }
 
-            return this.RazorView(model);
-        }
+    /// <summary>
+    /// The some ajax call.
+    /// </summary>
+    /// <param name="id">
+    /// The id.
+    /// </param>
+    /// <returns>
+    /// The <see cref="ActionResult"/>.
+    /// </returns>
+    [HttpGet]
+    public ActionResult SomeAjaxCall(int id)
+    {
+        var model = new Users { UserId = id, UserName = "Testuser" };
 
-        /// <summary>
-        /// The some ajax call.
-        /// </summary>
-        /// <param name="id">
-        /// The id.
-        /// </param>
-        /// <returns>
-        /// The <see cref="ActionResult"/>.
-        /// </returns>
-        [HttpGet]
-        public ActionResult SomeAjaxCall(int id)
-        {
-            var model = new Users { UserId = id, UserName = "Testuser" };
-
-            return this.View("Users", model);
-        }
+        return this.View("Users", model);
     }
 }

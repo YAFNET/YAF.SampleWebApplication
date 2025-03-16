@@ -1,9 +1,9 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2023 Ingo Herbote
+ * Copyright (C) 2014-2025 Ingo Herbote
  * https://www.yetanotherforum.net/
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -22,36 +22,35 @@
  * under the License.
  */
 
-namespace YAF.SampleWebApplication.Models
+namespace YAF.SampleWebApplication.Models;
+
+/// <summary>
+/// The users.
+/// </summary>
+public class Users
 {
     /// <summary>
-    /// The users.
+    /// Gets or sets the connection id.
     /// </summary>
-    public class Users
-    {
-        /// <summary>
-        /// Gets or sets the connection id.
-        /// </summary>
-        public string ConnectionId { get; set; }
+    public string ConnectionId { get; set; }
 
-        /// <summary>
-        /// Gets or sets the user id.
-        /// </summary>
-        public int UserId { get; set; }
+    /// <summary>
+    /// Gets or sets the user id.
+    /// </summary>
+    public int UserId { get; set; }
 
-        /// <summary>
-        /// Gets or sets the user name.
-        /// </summary>
-        public string UserName { get; set; }
+    /// <summary>
+    /// Gets or sets the user name.
+    /// </summary>
+    public string UserName { get; set; }
 
-        /// <summary>
-        /// Gets or sets the user image.
-        /// </summary>
-        public string UserImage { get; set; }
+    /// <summary>
+    /// Gets or sets the user image.
+    /// </summary>
+    public string UserImage { get; set; }
 
-        /// <summary>
-        /// Gets or sets the login time.
-        /// </summary>
-        public string LoginTime { get; set; }
-    }
+    /// <summary>
+    /// Gets or sets the login time.
+    /// </summary>
+    public string LoginTime { get; set; }
 }
