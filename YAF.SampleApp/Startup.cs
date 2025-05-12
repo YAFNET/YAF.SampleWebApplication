@@ -24,11 +24,10 @@
 
 using Autofac;
 
+using YAF.Core.Context;
 using YAF.Core.Extensions;
 using YAF.Core.Hubs;
 using YAF.Core.Middleware;
-using YAF.RazorPages;
-using YAF.UI.Chat;
 
 namespace YAF.SampleApp;
 
@@ -72,8 +71,8 @@ public class Startup : IHaveServiceLocator
     {
         services.AddRazorPages(options =>
         {
-            options.Conventions.AddAreaPageRoute("Forums","/SiteMap", "/Sitemap.xml");
-        }).AddYafRazorPages(this.Environment);
+            options.Conventions.AddAreaPageRoute("Forums", "/SiteMap", "/Sitemap.xml");
+        });
 
         services.AddYafCore(this.Configuration);
 
@@ -136,8 +135,6 @@ public class Startup : IHaveServiceLocator
 
             endpoints.MapHub<NotificationHub>("/NotificationHub");
             endpoints.MapHub<ChatHub>("/ChatHub");
-
-            endpoints.MapHub<AllChatHub>("/AllChatHub");
         });
     }
 }

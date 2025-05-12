@@ -1,0 +1,1664 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ServiceStack.OrmLite.SqlServer</name>
+    </assembly>
+    <members>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerBoolConverter">
+            <summary>
+            Class SqlServerBoolConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.BoolConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.BoolConverter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerBoolConverter.ColumnDefinition">
+            <summary>
+            SQL Column Definition used in CREATE Table.
+            </summary>
+            <value>The column definition.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerBoolConverter.DbType">
+            <summary>
+            Used in DB Params. Defaults to DbType.String
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerBoolConverter.ToDbValue(System.Type,System.Object)">
+            <summary>
+            Parameterized value in parameterized queries
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerBoolConverter.ToQuotedString(System.Type,System.Object)">
+            <summary>
+            Quoted Value in SQL Statement
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerBoolConverter.FromDbValue(System.Type,System.Object)">
+            <summary>
+            Froms the database value.
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerByteArrayConverter">
+            <summary>
+            Class SqlServerByteArrayConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.ByteArrayConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.ByteArrayConverter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerByteArrayConverter.ColumnDefinition">
+            <summary>
+            SQL Column Definition used in CREATE Table.
+            </summary>
+            <value>The column definition.</value>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerByteArrayConverter.ToQuotedString(System.Type,System.Object)">
+            <summary>
+            Converts to quotedstring.
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTime2Converter">
+            <summary>
+            Class SqlServerDateTime2Converter.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTimeConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTimeConverter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTime2Converter.ColumnDefinition">
+            <summary>
+            SQL Column Definition used in CREATE Table.
+            </summary>
+            <value>The column definition.</value>
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTime2Converter.DateTimeFormat">
+            <summary>
+            The date time format
+            </summary>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTime2Converter.DbType">
+            <summary>
+            Used in DB Params. Defaults to DbType.String
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTime2Converter.ToQuotedString(System.Type,System.Object)">
+            <summary>
+            Converts to quotedstring.
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTime2Converter.FromDbValue(System.Type,System.Object)">
+            <summary>
+            Froms the database value.
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTimeConverter">
+            <summary>
+            Class SqlServerDateTimeConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.DateTimeConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.DateTimeConverter" />
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTimeConverter.DateTimeFormat">
+            <summary>
+            The date time format
+            </summary>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTimeConverter.ToQuotedString(System.Type,System.Object)">
+            <summary>
+            Quoted Value in SQL Statement
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDateTimeConverter.FromDbValue(System.Type,System.Object)">
+            <summary>
+            Froms the database value.
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerFloatConverter">
+            <summary>
+            Class SqlServerFloatConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.FloatConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.FloatConverter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerFloatConverter.ColumnDefinition">
+            <summary>
+            SQL Column Definition used in CREATE Table.
+            </summary>
+            <value>The column definition.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDoubleConverter">
+            <summary>
+            Class SqlServerDoubleConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.DoubleConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.DoubleConverter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDoubleConverter.ColumnDefinition">
+            <summary>
+            SQL Column Definition used in CREATE Table.
+            </summary>
+            <value>The column definition.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDecimalConverter">
+            <summary>
+            Class SqlServerDecimalConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.DecimalConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.DecimalConverter" />
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDecimalConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerDecimalConverter" /> class.
+            </summary>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerGuidConverter">
+            <summary>
+            Class SqlServerGuidConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.GuidConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.GuidConverter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerGuidConverter.ColumnDefinition">
+            <summary>
+            SQL Column Definition used in CREATE Table.
+            </summary>
+            <value>The column definition.</value>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerGuidConverter.ToQuotedString(System.Type,System.Object)">
+            <summary>
+            Converts to quotedstring.
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerSByteConverter">
+            <summary>
+            Class SqlServerSByteConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.SByteConverter" />
+            throws unknown type exceptions in parameterized queries, e.g: p.DbType = DbType.SByte
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.SByteConverter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerSByteConverter.DbType">
+            <summary>
+            Gets the type of the database.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerUInt16Converter">
+            <summary>
+            Class SqlServerUInt16Converter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.UInt16Converter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.UInt16Converter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerUInt16Converter.DbType">
+            <summary>
+            Gets the type of the database.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerUInt32Converter">
+            <summary>
+            Class SqlServerUInt32Converter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.UInt32Converter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.UInt32Converter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerUInt32Converter.DbType">
+            <summary>
+            Gets the type of the database.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerUInt64Converter">
+            <summary>
+            Class SqlServerUInt64Converter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.UInt64Converter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.UInt64Converter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerUInt64Converter.DbType">
+            <summary>
+            Gets the type of the database.
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerJsonStringConverter">
+            <summary>
+            Class SqlServerJsonStringConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerStringConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerStringConverter" />
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerJsonStringConverter.FromDbValue(System.Type,System.Object)">
+            <summary>
+            json string to object
+            Value from DB to Populate on POCO Data Model with
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerJsonStringConverter.ToDbValue(System.Type,System.Object)">
+            <summary>
+            object to json string
+            Parameterized value in parameterized queries
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlJsonAttribute">
+            <summary>
+            Class SqlJsonAttribute.
+            Implements the <see cref="T:System.Attribute" />
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerRowVersionConverter">
+            <summary>
+            Class SqlServerRowVersionConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.RowVersionConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.RowVersionConverter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerRowVersionConverter.ColumnDefinition">
+            <summary>
+            Gets the column definition.
+            </summary>
+            <value>The column definition.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerStringConverter">
+            <summary>
+            Class SqlServerStringConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.Converters.StringConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.Converters.StringConverter" />
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerStringConverter.MaxColumnDefinition">
+            <summary>
+            Gets the maximum column definition.
+            </summary>
+            <value>The maximum column definition.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerStringConverter.MaxVarCharLength">
+            <summary>
+            Gets the maximum length of the variable character.
+            </summary>
+            <value>The maximum length of the variable character.</value>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerStringConverter.GetColumnDefinition(System.Nullable{System.Int32})">
+            <summary>
+            Gets the column definition.
+            </summary>
+            <param name="stringLength">Length of the string.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerStringConverter.InitDbParam(System.Data.IDbDataParameter,System.Type)">
+            <summary>
+            Initializes the database parameter.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="fieldType">Type of the field.</param>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.Converters.SqlServerTimeConverter">
+            <summary>
+            Class SqlServerTimeConverter.
+            Implements the <see cref="T:ServiceStack.OrmLite.OrmLiteConverter" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.OrmLiteConverter" />
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.Converters.SqlServerTimeConverter.timeSpanOffset">
+            <summary>
+            The time span offset
+            </summary>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerTimeConverter.Precision">
+            <summary>
+            Gets or sets the precision.
+            </summary>
+            <value>The precision.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerTimeConverter.ColumnDefinition">
+            <summary>
+            SQL Column Definition used in CREATE Table.
+            </summary>
+            <value>The column definition.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.Converters.SqlServerTimeConverter.DbType">
+            <summary>
+            Used in DB Params. Defaults to DbType.String
+            </summary>
+            <value>The type of the database.</value>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.Converters.SqlServerTimeConverter.ToDbValue(System.Type,System.Object)">
+            <summary>
+            Converts to dbvalue.
+            </summary>
+            <param name="fieldType">Type of the field.</param>
+            <param name="value">The value.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider">
+            <summary>
+            Class SqlServer2012OrmLiteDialectProvider.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider" />
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.Instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.DoesSequenceExist(System.Data.IDbCommand,System.String)">
+            <summary>
+            Doeses the sequence exist.
+            </summary>
+            <param name="dbCmd">The database command.</param>
+            <param name="sequence">Name of the sequence.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.DoesSequenceExistAsync(System.Data.IDbCommand,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Does sequence exist as an asynchronous operation.
+            </summary>
+            <param name="dbCmd">The database command.</param>
+            <param name="sequenceName">Name of the sequence.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>A Task&lt;System.Boolean&gt; representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.GetAutoIncrementDefinition(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Gets the automatic increment definition.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.ShouldSkipInsert(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Shoulds the skip insert.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.SupportsSequences(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Supportses the sequences.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.ToCreateSequenceStatements(System.Type)">
+            <summary>
+            Converts to createsequencestatements.
+            </summary>
+            <param name="tableType">Type of the table.</param>
+            <returns>List&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.ToCreateSequenceStatement(System.Type,System.String)">
+            <summary>
+            Converts to createsequencestatement.
+            </summary>
+            <param name="tableType">Type of the table.</param>
+            <param name="sequenceName">Name of the sequence.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.SequenceList(System.Type)">
+            <summary>
+            Sequences the list.
+            </summary>
+            <param name="tableType">Type of the table.</param>
+            <returns>List&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.ToSelectStatement(ServiceStack.OrmLite.QueryType,ServiceStack.OrmLite.ModelDefinition,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Collections.Generic.ISet{System.String})">
+            <summary>
+            Converts to selectstatement.
+            </summary>
+            <param name="queryType">Type of the query.</param>
+            <param name="modelDef">The model definition.</param>
+            <param name="selectExpression">The select expression.</param>
+            <param name="bodyExpression">The body expression.</param>
+            <param name="orderByExpression">The order by expression.</param>
+            <param name="offset">The offset.</param>
+            <param name="rows">The rows.</param>
+            <param name="tags">The tags.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.GetColumnDefinition(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Gets the column definition.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.GetColumnDefinition(ServiceStack.OrmLite.FieldDefinition,ServiceStack.OrmLite.ModelDefinition)">
+            <summary>
+            Gets the column definition.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <param name="modelDef">The model definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.ToCreateTableStatement(System.Type)">
+            <summary>
+            Converts to createtablestatement.
+            </summary>
+            <param name="tableType">Type of the table.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.AppendFieldCondition(System.Text.StringBuilder,ServiceStack.OrmLite.FieldDefinition,System.Data.IDbCommand)">
+            <summary>
+            Appends the field condition.
+            </summary>
+            <param name="sqlFilter">The SQL filter.</param>
+            <param name="fieldDef">The field definition.</param>
+            <param name="cmd">The command.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.AppendNullFieldCondition(System.Text.StringBuilder,ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Appends the null field condition.
+            </summary>
+            <param name="sqlFilter">The SQL filter.</param>
+            <param name="fieldDef">The field definition.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.isSpatialField(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Determines whether [is spatial field] [the specified field definition].
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns><c>true</c> if [is spatial field] [the specified field definition]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider.hasIsNullProperty(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Determines whether [has is null property] [the specified field definition].
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns><c>true</c> if [has is null property] [the specified field definition]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2014OrmLiteDialectProvider">
+            <summary>
+            Class SqlServer2014OrmLiteDialectProvider.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2012OrmLiteDialectProvider" />
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServer2014OrmLiteDialectProvider.Instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2014OrmLiteDialectProvider.GetColumnDefinition(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Gets the column definition.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2014OrmLiteDialectProvider.GetColumnDefinition(ServiceStack.OrmLite.FieldDefinition,ServiceStack.OrmLite.ModelDefinition)">
+            <summary>
+            Gets the column definition.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <param name="modelDef">The model definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2014OrmLiteDialectProvider.ToCreateTableStatement(System.Type)">
+            <summary>
+            Converts to createtablestatement.
+            </summary>
+            <param name="tableType">Type of the table.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2016Expression`1">
+            <summary>
+            Class SqlServer2016Expression.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1" />
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2016Expression`1.#ctor(ServiceStack.OrmLite.IOrmLiteDialectProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2016Expression`1" /> class.
+            </summary>
+            <param name="dialectProvider">The dialect provider.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2016Expression`1.VisitSqlMethodCall(System.Linq.Expressions.MethodCallExpression)">
+            <summary>
+            Visits the SQL method call.
+            </summary>
+            <param name="m">The m.</param>
+            <returns>System.Object.</returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServerDialect">
+            <summary>
+            Class SqlServerDialect.
+            </summary>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServerDialect.Provider">
+            <summary>
+            Gets the provider.
+            </summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServerDialect.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2012Dialect">
+            <summary>
+            Class SqlServer2012Dialect.
+            </summary>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2012Dialect.Provider">
+            <summary>
+            Gets the provider.
+            </summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2012Dialect.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2014Dialect">
+            <summary>
+            Class SqlServer2014Dialect.
+            </summary>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2014Dialect.Provider">
+            <summary>
+            Gets the provider.
+            </summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2014Dialect.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2016Dialect">
+            <summary>
+            Class SqlServer2016Dialect.
+            </summary>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2016Dialect.Provider">
+            <summary>
+            Gets the provider.
+            </summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2016Dialect.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2017Dialect">
+            <summary>
+            Class SqlServer2017Dialect.
+            </summary>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2017Dialect.Provider">
+            <summary>
+            Gets the provider.
+            </summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2017Dialect.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2019Dialect">
+            <summary>
+            Class SqlServer2019Dialect.
+            </summary>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2019Dialect.Provider">
+            <summary>
+            Gets the provider.
+            </summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2019Dialect.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2022Dialect">
+            <summary>
+            Class SqlServer2022Dialect.
+            </summary>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2022Dialect.Provider">
+            <summary>
+            Gets the provider.
+            </summary>
+            <value>The provider.</value>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServer2022Dialect.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1">
+            <summary>
+            Class SqlServerExpression.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlExpression`1" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:ServiceStack.OrmLite.SqlExpression`1" />
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1.#ctor(ServiceStack.OrmLite.IOrmLiteDialectProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1" /> class.
+            </summary>
+            <param name="dialectProvider">The dialect provider.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1.PrepareUpdateStatement(System.Data.IDbCommand,`0,System.Boolean)">
+            <summary>
+            Prepares the update statement.
+            </summary>
+            <param name="dbCmd">The database command.</param>
+            <param name="item">The item.</param>
+            <param name="excludeDefaults">The exclude defaults.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1.GetCoalesceExpression(System.Linq.Expressions.BinaryExpression,System.Object,System.Object)">
+            <summary>
+            Gets the coalesce expression.
+            </summary>
+            <param name="b">The b.</param>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1.GetSubstringSql(System.Object,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Gets the substring SQL.
+            </summary>
+            <param name="quotedColumn">The quoted column.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="length">The length.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1.ToLengthPartialString(System.Object)">
+            <summary>
+            Converts to lengthpartialstring.
+            </summary>
+            <param name="arg">The argument.</param>
+            <returns>ServiceStack.OrmLite.PartialSqlString.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1.ConvertToPlaceholderAndParameter(System.Object@)">
+            <summary>
+            Converts to placeholder and parameter.
+            </summary>
+            <param name="right">The right.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1.VisitFilter(System.String,System.Object,System.Object,System.Object@,System.Object@)">
+            <summary>
+            Visits the filter.
+            </summary>
+            <param name="operand">The operand.</param>
+            <param name="originalLeft">The original left.</param>
+            <param name="originalRight">The original right.</param>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerExpression`1.ToDeleteRowStatement">
+            <summary>
+            Converts to deleterowstatement.
+            </summary>
+            <returns>string.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServerExpressionUtils">
+            <summary>
+            Class SqlServerExpressionUtils.
+            </summary>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerExpressionUtils.PrepareSqlServerUpdateStatement``1(System.Data.IDbCommand,ServiceStack.OrmLite.SqlExpression{``0},``0,System.Boolean)">
+            <summary>
+            Prepares the SQL server update statement.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dbCmd">The database command.</param>
+            <param name="q">The q.</param>
+            <param name="item">The item.</param>
+            <param name="excludeDefaults">if set to <c>true</c> [exclude defaults].</param>
+            <exception cref="T:System.ArgumentException">No non-null or non-default values were provided for type: {typeof(T).Name}</exception>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider">
+            <summary>
+            Class SqlServerOrmLiteDialectProvider.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider" />
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.Instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider" /> class.
+            </summary>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetQuotedValue(System.String)">
+            <summary>
+            Quote the string so that it can be used inside an SQL-expression
+            Escape quotes inside the string
+            </summary>
+            <param name="paramValue">The parameter value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.CreateConnection(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Creates the connection.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="options">The options.</param>
+            <returns>IDbConnection.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SqlExpression``1">
+            <summary>
+            SQLs the expression.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>SqlExpression&lt;T&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.CreateParam">
+            <summary>
+            Creates the parameter.
+            </summary>
+            <returns>IDbDataParameter.</returns>
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DefaultSchema">
+            <summary>
+            The default schema
+            </summary>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToTableNamesStatement(System.String)">
+            <summary>
+            Converts to tablenamesstatement.
+            </summary>
+            <param name="schema">The schema.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToTableNamesWithRowCountsStatement(System.Boolean,System.String)">
+            <summary>
+            Return table, row count SQL for listing all tables with their row counts
+            </summary>
+            <param name="live">If true returns live current row counts of each table (slower), otherwise returns cached row counts from RDBMS table stats</param>
+            <param name="schema">The table schema if any</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetSchemas(System.Data.IDbCommand)">
+            <summary>
+            Gets the schemas.
+            </summary>
+            <param name="dbCmd">The database command.</param>
+            <returns>List&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetSchemaTables(System.Data.IDbCommand)">
+            <summary>
+            Gets the schema tables.
+            </summary>
+            <param name="dbCmd">The database command.</param>
+            <returns>Dictionary&lt;System.String, List&lt;System.String&gt;&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DoesSchemaExist(System.Data.IDbCommand,System.String)">
+            <summary>
+            Doeses the schema exist.
+            </summary>
+            <param name="dbCmd">The database command.</param>
+            <param name="schemaName">Name of the schema.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DoesSchemaExistAsync(System.Data.IDbCommand,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Does schema exist as an asynchronous operation.
+            </summary>
+            <param name="dbCmd">The database command.</param>
+            <param name="schemaName">Name of the schema.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>A Task&lt;System.Boolean&gt; representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToCreateSchemaStatement(System.String)">
+            <summary>
+            Converts to createschemastatement.
+            </summary>
+            <param name="schemaName">Name of the schema.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToCreateSavePoint(System.String)">
+            <summary>
+            Converts to createsavepoint.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToReleaseSavePoint(System.String)">
+            <summary>
+            Converts to releasesavepoint.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToRollbackSavePoint(System.String)">
+            <summary>
+            Converts to rollbacksavepoint.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DoesTableExist(System.Data.IDbCommand,System.String,System.String)">
+            <summary>
+            Doeses the table exist.
+            </summary>
+            <param name="dbCmd">The database command.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="schema">The schema.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DoesTableExistAsync(System.Data.IDbCommand,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Does table exist as an asynchronous operation.
+            </summary>
+            <param name="dbCmd">The database command.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="schema">The schema.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>A Task&lt;System.Boolean&gt; representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DoesColumnExist(System.Data.IDbConnection,System.String,System.String,System.String)">
+            <summary>
+            Doeses the column exist.
+            </summary>
+            <param name="db">The database.</param>
+            <param name="columnName">Name of the column.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="schema">The schema.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DoesColumnExistAsync(System.Data.IDbConnection,System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Does column exist as an asynchronous operation.
+            </summary>
+            <param name="db">The database.</param>
+            <param name="columnName">Name of the column.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="schema">The schema.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>A Task&lt;System.Boolean&gt; representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetColumnDataType(System.Data.IDbConnection,System.String,System.String,System.String)">
+            <summary>
+            Gets the type of the column data.
+            </summary>
+            <param name="db">The database.</param>
+            <param name="columnName">Name of the column.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="schema">The schema.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ColumnIsNullable(System.Data.IDbConnection,System.String,System.String,System.String)">
+            <summary>
+            Columns the is nullable.
+            </summary>
+            <param name="db">The database.</param>
+            <param name="columnName">Name of the column.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="schema">The schema.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetColumnMaxLength(System.Data.IDbConnection,System.String,System.String,System.String)">
+            <summary>
+            Gets the maximum length of the column.
+            </summary>
+            <param name="db">The database.</param>
+            <param name="columnName">Name of the column.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="schema">The schema.</param>
+            <returns>System.Int64.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetForeignKeyOnDeleteClause(ServiceStack.OrmLite.ForeignKeyConstraint)">
+            <summary>
+            Gets the foreign key on delete clause.
+            </summary>
+            <param name="foreignKey">The foreign key.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetForeignKeyOnUpdateClause(ServiceStack.OrmLite.ForeignKeyConstraint)">
+            <summary>
+            Gets the foreign key on update clause.
+            </summary>
+            <param name="foreignKey">The foreign key.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetDropFunction(System.String,System.String)">
+            <summary>
+            Gets the drop function.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="functionName">Name of the function.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetCreateView(System.String,ServiceStack.OrmLite.ModelDefinition,System.Text.StringBuilder)">
+            <summary>
+            Gets the create view.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="modelDef">The model definition.</param>
+            <param name="selectSql">The select SQL.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetDropView(System.String,ServiceStack.OrmLite.ModelDefinition)">
+            <summary>
+            Gets the drop view.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="modelDef">The model definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetCreateIndexView(ServiceStack.OrmLite.ModelDefinition,System.String,System.String)">
+            <summary>
+            Gets the create index view.
+            </summary>
+            <param name="modelDef">The model definition.</param>
+            <param name="name">The name.</param>
+            <param name="selectSql">The select SQL.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetDropIndexView(ServiceStack.OrmLite.ModelDefinition,System.String)">
+            <summary>
+            Gets the drop index view.
+            </summary>
+            <param name="modelDef">The model definition.</param>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetDropIndexConstraint(ServiceStack.OrmLite.ModelDefinition,System.String)">
+            <summary>
+            Gets the drop index constraint.
+            </summary>
+            <param name="modelDef">The model definition.</param>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetAddCompositePrimaryKey(System.String,ServiceStack.OrmLite.ModelDefinition,System.String,System.String)">
+            <summary>
+            Gets the add composite primary key sql command.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="modelDef">The model definition.</param>
+            <param name="fieldNameA">The field name a.</param>
+            <param name="fieldNameB">The field name b.</param>
+            <returns>Returns the SQL Command</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetPrimaryKeyName(ServiceStack.OrmLite.ModelDefinition)">
+            <summary>
+            Gets the name of the primary key.
+            </summary>
+            <param name="modelDef">The model definition.</param>
+            <returns>Returns the Primary Key Name</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetDropPrimaryKeyConstraint(System.String,ServiceStack.OrmLite.ModelDefinition,System.String)">
+            <summary>
+            Gets the drop primary key constraint.
+            </summary>
+            <param name="database">the database name</param>
+            <param name="modelDef">The model definition.</param>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetDropPrimaryKeyConstraint(System.String,ServiceStack.OrmLite.ModelDefinition,System.String,System.String,System.String)">
+            <summary>
+            Gets the drop primary key constraint.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="modelDef">The model definition.</param>
+            <param name="name">The name.</param>
+            <param name="fieldNameA">The field name a.</param>
+            <param name="fieldNameB">The field name b.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetDropForeignKeyConstraint(ServiceStack.OrmLite.ModelDefinition,System.String)">
+            <summary>
+            Gets the drop foreign key constraint.
+            </summary>
+            <param name="modelDef">The model definition.</param>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetConstraintName(System.String,ServiceStack.OrmLite.ModelDefinition,System.String)">
+            <summary>
+            Gets the name of the constraint.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="modelDef">The model definition.</param>
+            <param name="fieldName">Name of the field.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetDropConstraint(ServiceStack.OrmLite.ModelDefinition,System.String)">
+            <summary>
+            Gets the drop constraint.
+            </summary>
+            <param name="modelDef">The model definition.</param>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetDropForeignKeyConstraints(ServiceStack.OrmLite.ModelDefinition)">
+            <summary>
+            Gets the drop foreign key constraints.
+            </summary>
+            <param name="modelDef">The model definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToAddColumnStatement(System.String,System.String,ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Converts to alter column statement.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="table">The table.</param>
+            <param name="fieldDef">The field definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToAlterColumnStatement(System.String,System.String,ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Converts to altercolumnstatement.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="table">The table.</param>
+            <param name="fieldDef">The field definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToChangeColumnNameStatement(System.String,System.String,ServiceStack.OrmLite.FieldDefinition,System.String)">
+            <summary>
+            Converts to changecolumnnamestatement.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="table">The table.</param>
+            <param name="fieldDef">The field definition.</param>
+            <param name="oldColumn">The old column.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToRenameColumnStatement(System.String,System.String,System.String,System.String)">
+            <summary>
+            Converts to renamecolumnstatement.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="table">The table.</param>
+            <param name="oldColumn">The old column.</param>
+            <param name="newColumn">The new column.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetAutoIncrementDefinition(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Gets the automatic increment definition.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetAutoIdDefaultValue(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Gets the automatic identifier default value.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetColumnDefinition(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Gets the column definition.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetColumnDefinition(ServiceStack.OrmLite.FieldDefinition,ServiceStack.OrmLite.ModelDefinition)">
+            <summary>
+            Gets the column definition.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <param name="modelDef">The model definition.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToDropConstraintStatement(System.String,System.String,System.String)">
+            <summary>
+            Converts to dropconstraintstatement.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="table">The table.</param>
+            <param name="constraintName">Name of the constraint.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.BulkInsert``1(System.Data.IDbConnection,System.Collections.Generic.IEnumerable{``0},ServiceStack.OrmLite.BulkInsertConfig)">
+            <summary>
+            Bulks the insert.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="db">The database.</param>
+            <param name="objs">The objs.</param>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToInsertRowStatement(System.Data.IDbCommand,System.Object,System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Converts to insertrowstatement.
+            </summary>
+            <param name="cmd">The command.</param>
+            <param name="objWithProperties">The object with properties.</param>
+            <param name="insertFields">The insert fields.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.Sequence(System.String,System.String)">
+            <summary>
+            Sequences the specified schema.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="sequence">The sequence.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ShouldSkipInsert(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Shoulds the skip insert.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ShouldReturnOnInsert(ServiceStack.OrmLite.ModelDefinition,ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Shoulds the return on insert.
+            </summary>
+            <param name="modelDef">The model definition.</param>
+            <param name="fieldDef">The field definition.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.HasInsertReturnValues(ServiceStack.OrmLite.ModelDefinition)">
+            <summary>
+            Determines whether [has insert return values] [the specified model definition].
+            </summary>
+            <param name="modelDef">The model definition.</param>
+            <returns><c>true</c> if [has insert return values] [the specified model definition]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SupportsSequences(ServiceStack.OrmLite.FieldDefinition)">
+            <summary>
+            Supportses the sequences.
+            </summary>
+            <param name="fieldDef">The field definition.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.EnableIdentityInsert``1(System.Data.IDbCommand)">
+            <summary>
+            Enables the identity insert.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="cmd">The command.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.EnableIdentityInsertAsync``1(System.Data.IDbCommand,System.Threading.CancellationToken)">
+            <summary>
+            Enables the identity insert asynchronous.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="cmd">The command.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DisableIdentityInsert``1(System.Data.IDbCommand)">
+            <summary>
+            Disables the identity insert.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="cmd">The command.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DisableIdentityInsertAsync``1(System.Data.IDbCommand,System.Threading.CancellationToken)">
+            <summary>
+            Disables the identity insert asynchronous.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="cmd">The command.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.PrepareParameterizedInsertStatement``1(System.Data.IDbCommand,System.Collections.Generic.ICollection{System.String},System.Func{ServiceStack.OrmLite.FieldDefinition,System.Boolean})">
+            <summary>
+            Prepares the parameterized insert statement.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="cmd">The command.</param>
+            <param name="insertFields">The insert fields.</param>
+            <param name="shouldInclude">The should include.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.PrepareInsertRowStatement``1(System.Data.IDbCommand,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Prepares the insert row statement.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dbCmd">The database command.</param>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ToSelectStatement(ServiceStack.OrmLite.QueryType,ServiceStack.OrmLite.ModelDefinition,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Collections.Generic.ISet{System.String})">
+            <summary>
+            Converts to selectstatement.
+            </summary>
+            <param name="queryType">Type of the query.</param>
+            <param name="modelDef">The model definition.</param>
+            <param name="selectExpression">The select expression.</param>
+            <param name="bodyExpression">The body expression.</param>
+            <param name="orderByExpression">The order by expression.</param>
+            <param name="offset">The offset.</param>
+            <param name="rows">The rows.</param>
+            <param name="tags">The tags.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentException">Skip value:'{offset.Value}' must be>=0</exception>
+            <exception cref="T:System.ArgumentException">Rows value:'{rows.Value}' must be>=0</exception>
+            <exception cref="T:System.ApplicationException">Malformed model, no PrimaryKey defined</exception>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SqlTop(System.String,System.Int32,System.String)">
+            <summary>
+            SQLs the top.
+            </summary>
+            <param name="sql">The SQL.</param>
+            <param name="take">The take.</param>
+            <param name="selectType">Type of the select.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.UseAliasesOrStripTablePrefixes(System.String)">
+            <summary>
+            Uses the aliases or strip table prefixes.
+            </summary>
+            <param name="selectExpression">The select expression.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetLoadChildrenSubSelect``1(ServiceStack.OrmLite.SqlExpression{``0})">
+            <summary>
+            Gets the load children sub select.
+            </summary>
+            <typeparam name="From">The type of from.</typeparam>
+            <param name="expr">The expr.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SqlCurrency(System.String,System.String)">
+            <summary>
+            SQLs the currency.
+            </summary>
+            <param name="fieldOrValue">The field or value.</param>
+            <param name="currencySymbol">The currency symbol.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SqlBool(System.Boolean)">
+            <summary>
+            SQLs the bool.
+            </summary>
+            <param name="value">if set to <c>true</c> [value].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SqlLimit(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            SQLs the limit.
+            </summary>
+            <param name="offset">The offset.</param>
+            <param name="rows">The rows.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SqlCast(System.Object,System.String)">
+            <summary>
+            SQLs the cast.
+            </summary>
+            <param name="fieldOrValue">The field or value.</param>
+            <param name="castAs">The cast as.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SqlRandom">
+            <summary>
+            Gets the SQL random.
+            </summary>
+            <value>The SQL random.</value>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.EnableForeignKeysCheck(System.Data.IDbCommand)">
+            <summary>
+            Enables the foreign keys check.
+            </summary>
+            <param name="cmd">The command.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.EnableForeignKeysCheckAsync(System.Data.IDbCommand,System.Threading.CancellationToken)">
+            <summary>
+            Enables the foreign keys check asynchronous.
+            </summary>
+            <param name="cmd">The command.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DisableForeignKeysCheck(System.Data.IDbCommand)">
+            <summary>
+            Disables the foreign keys check.
+            </summary>
+            <param name="cmd">The command.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DisableForeignKeysCheckAsync(System.Data.IDbCommand,System.Threading.CancellationToken)">
+            <summary>
+            Disables the foreign keys check asynchronous.
+            </summary>
+            <param name="cmd">The command.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.Unwrap(System.Data.IDbConnection)">
+            <summary>
+            Unwraps the specified database.
+            </summary>
+            <param name="db">The database.</param>
+            <returns>SqlConnection.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.Unwrap(System.Data.IDbCommand)">
+            <summary>
+            Unwraps the specified command.
+            </summary>
+            <param name="cmd">The command.</param>
+            <returns>SqlCommand.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.Unwrap(System.Data.IDataReader)">
+            <summary>
+            Unwraps the specified reader.
+            </summary>
+            <param name="reader">The reader.</param>
+            <returns>SqlDataReader.</returns>
+        </member>
+        <member name="P:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SupportsAsync">
+            <summary>
+            Gets a value indicating whether [supports asynchronous].
+            </summary>
+            <value><c>true</c> if [supports asynchronous]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.OpenAsync(System.Data.IDbConnection,System.Threading.CancellationToken)">
+            <summary>
+            Opens the asynchronous.
+            </summary>
+            <param name="db">The database.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ExecuteReaderAsync(System.Data.IDbCommand,System.Threading.CancellationToken)">
+            <summary>
+            Executes the reader asynchronous.
+            </summary>
+            <param name="cmd">The command.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task&lt;IDataReader&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ExecuteNonQueryAsync(System.Data.IDbCommand,System.Threading.CancellationToken)">
+            <summary>
+            Executes the non query asynchronous.
+            </summary>
+            <param name="cmd">The command.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task&lt;System.Int32&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ExecuteScalarAsync(System.Data.IDbCommand,System.Threading.CancellationToken)">
+            <summary>
+            Executes the scalar asynchronous.
+            </summary>
+            <param name="cmd">The command.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task&lt;System.Object&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ReadAsync(System.Data.IDataReader,System.Threading.CancellationToken)">
+            <summary>
+            Reads the asynchronous.
+            </summary>
+            <param name="reader">The reader.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task&lt;System.Boolean&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ReaderEach``1(System.Data.IDataReader,System.Func{``0},System.Threading.CancellationToken)">
+            <summary>
+            Readers the each.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The reader.</param>
+            <param name="fn">The function.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task&lt;List&lt;T&gt;&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ReaderEach``1(System.Data.IDataReader,System.Action,``0,System.Threading.CancellationToken)">
+            <summary>
+            Readers the each.
+            </summary>
+            <typeparam name="Return">The type of the return.</typeparam>
+            <param name="reader">The reader.</param>
+            <param name="fn">The function.</param>
+            <param name="source">The source.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task&lt;Return&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ReaderRead``1(System.Data.IDataReader,System.Func{``0},System.Threading.CancellationToken)">
+            <summary>
+            Readers the read.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The reader.</param>
+            <param name="fn">The function.</param>
+            <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Task&lt;T&gt;.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.InitConnection(System.Data.IDbConnection)">
+            <summary>
+            Initializes the connection.
+            </summary>
+            <param name="dbConn">The database connection.</param>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.GetUtcDateFunction">
+            <summary>
+            Gets the UTC date function.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DateDiffFunction(System.String,System.String,System.String)">
+            <summary>
+            Dates the difference function.
+            </summary>
+            <param name="interval">The interval.</param>
+            <param name="date1">The date1.</param>
+            <param name="date2">The date2.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.IsNullFunction(System.String,System.Object)">
+            <summary>
+            Gets the SQL ISNULL Function
+            </summary>
+            <param name="expression">The expression.</param>
+            <param name="alternateValue">The alternate Value.</param>
+            <returns>The <see cref="T:System.String" />.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ConvertFlag(System.String)">
+            <summary>
+            Converts the flag.
+            </summary>
+            <param name="expression">The expression.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DatabaseFragmentationInfo(System.String)">
+            <summary>
+            Databases the fragmentation information.
+            </summary>
+            <param name="database">The database.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.DatabaseSize(System.String)">
+            <summary>
+            Databases the size.
+            </summary>
+            <param name="database">The database.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SQLVersion">
+            <summary>
+            SQLs the version.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.SQLServerName">
+            <summary>
+            SQLs the name of the server.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ShrinkDatabase(System.String)">
+            <summary>
+            Shrinks the database.
+            </summary>
+            <param name="database">The database.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ReIndexDatabase(System.String,System.String)">
+            <summary>
+            Res the index database.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="objectQualifier">The object qualifier.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.ChangeRecoveryMode(System.String,System.String)">
+            <summary>
+            Changes the recovery mode.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="mode">The mode.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServerOrmLiteDialectProvider.InnerRunSqlExecuteReader(System.Data.IDbCommand)">
+            <summary>
+            Just runs the SQL command according to specifications.
+            </summary>
+            <param name="command">The command.</param>
+            <returns>Returns the Results</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2016OrmLiteDialectProvider">
+            <summary>
+            Class SqlServer2016OrmLiteDialectProvider.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2014OrmLiteDialectProvider" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2014OrmLiteDialectProvider" />
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2016OrmLiteDialectProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2016OrmLiteDialectProvider"/> class.
+            </summary>
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServer2016OrmLiteDialectProvider.Instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="M:ServiceStack.OrmLite.SqlServer.SqlServer2016OrmLiteDialectProvider.SqlExpression``1">
+            <summary>
+            SQL expression.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>SqlExpression&lt;T&gt;.</returns>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2017OrmLiteDialectProvider">
+            <summary>
+            Class SqlServer2017OrmLiteDialectProvider.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2016OrmLiteDialectProvider" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2016OrmLiteDialectProvider" />
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServer2017OrmLiteDialectProvider.Instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2019OrmLiteDialectProvider">
+            <summary>
+            Class SqlServer2019OrmLiteDialectProvider.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2017OrmLiteDialectProvider" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2017OrmLiteDialectProvider" />
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServer2019OrmLiteDialectProvider.Instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServer2022OrmLiteDialectProvider">
+            <summary>
+            Class SqlServer2022OrmLiteDialectProvider.
+            Implements the <see cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2019OrmLiteDialectProvider" />
+            </summary>
+            <seealso cref="T:ServiceStack.OrmLite.SqlServer.SqlServer2019OrmLiteDialectProvider" />
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServer2022OrmLiteDialectProvider.Instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="T:ServiceStack.OrmLite.SqlServer.SqlServerTableHint">
+            <summary>
+            Class SqlServerTableHint.
+            </summary>
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServerTableHint.ReadUncommitted">
+            <summary>
+            The read uncommitted
+            </summary>
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServerTableHint.ReadCommitted">
+            <summary>
+            The read committed
+            </summary>
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServerTableHint.ReadPast">
+            <summary>
+            The read past
+            </summary>
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServerTableHint.Serializable">
+            <summary>
+            The serializable
+            </summary>
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServerTableHint.RepeatableRead">
+            <summary>
+            The repeatable read
+            </summary>
+        </member>
+        <member name="F:ServiceStack.OrmLite.SqlServer.SqlServerTableHint.NoLock">
+            <summary>
+            The no lock
+            </summary>
+        </member>
+    </members>
+</doc>

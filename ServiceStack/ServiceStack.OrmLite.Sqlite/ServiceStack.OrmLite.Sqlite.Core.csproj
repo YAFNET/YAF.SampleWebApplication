@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>ServiceStack.OrmLite.Sqlite.Core</PackageId>
+    <AssemblyName>ServiceStack.OrmLite.Sqlite</AssemblyName>
+    <RootNamespace>ServiceStack.OrmLite.Sqlite</RootNamespace>
+    <TargetFramework>net9.0</TargetFramework>
+    <Title>ServiceStack.OrmLite.Sqlite</Title>
+    <PackageDescription>
+      ServiceStack.OrmLite.Sqlite
+    </PackageDescription>
+    <PackageTags>SQLite;OrmLite;RDBMS;SQL;POCO;Code-First;ORM;Schema-less;Blobs</PackageTags>
+    <DefineConstants>$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceStack.OrmLite\ServiceStack.OrmLite.Core.csproj" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.7.0.110445">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
+  </ItemGroup>
+
+</Project>

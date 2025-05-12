@@ -1,0 +1,4 @@
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\bin\Release\net9.0\publish\ServiceStack.OrmLite.dll
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\bin\Release\net9.0\publish\ServiceStack.OrmLite.deps.json
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\bin\Release\net9.0\publish\SimdLinq.dll
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\bin\Release\net9.0\publish\ServiceStack.OrmLite.xml

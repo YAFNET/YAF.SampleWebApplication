@@ -7,13 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="C:\Users\iherb\.nuget\packages\yafnet.razorpages\4.0.0\contentFiles\any\net9.0\package-lock.json" />
     <Content Remove="C:\Users\iherb\.nuget\packages\yafnet.ui.chat\4.0.0-rc02\contentFiles\any\net8.0\libman.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.0" />
-    <PackageReference Include="YAFNET.RazorPages" Version="4.0.0" />
-    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +26,14 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YAFNET.Configuration\YAFNET.Configuration.csproj" />
+    <ProjectReference Include="..\YAFNET.Core\YAFNET.Core.csproj" />
+    <ProjectReference Include="..\YAFNET.Data\YAFNET.Data.SqlServer\YAFNET.Data.SqlServer.csproj" />
+    <ProjectReference Include="..\YAFNET.Types\YAFNET.Types.csproj" />
+    <ProjectReference Include="..\YAFNET.Web\YAFNET.Web.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>ServiceStack.OrmLite.PostgreSQL.Core</PackageId>
+    <AssemblyName>ServiceStack.OrmLite.PostgreSQL</AssemblyName>
+    <RootNamespace>ServiceStack.OrmLite.PostgreSQL</RootNamespace>
+	<TargetFramework>net9.0</TargetFramework>
+    <Title>ServiceStack.OrmLite.PostgreSQL</Title>
+    <PackageDescription>
+     ServiceStack.OrmLite.PostgreSQL
+    </PackageDescription>
+    <PackageTags>PostgreSQL;OrmLite;RDBMS;SQL;POCO;Code-First;ORM;Schema-less;Blobs</PackageTags>
+    <DefineConstants>$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceStack.OrmLite\ServiceStack.OrmLite.Core.csproj" />
+    <PackageReference Include="Npgsql" Version="9.0.3" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.7.0.110445">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

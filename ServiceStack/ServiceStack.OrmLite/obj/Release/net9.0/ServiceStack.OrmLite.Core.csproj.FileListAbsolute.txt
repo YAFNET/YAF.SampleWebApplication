@@ -1,0 +1,12 @@
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\bin\Release\net9.0\ServiceStack.OrmLite.deps.json
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\bin\Release\net9.0\ServiceStack.OrmLite.dll
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\bin\Release\net9.0\ServiceStack.OrmLite.xml
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\obj\Release\net9.0\ServiceStack.OrmLite.Core.csproj.AssemblyReference.cache
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\obj\Release\net9.0\ServiceStack.OrmLite.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\obj\Release\net9.0\ServiceStack.OrmLite.Core.AssemblyInfoInputs.cache
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\obj\Release\net9.0\ServiceStack.OrmLite.Core.AssemblyInfo.cs
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\obj\Release\net9.0\ServiceStack.OrmLite.Core.csproj.CoreCompileInputs.cache
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\obj\Release\net9.0\ServiceStack.OrmLite.dll
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\obj\Release\net9.0\refint\ServiceStack.OrmLite.dll
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\obj\Release\net9.0\ServiceStack.OrmLite.xml
+C:\Users\iherb\source\repos\YAF.Core\yafsrc\ServiceStack\ServiceStack.OrmLite\obj\Release\net9.0\ref\ServiceStack.OrmLite.dll

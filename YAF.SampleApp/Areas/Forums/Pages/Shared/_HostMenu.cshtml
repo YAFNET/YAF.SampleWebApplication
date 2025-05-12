@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using YAF.Core.Context
+@using YAF.Web.HtmlHelpers
+@using YAF.Types.Constants
+@using YAF.Types.Extensions
+@using YAF.Web.TagHelpers
+
+@inject BoardContext Current
+
+@if (Current.PageUser.UserFlags.IsHostAdmin)
+{
+	var currentPageName = Enum.GetName(Current.CurrentForumPage.PageName);
+
+	var isHostPage = Current.CurrentForumPage.PageName is ForumPages.Admin_HostSettings or
+		                 ForumPages.Admin_Boards or
+		                 ForumPages.Admin_EditBoard or
+		                 ForumPages.Admin_PageAccessEdit or
+		                 ForumPages.Admin_PageAccessList ||
+	                 currentPageName != null && currentPageName.StartsWith("Host_");
+
+	<li class="nav-item dropdown">
+        <a class="@Html.Raw(isHostPage ? "nav-link dropdown-toggle active" : "nav-link dropdown-toggle")"
+           role="button"
+           href="#"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+            @Html.LocalizedText("TOOLBAR", "HOST")
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="hostDropdown">
+	        @Html.HostMenu()
+	        <li>
+		        <a asp-page="@ForumPages.Admin_Boards.GetPageName()"
+		           class="@Html.Raw(BoardContext.Current.CurrentForumPage.PageName is ForumPages.Admin_Boards or ForumPages.Admin_EditBoard ? "dropdown-item active" : "dropdown-item")"
+		           text-localized-page="ADMINMENU" text-localized-tag="ADMIN_BOARDS"
+		           icon="globe">
+		        </a>
+	        </li>
+	        <li>
+		        <a asp-page="@ForumPages.Admin_PageAccessList.GetPageName()"
+		           class="@Html.Raw(BoardContext.Current.CurrentForumPage.PageName is ForumPages.Admin_PageAccessList or ForumPages.Admin_PageAccessEdit ? "dropdown-item active" : "dropdown-item")"
+		           text-localized-page="ADMINMENU" text-localized-tag="ADMIN_PAGEACCESSLIST"
+		           icon="building">
+		        </a>
+	        </li>
+        </ul>
+    </li>
+}

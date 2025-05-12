@@ -24,6 +24,8 @@
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using YAF.Core.Context;
+
 namespace YAF.SampleApp.Pages;
 
 /// <summary>

@@ -1,0 +1,33 @@
+﻿@using YAF.Core.Context
+@using YAF.Web.HtmlHelpers
+@using YAF.Types.Constants
+@using YAF.Types.Interfaces
+
+@inject BoardContext Current
+
+<div class="row">
+    <div class="col">
+        <alert type="warning" dismissible="true">
+            <strong>@Html.LocalizedText("TOOLBAR", "WELCOME_GUEST_CONNECT")</strong> 
+            <a title="@Html.LocalizedText("TOOLBAR", "LOGIN_TITLE")"
+               class="alert-link"
+               bs-toggle="ajax-modal"
+               bs-target-url="@Url.Action("ShowModal", "LoginBox", null)">
+                @Html.LocalizedTextFormatted("LOGIN_CONNECT", Current.BoardSettings.Name)
+            </a>
+
+            @if (!Current.BoardSettings.DisableRegistrations)
+            {
+	            <a title="@Html.LocalizedText("TOOLBAR", "REGISTER_TITLE")"
+	               class="alert-link"
+	               href="@(Current.BoardSettings.ShowRulesForRegistration ? Current.Get<ILinkBuilder>().GetLink(ForumPages.Privacy) : Current.Get<ILinkBuilder>().GetLink(ForumPages.Account_Register))">
+                    @Html.LocalizedText("TOOLBAR", "REGISTER_CONNECT")
+	            </a>
+            }
+            else
+            {
+                <span>.</span> @Html.LocalizedText("TOOLBAR", "DISABLED_REGISTER")
+            }
+        </alert>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>YAF.Types</RootNamespace>
+	<AssemblyName>YAF.Types</AssemblyName>
+    <NuspecFile>YAFNET.Types.nuspec</NuspecFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="GoogleAuthenticator" Version="3.2.0" />
+    <PackageReference Include="MailKit" Version="4.11.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.3" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.7.0.110445">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.Caching" Version="9.0.3" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceStack\ServiceStack.OrmLite\ServiceStack.OrmLite.Core.csproj" />
+  </ItemGroup>
+
+
+</Project>
