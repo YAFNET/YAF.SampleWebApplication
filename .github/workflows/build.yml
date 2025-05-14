@@ -20,7 +20,7 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
         working-directory: ./
-        run: dotnet restore ./YAF.SampleApp.sln
+        run: dotnet restore ./YAF.SampleApp.slnx
       - name: Build
         working-directory: ./
-        run: dotnet build ./YAF.SampleApp.sln
+        run: dotnet build ./YAF.SampleApp.slnx
