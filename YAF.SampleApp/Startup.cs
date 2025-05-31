@@ -77,6 +77,7 @@ public class Startup : IHaveServiceLocator
 
         services.AddYafCore(this.Configuration);
 
+        // only needed for blazor
         services.AddServerSideBlazor();
     }
 
@@ -123,8 +124,8 @@ public class Startup : IHaveServiceLocator
         {
             endpoints.MapRazorPages();
 
+            // only needed for blazor
             endpoints.MapBlazorHub();
-
             endpoints.MapFallbackToPage("/_Host");
 
 			endpoints.MapAreaControllerRoute(
