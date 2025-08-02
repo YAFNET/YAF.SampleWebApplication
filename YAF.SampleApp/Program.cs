@@ -22,31 +22,77 @@
  * under the License.
  */
 
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+
 using YAF.Core.Extensions;
+using YAF.Core.Hubs;
+using YAF.Core.Middleware;
+using YAF.RazorPages;
+using YAF.UI.Chat;
 
-namespace YAF.SampleApp;
+var builder = WebApplication.CreateBuilder(args);
 
-/// <summary>
-/// Class Program.
-/// </summary>
-public class Program
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
+builder.Host.ConfigureYafLogging();
+
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
-    /// <summary>
-    /// Defines the entry point of the application.
-    /// </summary>
-    /// <param name="args">
-    /// The arguments.
-    /// </param>
-    /// <returns>
-    /// The <see cref="Task"/>.
-    /// </returns>
-    public static Task Main(string[] args)
-    {
-        var host = Host.CreateDefaultBuilder(args).UseAutofacServiceProviderFactory()
-            .ConfigureYafLogging()
-            .ConfigureWebHostDefaults(webHostBuilder =>
-                webHostBuilder.UseStartup<Startup>()).Build();
+    containerBuilder.RegisterYafModules();
+});
 
-        return host.RunAsync();
-    }
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AddAreaPageRoute("Forums", "/SiteMap", "/Sitemap.xml");
+}).AddYafRazorPages(builder.Environment);
+
+builder.Services.AddYafCore(builder.Configuration);
+
+// only needed for blazor
+builder.Services.AddServerSideBlazor();
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
 }
+else
+{
+    app.UseExceptionHandler("/Forums/Error");
+
+    app.UseHsts();
+}
+
+app.RegisterAutofac();
+
+app.UseAntiXssMiddleware();
+
+app.UseStaticFiles();
+
+app.UseSession();
+
+app.UseYafCore(BoardContext.Current.ServiceLocator, app.Environment);
+
+app.UseRobotsTxt(app.Environment);
+
+app.MapRazorPages();
+
+// only needed for blazor
+app.MapBlazorHub();
+app.MapFallbackToPage("/_Host");
+
+app.MapAreaControllerRoute(
+    name: "default",
+    areaName: "Forums",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllers();
+
+app.MapHub<NotificationHub>("/NotificationHub");
+app.MapHub<ChatHub>("/ChatHub");
+
+app.MapHub<AllChatHub>("/AllChatHub");
+
+await app.RunAsync();
