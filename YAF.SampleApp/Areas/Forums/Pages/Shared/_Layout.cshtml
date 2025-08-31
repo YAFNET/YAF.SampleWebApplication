@@ -15,16 +15,7 @@
 @inject BoardContext Current
 
 @{
-    ViewBag.CdvVersion = Current.BoardSettings.CdvVersion;
-
-    #if DEBUG
-    ViewBag.ForumJs = Current.CurrentForumPage.IsAdminPage ? "forumAdminExtensions" : "forumExtensions";
-    ViewBag.ForumCss = Current.CurrentForumPage.IsAdminPage ? "forum-admin" : "forum";
-    #else
-    ViewBag.ForumJs = Current.CurrentForumPage.IsAdminPage ? "forumAdminExtensions.min" : "forumExtensions.min";
-    ViewBag.ForumCss = Current.CurrentForumPage.IsAdminPage ? "forum-admin.min" : "forum.min";
-    #endif
-
+	ViewBag.ForumCss = Current.CurrentForumPage.IsAdminPage ? "forum-admin.min" : "forum.min";
     ViewBag.PageName = Current.CurrentForumPage.PageName.ToString();
 }
 
@@ -249,7 +240,7 @@
     </div>
 </footer>
 
-<script src="@(Current.Get<BoardInfo>().GetUrlToScripts($"{ViewBag.ForumJs}.js?v={ViewBag.CdvVersion}"))"></script>
+    <script src="~/js/forumExtensions.min.js" asp-append-version="true"></script>
 
 
 @await RenderSectionAsync("Scripts", required: false)

@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="C:\Users\iherb\.nuget\packages\yafnet.razorpages\4.0.0\contentFiles\any\net9.0\package-lock.json" />
-    <Content Remove="C:\Users\iherb\.nuget\packages\yafnet.ui.chat\4.0.0-rc02\contentFiles\any\net8.0\libman.json" />
+    <Content Remove="C:\Users\iherb\.nuget\packages\yafnet.razorpages\4.0.1\contentFiles\any\net9.0\package-lock.json" />
+    <Content Remove="C:\Users\iherb\.nuget\packages\yafnet.ui.chat\4.0.1\contentFiles\any\net8.0\libman.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.0" />
-    <PackageReference Include="YAFNET.RazorPages" Version="4.0.0" />
-    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.0" />
+    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.1" />
+    <PackageReference Include="YAFNET.RazorPages" Version="4.0.1" />
+    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>
