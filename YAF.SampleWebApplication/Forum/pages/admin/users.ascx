@@ -227,16 +227,6 @@
                                             </span>
                                         </li>
                                         <li class="list-inline-item" runat="server"
-                                            Visible="<%#((PagedUser)Container.DataItem).Profile_TwitterId.IsSet() %>" >
-                                            <span title='<%# this.GetText("ADMIN_EDITUSER", "TWITTER_USER_HELP") %>'>
-
-                                                <YAF:Icon runat="server"
-                                                          IconName="twitter"
-                                                          IconStyle="fab"
-                                                          IconType="text-info" />
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item" runat="server"
                                             Visible="<%# ((PagedUser)Container.DataItem).Profile_GoogleId.IsSet() %>">
                                             <span title='<%# this.GetText("ADMIN_EDITUSER", "GOOGLE_USER_HELP") %>'>
                                                 <YAF:Icon runat="server"
@@ -299,7 +289,7 @@
                     <YAF:Alert runat="server" ID="NoInfo"
                                Type="info"
                                Visible="False">
-                        <i class="fa fa-exclamation-triangle fa-fw"></i>
+                        <i class="fa fa-exclamation-triangle"></i>
                         <YAF:LocalizedLabel runat="server"
                                             LocalizedTag="NO_ENTRY"></YAF:LocalizedLabel>
                     </YAF:Alert>

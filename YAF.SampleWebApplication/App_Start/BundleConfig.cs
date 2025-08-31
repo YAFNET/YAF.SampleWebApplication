@@ -1,9 +1,9 @@
 ﻿/* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2023 Ingo Herbote
+ * Copyright (C) 2014-2025 Ingo Herbote
  * https://www.yetanotherforum.net/
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -22,18 +22,17 @@
  * under the License.
  */
 
-namespace YAF.SampleWebApplication
+namespace YAF.SampleWebApplication;
+
+/// <summary>
+/// The bundle config.
+/// </summary>
+public class BundleConfig
 {
     /// <summary>
-    /// The bundle config.
+    /// The register bundles.
     /// </summary>
-    public class BundleConfig
+    public static void RegisterBundles()
     {
-        /// <summary>
-        /// The register bundles.
-        /// </summary>
-        public static void RegisterBundles()
-        {
-        }
     }
 }

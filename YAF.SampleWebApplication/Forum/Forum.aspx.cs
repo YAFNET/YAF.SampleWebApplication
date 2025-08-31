@@ -29,6 +29,4 @@ using YAF.Core.BasePages;
 /// <summary>
 /// The forum.
 /// </summary>
-public partial class Forum : ForumPageBase
-{
-}
+public partial class Forum : ForumPageBase;

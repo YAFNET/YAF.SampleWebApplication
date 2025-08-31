@@ -1,9 +1,9 @@
 /* Yet Another Forum.NET
  * Copyright (C) 2003-2005 Bjørnar Henden
  * Copyright (C) 2006-2013 Jaben Cargman
- * Copyright (C) 2014-2023 Ingo Herbote
+ * Copyright (C) 2014-2025 Ingo Herbote
  * https://www.yetanotherforum.net/
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -22,36 +22,35 @@
  * under the License.
  */
 
-namespace YAF.SampleWebApplication
+namespace YAF.SampleWebApplication;
+
+using System.Web.Mvc;
+using System.Web.Routing;
+
+using Microsoft.AspNet.FriendlyUrls;
+
+/// <summary>
+/// The route config.
+/// </summary>
+public static class RouteConfig
 {
-    using System.Web.Mvc;
-    using System.Web.Routing;
-
-    using Microsoft.AspNet.FriendlyUrls;
-
     /// <summary>
-    /// The route config.
+    /// The register routes.
     /// </summary>
-    public static class RouteConfig
+    /// <param name="routes">
+    /// The routes.
+    /// </param>
+    public static void RegisterRoutes(RouteCollection routes)
     {
-        /// <summary>
-        /// The register routes.
-        /// </summary>
-        /// <param name="routes">
-        /// The routes.
-        /// </param>
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            var settings = new FriendlyUrlSettings { AutoRedirectMode = RedirectMode.Permanent };
+        var settings = new FriendlyUrlSettings { AutoRedirectMode = RedirectMode.Permanent };
 
-            routes.EnableFriendlyUrls(settings);
+        routes.EnableFriendlyUrls(settings);
 
-            routes.Ignore("{*legacy}", new { legacy = @".*\.(aspx|ashx|asmx|axd|svc)([/\?].*)?" });
+        routes.Ignore("{*legacy}", new { legacy = @".*\.(aspx|ashx|asmx|axd|svc)([/\?].*)?" });
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { action = "Index", id = UrlParameter.Optional });
-        }
+        routes.MapRoute(
+            name: "Default",
+            url: "{controller}/{action}/{id}",
+            defaults: new { action = "Index", id = UrlParameter.Optional });
     }
 }
