@@ -580,6 +580,63 @@
             </summary>
             <returns>SameSite attribute value or null if attribute must not be set.</returns>
         </member>
+        <member name="T:Microsoft.Owin.AppBuilderCookieExtensions">
+            <summary>
+            Cookie-related extensions for <see cref="T:Owin.IAppBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.AppBuilderCookieExtensions.SetDefaultCookieManager(Owin.IAppBuilder,Microsoft.Owin.Infrastructure.ICookieManager)">
+            <summary>
+            Sets the default <see cref="T:Microsoft.Owin.Infrastructure.ICookieManager"/> that will be used by
+            the OWIN middleware when no manager is explicitly set in their options.
+            </summary>
+            <remarks>
+            Depending on the host, a default <see cref="T:Microsoft.Owin.Infrastructure.ICookieManager"/> instance
+            may already be registered in <see cref="P:Owin.IAppBuilder.Properties"/>
+            (e.g SystemWeb automatically registers a cookie manager that relies on
+            HttpCookieCollection instead of directly manipulating the HTTP headers).
+            </remarks>
+            <param name="app">The application builder.</param>
+            <param name="manager">The cookie manager.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="app"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Owin.AppBuilderCookieExtensions.SetDefaultChunkingCookieManager(Owin.IAppBuilder,Microsoft.Owin.Infrastructure.ICookieManager)">
+            <summary>
+            Sets the default chunking <see cref="T:Microsoft.Owin.Infrastructure.ICookieManager"/> that will be used
+            by the OWIN middleware when no manager is explicitly set in their options.
+            </summary>
+            <remarks>
+            Depending on the host, a default <see cref="T:Microsoft.Owin.Infrastructure.ICookieManager"/> instance
+            may already be registered in <see cref="P:Owin.IAppBuilder.Properties"/>
+            (e.g SystemWeb automatically registers a cookie manager that relies on
+            HttpCookieCollection instead of directly manipulating the HTTP headers).
+            </remarks>
+            <param name="app">The application builder.</param>
+            <param name="manager">The cookie manager.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="app"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Owin.AppBuilderCookieExtensions.GetDefaultCookieManager(Owin.IAppBuilder)">
+            <summary>
+            Gets the default <see cref="T:Microsoft.Owin.Infrastructure.ICookieManager"/> that will be used by
+            the OWIN middleware when no manager is explicitly set in their options.
+            </summary>
+            <param name="app">The application builder.</param>
+            <returns>
+            The cookie manager or a default <see cref="T:Microsoft.Owin.Infrastructure.CookieManager"/> instance if no manager was registered.
+            </returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="app"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Owin.AppBuilderCookieExtensions.GetDefaultChunkingCookieManager(Owin.IAppBuilder)">
+            <summary>
+            Gets the default chunking <see cref="T:Microsoft.Owin.Infrastructure.ICookieManager"/> that will be used
+            by the OWIN middleware when no manager is explicitly set in their options.
+            </summary>
+            <param name="app">The application builder.</param>
+            <returns>
+            The cookie manager or a default <see cref="T:Microsoft.Owin.Infrastructure.ChunkingCookieManager"/> instance if no manager was registered.
+            </returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="app"/> is <see langword="null"/>.</exception>
+        </member>
         <member name="T:Microsoft.Owin.Extensions.IntegratedPipelineExtensions">
             <summary>
             Extension methods used to indicate at which stage in the integrated pipeline prior middleware should run.
@@ -1027,6 +1084,11 @@
             <summary>
             Throw if not all chunks of a cookie are available on a request for re-assembly.
             </summary>
+            <remarks>
+            By default, this property is set to <see langword="false"/>. In this case,
+            <see cref="M:Microsoft.Owin.Infrastructure.ChunkingCookieManager.GetRequestCookie(Microsoft.Owin.IOwinContext,System.String)"/> returns "chunks:[number of chunks]"
+            instead of causing a <see cref="T:System.FormatException"/> if one of the chunks is missing.
+            </remarks>
         </member>
         <member name="M:Microsoft.Owin.Infrastructure.ChunkingCookieManager.GetRequestCookie(Microsoft.Owin.IOwinContext,System.String)">
             <summary>
