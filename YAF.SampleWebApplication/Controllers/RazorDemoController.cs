@@ -73,7 +73,7 @@ public class RazorDemoController : RazorController
     }
 
     /// <summary>
-    /// The some ajax call.
+    /// Some Ajax Sample Call.
     /// </summary>
     /// <param name="id">
     /// The id.

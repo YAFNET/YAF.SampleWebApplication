@@ -29,6 +29,4 @@ using System.Web.UI;
 /// <summary>
 /// The _ default.
 /// </summary>
-public partial class _Default : Page
-{
-}
+public partial class _Default : Page;

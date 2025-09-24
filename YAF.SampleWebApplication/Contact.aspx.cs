@@ -31,6 +31,4 @@ using System.Web.UI;
 /// Implements the <see cref="System.Web.UI.Page" />
 /// </summary>
 /// <seealso cref="System.Web.UI.Page" />
-public partial class Contact : Page
-{
-}
+public partial class Contact : Page;

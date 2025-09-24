@@ -26,6 +26,4 @@ namespace YAF.SampleWebApplication;
 
 using System.Web.UI;
 
-public partial class About : Page
-{
-}
+public partial class About : Page;

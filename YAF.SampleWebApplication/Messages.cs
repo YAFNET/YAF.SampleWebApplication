@@ -35,7 +35,7 @@ public class Messages
     public int UserId { get; set; }
 
     /// <summary>
-    /// Gets or sets the user name.
+    /// Gets or sets the username.
     /// </summary>
     public string UserName { get; set; }
 

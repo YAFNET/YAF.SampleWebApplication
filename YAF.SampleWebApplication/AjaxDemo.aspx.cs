@@ -24,9 +24,9 @@
 
 namespace YAF.SampleWebApplication;
 
+using System.Web.UI;
+
 /// <summary>
 /// The ajax demo.
 /// </summary>
-public partial class AjaxDemo : System.Web.UI.Page
-{
-}
+public partial class AjaxDemo : Page;
