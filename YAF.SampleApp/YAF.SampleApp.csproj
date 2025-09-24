@@ -12,9 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.1" />
-    <PackageReference Include="YAFNET.RazorPages" Version="4.0.1" />
-    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.1" />
+    <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.2" />
+    <PackageReference Include="YAFNET.RazorPages" Version="4.0.2" />
+    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.2" />
   </ItemGroup>
 
   <ItemGroup>
