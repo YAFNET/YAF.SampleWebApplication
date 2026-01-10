@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="c#" AutoEventWireup="True" Inherits="YAF.Pages.Admin.Users"
     CodeBehind="Users.ascx.cs" %>
 <%@ Import Namespace="YAF.Types.Interfaces" %>
-<%@ Import Namespace="YAF.Types.Extensions" %>
 <%@ Import Namespace="YAF.Types.Objects.Model" %>
 <%@ Import Namespace="YAF.Types.Interfaces.Services" %>
 
@@ -216,24 +215,6 @@
                                         <li class="list-inline-item">
                                             <strong><YAF:LocalizedLabel ID="LocalizedLabel5" runat="server" LocalizedTag="LAST_VISIT" LocalizedPage="ADMIN_USERS" />:</strong>
                                             <%# this.Get<IDateTimeService>().FormatDateTime(((PagedUser)Container.DataItem).LastVisit) %>
-                                        </li>
-                                        <li class="list-inline-item" runat="server"
-                                            Visible="<%# ((PagedUser)Container.DataItem).Profile_FacebookId.IsSet() %>">
-                                            <span title='<%# this.GetText("ADMIN_EDITUSER", "FACEBOOK_USER_HELP") %>'>
-                                                <YAF:Icon runat="server"
-                                                          IconName="facebook"
-                                                          IconStyle="fab"
-                                                          IconType="text-info" />
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item" runat="server"
-                                            Visible="<%# ((PagedUser)Container.DataItem).Profile_GoogleId.IsSet() %>">
-                                            <span title='<%# this.GetText("ADMIN_EDITUSER", "GOOGLE_USER_HELP") %>'>
-                                                <YAF:Icon runat="server"
-                                                          IconName="google"
-                                                          IconStyle="fab"
-                                                          IconType="text-info" />
-                                            </span>
                                         </li>
                                     </ul>
                                 </p>

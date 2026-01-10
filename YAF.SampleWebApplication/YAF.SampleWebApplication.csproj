@@ -51,8 +51,8 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.9, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.9\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.1\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -857,7 +857,6 @@
     <Content Include="Forum\Images\Avatars\SampleAvatar.gif" />
     <Content Include="Forum\Images\Categories\categoryImageSample.gif" />
     <Content Include="Forum\Images\Forums\forumImageSample.gif" />
-    <Content Include="Forum\Images\image-not-found.svg" />
     <Content Include="Forum\Images\Logos\YAFLogo.svg" />
     <Content Include="Forum\Images\Medals\award_star_bronze_3.png" />
     <Content Include="Forum\Images\Medals\award_star_bronze_3_small.png" />
@@ -1139,9 +1138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forum\Uploads\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.10.15.0.120848\analyzers\SonarAnalyzer.CSharp.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
