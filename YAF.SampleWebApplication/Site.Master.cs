@@ -31,8 +31,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 
-using Microsoft.AspNet.Web.Optimization.WebForms;
-
 using YAF.Configuration;
 using YAF.Core.Context;
 using YAF.Core.Extensions;
@@ -120,9 +118,11 @@ public partial class SiteMaster : MasterPage
 
             this.Page.Header.Controls.Add(linkForum);
 
-            var bundleReference = new BundleReference { Path = "~/Content/css" };
+            var linkSite = new HtmlLink { Href = "~/Content/Site.css" };
+            linkSite.Attributes.Add("rel", "stylesheet");
+            linkSite.Attributes.Add("type", "text/css");
 
-            this.Page.Header.Controls.Add(bundleReference);
+            this.Page.Header.Controls.Add(linkSite);
         }
     }
 

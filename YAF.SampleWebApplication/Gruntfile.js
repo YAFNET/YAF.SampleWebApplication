@@ -120,26 +120,11 @@ module.exports = function(grunt) {
                     }
                 ]
             }
-        },
-
-        devUpdate: {
-            main: {
-                options: {
-                    reportUpdated: true,
-                    updateType: 'force',
-                    semver: false,
-                    packages: {
-                        devDependencies: true, //only check for devDependencies
-                        dependencies: true
-                    }
-                }
-            }
         }
     });
 
     // PLUGINS
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('@w8tcha/grunt-dev-update');
     grunt.loadNpmTasks('grunt-zip');
     grunt.loadNpmTasks('grunt-downloadfile');
     grunt.loadNpmTasks('grunt-shell');
