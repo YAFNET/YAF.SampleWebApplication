@@ -51,8 +51,8 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.9, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.9\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.10\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -764,12 +764,6 @@
     <Content Include="Forum\Content\Themes\yeti\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\zephyr\bootstrap-forum.min.css" />
     <Content Include="Forum\Content\Themes\zephyr\EmailTemplate.html" />
-    <Content Include="Forum\Content\webfonts\fa-brands-400.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-brands-400.woff2" />
-    <Content Include="Forum\Content\webfonts\fa-regular-400.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-regular-400.woff2" />
-    <Content Include="Forum\Content\webfonts\fa-solid-900.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
     <Content Include="Forum\Controls\ActiveDiscussion.ascx" />
     <Content Include="Forum\Controls\AdminMenu.ascx" />
     <Content Include="Forum\Controls\AlbumImageList.ascx" />
@@ -1026,7 +1020,6 @@
     <Content Include="Site.Master" />
     <Content Include="Views\Shared\RazorView.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Bundle.config" />
     <Content Include="UrlRewriter.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1112,8 +1105,6 @@
     <Content Include="Forum\languages\vietnam.json" />
     <Content Include="Forum\LICENSE.md" />
     <Content Include="Forum\README.md" />
-    <Content Include="Forum\Content\webfonts\fa-v4compatibility.ttf" />
-    <Content Include="Forum\Content\webfonts\fa-v4compatibility.woff2" />
     <Content Include="package.json" />
     <None Include="packages.config" />
     <Content Include="Views\RazorDemo\Hello.cshtml" />

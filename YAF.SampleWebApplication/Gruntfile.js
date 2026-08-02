@@ -131,6 +131,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default',
         [
-            'devUpdate', 'downloadfile', 'unzip', 'copy', 'shell'
+            'downloadfile', 'unzip', 'copy', 'shell'
         ]);
 };
