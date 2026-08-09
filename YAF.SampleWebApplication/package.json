@@ -1,6 +1,6 @@
 {
     "name": "yaf.samplewebapplication",
-    "version": "3.2.14",
+    "version": "3.2.15",
     "description": "This Application is a Standard Visual Studio Sample ASP.NET Application, including YAF.NET integrated as Control on a Page.",
     "repository": {
         "type": "git",
