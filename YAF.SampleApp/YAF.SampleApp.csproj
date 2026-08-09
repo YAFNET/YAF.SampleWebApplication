@@ -6,13 +6,14 @@
 	  <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
 	  <TypeScriptJSXEmit>preserve</TypeScriptJSXEmit>
 	  <CompressionEnabled>false</CompressionEnabled>
+	  <Version>4.0.7</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="YAFNET.Data.SqlServer" Version="4.0.7" />
-    <PackageReference Include="YAFNET.RazorPages" Version="4.0.6" />
+    <PackageReference Include="YAFNET.RazorPages" Version="4.0.7" />
     <PackageReference Include="SimdLinq" Version="1.3.2" />
-    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.6" />
+    <PackageReference Include="YAFNET.UI.Chat" Version="4.0.7" />
   </ItemGroup>
 
   <ItemGroup>
