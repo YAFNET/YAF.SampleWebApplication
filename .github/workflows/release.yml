@@ -1,0 +1,43 @@
+name: Release v4
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'YAF.SampleApp/YAF.SampleApp.csproj'
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Extract version from csproj
+        id: version
+        run: |
+          VERSION=$(grep -oPm1 "(?<=<Version>)[^<]+" YAF.SampleApp/YAF.SampleApp.csproj)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check if release tag already exists
+        id: check_tag
+        run: |
+          if git ls-remote --tags origin "refs/tags/v${{ steps.version.outputs.version }}" | grep -q .; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub Release
+        if: steps.check_tag.outputs.exists == 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v${{ steps.version.outputs.version }}" \
+            --target master \
+            --title "YAF.NET v${{ steps.version.outputs.version }} SampleApp" \
+            --notes "This Application is a Standard Visual Studio Sample ASP.NET Core Application (.NET 10.0), including integrated YAF.NET v${{ steps.version.outputs.version }}"
