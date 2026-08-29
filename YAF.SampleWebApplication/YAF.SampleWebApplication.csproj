@@ -51,8 +51,8 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.10\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.11, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.11\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -708,61 +708,89 @@
     <Content Include="Forum\Content\flags\4x3\zw.svg" />
     <Content Include="Forum\Content\forum-admin.min.css" />
     <Content Include="Forum\Content\forum.min.css" />
-    <Content Include="Forum\Content\images\error.svg" />
     <Content Include="Forum\Content\images\InstallBackground.jpg" />
-    <Content Include="Forum\Content\images\play-pause.svg" />
     <Content Include="Forum\Content\InstallWizard.min.css" />
+    <Content Include="Forum\Content\sceditor.min.css" />
+    <Content Include="Forum\Content\Themes\brite\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\brite\DigestTopicTemplate.html" />
+    <Content Include="Forum\Content\Themes\brite\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\cerulean\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\cerulean\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\cerulean\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\cosmo\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\cosmo\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\cosmo\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\cyborg\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\cyborg\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\cyborg\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\darkly\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\darkly\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\darkly\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\flatly\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\flatly\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\flatly\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\journal\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\journal\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\journal\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\litera\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\litera\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\litera\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\lumen\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\lumen\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\lumen\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\lux\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\lux\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\lux\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\materia\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\materia\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\materia\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\minty\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\minty\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\minty\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\morph\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\morph\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\morph\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\pulse\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\pulse\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\pulse\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\quartz\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\quartz\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\quartz\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\sandstone\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\sandstone\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\sandstone\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\simplex\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\simplex\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\simplex\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\sketchy\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\sketchy\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\sketchy\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\slate\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\slate\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\slate\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\solar\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\solar\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\solar\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\spacelab\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\spacelab\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\spacelab\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\superhero\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\superhero\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\superhero\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\united\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\united\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\united\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\vapor\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\vapor\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\vapor\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\yaf\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\yaf\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\yaf\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\yeti\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\yeti\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\yeti\EmailTemplate.html" />
     <Content Include="Forum\Content\Themes\zephyr\bootstrap-forum.min.css" />
+    <Content Include="Forum\Content\Themes\zephyr\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\zephyr\EmailTemplate.html" />
     <Content Include="Forum\Controls\ActiveDiscussion.ascx" />
     <Content Include="Forum\Controls\AdminMenu.ascx" />
@@ -1012,6 +1040,8 @@
     <Content Include="Forum\Scripts\sceditor\languages\tw.js" />
     <Content Include="Forum\Scripts\sceditor\languages\uk.js" />
     <Content Include="Forum\Scripts\sceditor\languages\vi.js" />
+    <Content Include="Forum\Scripts\sceditor\sceditor.min.js" />
+    <Content Include="Forum\Scripts\themeSelector.min.js" />
     <Content Include="Global.asax" />
     <Content Include="app.config" />
     <Content Include="db.config" />
@@ -1106,6 +1136,15 @@
     <Content Include="Forum\LICENSE.md" />
     <Content Include="Forum\README.md" />
     <Content Include="package.json" />
+    <Content Include="Forum\Content\webfonts\fa-brands-400.woff2" />
+    <Content Include="Forum\Content\webfonts\fa-regular-400.woff2" />
+    <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
+    <Content Include="Forum\Content\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="Forum\Content\favicons\android-chrome-144x144.webp" />
+    <Content Include="Forum\Content\favicons\apple-touch-icon.webp" />
+    <Content Include="Forum\Content\favicons\favicon-16x16.webp" />
+    <Content Include="Forum\Content\favicons\favicon-32x32.webp" />
+    <Content Include="Forum\Content\favicons\mstile-150x150.webp" />
     <None Include="packages.config" />
     <Content Include="Views\RazorDemo\Hello.cshtml" />
     <Content Include="Views\RazorDemo\Index.cshtml" />
