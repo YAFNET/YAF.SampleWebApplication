@@ -51,8 +51,8 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.11, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.11\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.12, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.12\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -158,12 +158,17 @@
     <Content Include="favicon.ico" />
     <Content Include="Forum\Content\codemirror.min.css" />
     <Content Include="Forum\Content\favicons\android-chrome-144x144.png" />
+    <Content Include="Forum\Content\favicons\android-chrome-144x144.webp" />
     <Content Include="Forum\Content\favicons\apple-touch-icon.png" />
+    <Content Include="Forum\Content\favicons\apple-touch-icon.webp" />
     <Content Include="Forum\Content\favicons\browserconfig.xml" />
     <Content Include="Forum\Content\favicons\favicon-16x16.png" />
+    <Content Include="Forum\Content\favicons\favicon-16x16.webp" />
     <Content Include="Forum\Content\favicons\favicon-32x32.png" />
+    <Content Include="Forum\Content\favicons\favicon-32x32.webp" />
     <Content Include="Forum\Content\favicons\favicon.ico" />
     <Content Include="Forum\Content\favicons\mstile-150x150.png" />
+    <Content Include="Forum\Content\favicons\mstile-150x150.webp" />
     <Content Include="Forum\Content\favicons\safari-pinned-tab.svg" />
     <Content Include="Forum\Content\favicons\site.webmanifest" />
     <Content Include="Forum\Content\flags\1x1\ac.svg" />
@@ -179,6 +184,7 @@
     <Content Include="Forum\Content\flags\1x1\ar.svg" />
     <Content Include="Forum\Content\flags\1x1\arab.svg" />
     <Content Include="Forum\Content\flags\1x1\as.svg" />
+    <Content Include="Forum\Content\flags\1x1\asean.svg" />
     <Content Include="Forum\Content\flags\1x1\at.svg" />
     <Content Include="Forum\Content\flags\1x1\au.svg" />
     <Content Include="Forum\Content\flags\1x1\aw.svg" />
@@ -356,6 +362,7 @@
     <Content Include="Forum\Content\flags\1x1\nz.svg" />
     <Content Include="Forum\Content\flags\1x1\om.svg" />
     <Content Include="Forum\Content\flags\1x1\pa.svg" />
+    <Content Include="Forum\Content\flags\1x1\pc.svg" />
     <Content Include="Forum\Content\flags\1x1\pe.svg" />
     <Content Include="Forum\Content\flags\1x1\pf.svg" />
     <Content Include="Forum\Content\flags\1x1\pg.svg" />
@@ -381,6 +388,9 @@
     <Content Include="Forum\Content\flags\1x1\sd.svg" />
     <Content Include="Forum\Content\flags\1x1\se.svg" />
     <Content Include="Forum\Content\flags\1x1\sg.svg" />
+    <Content Include="Forum\Content\flags\1x1\sh-ac.svg" />
+    <Content Include="Forum\Content\flags\1x1\sh-hl.svg" />
+    <Content Include="Forum\Content\flags\1x1\sh-ta.svg" />
     <Content Include="Forum\Content\flags\1x1\sh.svg" />
     <Content Include="Forum\Content\flags\1x1\si.svg" />
     <Content Include="Forum\Content\flags\1x1\sj.svg" />
@@ -449,6 +459,7 @@
     <Content Include="Forum\Content\flags\4x3\ar.svg" />
     <Content Include="Forum\Content\flags\4x3\arab.svg" />
     <Content Include="Forum\Content\flags\4x3\as.svg" />
+    <Content Include="Forum\Content\flags\4x3\asean.svg" />
     <Content Include="Forum\Content\flags\4x3\at.svg" />
     <Content Include="Forum\Content\flags\4x3\au.svg" />
     <Content Include="Forum\Content\flags\4x3\aw.svg" />
@@ -626,6 +637,7 @@
     <Content Include="Forum\Content\flags\4x3\nz.svg" />
     <Content Include="Forum\Content\flags\4x3\om.svg" />
     <Content Include="Forum\Content\flags\4x3\pa.svg" />
+    <Content Include="Forum\Content\flags\4x3\pc.svg" />
     <Content Include="Forum\Content\flags\4x3\pe.svg" />
     <Content Include="Forum\Content\flags\4x3\pf.svg" />
     <Content Include="Forum\Content\flags\4x3\pg.svg" />
@@ -651,6 +663,9 @@
     <Content Include="Forum\Content\flags\4x3\sd.svg" />
     <Content Include="Forum\Content\flags\4x3\se.svg" />
     <Content Include="Forum\Content\flags\4x3\sg.svg" />
+    <Content Include="Forum\Content\flags\4x3\sh-ac.svg" />
+    <Content Include="Forum\Content\flags\4x3\sh-hl.svg" />
+    <Content Include="Forum\Content\flags\4x3\sh-ta.svg" />
     <Content Include="Forum\Content\flags\4x3\sh.svg" />
     <Content Include="Forum\Content\flags\4x3\si.svg" />
     <Content Include="Forum\Content\flags\4x3\sj.svg" />
@@ -792,6 +807,10 @@
     <Content Include="Forum\Content\Themes\zephyr\bootstrap-forum.min.css" />
     <Content Include="Forum\Content\Themes\zephyr\DigestTopicTemplate.html" />
     <Content Include="Forum\Content\Themes\zephyr\EmailTemplate.html" />
+    <Content Include="Forum\Content\webfonts\fa-brands-400.woff2" />
+    <Content Include="Forum\Content\webfonts\fa-regular-400.woff2" />
+    <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
+    <Content Include="Forum\Content\webfonts\fa-v4compatibility.woff2" />
     <Content Include="Forum\Controls\ActiveDiscussion.ascx" />
     <Content Include="Forum\Controls\AdminMenu.ascx" />
     <Content Include="Forum\Controls\AlbumImageList.ascx" />
@@ -851,7 +870,6 @@
     <Content Include="Forum\Dialogs\BBCodeImport.ascx" />
     <Content Include="Forum\Dialogs\EditProfileDefinition.ascx" />
     <Content Include="Forum\Dialogs\GroupMedalEdit.ascx" />
-    <Content Include="Forum\Dialogs\ImageGallery.ascx" />
     <Content Include="Forum\Dialogs\LoginBox.ascx" />
     <Content Include="Forum\Dialogs\ModForumUser.ascx" />
     <Content Include="Forum\Dialogs\MoveTopic.ascx" />
@@ -864,32 +882,7 @@
     <Content Include="Forum\Dialogs\UsersImport.ascx" />
     <Content Include="Forum\error.aspx" />
     <Content Include="Forum\Forum.aspx" />
-    <Content Include="Forum\Images\Avatars\SampleAvatar.gif" />
-    <Content Include="Forum\Images\Categories\categoryImageSample.gif" />
-    <Content Include="Forum\Images\Forums\forumImageSample.gif" />
     <Content Include="Forum\Images\Logos\YAFLogo.svg" />
-    <Content Include="Forum\Images\Medals\award_star_bronze_3.png" />
-    <Content Include="Forum\Images\Medals\award_star_bronze_3_small.png" />
-    <Content Include="Forum\Images\Medals\award_star_gold_2.png" />
-    <Content Include="Forum\Images\Medals\award_star_gold_2_small.png" />
-    <Content Include="Forum\Images\Medals\medal.png" />
-    <Content Include="Forum\Images\Medals\medal_bronze_1.png" />
-    <Content Include="Forum\Images\Medals\medal_bronze_1_small.png" />
-    <Content Include="Forum\Images\Medals\medal_bronze_2.png" />
-    <Content Include="Forum\Images\Medals\medal_bronze_2_small.png" />
-    <Content Include="Forum\Images\Medals\medal_bronze_3.png" />
-    <Content Include="Forum\Images\Medals\medal_bronze_3_small.png" />
-    <Content Include="Forum\Images\Medals\medal_gold_1.png" />
-    <Content Include="Forum\Images\Medals\medal_gold_1_small.png" />
-    <Content Include="Forum\Images\Medals\medal_gold_2.png" />
-    <Content Include="Forum\Images\Medals\medal_gold_2_small.png" />
-    <Content Include="Forum\Images\Medals\medal_gold_3.png" />
-    <Content Include="Forum\Images\Medals\medal_gold_3_small.png" />
-    <Content Include="Forum\Images\Medals\medal_silver_1.png" />
-    <Content Include="Forum\Images\Medals\medal_silver_1_small.png" />
-    <Content Include="Forum\Images\Medals\medal_silver_2.png" />
-    <Content Include="Forum\Images\Medals\medal_silver_2_small.png" />
-    <Content Include="Forum\Images\Medals\medal_small.png" />
     <Content Include="Forum\Install\BBCodeExtensions.xml" />
     <Content Include="Forum\Install\default.aspx" />
     <Content Include="Forum\Install\mssql\upgrade\identity\upgrade.sql" />
@@ -983,7 +976,6 @@
     <Content Include="Forum\Pages\PrintTopic.ascx" />
     <Content Include="Forum\Pages\PrivateMessage.ascx" />
     <Content Include="Forum\Pages\Profile\Attachments.ascx" />
-    <Content Include="Forum\Pages\Profile\Avatar.ascx" />
     <Content Include="Forum\Pages\Profile\Blockoptions.ascx" />
     <Content Include="Forum\Pages\Profile\ChangePassword.ascx" />
     <Content Include="Forum\Pages\Profile\DeleteAccount.ascx" />
@@ -1045,9 +1037,10 @@
     <Content Include="Global.asax" />
     <Content Include="app.config" />
     <Content Include="db.config" />
-    <Content Include="Gruntfile.js" />
     <Content Include="mail.config" />
     <Content Include="Site.Master" />
+    <Content Include="update-scripts\copy-debug.js" />
+    <Content Include="update-scripts\update-yaf.js" />
     <Content Include="Views\Shared\RazorView.aspx" />
     <Content Include="Web.config" />
     <Content Include="UrlRewriter.config" />
@@ -1136,15 +1129,31 @@
     <Content Include="Forum\LICENSE.md" />
     <Content Include="Forum\README.md" />
     <Content Include="package.json" />
-    <Content Include="Forum\Content\webfonts\fa-brands-400.woff2" />
-    <Content Include="Forum\Content\webfonts\fa-regular-400.woff2" />
-    <Content Include="Forum\Content\webfonts\fa-solid-900.woff2" />
-    <Content Include="Forum\Content\webfonts\fa-v4compatibility.woff2" />
-    <Content Include="Forum\Content\favicons\android-chrome-144x144.webp" />
-    <Content Include="Forum\Content\favicons\apple-touch-icon.webp" />
-    <Content Include="Forum\Content\favicons\favicon-16x16.webp" />
-    <Content Include="Forum\Content\favicons\favicon-32x32.webp" />
-    <Content Include="Forum\Content\favicons\mstile-150x150.webp" />
+    <Content Include="Forum\Images\Avatars\SampleAvatar.webp" />
+    <Content Include="Forum\Images\Categories\categoryImageSample.webp" />
+    <Content Include="Forum\Images\Forums\forumImageSample.webp" />
+    <Content Include="Forum\Images\Medals\award_star_bronze_3.webp" />
+    <Content Include="Forum\Images\Medals\award_star_bronze_3_small.webp" />
+    <Content Include="Forum\Images\Medals\award_star_gold_2.webp" />
+    <Content Include="Forum\Images\Medals\award_star_gold_2_small.webp" />
+    <Content Include="Forum\Images\Medals\medal.webp" />
+    <Content Include="Forum\Images\Medals\medal_bronze_1.webp" />
+    <Content Include="Forum\Images\Medals\medal_bronze_1_small.webp" />
+    <Content Include="Forum\Images\Medals\medal_bronze_2.webp" />
+    <Content Include="Forum\Images\Medals\medal_bronze_2_small.webp" />
+    <Content Include="Forum\Images\Medals\medal_bronze_3.webp" />
+    <Content Include="Forum\Images\Medals\medal_bronze_3_small.webp" />
+    <Content Include="Forum\Images\Medals\medal_gold_1.webp" />
+    <Content Include="Forum\Images\Medals\medal_gold_1_small.webp" />
+    <Content Include="Forum\Images\Medals\medal_gold_2.webp" />
+    <Content Include="Forum\Images\Medals\medal_gold_2_small.webp" />
+    <Content Include="Forum\Images\Medals\medal_gold_3.webp" />
+    <Content Include="Forum\Images\Medals\medal_gold_3_small.webp" />
+    <Content Include="Forum\Images\Medals\medal_silver_1.webp" />
+    <Content Include="Forum\Images\Medals\medal_silver_1_small.webp" />
+    <Content Include="Forum\Images\Medals\medal_silver_2.webp" />
+    <Content Include="Forum\Images\Medals\medal_silver_2_small.webp" />
+    <Content Include="Forum\Images\Medals\medal_small.webp" />
     <None Include="packages.config" />
     <Content Include="Views\RazorDemo\Hello.cshtml" />
     <Content Include="Views\RazorDemo\Index.cshtml" />

@@ -12,15 +12,9 @@
         "url": "https://github.com/YAFNET/YAF.SampleWebApplication/issues"
     },
     "homepage": "https://github.com/YAFNET/YAF.SampleWebApplication#readme",
-    "devDependencies": {
-        "grunt": "^1.6.3",
-        "grunt-contrib-copy": "^1.0.0",
-        "grunt-downloadfile": "^2.1.1",
-        "grunt-shell": "^4.0.0",
-        "grunt-zip": "^1.0.0"
-    },
     "scripts": {
-        "updateYAF": "grunt",
+        "updateYAF": "node update-scripts/update-yaf.js",
+        "copyDebug": "node update-scripts/copy-debug.js",
         "updatePackages": "set npm_config_allow_scripts=&& npm-check -y"
     }
 }
