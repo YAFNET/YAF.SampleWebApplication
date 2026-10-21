@@ -4,7 +4,7 @@
 <%@ Import Namespace="YAF.Types.Flags" %>
 <YAF:PageLinks runat="server" ID="PageLinks" />
 
-    <div class="row" runat="server" Visible="<%# this.RoleListNet.Items.Count > 0 %>">
+    <div class="row" runat="server" Visible="<%# this.RoleListNet.DataSource != null %>">
         <div class="col-xl-12">
             <div class="card mb-3">
                 <div class="card-header">
@@ -29,7 +29,7 @@
                  <li class="list-group-item list-group-item-action">
                  <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1 text-break">
-                        <%# Container.DataItem %>
+                        <%#: Container.DataItem %>
                     </h5>
                      <small class="text-body-secondary">
                          <YAF:LocalizedLabel ID="LocalizedLabel13" runat="server" LocalizedPage="ADMIN_GROUPS" LocalizedTag="UNLINKED" />
@@ -95,7 +95,7 @@
                  <li class="list-group-item list-group-item-action list-group-item-menu">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1 text-break">
-                        <i class="fa fa-users"></i>&nbsp;<%# this.Eval( "Name" ) %>
+                        <i class="fa fa-users"></i>&nbsp;<%#: this.Eval( "Name" ) %>
                     </h5>
                     <small class="text-body-secondary">
                         <%# this.GetLinkedStatus((YAF.Types.Models.Group)Container.DataItem )%>
@@ -107,7 +107,7 @@
                         <YAF:LocalizedLabel ID="HelpLabel6" runat="server"
                                             LocalizedTag="DESCRIPTION" LocalizedPage="ADMIN_EDITGROUP">
                         </YAF:LocalizedLabel>
-                        &nbsp;<%# this.Eval("Description") %>
+                        &nbsp;<%#: this.Eval("Description") %>
                     </asp:PlaceHolder>
                     <ul class="list-inline">
                         <li class="list-inline-item">
@@ -181,7 +181,7 @@
                                        CssClass="<%# this.GetItemColorString(((YAF.Types.Models.Group)Container.DataItem).Style) %>">
                                 <%#((YAF.Types.Models.Group)Container.DataItem).Style.IsSet() && this.Eval("Style").ToString().Trim().Length > 0 ? "" : this.GetItemName(false)%>
                             </asp:Label>
-                            <code><%# ((YAF.Types.Models.Group)Container.DataItem).Style %></code>
+                            <code><%#: ((YAF.Types.Models.Group)Container.DataItem).Style %></code>
                         </li>
                         <li class="list-inline-item">
                             <YAF:LocalizedLabel ID="HelpLabel7" runat="server"
@@ -214,7 +214,7 @@
                         <YAF:ThemeButton ID="ThemeButtonDelete" runat="server"
                                          Type="Danger"
                                          Size="Small"
-                                         Visible='<%#!((GroupFlags)this.Eval("GroupFlags")).IsGuest%>'
+                                         Visible='<%#!((GroupFlags)this.Eval("GroupFlags")).IsGuest && !((GroupFlags)this.Eval("GroupFlags")).IsAdmin%>'
                                          CommandName="delete" CommandArgument='<%# this.Eval( "ID") %>'
                                          ReturnConfirmTag="CONFIRM_DELETE"
                                          TitleLocalizedTag="DELETE"
@@ -234,7 +234,7 @@
                         <YAF:ThemeButton ID="ThemeButton2" runat="server"
                                          Type="None"
                                          CssClass="dropdown-item"
-                                         Visible='<%#!((GroupFlags)this.Eval("GroupFlags")).IsGuest && !YAF.Configuration.Config.IsDotNetNuke %>'
+                                         Visible='<%#!((GroupFlags)this.Eval("GroupFlags")).IsGuest && !((GroupFlags)this.Eval("GroupFlags")).IsAdmin && !YAF.Configuration.Config.IsDotNetNuke %>'
                                          CommandName="delete" CommandArgument='<%# this.Eval( "ID") %>'
                                          ReturnConfirmTag="CONFIRM_DELETE"
                                          TitleLocalizedTag="DELETE"

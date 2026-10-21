@@ -82,7 +82,7 @@
                     </span>
                     <asp:Repeater ID="Groups" runat="server">
                         <ItemTemplate>
-                            <%# this.Eval("Name") %>
+                            <%#: this.Eval("Name") %>
                         </ItemTemplate>
                         <SeparatorTemplate>
                             ,
@@ -161,7 +161,7 @@
                     <ItemTemplate>
                         <li class="list-group-item text-end">
                             <span class="float-start fw-bold">
-                                <%# this.Eval("Item2.Name") %>:
+                                <%#: this.Eval("Item2.Name") %>:
                             </span>
                             <%# this.HtmlEncode(this.Eval("Item1.Value")) %>
                         </li>
@@ -282,7 +282,7 @@
                                 </span><a
                                     title='<%# this.GetText("COMMON", "VIEW_TOPIC") %>'
                                     href='<%# this.Get<LinkBuilder>().GetTopicLink(((Tuple<Message, Topic, User>)Container.DataItem).Item2.ID, this.Eval("Item2.TopicName").ToString()) %>'>
-                                    <%# this.Get<IBadWordReplace>().Replace(this.HtmlEncode(this.Eval("Item2.TopicName").ToString())) %>
+                                    <%# this.Get<IBadWordReplace>().ReplaceHtml(this.HtmlEncode(this.Eval("Item2.TopicName").ToString())) %>
                                 </a>
                             </div>
                             <div class="card-body">

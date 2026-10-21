@@ -87,7 +87,7 @@
                 <asp:HiddenField ID="fID" Value='<%# this.Eval("ID") %>' runat="server"/>
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1 text-break">
-                        <asp:Label ID="MaskBox" Text='<%# this.Eval("Mask") %>' runat="server"></asp:Label>
+                        <asp:Label ID="MaskBox" Text='<%#: this.Eval("Mask") %>' runat="server"></asp:Label>
                     </h5>
                     <small class="d-none d-md-block">
                         <span class="fw-bold">
@@ -100,7 +100,7 @@
                     <span class="fw-bold">
                         <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="REASON" LocalizedPage="ADMIN_BANNEDEMAIL" />
                     </span>
-                    <%# this.Eval("Reason") %>
+                    <%#: this.Eval("Reason") %>
                 </p>
                 <small>
                     <div class="btn-group btn-group-sm">
