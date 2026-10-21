@@ -217,16 +217,13 @@
 
                             @await Html.PartialAsync("_HostMenu")
 
-                            @await Html.PartialAsync("_UserMenu")
-
 
                         </ul>
                         @await Html.PartialAsync("_QuickSearch")
 
-                        @if (Current.BoardSettings.AllowUserTheme)
-                        {
-	                        @await Html.PartialAsync("_ThemeModeSelector")
-                        }
+                        @await Html.PartialAsync("_ThemeModeSelector")
+
+                        @await Html.PartialAsync("_UserMenu")
                     </div>
                 </div>
             </nav>
