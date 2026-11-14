@@ -5,3 +5,7 @@ YAF.SampleWebApplication/package-lock.json
 YAF.SampleApp/package-lock.json
 /YAF.SampleApp/bin
 /YAF.SampleApp/obj
+/.vs
+YAF.SampleApp.sln.GhostDoc.xml
+YAF.SampleApp/appsettings.Development.json
+/YAF.SampleApp/wwwroot/Search_Data
