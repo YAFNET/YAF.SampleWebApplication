@@ -2,3 +2,10 @@
 *.CopyComplete
 *.cache
 YAF.SampleWebApplication/package-lock.json
+/.vs
+/packages
+YAF.SampleWebApplication.sln.GhostDoc.xml
+/YAF.SampleWebApplication/.vs
+/YAF.SampleWebApplication/App_Data
+/YAF.SampleWebApplication/node_modules
+/YAF.SampleWebApplication/obj
