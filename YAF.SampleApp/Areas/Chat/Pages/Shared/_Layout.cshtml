@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@Html.Raw(Current.CurrentForumPage.GeneratePageTitle())</title>
+    <title>@ViewData["Title"] - YAF.SampleApp</title>
     <link rel="stylesheet" href="@Html.Raw(Current.Get<ITheme>().BuildThemePath("bootstrap-forum.min.css"))"
           type="text/css" asp-append-version="true" />
     <link rel="preload" href="~/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
