@@ -27,15 +27,15 @@
             <div class="site-toc">
                 <div class="small fw-semibold text-uppercase text-body-secondary mb-2">On this page</div>
                 <nav class="nav flex-column">
-                    <a class="nav-link" href="#requirements">Requirements</a>
-                    <a class="nav-link" href="#run">Run the sample</a>
-                    <a class="nav-link" href="#tour">Tour of the project</a>
-                    <a class="nav-link" href="#program">Program.cs</a>
-                    <a class="nav-link" href="#settings">appsettings.json</a>
-                    <a class="nav-link" href="#your-pages">The forum in your pages</a>
-                    <a class="nav-link" href="#customize">Layout and themes</a>
-                    <a class="nav-link" href="#databases">Other databases</a>
-                    <a class="nav-link" href="#next">Next steps</a>
+                    <a class="nav-link" asp-page="/GettingStarted" asp-fragment="requirements">Requirements</a>
+                    <a class="nav-link" asp-page="/GettingStarted" asp-fragment="run">Run the sample</a>
+                    <a class="nav-link" asp-page="/GettingStarted" asp-fragment="tour">Tour of the project</a>
+                    <a class="nav-link" asp-page="/GettingStarted" asp-fragment="program">Program.cs</a>
+                    <a class="nav-link" asp-page="/GettingStarted" asp-fragment="settings">appsettings.json</a>
+                    <a class="nav-link" asp-page="/GettingStarted" asp-fragment="your-pages">The forum in your pages</a>
+                    <a class="nav-link" asp-page="/GettingStarted" asp-fragment="customize">Layout and themes</a>
+                    <a class="nav-link" asp-page="/GettingStarted" asp-fragment="databases">Other databases</a>
+                    <a class="nav-link" asp-page="/GettingStarted" asp-fragment="next">Next steps</a>
                 </nav>
             </div>
         </nav>
@@ -45,7 +45,7 @@
                 <h2 class="h3 mb-3">Requirements</h2>
                 <ul class="mb-0">
                     <li>The <a href="https://dotnet.microsoft.com/download">.NET 11 SDK</a> (or Visual Studio with the ASP.NET workload).</li>
-                    <li>Microsoft SQL Server (Express and LocalDB work too). For MySQL, PostgreSQL or SQLite see <a href="#databases">other databases</a>.</li>
+                    <li>Microsoft SQL Server (Express and LocalDB work too). For MySQL, PostgreSQL or SQLite see <a asp-page="/GettingStarted" asp-fragment="databases">other databases</a>.</li>
                     <li>Optional: an SMTP server for the registration and notification mails.</li>
                 </ul>
             </section>
