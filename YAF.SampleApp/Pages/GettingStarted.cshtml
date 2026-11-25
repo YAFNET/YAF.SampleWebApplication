@@ -130,7 +130,7 @@ dotnet run</code></pre>
                         <tbody>
                             <tr>
                                 <td><code>Program.cs</code></td>
-                                <td>Registers YAF.NET (Autofac, services, middleware, hubs), the chat and Blazor.</td>
+                                <td>Registers YAF.NET (Autofac, services, middleware, hubs), the chat hub and Blazor.</td>
                             </tr>
                             <tr>
                                 <td><code>appsettings.json</code></td>
@@ -191,7 +191,7 @@ dotnet run</code></pre>
 
             <section id="program" class="mb-5">
                 <h2 class="h3 mb-3">Program.cs</h2>
-                <p>These are the lines that add the forum to an application. The chat and Blazor lines are optional.</p>
+                <p>These are the lines that add the forum to an application. The chat and Blazor lines are optional: the chat only needs its hub, Blazor is only needed for the Blazor demos.</p>
                 <div class="site-code">
                     <div class="site-code-title">@Html.Icon("file-code") Program.cs</div>
 <pre><code>var builder = WebApplication.CreateBuilder(args);
@@ -211,7 +211,7 @@ builder.Services.AddRazorPages(options =&gt;
 
 builder.Services.AddYafCore(builder.Configuration, "/Forums");
 
-builder.Services.AddServerSideBlazor(); // chat and Blazor only
+builder.Services.AddServerSideBlazor(); // Blazor only
 
 var app = builder.Build();
 
@@ -232,7 +232,7 @@ app.MapControllers();
 
 app.MapYafHubs();                             // notifications, private messages
 app.MapHub&lt;AllChatHub&gt;("/AllChatHub");       // chat only
-app.MapBlazorHub();                           // chat and Blazor only
+app.MapBlazorHub();                           // Blazor only
 app.MapFallbackToPage("/_Host");              // Blazor routing only
 
 await app.RunAsync();</code></pre>
