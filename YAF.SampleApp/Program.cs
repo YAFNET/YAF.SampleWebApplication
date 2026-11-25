@@ -26,8 +26,6 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 
 using YAF.Core.Extensions;
-using YAF.Core.Hubs;
-using YAF.Core.Middleware;
 using YAF.RazorPages;
 using YAF.UI.Chat;
 
@@ -67,12 +65,7 @@ else
 
 app.RegisterAutofac();
 
-app.UseAntiXssMiddleware();
-
-app.UseStaticFiles();
-
-app.UseSession();
-
+// adds the static files, session, anti-xss and security headers, routing, authentication, ...
 app.UseYafCore(BoardContext.Current.ServiceLocator);
 
 app.UseRobotsTxt(app.Environment);
@@ -90,8 +83,8 @@ app.MapAreaControllerRoute(
 
 app.MapControllers();
 
-app.MapHub<NotificationHub>("/NotificationHub");
-app.MapHub<ChatHub>("/ChatHub");
+// the SignalR hubs of the forum (notifications and private messages)
+app.MapYafHubs();
 
 app.MapHub<AllChatHub>("/AllChatHub");
 
