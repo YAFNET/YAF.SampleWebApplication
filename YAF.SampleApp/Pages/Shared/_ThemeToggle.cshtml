@@ -1,0 +1,32 @@
+﻿@using YAF.Web.HtmlHelpers
+
+@* Light/dark mode switch, handled by ~/js/themeSelector.min.js of the forum (the ids and
+   data-bs-theme-value attributes are what the script looks for, only one per page). *@
+
+<div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center px-0 px-lg-2" type="button" id="bd-theme"
+            data-bs-toggle="dropdown" aria-expanded="false" title="Light or dark mode">
+        @Html.Icon("moon theme-icon-active")
+        <span class="d-lg-none ms-2" id="bd-theme-text">Light or dark mode</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+            <button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light" type="button">
+                @Html.Icon("sun") Light
+                @Html.Icon("check ms-auto d-none")
+            </button>
+        </li>
+        <li>
+            <button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark" type="button">
+                @Html.Icon("moon") Dark
+                @Html.Icon("check ms-auto d-none")
+            </button>
+        </li>
+        <li>
+            <button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto" type="button">
+                @Html.Icon("circle-half-stroke") Auto
+                @Html.Icon("check ms-auto d-none")
+            </button>
+        </li>
+    </ul>
+</div>

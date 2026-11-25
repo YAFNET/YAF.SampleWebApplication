@@ -1,14 +1,27 @@
-﻿<h1>Counter</h1>
+﻿@* A Blazor component, used on the routable page /counter (Pages/Counter.razor)
+   and on the Razor Page /CounterPage (Pages/CounterPage.cshtml) *@
 
-<p>Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<div class="card site-card shadow-sm text-center mx-auto" style="max-width: 22rem" data-counter>
+    <div class="card-body p-4">
+        <div class="small text-uppercase text-body-secondary mb-2">Current count</div>
+        <div class="site-counter-value mb-4" role="status" aria-live="polite">@currentCount</div>
+        <div class="d-flex justify-content-center gap-2">
+            <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+            <button class="btn btn-outline-secondary" @onclick="Reset" disabled="@(currentCount == 0)">Reset</button>
+        </div>
+    </div>
+</div>
 
 @code {
-	private int currentCount = 0;
+    private int currentCount;
 
-	private void IncrementCount()
-	{
-		currentCount++;
-	}
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private void Reset()
+    {
+        currentCount = 0;
+    }
 }

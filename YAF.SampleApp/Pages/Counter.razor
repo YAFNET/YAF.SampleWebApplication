@@ -1,18 +1,22 @@
 ﻿@page "/counter"
 
-<PageTitle>Routable Counter</PageTitle>
+@* A routable Blazor component: Program.cs maps the fallback route to Pages/_Host.cshtml,
+   which renders App.razor and its router inside the layout of the site *@
 
-<h1>Routable Counter</h1>
+<div class="site-hero border-bottom py-5">
+    <div class="container-xxl">
+        <h1 class="display-6 mb-2">Blazor: routable component</h1>
+        <p class="lead text-body-secondary mb-0">
+            This page is a Blazor component with <code>@@page "/counter"</code>. The router in <code>App.razor</code>
+            finds it, the page runs in the same layout as the forum.
+        </p>
+    </div>
+</div>
 
-<p>Current count: @currentCount</p>
+<div class="container-xxl py-5">
+    <YAF.SampleApp.Pages.Shared.Counter />
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-
-@code {
-	private int currentCount = 0;
-
-	private void IncrementCount()
-	{
-		currentCount++;
-	}
-}
+    <p class="text-center text-body-secondary small mt-4 mb-0">
+        The same component on a Razor Page: <a href="CounterPage">Component on a Razor Page</a>
+    </p>
+</div>

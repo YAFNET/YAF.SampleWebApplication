@@ -1,13 +1,274 @@
 ﻿@page
+@using YAF.Core.Context
+@using YAF.Core.Services
+@using YAF.Types.Constants
+@using YAF.Types.Interfaces.Services
+@using YAF.Web.HtmlHelpers
 @model IndexModel
+
+@inject BoardContext Current
+
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
+
+    var linkBuilder = Current.Get<ILinkBuilder>();
+    var yafVersion = typeof(BoardContext).Assembly.GetName().Version?.ToString(3);
 }
 
-<div class="text-center">
-	<h1>Welcome to ASP.NET and the YAF.NET Sample Application</h1>
-	<p class="lead">
-		This Is a Sample Demo Application that shows the Integration of YAF.NET in to an existing ASP.NET Core Application.
-	</p>
-	<p> To learn more about YAF.NET visit <a href="http://www.yetanotherforum.net" title="YAF.NET Website">YAF.NET Website</a>.</p>
-</div>
+<section class="site-hero border-bottom">
+    <div class="container-xxl">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <span class="site-eyebrow mb-3">
+                    @Html.Icon("code") YAF.NET @yafVersion &middot; ASP.NET Core
+                </span>
+                <h1 class="display-5 mb-3">Your website, with a forum built in</h1>
+                <p class="lead text-body-secondary mb-4">
+                    This sample is a standard ASP.NET Core application with the YAF.NET forum integrated as an area.
+                    The forum, the chat and your own pages share one login, one theme and one layout.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a class="btn btn-primary btn-lg" asp-area="Forums" asp-page="/Index">
+                        @Html.Icon("comments", "me-2")Open the forums
+                    </a>
+                    <a class="btn btn-outline-secondary btn-lg" asp-page="/GettingStarted">
+                        @Html.Icon("rocket", "me-2")Getting started
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card site-card shadow-sm" data-forum-stats>
+                    <div class="card-header bg-transparent d-flex align-items-center justify-content-between">
+                        <span class="fw-semibold">@Html.Icon("chart-bar", "me-2 text-primary")@Current.BoardSettings.Name</span>
+                        <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle">
+                            @Html.Icon("database", "me-1") From the forum
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row row-cols-3 g-2 text-center">
+                            <div class="col">
+                                <div class="bg-body-tertiary rounded p-3 h-100">
+                                    <div class="site-stat-value text-primary">@Model.Statistics.Topics.ToString("N0")</div>
+                                    <div class="small text-body-secondary">Topics</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="bg-body-tertiary rounded p-3 h-100">
+                                    <div class="site-stat-value text-primary">@Model.Statistics.Posts.ToString("N0")</div>
+                                    <div class="small text-body-secondary">Posts</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="bg-body-tertiary rounded p-3 h-100">
+                                    <div class="site-stat-value text-primary">@Model.MemberCount.ToString("N0")</div>
+                                    <div class="small text-body-secondary">Members</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent small text-body-secondary">
+                        Read from the forum database by <code>Pages/Index.cshtml.cs</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="site-section">
+    <div class="container-xxl">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
+            <div>
+                <h2 class="site-section-title mb-1">Quick start</h2>
+                <p class="text-body-secondary mb-0">From clone to running forum in three steps.</p>
+            </div>
+            <a asp-page="/GettingStarted">Read the full guide @Html.Icon("angle-right", "ms-1")</a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="site-step">
+                    <span class="site-step-number">1</span>
+                    <div>
+                        <h3 class="h5">Set the connection string</h3>
+                        <p class="text-body-secondary mb-0">
+                            Point <code>ConnectionStrings:DefaultConnection</code> in <code>appsettings.json</code>
+                            to an empty SQL Server database.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="site-step">
+                    <span class="site-step-number">2</span>
+                    <div>
+                        <h3 class="h5">Run and install</h3>
+                        <p class="text-body-secondary mb-0">
+                            Start the app with <code>dotnet run</code>. The first request opens the installation
+                            wizard, which creates the tables and your admin account.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="site-step">
+                    <span class="site-step-number">3</span>
+                    <div>
+                        <h3 class="h5">Make it yours</h3>
+                        <p class="text-body-secondary mb-0">
+                            Add your own pages, change the layout in <code>Pages/Shared</code> and pick a theme in
+                            the forum admin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="site-section bg-body-tertiary border-top border-bottom">
+    <div class="container-xxl">
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="card site-card">
+                    <div class="card-header bg-transparent d-flex align-items-center justify-content-between">
+                        <h2 class="h5 mb-0">@Html.Icon("comment-dots", "me-2 text-primary")Latest topics</h2>
+                        <a class="small" asp-area="Forums" asp-page="/Index">All forums @Html.Icon("angle-right", "ms-1")</a>
+                    </div>
+                    @if (Model.LatestTopics.Count > 0)
+                    {
+                        <ul class="list-group list-group-flush site-topic-list" data-latest-topics>
+                            @foreach (var topic in Model.LatestTopics)
+                            {
+                                var lastUser = Current.BoardSettings.EnableDisplayName ? topic.LastUserDisplayName : topic.LastUserName;
+
+                                <li class="list-group-item d-flex align-items-start gap-3 py-3">
+                                    <span class="site-card-icon bg-primary-subtle text-primary-emphasis flex-shrink-0">
+                                        @Html.Icon("comment")
+                                    </span>
+                                    <div class="min-w-0 flex-grow-1">
+                                        <a class="fw-semibold text-decoration-none d-block text-truncate"
+                                           href="@linkBuilder.GetTopicLink(topic.TopicID, topic.Topic)">
+                                            @Html.Raw(Current.Get<IBadWordReplace>().ReplaceHtml(Html.Encode(topic.Topic)))
+                                        </a>
+                                        <div class="small text-body-secondary">
+                                            in <a class="link-secondary" href="@linkBuilder.GetForumLink(topic.ForumID, topic.Forum)">@topic.Forum</a>
+                                            @if (topic.LastPosted.HasValue)
+                                            {
+                                                <span>
+                                                    &middot; last post by @lastUser,
+                                                    @(Current.Get<IDateTimeService>().FormatDateTimeShort(topic.LastPosted.Value))
+                                                </span>
+                                            }
+                                        </div>
+                                    </div>
+                                    <span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle"
+                                          title="Posts">
+                                        @Html.Icon("reply", "me-1")@topic.NumPosts.ToString("N0")
+                                    </span>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="card-body text-center text-body-secondary py-5">
+                            @Html.Icon("comments", "fa-2x mb-3 d-block")
+                            No topics yet. <a asp-area="Forums" asp-page="/Index">Start the first discussion</a>.
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card site-card h-100">
+                    <div class="card-body">
+                        <h2 class="h5">@Html.Icon("circle-info", "me-2 text-warning")How does this page get the topics?</h2>
+                        <p class="text-body-secondary">
+                            Your own pages can use the services of the forum. The page model implements
+                            <code>IHaveServiceLocator</code> and reads the topics through the same repository the forum uses,
+                            so the list only shows topics the visitor is allowed to read.
+                        </p>
+                        <div class="site-code">
+                            <div class="site-code-title">@Html.Icon("file-code") Pages/Index.cshtml.cs</div>
+<pre><code>public class IndexModel : PageModel, IHaveServiceLocator
+{
+    public IServiceLocator ServiceLocator =&gt;
+        BoardContext.Current.ServiceLocator;
+
+    public async Task OnGetAsync()
+    {
+        var context = BoardContext.Current;
+
+        this.LatestTopics = this.GetRepository&lt;Topic&gt;()
+            .Latest(context.PageBoardID, 0, 5,
+                    context.PageUserID, false, false);
+    }
+}</code></pre>
+                        </div>
+                        <a asp-page="/GettingStarted" asp-fragment="your-pages">
+                            More about using the forum in your pages @Html.Icon("angle-right", "ms-1")
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="site-section">
+    <div class="container-xxl">
+        <h2 class="site-section-title mb-1">What is in the sample</h2>
+        <p class="text-body-secondary mb-4">Everything you see here is in the source of this project, ready to copy.</p>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+            <div class="col">
+                <a class="card site-card h-100 text-decoration-none" asp-area="Forums" asp-page="/Index">
+                    <div class="card-body">
+                        <span class="site-card-icon bg-primary-subtle text-primary-emphasis mb-3">@Html.Icon("comments")</span>
+                        <h3 class="h6 text-body">Forum as an area</h3>
+                        <p class="small text-body-secondary mb-0">
+                            The complete forum from the <code>YAFNET.RazorPages</code> package, at <code>/Forums</code>,
+                            inside the layout of the site.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a class="card site-card h-100 text-decoration-none" href="@linkBuilder.GetLink(Current.IsGuest ? ForumPages.Account_Login : ForumPages.MyAccount)">
+                    <div class="card-body">
+                        <span class="site-card-icon bg-success-subtle text-success-emphasis mb-3">@Html.Icon("user-shield")</span>
+                        <h3 class="h6 text-body">One login</h3>
+                        <p class="small text-body-secondary mb-0">
+                            The forum accounts are the accounts of the site. The header knows who is logged in on
+                            every page.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a class="card site-card h-100 text-decoration-none" asp-area="Chat" asp-page="/Index">
+                    <div class="card-body">
+                        <span class="site-card-icon bg-info-subtle text-info-emphasis mb-3">@Html.Icon("message")</span>
+                        <h3 class="h6 text-body">Real-time chat</h3>
+                        <p class="small text-body-secondary mb-0">
+                            The optional <code>YAFNET.UI.Chat</code> package, a chat room for all members using SignalR.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a class="card site-card h-100 text-decoration-none" href="~/counter">
+                    <div class="card-body">
+                        <span class="site-card-icon bg-warning-subtle text-warning-emphasis mb-3">@Html.Icon("layer-group")</span>
+                        <h3 class="h6 text-body">Blazor components</h3>
+                        <p class="small text-body-secondary mb-0">
+                            Blazor Server runs next to the forum: as a routable component and inside a Razor Page.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,42 @@
+﻿@using YAF.Core.Context
+@using YAF.Web.HtmlHelpers
+
+@{
+    var yafVersion = typeof(BoardContext).Assembly.GetName().Version?.ToString(3);
+}
+
+<footer class="site-footer border-top mt-auto">
+    <div class="container-xxl py-4">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2 fw-semibold mb-2">
+                    <span class="site-brand-mark site-brand-mark-sm" aria-hidden="true">@Html.Icon("comments")</span>
+                    YAF.SampleApp
+                </div>
+                <p class="text-body-secondary small mb-0">
+                    An ASP.NET Core application with YAF.NET @yafVersion integrated as the <code>Forums</code> area.
+                    Use it as a starting point for your own site.
+                </p>
+            </div>
+            <div class="col-6 col-md-3">
+                <h2 class="h6 text-uppercase text-body-secondary small">This sample</h2>
+                <ul class="list-unstyled small mb-0">
+                    <li><a asp-area="" asp-page="/GettingStarted">Getting started</a></li>
+                    <li><a href="https://github.com/YAFNET/YAF.SampleWebApplication">Source code on GitHub</a></li>
+                    <li><a href="https://github.com/YAFNET/YAF.SampleWebApplication/releases">Releases</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-3">
+                <h2 class="h6 text-uppercase text-body-secondary small">YAF.NET</h2>
+                <ul class="list-unstyled small mb-0">
+                    <li><a href="https://www.yetanotherforum.net/">Website</a></li>
+                    <li><a href="https://github.com/YAFNET/YAFNET/wiki">Documentation</a></li>
+                    <li><a href="https://forum.yetanotherforum.net/">Support forum</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-top mt-4 pt-3 small text-body-secondary">
+            &copy; @DateTime.UtcNow.Year YAF.SampleApp &middot; Powered by <a href="https://www.yetanotherforum.net/">YAF.NET</a>
+        </div>
+    </div>
+</footer>

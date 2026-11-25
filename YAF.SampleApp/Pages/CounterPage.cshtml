@@ -1,7 +1,23 @@
 ﻿@page
 @using YAF.SampleApp.Pages.Shared
 @{
-    ViewData["Title"] = "Blazor Counter on Razor Page";
+    ViewData["Title"] = "Blazor component on a Razor Page";
 }
 
-<component type="typeof(Counter)" render-mode="ServerPrerendered" />
+<div class="site-hero border-bottom py-5">
+    <div class="container-xxl">
+        <h1 class="display-6 mb-2">Blazor: component on a Razor Page</h1>
+        <p class="lead text-body-secondary mb-0">
+            A normal Razor Page that renders a Blazor component with the <code>&lt;component&gt;</code> tag helper.
+            The button works over the Blazor Server connection.
+        </p>
+    </div>
+</div>
+
+<div class="container-xxl py-5">
+    <component type="typeof(Counter)" render-mode="ServerPrerendered" />
+
+    <p class="text-center text-body-secondary small mt-4 mb-0">
+        The same component as a routable page: <a href="~/counter">Routable component</a>
+    </p>
+</div>

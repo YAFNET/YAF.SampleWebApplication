@@ -1,0 +1,421 @@
+﻿@page
+@using YAF.Core.Context
+@using YAF.Web.HtmlHelpers
+
+@{
+    ViewData["Title"] = "Getting started";
+
+    var yafVersion = typeof(BoardContext).Assembly.GetName().Version?.ToString(3);
+
+    const string Wiki = "https://github.com/YAFNET/YAFNET/wiki/";
+}
+
+<div class="site-hero border-bottom py-5">
+    <div class="container-xxl">
+        <span class="site-eyebrow mb-3">@Html.Icon("rocket") Getting started</span>
+        <h1 class="display-6 mb-2">Run the sample, then build on it</h1>
+        <p class="lead text-body-secondary mb-0">
+            How to start this application, how YAF.NET @yafVersion is wired into it, and how to bring the forum into your own
+            ASP.NET Core site.
+        </p>
+    </div>
+</div>
+
+<div class="container-xxl py-5">
+    <div class="row g-4">
+        <nav class="col-lg-3 d-none d-lg-block" aria-label="On this page">
+            <div class="site-toc">
+                <div class="small fw-semibold text-uppercase text-body-secondary mb-2">On this page</div>
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="#requirements">Requirements</a>
+                    <a class="nav-link" href="#run">Run the sample</a>
+                    <a class="nav-link" href="#tour">Tour of the project</a>
+                    <a class="nav-link" href="#program">Program.cs</a>
+                    <a class="nav-link" href="#settings">appsettings.json</a>
+                    <a class="nav-link" href="#your-pages">The forum in your pages</a>
+                    <a class="nav-link" href="#customize">Layout and themes</a>
+                    <a class="nav-link" href="#databases">Other databases</a>
+                    <a class="nav-link" href="#next">Next steps</a>
+                </nav>
+            </div>
+        </nav>
+
+        <div class="col-lg-9 site-guide">
+            <section id="requirements" class="mb-5">
+                <h2 class="h3 mb-3">Requirements</h2>
+                <ul class="mb-0">
+                    <li>The <a href="https://dotnet.microsoft.com/download">.NET 11 SDK</a> (or Visual Studio with the ASP.NET workload).</li>
+                    <li>Microsoft SQL Server (Express and LocalDB work too). For MySQL, PostgreSQL or SQLite see <a href="#databases">other databases</a>.</li>
+                    <li>Optional: an SMTP server for the registration and notification mails.</li>
+                </ul>
+            </section>
+
+            <section id="run" class="mb-5">
+                <h2 class="h3 mb-3">Run the sample</h2>
+
+                <div class="site-step mb-4">
+                    <span class="site-step-number">1</span>
+                    <div class="flex-grow-1 min-w-0">
+                        <h3 class="h5">Get the code</h3>
+                        <div class="site-code">
+<pre><code>git clone https://github.com/YAFNET/YAF.SampleWebApplication.git
+cd YAF.SampleWebApplication</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="site-step mb-4">
+                    <span class="site-step-number">2</span>
+                    <div class="flex-grow-1 min-w-0">
+                        <h3 class="h5">Create a database and set the connection string</h3>
+                        <p>
+                            Create an empty database (e.g. <code>yafnet</code>) and enter the connection string in
+                            <code>YAF.SampleApp/appsettings.json</code>:
+                        </p>
+                        <div class="site-code">
+                            <div class="site-code-title">@Html.Icon("file-code") appsettings.json</div>
+<pre><code>"ConnectionStrings": {
+  "DefaultConnection": "data source=(local);initial catalog=yafnet;Integrated Security=True;TrustServerCertificate=True;"
+}</code></pre>
+                        </div>
+                        <div class="alert alert-info d-flex gap-2 small mb-0">
+                            @Html.Icon("circle-info", "mt-1")
+                            <div>
+                                Keep the connection string of your machine out of git: put it in
+                                <code>appsettings.Development.json</code> (ignored by the <code>.gitignore</code> of the sample) or in
+                                the user secrets (read in the <code>Development</code> environment):
+                                <code>dotnet user-secrets init</code>, then
+                                <code>dotnet user-secrets set "ConnectionStrings:DefaultConnection" "..."</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="site-step mb-4">
+                    <span class="site-step-number">3</span>
+                    <div class="flex-grow-1 min-w-0">
+                        <h3 class="h5">Start the application</h3>
+                        <div class="site-code">
+<pre><code>cd YAF.SampleApp
+dotnet run</code></pre>
+                        </div>
+                        <p class="mb-0">Or open <code>YAF.SampleApp.slnx</code> in Visual Studio and press <kbd>F5</kbd>.</p>
+                    </div>
+                </div>
+
+                <div class="site-step">
+                    <span class="site-step-number">4</span>
+                    <div class="flex-grow-1 min-w-0">
+                        <h3 class="h5">Install the forum</h3>
+                        <p class="mb-0">
+                            The first request redirects to the installation wizard (<code>/Forums/Install/Install</code>). It tests
+                            the connection, creates the tables and asks for the name of the board and your admin account. When
+                            it is done, log in with that account: you are the host admin of the forum.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tour" class="mb-5">
+                <h2 class="h3 mb-3">Tour of the project</h2>
+                <p>The forum itself comes from NuGet packages. The project only contains what connects it to the site:</p>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">File</th>
+                                <th scope="col">What it does</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>Program.cs</code></td>
+                                <td>Registers YAF.NET (Autofac, services, middleware, hubs), the chat and Blazor.</td>
+                            </tr>
+                            <tr>
+                                <td><code>appsettings.json</code></td>
+                                <td>Connection string, mail server and the <code>BoardConfiguration</code> of the forum.</td>
+                            </tr>
+                            <tr>
+                                <td><code>Pages/Shared/_Layout.cshtml</code></td>
+                                <td>The layout of your own pages, with the theme of the forum.</td>
+                            </tr>
+                            <tr>
+                                <td><code>Pages/Shared/_SiteHeader.cshtml</code><br /><code>Pages/Shared/_SiteFooter.cshtml</code></td>
+                                <td>Header and footer of all pages, also of the forum and the chat. The header shows the login state of the forum.</td>
+                            </tr>
+                            <tr>
+                                <td><code>Areas/Forums/Pages/Shared/_Layout.cshtml</code></td>
+                                <td>Replaces the layout of the forum from the package: the site header around the forum navigation.</td>
+                            </tr>
+                            <tr>
+                                <td><code>Areas/Chat/Pages/Shared/_Layout.cshtml</code></td>
+                                <td>The same for the chat page of <code>YAFNET.UI.Chat</code>.</td>
+                            </tr>
+                            <tr>
+                                <td><code>Pages/Index.cshtml(.cs)</code></td>
+                                <td>This home page: reads statistics and the latest topics from the forum.</td>
+                            </tr>
+                            <tr>
+                                <td><code>Pages/Counter.razor</code>, <code>Pages/CounterPage.cshtml</code></td>
+                                <td>Blazor Server components next to the forum.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">NuGet package</th>
+                                <th scope="col">Contains</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="https://www.nuget.org/packages/YAFNET.RazorPages/"><code>YAFNET.RazorPages</code></a></td>
+                                <td>All forum pages and their static files (css, js, images, languages).</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.nuget.org/packages/YAFNET.Data.SqlServer/"><code>YAFNET.Data.SqlServer</code></a></td>
+                                <td>The data provider for SQL Server.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.nuget.org/packages/YAFNET.UI.Chat/"><code>YAFNET.UI.Chat</code></a></td>
+                                <td>Optional: the chat area.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="program" class="mb-5">
+                <h2 class="h3 mb-3">Program.cs</h2>
+                <p>These are the lines that add the forum to an application. The chat and Blazor lines are optional.</p>
+                <div class="site-code">
+                    <div class="site-code-title">@Html.Icon("file-code") Program.cs</div>
+<pre><code>var builder = WebApplication.CreateBuilder(args);
+
+// YAF.NET uses Autofac as dependency injection container
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureYafLogging();
+builder.Host.ConfigureContainer&lt;ContainerBuilder&gt;(containerBuilder =&gt;
+{
+    containerBuilder.RegisterYafModules();
+});
+
+builder.Services.AddRazorPages(options =&gt;
+{
+    options.Conventions.AddAreaPageRoute("Forums", "/SiteMap", "/Sitemap.xml");
+}).AddYafRazorPages(builder.Environment);
+
+builder.Services.AddYafCore(builder.Configuration, "/Forums");
+
+builder.Services.AddServerSideBlazor(); // chat and Blazor only
+
+var app = builder.Build();
+
+app.RegisterAutofac();
+
+// static files, session, security headers, routing, authentication, ...
+// (don't add UseStaticFiles or UseSession a second time)
+app.UseYafCore(BoardContext.Current.ServiceLocator);
+
+app.UseRobotsTxt(app.Environment);
+
+app.MapRazorPages();
+app.MapAreaControllerRoute(
+    name: "default",
+    areaName: "Forums",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllers();
+
+app.MapYafHubs();                             // notifications, private messages
+app.MapHub&lt;AllChatHub&gt;("/AllChatHub");       // chat only
+app.MapBlazorHub();                           // chat and Blazor only
+app.MapFallbackToPage("/_Host");              // Blazor routing only
+
+await app.RunAsync();</code></pre>
+                </div>
+            </section>
+
+            <section id="settings" class="mb-5">
+                <h2 class="h3 mb-3">appsettings.json</h2>
+                <p>
+                    Besides the connection string and the mail server, the <code>BoardConfiguration</code> section configures the
+                    forum. For a forum in an area, two settings matter:
+                </p>
+                <div class="site-code">
+                    <div class="site-code-title">@Html.Icon("file-code") appsettings.json</div>
+<pre><code>"BoardConfiguration": {
+  "ConnectionProviderName": "Microsoft.Data.SqlClient",
+  "Area": "Forums",              // the forum runs at /Forums
+  "StaticFilesRoot": "Forums/",  // its uploads and images are in wwwroot/Forums/
+  ...
+}</code></pre>
+                </div>
+                <p class="mb-0">
+                    All settings are described on the
+                    <a href="@(Wiki)BoardConfiguration-Settings">BoardConfiguration Settings</a> page of the wiki.
+                    Browser push notifications need a key pair in <code>VapidConfiguration</code>, see
+                    <a href="@(Wiki)Push-Notifications">Push notifications</a>.
+                </p>
+            </section>
+
+            <section id="your-pages" class="mb-5">
+                <h2 class="h3 mb-3">The forum in your pages</h2>
+                <p>
+                    <code>BoardContext.Current</code> is available in every page of the application. It knows the current user
+                    of the forum, the board settings and gives access to all services of the forum.
+                </p>
+                <div class="site-code">
+                    <div class="site-code-title">@Html.Icon("file-code") Any .cshtml file</div>
+<pre><code>@@inject BoardContext Current
+
+@@if (Current.IsGuest)
+{
+    &lt;a href="@@Current.Get&lt;ILinkBuilder&gt;().GetLink(ForumPages.Account_Login)"&gt;Login&lt;/a&gt;
+}
+else
+{
+    &lt;span&gt;Welcome @@Current.PageUser.DisplayOrUserName()&lt;/span&gt;
+
+    @@if (Current.IsAdmin)
+    {
+        &lt;a href="@@Current.Get&lt;ILinkBuilder&gt;().GetLink(ForumPages.Admin_Admin)"&gt;Forum admin&lt;/a&gt;
+    }
+}</code></pre>
+                </div>
+                <p>
+                    A page model that implements <code>IHaveServiceLocator</code> can use the repositories of the forum with
+                    <code>this.GetRepository&lt;T&gt;()</code>. The <a asp-page="/Index">home page</a> reads the statistics and
+                    the latest topics this way, see <code>Pages/Index.cshtml.cs</code>.
+                </p>
+                <div class="alert alert-warning d-flex gap-2 small mb-0">
+                    @Html.Icon("exclamation-triangle", "mt-1")
+                    <div>
+                        Data of the forum is user content: encode it (Razor does that for <code>@@value</code>) and check the
+                        permissions. Repository methods that take the <code>PageUserID</code>, like <code>Latest</code>, only
+                        return what that user may read.
+                    </div>
+                </div>
+            </section>
+
+            <section id="customize" class="mb-5">
+                <h2 class="h3 mb-3">Layout and themes</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card site-card h-100">
+                            <div class="card-body">
+                                <span class="site-card-icon bg-primary-subtle text-primary-emphasis mb-3">@Html.Icon("edit")</span>
+                                <h3 class="h6">Override any forum file</h3>
+                                <p class="small text-body-secondary mb-0">
+                                    A file at the same path as in the <code>YAFNET.RazorPages</code> package replaces the one of
+                                    the package. That is how <code>Areas/Forums/Pages/Shared/_Layout.cshtml</code> puts the site
+                                    header around the forum. Copy the original from the
+                                    <a href="https://github.com/YAFNET/YAFNET/tree/master/yafsrc/YAFNET.UI/YAFNET.RazorPages/Areas/Forums/Pages">source</a>
+                                    of the same version and change it; after an update compare your copy with the new original.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card site-card h-100">
+                            <div class="card-body">
+                                <span class="site-card-icon bg-info-subtle text-info-emphasis mb-3">@Html.Icon("palette")</span>
+                                <h3 class="h6">Themes</h3>
+                                <p class="small text-body-secondary mb-0">
+                                    The theme chosen in <em>Admin &rsaquo; Board Settings</em> styles the forum and your pages,
+                                    which load the same <code>bootstrap-forum.min.css</code>. Light and dark mode are switched in
+                                    the header. Your own themes can be built with the
+                                    <a href="https://www.npmjs.com/package/@@yafnet/theme-kit">@@yafnet/theme-kit</a>, see
+                                    <a href="@(Wiki)Customization">Customization</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="databases" class="mb-5">
+                <h2 class="h3 mb-3">Other databases</h2>
+                <p>
+                    Replace the <code>YAFNET.Data.SqlServer</code> package with the package of your database and set the
+                    connection string and the <code>ConnectionProviderName</code> (examples are in the comments of
+                    <code>appsettings.json</code>).
+                </p>
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Database</th>
+                                <th scope="col">Package</th>
+                                <th scope="col">ConnectionProviderName</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Microsoft SQL Server</td>
+                                <td><code>YAFNET.Data.SqlServer</code></td>
+                                <td><code>Microsoft.Data.SqlClient</code></td>
+                            </tr>
+                            <tr>
+                                <td>MySQL / MariaDB</td>
+                                <td><code>YAFNET.Data.MySQL</code></td>
+                                <td><code>MySql.Data.MySqlClient</code></td>
+                            </tr>
+                            <tr>
+                                <td>PostgreSQL</td>
+                                <td><code>YAFNET.Data.PostgreSQL</code></td>
+                                <td><code>Npgsql Data Provider</code></td>
+                            </tr>
+                            <tr>
+                                <td>SQLite</td>
+                                <td><code>YAFNET.Data.Sqlite</code></td>
+                                <td><code>System.Data.SQLite</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="next">
+                <h2 class="h3 mb-3">Next steps</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-3">
+                    <div class="col">
+                        <a class="card site-card h-100 text-decoration-none" href="@(Wiki)YAF.NET-Integration-in-to-an-existing-ASP.NET-Core-Application">
+                            <div class="card-body">
+                                <h3 class="h6 text-body">@Html.Icon("plug", "me-2 text-primary")Add YAF.NET to your own application</h3>
+                                <p class="small text-body-secondary mb-0">The same steps for an existing ASP.NET Core project.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a class="card site-card h-100 text-decoration-none" href="@(Wiki)Admin-Guide">
+                            <div class="card-body">
+                                <h3 class="h6 text-body">@Html.Icon("tachometer-alt", "me-2 text-primary")Set up the forum</h3>
+                                <p class="small text-body-secondary mb-0">Forums, roles, permissions, mails and spam protection.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a class="card site-card h-100 text-decoration-none" href="@(Wiki)Installation-YAF.NET-v4.x.x">
+                            <div class="card-body">
+                                <h3 class="h6 text-body">@Html.Icon("server", "me-2 text-primary")Deploy</h3>
+                                <p class="small text-body-secondary mb-0">Requirements and the setup for IIS, Docker and Linux with nginx.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a class="card site-card h-100 text-decoration-none" href="https://forum.yetanotherforum.net/">
+                            <div class="card-body">
+                                <h3 class="h6 text-body">@Html.Icon("circle-question", "me-2 text-primary")Get help</h3>
+                                <p class="small text-body-secondary mb-0">Ask in the YAF.NET support forum.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

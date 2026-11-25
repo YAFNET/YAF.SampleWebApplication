@@ -24,27 +24,73 @@
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using YAF.Core.Extensions;
+using YAF.Core.Model;
+using YAF.Types.Constants;
+using YAF.Types.Extensions;
+using YAF.Types.Models;
+using YAF.Types.Objects;
+using YAF.Types.Objects.Model;
+
 namespace YAF.SampleApp.Pages;
 
 /// <summary>
-/// Class IndexModel.
-/// Implements the <see cref="PageModel" />
-/// Implements the <see cref="YAF.Types.Interfaces.IHaveServiceLocator" />
+/// The home page of the sample. Shows how a page of the host application can read
+/// data of the forum: with <see cref="IHaveServiceLocator"/> the page gets the same
+/// services and repositories (GetRepository&lt;T&gt;) the forum pages use.
 /// </summary>
-/// <seealso cref="PageModel" />
-/// <seealso cref="YAF.Types.Interfaces.IHaveServiceLocator" />
 public class IndexModel : PageModel, IHaveServiceLocator
 {
     /// <summary>
+    /// The number of topics shown in the "latest topics" list.
+    /// </summary>
+    private const int LatestTopicsCount = 5;
+
+    /// <summary>
     /// Gets the service locator.
     /// </summary>
-    /// <value>The service locator.</value>
     public IServiceLocator ServiceLocator => BoardContext.Current.ServiceLocator;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="IndexModel"/> class.
+    /// Gets the post statistics of the board.
     /// </summary>
-    public IndexModel()
+    public BoardStat Statistics { get; private set; }
+
+    /// <summary>
+    /// Gets the number of members of the board.
+    /// </summary>
+    public long MemberCount { get; private set; }
+
+    /// <summary>
+    /// Gets the latest topics the current user can read.
+    /// </summary>
+    public List<LatestTopic> LatestTopics { get; private set; } = [];
+
+    /// <summary>
+    /// Loads the forum data shown on the home page.
+    /// </summary>
+    public async Task OnGetAsync()
     {
+        var context = BoardContext.Current;
+
+        // the same cache entries as the statistics of the forum index, so both show the same numbers
+        this.Statistics = await this.Get<IDataCache>().GetOrSetAsync(
+            Constants.Cache.BoardStats,
+            () => this.GetRepository<Board>().PostStatsAsync(context.PageBoardID, true),
+            TimeSpan.FromMinutes(context.BoardSettings.ForumStatisticsCacheTimeout));
+
+        this.MemberCount = await this.Get<IDataCache>().GetOrSetAsync(
+            Constants.Cache.BoardMembers,
+            () => this.GetRepository<User>().BoardMembersAsync(context.PageBoardID),
+            TimeSpan.FromMinutes(context.BoardSettings.BoardUserStatsCacheTimeout));
+
+        // only topics of forums the current user (or guest) can read
+        this.LatestTopics = this.GetRepository<Topic>().Latest(
+            context.PageBoardID,
+            0,
+            LatestTopicsCount,
+            context.PageUserID,
+            context.BoardSettings.NoCountForumsInActiveDiscussions,
+            false);
     }
 }

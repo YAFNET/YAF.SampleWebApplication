@@ -1,0 +1,151 @@
+﻿@using YAF.Core.Context
+@using YAF.Core.Extensions
+@using YAF.Core.Services
+@using YAF.Types.Constants
+@using YAF.Types.Extensions
+@using YAF.Types.Interfaces.Services
+@using YAF.Web.HtmlHelpers
+
+@* The header of the whole application (home page, forum and chat). It shows how the
+   host application can use the forum login (BoardContext.Current) in its own pages. *@
+
+@inject BoardContext Current
+
+@{
+    var area = ViewContext.RouteData.Values["area"]?.ToString() ?? string.Empty;
+    var page = ViewContext.RouteData.Values["page"]?.ToString() ?? string.Empty;
+    var path = Context.Request.Path.Value ?? string.Empty;
+
+    var isHome = area.Length == 0 && page == "/Index";
+    var isGuide = area.Length == 0 && page == "/GettingStarted";
+    var isForums = area == "Forums";
+    var isChat = area == "Chat";
+    var isBlazor = page == "/CounterPage" || path.StartsWith("/counter", StringComparison.OrdinalIgnoreCase);
+
+    var linkBuilder = Current.Get<ILinkBuilder>();
+}
+
+<header class="site-header sticky-top border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <div class="container-xxl">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" asp-area="" asp-page="/Index">
+                <span class="site-brand-mark" aria-hidden="true">@Html.Icon("comments")</span>
+                YAF.SampleApp
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#SiteNav"
+                    aria-controls="SiteNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="SiteNav">
+                <ul class="navbar-nav me-auto gap-lg-1">
+                    <li class="nav-item">
+                        <a class="nav-link @(isHome ? "active" : null)" aria-current="@(isHome ? "page" : null)"
+                           asp-area="" asp-page="/Index">
+                            @Html.Icon("house", "me-1") Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(isGuide ? "active" : null)" aria-current="@(isGuide ? "page" : null)"
+                           asp-area="" asp-page="/GettingStarted">
+                            @Html.Icon("rocket", "me-1") Getting started
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(isForums ? "active" : null)" aria-current="@(isForums ? "page" : null)"
+                           asp-area="Forums" asp-page="/Index">
+                            @Html.Icon("comments", "me-1") Forums
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(isChat ? "active" : null)" aria-current="@(isChat ? "page" : null)"
+                           asp-area="Chat" asp-page="/Index">
+                            @Html.Icon("message", "me-1") Chat
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle @(isBlazor ? "active" : null)" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            @Html.Icon("layer-group", "me-1") Blazor
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="~/counter">
+                                    @Html.Icon("link", "me-2 text-secondary") Routable component
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-area="" asp-page="/CounterPage">
+                                    @Html.Icon("file-code", "me-2 text-secondary") Component on a Razor Page
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 py-2 py-lg-0">
+                    @await Html.PartialAsync("~/Pages/Shared/_ThemeToggle.cshtml")
+
+                    @if (Current.IsGuest)
+                    {
+                        <a class="btn btn-outline-primary btn-sm"
+                           href="@linkBuilder.GetLink(ForumPages.Account_Login)">
+                            @Html.Icon("sign-in-alt", "me-1") Login
+                        </a>
+
+                        @if (!Current.BoardSettings.DisableRegistrations)
+                        {
+                            <a class="btn btn-primary btn-sm"
+                               href="@linkBuilder.GetLink(Current.BoardSettings.ShowRulesForRegistration ? ForumPages.Privacy : ForumPages.Account_Register)">
+                                @Html.Icon("user-plus", "me-1") Register
+                            </a>
+                        }
+                    }
+                    else
+                    {
+                        <div class="dropdown">
+                            <button class="btn btn-link nav-link d-flex align-items-center gap-2 dropdown-toggle px-0 px-lg-2"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="@(Current.Get<IAvatars>().GetAvatarUrlForCurrentUser())" alt=""
+                                     class="site-avatar rounded-circle" width="28" height="28" />
+                                <span class="fw-semibold">@Current.PageUser.DisplayOrUserName()</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="@linkBuilder.GetLink(ForumPages.MyAccount)">
+                                        @Html.Icon("address-card", "me-2 text-secondary") My account
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="@linkBuilder.GetLink(ForumPages.Profile_EditProfile)">
+                                        @Html.Icon("user-edit", "me-2 text-secondary") Edit profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="@linkBuilder.GetLink(ForumPages.MyTopics)">
+                                        @Html.Icon("comment-dots", "me-2 text-secondary") My topics
+                                    </a>
+                                </li>
+                                @if (Current.IsAdmin)
+                                {
+                                    <li>
+                                        <a class="dropdown-item" href="@linkBuilder.GetLink(ForumPages.Admin_Admin)">
+                                            @Html.Icon("tachometer-alt", "me-2 text-secondary") Forum admin
+                                        </a>
+                                    </li>
+                                }
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="javascript:LogOutClick()">
+                                        @Html.Icon("sign-out-alt", "me-2 text-secondary") Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
